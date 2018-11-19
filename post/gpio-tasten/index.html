@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "GPIO-Eingang als Tastaturtaste",
+        "headline" : "GPIO-Eingang als Tastaturtaste",
+        "description" : "<p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
+        "url" : "/post/gpio-tasten/",
+        "wordCount" : "267",
+        "image" : img/gpio-key.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>GPIO-Eingang als Tastaturtaste </title>
+
+
+<meta name="description" content="Raspberry Pi Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Raspberry Pi Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um den Raspberry Pi Einplatinencomputer</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="index.html">Blog</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="impressum/">Impressum</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="contact/">Kontakt</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="img/gpio-key.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">16 September</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Raspberry%20Pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> GPIO-Eingang als Tastaturtaste</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+</p>
+
+<h2 id="umsetzung">Umsetzung</h2>
+
+<p>Mithilfe von DeviceTree Funktion ‚gpio-key‘ kann ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welchem Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm ‚showkey‘ ermittelt werden, wenn eine Tastatur angeschlossen ist. wird 10 Skunden keine taste gedrückt beendet sich das Programm von selbst.</p>
+
+<table>
+<thead>
+<tr>
+<th>Taste</th>
+<th align="center">Scancode</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Pfeil oben</td>
+<td align="center">103</td>
+</tr>
+
+<tr>
+<td>Pfeil links</td>
+<td align="center">105</td>
+</tr>
+
+<tr>
+<td>Pfeil rechts</td>
+<td align="center">106</td>
+</tr>
+
+<tr>
+<td>Pfeil unten</td>
+<td align="center">108</td>
+</tr>
+
+<tr>
+<td>Esc</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td>Backspace</td>
+<td align="center">14</td>
+</tr>
+
+<tr>
+<td>Enter</td>
+<td align="center">28</td>
+</tr>
+
+<tr>
+<td>Space</td>
+<td align="center">57</td>
+</tr>
+
+<tr>
+<td>a</td>
+<td align="center">30</td>
+</tr>
+
+<tr>
+<td>s</td>
+<td align="center">31</td>
+</tr>
+
+<tr>
+<td>d</td>
+<td align="center">32</td>
+</tr>
+
+<tr>
+<td>w</td>
+<td align="center">17</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td align="center">44</td>
+</tr>
+
+<tr>
+<td>x</td>
+<td align="center">45</td>
+</tr>
+
+<tr>
+<td>c</td>
+<td align="center">46</td>
+</tr>
+
+<tr>
+<td>z</td>
+<td align="center">21</td>
+</tr>
+
+<tr>
+<td>p</td>
+<td align="center">28</td>
+</tr>
+</tbody>
+</table>
+
+<p>Alternativ kann auch das Programm ‚dumpkeys‘ mit dem Aufruf
+‚sudo dumpkeys -f &gt; dumpkeys.txt‘ verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.</p>
+
+<p>Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
+
+<pre><code>dtoverlay=gpio-key,gpio=16,keycode=103,label=&quot;KEY_UP&quot;,gpio_pull=2
+dtoverlay=gpio-key,gpio=26,keycode=105,label=&quot;KEY_LEFT&quot;,gpio_pull=2
+dtoverlay=gpio-key,gpio=20,keycode=106,label=&quot;KEY_RIGHT&quot;,gpio_pull=2
+dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
+</code></pre>
+
+<p>Parameter für gpio-key Overlay:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Funktion</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>gpio</td>
+<td align="center">GPIO-Nummer (BCM)</td>
+</tr>
+
+<tr>
+<td>keycode</td>
+<td align="center">Tastencode</td>
+</tr>
+
+<tr>
+<td>label</td>
+<td align="center">Beliebiger Name</td>
+</tr>
+
+<tr>
+<td>gpio_pull</td>
+<td align="center">Aktivierung Pull-Up/Pull-Down Widerstand 0 = keiner; 1 = pull-down; 2 = pull-up</td>
+</tr>
+
+<tr>
+<td>active_low</td>
+<td align="center">Logikpegel für Tastendruck 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND</td>
+</tr>
+</tbody>
+</table>
+
+<p>Auf der Kommandozeile kann die Funktion durch folgenden Befehl getestet werden:</p>
+
+<pre><code>sudo dtoverlay gpio-key gpio=19 keycode=28 label=&quot;KEY_ENTER&quot; gpio_pull=2
+</code></pre>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p>Weitere Infos bezüglich der DeviceTree Funktion ‚gpio-keys‘, erhält man unter <a href="https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt">https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  <div class="entry-categories"><p><span>Categories</span>
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Written by:<a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Programmierer und Raspberry Pi Experte.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Raspberry Pi Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um den Raspberry Pi Einplatinencomputer</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="js/jquery.min.js"></script>
+<script src="js/jquerymigrate.js"></script>
+<script src="js/production.min.js"></script>
+
+</body>
+</html>

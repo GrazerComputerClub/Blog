@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GC2 Raspberry Pi Blog</title>
+    <link>/</link>
+    <description>Recent content on GC2 Raspberry Pi Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Fri, 12 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi GPIO Beschriftung</title>
+      <link>/post/gpio-beschriftung/</link>
+      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gpio-beschriftung/</guid>
+      <description>&lt;p&gt;Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschrif-
+tete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang
+wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen
+schaffen, die man über die GPIO-Stiftleiste steckt.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tastaturtasten Programmaufrufe zuweisen ohne X11</title>
+      <link>/post/tasten-programmaufrufe-zuweisen-ohne-x11/</link>
+      <pubDate>Tue, 02 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tasten-programmaufrufe-zuweisen-ohne-x11/</guid>
+      <description>&lt;p&gt;Tastaturtasten Programmaufrufe zuweisen ist eine typische Aufgabe die von diversen X11 Oberflächen zur Verfügung gestellt werden. Mit Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GPIO-Eingang als Tastaturtaste</title>
+      <link>/post/gpio-tasten/</link>
+      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gpio-tasten/</guid>
+      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero W Stromaufnahme</title>
+      <link>/post/raspberry-pi-zero-w-stromaufnahme/</link>
+      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/raspberry-pi-zero-w-stromaufnahme/</guid>
+      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi über GPIO-Eingang herunterfahren</title>
+      <link>/post/pi-herunterfahren/</link>
+      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pi-herunterfahren/</guid>
+      <description>&lt;p&gt;Leider fehler den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion, geht ganz einfach. Man benötgt nur einen Schalter, Kabel und einen Eintrag in der config.txt.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WLAN bei Boot verbinden</title>
+      <link>/post/wlan-bei-boot-verbinden/</link>
+      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/wlan-bei-boot-verbinden/</guid>
+      <description>Zusammenfassung Oft ist es von Vorteil wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
+Umsetzung Damit sich der Raspberry Pi direkt nach dem ersten Boot ins lokale WLAN verbinden kann, müssen die Zugangsdaten in der Boot-Partition hinterlegt werden. Man muss dort die Datei &amp;lsquo;wpa_supplicant.conf&amp;rsquo; mit folgenden inhalt anlegen:</description>
+    </item>
+    
+    <item>
+      <title>Über uns</title>
+      <link>/impressum/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/impressum/</guid>
+      <description>Wir sind der eingetragene Verein &amp;ldquo;Grazer Computer Club&amp;rdquo; kurt GC2.
+Wir möchten damit Menschen, Computer- und Programmierkenntnisse näher bringen. Es soll das Studium der Informatik und verwandte Themen gefördert werden.
+Wird sind gemeinützig und möchten allen kostenfreien Zugang zu Informationen ermöglichen. Publikationen des Vereins (Sourcecode, Programme, Anleitungen usw.) werden daher mit einer CC-Lizenz oder einer vergleichbaren Lizenz veröffentlicht.
+Grazer Computer Club
+ZVR: 1093020071 Rechtlicher Sitz: Graz</description>
+    </item>
+    
+  </channel>
+</rss>
