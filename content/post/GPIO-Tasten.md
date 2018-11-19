@@ -11,12 +11,12 @@ weight = 1
 +++
 
 
-Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei "config.txt" wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 <!--more-->
 
 ## Umsetzung
 
-Mithilfe von DeviceTree Funktion ‚gpio-key‘ kann ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welchem Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm ‚showkey‘ ermittelt werden, wenn eine Tastatur angeschlossen ist. wird 10 Skunden keine taste gedrückt beendet sich das Programm von selbst.
+Mithilfe der Devicetree Funktion 'gpio-key' können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm 'showkey' ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.
 
 | Taste         | Scancode |
 | ------------- |:--------:|
@@ -38,8 +38,7 @@ Mithilfe von DeviceTree Funktion ‚gpio-key‘ kann ganz einfach GPIO-Eingänge
 | z   | 21     |
 | p   | 28     |
 
-Alternativ kann auch das Programm ‚dumpkeys‘ mit dem Aufruf 
-‚sudo dumpkeys -f > dumpkeys.txt‘ verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.
+Alternativ kann auch das Programm 'dumpkeys' mit dem Aufruf ``sudo dumpkeys -f > dumpkeys.txt`` verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.
 
 Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:
 
@@ -53,12 +52,12 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label="KEY_DOWN",gpio_pull=2
 Parameter für gpio-key Overlay:
 
 | Parameter     | Funktion |
-| ------------- |:--------:|
+| ------------- |----------|
 | gpio          | GPIO-Nummer (BCM)  |
 | keycode       |  Tastencode        |
 | label         |  Beliebiger Name   |
-| gpio_pull     |  Aktivierung Pull-Up/Pull-Down Widerstand 0 = keiner; 1 = pull-down; 2 = pull-up     |
-| active_low    |  Logikpegel für Tastendruck 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND     |
+| gpio_pull     |  Aktivierung Pull-Up/Pull-Down Widerstand; 0 = keiner; 1 = pull-down; 2 = pull-up     |
+| active_low    |  Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND     |
 
 
 Auf der Kommandozeile kann die Funktion durch folgenden Befehl getestet werden:
