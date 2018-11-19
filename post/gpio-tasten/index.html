@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "GPIO-Eingang als Tastaturtaste",
         "headline" : "GPIO-Eingang als Tastaturtaste",
-        "description" : "<p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+        "description" : "<p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/gpio-tasten/",
-        "wordCount" : "267",
+        "wordCount" : "270",
         "image" : https://grazercomputerclub.github.io/Blogimg/gpio-key.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -232,12 +232,12 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit eigenen Programmen oder Hardware realsieren. Doch nun geht das ganz einfach, über DeviceTree. Mit nur einem Eintrag in der config.txt wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen werden.
+              <p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 </p>
 
 <h2 id="umsetzung">Umsetzung</h2>
 
-<p>Mithilfe von DeviceTree Funktion ‚gpio-key‘ kann ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welchem Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm ‚showkey‘ ermittelt werden, wenn eine Tastatur angeschlossen ist. wird 10 Skunden keine taste gedrückt beendet sich das Programm von selbst.</p>
+<p>Mithilfe der Devicetree Funktion &lsquo;gpio-key&rsquo; können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm &lsquo;showkey&rsquo; ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.</p>
 
 <table>
 <thead>
@@ -335,8 +335,7 @@
 </tbody>
 </table>
 
-<p>Alternativ kann auch das Programm ‚dumpkeys‘ mit dem Aufruf
-‚sudo dumpkeys -f &gt; dumpkeys.txt‘ verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.</p>
+<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.</p>
 
 <p>Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
 
@@ -352,34 +351,34 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
 <thead>
 <tr>
 <th>Parameter</th>
-<th align="center">Funktion</th>
+<th>Funktion</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>gpio</td>
-<td align="center">GPIO-Nummer (BCM)</td>
+<td>GPIO-Nummer (BCM)</td>
 </tr>
 
 <tr>
 <td>keycode</td>
-<td align="center">Tastencode</td>
+<td>Tastencode</td>
 </tr>
 
 <tr>
 <td>label</td>
-<td align="center">Beliebiger Name</td>
+<td>Beliebiger Name</td>
 </tr>
 
 <tr>
 <td>gpio_pull</td>
-<td align="center">Aktivierung Pull-Up/Pull-Down Widerstand 0 = keiner; 1 = pull-down; 2 = pull-up</td>
+<td>Aktivierung Pull-Up/Pull-Down Widerstand; 0 = keiner; 1 = pull-down; 2 = pull-up</td>
 </tr>
 
 <tr>
 <td>active_low</td>
-<td align="center">Logikpegel für Tastendruck 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND</td>
+<td>Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND</td>
 </tr>
 </tbody>
 </table>

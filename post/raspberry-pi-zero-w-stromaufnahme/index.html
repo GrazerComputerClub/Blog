@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero W Stromaufnahme",
         "headline" : "Raspberry Pi Zero W Stromaufnahme",
-        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?<br />
+        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/",
-        "wordCount" : "307",
+        "wordCount" : "306",
         "image" : https://grazercomputerclub.github.io/Blogimg/consumtion.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -232,24 +232,24 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?<br />
+              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 </p>
 
 <h2 id="messaufbau">Messaufbau</h2>
 
-<p>Beim Test wurde nichts außer eine MicroSD Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb aber ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
+<p>Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb aber ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
 
 <h2 id="messung">Messung</h2>
 
 <p>Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA ohne WLAN und 110 mA mit verbundenen WLAN. Bei CPU-Belastung stieg der Wert um 80 mA auf maximal 190 mA an. Wird das WLAN stark belastet kann der Verbrauch kurzzeitig auf bis zu 220 mA steigen.<br />
 Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelasteten Betrieb. Damit steht dem Betrieb am USB-Bus nichts entgegen!<br />
-Zu beachten ist allerdings, dass durch zusätzliche angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.</p>
+Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.</p>
 
-<p><img src="/img/Raspberry-Pi-zero-W-Stromaufnahme.png" alt="Diagramm" /></p>
+<p><img src="../../img/Raspberry-Pi-zero-W-Stromaufnahme.png" alt="Diagramm" /></p>
 
 <h2 id="optimierungen">Optimierungen</h2>
 
-<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf &lsquo;/opt/vc/bin/tvservice -o&rsquo;, bringt eine Reduktion von 10 mA. Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Veringerung bei 3 mA.<br />
+<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA. Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br />
 WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
 
 <p><code>rfkill list</code></p>
@@ -262,7 +262,7 @@ WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. 
 	Hard blocked: no
 </code></pre>
 
-<p><code>rfkill block 0</code>
+<p><code>rfkill block 0</code><br />
 <code>rfkill list</code></p>
 
 <pre><code>0: phy0: Wireless LAN
@@ -275,7 +275,7 @@ WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. 
 
 <p><code>rfkill unblock 0</code></p>
 
-<p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &lsquo;config.txt&rsquo; deaktiviert werden.</p>
+<p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; deaktiviert werden.</p>
 
 <pre><code>dtoverlay=pi3-disable-wifi
 dtoverlay=pi3-disable-bt

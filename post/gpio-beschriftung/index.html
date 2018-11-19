@@ -13,10 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi GPIO Beschriftung",
         "headline" : "Raspberry Pi GPIO Beschriftung",
-        "description" : "<p>Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschrif-
-tete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang
-wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen
-schaffen, die man über die GPIO-Stiftleiste steckt.
+        "description" : "<p>Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -28,7 +25,7 @@ schaffen, die man über die GPIO-Stiftleiste steckt.
         "datePublished": "2018-10-12 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-10-12 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/",
-        "wordCount" : "254",
+        "wordCount" : "248",
         "image" : https://grazercomputerclub.github.io/Blogimg/pileaf.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -235,21 +232,16 @@ schaffen, die man über die GPIO-Stiftleiste steckt.
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschrif-
-tete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang
-wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen
-schaffen, die man über die GPIO-Stiftleiste steckt.
+              <p>Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
 </p>
 
 <h2 id="erstellung">Erstellung</h2>
 
-<p>Die GPIO-Kontakte der Raspberry sind nicht beschriftet. Es werden im einschlägigen Handel Beschriftungskarten, sie werden als Referenzkarten (&ldquo;Reference Card&rdquo;) bezeichnet, angeboten. Sie werden über die Steckerleiste gesteckt. Diese Referenzkarten müssen natürlich nicht aus einem harten Material bestehen. Sie können mit etwas Handarbeit auch leicht selbst aus Papier hergestellt werden. Sie werden ausgedruckt und dann zurecht geschnitten. Die Löcher kann man z. B. mit einem Nagel vorstechen. Solche PDF-Vorlagen gibt es vielfach im Internet zu finden z. B. <a href="http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf">http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf</a>. Eine besondere Möglichkeit bietet hier das Projekt Pi Leaf <a href="https://www.raspberrypi.org/blog/raspberry-leaf">https://www.raspberrypi.org/blog/raspberry-leaf</a>. Dabei wurde die Zeichnung nicht in einem Grafikprogramm erzeugt, sondern über eine Beschreibungs-
-sprache definiert. Ursprünglich wurde das Projekt auf <a href="http://www.doctormonk.com/2013/02/raspberry-pi-and-breadboard-raspberry.html">Dr. Monk&rsquo;s DIY Electronics Blog</a> beschrieben und auf <a href="https://sourceforge.net/projects/pileaf/">Sourceforge</a> publiziert.</p>
+<p>Die GPIO-Kontakte der Raspberry sind nicht beschriftet. Es werden im einschlägigen Handel Beschriftungskarten, sie werden auch als Referenzkarten (&ldquo;Reference Card&rdquo;) bezeichnet, angeboten. Man steckt sie über die GPIO-Steckerleiste. Diese Referenzkarten müssen natürlich nicht aus einem harten Material bestehen. Sie können mit etwas Handarbeit auch leicht selbst aus Papier hergestellt werden. Sie werden ausgedruckt und dann zurecht geschnitten. Die Löcher kann man z. B. mit einem Nagel vorstechen. Solche PDF-Vorlagen gibt es vielfach im Internet zu finden z. B. <a href="http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf">http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf</a>. Eine besondere Möglichkeit bietet hier das Projekt Pi Leaf <a href="https://www.raspberrypi.org/blog/raspberry-leaf">https://www.raspberrypi.org/blog/raspberry-leaf</a>. Dabei wurde die Zeichnung nicht in einem Grafikprogramm erzeugt, sondern über eine Beschreibungssprache definiert. Ursprünglich wurde das Projekt auf <a href="http://www.doctormonk.com/2013/02/raspberry-pi-and-breadboard-raspberry.html">Dr. Monk&rsquo;s DIY Electronics Blog</a> beschrieben und auf <a href="https://sourceforge.net/projects/pileaf/">Sourceforge</a> publiziert.</p>
 
 <p>Für das veraltete Projekt wurde ein Fork von &ldquo;Sanderr&rdquo; auf <a href="https://sourceforge.net/u/sanderr/pileaf">Sourceforge</a> erstellt. Diese Version enthält auch eine Vorlage für den 40-Pin Anschluss der aktuellen Raspberry Pi Varianten. Aus der Beschreibungsdatei &ldquo;pi-leaf.asy&rdquo; kann mit dem Programm Asymptote die PDF-Datei erstellt werden.</p>
 
-<pre><code>sudo apt-get install asymptote git
-cd /usr/src/
+<pre><code class="language-sudo">cd /usr/src/
 git clone git://git.code.sf.net/u/sanderr/pileaf u-sanderr-pileaf
 cd u-sanderr-pileaf
 asy -f pdf pi-leaf.asy
@@ -257,7 +249,7 @@ asy -f pdf pi-leaf.asy
 
 <p>Eine bereits erstellte PDF-Vorlagedatei kann von unserer Homepage unter <a href="http://raspjamming.at/PDF/pi-leaf.pdf">http://raspjamming.at/PDF/pi-leaf.pdf</a> heruntergeladen werden. Beim Ausdrucken (z. B. mit dem Browser Chrome) muss unbedingt die Einstellung &ldquo;Seitengröße anpassen&rdquo; bzw. &ldquo;Fit to page&rdquo; deaktiviert werden!</p>
 
-<p><img src="/img/pileaf-printer.png" alt="Dialog Chrome Ausdruck" /></p>
+<p><img src="../../img/pileaf-printer.png" alt="Dialog Chrome Ausdruck" /></p>
             </article>
           </div>
           
