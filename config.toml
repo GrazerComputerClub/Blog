@@ -1,4 +1,4 @@
-baseurl = ""
+baseurl = "https://grazercomputerclub.github.io/Blog"
 title = "GC2 Raspberry Pi Blog"
 theme = "hugo-nederburg-theme"
 languageCode = "de-de"
