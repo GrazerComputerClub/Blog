@@ -3,76 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/gpio-beschriftung/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</loc>
     <lastmod>2018-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/tasten-programmaufrufe-zuweisen-ohne-x11/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/tasten-programmaufrufe-zuweisen-ohne-x11/</loc>
     <lastmod>2018-10-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/gpio-tasten/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</loc>
     <lastmod>2018-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/raspberry-pi-zero-w-stromaufnahme/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</loc>
     <lastmod>2018-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/pi-herunterfahren/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</loc>
     <lastmod>2018-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/wlan-bei-boot-verbinden/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</loc>
     <lastmod>2018-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/impressum/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/impressum/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/contact/</loc>
     <lastmod>2018-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/</loc>
     <lastmod>2018-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/post/</loc>
     <lastmod>2018-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/raspberry-pi/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</loc>
     <lastmod>2018-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/raspberry-pi-zero/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/</loc>
     <lastmod>2018-09-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://grazercomputerclub.github.io/Blog/tags/</loc>
     <priority>0</priority>
   </url>
   

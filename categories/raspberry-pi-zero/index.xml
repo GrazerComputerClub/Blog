@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi Zero on GC2 Raspberry Pi Blog</title>
-    <link>/categories/raspberry-pi-zero/</link>
+    <link>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/</link>
     <description>Recent content in Raspberry Pi Zero on GC2 Raspberry Pi Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Sun, 16 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Raspberry Pi Zero W Stromaufnahme</title>
-      <link>/post/raspberry-pi-zero-w-stromaufnahme/</link>
+      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</link>
       <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/raspberry-pi-zero-w-stromaufnahme/</guid>
+      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
