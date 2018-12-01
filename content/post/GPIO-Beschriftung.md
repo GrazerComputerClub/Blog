@@ -11,7 +11,7 @@ weight = 1
 +++
 
 
-Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
+Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
 <!--more-->
 
 ## Erstellung
@@ -29,5 +29,5 @@ asy -f pdf pi-leaf.asy
 
 Eine bereits erstellte PDF-Vorlagedatei kann von unserer Homepage unter [http://raspjamming.at/PDF/pi-leaf.pdf](http://raspjamming.at/PDF/pi-leaf.pdf) heruntergeladen werden. Beim Ausdrucken (z. B. mit dem Browser Chrome) muss unbedingt die Einstellung "Seitengröße anpassen" bzw. "Fit to page" deaktiviert werden!
 
-![Dialog Chrome Ausdruck](../../img/pileaf-printer.png) 
+![Chrome Drucken Dialog](../../img/pileaf-printer.png) 
 
