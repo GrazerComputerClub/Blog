@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raspberry Pi on GC2 Raspberry Pi Blog</title>
+    <title>Raspberry Pi on GC2 Blog</title>
     <link>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</link>
-    <description>Recent content in Raspberry Pi on GC2 Raspberry Pi Blog</description>
+    <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 12 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,50 +14,10 @@
     <item>
       <title>Raspberry Pi GPIO Beschriftung</title>
       <link>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</link>
-      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</guid>
       <description>&lt;p&gt;Ein Problem, dass beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Tastaturtasten Programmaufrufe zuweisen ohne X11</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/tasten-programmaufrufe-zuweisen-ohne-x11/</link>
-      <pubDate>Tue, 02 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/tasten-programmaufrufe-zuweisen-ohne-x11/</guid>
-      <description>&lt;p&gt;Tastaturtasten einem Programmaufruf zuweisen ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm  Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>GPIO-Eingang als Tastaturtaste</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</link>
-      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</guid>
-      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi über GPIO-Eingang herunterfahren</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</link>
-      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</guid>
-      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion, geht ganz einfach. Man benötgt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WLAN bei Boot verbinden</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</link>
-      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
-      <description>&lt;p&gt;Oft ist es von Vorteil wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
 &lt;/p&gt;</description>
     </item>
     

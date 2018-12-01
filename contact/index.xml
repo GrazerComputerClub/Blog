@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kontakt on GC2 Raspberry Pi Blog</title>
+    <title>Kontakt on GC2 Blog</title>
     <link>https://grazercomputerclub.github.io/Blog/contact/</link>
-    <description>Recent content in Kontakt on GC2 Raspberry Pi Blog</description>
+    <description>Recent content in Kontakt on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Sat, 06 Oct 2018 00:00:00 +0000</lastBuildDate>

@@ -4,37 +4,12 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</loc>
-    <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/post/tasten-programmaufrufe-zuweisen-ohne-x11/</loc>
-    <lastmod>2018-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</loc>
-    <lastmod>2018-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</loc>
-    <lastmod>2018-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</loc>
-    <lastmod>2018-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</loc>
-    <lastmod>2018-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/impressum/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -49,25 +24,19 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/</loc>
-    <lastmod>2018-10-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/</loc>
-    <lastmod>2018-10-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</loc>
-    <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/</loc>
-    <lastmod>2018-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
