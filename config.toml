@@ -1,5 +1,5 @@
 baseurl = "https://grazercomputerclub.github.io/Blog"
-title = "GC2 Raspberry Pi Blog"
+title = "GC2 Blog"
 theme = "hugo-nederburg-theme"
 languageCode = "de-de"
 # Enable comments by entering your Disqus shortname
@@ -12,8 +12,8 @@ paginate = 5 #frontpage pagination
 [params]
   # Unmark to use post folder for images. Default is static folder.
   #usepostimgfolder = true
-  slogan = "Infos rund um den Raspberry Pi Einplatinencomputer"
-  description = "Raspberry Pi Blog des Grazer Computer Club - GC2" # meta description
+  slogan = "Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik"
+  description = "Blog des Grazer Computer Club - GC2" # meta description
   # You need to set author to have an author bio. If you have a writer in the markdown file it will override this.
   author = "GC2"
   authorLink = "https://gc2.at"
@@ -41,11 +41,11 @@ paginate = 5 #frontpage pagination
      # - send a dummy email yourself to confirm your account
      # - click the confirm link in the email from www.formspree.io
      # - you're done. Happy mailing!
-  email = "blog@raspjamming.at"
+  email = "blog@gc2.at"
 
   # Nav links in the side bar
   [[menu.main]]
-  name = "Blog"
+  name = "Blog (Deutsch)"
   url = "index.html"
   weight = 1
 
@@ -54,10 +54,10 @@ paginate = 5 #frontpage pagination
   url = "impressum/"
   weight = 2
 
-  [[menu.main]]
-  name = "Kontakt"
-  url = "contact/"
-  weight = 3
+# [[menu.main]]
+# name = "Kontakt"
+# url = "contact/"
+# weight = 3
 
   [[menu.main]]
   name = "Hauptseite"
