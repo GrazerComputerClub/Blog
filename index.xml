@@ -6,10 +6,21 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi USB Gadget</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-usb-gadget/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-usb-gadget/</guid>
+      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi GPIO Beschriftung</title>
