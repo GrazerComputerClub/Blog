@@ -11,9 +11,10 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi GPIO Beschriftung",
-        "headline" : "Raspberry Pi GPIO Beschriftung",
-        "description" : "<p>Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
+        "name" : "Raspberry Pi USB Gadget",
+        "headline" : "Raspberry Pi USB Gadget",
+        "description" : "<p>Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,17 +23,17 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-01 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-01 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/",
-        "wordCount" : "248",
-        "image" : https://grazercomputerclub.github.io/Blogimg/pileaf.jpg",
+        "datePublished": "2018-12-02 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-02 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-usb-gadget/",
+        "wordCount" : "466",
+        "image" : https://grazercomputerclub.github.io/Blogimg/Raspberry-Pi-USB-Gadget.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Raspberry Pi GPIO Beschriftung </title>
+ <title>Raspberry Pi USB Gadget </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -205,11 +206,11 @@
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/pileaf.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/Raspberry-Pi-USB-Gadget.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">01 December</span>	<span> / </span>
+          <span class="date">02 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -220,36 +221,50 @@
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
+            <a href="/categories/Blog/Raspberry%20Pi%20Zero">Raspberry Pi Zero</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Raspberry Pi GPIO Beschriftung</h1>
+          <h1 class='entry-title'> Raspberry Pi USB Gadget</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
+              <p>Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
 </p>
 
-<h2 id="erstellung">Erstellung</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Die GPIO-Kontakte der Raspberry sind nicht beschriftet. Es werden im einschlägigen Handel Beschriftungskarten, sie werden auch als Referenzkarten (&ldquo;Reference Card&rdquo;) bezeichnet, angeboten. Man steckt sie über die GPIO-Steckerleiste. Diese Referenzkarten müssen natürlich nicht aus einem harten Material bestehen. Sie können, mit etwas Handarbeit, auch leicht selbst aus Papier hergestellt werden. Sie werden ausgedruckt und dann zurecht geschnitten. Die Löcher kann man z. B. mit einem Nagel vorstechen. Solche PDF-Vorlagen gibt es vielfach im Internet zu finden z. B. <a href="http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf">http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf</a>. Eine besondere Möglichkeit bietet hier das Projekt Pi Leaf <a href="https://www.raspberrypi.org/blog/raspberry-leaf">https://www.raspberrypi.org/blog/raspberry-leaf</a>. Dabei wurde die Zeichnung nicht in einem Grafikprogramm erzeugt, sondern über eine Beschreibungssprache definiert. Ursprünglich wurde das Projekt auf <a href="http://www.doctormonk.com/2013/02/raspberry-pi-and-breadboard-raspberry.html">Dr. Monk&rsquo;s DIY Electronics Blog</a> beschrieben und auf <a href="https://sourceforge.net/projects/pileaf/">Sourceforge</a> publiziert.</p>
+<p>Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozessor verbunden ist. Dadurch kann der USB-Anschluss nicht nur als Host für USB-Geräte (Tastatur,  Maus, USB-Stick) verwendet werden, sondern auch als Client. Beim Client-Betrieb verhält er sich dann wie ein USB-Gerät. Es gibt die unterschiedlichsten Modi wie z. B. Massenspeicher-, Serielles- oder Netzwerkgerät aber auch eine kombierte Funktion ist möglich. Je nachdem welches Kernel-Modul geladen und parametriert wird entscheidet über die Funktion. Weitere Informationen über den OTG-Betrieb und alle möglichen Varianten können der Git-Hub Seite <a href="https://gist.github.com/gbaman/50b6cca61dd1c3f88f41">Raspberry Pi Zero OTG Mode</a> entnommen werden.</p>
 
-<p>Für das veraltete Projekt wurde ein Fork von &ldquo;Sanderr&rdquo; auf <a href="https://sourceforge.net/u/sanderr/pileaf">Sourceforge</a> erstellt. Diese Version enthält auch eine Vorlage für den 40-Pin Anschluss der aktuellen Raspberry Pi Varianten. Aus der Beschreibungsdatei &ldquo;pi-leaf.asy&rdquo; kann mit dem Programm Asymptote die PDF-Datei erstellt werden.</p>
+<h2 id="netzwerkgerät">Netzwerkgerät</h2>
 
-<pre><code class="language-sudo">cd /usr/src/
-git clone git://git.code.sf.net/u/sanderr/pileaf u-sanderr-pileaf
-cd u-sanderr-pileaf
-asy -f pdf pi-leaf.asy
-</code></pre>
+<p>Besonders interessant für den Bastellbetrieb ist der Einsatz als Netzwerkgerät, dann kann der Raspberry Pi Zero direkt an einem PC oder Laptop per USB angeschlossen werden. Die Versorgung und die Netzwerk-Kommunikation erfolgen über USB. Man benötigt für diese Betrieb also nur ein Mirco-USB Kabel. WLAN ist nicht nötig weil die Verbindung über einen virtuellen Netzwerkanschluss läuft. Das funktioniert dann auch mit dem billigen Raspberry Pi Zero der kein WLAN integriert hat.</p>
 
-<p>Eine bereits erstellte PDF-Vorlagedatei kann von unserer Homepage unter <a href="http://raspjamming.at/PDF/pi-leaf.pdf">http://raspjamming.at/PDF/pi-leaf.pdf</a> heruntergeladen werden. Beim Ausdrucken (z. B. mit dem Browser Chrome) muss unbedingt die Einstellung &ldquo;Seitengröße anpassen&rdquo; bzw. &ldquo;Fit to page&rdquo; deaktiviert werden!</p>
+<h3 id="einrichtung-raspberry-pi-zero">Einrichtung Raspberry Pi Zero</h3>
 
-<p><img src="../../img/pileaf-printer.png" alt="Chrome Drucken Dialog" /></p>
+<p>Die Installation und Einrichtung des OTG-Ethernet Modus ist nicht ganz einfach, darum habe ich alles im Dokument <a href="http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf">Raspberry Pi Jam - Raspjamming Installation/Vorbereitung/Microsoft Windows</a> zusammengefasst. Kapitel 1.2 &ldquo;USB Gadget/OTG Mode ZeroConf&rdquo; beschreibt dabei die Netzwerkkonfiguration über Zero Configuration Networking System (ZeroConf). Dazu muss am Host-PC allerdings der Linux-Dienst Avahi (avahi-daemon) installiert sein. Am Windows PC muss das Programm <a href="https://support.apple.com/kb/DL999?locale=de_AT">Bonjour</a> von Apple installiert sein.</p>
+
+<p>Kapitel 1.3 &ldquo;USB Gadget/OTG Mode DHCP-Server&rdquo; beschreibt die Netzwerkkonfiguration über DHCP. In dem Fall muss am Host PC nichts eingerichtet werden, da alle Einstellungen für das Netzwerk vom DHCP-Server übermittelt werden. Dieser Modus ist eindeutig zu bevorzugen!</p>
+
+<p><img src="../../img/Raspberry-Pi-Zero-USB-Gadget-Ether-DHCP.png" alt="Schema Raspberry Pi Zero USB-Gadget Ethernet mit DHCP-Server" /></p>
+
+<p>Wem die Anpassung zu kompliziert oder aufwendig ist, kann auch unser modifiziertes <a href="http://strohmayers.com/image/Raspjamming-April-2018.img.7z">Raspjamming Raspbian Image</a> verwenden. Dort ist alles für den OTG-Betrieb vorbereit und man muss nur noch den Host parametrieren wenn Internet am Raspberry Pi benötigt wird.
+Erreichbar ist der Raspberry Pi Zero über den Namen &ldquo;raspberrypi.local&rdquo; und der IP-Adresse &ldquo;192.168.137.10&rdquo;.</p>
+
+<h3 id="einrichtung-host">Einrichtung Host</h3>
+
+<p>Die Anleitung <a href="http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf">Raspberry Pi Jam - Raspjamming</a> beschreibt in Kapitel 1 alle Schritte für die komplette Einrichtung auf Linux. Wenn Windows als Host zum Einsatz kommt, muss die Anleitung <a href="http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf">Raspberry Pi Jam - Raspjamming Installation/Vorbereitung/Microsoft Windows</a> verwendet werden. Kapitel 1.3.2 &ldquo;Host (DHCP-Client)&rdquo; beschreibt den Vorgang für Windows 7 und Windows 10 (inkl. Gemeinsame Nutzung der Internet Verbindung).<br />
+Für Linux steht das Script <a href="https://raw.githubusercontent.com/woergi/Raspjamming_Scripts/master/PiConnect.sh">PiConnect.sh</a>
+ zur Verfügung das die Verbindung zur Raspberry Pi herstellt und Internet zur Verfügung stellt bzw. &ldquo;routing&rdquo; einrichtet.</p>
+
+<p>Diese Konfiguration wurde auch bei meinem Vortrag bei den Grazer Linuxtage 2018 beschrieben.</p>
+
+<p><a href="https://www.youtube.com/watch?v=zny9Ry7ssU0&amp;t=694s"><img src="https://img.youtube.com/vi/zny9Ry7ssU0/0.jpg" alt="Raspberry Pi Projekte Vortrag GLT18" /></a></p>
             </article>
           </div>
           
@@ -258,7 +273,7 @@ asy -f pdf pi-leaf.asy
 
   <div class="entry-categories"><p><span>Categories</span>
     
-    <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/Blog/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
 
