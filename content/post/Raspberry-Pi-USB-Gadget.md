@@ -1,7 +1,7 @@
 +++
 showonlyimage = false
 draft = false
-image = "img/pileaf.jpg"
+image = "img/Raspberry-Pi-USB-Gadget.jpg"
 date = "2018-12-02"
 title = "Raspberry Pi USB Gadget"
 writer = "Martin Strohmayer"
@@ -12,7 +12,7 @@ weight = 1
 
 
 Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
-Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.    
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
 <!--more-->
 
 ## Grundsätzliches
@@ -22,7 +22,7 @@ Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozes
 
 ## Netzwerkgerät
 
-Besonders interessant für den Bastellbetrieb ist der Einsatz als Netzwerkgerät, dann kann der Raspberry Pi Zero direkt an einem PC oder Laptop per USB angeschlossen werden. Die Versorgung und die Netzwerk-Kommunikation erfolgen über USB. Man benötigt für diese Betrieb also nur ein Mirco-USB Kabel. WLAN ist nicht nötig weil die Verbindung über einen virtuellen Netzwerkanschluss läuft. Das funktioniert dann auch mit dem billigen Raspberry Pi Zero der kein WLAN integriert hat.  
+Besonders interessant für den Bastellbetrieb ist der Einsatz als Netzwerkgerät, dann kann der Raspberry Pi Zero direkt an einem PC oder Laptop per USB angeschlossen werden. Die Versorgung und die Netzwerk-Kommunikation erfolgen über USB. Man benötigt für diese Betrieb also nur ein Mirco-USB Kabel. WLAN ist nicht nötig weil die Verbindung über einen virtuellen Netzwerkanschluss läuft. Das funktioniert dann auch mit dem billigen Raspberry Pi Zero der kein WLAN integriert hat.
 
 ### Einrichtung Raspberry Pi Zero
 
