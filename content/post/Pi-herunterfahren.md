@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/gpio-shutdown.jpg"
-date = "2018-09-16"
+date = "2018-12-03"
 title = "Raspberry Pi über GPIO-Eingang herunterfahren"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
@@ -33,7 +33,7 @@ Parameter für gpio-shutdown Overlay:
 | Parameter     | Funktion |
 | ------------- |----------|
 | gpio_pin      | GPIO-Nummer (BCM), 3 ist Standard-Einstellung     |
-| gpio_pull     | Aktivierung Pull-up/Pull-down Widerstand; 0 = Keiner; 1 = Pull-down; 2 = Pull-up (Standard-Einstellung)   |
+| gpio_pull     | Aktivierung Pull-up/Pull-down Widerstand; off = Keiner; down = Pull-down; up = Pull-up (Standard-Einstellung)   |
 | active_low    | Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND     |
 
 
