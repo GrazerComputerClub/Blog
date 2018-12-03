@@ -37,7 +37,7 @@ Erreichbar ist der Raspberry Pi Zero über den Namen "raspberrypi.local" und der
 
 ### Einrichtung Host
 
-Die Anleitung [Raspberry Pi Jam - Raspjamming](http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf) beschreibt in Kapitel 1 alle Schritte für die komplette Einrichtung auf Linux. Wenn Windows als Host zum Einsatz kommt, muss die Anleitung [Raspberry Pi Jam - Raspjamming Installation/Vorbereitung/Microsoft Windows](http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf) verwendet werden. Kapitel 1.3.2 "Host (DHCP-Client)" beschreibt den Vorgang für Windows 7 und Windows 10 (inkl. Gemeinsame Nutzung der Internet Verbindung).\
+Die Anleitung [Raspberry Pi Jam - Raspjamming](http://raspjamming.at/PDF/Raspjamming-GLT18.pdf) beschreibt in Kapitel 1 alle Schritte für die komplette Einrichtung auf Linux. Wenn Windows als Host zum Einsatz kommt, muss die Anleitung [Raspberry Pi Jam - Raspjamming Installation/Vorbereitung/Microsoft Windows](http://raspjamming.at/PDF/Raspjamming%20-%20Admin-GLT18.pdf) verwendet werden. Kapitel 1.3.2 "Host (DHCP-Client)" beschreibt den Vorgang für Windows 7 und Windows 10 (inkl. Gemeinsame Nutzung der Internet Verbindung).\
 Für Linux steht das Script [PiConnect.sh](https://raw.githubusercontent.com/woergi/Raspjamming_Scripts/master/PiConnect.sh)
  zur Verfügung das die Verbindung zur Raspberry Pi herstellt und Internet zur Verfügung stellt bzw. "routing" einrichtet.\
 
