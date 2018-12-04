@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WLAN bei Boot verbinden</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
+      <description>&lt;p&gt;Oft ist es von Vorteil wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi über GPIO-Eingang herunterfahren</title>
