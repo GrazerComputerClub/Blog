@@ -2,11 +2,11 @@
 showonlyimage = false
 draft = false
 image = "img/wlan-bei-boot-verbinden.jpg"
-date = "2018-09-16"
+date = "2018-12-04"
 title = "WLAN bei Boot verbinden"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
-keywords = ["Taste", "Tastatur", "gpio-key", "gpio"]
+keywords = ["WiFi", "WLAN", "SSID", "wpa_supplicant", "boot", "ssh"]
 weight = 1
 +++
 
@@ -38,7 +38,7 @@ Bei 'ssid=' muss unter Hochkomma der Name des WLANs angegeben werden. Bei 'psk='
 
 Weiters darf man nicht vergessen, eine leere Datei mit dem Namen 'ssh' auf der boot-Partition anzulegen. Sie sorgt dafür, dass nach dem Boot der SSH-Dienst gestartet wird und man sich dann mit den Benutzernamen 'pi' und dem Passwort 'raspberry' am System anmelden kann.
 
-Wer diese Schritte durchführt kann ohne Monitor einen Raspberry Pi inbetriebnehmen und "Headless" betreiben.
+Wer diese Schritte durchführt, kann ohne Monitor und Tastatur einen Raspberry Pi betriebsbereit machen und "Headless" betreiben.
 
  
 
