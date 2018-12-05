@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi über GPIO-Eingang herunterfahren",
         "headline" : "Raspberry Pi über GPIO-Eingang herunterfahren",
-        "description" : "<p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion, geht ganz einfach. Man benötgt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
+        "description" : "<p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -232,7 +232,7 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion, geht ganz einfach. Man benötgt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
+              <p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
 </p>
 
 <h2 id="umsetzung">Umsetzung</h2>
@@ -243,7 +243,7 @@
 dtoverlay=gpio-shutdown
 </code></p>
 
-<p>Ohne Parametrierung  wird eine Shutdown ausgelöst, wenn der GPIO3 auf Low bzw. GND gesetzt wird. Achtung der GPIO3 gehört zur I2C-Schnittstelle und sollte also nur für den Shutdown verwendet werden, wenn I2C nicht verwendet wird. Möchte man die Funktion mit einem anderen GPIO verwenden, so muss man die entsprechenden Parameter angeben.</p>
+<p>Ohne Parametrierung  wird eine Shutdown ausgelöst, wenn der GPIO3 auf Low bzw. GND gesetzt wird. Achtung, der GPIO3 gehört zur I2C-Schnittstelle und sollte also nur für den Shutdown verwendet werden, wenn I2C nicht verwendet wird. Möchte man die Funktion mit einem anderen GPIO verwenden, so muss man die entsprechenden Parameter angeben.</p>
 
 <p><code>
 dtoverlay=gpio-shutdown,gpio_pin=5,active_low=1,gpio_pull=up
