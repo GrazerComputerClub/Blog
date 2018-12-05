@@ -17,7 +17,7 @@
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
-      <description>&lt;p&gt;Oft ist es von Vorteil wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
+      <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
 &lt;/p&gt;</description>
     </item>
     
@@ -27,7 +27,7 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</guid>
-      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion, geht ganz einfach. Man benötgt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
+      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
 &lt;/p&gt;</description>
     </item>
     
