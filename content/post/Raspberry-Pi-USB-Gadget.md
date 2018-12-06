@@ -17,7 +17,7 @@ Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Et
 
 ## Grundsätzliches
 
-Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozessor verbunden ist. Dadurch kann der USB-Anschluss nicht nur als Host für USB-Geräte (Tastatur,  Maus, USB-Stick) verwendet werden, sondern auch als Client. Beim Client-Betrieb verhält er sich dann wie ein USB-Gerät. Es gibt die unterschiedlichsten Modi wie z. B. Massenspeicher-, Serielles- oder Netzwerkgerät aber auch eine kombierte Funktion ist möglich. Je nachdem welches Kernel-Modul geladen und parametriert wird entscheidet über die Funktion. Weitere Informationen über den OTG-Betrieb und alle möglichen Varianten können der Git-Hub Seite [Raspberry Pi Zero OTG Mode](https://gist.github.com/gbaman/50b6cca61dd1c3f88f41) entnommen werden. 
+Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozessor verbunden ist. Dadurch kann der USB-Anschluss nicht nur als Host für USB-Geräte (Tastatur, Maus, USB-Stick) verwendet werden, sondern auch als Client. Beim Client-Betrieb verhält er sich dann wie ein USB-Gerät. Es gibt die unterschiedlichsten Modi wie z. B. Massenspeicher-, Serielles- oder Netzwerkgerät aber auch eine kombierte Funktion ist möglich. Je nachdem welches Kernel-Modul geladen und parametriert wird entscheidet über die Funktion. Weitere Informationen über den OTG-Betrieb und alle möglichen Varianten können der Git-Hub Seite [Raspberry Pi Zero OTG Mode](https://gist.github.com/gbaman/50b6cca61dd1c3f88f41) entnommen werden. 
 
 
 ## Netzwerkgerät

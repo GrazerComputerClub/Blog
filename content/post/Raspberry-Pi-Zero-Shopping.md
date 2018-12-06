@@ -20,12 +20,12 @@ Der **Raspberry Pi Zero V1.3** ist am günstigstens zu haben. Der Preis liegt be
 
 Der **Raspberry Pi Zero W** hat zuzätzlich zur V1.3 noch WLAN und Bluetooth dabei. Der WLAN Chip (Broadcom BCM43143) entsprcht dem Chip der Raspberry Pi 3 Modell B. Es wird das 2,4 GHz Band mit Standard 802.11b/g/n unterstützt. Bei Bluetooth wird Version 4.1 LE (Low Energy) unterstützt. Der Preis liegt bei 9,3 Pfund bzw. ca. 11 Euro. Wieder kann pro Bestellung nur maximal ein Stück gekauft werden. Damit erhöht sich in Wahrheit der Preis noch um den Versand.\
 
-Der **Raspberry Pi Zero WH** hat zuzätzlich zur W Version eine Stecker- oder Buchsenleiste bei den GPIOs verlötet. Diese Variante kann  unlimitert bestellt werden. Der Preis liegt bei 13 Pfund bzw. ca. 15 Euro.
+Der **Raspberry Pi Zero WH** hat zuzätzlich zur W Version eine Stecker- oder Buchsenleiste bei den GPIOs verlötet. Diese Variante kann unlimitert bestellt werden. Der Preis liegt bei 13 Pfund bzw. ca. 15 Euro.
 
 ## Bestellung
 
-Ich persönlich bestelle gerne bei [PiHut](https://thepihut.com) wenn ich direkt in England bestelle. Bezahlen kann man per Kreditkarte in Pfund. Die Versandkosten sind von allen Shops am niedrigsten bei ca. 4 Pfund für kleine Pakete.  
-Früher habe ich gerne bei [KIWI Electronics](https://www.kiwi-electronics.nl/?lang=de) in Holland bestellt. Dort konnte man von Anfang an den Raspberry Pi Zero V1.3 und W zusammen bestellen und das bei sehr geringen Versandkosten. Mittlerweile liefern sie nur noch per Paketdienst nach Österreich, wodurch die Versandkosten viel zu hoch sind.  
+Ich persönlich bestelle gerne bei [PiHut](https://thepihut.com) wenn ich direkt in England bestelle. Bezahlen kann man per Kreditkarte in Pfund. Die Versandkosten sind von allen Shops am niedrigsten bei ca. 4 Pfund für kleine Pakete.
+Früher habe ich gerne bei [KIWI Electronics](https://www.kiwi-electronics.nl/?lang=de) in Holland bestellt. Dort konnte man von Anfang an den Raspberry Pi Zero V1.3 und W zusammen bestellen und das bei sehr geringen Versandkosten. Mittlerweile liefern sie nur noch per Paketdienst nach Österreich, wodurch die Versandkosten viel zu hoch sind.
 Zuletzt konnte ich allerdings auch bei [PiHut](https://thepihut.com) Raspberry Pi Zero V1.3 und W zusammen bestellen.\
 
 In Österreich gibt es den Shop [semaf electronics](https://electronics.semaf.at) der ab 150 Euro kostenlos liefert. Für größere Bestellung würde ich diesen Shop empfehlen, obwohl ich selbst dort noch nicht eingekauft habe. Der Preis für die [Raspberry Pi Zero WH](https://electronics.semaf.at/Raspberry-Pi-Zero-W-mit-Stiftleiste-angeloetet) von aktuell 14,87 Euro, ist günstig.\
@@ -33,7 +33,3 @@ In Österreich gibt es den Shop [semaf electronics](https://electronics.semaf.at
 Benötigt man mehrere Raspberry Pi Zero für z.B. einem Workshop, so landet man zwangsläuft bei der WH Version. Man muss auch bedenken, dass das manuelle Einlöten der Steckerleiste nicht gerade wenig Arbeit ist. Ganz zu schweigen vom aufwendigen Bestellprozess und der reduzierten Preisreduktion wegen der Versandkosten.\
 Im übrigen habe ich auch bei der Raspberry Pi Foundation nachgefragt, ob es möglich ist für einem Raspberry Pi Jam mehere Raspberry Pi Zero V1.3 zu bestellen.
 Dies wurde mir nicht ermöglich, da es so einen Support nur für Jams in UK gibt.
-
- 
-
-  

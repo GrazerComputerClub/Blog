@@ -21,7 +21,7 @@ Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahr
 dtoverlay=gpio-shutdown
 ``
 
-Ohne Parametrierung  wird eine Shutdown ausgelöst, wenn der GPIO3 auf Low bzw. GND gesetzt wird. Achtung, der GPIO3 gehört zur I2C-Schnittstelle und sollte also nur für den Shutdown verwendet werden, wenn I2C nicht verwendet wird. Möchte man die Funktion mit einem anderen GPIO verwenden, so muss man die entsprechenden Parameter angeben.
+Ohne Parametrierung wird eine Shutdown ausgelöst, wenn der GPIO3 auf Low bzw. GND gesetzt wird. Achtung, der GPIO3 gehört zur I2C-Schnittstelle und sollte also nur für den Shutdown verwendet werden, wenn I2C nicht verwendet wird. Möchte man die Funktion mit einem anderen GPIO verwenden, so muss man die entsprechenden Parameter angeben.
 
 ``
 dtoverlay=gpio-shutdown,gpio_pin=5,active_low=1,gpio_pull=up
