@@ -24,8 +24,8 @@ Der **Raspberry Pi Zero WH** hat zuzätzlich zur W Version eine Stecker- oder Bu
 
 ## Bestellung
 
-Ich persönlich bestelle gerne bei [PiHut](https://thepihut.com) wenn ich direkt in England bestelle. Bezahlen kann man per Kreditkarte in Pfund. Die Versandkosten sind von allen Shops am niedrigsten bei ca. 4 Pfund für kleine Pakete.
-Früher habe ich gerne bei [KIWI Electronics](https://www.kiwi-electronics.nl/?lang=de) in Holland bestellt. Dort konnte man von Anfang an den Raspberry Pi Zero V1.3 und W zusammen bestellen und das bei sehr geringen Versandkosten. Mittlerweile liefern sie nur noch per Paketdienst nach Österreich, wodurch die Versandkosten viel zu hoch sind.
+Ich persönlich bestelle gerne bei [PiHut](https://thepihut.com) wenn ich direkt in England bestelle. Bezahlen kann man per Kreditkarte in Pfund. Die Versandkosten sind von allen Shops am niedrigsten bei ca. 4 Pfund für kleine Pakete.  
+Früher habe ich gerne bei [KIWI Electronics](https://www.kiwi-electronics.nl/?lang=de) in Holland bestellt. Dort konnte man von Anfang an den Raspberry Pi Zero V1.3 und W zusammen bestellen und das bei sehr geringen Versandkosten. Mittlerweile liefern sie nur noch per Paketdienst nach Österreich, wodurch die Versandkosten viel zu hoch sind.  
 Zuletzt konnte ich allerdings auch bei [PiHut](https://thepihut.com) Raspberry Pi Zero V1.3 und W zusammen bestellen.\
 
 In Österreich gibt es den Shop [semaf electronics](https://electronics.semaf.at) der ab 150 Euro kostenlos liefert. Für größere Bestellung würde ich diesen Shop empfehlen, obwohl ich selbst dort noch nicht eingekauft habe. Der Preis für die [Raspberry Pi Zero WH](https://electronics.semaf.at/Raspberry-Pi-Zero-W-mit-Stiftleiste-angeloetet) von aktuell 14,87 Euro, ist günstig.\
