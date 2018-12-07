@@ -20,7 +20,7 @@ Der **Raspberry Pi Zero V1.3** ist am günstigstens zu haben. Der Preis liegt be
 
 Der **Raspberry Pi Zero W** hat zuzätzlich zur V1.3 noch WLAN und Bluetooth dabei. Der WLAN Chip (Broadcom BCM43143) entsprcht dem Chip der Raspberry Pi 3 Modell B. Es wird das 2,4 GHz Band mit Standard 802.11b/g/n unterstützt. Bei Bluetooth wird Version 4.1 LE (Low Energy) unterstützt. Der Preis liegt bei 9,3 Pfund bzw. ca. 11 Euro. Wieder kann pro Bestellung nur maximal ein Stück gekauft werden. Damit erhöht sich in Wahrheit der Preis noch um den Versand.\
 
-Der **Raspberry Pi Zero WH** hat zuzätzlich zur W Version eine Stecker- oder Buchsenleiste bei den GPIOs verlötet. Diese Variante kann  unlimitert bestellt werden. Der Preis liegt bei 13 Pfund bzw. ca. 15 Euro.
+Der **Raspberry Pi Zero WH** hat zuzätzlich zur W Version eine Stecker- oder Buchsenleiste bei den GPIOs verlötet. Diese Variante kann unlimitert bestellt werden. Der Preis liegt bei 13 Pfund bzw. ca. 15 Euro.
 
 ## Bestellung
 
@@ -33,7 +33,3 @@ In Österreich gibt es den Shop [semaf electronics](https://electronics.semaf.at
 Benötigt man mehrere Raspberry Pi Zero für z.B. einem Workshop, so landet man zwangsläuft bei der WH Version. Man muss auch bedenken, dass das manuelle Einlöten der Steckerleiste nicht gerade wenig Arbeit ist. Ganz zu schweigen vom aufwendigen Bestellprozess und der reduzierten Preisreduktion wegen der Versandkosten.\
 Im übrigen habe ich auch bei der Raspberry Pi Foundation nachgefragt, ob es möglich ist für einem Raspberry Pi Jam mehere Raspberry Pi Zero V1.3 zu bestellen.
 Dies wurde mir nicht ermöglich, da es so einen Support nur für Jams in UK gibt.
-
- 
-
-  

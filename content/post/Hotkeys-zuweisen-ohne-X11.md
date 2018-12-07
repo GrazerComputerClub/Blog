@@ -11,7 +11,7 @@ weight = 1
 +++
 
 
-Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm  Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
 <!--more-->
 
 
