@@ -6,10 +6,21 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 06 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39;</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
+      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;lsquo;config.txt&amp;rsquo; auf der Boot-Partition der Raspberry Pi.
+Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;</title>
