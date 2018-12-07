@@ -62,5 +62,5 @@ dtoverlay=pi3-disable-wifi
 dtoverlay=pi3-disable-bt
 ```
 
-Das so deaktiviere WLAN reduziert die Stromaufnahme um 20 mA. 
+Das so deaktivierte WLAN reduziert die Stromaufnahme um 20 mA. 
 
