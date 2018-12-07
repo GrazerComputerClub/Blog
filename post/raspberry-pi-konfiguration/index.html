@@ -11,9 +11,10 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi Zero W Stromaufnahme",
-        "headline" : "Raspberry Pi Zero W Stromaufnahme",
-        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+        "name" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
+        "headline" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
+        "description" : "<p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &lsquo;config.txt&rsquo; auf der Boot-Partition der Raspberry Pi.
+Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,17 +23,17 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/",
-        "wordCount" : "306",
-        "image" : https://grazercomputerclub.github.io/Blogimg/consumtion.jpg",
+        "datePublished": "2018-12-07 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-07 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/",
+        "wordCount" : "471",
+        "image" : https://grazercomputerclub.github.io/Blogimg/config-txt.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Raspberry Pi Zero W Stromaufnahme </title>
+ <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39; </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -205,17 +206,23 @@
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/consumtion.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/config-txt.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">16 September</span>	<span> / </span>
+          <span class="date">07 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
+          </span>
           
           <span class="category">
             <span> / </span>
@@ -227,61 +234,123 @@
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Raspberry Pi Zero W Stromaufnahme</h1>
+          <h1 class='entry-title'> Raspberry Pi Konfiguration mit &#39;config.txt&#39;</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+              <p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &lsquo;config.txt&rsquo; auf der Boot-Partition der Raspberry Pi.
+Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
 </p>
 
-<h2 id="messaufbau">Messaufbau</h2>
+<h2 id="allgemeines">Allgemeines</h2>
 
-<p>Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb aber ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
+<p>Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei &lsquo;config.txt&rsquo; vorgenommen. Die Datei liegt auf der
+ersten Partition, die mit dem Windows FAT Dateisystem formatiert ist. Dadurch kann sie sehr leicht auch aus einem Windows System verändert werden.
+Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle <a href="https://notepad-plus-plus.org/download/v7.6.html">Notepad++</a>, obwohl der integrierte Windows 10 Editor nun auch endlich diese <a href="https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/">Funktion</a> beherrscht. <strong>\o/</strong></p>
 
-<h2 id="messung">Messung</h2>
+<h2 id="spezielle-konfiguationsmöglichkeiten">Spezielle Konfiguationsmöglichkeiten</h2>
 
-<p>Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA ohne WLAN und 110 mA mit verbundenen WLAN. Bei CPU-Belastung stieg der Wert um 80 mA auf maximal 190 mA an. Wird das WLAN stark belastet kann der Verbrauch kurzzeitig auf bis zu 220 mA steigen.<br />
-Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelasteten Betrieb. Damit steht dem Betrieb am USB-Bus nichts entgegen!<br />
-Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.</p>
+<p>Eine Auflistung der gängisten Paranmetrierungen erspare ich mir,  die gibt es bereits unzählige Male im Internet zu finden.
+Bei der Raspberry Pi Foundation git es zum Beispiel unfassende Informationen bei <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/">documentation &gt; configuration &gt; config-txt</a>. Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.</p>
 
-<p><img src="../../img/Raspberry-Pi-zero-W-Stromaufnahme.png" alt="Diagramm" /></p>
+<h3 id="include">Include</h3>
 
-<h2 id="optimierungen">Optimierungen</h2>
+<p>Über die Anweisung <strong>include</strong> können zusätzliche Textdateien für die Konfiguration eingebunden werden. Damit kann man zum Beispiel über eine einzelne Zeile
+eine Vielzahl an Parametrierungen hinzufügen und auch wieder leicht entfernen.</p>
 
-<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA. Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br />
-WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
-
-<p><code>rfkill list</code></p>
-
-<pre><code>0: phy0: Wireless LAN
-	Soft blocked: no
-	Hard blocked: no
-1: hci0: Bluetooth
-	Soft blocked: no
-	Hard blocked: no
+<pre><code>#include OverclockPiZero.txt
+include SPIDisplaySettings.txt
 </code></pre>
 
-<p><code>rfkill block 0</code><br />
-<code>rfkill list</code></p>
+<h3 id="filter">Filter</h3>
 
-<pre><code>0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: no
-1: hci0: Bluetooth
-	Soft blocked: no
-	Hard blocked: no
+<p>Bedingte Einstellungen können über <strong>Filter</strong> realisiert werden, und gelten somit nur wenn es Sinn macht. Der Filter wird in eckigen Klammern angegeben. <em>[all]</em> deaktiviert den Filter. Als Filter kann verwendet werden:
+ * Raspberry Pi Variante (Pi 3, Pi Zero usw.)
+ * <a href="https://de.wikipedia.org/wiki/Extended_Display_Identification_Data">EDID</a> Kennung des Monitors
+ * Seriennummer des Raspberry Pis
+ * GPIO Zustand</p>
+
+<p>Die Kombination von Filtern ist auch möglich. Damit sind viele spezielle Einsatzgebiete möglich.</p>
+
+<p>Beim der <strong>Raspberry Pi Variante</strong> muss nur der Kurzname des Raspberry Pi in eckigen Klammern angegeben werden. Alle nachfolgenden Einstellungen gelten dann nur für diese Raspberry Pi Variante.</p>
+
+<p><strong>[pi1]</strong> &hellip; Raspberry Pi 1 (A, A+, B, B+)<br />
+<strong>[pi2]</strong> &hellip; Raspberry Pi 2<br />
+<strong>[pi3]</strong> &hellip; Raspberry Pi 3, Compute Module 3<br />
+<strong>[pi3+]</strong> &hellip; Raspberry Pi 3+<br />
+<strong>[pi0]</strong> &hellip; Pi Zero, Pi Zero W<br />
+<strong>[pi0w]</strong> &hellip; Pi Zero W<br />
+<strong>[all]</strong> &hellip; Filter wird aufgehoben</p>
+
+<p>Beispiel:</p>
+
+<pre><code>[pi0]
+# Overclock Pi Zero (W)
+arm_freq=1030
+core_freq=500
+sdram_freq=500
+[all]
 </code></pre>
 
-<p><code>rfkill unblock 0</code></p>
+<p>Beim der <strong>Seriennummer</strong>, muss man die Raspberry Pi Seriennummer mit &ldquo;0x&rdquo; ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
+<code>cat /proc/cpuinfo</code> ermittelt.</p>
 
-<p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; deaktiviert werden.</p>
+<p>Beispiel:</p>
 
-<pre><code>dtoverlay=pi3-disable-wifi
-dtoverlay=pi3-disable-bt
+<pre><code>[0x12345678]
+# UART defect
+enable_uart=0
+[all]
 </code></pre>
 
-<p>Das so deaktivierte WLAN reduziert die Stromaufnahme um 20 mA.</p>
+<p>Beim Filter über <strong>GPIO Zustand</strong>, muss man in eckigen Klammern die GPIO-Nummer (BCM) und der Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren.</p>
+
+<p>Beispiel:</p>
+
+<pre><code>[gpio4=1]
+# GPIO 4 switch to 720p60 HDMI Mode
+hdmi_mode=4
+disable_overscan=1
+[all]
+</code></pre>
+
+<h2 id="konfigurationen-auslesen">Konfigurationen auslesen</h2>
+
+<p>Wenn Raspbian Linux gestartet ist, können die Einstellungen der &lsquo;config.txt&rsquo; mit dem Befehl <code>vcgencmd get_config</code> aufgelistet werden.</p>
+
+<pre><code>vcgencmd get_config int
+</code></pre>
+
+<pre><code>aphy_params_current=547
+arm_freq=1000
+audio_pwm_mode=514
+config_hdmi_boost=5
+core_freq=400
+disable_auto_turbo=1
+disable_commandline_tags=2
+display_hdmi_rotate=-1
+display_lcd_rotate=-1
+dphy_params_current=547
+force_eeprom_read=1
+force_pwm_open=1
+framebuffer_ignore_alpha=1
+framebuffer_swap=1
+gpu_freq=300
+hdmi_force_cec_address=65535
+hdmi_group=1
+hdmi_mode=1
+ignore_lcd=1
+init_uart_clock=0x2dc6c00
+over_voltage_avs=0x249f0
+overscan_bottom=32
+overscan_left=32
+overscan_right=32
+overscan_top=32
+pause_burst_frames=1
+program_serial_random=1
+sdram_freq=450
+</code></pre>
             </article>
           </div>
           
@@ -290,6 +359,7 @@ dtoverlay=pi3-disable-bt
 
   <div class="entry-categories"><p><span>Categories</span>
     
+    <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
     <a href="/Blog/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
