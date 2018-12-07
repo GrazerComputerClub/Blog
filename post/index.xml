@@ -17,7 +17,7 @@
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
-      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;lsquo;config.txt&amp;rsquo; auf der Boot-Partition der Raspberry Pi.
+      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;lsquo;config.txt&amp;rsquo; auf der Boot-Partition des Raspberry Pis.
 Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
 &lt;/p&gt;</description>
     </item>
@@ -80,16 +80,6 @@ Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Et
       
       <guid>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</guid>
       <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Zero W Stromaufnahme</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</link>
-      <pubDate>Sun, 16 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 &lt;/p&gt;</description>
     </item>
     
