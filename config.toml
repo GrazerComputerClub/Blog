@@ -5,9 +5,19 @@ languageCode = "de-de"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-130665257-1"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
 
 [params]
   # Unmark to use post folder for images. Default is static folder.
