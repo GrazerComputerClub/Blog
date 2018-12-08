@@ -15,7 +15,7 @@ Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemä�
 
 ## Umsetzung
 
-Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des System auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Devicetree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Verantwortlich für die Funktion ist die Funktion 'gpio-shutdown'.
+Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des System auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Devicetree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Verantwortlich dafür ist die Funktion 'gpio-shutdown'.
 
 ``
 dtoverlay=gpio-shutdown
@@ -37,7 +37,7 @@ Parameter für gpio-shutdown Overlay:
 
 Der Taster führt im übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.
 
-Nicht verwechseln darf man den Devicetree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der Standard Ausgang GPIO26 nicht gewünscht ist.
+Nicht verwechseln darf man den Devicetree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der standard Ausgang GPIO26 nicht gewünscht ist.
 
 ``
 dtoverlay=gpio-poweroff,gpiopin=20

@@ -11,21 +11,21 @@ weight = 1
 +++
 
 
-Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei 'config.txt' auf der Boot-Partition der Raspberry Pi.
-Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind. 
+Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei "config.txt" auf der Boot-Partition des Raspberry Pis.
+Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind. 
 <!--more-->
 
 ## Allgemeines
 
-Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei 'config.txt' vorgenommen. Die Datei liegt auf der 
+Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei "config.txt" vorgenommen. Die Datei liegt auf der 
 ersten Partition, die mit dem Windows FAT Dateisystem formatiert ist. Dadurch kann sie sehr leicht auch aus einem Windows System verändert werden.
-Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle [Notepad++](https://notepad-plus-plus.org/download/v7.6.html), obwohl der integrierte Windows 10 Editor nun auch endlich diese [Funktion](https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/) beherrscht. **\o/**
+Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle [Notepad++](https://notepad-plus-plus.org/download/), obwohl der integrierte Notepad Editor von Windows 10 nun auch endlich diese [Funktion](https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/) beherrscht. **\o/**
 
 
 ## Spezielle Konfiguationsmöglichkeiten
  
-Eine Auflistung der gängisten Paranmetrierungen erspare ich mir,  die gibt es bereits unzählige Male im Internet zu finden. 
-Bei der Raspberry Pi Foundation git es zum Beispiel unfassende Informationen bei [documentation > configuration > config-txt](https://www.raspberrypi.org/documentation/configuration/config-txt/). Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.  
+Eine Auflistung der gängisten Paranmetrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden. 
+Bei der Raspberry Pi Foundation gibt es zum Beispiel unfassende Informationen bei [documentation > configuration > config-txt](https://www.raspberrypi.org/documentation/configuration/config-txt/). Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.
 
 ### Include 
 
@@ -39,11 +39,11 @@ include SPIDisplaySettings.txt
 
 ### Filter
 
-Bedingte Einstellungen können über **Filter** realisiert werden, und gelten somit nur wenn es Sinn macht. Der Filter wird in eckigen Klammern angegeben. *[all]* deaktiviert den Filter. Als Filter kann verwendet werden:
- * Raspberry Pi Variante (Pi 3, Pi Zero usw.)
- * [EDID](https://de.wikipedia.org/wiki/Extended_Display_Identification_Data) Kennung des Monitors
- * Seriennummer des Raspberry Pis
- * GPIO Zustand
+Bedingte Einstellungen können über **Filter** realisiert werden, und gelten somit nur unter bestimmten Umständen. Der Filter wird in eckigen Klammern angegeben *[ ]*. *[all]* deaktiviert den Filter. Als Filter kann verwendet werden:
+* Raspberry Pi Variante (Pi 3, Pi Zero usw.)
+* [EDID](https://de.wikipedia.org/wiki/Extended_Display_Identification_Data) Kennung des Monitors
+* Seriennummer des Raspberry Pis
+* GPIO Zustand
 
 Die Kombination von Filtern ist auch möglich. Damit sind viele spezielle Einsatzgebiete möglich. 
 
@@ -57,7 +57,7 @@ Beim der **Raspberry Pi Variante** muss nur der Kurzname des Raspberry Pi in eck
 **[pi0w]** ... Pi Zero W  
 **[all]** ... Filter wird aufgehoben
 
-Beispiel:  
+Beispiel:
 ```
 [pi0]
 # Overclock Pi Zero (W)
@@ -70,7 +70,7 @@ sdram_freq=500
 Beim der **Seriennummer**, muss man die Raspberry Pi Seriennummer mit "0x" ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
 `cat /proc/cpuinfo` ermittelt. 
 
-Beispiel:  
+Beispiel:
 ```
 [0x12345678]
 # UART defect
@@ -80,7 +80,7 @@ enable_uart=0
 
 Beim Filter über **GPIO Zustand**, muss man in eckigen Klammern die GPIO-Nummer (BCM) und der Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren. 
 
-Beispiel:  
+Beispiel:
 ```
 [gpio4=1]
 # GPIO 4 switch to 720p60 HDMI Mode
@@ -92,10 +92,6 @@ disable_overscan=1
 ## Konfigurationen auslesen 
 
 Wenn Raspbian Linux gestartet ist, können die Einstellungen der 'config.txt' mit dem Befehl `vcgencmd get_config` aufgelistet werden.
-
-```
-vcgencmd get_config int
-```
 
 ```
 aphy_params_current=547
