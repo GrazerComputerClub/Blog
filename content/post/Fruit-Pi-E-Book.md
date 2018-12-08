@@ -17,7 +17,7 @@ Hier bekommt man die gratis CC-Version meines Buches "Fruit Pi - Raspberry Pi ve
 ## Gratis E-Book
 
 [Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi](http://strohmayers.com/Buch/Fruit%20Pi%20(CC).pdf)
-[![Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi](../../img/Fruit_P_EBook.jpg)](http://strohmayers.com/Buch/Fruit%20Pi%20(CC).pdf)
+[![Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi](../../img/Fruit_Pi_EBook.jpg)](http://strohmayers.com/Buch/Fruit%20Pi%20(CC).pdf)
  
 
 ## Inhaltsangabe
