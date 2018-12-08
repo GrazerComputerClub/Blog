@@ -92,9 +92,19 @@ paginate = 5 #frontpage pagination
     link = "http://strohmayers.com"
     email = "martin.strohmayer@gc2.at"
     bio = [
-      "Programmierer und Raspberry Pi Experte."
+      "Softwareentwickler und Raspberry Pi Enthusiast."
     ]
     twitter       = "https://twitter.com/m_stroh"
     github        = "https://github.com/mstroh76"
+
+    [params.writers."Manfred Wallner"]
+    link = "https://mwallner.net"
+    email = "manfred.wallner@gc2.at"
+    bio = [
+      "Softwareentwickler und PowerShell Evangelist."
+    ]
+    twitter       = "https://twitter.com/schusterfredl"
+    github        = "https://github.com/mwallner"
+
 
 
