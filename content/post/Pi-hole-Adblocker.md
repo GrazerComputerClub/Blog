@@ -1,7 +1,7 @@
 +++
 showonlyimage = false
 draft = false
-image = "img/pihole_homepage.PNG"
+image = "img/pihole_homepage.png"
 date = "2018-12-"
 title = "Werbefrei im Heimnetz mit Pi-hole"
 writer = "Manfred Wallner"
@@ -18,9 +18,9 @@ Hier hilft das Projekt "Pi-hole", welches als lokaler DNS-Server eingerichtet wi
 
 Die Installation ist wirklich einfach, man muss nur den Befehl
 
-``
+```
 curl -sSL https://install.pi-hole.net | bash
-``
+```
 
 in einem Terminal ausführen.
 Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard über einen Browser aufrufen.
@@ -29,20 +29,20 @@ Wenn man die IP-Adresse seiner Raspberry nicht weiß, kann man diese entweder ü
 
 ## Pi-hole aktivieren
 
-Um Pi-hole zu nutzen kann man entweder in allen betroffenen Geräten (Computer, Smartphone, Tablet) die IP bzw. DNS-Einstellungen manuell anpassen, oder einmal für alle an zentraler Stelle - in eurem Router.
+Um Pi-hole zu nutzen kann man entweder in allen betroffenen Geräten (Computer, Smartphone, Tablet) die IP-Adresse bzw. DNS-Einstellungen manuell anpassen, oder einmal für alle an zentraler Stelle - in eurem Router.
 
 ![Raspberry Pi als 1. DNS Server im Heimnetzwerk festlegen](../../img/pihole_router_config.png) 
 
-Um Pi-hole für das gesamte Heimnetz zu nutzen kann einfach der 1. DNS-Server in den DHCP-Einstellungen des Routers auf die IP-Adresse des Raspberry Pi angepasst werden.
-(Achtung: bereits mit dem Netzwerk verbundene Geräte benötigen vermutlich einen Neustart, damit der Werbeblocker aktiv wird.)
+Um Pi-hole für das gesamte Heimnetz zu nutzen, kann einfach der 1. DNS-Server in den DHCP-Einstellungen des Routers auf die IP-Adresse des Raspberry Pis angepasst werden.
+(Achtung: Bereits mit dem Netzwerk verbundene Geräte benötigen vermutlich einen Neustart, damit der Werbeblocker aktiv wird.)
 
 ## Ausnahmen hinzufügen
 
-Stellt man fest, dass die Werbung von bestimmten Websiten nicht geblockt wird, oder lassen sich gewisse Websiten mit aktiviertem Werbeblocker nicht öffnen, so kann man diese in den Ausnahmeregeln **Whitelist** bzw. **Blacklist** explizit hinzufügen oder ausnehmen.
+Stellt man fest, dass die Werbung von bestimmten Websiten nicht geblockt wird, oder lassen sich gewisse Webseiten mit aktiviertem Werbeblocker nicht öffnen, so kann man diese in den Ausnahmeregeln **Whitelist** bzw. **Blacklist** explizit hinzufügen oder ausnehmen.
 
 Whitelist: Es wird keine Werbung von Domains in dieser Liste blockiert
 
-Blacklist: Diese Domain wird blockiert, d.h. DNS-Anfragen werden einfach nicht beantwortet)
+Blacklist: Diese Domain wird blockiert, d. h. DNS-Anfragen werden einfach nicht beantwortet)
 
 ![Pi-hole Admin Panel](../../img/pihole_panel.png)
 
