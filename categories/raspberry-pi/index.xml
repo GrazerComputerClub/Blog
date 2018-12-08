@@ -6,10 +6,21 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Werbefrei im Heimnetz mit Pi-hole</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</guid>
+      <description>&lt;p&gt;Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
+Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39;</title>
