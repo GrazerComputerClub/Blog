@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/pihole_homepage.png"
-date = "2018-12-"
+date = "2018-12-08"
 title = "Werbefrei im Heimnetz mit Pi-hole"
 writer = "Manfred Wallner"
 categories = ["Raspberry Pi"]
