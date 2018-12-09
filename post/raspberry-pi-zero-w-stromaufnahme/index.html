@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero W Stromaufnahme",
         "headline" : "Raspberry Pi Zero W Stromaufnahme",
-        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,8 +22,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
+        "datePublished": "2018-12-09 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-09 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/",
         "wordCount" : "306",
         "image" : https://grazercomputerclub.github.io/Blogimg/consumtion.jpg",
@@ -51,6 +51,27 @@
 <link rel="shortcut icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
 
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 
@@ -209,7 +230,7 @@
       </div>
       
         <div class="entry-meta">
-          <span class="date">16 September</span>	<span> / </span>
+          <span class="date">09 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -232,12 +253,12 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss. Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 </p>
 
 <h2 id="messaufbau">Messaufbau</h2>
 
-<p>Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb aber ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
+<p>Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
 
 <h2 id="messung">Messung</h2>
 
@@ -249,7 +270,8 @@ Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z
 
 <h2 id="optimierungen">Optimierungen</h2>
 
-<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA. Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br />
+<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA.<br />
+Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br />
 WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
 
 <p><code>rfkill list</code></p>
@@ -314,7 +336,7 @@ dtoverlay=pi3-disable-bt
     <div class="bio">
       
       
-      <p>Programmierer und Raspberry Pi Experte.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	

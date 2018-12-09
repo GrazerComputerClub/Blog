@@ -25,7 +25,7 @@
         "datePublished": "2018-12-01 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-01 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/",
-        "wordCount" : "248",
+        "wordCount" : "253",
         "image" : https://grazercomputerclub.github.io/Blogimg/pileaf.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -262,7 +262,8 @@ if (!doNotTrack) {
 
 <p>Für das veraltete Projekt wurde ein Fork von &ldquo;Sanderr&rdquo; auf <a href="https://sourceforge.net/u/sanderr/pileaf">Sourceforge</a> erstellt. Diese Version enthält auch eine Vorlage für den 40-Pin Anschluss der aktuellen Raspberry Pi Varianten. Aus der Beschreibungsdatei &ldquo;pi-leaf.asy&rdquo; kann mit dem Programm Asymptote die PDF-Datei erstellt werden.</p>
 
-<pre><code class="language-sudo">cd /usr/src/
+<pre><code>sudo apt-get install asymptote git
+cd /usr/src/
 git clone git://git.code.sf.net/u/sanderr/pileaf u-sanderr-pileaf
 cd u-sanderr-pileaf
 asy -f pdf pi-leaf.asy

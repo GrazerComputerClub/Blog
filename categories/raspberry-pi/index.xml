@@ -28,8 +28,8 @@ Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Se
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
-      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;lsquo;config.txt&amp;rsquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
+      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.
+Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
 &lt;/p&gt;</description>
     </item>
     
@@ -49,7 +49,7 @@ Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
-      <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach. Ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
+      <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
 &lt;/p&gt;</description>
     </item>
     
