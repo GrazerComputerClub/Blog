@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</loc>
+    <lastmod>2018-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</loc>
     <lastmod>2018-12-08T00:00:00+00:00</lastmod>
   </url>
@@ -59,13 +64,13 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/</loc>
-    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/</loc>
-    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -77,7 +82,7 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/</loc>
-    <lastmod>2018-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

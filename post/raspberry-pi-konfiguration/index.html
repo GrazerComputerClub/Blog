@@ -13,8 +13,8 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
         "headline" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
-        "description" : "<p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &lsquo;config.txt&rsquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
+        "description" : "<p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &ldquo;config.txt&rdquo; auf der Boot-Partition des Raspberry Pis.
+Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -245,6 +245,12 @@ if (!doNotTrack) {
             <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
           </span>
           
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Raspberry%20Pi%20Zero">Raspberry Pi Zero</a>
+          </span>
+          
 
 
         </div>
@@ -254,20 +260,20 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &lsquo;config.txt&rsquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehl und Möglichkeiten die nicht jedem bekannt sind.
+              <p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &ldquo;config.txt&rdquo; auf der Boot-Partition des Raspberry Pis.
+Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
 </p>
 
 <h2 id="allgemeines">Allgemeines</h2>
 
-<p>Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei &lsquo;config.txt&rsquo; vorgenommen. Die Datei liegt auf der
+<p>Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei &ldquo;config.txt&rdquo; vorgenommen. Die Datei liegt auf der
 ersten Partition, die mit dem Windows FAT Dateisystem formatiert ist. Dadurch kann sie sehr leicht auch aus einem Windows System verändert werden.
-Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle <a href="https://notepad-plus-plus.org/download/v7.6.html">Notepad++</a>, obwohl der integrierte Windows 10 Editor nun auch endlich diese <a href="https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/">Funktion</a> beherrscht. <strong>\o/</strong></p>
+Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle <a href="https://notepad-plus-plus.org/download/">Notepad++</a>, obwohl der integrierte Notepad Editor von Windows 10 nun auch endlich diese <a href="https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/">Funktion</a> beherrscht. <strong>\o/</strong></p>
 
 <h2 id="spezielle-konfiguationsmöglichkeiten">Spezielle Konfiguationsmöglichkeiten</h2>
 
-<p>Eine Auflistung der gängisten Paranmetrierungen erspare ich mir,  die gibt es bereits unzählige Male im Internet zu finden.
-Bei der Raspberry Pi Foundation git es zum Beispiel unfassende Informationen bei <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/">documentation &gt; configuration &gt; config-txt</a>. Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.</p>
+<p>Eine Auflistung der gängisten Paranmetrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden.
+Bei der Raspberry Pi Foundation gibt es zum Beispiel unfassende Informationen bei <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/">documentation &gt; configuration &gt; config-txt</a>. Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.</p>
 
 <h3 id="include">Include</h3>
 
@@ -280,11 +286,11 @@ include SPIDisplaySettings.txt
 
 <h3 id="filter">Filter</h3>
 
-<p>Bedingte Einstellungen können über <strong>Filter</strong> realisiert werden, und gelten somit nur wenn es Sinn macht. Der Filter wird in eckigen Klammern angegeben. <em>[all]</em> deaktiviert den Filter. Als Filter kann verwendet werden:
- * Raspberry Pi Variante (Pi 3, Pi Zero usw.)
- * <a href="https://de.wikipedia.org/wiki/Extended_Display_Identification_Data">EDID</a> Kennung des Monitors
- * Seriennummer des Raspberry Pis
- * GPIO Zustand</p>
+<p>Bedingte Einstellungen können über <strong>Filter</strong> realisiert werden, und gelten somit nur unter bestimmten Umständen. Der Filter wird in eckigen Klammern angegeben <em>[ ]</em>. <em>[all]</em> deaktiviert den Filter. Als Filter kann verwendet werden:
+* Raspberry Pi Variante (Pi 3, Pi Zero usw.)
+* <a href="https://de.wikipedia.org/wiki/Extended_Display_Identification_Data">EDID</a> Kennung des Monitors
+* Seriennummer des Raspberry Pis
+* GPIO Zustand</p>
 
 <p>Die Kombination von Filtern ist auch möglich. Damit sind viele spezielle Einsatzgebiete möglich.</p>
 
@@ -334,9 +340,6 @@ disable_overscan=1
 
 <p>Wenn Raspbian Linux gestartet ist, können die Einstellungen der &lsquo;config.txt&rsquo; mit dem Befehl <code>vcgencmd get_config</code> aufgelistet werden.</p>
 
-<pre><code>vcgencmd get_config int
-</code></pre>
-
 <pre><code>aphy_params_current=547
 arm_freq=1000
 audio_pwm_mode=514
@@ -375,6 +378,7 @@ sdram_freq=450
   <div class="entry-categories"><p><span>Categories</span>
     
     <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/Blog/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
 
