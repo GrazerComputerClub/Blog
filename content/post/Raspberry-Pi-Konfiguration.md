@@ -24,8 +24,8 @@ Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mi
 
 ## Spezielle Konfiguationsmöglichkeiten
  
-Eine Auflistung der gängisten Paranmetrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden. 
-Bei der Raspberry Pi Foundation gibt es zum Beispiel unfassende Informationen bei [documentation > configuration > config-txt](https://www.raspberrypi.org/documentation/configuration/config-txt/). Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.
+Eine Auflistung der gängigsten Parametrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden. 
+Bei der Raspberry Pi Foundation gibt es zum Beispiel umfassende Informationen bei [documentation > configuration > config-txt](https://www.raspberrypi.org/documentation/configuration/config-txt/). Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.
 
 ### Include 
 
