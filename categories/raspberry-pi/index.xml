@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPIO-Eingang als Tastaturtaste</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</guid>
+      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Werbefrei im Heimnetz mit Pi-hole</title>

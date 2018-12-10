@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "GPIO-Eingang als Tastaturtaste",
         "headline" : "GPIO-Eingang als Tastaturtaste",
-        "description" : "<p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+        "description" : "<p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,11 +22,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-09-16 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-09-16 00:00:00 &#43;0000 UTC",
+        "datePublished": "2018-12-10 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-10 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/gpio-tasten/",
         "wordCount" : "270",
-        "image" : https://grazercomputerclub.github.io/Blogimg/gpio-key.jpg",
+        "image" : https://grazercomputerclub.github.io/Blogimg/keys_white_nav.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -35,7 +35,7 @@
  <title>GPIO-Eingang als Tastaturtaste </title>
 
 
-<meta name="description" content="Raspberry Pi Blog des Grazer Computer Club - GC2" />
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
 
 
 
@@ -51,6 +51,27 @@
 <link rel="shortcut icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
 
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 
@@ -148,7 +169,7 @@
         <div id="title-info" class="title-info">
   <div id='site-title' class='site-title'>
     
-    <a href="/Blog"> GC2 Raspberry Pi Blog </a>
+    <a href="/Blog"> GC2 Blog </a>
     </div>
   </div>
   <button id="toggle-navigation" class="toggle-navigation">
@@ -158,7 +179,7 @@
   <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
   <div id="menu-primary" class="menu-container menu-primary" role="navigation">
     
-    <p class="site-description">Infos rund um den Raspberry Pi Einplatinencomputer</p>
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
     
 
     <div class="menu">
@@ -166,17 +187,17 @@
         
         
         <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
-          <a href="https://grazercomputerclub.github.io/Blog/index.html">Blog</a>
+          <a href="https://grazercomputerclub.github.io/Blog/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
           
         </li>
         
         <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
           <a href="https://grazercomputerclub.github.io/Blog/impressum/">Impressum</a>
-          
-        </li>
-        
-        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
-          <a href="https://grazercomputerclub.github.io/Blog/contact/">Kontakt</a>
           
         </li>
         
@@ -205,11 +226,11 @@
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/gpio-key.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/keys_white_nav.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">16 September</span>	<span> / </span>
+          <span class="date">10 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -232,7 +253,7 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+              <p>Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 </p>
 
 <h2 id="umsetzung">Umsetzung</h2>
@@ -423,7 +444,7 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
     <div class="bio">
       
       
-      <p>Programmierer und Raspberry Pi Experte.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -494,12 +515,12 @@ title="github icon"></i>
     <footer id="site-footer" class="site-footer" role="contentinfo">
 	<h1>
     
-    <a href=""> GC2 Raspberry Pi Blog </a>
+    <a href=""> GC2 Blog </a>
     
 	</h1>
 
 			
-			<p class="site-description">Infos rund um den Raspberry Pi Einplatinencomputer</p>
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
 			
 
 		<div id="menu-footer" class="menu-container menu-footer" role="navigation">

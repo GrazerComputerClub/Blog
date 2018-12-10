@@ -6,10 +6,20 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 09 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GPIO-Eingang als Tastaturtaste</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</guid>
+      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Zero W Stromaufnahme</title>
@@ -17,7 +27,7 @@
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
 &lt;/p&gt;</description>
     </item>
     
