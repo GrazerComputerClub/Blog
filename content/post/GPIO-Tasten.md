@@ -11,7 +11,7 @@ weight = 1
 +++
 
 
-Oft sollen per GPIO-Taste Programme gesteuert werden. Früher muss man das kompliziert mit einem eigenen Programmen oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei "config.txt" wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei "config.txt" wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 <!--more-->
 
 ## Umsetzung

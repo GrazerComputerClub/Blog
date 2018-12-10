@@ -32,7 +32,7 @@ Mittlerweile ist das Buch schon etwas veraltet, da es sich noch auf Debian 8 Jes
 
 Dieses Werk steht unter der Lizenz [Creative Commons BY-NC-ND 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/at/). Sie erlaubt ausdrücklich, das Werk zu vervielfältigen, zu verbreiten und öffentlich zugänglich machen. Es muss der Urheber genannt werden, die Weitergabe darf nicht kommerziell erfolgen.
 Es ist nicht erlaubt diese Werk zu verändern und darauf aufbauen zu erweitern.  
-Dieses Werk ist eine reduzierte kostenfreie Version des kommerziell erhältlichen E-Book's. Es kann über
+Dieses Werk ist eine reduzierte kostenfreie Version des kommerziell erhältlichen E-Books. Es kann über
 [Amazon](https://www.amazon.de/dp/B01LY28XVD/) und [Google](https://play.google.com/store/books/details?id=kVEyDQAAQBAJ) bezogen werden.
-Wenn Sie die Arbeit des Autors unterstützen wollen oder die orignale Version (qualitative bessere
-Bilder, in Farbe und Diagramme) besitzen wollen so erwerben Sie das E-Book, Danke!
+Wenn Sie die Arbeit des Autors unterstützen wollen, oder die originale Version (qualitative bessere
+Bilder, in Farbe und Diagramme) besitzen wollen, so erwerben Sie das E-Book, Danke!
