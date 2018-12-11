@@ -5,9 +5,19 @@ languageCode = "de-de"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-130665257-1"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
 
 [params]
   # Unmark to use post folder for images. Default is static folder.
@@ -82,9 +92,19 @@ paginate = 5 #frontpage pagination
     link = "http://strohmayers.com"
     email = "martin.strohmayer@gc2.at"
     bio = [
-      "Programmierer und Raspberry Pi Experte."
+      "Softwareentwickler und Raspberry Pi Enthusiast."
     ]
     twitter       = "https://twitter.com/m_stroh"
     github        = "https://github.com/mstroh76"
+
+    [params.writers."Manfred Wallner"]
+    link = "https://mwallner.net"
+    email = "manfred.wallner@gc2.at"
+    bio = [
+      "Softwareentwickler und PowerShell Evangelist."
+    ]
+    twitter       = "https://twitter.com/schusterfredl"
+    github        = "https://github.com/mwallner"
+
 
 
