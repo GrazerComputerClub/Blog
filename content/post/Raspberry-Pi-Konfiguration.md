@@ -68,7 +68,10 @@ sdram_freq=500
 ```
 
 Beim der **Seriennummer**, muss man die Raspberry Pi Seriennummer mit "0x" ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
-`cat /proc/cpuinfo` ermittelt. 
+`cat /proc/cpuinfo | grep Serial` ermittelt. 
+```
+Serial		: 0000000012345678
+```
 
 Beispiel:
 ```
@@ -78,7 +81,7 @@ enable_uart=0
 [all]
 ```
 
-Beim Filter über **GPIO Zustand**, muss man in eckigen Klammern die GPIO-Nummer (BCM) und der Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren. 
+Beim Filter über **GPIO Zustand**, muss man in eckigen Klammern die GPIO-Nummer (BCM) und den Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren. 
 
 Beispiel:
 ```
@@ -91,7 +94,7 @@ disable_overscan=1
 
 ## Konfigurationen auslesen 
 
-Wenn Raspbian Linux gestartet ist, können die Einstellungen der 'config.txt' mit dem Befehl `vcgencmd get_config` aufgelistet werden.
+Wenn Raspbian Linux gestartet ist, können die Einstellungen der "config.txt" Konfigurationsdatei mit dem Befehl `vcgencmd get_config` aufgelistet werden.
 
 ```
 aphy_params_current=547
