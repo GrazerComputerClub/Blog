@@ -37,7 +37,7 @@ Parameter für gpio-shutdown Overlay:
 
 Der Taster führt im übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.
 
-Nicht verwechseln darf man den Devicetree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der standard Ausgang GPIO26 nicht gewünscht ist.
+Nicht verwechseln darf man den Devicetree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs, wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der standard Ausgang GPIO26 nicht gewünscht ist.
 
 ``
 dtoverlay=gpio-poweroff,gpiopin=20
