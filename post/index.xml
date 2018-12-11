@@ -6,10 +6,20 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hotkeys zuweisen ohne X11</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/hotkeys-zuweisen-ohne-x11/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/hotkeys-zuweisen-ohne-x11/</guid>
+      <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GPIO-Eingang als Tastaturtaste</title>
@@ -74,7 +84,7 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
     </item>
     
     <item>
-      <title>WLAN bei Boot verbinden</title>
+      <title>Raspberry Pi WLAN bei Boot verbinden</title>
       <link>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -110,7 +120,7 @@ Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Et
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</guid>
-      <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
+      <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang, wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
 &lt;/p&gt;</description>
     </item>
     
