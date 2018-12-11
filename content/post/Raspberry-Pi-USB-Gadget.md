@@ -32,7 +32,7 @@ Kapitel 1.3 "USB Gadget/OTG Mode DHCP-Server" beschreibt die Netzwerkkonfigurati
 
 ![Schema Raspberry Pi Zero USB-Gadget Ethernet mit DHCP-Server](../../img/Raspberry-Pi-Zero-USB-Gadget-Ether-DHCP.png) 
 
-Wem die Anpassung zu kompliziert oder aufwendig ist, kann auch unser modifiziertes [Raspjamming Raspbian Image](http://strohmayers.com/image/Raspjamming-April-2018.img.7z) verwenden. Dort ist alles für den OTG-Betrieb vorbereit und man muss nur noch den Host parametrieren wenn Internet am Raspberry Pi benötigt wird. Erreichbar ist der Raspberry Pi Zero über den Namen "raspberrypi.local" und der IP-Adresse "192.168.137.10".
+Wem die Anpassung zu kompliziert oder aufwendig ist, kann auch unser modifiziertes [Raspjamming Raspbian Image](http://strohmayers.com/image/Raspjamming-April-2018.img.7z) verwenden. Dort ist alles für den OTG-Betrieb vorbereit und man muss nur noch den Host parametrieren, wenn Internet am Raspberry Pi benötigt wird. Erreichbar ist der Raspberry Pi Zero über den Namen "raspberrypi.local" und der IP-Adresse "192.168.137.10".
 
 ### Einrichtung Host
 
