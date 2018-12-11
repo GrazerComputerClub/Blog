@@ -68,7 +68,10 @@ sdram_freq=500
 ```
 
 Beim der **Seriennummer**, muss man die Raspberry Pi Seriennummer mit "0x" ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
-`cat /proc/cpuinfo` ermittelt. 
+`cat /proc/cpuinfo | grep Serial` ermittelt. 
+```
+Serial		: 0000000012345678
+```
 
 Beispiel:
 ```
