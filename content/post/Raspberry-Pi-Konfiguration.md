@@ -91,7 +91,7 @@ disable_overscan=1
 
 ## Konfigurationen auslesen 
 
-Wenn Raspbian Linux gestartet ist, können die Einstellungen der 'config.txt' mit dem Befehl `vcgencmd get_config` aufgelistet werden.
+Wenn Raspbian Linux gestartet ist, können die Einstellungen der "config.txt" Konfigurationsdatei mit dem Befehl `vcgencmd get_config` aufgelistet werden.
 
 ```
 aphy_params_current=547
