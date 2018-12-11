@@ -106,5 +106,12 @@ paginate = 5 #frontpage pagination
     twitter       = "https://twitter.com/schusterfredl"
     github        = "https://github.com/mwallner"
 
+    [params.writers."Christoph Woergoetter"]
+    email = "christoph.woergoetter@gc2.at"
+    bio = [
+      "ZisrIHN1cmp1ZHBwbGh1aHU="
+    ]
+    twitter       = "https://twitter.com/woergi"
+    github        = "https://github.com/woergi"
 
 
