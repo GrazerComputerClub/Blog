@@ -14,13 +14,13 @@ Damit man den Blog erzeugen kann, muss man zuerst
 [Hugo](https://github.com/gohugoio/hugo) installieren.
 
 Anschließend muss man das
-[Nederburg-Theme](https://themes.gohugo.io/hugo-nederburg-theme/) in einen 
-*themes* Unterordner herunterladen.
+[Nederburg-Theme](https://github.com/GrazerComputerClub/hugo-nederburg-theme)
+in einen *themes* Unterordner herunterladen.
 
 ```bash
 ~/Blog$ mkdir themes
 ~/Blog$ cd themes
-~/Blog/themes$ git clone https://github.com/appernetic/hugo-nederburg-theme.git
+~/Blog/themes$ git clone https://github.com/GrazerComputerClub/hugo-nederburg-theme
 ```
 
 Danach kann man über das Kommando *hugo* die Webseite erzeugen.
