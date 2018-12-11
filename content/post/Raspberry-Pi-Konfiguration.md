@@ -78,7 +78,7 @@ enable_uart=0
 [all]
 ```
 
-Beim Filter über **GPIO Zustand**, muss man in eckigen Klammern die GPIO-Nummer (BCM) und der Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren. 
+Beim Filter über **GPIO Zustand**, muss man in eckigen Klammern die GPIO-Nummer (BCM) und den Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren. 
 
 Beispiel:
 ```
