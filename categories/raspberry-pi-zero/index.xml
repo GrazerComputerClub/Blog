@@ -22,17 +22,6 @@
     </item>
     
     <item>
-      <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39;</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</link>
-      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
-      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Raspberry Pi Zero Shopping Guide</title>
       <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-shopping/</link>
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
