@@ -5,7 +5,7 @@ image = "img/config-txt.jpg"
 date = "2018-12-07"
 title = "Raspberry Pi Konfiguration mit 'config.txt'"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi", "Raspberry Pi Zero"]
+categories = ["Raspberry Pi"]
 keywords = ["config.txt", "Konfiguration", "include", "filter"]
 weight = 1
 +++

@@ -1,8 +1,8 @@
 +++
 showonlyimage = false
 draft = false
-image = "img/gpio-key.jpg"
-date = "2018-09-16"
+image = "img/keys_white_nav.jpg"
+date = "2018-12-10"
 title = "GPIO-Eingang als Tastaturtaste"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
