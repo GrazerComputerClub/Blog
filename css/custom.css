@@ -1116,6 +1116,7 @@ a img {
   font-weight: 400;
   letter-spacing: 0.1em;
   display: block;
+  width: 16em;
 }
 .author-meta .bio a {
   margin-right: 0.375em;

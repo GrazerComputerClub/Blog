@@ -6,10 +6,21 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 13 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerShell Core in Linux</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/</link>
+      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/</guid>
+      <description>&lt;p&gt;Seit .Net Core offiziell auf der Rapsberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
+Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
