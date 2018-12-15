@@ -17,7 +17,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</guid>
-      <description>&lt;p&gt;Hat man eine  SPI TFT LCD über eine Kernel Modul in das Linux System integriert so man nur noch darauf zugreifen können. Das kann man entweder direkt über den Farmebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Displasy dupliziert.&lt;/p&gt;
+      <description>&lt;p&gt;Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

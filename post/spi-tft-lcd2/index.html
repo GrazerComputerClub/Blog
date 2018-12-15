@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 2",
         "headline" : "SPI TFT LCD - Teil 2",
-        "description" : "<p>Hat man eine  SPI TFT LCD über eine Kernel Modul in das Linux System integriert so man nur noch darauf zugreifen können. Das kann man entweder direkt über den Farmebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Displasy dupliziert.</p>
+        "description" : "<p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
 
 <p></p>",
         "inLanguage" : "en",
@@ -26,7 +26,7 @@
         "datePublished": "2018-12-15 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-15 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/",
-        "wordCount" : "518",
+        "wordCount" : "528",
         "image" : https://grazercomputerclub.github.io/Blogimg/SPI-LCD-TFT2.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -258,11 +258,13 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Hat man eine  SPI TFT LCD über eine Kernel Modul in das Linux System integriert so man nur noch darauf zugreifen können. Das kann man entweder direkt über den Farmebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Displasy dupliziert.</p>
+              <p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
 
 <p></p>
 
 <h2 id="verwendung-grafikausgabe">Verwendung / Grafikausgabe</h2>
+
+<h2 id="framebuffer">Framebuffer</h2>
 
 <p>Nach dem Anschließen des SPI TFT LCD und dem Laden des Kernelmoduls &lsquo;fbtft_device&rsquo; wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. Nun kann der Framebuffer direkt angesprochen werden z. B. mit dem Programm &lsquo;fbi‘, das zur Anzeige eines Bildes verwendet wird.</p>
 
@@ -271,8 +273,11 @@ wget http://shorturl.at/gvAO1 -O sample.jpg
 sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
 </code></pre>
 
-<p>Früher konnte man mit der SDL Libray 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.
-Eine Alternative ist allerdings den Inhalt der Grafikkarte bzw. &lsquo;/dev/fb0&rsquo; auf das SPI-Display bzw. &lsquo;/dev/fb1&rsquo; zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
+<p>Früher konnte man mit der SDL Libray 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
+
+<h2 id="dupplizierung-via-fbcp">Dupplizierung via fbcp</h2>
+
+<p>Eine Alternative zum direkten Zugriff ist, den Inhalt der Grafikkarte bzw. &lsquo;/dev/fb0&rsquo; auf das SPI-Display bzw. &lsquo;/dev/fb1&rsquo; zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
 Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf der langsamen Raspberry Pi Zero möglich Video abzuspielen.
 Mit dem Programm &lsquo;fbcp&rsquo; kann diese ständige Kopieroperation nun im Hintergrund mit geringer CPU-Last erledigt werden. Dabei wird sogar das Bild auf die Auflösung des SPI-Displays angepasst  bzw. herunter gerechnet. Das gilt für die Konsole, für X-Windows und auch für die Videoausgabe. Man kann also auch flüssig Videos auf einem 160x128 Displays ausgeben.</p>
 
@@ -312,7 +317,7 @@ omxplayer sintel_trailer-480p.mp4
 
 <h2 id="auflösung">Auflösung</h2>
 
-<p>&lsquo;fbcp&rsquo; passt die Ausgabe bereits an die Auflösung des Zieldisplays an, dennoch kann es sinnvoll sein den Grafikmodus anstatt auf Full HD gleich in der nativen Auflösung des Displays zu setzen. Dazu muss man eine Custom HDMI Einstellung in der Konfigurationsdatei &ldquo;config.txt&rdquo; definieren. Im Beispiel wurde das &ldquo;sainsmart18&rdquo; Display mit 160x128 verwendet.</p>
+<p>&lsquo;fbcp&rsquo; passt die Ausgabe bereits an die Auflösung des Zieldisplays an, dennoch kann es sinnvoll sein den Grafikmodus anstatt auf Full HD gleich in der nativen Auflösung des Displays zu setzen. Dazu muss man eine Custom HDMI Einstellung in der Konfigurationsdatei &ldquo;config.txt&rdquo; definieren. Im Beispiel wurde das &ldquo;sainsmart18&rdquo; Display mit 160x128 Pixel verwendet.</p>
 
 <p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
 

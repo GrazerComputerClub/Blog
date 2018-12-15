@@ -26,7 +26,7 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
         "datePublished": "2018-12-14 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-14 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/",
-        "wordCount" : "254",
+        "wordCount" : "250",
         "image" : https://grazercomputerclub.github.io/Blogimg/posh_linux.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -275,77 +275,69 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
 sudo apt-get install libunwind8
 </code></pre></li>
 
-<li><p>PowerShell git repository auschecken</p></li>
-</ol>
+<li><p>PowerShell git repository auschecken</p>
 
 <pre><code>git clone https://github.com/PowerShell/PowerShell.git
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>PowerShell über &ldquo;install-powershell.sh&rdquo; bauen und starten
-```
-cd PowerShell
-./tools/install-powershell.sh</li>
+<li><p>PowerShell über &ldquo;install-powershell.sh&rdquo; bauen und starten</p>
+
+<pre><code>cd PowerShell
+./tools/install-powershell.sh
+pwsh
+</code></pre></li>
 </ol>
 
-<p>pwsh</p>
+<h2 id="speedtest">Speedtest</h2>
 
-<pre><code>
-## Speedtest
-Um einen Speedtest über die Kommandozeile durchzuführen gibt es mehrere Möglichkeiten.
+<p>Um einen Speedtest über die Kommandozeile durchzuführen gibt es mehrere Möglichkeiten.</p>
 
-Eine einfache Variante ist das Python-Programm &quot;speedtest-cli&quot; von [Matt Martz](https://github.com/sivel/).
-Man kann das Tool direkt herunterladen und ausführbar machen, siehe [Anleitung](https://github.com/sivel/speedtest-cli/blob/master/README.rst).
+<p>Eine einfache Variante ist das Python-Programm &ldquo;speedtest-cli&rdquo; von <a href="https://github.com/sivel/">Matt Martz</a>.
+Man kann das Tool direkt herunterladen und ausführbar machen, siehe <a href="https://github.com/sivel/speedtest-cli/blob/master/README.rst">Anleitung</a>.</p>
+
+<pre><code>wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py speedtest
+
+chmod +x speedtest
 </code></pre>
 
-<p>wget -O speedtest-cli <a href="https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py">https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</a> speedtest</p>
+<h2 id="powershell-script-executable">PowerShell Script Executable</h2>
 
-<p>chmod +x speedtest</p>
+<p>Damit PowerShell-Scripts in Linux korrekt ausgeführt werden können muss man einen &ldquo;shebang&rdquo; am Anfang des Scripts einfügen:</p>
 
-<pre><code>
-## PowerShell Script Executable
-
-Damit PowerShell-Scripts in Linux korrekt ausgeführt werden können muss man einen &quot;shebang&quot; am Anfang des Scripts einfügen:
+<pre><code>#!/usr/local/bin/pwsh
 </code></pre>
 
-<p>#!/usr/local/bin/pwsh</p>
+<p>Folgendes Script kann verwendet werden um einen &ldquo;dauer-Speedtest&rdquo; durchzuführen. (Inhalt z.B. in Invoke-Speedtest.ps1 kopieren)</p>
 
-<pre><code>
-Folgendes Script kann verwendet werden um einen &quot;dauer-Speedtest&quot; durchzuführen. (Inhalt z.B. in Invoke-Speedtest.ps1 kopieren)
-</code></pre>
-
-<p>#!/usr/local/bin/pwsh
-$outfile = &ldquo;speedtest.csv&rdquo;</p>
-
-<p>[regex]$regexDl=&ldquo;Download:\s(?&lsquo;speed&rsquo;\d+.\d+)\s&rdquo;
-[regex]$regexUl=&ldquo;Upload:\s(?&lsquo;speed&rsquo;\d+.\d+)\s&rdquo;</p>
-
-<p>&ldquo;Date;Time;Download;Upload;&rdquo; | Out-File $outfile -Encoding utf8</p>
-
-<p>while (1 -eq 1) {
-    Write-Host -ForegroundColor Green &ldquo;doing speedtest&hellip;&rdquo;
+<pre><code>#!/usr/local/bin/pwsh
+$outfile = &quot;speedtest.csv&quot;
+ 
+[regex]$regexDl=&quot;Download\:\s(?'speed'\d+\.\d+)\s&quot;
+[regex]$regexUl=&quot;Upload\:\s(?'speed'\d+\.\d+)\s&quot;
+ 
+&quot;Date;Time;Download;Upload;&quot; | Out-File $outfile -Encoding utf8
+ 
+while (1 -eq 1) {
+    Write-Host -ForegroundColor Green &quot;doing speedtest...&quot;
     $meas = $(speedtest)
     $meas
-    $download = $regexDl.Match($meas).Groups[1].Value.Replace(&ldquo;.&rdquo;,&ldquo;,&rdquo;)
-    $upload = $regexUl.Match($meas).Groups[1].Value.Replace(&ldquo;.&rdquo;,&ldquo;,&rdquo;)</p>
-
-<pre><code>&quot;$(Get-Date -Format &quot;yyyy-mm-dd;HH:mm:ss&quot;);$download;$upload;&quot; | Out-File $outfile -Encoding utf8 -Append
-Start-Sleep -Seconds 300
+    $download = $regexDl.Match($meas).Groups[1].Value.Replace(&quot;.&quot;,&quot;,&quot;)
+    $upload = $regexUl.Match($meas).Groups[1].Value.Replace(&quot;.&quot;,&quot;,&quot;)
+ 
+    &quot;$(Get-Date -Format &quot;yyyy-mm-dd;HH:mm:ss&quot;);$download;$upload;&quot; | Out-File $outfile -Encoding utf8 -Append
+    Start-Sleep -Seconds 300
+}
 </code></pre>
 
-<p>}</p>
+<p>Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:</p>
 
-<pre><code>
-Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:
+<pre><code>chmod +x Invoke-Speedtest.ps1
+./Invoke-Speedtest.ps1
 </code></pre>
 
-<p>chmod +x Invoke-Speedtest.ps1</p>
+<p>Die so erzeugte Datei &ldquo;speedtest.csv&rdquo; kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:</p>
 
-<p>./Invoke-Speedtest.ps1
-```</p>
-
-<p>Die so erzeugte Datei &ldquo;speedtest.csv&rdquo; kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:
-<img src="../../img/posh_speedtest.png" alt="Auswertung von PowerShell Script" /></p>
+<p><img src="../../img/posh_speedtest.png" alt="Auswertung von PowerShell Script" /></p>
             </article>
           </div>
           
