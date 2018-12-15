@@ -6,10 +6,21 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 14 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SPI TFT LCD - Teil 2</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</guid>
+      <description>&lt;p&gt;Hat man eine  SPI TFT LCD über eine Kernel Modul in das Linux System integriert so man nur noch darauf zugreifen können. Das kann man entweder direkt über den Farmebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Displasy dupliziert.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>PowerShell Core in Linux</title>
@@ -25,7 +36,7 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
       <link>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</link>
-      <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</guid>
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
@@ -36,7 +47,7 @@ mit Daten von OpenWeather befüllt.
     </item>
     
     <item>
-      <title>SPI TFT LCD</title>
+      <title>SPI TFT LCD - Teil 1</title>
       <link>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
