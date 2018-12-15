@@ -26,7 +26,6 @@ sudo apt-get install libunwind8
 ```
 
 2. PowerShell git repository auschecken
-
 ```
 git clone https://github.com/PowerShell/PowerShell.git
 ```
@@ -35,7 +34,6 @@ git clone https://github.com/PowerShell/PowerShell.git
 ```
 cd PowerShell
 ./tools/install-powershell.sh
-
 pwsh
 ```
 
@@ -82,9 +80,9 @@ while (1 -eq 1) {
 Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:
 ```
 chmod +x Invoke-Speedtest.ps1
-
 ./Invoke-Speedtest.ps1
 ```
 
-Die so erzeugte Datei "speedtest.csv" kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:
+Die so erzeugte Datei "speedtest.csv" kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:  
+
 ![Auswertung von PowerShell Script](../../img/posh_speedtest.png) 
