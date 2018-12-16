@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://grazercomputerclub.github.io/Blog"
+        },
+        "articleSection" : "post",
+        "name" : "Device Tree",
+        "headline" : "Device Tree",
+        "description" : "<p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
+
+<p></p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-12-16 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-16 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/device-tree/",
+        "wordCount" : "504",
+        "image" : https://grazercomputerclub.github.io/Blogimg/Device-Tree.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Device Tree </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://grazercomputerclub.github.io/Blog/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://grazercomputerclub.github.io/Blog/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://grazercomputerclub.github.io/Blog/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://grazercomputerclub.github.io/Blog/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/Blog"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/Blog/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/Blog/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/Device-Tree.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">16 December</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Device Tree</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
+
+<p></p>
+
+<h2 id="allgemeines">Allgemeines</h2>
+
+<p>Device Tree ist eine Datenstruktur zur Beschreibung von Hardware. Besonders bei ARM-Systemen kann die Hardware unterschiedlich verwendet und konfiguriert werden. Anstatt alle Details im Betriebssystem fest zu kodieren, können viele Aspekte der Hardware in einer Datenstruktur beschrieben werden, die beim Booten an das Betriebssystem übergeben wird. Der Device Tree wird für diese Aufgabe verwendet.<br />
+Device Tree verwendet Dateien mit einer einfache Baumstruktur aus Knoten und Eigenschaften. Die Eigenschaften sind Schlüsselwertpaare, und der Knoten kann sowohl Eigenschaften als auch untergeordnete Knoten enthalten. Die Datei wird mit der Extention &ldquo;dts&rdquo; gespeichert.<br />
+Mit Hilfe eines Device Tree Compilers (DTC) wird aus der dts-Datei die binäre Device Tree Blob Datei mit der Extention &ldquo;dtb&rdquo; erzeugen.<br />
+Diese wird beim Bootvorgang gelesen und angewendet. Eine Vielzahl an Device Tree Blob Datei sind bereits auf der Boot-Partition im Verzeichnis &ldquo;overlays&rdquo; der Raspberry Pi zu finden.</p>
+
+<h2 id="verwendung">Verwendung</h2>
+
+<p>Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit den Device Tree Einträgen in der Konfigurationsdatei &ldquo;config.txt&rdquo; zu tun gehabt.
+Diese werden einfach als eigene Zeile mit <code>dtoverlay={Overlay-Name},{Parameter1},{Parameter2}</code> eingetragen und damit aktiviert.<br />
+Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Blog-Eintrag &ldquo;GPIO-Eingang als Tastaturtaste&rdquo; bereits beschrieben wurde.</p>
+
+<pre><code>dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
+</code></pre>
+
+<h2 id="erstellung">Erstellung</h2>
+
+<p>Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine &ldquo;dts&rdquo; Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie Blog-Eintrag &ldquo;SPI TFT LCD - Teil 1&rdquo;.</p>
+
+<p>&ldquo;st7735r.dts&rdquo;:</p>
+
+<pre><code>/*
+ * Device Tree overlay for SPI TFT LCD with ST7735R chip 160x128 (1,8&quot;) 
+ *
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = &quot;brcm,bcm2835&quot;, &quot;brcm,bcm2708&quot;, &quot;brcm,bcm2709&quot;;
+
+	fragment@0 {
+		target = &lt;&amp;spi0&gt;;
+		__overlay__ {
+			status = &quot;okay&quot;;
+
+			spidev@0{
+				status = &quot;disabled&quot;;
+			};
+
+		};
+	};
+
+	fragment@1 {
+		target = &lt;&amp;spi0&gt;;
+		__overlay__ {
+			/* needed to avoid dtc warning */
+			#address-cells = &lt;1&gt;;
+			#size-cells = &lt;0&gt;;
+
+			sainsmart18@0{
+				compatible = &quot;sitronix,st7735r&quot;;
+				reg = &lt;0&gt;;
+				pinctrl-names = &quot;default&quot;;
+
+				name = &quot;sainsmart18&quot;;
+				spi-max-frequency = &lt;48000000&gt;;
+				rotate = &lt;90&gt;;
+				buswidth = &lt;8&gt;;
+				fps = &lt;50&gt;;
+				height = &lt;160&gt;;
+				width = &lt;128&gt;;
+				reset-gpios = &lt;&amp;gpio 25 0&gt;;
+				dc-gpios = &lt;&amp;gpio 24 0&gt;;
+				cs-gpios = &lt;&amp;gpio 8 0&gt;;
+				debug = &lt;0&gt;;
+			};
+		};
+	};
+};
+</code></pre>
+
+<p>Darin sind alle Parameter die benötigt werden, wie z. B. Kontroller, Anschlüsse, Geschwinigkeit usw. enthalten.<br />
+Man kann sich auch Beispielkonfiguraionen von userer <a href="https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays">Git-Hub</a> Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im &ldquo;overlays&rdquo; Verzeichnis abgelegt.</p>
+
+<pre><code>wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/st7735r.dts
+sudo dtc -@ -I dts -O dtb -o st7735r.dtb st7735r.dts
+cp st7735r.dtb /boot/overlays
+</code></pre>
+
+<p>Der neune Device Tree Blob kann nun in der Konfigurationdatei &ldquo;config.txt&rdquo; geladen werden.</p>
+
+<pre><code>dtoverlay=st7735r
+</code></pre>
+
+<p>Damit erspart man sich, das entsprechende Kernel Modul &lsquo;fbtft_device&rsquo; zu laden und zu parametrieren. Das Display wird beim Boot bereits korrekt eingebunden  ohne, dass Anpassungen am Betriebssystem benötigt werden.</p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p>Alle Informationen und Parameter für den Device Tree für den Raspberry Pi sind auf der Seite <a href="https://www.raspberrypi.org/documentation/configuration/device-tree.md">documentation &gt; configuration &gt; device-tree</a> beschrieben.</p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  <div class="entry-categories"><p><span>Categories</span>
+    
+    <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Written by:<a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://grazercomputerclub.github.io/Blog/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://grazercomputerclub.github.io/Blog/js/jquery.min.js"></script>
+<script src="https://grazercomputerclub.github.io/Blog/js/jquerymigrate.js"></script>
+<script src="https://grazercomputerclub.github.io/Blog/js/production.min.js"></script>
+
+</body>
+</html>
