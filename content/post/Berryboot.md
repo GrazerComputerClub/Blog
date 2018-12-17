@@ -11,7 +11,6 @@ weight = 1
 +++
 
 Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!
-
 <!--more-->
 
 ## BerryBoot?
@@ -21,7 +20,7 @@ Wenn man eine SD-Karte mit genügend Kapazität (16GB+ empfohlen) besitzt, kann 
 
 ## BerryBoot Beziehen
 
-Man kann BerryBoot entweder selbst bauen, siehe Anleitung auf [GitHub](https://github.com/maxnet/berryboot), oder man lädt einfach eine vorbereitete Version von  [SourceForge](http://downloads.sourceforge.net/project/berryboot/berryboot-20181211-pi2-pi3.zip) herunter.
+Man kann BerryBoot entweder selbst bauen, siehe Anleitung auf [GitHub](https://github.com/maxnet/berryboot), oder man lädt einfach eine vorbereitete Version von [SourceForge](http://downloads.sourceforge.net/project/berryboot/berryboot-20181211-pi2-pi3.zip) herunter.
 
 
 Um BerryBoot selbst zu bauen kann man einfach den aktuellen Sourcode von GitHub auschecken und mit dem vorbereiteten Bulidscript bauen:
@@ -36,11 +35,11 @@ chmod +x build-berryboot.sh
 
 ## BerryBoot & Andere Systeme Installieren
 
-Die erzeugten bzw. heruntergeladen und entpackten Dateien muss man lediglich auf eine SD-Karte kopieren und damit eine Raspberry-Pi starten.
+Die erzeugten bzw. heruntergeladen und entpackten Dateien muss man lediglich auf eine SD-Karte kopieren und damit den Raspberry Pi starten.
 
 ![BerryBoot - Installation](https://www.berryterminal.com/lib/exe/fetch.php/bb1.png)
 
-Beim initialen Start wird was Basissystem installiet, von dort an hat man die Möglichkeit über einen grafischen Auswahldialog weitere Betriebssysteme, wie z.B. Raspbian, Ubuntu oder sogar Android installieren.
+Beim initialen Start wird was Basissystem installiet, von dort an hat man die Möglichkeit über einen grafischen Auswahldialog weitere Betriebssysteme, wie z. B. Raspbian, Ubuntu oder sogar Android installieren.
 
 ![BerryBoot - Installer UI](https://www.berryterminal.com/lib/exe/fetch.php/bb3.png)
 
