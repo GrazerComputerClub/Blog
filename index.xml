@@ -6,10 +6,22 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 17 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Geschwindigkeitsmessung mit Raspberry Pi</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/</link>
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/</guid>
+      <description>&lt;p&gt;Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
+So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>BerryBoot</title>
@@ -57,7 +69,7 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
       <link>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</link>
-      <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</guid>
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein

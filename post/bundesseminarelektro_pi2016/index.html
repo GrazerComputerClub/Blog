@@ -11,13 +11,12 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Wetteranzeige mittels ESP8266 und I²C Display",
-        "headline" : "Wetteranzeige mittels ESP8266 und I²C Display",
-        "description" : "<p>Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
-ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
-Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.
-</p>",
+        "name" : "Geschwindigkeitsmessung mit Raspberry Pi",
+        "headline" : "Geschwindigkeitsmessung mit Raspberry Pi",
+        "description" : "<p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
+So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
+
+<p></p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -25,17 +24,17 @@ mit Daten von OpenWeather befüllt.
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-13 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-13 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/",
-        "wordCount" : "407",
-        "image" : https://grazercomputerclub.github.io/Blogimg/esp8266_i2c_display_weather.jpg",
+        "datePublished": "2018-12-18 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-18 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/",
+        "wordCount" : "159",
+        "image" : https://grazercomputerclub.github.io/Blogimg/fortbildungE_demo.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Wetteranzeige mittels ESP8266 und I²C Display </title>
+ <title>Geschwindigkeitsmessung mit Raspberry Pi </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -233,14 +232,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/esp8266_i2c_display_weather.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/fortbildungE_demo.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">13 December</span>	<span> / </span>
+          <span class="date">18 December</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://woergi.wordpress.com/" title="Posts by Christoph Woergoetter" rel="author">Christoph Woergoetter</a>
+            <a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a>
           </span>
 
 
@@ -248,134 +247,60 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/ESP8266">ESP8266</a>
+            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Wetteranzeige mittels ESP8266 und I²C Display</h1>
+          <h1 class='entry-title'> Geschwindigkeitsmessung mit Raspberry Pi</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
-ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
-Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.
-</p>
+              <p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
+So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
 
-<h2 id="umsetzung">Umsetzung</h2>
+<p></p>
 
-<p>Für die Umsetzung muss man</p>
+<p>Beim Bundesseminar für Elektro,­ Elektrotechnik vom 24. bis 26.02.2016 in der Landesberufsschule Voitsberg wurden drei aufeinander Aufbauende Versuche zum Thema Geschwindigkeitsmessung vorgestellt.
+Es wurde mit Lichtschranken und Ultraschallsensor gemessen, sowie eine kombinierte Variante mit Differenz-Auswertung implementiert.
+Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com/">wiringPi</a> Bibliothek umgesetzt.</p>
+
+<h2 id="schaltbild-übersicht">Schaltbild / Übersicht</h2>
+
+<p><img src="../../img/fortbildungE_gesamtschaltbild_bb.png" alt="ALT" /></p>
+
+<h3 id="materialen-aufgabe-1">Materialen - Aufgabe 1</h3>
 
 <ul>
-<li>das I²C Display über den ESP8266 ansteuern</li>
-<li>den ESP8266 mit dem eigenen WiFi verbinden</li>
-<li>Daten von OpenWeather abrufen.</li>
+<li>2x IR­Empfänger OPN6042­36­CUT</li>
+<li>2x IR­Sendediode 1.3 &hellip; 1.7 V ~ 100mA</li>
+<li>2x 68 Ω Widerstand</li>
+<li>2x 160 Ω Widerstand</li>
+<li>2x Standard LED 10­20mA</li>
 </ul>
 
-<h3 id="wifi-mit-esp8266">WiFi mit ESP8266</h3>
+<h3 id="materialen-aufgabe-2">Materialen - Aufgabe 2</h3>
 
-<p>Jeder der schon einmal einen ESP8266 verwendet hat, wird sicherlich auch schon
-einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.</p>
+<ul>
+<li>1x HC­SR04 Ultraschallsensor</li>
+<li>1x 220 Ω Widerstand</li>
+<li>1x 430 Ω Widerstand</li>
+</ul>
 
-<pre><code class="language-C++">WiFi.mode(WIFI_STA);
-WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
-WiFi.setAutoReconnect(true);
-WiFi.begin(m_ssid.c_str(), m_password.c_str());
-</code></pre>
+<h3 id="materialen-aufgabe-3">Materialen - Aufgabe 3</h3>
 
-<h3 id="display">Display</h3>
+<ul>
+<li>Kabelkanal (ca 1m)</li>
+<li>Heißkleber</li>
+<li><strong>Matchboxautos</strong></li>
+</ul>
 
-<p>Um das Display über den ESP8266 anzusteuern, kann man bereits auf ein paar
-vorhandene Bibliotheken aufbauen. Verwendet man für das Projekt die PlatformIO-IDE,
-so muss man nur folgende Bibliotheken als Abhängigkeiten setzen:</p>
+<h2 id="unterrichtsmaterialen">Unterrichtsmaterialen</h2>
 
-<pre><code>ESP_SSD1306
-Adafruit GFX Library
-</code></pre>
-
-<p>Um das Display anschließend zu initialisieren sind folgende Zeilen notwendig:</p>
-
-<pre><code class="language-C++">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
-// verwendet werden
-ESP_SSD1306 display(RST_PIN);
-// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
-// 0x3C ... I²C Adresse
-display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-
-// Initialen Buffer anzeigen
-display.display();
-</code></pre>
-
-<p>Damit Wetterdaten angezeigt werden können, muss das Display zyklisch gelöscht
-und die Daten wieder neu aufgebaut werden. Hierfür kann über <code>clearDisplay()</code>
-zuerst das Display gelöscht und anschließend entsprechend über die
-dazugehörigen Grafikfunktionen die Daten neu gezeichnet werden.
-Für die Anzeige der Wetterdaten wurde folgender Code verwendet:</p>
-
-<pre><code class="language-C++">display.setTextSize(2);
-display.setCursor(0, 16);
-display.print(&quot;  &quot;);
-display.print(m_lastTemp);
-display.print((char)248); display.println(&quot;C&quot;);
-display.print(&quot;  &quot;);
-display.print(m_lastHum); display.println(&quot;%&quot;);
-</code></pre>
-
-<p><img src="../../img/esp8266_i2c_display_weather_detail.jpg" alt="Display" /></p>
-
-<h3 id="openweather">OpenWeather</h3>
-
-<p>Um Daten von OpenWeather abzurufen, muss man sich zuvor registrieren. Anschließend
-kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
-Anwedung verwenden kann.</p>
-
-<p>OpenWeather besitzt für das Abrufen der Daten ein Rest-Interface. Dieses kann
-durch den ESP8266 leicht abgerufen werden:</p>
-
-<pre><code class="language-C++">WiFiClient client;
-client.connect(&quot;api.openweathermap.org&quot;, 80);
-
-String uri = &quot;/data/2.5/weather?id=&quot;;
-uri += ID;
-uri += &quot;&amp;appid=&quot;;
-uri += APP_ID;
-uri += &quot;&amp;units=metric&quot;;
-client.print(String(&quot;GET &quot;) 
-  + uri + &quot; HTTP/1.1\r\n&quot; +
-  &quot;Host: &quot; + HOST + &quot;\r\n&quot; +
-  &quot;Connection: close\r\n\r\n&quot;);
-
-while (client.available() == 0) {
-  // Auf Daten warten
-}
-
-String line;
-while(client.available()) {
-  line += client.readStringUntil('\r');
-}
-</code></pre>
-
-<p>Anschließend muss der empfangene Rest-String geparst werden. Hierfür existieren
-unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
-darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.</p>
-
-<pre><code class="language-C++">auto dataExtractor = [&amp;](String searchPattern) {
-  int idx = line.indexOf(searchPattern);
-  int delTokenIdx = line.indexOf(&quot;,&quot;, idx);
-  if (delTokenIdx &lt; 0)
-    delTokenIdx = line.indexOf(&quot;}&quot;, idx);
-  if (delTokenIdx &lt; 0) {
-    return 0.0f;
-  }
-  return line.substring(idx + searchPattern.length(), delTokenIdx).toFloat();
-};
-m_temp = dataExtractor(&quot;\&quot;temp\&quot;:&quot;);
-m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
-</code></pre>
+<p><a href="https://github.com/GrazerComputerClub/Talk/blob/master/FortbildungE_Geschwindigkeitsmessung_001.pdf">PDF - vollständige Anleitung zum herunterladen</a></p>
             </article>
           </div>
           
@@ -384,7 +309,7 @@ m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
 
   <div class="entry-categories"><p><span>Categories</span>
     
-    <a href="/Blog/categories/esp8266" title="View all posts in ESP8266">ESP8266</a>
+    <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
 
@@ -400,15 +325,15 @@ m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
 
   <div class="author">
     	
-    <img alt='Christoph Woergoetter' src="https://www.gravatar.com/avatar/4e54135ce3ee5a79c20cbdb02086487d?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Written by:<a href="https://woergi.wordpress.com/" title="Posts by Christoph Woergoetter" rel="author">Christoph Woergoetter</a> </span>
+      Written by:<a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>ZisrIHN1cmp1ZHBwbGh1aHU=</p>
+      <p>Softwareentwickler und PowerShell Evangelist.</p>
         
       
 	
@@ -419,7 +344,7 @@ m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/woergi">
+  href="https://twitter.com/schusterfredl">
   <i class="fa fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -428,7 +353,7 @@ m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
 
 
 <a class="email" target="_blank"
-href="mailto:christoph.woergoetter@gc2.at">
+href="mailto:manfred.wallner@gc2.at">
 <i class="fa fa-envelope"
 title="email icon"></i>
 </a>
@@ -440,7 +365,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/woergi">
+href="https://github.com/mwallner">
 <i class="fa fa-github"
 title="github icon"></i>
 </a>
