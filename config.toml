@@ -108,6 +108,7 @@ paginate = 5 #frontpage pagination
 
     [params.writers."Christoph Woergoetter"]
     email = "christoph.woergoetter@gc2.at"
+    link = "https://woergi.wordpress.com/"
     bio = [
       "ZisrIHN1cmp1ZHBwbGh1aHU="
     ]
