@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 09 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi Zero Audio</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/pi-zero-audio/</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/pi-zero-audio/</guid>
+      <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Zero W Stromaufnahme</title>

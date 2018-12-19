@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://grazercomputerclub.github.io/Blog"
+        },
+        "articleSection" : "post",
+        "name" : "Raspberry Pi Zero Audio",
+        "headline" : "Raspberry Pi Zero Audio",
+        "description" : "<p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-12-19 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-19 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/pi-zero-audio/",
+        "wordCount" : "424",
+        "image" : https://grazercomputerclub.github.io/Blogimg/Raspberry-Pi-Zero-Audio.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Raspberry Pi Zero Audio </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://grazercomputerclub.github.io/Blog/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://grazercomputerclub.github.io/Blog/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://grazercomputerclub.github.io/Blog/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://grazercomputerclub.github.io/Blog/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://grazercomputerclub.github.io/Blog/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/Blog"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/Blog/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/Blog/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/Raspberry-Pi-Zero-Audio.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">19 December</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Raspberry%20Pi%20Zero">Raspberry Pi Zero</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Raspberry Pi Zero Audio</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
+</p>
+
+<h2 id="grundsätzliches">Grundsätzliches</h2>
+
+<p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang bzw. Kopfhöreranschluss (3,5 mm Klinkenbuchse) wie der Raspberry Pi Model A und B. Nun gibt es drei Möglichkeiten zu einem Audioausgang zu kommen.<br />
+Per USB-Soundkarte per I2S oder per PWM-Ausgang. Eine USB-Soundkarte würde den einzigen USB-Steckplatz belegen. I2S benötigt einen I2S-Kontroller Platine sowie einige GPIOs. Der PWM-Ausgang lässt sich hingegen mit nur zwei Widerständen und zwei Kondensatoren am einfachsten realisieren.<br />
+Der Raspberry Pi hat an den GPIOs nur PWM0 und PWM1 zur Verfügung. Will man also Stereo-Audio realisieren, so werden beide PWM-Ausgänge belegt.<br />
+Der so erstellte Audio-Ausgang entspricht der Ausführung auf den ersten Raspberry Pis. Später wurde der Ausgang noch mit einem Verstärker und einer stabilen Spannung verbessert.</p>
+
+<h2 id="schaltung">Schaltung</h2>
+
+<p>An dem PWM-Ausgang wird ein Bandpass in Form einen Hochpass und Tiefpass RC-Filter angeschlossen. Man benötigt hierzu also folgende Schaltung:</p>
+
+<p><img src="../../img/PWM-Audio_Filter.png" alt="PWM-Audio RC-Filter" /></p>
+
+<p>Der Tiefpass besteht aus einem 270 Ohm Widerstand und einem 33 nF Kondensator. Der Hochpass besteht aus einem 150 Ohm Widerstand und einem 10 µF Kondensator.
+Danach kann der Ausgang bereits an einem Kopfhörer angeschlossen werden.</p>
+
+<p>Möchte man allerdings einen Lautsprecher anschließen so benötigt man noch einen Audio-Verstärker. Hier empfiehlt sich ein PAM8302 für Mono oder PAM8403 für Stereo.</p>
+
+<p><img src="../../img/PWM-Audio_Schaltplan.png" alt="PWM-Audio Schaltplan" /></p>
+
+<p><img src="../../img/PWM-Audio_Steckplatine.png" alt="PWM-Audio Steckplatine" /></p>
+
+<p>Wenn eine Mono Lautsprecher verwendet wird, aber Stereo-Audio vorhanden ist, so kann man die Ausgänge vor dem Verstärker über zwei 100 Ohm Widerstände zusammenführen (so wie in der Schaltung zu sehen). Achtung das Zusammenführen ohne Widerstände ergibt einen Kurzschluss!</p>
+
+<p>Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechner mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.</p>
+
+<h3 id="konfiguration">Konfiguration</h3>
+
+<p>Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so umkonfigurieren, dass das Audio-Signal erzeugt wird.
+Dazu muss man lediglich einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.</p>
+
+<p><strong>Mono:</strong></p>
+
+<pre><code>dtoverlay=pwm,pin=12,func=4
+</code></pre>
+
+<pre><code>dtoverlay=pwm,pin=18,func=2
+</code></pre>
+
+<pre><code>dtoverlay=pwm,pin=13,func=4
+</code></pre>
+
+<pre><code>dtoverlay=pwm,pin=19,func=2
+</code></pre>
+
+<p><strong>Stereo:</strong></p>
+
+<pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=13,func2=4
+</code></pre>
+
+<pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
+</code></pre>
+
+<pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=19,func2=2
+</code></pre>
+
+<pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2 
+</code></pre>
+
+<h3 id="test">Test</h3>
+
+<p>Nach dem Neustart muss nun nur noch ein Test erfolgen.</p>
+
+<p><strong>Stereo Links &amp; Rechts</strong>:<br />
+<code>speaker-test -t sine -f 440 -c 2</code></p>
+
+<p><strong>Stereo Links</strong>:<br />
+<code>speaker-test -t sine -f 440 -c 1 -s 1</code></p>
+
+<p><strong>Stereo Rechts</strong>:<br />
+<code>speaker-test -t sine -f 440 -c 1 -s 2</code></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  <div class="entry-categories"><p><span>Categories</span>
+    
+    <a href="/Blog/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Written by:<a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://grazercomputerclub.github.io/Blog/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://grazercomputerclub.github.io/Blog/js/jquery.min.js"></script>
+<script src="https://grazercomputerclub.github.io/Blog/js/jquerymigrate.js"></script>
+<script src="https://grazercomputerclub.github.io/Blog/js/production.min.js"></script>
+
+</body>
+</html>
