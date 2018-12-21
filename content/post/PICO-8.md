@@ -26,7 +26,7 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 **Auflösung:** 128 x 128 Pixel  
 **Bilder pro Sekunde (FPS):** 30 oder 60  
 **Farben:** 16 Farben (Palette unter CC0 freigegeben)  
-**Modul (Catridge) Größe:** 32 kB  
+**Modul (Cartridge) Größe:** 32 kB  
 **Tasten:** D-PAD, 2 Aktionstasten, Menütaste  
 **Sound**: 4 Kanal, 64 definierbare Chip Sounds  
 **Limitierungen:**  Sprites (128 8x8 Pixel), Maps (128x32 Zellen), Source (8192 Tokens)  
@@ -51,7 +51,7 @@ Steuerung Player 2:
 
 ### Modul (Catridge)
 
-Vielfach wird beim Programmspeicher von Catridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Catridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.
+Vielfach wird beim Programmspeicher von Cartridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Cartridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.
 
 
 ## Programmierung  
