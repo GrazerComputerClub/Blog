@@ -11,10 +11,9 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Werbefrei im Heimnetz mit Pi-hole",
-        "headline" : "Werbefrei im Heimnetz mit Pi-hole",
-        "description" : "<p>Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
-Hier hilft das Projekt &ldquo;Pi-hole&rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.
+        "name" : "PICO-8",
+        "headline" : "PICO-8",
+        "description" : "<p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -23,17 +22,17 @@ Hier hilft das Projekt &ldquo;Pi-hole&rdquo;, welches als lokaler DNS-Server ein
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-08 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-08 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/",
-        "wordCount" : "271",
-        "image" : https://grazercomputerclub.github.io/Blogimg/pihole_homepage.png",
+        "datePublished": "2018-12-21 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-21 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/pico-8/",
+        "wordCount" : "480",
+        "image" : https://grazercomputerclub.github.io/Blogimg/PICO-8.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Werbefrei im Heimnetz mit Pi-hole </title>
+ <title>PICO-8 </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -235,17 +234,23 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/pihole_homepage.png">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/PICO-8.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">08 December</span>	<span> / </span>
+          <span class="date">21 December</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a>
+            <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Programmierung">Programmierung</a>
+          </span>
           
           <span class="category">
             <span> / </span>
@@ -257,49 +262,132 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Werbefrei im Heimnetz mit Pi-hole</h1>
+          <h1 class='entry-title'> PICO-8</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
-Hier hilft das Projekt &ldquo;Pi-hole&rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.
+              <p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 </p>
 
-<h2 id="setup">Setup</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Die Installation ist wirklich einfach, man muss nur den Befehl</p>
+<p>PICO-8 ist eine erfundene „Fantasy Console“ die am PC (Windows, Linux, MacOS) und auf dem Raspberry
+Pi emuliert werden kann. Es handelt sich um ein kommerzielles Produkt das von Lexaloffle Games entwickelt wird. Die Programmierung erfolgt in Lua. Mithilfe der integrierten Entwicklungsumgebung können Source, Musik, Sound, Sprites und Maps erstellen werden.
+Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam bzw. im Schulungsbereich kann es gratis benutzt werden. Nach der Schulung können die Teilnehmer vergünstigt eine &ldquo;Take-home license&rdquo; erwerben.</p>
 
-<pre><code>curl -sSL https://install.pi-hole.net | bash
+<h2 id="technische-daten">Technische Daten</h2>
+
+<p><strong>Auflösung:</strong> 128 x 128 Pixel<br />
+<strong>Bilder pro Sekunde (FPS):</strong> 30 oder 60<br />
+<strong>Farben:</strong> 16 Farben (Palette unter CC0 freigegeben)<br />
+<strong>Modul (Catridge) Größe:</strong> 32 kB<br />
+<strong>Tasten:</strong> D-PAD, 2 Aktionstasten, Menütaste<br />
+<strong>Sound</strong>: 4 Kanal, 64 definierbare Chip Sounds<br />
+<strong>Limitierungen:</strong>  Sprites (128 8x8 Pixel), Maps (128x32 Zellen), Source (8192 Tokens)</p>
+
+<h3 id="palette">Palette</h3>
+
+<p><img src="../../img/PICO-8-Palette.png" alt="PICO-8 Palette" /></p>
+
+<h3 id="tastenzuordnung">Tastenzuordnung</h3>
+
+<p>Pause: Enter bzw. P</p>
+
+<p>Steuerung Player 1:
+  D-PAD: Steuerkreuz<br />
+  Taste 1 (X): Z bzw. N<br />
+  Taste 2 (O): N bzw. M</p>
+
+<p>Steuerung Player 2:
+  D-PAD = S D E F<br />
+  Taste 1 (X): Tab bzw. Shift<br />
+  Taste 2 (O): Q bzw. A</p>
+
+<h3 id="modul-catridge">Modul (Catridge)</h3>
+
+<p>Vielfach wird beim Programmspeicher von Catridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Catridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.</p>
+
+<h2 id="programmierung">Programmierung</h2>
+
+<p><img src="../../img/PICO-8-Gameplay.png" alt="PICO-8 Gameplay" /></p>
+
+<h3 id="sourcecode-ausschnitt-als-beispiel">Sourcecode Ausschnitt als Beispiel</h3>
+
+<pre><code>FUNCTION MOVEPADDLE()
+  IF BTN(0) THEN
+    IF PADX&gt;=STEP THEN
+      PADX-=STEP
+    ELSE
+      PADX=0
+    END
+  ELSEIF BTN(1) THEN
+    IF PADX+PADW&lt;=127-STEP THEN
+      PADX+=STEP
+    ELSE
+      PADX=127-PADW
+	  END
+  END
+END
+
+FUNCTION _UPDATE()
+  MOVEENEMY()
+  MOVEPADDLE()
+  BOUNCEBALL()
+  BOUNCEBUMPER()
+  BOUNCEPADDLE()
+  MOVEBALL()
+  CHECKENEMYHIT()
+END
+
+FUNCTION _DRAW()
+  CLS()
+  FOREACH(BUMPERS, DRAW_BUMPER)
+  DRAW_ENEMY()
+  RECTFILL(PADX,PADY,PADX+PADW,PADY+PADH,15)
+  PRINT(&quot;TIME=&quot;..CEIL(TIME())..&quot;S&quot;,0,122,12)
+  PRINT(&quot;LIVE=&quot;..LIVE,40,122,12)
+  PRINT(&quot;USS YOU'RE &quot;..ENEMY_HEALTH..&quot;%&quot;,70,122,12) 
+  CIRCFILL(BALLX,BALLY,BALLSIZE,6)
+END
 </code></pre>
 
-<p>in einem Terminal ausführen.
-Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard über einen Browser aufrufen.</p>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
 
-<p>Wenn man die IP-Adresse seiner Raspberry nicht weiß, kann man diese entweder über das Web-Interface seines Routers, über die &ldquo;config.txt&rdquo;-Datei, oder über den Kommandozeilenbefehl <code>sudo ifconfig</code> herausfinden.</p>
+<p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="http://wiringpi.com/pins/">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf 1 oder 0 gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br />
+Mit dem Befehl &lsquo;peek&rsquo; dient zum Einlesen des Zustands des GPIOs.</p>
 
-<h2 id="pi-hole-aktivieren">Pi-hole aktivieren</h2>
+<p><strong>Blinklicht auf zwei GPIOs:</strong></p>
 
-<p>Um Pi-hole zu nutzen kann man entweder in allen betroffenen Geräten (Computer, Smartphone, Tablet) die IP-Adresse bzw. DNS-Einstellungen manuell anpassen, oder einmal für alle an zentraler Stelle - in eurem Router.</p>
+<pre><code>TIMER=0
 
-<p><img src="../../img/pihole_router_config.png" alt="Raspberry Pi als 1. DNS Server im Heimnetzwerk festlegen" /></p>
+FUNCTION _UPDATE()
+  TIMER = TIMER+1
+  IF TIMER&gt;=60 THEN
+    TIMER = 0
+  END
+  IF TIMER==30 THEN
+    POKE(0X5F80,255)
+    POKE(0X5F87,255)
+  ELSEIF TIMER==0 THEN
+    POKE(0X5F80,0)
+    POKE(0X5F87,0)
+  END
+END
+</code></pre>
 
-<p>Um Pi-hole für das gesamte Heimnetz zu nutzen, kann einfach der 1. DNS-Server in den DHCP-Einstellungen des Routers auf die IP-Adresse des Raspberry Pis angepasst werden.
-(Achtung: Bereits mit dem Netzwerk verbundene Geräte benötigen vermutlich einen Neustart, damit der Werbeblocker aktiv wird.)</p>
+<h2 id="verlinkungen">Verlinkungen</h2>
 
-<h2 id="ausnahmen-hinzufügen">Ausnahmen hinzufügen</h2>
+<h3 id="pico-8">PICO-8</h3>
 
-<p>Stellt man fest, dass die Werbung von bestimmten Websiten nicht geblockt wird, oder lassen sich gewisse Webseiten mit aktiviertem Werbeblocker nicht öffnen, so kann man diese in den Ausnahmeregeln <strong>Whitelist</strong> bzw. <strong>Blacklist</strong> explizit hinzufügen oder ausnehmen.</p>
+<p>Offizielles PICO-8 <a href="https://www.lexaloffle.com/pico8_manual.txt">Handbuch</a><br />
+Bezug <a href="https://www.lexaloffle.com/pico-8.php?#getpico8">PICO-8</a><br />
+Vergünstigte Lizenz <a href="https://www.lexaloffle.com/pico-8.php?page=schools">PICO-8 for Educators</a></p>
 
-<p>Whitelist: Es wird keine Werbung von Domains in dieser Liste blockiert</p>
+<h3 id="englische-handbücher-für-den-einstieg">Englische Handbücher für den Einstieg</h3>
 
-<p>Blacklist: Diese Domain wird blockiert, d. h. DNS-Anfragen werden einfach nicht beantwortet)</p>
-
-<p><img src="../../img/pihole_panel.png" alt="Pi-hole Admin Panel" /></p>
-
-<p>Möchte man den Werbeblocker temporär komplett deaktiveren kann man das über das über den Menüeintrag &ldquo;Disable-&gt;&rdquo; bewerkstelligen.</p>
-
-<p><img src="../../img/pihole_disable.png" alt="Pi-hole temporär deaktivieren" /></p>
+<p><a href="https://mboffin.itch.io/gamedev-with-pico-8-issue1">Gamedev with PICO-8</a><br />
+<a href="https://sectordub.itch.io/pico-8-fanzine-1">PICO-8 Fanzine #1 - #4</a></p>
             </article>
           </div>
           
@@ -308,6 +396,7 @@ Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard üb
 
   <div class="entry-categories"><p><span>Categories</span>
     
+    <a href="/Blog/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
     <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
@@ -324,15 +413,15 @@ Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard üb
 
   <div class="author">
     	
-    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Written by:<a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a> </span>
+      Written by:<a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>Softwareentwickler und PowerShell Evangelist.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -343,7 +432,7 @@ Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard üb
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/schusterfredl">
+  href="https://twitter.com/m_stroh">
   <i class="fa fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -352,7 +441,7 @@ Nach einem eventuellen Neustart der Raspberry kann man das Pi-hole Dashboard üb
 
 
 <a class="email" target="_blank"
-href="mailto:manfred.wallner@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fa fa-envelope"
 title="email icon"></i>
 </a>
@@ -364,7 +453,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/mwallner">
+href="https://github.com/mstroh76">
 <i class="fa fa-github"
 title="github icon"></i>
 </a>
