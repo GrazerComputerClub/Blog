@@ -5,8 +5,8 @@ image = "img/brickPi_explorer.jpg"
 date = "2018-12-22"
 title = "Lego Roboter + Raspberry Pi"
 writer = "Manfred Wallner"
-categories = ["Programmierung", "Lego", "RaspberryPi"]
-keywords = ["Mindstorms", "BrickPi", "Lego"]
+categories = ["Programmierung", "Raspberry Pi"]
+keywords = ["Mindstorms", "BrickPi", "Lego", "Roboter"]
 weight = 1
 +++
 
@@ -28,7 +28,7 @@ Auf der [Lego Mindstorms Website](https://www.lego.com/de-de/mindstorms) findet 
 
 Ich habe mich dazu entschlossen einen Roboter Arm ("RobotARM") zu bauen:
 
-![Lego Roboter Arm](../../img/robotARM.JPG)
+![Lego Roboter Arm](../../img/robotARM.jpg)
 
 Für dieses Modell habe ich 
 * 3 NXT Motoren

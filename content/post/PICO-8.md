@@ -39,15 +39,15 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 
 Pause: Enter bzw. P
 
-Steuerung Player 1:
-  D-PAD: Steuerkreuz  
-  Taste 1 (X): Z bzw. N  
-  Taste 2 (O): N bzw. M  
+**Steuerung Player 1:**  
+D-PAD: Steuerkreuz  
+Aktionstaste 1 (O): Z bzw. N  
+Aktionstaste 2 (X): N bzw. M  
 
-Steuerung Player 2:
-  D-PAD = S D E F  
-  Taste 1 (X): Tab bzw. Shift  
-  Taste 2 (O): Q bzw. A  
+**Steuerung Player 2:**  
+D-PAD = S D E F  
+Aktionstaste 1 (O): Tab bzw. Shift  
+Aktionstaste 2 (X): Q bzw. A  
 
 ### Modul (Catridge)
 
@@ -102,7 +102,7 @@ END
 ```
 ### Raspberry Pi
 
-Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs ([WiringPi Nummerierung](http://wiringpi.com/pins/)) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf 1 oder 0 gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl 'poke' den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).  
+Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs ([WiringPi Nummerierung](http://wiringpi.com/pins/)) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf High oder Low gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl 'poke' den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).  
 Mit dem Befehl 'peek' dient zum Einlesen des Zustands des GPIOs.
 
 **Blinklicht auf zwei GPIOs:**
@@ -136,4 +136,8 @@ Vergünstigte Lizenz [PICO-8 for Educators](https://www.lexaloffle.com/pico-8.ph
 ### Englische Handbücher für den Einstieg
 
 [Gamedev with PICO-8](https://mboffin.itch.io/gamedev-with-pico-8-issue1)  
-[PICO-8 Fanzine #1 - #4](https://sectordub.itch.io/pico-8-fanzine-1)
+[PICO-8 Fanzine #1](https://sectordub.itch.io/pico-8-fanzine-1)  
+[PICO-8 Fanzine #2](https://sectordub.itch.io/pico-8-fanzine-2)  
+[PICO-8 Fanzine #3](https://sectordub.itch.io/pico-8-fanzine-3)  
+[PICO-8 Fanzine #4](https://sectordub.itch.io/pico-8-fanzine-4)
+
