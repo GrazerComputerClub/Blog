@@ -11,10 +11,10 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
-        "headline" : "Raspberry Pi Konfiguration mit &#39;config.txt&#39;",
-        "description" : "<p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &ldquo;config.txt&rdquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
+        "name" : "Lego Roboter &#43; Raspberry Pi",
+        "headline" : "Lego Roboter &#43; Raspberry Pi",
+        "description" : "<p>&ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a>.&rdquo;
+Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -23,17 +23,17 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-07 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-07 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/",
-        "wordCount" : "515",
-        "image" : https://grazercomputerclub.github.io/Blogimg/config-txt.jpg",
+        "datePublished": "2018-12-22 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-22 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/robot-arm/",
+        "wordCount" : "588",
+        "image" : https://grazercomputerclub.github.io/Blogimg/brickPi_explorer.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39; </title>
+ <title>Lego Roboter &#43; Raspberry Pi </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -235,17 +235,23 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/config-txt.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/brickPi_explorer.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">07 December</span>	<span> / </span>
+          <span class="date">22 December</span>	<span> / </span>
 
           <span class="author">
-            <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
+            <a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a>
           </span>
 
 
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/Blog/Programmierung">Programmierung</a>
+          </span>
           
           <span class="category">
             <span> / </span>
@@ -257,158 +263,131 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Raspberry Pi Konfiguration mit &#39;config.txt&#39;</h1>
+          <h1 class='entry-title'> Lego Roboter &#43; Raspberry Pi</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &ldquo;config.txt&rdquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
+              <p>&ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a>.&rdquo;
+Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
 </p>
 
-<h2 id="allgemeines">Allgemeines</h2>
+<h2 id="brickpi">BrickPi</h2>
 
-<p>Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei &ldquo;config.txt&rdquo; vorgenommen. Die Datei liegt auf der
-ersten Partition, die mit dem Windows FAT Dateisystem formatiert ist. Dadurch kann sie sehr leicht auch aus einem Windows System verändert werden.
-Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle <a href="https://notepad-plus-plus.org/download/">Notepad++</a>, obwohl der integrierte Notepad Editor von Windows 10 nun auch endlich diese <a href="https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/">Funktion</a> beherrscht. <strong>\o/</strong></p>
+<p>Um circa. 100€ ist die <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a> Erweiterung für eure Raspberry Pi zu haben. Der Versand dauert ca. 1-2 Wochen (nach meiner Erfahrung). Wenn ihr schon einen Lego-Mindstorms NXT oder EV3 Baukasten Zuhause habt könnt ihr sofort loslegen.</p>
 
-<h2 id="spezielle-konfiguationsmöglichkeiten">Spezielle Konfiguationsmöglichkeiten</h2>
+<p>Warum möchte man einen NXT oder EV3 durch eine Raspberry austauschen? - ganz klar: ihr könnt mit einer Raspberry noch einfacher, noch mehr aus euren Kreationen rausholen.
+* Webserver / Services zum steuern eurer Roboter - kein Problem!
+* Mehrere BrickPis, oder BrickPi mit NXT/RXC koppeln - kein Problem!
+* Fernsteuerung über SSH/CLI - Check!</p>
 
-<p>Eine Auflistung der gängigsten Parametrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden.
-Bei der Raspberry Pi Foundation gibt es zum Beispiel umfassende Informationen bei <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/">documentation &gt; configuration &gt; config-txt</a>. Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.</p>
+<h2 id="roboter-bauen-fertig-los">Roboter bauen, fertig LOS!</h2>
 
-<h3 id="include">Include</h3>
+<p>Auf der <a href="https://www.lego.com/de-de/mindstorms">Lego Mindstorms Website</a> findet ihr etliche Ideen und Bauanleitungen für Einsteiger, Fortgeschrittene bis zu &ldquo;Extrem-Varianten&rdquo; von DIJ-Robotern.</p>
 
-<p>Über die Anweisung <strong>include</strong> können zusätzliche Textdateien für die Konfiguration eingebunden werden. Damit kann man zum Beispiel über eine einzelne Zeile
-eine Vielzahl an Parametrierungen hinzufügen und auch wieder leicht entfernen.</p>
+<p>Ich habe mich dazu entschlossen einen Roboter Arm (&ldquo;RobotARM&rdquo;) zu bauen:</p>
 
-<pre><code>#include OverclockPiZero.txt
-include SPIDisplaySettings.txt
+<p><img src="../../img/robotARM.jpg" alt="Lego Roboter Arm" /></p>
+
+<p>Für dieses Modell habe ich
+* 3 NXT Motoren
+* 1 Ultraschall Sensor
+* 1 Berührungssensor
+* 1 Farbsensor
+verwendet.</p>
+
+<p>Die Motoren sind für die Horizontal- und Vertikalbewegung des Greifarmes, sowie für das Schließen bzw. Öffnen der &ldquo;Zange&rdquo; gedacht.
+Mit dem Ultraschall-Sensor wird die Distanz zum Objekt in der Zange bestimmt, der Farbsensor kann dazu verwendet werden um die Farbe des zu greifenden Objektes zu bestimmen.
+Ein Berührungssensor (Taster) verhindert, dass der Greifarm zu weit nach hinten kippt bzw. dessen Null-Position zu finden.</p>
+
+<h2 id="treiber-raspbian-einrichten">Treiber / Raspbian einrichten</h2>
+
+<p>Wenn man ein Set mit SD-Karte von Dexter Industries gekauft hat ist dieser Schritt nicht notwendig, da die vorbereitete Distribution bereits alle notwendigen Module beinhaltet.</p>
+
+<p>Um eine Standard Raspbian Distribution für BrickPi vorzubereiten genügt es folgende Befehle auszuführen:</p>
+
+<p>(Checkout des <a href="https://github.com/DexterInd/BrickPi">BrickPi-Projektes auf GitHub</a> + Installations-Script ausführen)</p>
+
+<pre><code>git clone https://github.com/DexterInd/BrickPi.git
+cd BrickPi/Setup_Files
+sudo chmod +x install.sh
+sudo ./install.sh
 </code></pre>
 
-<h3 id="filter">Filter</h3>
+<h2 id="programmierung">Programmierung</h2>
 
-<p>Bedingte Einstellungen können über <strong>Filter</strong> realisiert werden, und gelten somit nur unter bestimmten Umständen. Der Filter wird in eckigen Klammern angegeben <em>[ ]</em>. <em>[all]</em> deaktiviert den Filter. Als Filter kann verwendet werden:
-* Raspberry Pi Variante (Pi 3, Pi Zero usw.)
-* <a href="https://de.wikipedia.org/wiki/Extended_Display_Identification_Data">EDID</a> Kennung des Monitors
-* Seriennummer des Raspberry Pis
-* GPIO Zustand</p>
+<p>Es gibt <a href="https://github.com/DexterInd/BrickPi/tree/master/Software">vorbereitete Softwarebibliotheken</a> für C, Python und Scratch.</p>
 
-<p>Die Kombination von Filtern ist auch möglich. Damit sind viele spezielle Einsatzgebiete möglich.</p>
+<p>Für die Software des &ldquo;RobotARM&rdquo; habe ich mich dazu entschieden, diesen in zu schreiben.</p>
 
-<p>Beim der <strong>Raspberry Pi Variante</strong> muss nur der Kurzname des Raspberry Pi in eckigen Klammern angegeben werden. Alle nachfolgenden Einstellungen gelten dann nur für diese Raspberry Pi Variante.</p>
+<p>Als erstes müsst ihr die benötigten &ldquo;Treiber&rdquo; für euer Projekt auswählen:</p>
 
-<p><strong>[pi1]</strong> &hellip; Raspberry Pi 1 (A, A+, B, B+)<br />
-<strong>[pi2]</strong> &hellip; Raspberry Pi 2<br />
-<strong>[pi3]</strong> &hellip; Raspberry Pi 3, Compute Module 3<br />
-<strong>[pi3+]</strong> &hellip; Raspberry Pi 3+<br />
-<strong>[pi0]</strong> &hellip; Pi Zero, Pi Zero W<br />
-<strong>[pi0w]</strong> &hellip; Pi Zero W<br />
-<strong>[all]</strong> &hellip; Filter wird aufgehoben</p>
-
-<p>Beispiel:</p>
-
-<pre><code>[pi0]
-# Overclock Pi Zero (W)
-arm_freq=1030
-core_freq=500
-sdram_freq=500
-[all]
+<pre><code>git clone https://github.com/DexterInd/BrickPi.git
+cp BrickPi/Software/BrickPi_C/Drivers/ RobotArm/ -r
+cd RobotArm/
 </code></pre>
 
-<p>Beim der <strong>Seriennummer</strong>, muss man die Raspberry Pi Seriennummer mit &ldquo;0x&rdquo; ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
-<code>cat /proc/cpuinfo | grep Serial</code> ermittelt.</p>
+<p>Die C-Bibliothek kommt in Fom von zwei Dateien - &ldquo;BrickPi.h&rdquo; und &ldquo;tick.h&rdquo;</p>
 
-<pre><code>Serial		: 0000000012345678
+<pre><code>[mw@mwmaster RobotArm]$ ll
+insgesamt 36K
+drwxr-xr-x  2 mw mw 4,0K 22. Dez 16:51 ./
+drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
+-rw-r--r--  1 mw mw  24K 22. Dez 16:51 BrickPi.h
+-rw-r--r--  1 mw mw 1,1K 22. Dez 16:51 tick.h
 </code></pre>
 
-<p>Beispiel:</p>
+<p>Diese müssen in euren Programm inkludiert werden.</p>
 
-<pre><code>[0x12345678]
-# UART defect
-enable_uart=0
-[all]
+<p>Für die C-Bibliothek gibt es <a href="https://github.com/DexterInd/BrickPi/tree/master/Software/BrickPi_C/Project_Examples">ein einfaches Beispiel</a>, um sich mit der Funktionsweise der bereitgestellten API vertraut zu machen.</p>
+
+<p>Euer Programm muss keiner bestimmen Form entsprechen, es sind jedoch einige Funktionsaufrufe in die BrickPi-Bibliothek (siehe BrickPi.h) notwendig, um die Hardware zu initialisieren.</p>
+
+<p>Am besten man kapselt diese in Hilfsfunktionen, damit die Program-Main übersichtlicher bleibt:</p>
+
+<pre><code>void SetUARTAtmegaPorts() {
+    //http://www.dexterindustries.com/forum/?topic=programming-in-c-2/#post-1078
+    BrickPi.Address[0] = 1; // UART AtMega 328P Address (needed by BrickPi)
+    BrickPi.Address[1] = 2; // UART AtMega 328P Address (needed by BrickPi)
+}
+
+void DeviceConfig() {
+    wiringPiSetup();
+    SetUARTAtmegaPorts();
+    BrickPi.MotorEnable[MOTOR_ROTATE]   = TYPE_MOTOR_SPEED;
+    BrickPi.MotorEnable[MOTOR_TILT]     = TYPE_MOTOR_SPEED;
+    BrickPi.MotorEnable[MOTOR_GRAB]     = TYPE_MOTOR_SPEED;
+    BrickPi.Timeout = ROBOTARM_DEFAULT_TIMEOUT;
+    BrickPiSetTimeout();
+
+    BrickPi.SensorType[SENSOR_ULTRASONIC]   = TYPE_SENSOR_ULTRASONIC_CONT;
+    BrickPi.SensorType[SENSOR_TOUCH]        = TYPE_SENSOR_TOUCH;
+    BrickPi.SensorType[SENSOR_LIGHT]        = TYPE_SENSOR_LIGHT_ON;
+}
 </code></pre>
 
-<p>Beim Filter über <strong>GPIO Zustand</strong>, muss man in eckigen Klammern die GPIO-Nummer (BCM) und den Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren.</p>
+<p>Damit bleibt die Hauptfunktion relativ gut lesbar:</p>
 
-<p>Beispiel:</p>
-
-<pre><code>[gpio4=1]
-# GPIO 4 switch to 720p60 HDMI Mode
-hdmi_mode=4
-disable_overscan=1
-[all]
+<pre><code>int main(int argc, char *argv[]) {
+    printf(&quot; - RobotARM -\n&quot;);
+    ClearTick();
+    int setupResult = BrickPiSetup();
+    if (setupResult) {
+        printf(&quot;ERROR! - failed to initialize BrickPi! (%d)\n&quot;, setupResult);
+        return setupResult;
+    }
+    DeviceConfig();
+    setupResult = BrickPiSetupSensors();
+    if (setupResult) {
+        printf(&quot;ERROR! - failed to setup sensors! (%d)\n&quot;, setupResult);
+        return setupResult;
+    }
+    printf(&quot; robot starting...\n\n&quot;);
+    return RobotMain();
+}
 </code></pre>
 
-<h2 id="konfigurationen-auslesen">Konfigurationen auslesen</h2>
-
-<p>Wenn Raspbian Linux gestartet ist, können die Einstellungen der &ldquo;config.txt&rdquo; Konfigurationsdatei mit dem Befehl <code>vcgencmd get_config int</code> aufgelistet werden.</p>
-
-<p><strong>Raspberry Pi Zero:</strong></p>
-
-<pre><code>aphy_params_current=547
-arm_freq=1000
-audio_pwm_mode=514
-config_hdmi_boost=5
-core_freq=400
-disable_auto_turbo=1
-disable_commandline_tags=2
-display_hdmi_rotate=-1
-display_lcd_rotate=-1
-dphy_params_current=547
-force_eeprom_read=1
-force_pwm_open=1
-framebuffer_ignore_alpha=1
-framebuffer_swap=1
-gpu_freq=300
-hdmi_force_cec_address=65535
-hdmi_group=1
-hdmi_mode=1
-ignore_lcd=1
-init_uart_clock=0x2dc6c00
-over_voltage_avs=0x249f0
-overscan_bottom=32
-overscan_left=32
-overscan_right=32
-overscan_top=32
-pause_burst_frames=1
-program_serial_random=1
-sdram_freq=450
-</code></pre>
-
-<p><strong>Raspberry Pi 3 A+:</strong></p>
-
-<pre><code>aphy_params_current=819
-arm_freq=1400
-audio_pwm_mode=514
-config_hdmi_boost=5
-core_freq=400
-desired_osc_freq=0x331df0
-desired_osc_freq_boost=0x3c45b0
-disable_commandline_tags=2
-disable_l2cache=1
-display_hdmi_rotate=-1
-display_lcd_rotate=-1
-dphy_params_current=547
-force_eeprom_read=1
-force_pwm_open=1
-framebuffer_ignore_alpha=1
-framebuffer_swap=1
-gpu_freq=300
-hdmi_force_cec_address=65535
-init_uart_clock=0x2dc6c00
-lcd_framerate=60
-over_voltage_avs=62500
-over_voltage_avs_boost=0x27ac4
-overscan_bottom=48
-overscan_left=48
-overscan_right=48
-overscan_top=48
-pause_burst_frames=1
-program_serial_random=1
-sdram_freq=450
-</code></pre>
+<p>Den kompletten Code für den RobotARM könnt ihr <a href="https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9">hier</a> beziehen.</p>
             </article>
           </div>
           
@@ -417,6 +396,7 @@ sdram_freq=450
 
   <div class="entry-categories"><p><span>Categories</span>
     
+    <a href="/Blog/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
     <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
@@ -433,15 +413,15 @@ sdram_freq=450
 
   <div class="author">
     	
-    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Written by:<a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+      Written by:<a href="https://mwallner.net" title="Posts by Manfred Wallner" rel="author">Manfred Wallner</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+      <p>Softwareentwickler und PowerShell Evangelist.</p>
         
       
 	
@@ -452,7 +432,7 @@ sdram_freq=450
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/m_stroh">
+  href="https://twitter.com/schusterfredl">
   <i class="fa fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -461,7 +441,7 @@ sdram_freq=450
 
 
 <a class="email" target="_blank"
-href="mailto:martin.strohmayer@gc2.at">
+href="mailto:manfred.wallner@gc2.at">
 <i class="fa fa-envelope"
 title="email icon"></i>
 </a>
@@ -473,7 +453,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/mstroh76">
+href="https://github.com/mwallner">
 <i class="fa fa-github"
 title="github icon"></i>
 </a>

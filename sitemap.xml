@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://grazercomputerclub.github.io/Blog/post/robot-arm/</loc>
+    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/pico-8/</loc>
     <lastmod>2018-12-21T00:00:00+00:00</lastmod>
   </url>
@@ -130,25 +135,25 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/</loc>
-    <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/</loc>
-    <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/programmierung/</loc>
-    <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</loc>
-    <lastmod>2018-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
