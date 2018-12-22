@@ -25,7 +25,7 @@
         "datePublished": "2018-12-21 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-21 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/pico-8/",
-        "wordCount" : "480",
+        "wordCount" : "487",
         "image" : https://grazercomputerclub.github.io/Blogimg/PICO-8.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -281,7 +281,7 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 <p><strong>Auflösung:</strong> 128 x 128 Pixel<br />
 <strong>Bilder pro Sekunde (FPS):</strong> 30 oder 60<br />
 <strong>Farben:</strong> 16 Farben (Palette unter CC0 freigegeben)<br />
-<strong>Modul (Catridge) Größe:</strong> 32 kB<br />
+<strong>Modul (Cartridge) Größe:</strong> 32 kB<br />
 <strong>Tasten:</strong> D-PAD, 2 Aktionstasten, Menütaste<br />
 <strong>Sound</strong>: 4 Kanal, 64 definierbare Chip Sounds<br />
 <strong>Limitierungen:</strong>  Sprites (128 8x8 Pixel), Maps (128x32 Zellen), Source (8192 Tokens)</p>
@@ -294,19 +294,19 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 
 <p>Pause: Enter bzw. P</p>
 
-<p>Steuerung Player 1:
-  D-PAD: Steuerkreuz<br />
-  Taste 1 (X): Z bzw. N<br />
-  Taste 2 (O): N bzw. M</p>
+<p><strong>Steuerung Player 1:</strong><br />
+D-PAD: Steuerkreuz<br />
+Aktionstaste 1 (O): Z bzw. N<br />
+Aktionstaste 2 (X): N bzw. M</p>
 
-<p>Steuerung Player 2:
-  D-PAD = S D E F<br />
-  Taste 1 (X): Tab bzw. Shift<br />
-  Taste 2 (O): Q bzw. A</p>
+<p><strong>Steuerung Player 2:</strong><br />
+D-PAD = S D E F<br />
+Aktionstaste 1 (O): Tab bzw. Shift<br />
+Aktionstaste 2 (X): Q bzw. A</p>
 
 <h3 id="modul-catridge">Modul (Catridge)</h3>
 
-<p>Vielfach wird beim Programmspeicher von Catridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Catridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.</p>
+<p>Vielfach wird beim Programmspeicher von Cartridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Cartridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.</p>
 
 <h2 id="programmierung">Programmierung</h2>
 
@@ -354,7 +354,7 @@ END
 
 <h3 id="raspberry-pi">Raspberry Pi</h3>
 
-<p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="http://wiringpi.com/pins/">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf 1 oder 0 gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br />
+<p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="http://wiringpi.com/pins/">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf High oder Low gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br />
 Mit dem Befehl &lsquo;peek&rsquo; dient zum Einlesen des Zustands des GPIOs.</p>
 
 <p><strong>Blinklicht auf zwei GPIOs:</strong></p>
@@ -387,7 +387,10 @@ Vergünstigte Lizenz <a href="https://www.lexaloffle.com/pico-8.php?page=schools
 <h3 id="englische-handbücher-für-den-einstieg">Englische Handbücher für den Einstieg</h3>
 
 <p><a href="https://mboffin.itch.io/gamedev-with-pico-8-issue1">Gamedev with PICO-8</a><br />
-<a href="https://sectordub.itch.io/pico-8-fanzine-1">PICO-8 Fanzine #1 - #4</a></p>
+<a href="https://sectordub.itch.io/pico-8-fanzine-1">PICO-8 Fanzine #1</a><br />
+<a href="https://sectordub.itch.io/pico-8-fanzine-2">PICO-8 Fanzine #2</a><br />
+<a href="https://sectordub.itch.io/pico-8-fanzine-3">PICO-8 Fanzine #3</a><br />
+<a href="https://sectordub.itch.io/pico-8-fanzine-4">PICO-8 Fanzine #4</a></p>
             </article>
           </div>
           
