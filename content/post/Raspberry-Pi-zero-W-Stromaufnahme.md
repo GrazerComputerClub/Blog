@@ -21,8 +21,8 @@ Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-
 
 ## Messung
 
-Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA ohne WLAN und 110 mA mit verbundenen WLAN. Bei CPU-Belastung stieg der Wert um 80 mA auf maximal 190 mA an. Wird das WLAN stark belastet kann der Verbrauch kurzzeitig auf bis zu 220 mA steigen.  
-Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelasteten Betrieb. Damit steht dem Betrieb am USB-Bus nichts entgegen!  
+Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA ohne WLAN und 110 mA mit verbundenen WLAN. Bei CPU-Belastung stieg der Wert um 80 mA auf maximal 190 mA an. Wird das WLAN stark belastet kann der Verbrauch kurzzeitig auf bis zu 290 mA steigen!  
+Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelasteten Betrieb. Kommt starke CPU-Last und WLAN Kommunikation zusammen, so liegt die maximale Leitungsaufnahme bei ca. 1,5 Watt. Damit steht dem Betrieb am USB-Bus (2,5 Watt) nichts entgegen!  
 Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.
 
 ![Diagramm](../../img/Raspberry-Pi-zero-W-Stromaufnahme.png) 
