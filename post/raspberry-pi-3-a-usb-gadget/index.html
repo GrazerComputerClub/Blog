@@ -11,9 +11,9 @@
              "@id": "https://grazercomputerclub.github.io/Blog"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi Zero W Stromaufnahme",
-        "headline" : "Raspberry Pi Zero W Stromaufnahme",
-        "description" : "<p>Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+        "name" : "Raspberry Pi 3 A&#43; USB Gadget",
+        "headline" : "Raspberry Pi 3 A&#43; USB Gadget",
+        "description" : "<p>Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,17 +22,17 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-09 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-09 00:00:00 &#43;0000 UTC",
-        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/",
-        "wordCount" : "324",
-        "image" : https://grazercomputerclub.github.io/Blogimg/consumtion.jpg",
+        "datePublished": "2018-12-23 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-12-23 00:00:00 &#43;0000 UTC",
+        "url" : "https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/",
+        "wordCount" : "549",
+        "image" : https://grazercomputerclub.github.io/Blogimg/Raspberry-Pi-3-A&#43;-USB-Gadget.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Raspberry Pi Zero W Stromaufnahme </title>
+ <title>Raspberry Pi 3 A&#43; USB Gadget </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -234,11 +234,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/consumtion.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://grazercomputerclub.github.io/Blog/img/Raspberry-Pi-3-A&#43;-USB-Gadget.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">09 December</span>	<span> / </span>
+          <span class="date">23 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts by Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -249,69 +249,82 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/Raspberry%20Pi%20Zero">Raspberry Pi Zero</a>
+            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Raspberry Pi Zero W Stromaufnahme</h1>
+          <h1 class='entry-title'> Raspberry Pi 3 A&#43; USB Gadget</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+              <p>Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.
 </p>
 
-<h2 id="messaufbau">Messaufbau</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm &lsquo;stress&rsquo; erzeugt.</p>
+<p>Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozessor verbunden ist. Dadurch kann der USB-Anschluss nicht nur als Host für USB-Geräte (Tastatur, Maus, USB-Stick) verwendet werden, sondern auch als Client. Beim Raspberry Pi 3 A+ ist das ähnlich, nur gibt es nur einen standard USB Anschluss als Typ A-Buchse. Zum Anschluss eines USB OTG Kabels mit Micro-USB Anschluss benötigt man einen Adapter oder eine andere Modifikation.<br />
+Verwendet man einen Adapter so umgeht man die Polyfuse Sicherung am Versorgungsanschluss. Ich habe mich deshalb dazu entschlossen einen eigenen Micro-USB Anschluss aufzulöten.<br />
+Da bei dem USB Anschluss der OTG ID Pin fehlt, ist der Anschluss eigentlich fix auf USB-Host konfiguriert. Dies kann allerdings umgangen werden indem man beim Laden des Overlays in der Konfigurationsdatei &ldquo;config.txt&rdquo; einen zusätzlichen Parameter mitgibt.</p>
 
-<h2 id="messung">Messung</h2>
-
-<p>Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA ohne WLAN und 110 mA mit verbundenen WLAN. Bei CPU-Belastung stieg der Wert um 80 mA auf maximal 190 mA an. Wird das WLAN stark belastet kann der Verbrauch kurzzeitig auf bis zu 290 mA steigen!<br />
-Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelasteten Betrieb. Kommt starke CPU-Last und WLAN Kommunikation zusammen, so liegt die maximale Leitungsaufnahme bei ca. 1,5 Watt. Damit steht dem Betrieb am USB-Bus (2,5 Watt) nichts entgegen!<br />
-Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.</p>
-
-<p><img src="../../img/Raspberry-Pi-zero-W-Stromaufnahme.png" alt="Diagramm" /></p>
-
-<h2 id="optimierungen">Optimierungen</h2>
-
-<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA.<br />
-Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br />
-WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
-
-<p><code>rfkill list</code></p>
-
-<pre><code>0: phy0: Wireless LAN
-	Soft blocked: no
-	Hard blocked: no
-1: hci0: Bluetooth
-	Soft blocked: no
-	Hard blocked: no
+<pre><code>dtoverlay=dwc2,dr_mode=peripheral
 </code></pre>
 
-<p><code>rfkill block 0</code><br />
-<code>rfkill list</code></p>
+<h2 id="zusätzlicher-microusb-anschluss">Zusätzlicher MicroUSB Anschluss</h2>
 
-<pre><code>0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: no
-1: hci0: Bluetooth
-	Soft blocked: no
-	Hard blocked: no
-</code></pre>
+<p>Beim Erstellen eines zusätzlichen Anschluss, habe ich eine MicroUSB Breakoutboard verwendet. Auf der Rückseite der Raspberry Pi 3 A+ Platine gibt es verschiedene Lötpunkte. An den Lötpunkten kann man recht leicht ein Kabel bzw. Draht anlöten. Die Lötpunkte sind mit Nummern bezeichnet. Leider gibt es keinen Schaltplan vom Raspberry Pi 3 A+, aber die USB Kontakte sind gleich bezeichnet wie beim Raspberry Pi Zero.</p>
 
-<p><code>rfkill unblock 0</code></p>
+<table>
+<thead>
+<tr>
+<th>Lötpunkt</th>
+<th align="center">Kontakt</th>
+</tr>
+</thead>
 
-<p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; deaktiviert werden.</p>
+<tbody>
+<tr>
+<td>PP2</td>
+<td align="center">VCC 5V</td>
+</tr>
 
-<pre><code>dtoverlay=pi3-disable-wifi
-dtoverlay=pi3-disable-bt
-</code></pre>
+<tr>
+<td>PP23</td>
+<td align="center">USB D-</td>
+</tr>
 
-<p>Das so deaktivierte WLAN reduziert die Stromaufnahme um 20 mA.</p>
+<tr>
+<td>PP22</td>
+<td align="center">USB D+</td>
+</tr>
+
+<tr>
+<td>PP5</td>
+<td align="center">GND</td>
+</tr>
+</tbody>
+</table>
+
+<p>Wie bereits beschrieben hätte man auch die USB Versorgung mit PP35 und PP27 verwenden können bzw. auch einen Adapter, aber dann würde man die Sicherung überbrücken.</p>
+
+<h2 id="stromaufnahme-reduzieren">Stromaufnahme reduzieren</h2>
+
+<p>Wenn nun die Raspberry Pi im OTG-Betrieb betrieben wird, hat man noch ein Problem. Die 500 mA die eine USB-Anschluss standardmäßig bereitstellen kann, reichen nicht aus um den Raspberry Pi 3 A+ zu betreiben. Insbesonders der mit 1400 Mhz sehr hoch getaktete Prozessor benötig um einiges mehr Leistung (&gt;750 mA).</p>
+
+<p>Damit man innerhalb der Spezifikation bei der Stromaufnahme bleibt, sollte man die Taktrate auf 1000 MHz begrenzen und 2 der 4 Kerne abschalten. Dann reduziert sich die Stromaufnahme im Lastbetrieb auf beiden Kernen auf ca. 380 mA.
+Dazu muss in der Konfigurationsdatei &ldquo;config.txt&rdquo; die Zeile <code>arm_freq=1000</code> eingefügt werden. In der Konfigurationsdatei &ldquo;cmdline.txt&rdquo; muss der Parameter <code>maxcpus=2</code> eingefügt werden.<br />
+Dennoch kann es zur Überschreitung der 500 mA Grenze kommen, wenn zusätzlich zu einer maximalen Prozessorlast auch das WLAN komplett ausgelastet wird. Dann würden im Testaufbau Stromspitzen von ca. 560 mA gemessen.<br />
+Wenn das System auf dieser Betrieb ausgelegt werden so, darf nur noch eine Prozessorkern benutzt werden und man muss <code>maxcpus=1</code> setzen. Danach wurden nur nur noch Stromspitzen bis 460 mA gemessen.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Zugegeben, selbst der reduzierte Stromverbrauch ist im Vergleich zu den maximal 290 mA des Raspberry Pi Zero W schon recht viel. Aber immerhin bekommt man so fast die doppelte Prozessorleistung und eine Polyfuse für mehr Sicherheit.<br />
+Beim Preis liegt der Raspberry Pi 3 A+ mit 25 Euro um ca. 10 Euro höher als beim Zero WH.<br />
+Den Umbau könnte man sich sparen wenn man einen entsprechenden Adapter einsetzt (allerings dann ohne Polyfuse).<br />
+Eine Überlegung für den nächsten Raspberry Pi Jam ist es auf jedenfall Wert.</p>
             </article>
           </div>
           
@@ -320,7 +333,7 @@ dtoverlay=pi3-disable-bt
 
   <div class="entry-categories"><p><span>Categories</span>
     
-    <a href="/Blog/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
+    <a href="/Blog/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
 
