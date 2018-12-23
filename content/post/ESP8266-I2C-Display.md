@@ -29,11 +29,13 @@ Für die Umsetzung muss man
 Jeder der schon einmal einen ESP8266 verwendet hat, wird sicherlich auch schon
 einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.
 
-```C++
+```cpp
+// ...
 WiFi.mode(WIFI_STA);
 WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
 WiFi.setAutoReconnect(true);
 WiFi.begin(m_ssid.c_str(), m_password.c_str());
+// ...
 ```
 
 ### Display ###
@@ -42,13 +44,13 @@ Um das Display über den ESP8266 anzusteuern, kann man bereits auf ein paar
 vorhandene Bibliotheken aufbauen. Verwendet man für das Projekt die PlatformIO-IDE,
 so muss man nur folgende Bibliotheken als Abhängigkeiten setzen:
 
-```
+```cpp
 ESP_SSD1306
 Adafruit GFX Library
 ```
 
 Um das Display anschließend zu initialisieren sind folgende Zeilen notwendig:
-```C++
+```cpp
 // RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
 // verwendet werden
 ESP_SSD1306 display(RST_PIN);
@@ -65,7 +67,7 @@ und die Daten wieder neu aufgebaut werden. Hierfür kann über `clearDisplay()`
 zuerst das Display gelöscht und anschließend entsprechend über die
 dazugehörigen Grafikfunktionen die Daten neu gezeichnet werden.
 Für die Anzeige der Wetterdaten wurde folgender Code verwendet:
-```C++
+```cpp
 display.setTextSize(2);
 display.setCursor(0, 16);
 display.print("  ");
@@ -82,12 +84,12 @@ display.print(m_lastHum); display.println("%");
 
 Um Daten von OpenWeather abzurufen, muss man sich zuvor registrieren. Anschließend
 kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
-Anwedung verwenden kann.
+Anwendung verwenden kann.
 
 OpenWeather besitzt für das Abrufen der Daten ein Rest-Interface. Dieses kann 
 durch den ESP8266 leicht abgerufen werden:
 
-```C++
+```cpp
 WiFiClient client;
 client.connect("api.openweathermap.org", 80);
 
@@ -111,11 +113,11 @@ while(client.available()) {
 }
 ```
 
-Anschließend muss der empfangene Rest-String geparst werden. Hierfür existieren
+Anschließend muss der empfangene Rest-String geparsed werden. Hierfür existieren
 unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
 darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.
 
-```C++
+```cpp
 auto dataExtractor = [&](String searchPattern) {
   int idx = line.indexOf(searchPattern);
   int delTokenIdx = line.indexOf(",", idx);

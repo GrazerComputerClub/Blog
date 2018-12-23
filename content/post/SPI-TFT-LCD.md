@@ -26,9 +26,9 @@ Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:
 | ST7735 (sainsmart18)| 160x128 | 1,8"     |  4 €  |
 | ILI9341	          |	320x240 | 2,2-2,8" |  8 €  |
 
-Ein Problem stellt die Framerate dar, weil der SPI-Bus des Kontrollers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.  
+Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.  
 Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).  
-Im Test lag die maximale SPI-Taktfrequenz des ST7735-Kontrollers bei 64 MHz und beim ILI9341-Kontroller bei 82 MHz.
+Im Test lag die maximale SPI-Taktfrequenz des ST7735-Controllers bei 64 MHz und beim ILI9341-Controller bei 82 MHz.
 
 ## Kontakte
 
@@ -42,14 +42,14 @@ Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:
 **RESET** ... Reset  
 **DC/A0/RS** ... Umschaltung Befehl oder Daten Übertagung  
 
-Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewiesen werden. Wobei CS typischerweise auf CS0 gesetzt wird. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die enstprechenden SPI-Bus Anschlüsse verbunden.
+Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewiesen werden. Wobei CS typischerweise auf CS0 gesetzt wird. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.
 
 ![SPI-LCD-TFT Anschluss](../../img/SPI-LCD-TFT_Steckplatine.png)
 
 ## Einbindung / Aktivierung
 
 Das Kernel Modul 'fbtft_device' unterstützt viele Parameter:  
-**name** ... Namen des Displays (dahinter ist der Kontroller, Auflösung und weitere Parameter hinterlegt)  
+**name** ... Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)  
 **gpios** ... gibt die GPIO-Nummer (BCM) für die angegebenen Anschlusse an (reset, dc, cs)  
 **rotate** ... Drehung des Displays  
 **speed** ... SPI-Takt  
@@ -57,7 +57,7 @@ Das Kernel Modul 'fbtft_device' unterstützt viele Parameter:
 **debug** ... Debugmodus, (Wert 32 bzw. $((1<<5)) protokolliert erreichte FPS, daher nur für kurze Tests aktivieren!)
 
 
-Mit folgenden Anruf können alle untertützen Displays aufgelistet werden
+Mit folgenden Anruf können alle unterstützen Displays aufgelistet werden
 ``sudo modprobe fbtft_device name=list; dmesg | tail -30``
 
 adafruit18

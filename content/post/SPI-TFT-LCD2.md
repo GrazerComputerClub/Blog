@@ -26,7 +26,7 @@ wget http://shorturl.at/gvAO1 -O sample.jpg
 sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
 ```
 
-Früher konnte man mit der SDL Libray 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.
+Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.
 
 ## Dupplizierung via fbcp
 
@@ -48,7 +48,7 @@ make
 install fbcp /usr/local/bin/fbcp
 ```
 
-Das Proragmm 'fbcp' kann permanent entweder über einen Eintrag in der Datei "/etc/rc.local" gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.
+Das Programm 'fbcp' kann permanent entweder über einen Eintrag in der Datei "/etc/rc.local" gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.
 
 "/etc/udev/rules.d/80-fbcp.rules":
 ```
