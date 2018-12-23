@@ -1,6 +1,7 @@
 baseurl = "https://grazercomputerclub.github.io/Blog"
 title = "GC2 Blog"
 theme = "hugo-nederburg-theme"
+defaultContentLanguage = "de"
 languageCode = "de-de"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
@@ -8,6 +9,10 @@ disqusShortname = ""
 googleAnalytics = "UA-130665257-1"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
+
+# Stuff for syntax highlighting
+pygmentsCodeFences = true
+pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=true"
 
 [privacy]
   [privacy.googleAnalytics]
