@@ -249,7 +249,7 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
+            <a href="/Blog/categories/raspberry-pi">Raspberry Pi</a>
           </span>
           
 
@@ -305,9 +305,9 @@ Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Disp
 </tbody>
 </table>
 
-<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Kontrollers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br />
+<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br />
 Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br />
-Im Test lag die maximale SPI-Taktfrequenz des ST7735-Kontrollers bei 64 MHz und beim ILI9341-Kontroller bei 82 MHz.</p>
+Im Test lag die maximale SPI-Taktfrequenz des ST7735-Controllers bei 64 MHz und beim ILI9341-Controller bei 82 MHz.</p>
 
 <h2 id="kontakte">Kontakte</h2>
 
@@ -321,21 +321,21 @@ Im Test lag die maximale SPI-Taktfrequenz des ST7735-Kontrollers bei 64 MHz und 
 <strong>RESET</strong> &hellip; Reset<br />
 <strong>DC/A0/RS</strong> &hellip; Umschaltung Befehl oder Daten Übertagung</p>
 
-<p>Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewiesen werden. Wobei CS typischerweise auf CS0 gesetzt wird. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die enstprechenden SPI-Bus Anschlüsse verbunden.</p>
+<p>Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewiesen werden. Wobei CS typischerweise auf CS0 gesetzt wird. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.</p>
 
 <p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss" /></p>
 
 <h2 id="einbindung-aktivierung">Einbindung / Aktivierung</h2>
 
 <p>Das Kernel Modul &lsquo;fbtft_device&rsquo; unterstützt viele Parameter:<br />
-<strong>name</strong> &hellip; Namen des Displays (dahinter ist der Kontroller, Auflösung und weitere Parameter hinterlegt)<br />
+<strong>name</strong> &hellip; Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)<br />
 <strong>gpios</strong> &hellip; gibt die GPIO-Nummer (BCM) für die angegebenen Anschlusse an (reset, dc, cs)<br />
 <strong>rotate</strong> &hellip; Drehung des Displays<br />
 <strong>speed</strong> &hellip; SPI-Takt<br />
 <strong>fps</strong> &hellip; Bilder pro Sekunde (wird möglicherweise nicht erreicht)<br />
 <strong>debug</strong> &hellip; Debugmodus, (Wert 32 bzw. $((1&lt;&lt;5)) protokolliert erreichte FPS, daher nur für kurze Tests aktivieren!)</p>
 
-<p>Mit folgenden Anruf können alle untertützen Displays aufgelistet werden
+<p>Mit folgenden Anruf können alle unterstützen Displays aufgelistet werden
 <code>sudo modprobe fbtft_device name=list; dmesg | tail -30</code></p>
 
 <p>adafruit18
