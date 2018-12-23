@@ -94,8 +94,9 @@ disable_overscan=1
 
 ## Konfigurationen auslesen 
 
-Wenn Raspbian Linux gestartet ist, können die Einstellungen der "config.txt" Konfigurationsdatei mit dem Befehl `vcgencmd get_config` aufgelistet werden.
+Wenn Raspbian Linux gestartet ist, können die Einstellungen der "config.txt" Konfigurationsdatei mit dem Befehl `vcgencmd get_config int` aufgelistet werden.
 
+**Raspberry Pi Zero:**
 ```
 aphy_params_current=547
 arm_freq=1000
@@ -122,6 +123,39 @@ overscan_bottom=32
 overscan_left=32
 overscan_right=32
 overscan_top=32
+pause_burst_frames=1
+program_serial_random=1
+sdram_freq=450
+```
+
+**Raspberry Pi 3 A+:**
+```
+aphy_params_current=819
+arm_freq=1400
+audio_pwm_mode=514
+config_hdmi_boost=5
+core_freq=400
+desired_osc_freq=0x331df0
+desired_osc_freq_boost=0x3c45b0
+disable_commandline_tags=2
+disable_l2cache=1
+display_hdmi_rotate=-1
+display_lcd_rotate=-1
+dphy_params_current=547
+force_eeprom_read=1
+force_pwm_open=1
+framebuffer_ignore_alpha=1
+framebuffer_swap=1
+gpu_freq=300
+hdmi_force_cec_address=65535
+init_uart_clock=0x2dc6c00
+lcd_framerate=60
+over_voltage_avs=62500
+over_voltage_avs_boost=0x27ac4
+overscan_bottom=48
+overscan_left=48
+overscan_right=48
+overscan_top=48
 pause_burst_frames=1
 program_serial_random=1
 sdram_freq=450
