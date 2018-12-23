@@ -1,4 +1,3 @@
-
 +++
 showonlyimage = false
 draft = false
@@ -6,7 +5,7 @@ image = "img/esp8266_i2c_display_weather.jpg"
 date = "2018-12-13"
 title = "Wetteranzeige mittels ESP8266 und I²C Display"
 writer = "Christoph Woergoetter"
-categories = ["ESP8266"]
+categories = ["ESP8266", "Programmierung"]
 keywords = ["WiFi", "WLAN", "ESP8266", "I²C"]
 weight = 1
 +++
