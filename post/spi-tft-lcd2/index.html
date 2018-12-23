@@ -250,7 +250,7 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/Raspberry%20Pi">Raspberry Pi</a>
+            <a href="/Blog/categories/raspberry-pi">Raspberry Pi</a>
           </span>
           
 
@@ -277,7 +277,7 @@ wget http://shorturl.at/gvAO1 -O sample.jpg
 sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
 </code></pre>
 
-<p>Früher konnte man mit der SDL Libray 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
+<p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
 
 <h2 id="dupplizierung-via-fbcp">Dupplizierung via fbcp</h2>
 
@@ -299,7 +299,7 @@ make
 install fbcp /usr/local/bin/fbcp
 </code></pre>
 
-<p>Das Proragmm &lsquo;fbcp&rsquo; kann permanent entweder über einen Eintrag in der Datei &ldquo;/etc/rc.local&rdquo; gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.</p>
+<p>Das Programm &lsquo;fbcp&rsquo; kann permanent entweder über einen Eintrag in der Datei &ldquo;/etc/rc.local&rdquo; gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.</p>
 
 <p>&rdquo;/etc/udev/rules.d/80-fbcp.rules&rdquo;:</p>
 

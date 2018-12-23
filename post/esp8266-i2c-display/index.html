@@ -28,7 +28,7 @@ mit Daten von OpenWeather befüllt.
         "datePublished": "2018-12-13 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-13 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/",
-        "wordCount" : "407",
+        "wordCount" : "474",
         "image" : https://grazercomputerclub.github.io/Blogimg/esp8266_i2c_display_weather.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -252,13 +252,13 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/ESP8266">ESP8266</a>
+            <a href="/Blog/categories/esp8266">ESP8266</a>
           </span>
           
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/Blog/Programmierung">Programmierung</a>
+            <a href="/Blog/categories/programmierung">Programmierung</a>
           </span>
           
 
@@ -290,102 +290,192 @@ mit Daten von OpenWeather befüllt.
 
 <p>Jeder der schon einmal einen ESP8266 verwendet hat, wird sicherlich auch schon
 einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.</p>
-
-<pre><code class="language-C++">WiFi.mode(WIFI_STA);
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// ...
+</span><span style="color:#60a0b0;font-style:italic"></span>WiFi.mode(WIFI_STA);
 WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
-WiFi.setAutoReconnect(true);
+WiFi.setAutoReconnect(<span style="color:#007020">true</span>);
 WiFi.begin(m_ssid.c_str(), m_password.c_str());
-</code></pre>
-
+<span style="color:#60a0b0;font-style:italic">// ...
+</span><span style="color:#60a0b0;font-style:italic"></span></code></pre></td></tr></table>
+</div>
+</div>
 <h3 id="display">Display</h3>
 
 <p>Um das Display über den ESP8266 anzusteuern, kann man bereits auf ein paar
 vorhandene Bibliotheken aufbauen. Verwendet man für das Projekt die PlatformIO-IDE,
 so muss man nur folgende Bibliotheken als Abhängigkeiten setzen:</p>
-
-<pre><code>ESP_SSD1306
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ESP_SSD1306
 Adafruit GFX Library
-</code></pre>
-
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>Um das Display anschließend zu initialisieren sind folgende Zeilen notwendig:</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
+</span><span style="color:#60a0b0;font-style:italic">// verwendet werden
+</span><span style="color:#60a0b0;font-style:italic"></span>ESP_SSD1306 <span style="color:#06287e">display</span>(RST_PIN);
+<span style="color:#60a0b0;font-style:italic">// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
+</span><span style="color:#60a0b0;font-style:italic">// 0x3C ... I²C Adresse
+</span><span style="color:#60a0b0;font-style:italic"></span>display.begin(SSD1306_SWITCHCAPVCC, <span style="color:#40a070">0x3C</span>);
 
-<pre><code class="language-C++">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
-// verwendet werden
-ESP_SSD1306 display(RST_PIN);
-// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
-// 0x3C ... I²C Adresse
-display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-
-// Initialen Buffer anzeigen
-display.display();
-</code></pre>
-
+<span style="color:#60a0b0;font-style:italic">// Initialen Buffer anzeigen
+</span><span style="color:#60a0b0;font-style:italic"></span>display.display();
+</code></pre></td></tr></table>
+</div>
+</div>
 <p>Damit Wetterdaten angezeigt werden können, muss das Display zyklisch gelöscht
 und die Daten wieder neu aufgebaut werden. Hierfür kann über <code>clearDisplay()</code>
 zuerst das Display gelöscht und anschließend entsprechend über die
 dazugehörigen Grafikfunktionen die Daten neu gezeichnet werden.
 Für die Anzeige der Wetterdaten wurde folgender Code verwendet:</p>
-
-<pre><code class="language-C++">display.setTextSize(2);
-display.setCursor(0, 16);
-display.print(&quot;  &quot;);
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">display.setTextSize(<span style="color:#40a070">2</span>);
+display.setCursor(<span style="color:#40a070">0</span>, <span style="color:#40a070">16</span>);
+display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
 display.print(m_lastTemp);
-display.print((char)248); display.println(&quot;C&quot;);
-display.print(&quot;  &quot;);
-display.print(m_lastHum); display.println(&quot;%&quot;);
-</code></pre>
-
+display.print((<span style="color:#902000">char</span>)<span style="color:#40a070">248</span>); display.println(<span style="color:#4070a0">&#34;C&#34;</span>);
+display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
+display.print(m_lastHum); display.println(<span style="color:#4070a0">&#34;%&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
 <p><img src="../../img/esp8266_i2c_display_weather_detail.jpg" alt="Display" /></p>
 
 <h3 id="openweather">OpenWeather</h3>
 
 <p>Um Daten von OpenWeather abzurufen, muss man sich zuvor registrieren. Anschließend
 kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
-Anwedung verwenden kann.</p>
+Anwendung verwenden kann.</p>
 
 <p>OpenWeather besitzt für das Abrufen der Daten ein Rest-Interface. Dieses kann
 durch den ESP8266 leicht abgerufen werden:</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">WiFiClient client;
+client.connect(<span style="color:#4070a0">&#34;api.openweathermap.org&#34;</span>, <span style="color:#40a070">80</span>);
 
-<pre><code class="language-C++">WiFiClient client;
-client.connect(&quot;api.openweathermap.org&quot;, 80);
+String uri <span style="color:#666">=</span> <span style="color:#4070a0">&#34;/data/2.5/weather?id=&#34;</span>;
+uri <span style="color:#666">+=</span> ID;
+uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;appid=&#34;</span>;
+uri <span style="color:#666">+=</span> APP_ID;
+uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;units=metric&#34;</span>;
+client.print(String(<span style="color:#4070a0">&#34;GET &#34;</span>) 
+  <span style="color:#666">+</span> uri <span style="color:#666">+</span> <span style="color:#4070a0">&#34; HTTP/1.1</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
+  <span style="color:#4070a0">&#34;Host: &#34;</span> <span style="color:#666">+</span> HOST <span style="color:#666">+</span> <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
+  <span style="color:#4070a0">&#34;Connection: close</span><span style="color:#4070a0;font-weight:bold">\r\n\r\n</span><span style="color:#4070a0">&#34;</span>);
 
-String uri = &quot;/data/2.5/weather?id=&quot;;
-uri += ID;
-uri += &quot;&amp;appid=&quot;;
-uri += APP_ID;
-uri += &quot;&amp;units=metric&quot;;
-client.print(String(&quot;GET &quot;) 
-  + uri + &quot; HTTP/1.1\r\n&quot; +
-  &quot;Host: &quot; + HOST + &quot;\r\n&quot; +
-  &quot;Connection: close\r\n\r\n&quot;);
-
-while (client.available() == 0) {
-  // Auf Daten warten
-}
+<span style="color:#007020;font-weight:bold">while</span> (client.available() <span style="color:#666">==</span> <span style="color:#40a070">0</span>) {
+  <span style="color:#60a0b0;font-style:italic">// Auf Daten warten
+</span><span style="color:#60a0b0;font-style:italic"></span>}
 
 String line;
-while(client.available()) {
-  line += client.readStringUntil('\r');
+<span style="color:#007020;font-weight:bold">while</span>(client.available()) {
+  line <span style="color:#666">+=</span> client.readStringUntil(<span style="color:#4070a0">&#39;\r&#39;</span>);
 }
-</code></pre>
-
-<p>Anschließend muss der empfangene Rest-String geparst werden. Hierfür existieren
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Anschließend muss der empfangene Rest-String geparsed werden. Hierfür existieren
 unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
 darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.</p>
-
-<pre><code class="language-C++">auto dataExtractor = [&amp;](String searchPattern) {
-  int idx = line.indexOf(searchPattern);
-  int delTokenIdx = line.indexOf(&quot;,&quot;, idx);
-  if (delTokenIdx &lt; 0)
-    delTokenIdx = line.indexOf(&quot;}&quot;, idx);
-  if (delTokenIdx &lt; 0) {
-    return 0.0f;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007020;font-weight:bold">auto</span> dataExtractor <span style="color:#666">=</span> [<span style="color:#666">&amp;</span>](String searchPattern) {
+  <span style="color:#902000">int</span> idx <span style="color:#666">=</span> line.indexOf(searchPattern);
+  <span style="color:#902000">int</span> delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;,&#34;</span>, idx);
+  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>)
+    delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;}&#34;</span>, idx);
+  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>) {
+    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0.0f</span>;
   }
-  return line.substring(idx + searchPattern.length(), delTokenIdx).toFloat();
+  <span style="color:#007020;font-weight:bold">return</span> line.substring(idx <span style="color:#666">+</span> searchPattern.length(), delTokenIdx).toFloat();
 };
-m_temp = dataExtractor(&quot;\&quot;temp\&quot;:&quot;);
-m_humidity = dataExtractor(&quot;\&quot;humidity\&quot;:&quot;);
-</code></pre>
+m_temp <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">temp</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
+m_humidity <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">humidity</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div>
             </article>
           </div>
           
