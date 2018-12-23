@@ -6,10 +6,20 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://grazercomputerclub.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi 3 A&#43; USB Gadget</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</guid>
+      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Lego Roboter &#43; Raspberry Pi</title>
