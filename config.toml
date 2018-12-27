@@ -120,4 +120,10 @@ pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=tru
     twitter       = "https://twitter.com/woergi"
     github        = "https://github.com/woergi"
 
-
+    [params.writers."Christof Hirndler"]
+    email = "christof.hirndler@gc2.at"
+    bio = [
+      "Softwareentwickler, Snooker Fan, Skeptiker"
+    ]
+    twitter       = "https://twitter.com/chirndler"
+    github        = "https://github.com/chirndler"
