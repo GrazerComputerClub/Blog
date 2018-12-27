@@ -1,4 +1,3 @@
-
 +++
 showonlyimage = false
 draft = false
@@ -6,7 +5,7 @@ image = "img/esp8266_i2c_display_weather.jpg"
 date = "2018-12-13"
 title = "Wetteranzeige mittels ESP8266 und I²C Display"
 writer = "Christoph Woergoetter"
-categories = ["ESP8266"]
+categories = ["ESP8266", "Programmierung"]
 keywords = ["WiFi", "WLAN", "ESP8266", "I²C"]
 weight = 1
 +++
@@ -85,7 +84,7 @@ display.print(m_lastHum); display.println("%");
 
 Um Daten von OpenWeather abzurufen, muss man sich zuvor registrieren. Anschließend
 kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
-Anwedung verwenden kann.
+Anwendung verwenden kann.
 
 OpenWeather besitzt für das Abrufen der Daten ein Rest-Interface. Dieses kann 
 durch den ESP8266 leicht abgerufen werden:
@@ -114,7 +113,7 @@ while(client.available()) {
 }
 ```
 
-Anschließend muss der empfangene Rest-String geparst werden. Hierfür existieren
+Anschließend muss der empfangene Rest-String geparsed werden. Hierfür existieren
 unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
 darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.
 
