@@ -13,7 +13,9 @@
         "articleSection" : "post",
         "name" : "Device Tree",
         "headline" : "Device Tree",
-        "description" : "<p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>",
+        "description" : "<p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
+
+<p></p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -89,6 +91,10 @@ if (!doNotTrack) {
     <div class="menu">
 
       <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/"></a>
+        </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/Blog/categories/allgemein">Allgemein</a>
@@ -266,6 +272,8 @@ if (!doNotTrack) {
             <article>
               <p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
 
+<p></p>
+
 <h2 id="allgemeines">Allgemeines</h2>
 
 <p>Device Tree ist eine Datenstruktur zur Beschreibung von Hardware. Besonders bei ARM-Systemen kann die Hardware unterschiedlich verwendet und konfiguriert werden. Anstatt alle Details im Betriebssystem fest zu kodieren, können viele Aspekte der Hardware in einer Datenstruktur beschrieben werden, die beim Booten an das Betriebssystem übergeben wird. Der Device Tree wird für diese Aufgabe verwendet.<br />
@@ -344,8 +352,8 @@ Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Blog-Eintrag &
 Man kann sich auch Beispielkonfiguraionen von userer <a href="https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays">Git-Hub</a> Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im &ldquo;overlays&rdquo; Verzeichnis abgelegt.</p>
 
 <pre><code>wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/st7735r.dts
-sudo dtc -@ -I dts -O dtb -o st7735r.dtb st7735r.dts
-cp st7735r.dtb /boot/overlays
+sudo dtc -@ -I dts -O dtb -o st7735r.dtbo st7735r.dts
+cp st7735r.dtbo /boot/overlays
 </code></pre>
 
 <p>Der neune Device Tree Blob kann nun in der Konfigurationdatei &ldquo;config.txt&rdquo; geladen werden.</p>

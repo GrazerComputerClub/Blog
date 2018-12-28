@@ -17,7 +17,8 @@
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pi-zero-audio/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +27,8 @@
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +37,8 @@
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-shopping/</guid>
-      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-usb-gadget/</guid>
       <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
-Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

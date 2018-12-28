@@ -19,7 +19,28 @@
       <guid>https://grazercomputerclub.github.io/Blog/post/35c3/</guid>
       <description>&lt;p&gt;Heuer feiert der Grazer Computer Club prämiere auf dem Chaos Communication
 Congress. Zuvor waren wir bereits auf der Privacy Week in Wien.
-Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</description>
+Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PICO-8 Konsole mit WaveShare LCD HAT</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/wavesharelcdhat/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/wavesharelcdhat/</guid>
+      <description>&lt;p&gt;Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Weihnachten</title>
+      <link>https://grazercomputerclub.github.io/Blog/post/weihnachten/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://grazercomputerclub.github.io/Blog/post/weihnachten/</guid>
+      <description>&lt;p&gt;Schöne Weihnachten &amp;hellip;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +49,8 @@ Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</descri
       <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</guid>
-      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,7 +60,8 @@ Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</descri
       
       <guid>https://grazercomputerclub.github.io/Blog/post/robot-arm/</guid>
       <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
+Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,7 +70,8 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pico-8/</guid>
-      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -56,7 +80,8 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</guid>
-      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -65,7 +90,8 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pi-zero-audio/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,7 +101,9 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       
       <guid>https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/</guid>
       <description>&lt;p&gt;Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;</description>
+So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -84,7 +112,8 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/berryboot/</guid>
-      <description>&lt;p&gt;Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -93,7 +122,9 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/device-tree/</guid>
-      <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -102,7 +133,9 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</guid>
-      <description>&lt;p&gt;Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -112,7 +145,8 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       
       <guid>https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/</guid>
       <description>&lt;p&gt;Seit .Net Core offiziell auf der Rapsberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
-Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.&lt;/p&gt;</description>
+Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -124,7 +158,8 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
 ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
 Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+mit Daten von OpenWeather befüllt.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -133,7 +168,8 @@ mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd/</guid>
-      <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.&lt;br /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -142,7 +178,8 @@ mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/hotkeys-zuweisen-ohne-x11/</guid>
-      <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -151,7 +188,8 @@ mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</guid>
-      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -160,7 +198,8 @@ mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-w-stromaufnahme/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -170,7 +209,8 @@ mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</guid>
       <description>&lt;p&gt;Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
-Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.&lt;/p&gt;</description>
+Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,7 +220,8 @@ Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Se
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
       <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.&lt;/p&gt;</description>
+Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -189,7 +230,8 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/fruit-pi-e-book/</guid>
-      <description>&lt;p&gt;Hier bekommt man die gratis CC-Version meines Buches &amp;ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&amp;rdquo;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hier bekommt man die gratis CC-Version meines Buches &amp;ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&amp;rdquo;.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -198,7 +240,8 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-zero-shopping/</guid>
-      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -207,7 +250,8 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
-      <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -216,7 +260,8 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</guid>
-      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -226,7 +271,8 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       
       <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-usb-gadget/</guid>
       <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
-Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
+Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -235,7 +281,8 @@ Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Et
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</guid>
-      <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang, wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang, wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
+&lt;/p&gt;</description>
     </item>
     
     <item>

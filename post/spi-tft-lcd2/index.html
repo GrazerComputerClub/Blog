@@ -13,7 +13,9 @@
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 2",
         "headline" : "SPI TFT LCD - Teil 2",
-        "description" : "<p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>",
+        "description" : "<p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
+
+<p></p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -24,7 +26,7 @@
         "datePublished": "2018-12-15 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-15 00:00:00 &#43;0000 UTC",
         "url" : "https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/",
-        "wordCount" : "528",
+        "wordCount" : "561",
         "image" : https://grazercomputerclub.github.io/Blogimg/SPI-LCD-TFT2.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -89,6 +91,10 @@ if (!doNotTrack) {
     <div class="menu">
 
       <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/Blog/categories/"></a>
+        </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/Blog/categories/allgemein">Allgemein</a>
@@ -266,6 +272,8 @@ if (!doNotTrack) {
             <article>
               <p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
 
+<p></p>
+
 <h2 id="verwendung-grafikausgabe">Verwendung / Grafikausgabe</h2>
 
 <h2 id="framebuffer">Framebuffer</h2>
@@ -279,7 +287,7 @@ sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
 
 <p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
 
-<h2 id="dupplizierung-via-fbcp">Dupplizierung via fbcp</h2>
+<h2 id="duplizierung-via-fbcp">Duplizierung via fbcp</h2>
 
 <p>Eine Alternative zum direkten Zugriff ist, den Inhalt der Grafikkarte bzw. &lsquo;/dev/fb0&rsquo; auf das SPI-Display bzw. &lsquo;/dev/fb1&rsquo; zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
 Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf der langsamen Raspberry Pi Zero möglich Video abzuspielen.
@@ -297,19 +305,34 @@ cd build/
 cmake ..
 make
 install fbcp /usr/local/bin/fbcp
+exit
 </code></pre>
+
+<p>Nun kann man noch ein systemd-Service für das Programm erstellen.</p>
+
+<p>&rdquo;/etc/systemd/system/fbcp.service&rdquo;:</p>
+
+<pre><code>[Unit]
+Description=fbcp Service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/usr/local/bin/fbcp
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+
+<p>Dann kann der Dienst mit dem Aufruf <code>sudo service fbcp start</code> gestartet und mit <code>sudo service fbcp stop</code> beendet werden. Der aktuelle Status kann mit dem Befehl <code>service fbcp status</code> abgerufen werden.</p>
 
 <p>Das Programm &lsquo;fbcp&rsquo; kann permanent entweder über einen Eintrag in der Datei &ldquo;/etc/rc.local&rdquo; gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.</p>
 
 <p>&rdquo;/etc/udev/rules.d/80-fbcp.rules&rdquo;:</p>
 
-<pre><code>SUBSYSTEM==&quot;graphics&quot; ACTION==&quot;add&quot; ENV{DEVNAME}==&quot;/dev/fb1&quot;, RUN+=&quot;/sbin/start-stop-daemon -b -S -x /usr/local/bin/fbcp&quot;
+<pre><code>SUBSYSTEM==&quot;graphics&quot; ACTION==&quot;add&quot; ENV{DEVNAME}==&quot;/dev/fb1&quot;, RUN+=&quot;/bin/systemctl start fbcp&quot;
 </code></pre>
-
-<p>&lsquo;start-stop-daemon&rsquo; Parameter:<br />
-<strong>-b</strong> &hellip; Im Hintergrund starten<br />
-<strong>-S</strong> &hellip; Prüfe auf Existenz eines angegebenen Prozesses<br />
-<strong>-x</strong> &hellip; Programm ausführen</p>
 
 <p>Als Test könnte man nun ein Video abspielen.</p>
 

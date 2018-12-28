@@ -17,7 +17,8 @@
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</guid>
-      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,7 +30,8 @@
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
 ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
 Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+mit Daten von OpenWeather befüllt.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

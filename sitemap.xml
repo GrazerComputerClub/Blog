@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>https://grazercomputerclub.github.io/Blog/post/wavesharelcdhat/</loc>
+    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://grazercomputerclub.github.io/Blog/post/weihnachten/</loc>
+    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</loc>
     <lastmod>2018-12-23T00:00:00+00:00</lastmod>
   </url>
@@ -133,6 +143,12 @@
   </url>
   
   <url>
+    <loc>https://grazercomputerclub.github.io/Blog/categories/</loc>
+    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/allgemein/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -140,7 +156,7 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/</loc>
-    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -170,7 +186,7 @@
   
   <url>
     <loc>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</loc>
-    <lastmod>2018-12-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
