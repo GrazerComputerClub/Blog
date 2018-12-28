@@ -10,12 +10,12 @@ keywords = ["Retro", "PICO-8", "Waveshare", "Konsole", "LCD"]
 weight = 1
 +++
 
-Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die 3 Tasten sind genau die passenden Teile für PICO-8. 
+Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8. 
 <!--more-->
 
 ## Grundsätzliches
 
-PICO-8 ist eine erfundene „Fantasy Console“ die auch am Raspberry Pi Zero emuliert werden kann. Die Auflösung beträgt 128x128 Pixel. Es wird mit einem D-PAD, 2 Aktionstasten und einer Menütaste gesteuert. Es gibt eine Operfäche, "splore" genannt mit der man auf eine Vielzahl von Community Spiele direkt Zugriff hat.  
+PICO-8 ist eine erfundene „Fantasy Console“ die auch am Raspberry Pi Zero emuliert werden kann. Die Auflösung beträgt 128x128 Pixel. Es wird mit einem D-PAD, 2 Aktionstasten und einer Menütaste gesteuert. Es gibt eine Oberfächer, "splore" genannt mit der man auf eine Vielzahl von Community Spiele direkt Zugriff hat.  
 Von WaveShare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei [semaf electronics](https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi) für 14 Euro kaufen. Dieses Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.  
 Mit etwas Konfigurationsarbeit lässt sich daraus recht einfach eine PICO-8 Spielkonsole bauen. 
  
@@ -27,7 +27,7 @@ Es gibt aber einige Nachteile bei der Nutzung. Es fehlt an Musikausgabe, was den
 Das Steuerkreuz führt bereits nach wenigen Sekunden zu Schmerzen im linken Daumen. Ein kleiner Steuerknüppel als Aufsatz, könnte hier vielleicht helfen.  
 Die Plattform kann nicht mobil als Handheld genutzt werden. 
 
-Ich habe mir teilweise für die Probleme eine Lösung überlerlegt, allerdings ganz zufrieden konnte ich mit der Plattform nicht werden. Einzig der einfach und günstige Zusammenbau begeistert.
+Ich habe mir teilweise für die Probleme eine Lösung überlegt, allerdings ganz zufrieden konnte ich mit der Plattform nicht werden. Einzig der einfach und günstige Zusammenbau begeistert.
 
 ## Installation
 
@@ -35,7 +35,7 @@ Aus Hardwaresicht muss der HAT einfach auf den Raspberry Pi Zero aufgesteckt wer
 
 ### Display
 
-Zur Aktivierung des Displays muss man das SPI-TFT-LCD in den Kernel einbinden. Hierfür habe ich bereits einen Devicetree Overlay erstellt, es kann einfach in "/boot/overlays/" abgelegt werden und wird dann in der Konfigurationsdatei "config.txt" geladen. Nun muss noch ein angepasster HDMI Video Mode aktiviert werden. Dafür habe ich eigene Sub-Konfigurtionsdateien erstellt. In dem Fall würde ich den Videomodus 256x256 empfehlen, dieser wird automatisch auf 128x128 runtergerechnet und damit geglättet.
+Zur Aktivierung des Displays muss man das SPI-TFT-LCD in den Kernel einbinden. Hierfür habe ich bereits einen Devicetree Overlay erstellt, es kann einfach in "/boot/overlays/" abgelegt werden und wird dann in der Konfigurationsdatei "config.txt" geladen. Nun muss noch ein angepasster HDMI Video Mode aktiviert werden. Dafür habe ich eigene Sub-Konfigurationsdateien erstellt. In dem Fall würde ich den Videomodus 256x256 empfehlen, dieser wird automatisch auf 128x128 heruntergerechnet und damit geglättet.
 
 ```
 cd /boot/overlays
@@ -93,7 +93,7 @@ SUBSYSTEM=="graphics" ACTION=="add" ENV{DEVNAME}=="/dev/fb1", RUN+="/bin/systemc
 
 ### Tasten
 
-Nun müssen noch die Tasten entsprechend der PICO-8 Tastaturbelegung konfiguriert werden. Dazu wird der Overlay 'gpio-key' verwendet, um GPIO Eingänge Tastaureingaben zuweisen zu können. Auch zu diesem Thema gibt es bereits einen Blog Post. Damit das einfacher wird, habe ich auch hierfür bereits eigene Sub-Konfigurtionsdateien erstellt. Nach dem Download muss die Datei mit 'include' in der Konfigurationsdatei "config.txt" referenziert werden.
+Nun müssen noch die Tasten entsprechend der PICO-8 Tastaturbelegung konfiguriert werden. Dazu wird der Overlay 'gpio-key' verwendet, um GPIO Eingänge Tastatureingaben zuweisen zu können. Auch zu diesem Thema gibt es bereits einen Blog Post. Damit das einfacher wird, habe ich auch hierfür bereits eigene Sub-Konfigurationsdateien erstellt. Nach dem Download muss die Datei mit 'include' in der Konfigurationsdatei "config.txt" referenziert werden.
 
 
 ```
@@ -133,16 +133,16 @@ Nun kann das System neu gestartet werden und fertig ist die PICO-8 Spielkonsole.
 
 ## Akku Erweiterung
 
-Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb der Raspberry Pi Zero angeschraubt werden.  
-Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und WaveShare HAT) für etwas mehr als eine Stunde betrieben werden. Als PICO-8 Referenzspiel wurde PicoFox benutzt.  
+Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb des Raspberry Pi Zeros angeschraubt werden.  
+Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und WaveShare HAT) für ca. 90 Minuten betrieben werden. Als PICO-8 Referenzspiel wurde PicoFox benutzt.
 
 ![Platine mit Akku](../../img/WaveShareLCDHAT-Accu2.jpg) 
 ![Platine auf Raspberry Pi](../../img/WaveShareLCDHAT-Accu.jpg)
 
 ## Steuerkreuz
 
-Da das Steuerkreuz ohne modifikation nicht schmerzfrei verwendet werden kann, habe ich eine M2.5 Mutter aufgeschraubt. Damit kann man es besser anfassen aber
- die Spielstuerung ist nicht optimal.
+Da das Steuerkreuz ohne Modifikation nicht schmerzfrei verwendet werden kann, habe ich eine M2.5 Mutter aufgeschraubt. Damit kann man es besser anfassen aber
+ die Spielsteuerung ist nicht optimal.
 
 ![Steuerkreuz mit M2.5 Mutter](../../img/WaveShareLCDHAT-Joystick.jpg) 
 
