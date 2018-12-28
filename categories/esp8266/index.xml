@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ESP8266 on GC2 Blog</title>
-    <link>https://grazercomputerclub.github.io/Blog/categories/esp8266/</link>
+    <link>https://blog.gc2.at/categories/esp8266/</link>
     <description>Recent content in ESP8266 on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/esp8266/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.gc2.at/categories/esp8266/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ESP8266 ESP-01</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</link>
+      <link>https://blog.gc2.at/post/esp8266-esp01/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</guid>
+      <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
       <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</link>
+      <link>https://blog.gc2.at/post/esp8266-i2c-display/</link>
       <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-i2c-display/</guid>
+      <guid>https://blog.gc2.at/post/esp8266-i2c-display/</guid>
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
 ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
 Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C

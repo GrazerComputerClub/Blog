@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi on GC2 Blog</title>
-    <link>https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/</link>
+    <link>https://blog.gc2.at/categories/raspberry-pi/</link>
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://grazercomputerclub.github.io/Blog/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PICO-8 Konsole mit WaveShare LCD HAT</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/wavesharelcdhat/</link>
+      <link>https://blog.gc2.at/post/wavesharelcdhat/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/wavesharelcdhat/</guid>
+      <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
       <description>&lt;p&gt;Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi 3 A&#43; USB Gadget</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</link>
+      <link>https://blog.gc2.at/post/raspberry-pi-3-a-usb-gadget/</link>
       <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-3-a-usb-gadget/</guid>
+      <guid>https://blog.gc2.at/post/raspberry-pi-3-a-usb-gadget/</guid>
       <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Lego Roboter &#43; Raspberry Pi</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/robot-arm/</link>
+      <link>https://blog.gc2.at/post/robot-arm/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/robot-arm/</guid>
+      <guid>https://blog.gc2.at/post/robot-arm/</guid>
       <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;
 Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
 &lt;/p&gt;</description>
@@ -44,30 +44,30 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
     
     <item>
       <title>PICO-8</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/pico-8/</link>
+      <link>https://blog.gc2.at/post/pico-8/</link>
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/pico-8/</guid>
+      <guid>https://blog.gc2.at/post/pico-8/</guid>
       <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>ESP8266 ESP-01</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</link>
+      <link>https://blog.gc2.at/post/esp8266-esp01/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/esp8266-esp01/</guid>
+      <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
       <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Geschwindigkeitsmessung mit Raspberry Pi</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/</link>
+      <link>https://blog.gc2.at/post/bundesseminarelektro_pi2016/</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/bundesseminarelektro_pi2016/</guid>
+      <guid>https://blog.gc2.at/post/bundesseminarelektro_pi2016/</guid>
       <description>&lt;p&gt;Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
 So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;
 
@@ -76,20 +76,20 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
     
     <item>
       <title>BerryBoot</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/berryboot/</link>
+      <link>https://blog.gc2.at/post/berryboot/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/berryboot/</guid>
+      <guid>https://blog.gc2.at/post/berryboot/</guid>
       <description>&lt;p&gt;Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Device Tree</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/device-tree/</link>
+      <link>https://blog.gc2.at/post/device-tree/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/device-tree/</guid>
+      <guid>https://blog.gc2.at/post/device-tree/</guid>
       <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -97,10 +97,10 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
     
     <item>
       <title>SPI TFT LCD - Teil 2</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</link>
+      <link>https://blog.gc2.at/post/spi-tft-lcd2/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd2/</guid>
+      <guid>https://blog.gc2.at/post/spi-tft-lcd2/</guid>
       <description>&lt;p&gt;Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -108,10 +108,10 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
     
     <item>
       <title>PowerShell Core in Linux</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/</link>
+      <link>https://blog.gc2.at/post/powershell-core-linux-1/</link>
       <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/powershell-core-linux-1/</guid>
+      <guid>https://blog.gc2.at/post/powershell-core-linux-1/</guid>
       <description>&lt;p&gt;Seit .Net Core offiziell auf der Rapsberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
 Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
 &lt;/p&gt;</description>
@@ -119,40 +119,40 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
     
     <item>
       <title>SPI TFT LCD - Teil 1</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd/</link>
+      <link>https://blog.gc2.at/post/spi-tft-lcd/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/spi-tft-lcd/</guid>
+      <guid>https://blog.gc2.at/post/spi-tft-lcd/</guid>
       <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hotkeys zuweisen ohne X11</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/hotkeys-zuweisen-ohne-x11/</link>
+      <link>https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/hotkeys-zuweisen-ohne-x11/</guid>
+      <guid>https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/</guid>
       <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GPIO-Eingang als Tastaturtaste</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</link>
+      <link>https://blog.gc2.at/post/gpio-tasten/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/gpio-tasten/</guid>
+      <guid>https://blog.gc2.at/post/gpio-tasten/</guid>
       <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Werbefrei im Heimnetz mit Pi-hole</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</link>
+      <link>https://blog.gc2.at/post/pi-hole-adblocker/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/pi-hole-adblocker/</guid>
+      <guid>https://blog.gc2.at/post/pi-hole-adblocker/</guid>
       <description>&lt;p&gt;Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
 Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.
 &lt;/p&gt;</description>
@@ -160,10 +160,10 @@ Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Se
     
     <item>
       <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39;</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</link>
+      <link>https://blog.gc2.at/post/raspberry-pi-konfiguration/</link>
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/raspberry-pi-konfiguration/</guid>
+      <guid>https://blog.gc2.at/post/raspberry-pi-konfiguration/</guid>
       <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.
 Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.
 &lt;/p&gt;</description>
@@ -171,40 +171,40 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
     
     <item>
       <title>Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/fruit-pi-e-book/</link>
+      <link>https://blog.gc2.at/post/fruit-pi-e-book/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/fruit-pi-e-book/</guid>
+      <guid>https://blog.gc2.at/post/fruit-pi-e-book/</guid>
       <description>&lt;p&gt;Hier bekommt man die gratis CC-Version meines Buches &amp;ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&amp;rdquo;.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi WLAN bei Boot verbinden</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</link>
+      <link>https://blog.gc2.at/post/wlan-bei-boot-verbinden/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/wlan-bei-boot-verbinden/</guid>
+      <guid>https://blog.gc2.at/post/wlan-bei-boot-verbinden/</guid>
       <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi über GPIO-Eingang herunterfahren</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</link>
+      <link>https://blog.gc2.at/post/pi-herunterfahren/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/pi-herunterfahren/</guid>
+      <guid>https://blog.gc2.at/post/pi-herunterfahren/</guid>
       <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi GPIO Beschriftung</title>
-      <link>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</link>
+      <link>https://blog.gc2.at/post/gpio-beschriftung/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://grazercomputerclub.github.io/Blog/post/gpio-beschriftung/</guid>
+      <guid>https://blog.gc2.at/post/gpio-beschriftung/</guid>
       <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang, wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.
 &lt;/p&gt;</description>
     </item>
