@@ -93,8 +93,8 @@ Man kann sich auch Beispielkonfiguraionen von userer [Git-Hub](https://github.co
 
 ```
 wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/st7735r.dts
-sudo dtc -@ -I dts -O dtb -o st7735r.dtb st7735r.dts
-cp st7735r.dtb /boot/overlays
+sudo dtc -@ -I dts -O dtb -o st7735r.dtbo st7735r.dts
+cp st7735r.dtbo /boot/overlays
 ```
 
 Der neune Device Tree Blob kann nun in der Konfigurationdatei "config.txt" geladen werden.

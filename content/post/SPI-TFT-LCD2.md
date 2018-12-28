@@ -28,7 +28,7 @@ sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
 
 Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.
 
-## Dupplizierung via fbcp
+## Duplizierung via fbcp
 
 Eine Alternative zum direkten Zugriff ist, den Inhalt der Grafikkarte bzw. '/dev/fb0' auf das SPI-Display bzw. '/dev/fb1' zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.  
 Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf der langsamen Raspberry Pi Zero möglich Video abzuspielen.
@@ -46,19 +46,34 @@ cd build/
 cmake ..
 make
 install fbcp /usr/local/bin/fbcp
+exit
 ```
 
-Das Programm 'fbcp' kann permanent entweder über einen Eintrag in der Datei "/etc/rc.local" gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.
+Nun kann man noch ein systemd-Service für das Programm erstellen. 
+
+"/etc/systemd/system/fbcp.service":
+```
+[Unit]
+Description=fbcp Service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/usr/local/bin/fbcp
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Dann kann der Dienst mit dem Aufruf ``sudo service fbcp start`` gestartet und mit ``sudo service fbcp stop`` beendet werden. Der aktuelle Status kann mit dem Befehl ``service fbcp status`` abgerufen werden.
+
+Das Programm 'fbcp' kann permanent entweder über einen Eintrag in der Datei "/etc/rc.local" gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.  
 
 "/etc/udev/rules.d/80-fbcp.rules":
 ```
-SUBSYSTEM=="graphics" ACTION=="add" ENV{DEVNAME}=="/dev/fb1", RUN+="/sbin/start-stop-daemon -b -S -x /usr/local/bin/fbcp"
+SUBSYSTEM=="graphics" ACTION=="add" ENV{DEVNAME}=="/dev/fb1", RUN+="/bin/systemctl start fbcp"
 ```
-
-'start-stop-daemon' Parameter:  
-**-b** ... Im Hintergrund starten  
-**-S** ... Prüfe auf Existenz eines angegebenen Prozesses  
-**-x** ... Programm ausführen  
 
 Als Test könnte man nun ein Video abspielen.
 
