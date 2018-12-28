@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/WaveShareLCDHAT.jpg"
-date = "2018-12-28"
+date = "2018-12-26"
 title = "PICO-8 Konsole mit WaveShare LCD HAT"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
