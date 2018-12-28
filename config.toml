@@ -1,4 +1,4 @@
-baseurl = "https://grazercomputerclub.github.io/Blog"
+baseurl = "https://blog.gc2.at"
 title = "GC2 Blog"
 theme = "hugo-nederburg-theme"
 defaultContentLanguage = "de"
@@ -61,7 +61,7 @@ pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=tru
   # Nav links in the side bar
   [[menu.main]]
   name = "Blog (Deutsch)"
-  url = "https://grazercomputerclub.github.io/Blog/index.html"
+  url = "https://blog.gc2.at/index.html"
   weight = 1
 
   [[menu.main]]
