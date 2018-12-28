@@ -94,3 +94,8 @@ Nach dem Neustart muss nun nur noch ein Test erfolgen.
 ``speaker-test -t sine -f 440 -c 1 -s 2``
 
 
+## Verlinkungen
+
+Ausführliche Informationen zur Nutzung von PWM findet man bei [http://librpip.frasersdev.net/peripheral-config/pwm0and1/](http://librpip.frasersdev.net/peripheral-config/pwm0and1/).
+
+
