@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>35C3 on GC2 Blog</title>
+    <link>https://blog.gc2.at/categories/35c3/</link>
+    <description>Recent content in 35C3 on GC2 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Fri, 28 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.gc2.at/categories/35c3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GC²@35C3 - Day 2</title>
+      <link>https://blog.gc2.at/post/35c3_2/</link>
+      <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/35c3_2/</guid>
+      <description>&lt;p&gt;Der Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam
+stellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag
+begann erst am späten Vormittag und ging bis spät in die Nacht.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GC²@35C3</title>
+      <link>https://blog.gc2.at/post/35c3/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/35c3/</guid>
+      <description>&lt;p&gt;Heuer feiert der Grazer Computer Club prämiere auf dem Chaos Communication
+Congress. Zuvor waren wir bereits auf der Privacy Week in Wien.
+Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
