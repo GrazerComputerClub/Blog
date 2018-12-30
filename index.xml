@@ -6,10 +6,23 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 28 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GC²@35C3 - Day 3</title>
+      <link>https://blog.gc2.at/post/35c3_3/</link>
+      <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/35c3_3/</guid>
+      <description>&lt;p&gt;Auch wenn wir nach ein paar Tschunks erst gegen halb vier ins Bett gefallen sind,
+sind wir am Tag 3 bereits um elf wieder am Start.&lt;/p&gt;
+
+&lt;p&gt;Jedoch - wie wir vom CERT erfahren haben - muss aber eh immer nur eine Person
+nüchtern sein - what could possibly go wrong?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GC²@35C3 - Day 2</title>
