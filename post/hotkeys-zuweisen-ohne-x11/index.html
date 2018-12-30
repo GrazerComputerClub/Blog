@@ -24,7 +24,7 @@
         "datePublished": "2018-12-11 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-11 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/",
-        "wordCount" : "390",
+        "wordCount" : "393",
         "image" : https://blog.gc2.atimg/keys_black_vol.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -285,12 +285,16 @@ KEY_VOLUMEDOWN			1	/usr/bin/amixer set PCM 2dB-
 KEY_VOLUMEDOWN			2	/usr/bin/amixer set PCM 2dB-
 KEY_VOLUMEDOWN+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB-
 KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
-# shutdown
+</code></pre>
+
+<p><strong>/etc/triggerhappy/triggers.d/system.conf</strong></p>
+
+<pre><code># shutdown
 KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
 </code></pre>
 
-<p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>adduser nobody audio</code>.
-Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>chmod u+s /sbin/halt</code>.</p>
+<p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
+Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
             </article>
           </div>
           
