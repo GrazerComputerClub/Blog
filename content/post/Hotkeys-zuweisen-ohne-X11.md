@@ -30,10 +30,14 @@ KEY_VOLUMEDOWN			1	/usr/bin/amixer set PCM 2dB-
 KEY_VOLUMEDOWN			2	/usr/bin/amixer set PCM 2dB-
 KEY_VOLUMEDOWN+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB-
 KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
+```
+
+**/etc/triggerhappy/triggers.d/system.conf**
+``` 
 # shutdown
 KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
 ``` 
 
-Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl ``service triggerhappy status``. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit 'amixer' wird die Gruppe bzw. das Recht 'audio' gebraucht. Deshalb muss zuvor der Benutzer 'nobody' zur Gruppe 'audio' hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls ``adduser nobody audio``.
-Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für 'shutdown' bzw. 'halt' gesetzt werden. Dies erfolgt mit dem Befehl ``chmod u+s /sbin/halt``.
+Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl ``service triggerhappy status``. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit 'amixer' wird die Gruppe bzw. das Recht 'audio' gebraucht. Deshalb muss zuvor der Benutzer 'nobody' zur Gruppe 'audio' hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls ``sudo adduser nobody audio``.
+Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für 'shutdown' bzw. 'halt' gesetzt werden. Dies erfolgt mit dem Befehl ``sudo chmod u+s /sbin/halt``.
 

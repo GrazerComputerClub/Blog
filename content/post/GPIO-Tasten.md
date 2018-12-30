@@ -27,6 +27,7 @@ Mithilfe der Devicetree Funktion 'gpio-key' können ganz einfach GPIO-Eingänge 
 | Esc           | 1        |
 | Backspace     | 14       |
 | Enter         | 28       |
+| Strg links    | 29       |
 | Space         | 57       |
 | a   | 30     |
 | s   | 31     |
