@@ -18,7 +18,8 @@
       
       <guid>https://blog.gc2.at/post/robot-arm/</guid>
       <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
+Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/pico-8/</guid>
-      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,7 +41,8 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
 ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
 Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+mit Daten von OpenWeather befüllt.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

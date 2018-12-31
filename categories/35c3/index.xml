@@ -6,20 +6,10 @@
     <description>Recent content in 35C3 on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 30 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/35c3/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>GC²@35C3 - The End</title>
-      <link>https://blog.gc2.at/post/35c3_4/</link>
-      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/35c3_4/</guid>
-      <description>&lt;p&gt;Vier Tage voller bunter Dinger und verrückter Menschen geht zu Ende. Der 35C3
-ist vorbei. Dementsprechend ist dies unser letzer Erfahrungsbericht aus Leipzig.&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>GC²@35C3 - Day 3</title>
@@ -31,7 +21,8 @@ ist vorbei. Dementsprechend ist dies unser letzer Erfahrungsbericht aus Leipzig.
 sind wir am Tag 3 bereits um elf wieder am Start.&lt;/p&gt;
 
 &lt;p&gt;Jedoch - wie wir vom CERT erfahren haben - muss aber eh immer nur eine Person
-nüchtern sein - what could possibly go wrong?&lt;/p&gt;</description>
+nüchtern sein - what could possibly go wrong?
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,7 +33,8 @@ nüchtern sein - what could possibly go wrong?&lt;/p&gt;</description>
       <guid>https://blog.gc2.at/post/35c3_2/</guid>
       <description>&lt;p&gt;Der Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam
 stellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag
-begann erst am späten Vormittag und ging bis spät in die Nacht.&lt;/p&gt;</description>
+begann erst am späten Vormittag und ging bis spät in die Nacht.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,7 +45,8 @@ begann erst am späten Vormittag und ging bis spät in die Nacht.&lt;/p&gt;</des
       <guid>https://blog.gc2.at/post/35c3/</guid>
       <description>&lt;p&gt;Heuer feiert der Grazer Computer Club prämiere auf dem Chaos Communication
 Congress. Zuvor waren wir bereits auf der Privacy Week in Wien.
-Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</description>
+Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.
+&lt;/p&gt;</description>
     </item>
     
   </channel>
