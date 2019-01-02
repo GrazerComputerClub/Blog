@@ -6,10 +6,20 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 31 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VNC - Virtual Network Computing</title>
+      <link>https://blog.gc2.at/post/vnc/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/vnc/</guid>
+      <description>&lt;p&gt;Wer sich gerne per Remote Control auf die grafische Oberfläche des Raspberry Pi verbinden möchte, kann dazu einen speziell angepassten VNC-Server benutzen.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Neujahr</title>
