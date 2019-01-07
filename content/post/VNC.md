@@ -74,6 +74,8 @@ Dann kann die grafische Oberfläche des Raspberry Pi direkt angezeigt und bedien
 
 ## Blog Referenzen
 
-[PICO-8 Konsole mit WaveShare LCD HAT](../WaveShareLCDHAT/)  
+[PICO-8 Konsole mit WaveShare LCD HAT](../wavesharelcdhat)  
+
+
 
 
