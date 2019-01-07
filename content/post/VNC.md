@@ -72,3 +72,8 @@ Dann kann die grafische Oberfläche des Raspberry Pi direkt angezeigt und bedien
 ![VNC Viewer 200% PICO-8 Splore](../../img/VNC-Server-PICO-8.png)
 
 
+## Blog Referenzen
+
+[PICO-8 Konsole mit WaveShare LCD HAT](../WaveShareLCDHAT/)  
+
+
