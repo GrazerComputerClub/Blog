@@ -25,7 +25,7 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 
 **Auflösung:** 128 x 128 Pixel  
 **Bilder pro Sekunde (FPS):** 30 oder 60  
-**Farben:** 16 Farben (Palette unter CC0 freigegeben)  
+**Farben:** 16 Farben (Palette unter CC0 freigegeben, [download](https://lospec.com/palette-list/pico-8))  
 **Modul (Cartridge) Größe:** 32 kB  
 **Tasten:** D-PAD, 2 Aktionstasten, Menütaste  
 **Sound**: 4 Kanal, 64 definierbare Chip Sounds  
@@ -130,8 +130,8 @@ END
 
 Offizielles PICO-8 [Handbuch](https://www.lexaloffle.com/pico8_manual.txt)  
 Bezug [PICO-8](https://www.lexaloffle.com/pico-8.php?#getpico8)  
-Vergünstigte Lizenz [PICO-8 for Educators](https://www.lexaloffle.com/pico-8.php?page=schools)
-
+Vergünstigte Lizenz [PICO-8 for Educators](https://www.lexaloffle.com/pico-8.php?page=schools)  
+PICO-8 [Palette](https://lospec.com/palette-list/pico-8)
 
 ### Englische Handbücher für den Einstieg
 
