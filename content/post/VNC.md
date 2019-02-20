@@ -24,7 +24,7 @@ VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig
 
 ```
 sudo -i
-apt-get install libvncserver-dev libconfig++-dev
+apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc
