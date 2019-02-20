@@ -25,7 +25,7 @@
         "datePublished": "2019-01-02 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-01-02 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/vnc/",
-        "wordCount" : "280",
+        "wordCount" : "281",
         "image" : https://blog.gc2.atimg/VNC-Server-PICO-8.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -97,6 +97,10 @@ if (!doNotTrack) {
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/35c3">35C3</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/atmega">ATmega</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
@@ -280,7 +284,7 @@ VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig
 <h2 id="installation">Installation</h2>
 
 <pre><code>sudo -i
-apt-get install libvncserver-dev libconfig++-dev
+apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc

@@ -11,10 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Lego Roboter &#43; Raspberry Pi",
-        "headline" : "Lego Roboter &#43; Raspberry Pi",
-        "description" : "<p>&ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a>.&rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
+        "name" : "ATmega328P Programmierung",
+        "headline" : "ATmega328P Programmierung",
+        "description" : "<p>Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,18 +21,18 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-22 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-22 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/robot-arm/",
-        "wordCount" : "588",
-        "image" : https://blog.gc2.atimg/brickPi_explorer.jpg",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-18 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-02-18 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/atmega-328p/",
+        "wordCount" : "389",
+        "image" : https://blog.gc2.atimg/ATmega328P.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Lego Roboter &#43; Raspberry Pi </title>
+ <title>ATmega328P Programmierung </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -247,14 +246,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/brickPi_explorer.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/ATmega328P.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">22 December</span>	<span> / </span>
+          <span class="date">18 February</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a>
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
@@ -262,7 +261,7 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/programmierung">Programmierung</a>
+            <a href="/categories/atmega">ATmega</a>
           </span>
           
           <span class="category">
@@ -275,131 +274,110 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Lego Roboter &#43; Raspberry Pi</h1>
+          <h1 class='entry-title'> ATmega328P Programmierung</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>&ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a>.&rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.
+              <p>Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
 </p>
 
-<h2 id="brickpi">BrickPi</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 
-<p>Um circa. 100€ ist die <a href="https://www.dexterindustries.com/brickpi/">BrickPi</a> Erweiterung für eure Raspberry Pi zu haben. Der Versand dauert ca. 1-2 Wochen (nach meiner Erfahrung). Wenn ihr schon einen Lego-Mindstorms NXT oder EV3 Baukasten Zuhause habt könnt ihr sofort loslegen.</p>
+<p>Der ATmega328P ist ein sehr beliebtes Atmega Mikroprozessor System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.</p>
 
-<p>Warum möchte man einen NXT oder EV3 durch eine Raspberry austauschen? - ganz klar: ihr könnt mit einer Raspberry noch einfacher, noch mehr aus euren Kreationen rausholen.
-* Webserver / Services zum steuern eurer Roboter - kein Problem!
-* Mehrere BrickPis, oder BrickPi mit NXT/RXC koppeln - kein Problem!
-* Fernsteuerung über SSH/CLI - Check!</p>
+<h2 id="anschluss">Anschluss</h2>
 
-<h2 id="roboter-bauen-fertig-los">Roboter bauen, fertig LOS!</h2>
+<p>Der ATmega328P kann direkt an den SPI-Bus des Raspberry Pi angeschlossen werden. Für die Reset-Funktion wird allerdings noch der GPIO25 zusätzlich benötigt.
+Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikroprozessors prüfen.</p>
 
-<p>Auf der <a href="https://www.lego.com/de-de/mindstorms">Lego Mindstorms Website</a> findet ihr etliche Ideen und Bauanleitungen für Einsteiger, Fortgeschrittene bis zu &ldquo;Extrem-Varianten&rdquo; von DIJ-Robotern.</p>
+<p><img src="../../img/ATmega328P_Steckplatine.png" alt="ATmega328 Steckplatine" />
+<img src="../../img/ATmega328P_Schaltplan.png" alt="ATmega328 Schaltplan" /></p>
 
-<p>Ich habe mich dazu entschlossen einen Roboter Arm (&ldquo;RobotARM&rdquo;) zu bauen:</p>
+<h2 id="kommunikation">Kommunikation</h2>
 
-<p><img src="../../img/robotARM.jpg" alt="Lego Roboter Arm" /></p>
-
-<p>Für dieses Modell habe ich
-* 3 NXT Motoren
-* 1 Ultraschall Sensor
-* 1 Berührungssensor
-* 1 Farbsensor
-verwendet.</p>
-
-<p>Die Motoren sind für die Horizontal- und Vertikalbewegung des Greifarmes, sowie für das Schließen bzw. Öffnen der &ldquo;Zange&rdquo; gedacht.
-Mit dem Ultraschall-Sensor wird die Distanz zum Objekt in der Zange bestimmt, der Farbsensor kann dazu verwendet werden um die Farbe des zu greifenden Objektes zu bestimmen.
-Ein Berührungssensor (Taster) verhindert, dass der Greifarm zu weit nach hinten kippt bzw. dessen Null-Position zu finden.</p>
-
-<h2 id="treiber-raspbian-einrichten">Treiber / Raspbian einrichten</h2>
-
-<p>Wenn man ein Set mit SD-Karte von Dexter Industries gekauft hat ist dieser Schritt nicht notwendig, da die vorbereitete Distribution bereits alle notwendigen Module beinhaltet.</p>
-
-<p>Um eine Standard Raspbian Distribution für BrickPi vorzubereiten genügt es folgende Befehle auszuführen:</p>
-
-<p>(Checkout des <a href="https://github.com/DexterInd/BrickPi">BrickPi-Projektes auf GitHub</a> + Installations-Script ausführen)</p>
-
-<pre><code>git clone https://github.com/DexterInd/BrickPi.git
-cd BrickPi/Setup_Files
-sudo chmod +x install.sh
-sudo ./install.sh
+<pre><code>sudo apt-get install avrdude
 </code></pre>
 
-<h2 id="programmierung">Programmierung</h2>
+<p>In der Konfigurationsdatei /etc/avrdude.conf kann die SPI-Taktfrequenz von 400 kHz auf 200 kHz reduziert werden.</p>
 
-<p>Es gibt <a href="https://github.com/DexterInd/BrickPi/tree/master/Software">vorbereitete Softwarebibliotheken</a> für C, Python und Scratch.</p>
-
-<p>Für die Software des &ldquo;RobotARM&rdquo; habe ich mich dazu entschieden, diesen in zu schreiben.</p>
-
-<p>Als erstes müsst ihr die benötigten &ldquo;Treiber&rdquo; für euer Projekt auswählen:</p>
-
-<pre><code>git clone https://github.com/DexterInd/BrickPi.git
-cp BrickPi/Software/BrickPi_C/Drivers/ RobotArm/ -r
-cd RobotArm/
+<pre><code>programmer
+  id = &quot;linuxspi&quot;;
+  desc = &quot;Use Linux SPI device in /dev/spidev*&quot;;
+  type = &quot;linuxspi&quot;;
+  reset = 25;
+  baudrate=200000;
+;
 </code></pre>
 
-<p>Die C-Bibliothek kommt in Fom von zwei Dateien - &ldquo;BrickPi.h&rdquo; und &ldquo;tick.h&rdquo;</p>
+<p>Danach kann mit &lsquo;avrdude&rsquo; der Chiptyp ausgelesen bzw. die Kommunikation geprüft werden.</p>
 
-<pre><code>[mw@mwmaster RobotArm]$ ll
-insgesamt 36K
-drwxr-xr-x  2 mw mw 4,0K 22. Dez 16:51 ./
-drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
--rw-r--r--  1 mw mw  24K 22. Dez 16:51 BrickPi.h
--rw-r--r--  1 mw mw 1,1K 22. Dez 16:51 tick.h
+<pre><code>sudo avrdude -c linuxspi -p m328p -P /dev/spidev0.0
 </code></pre>
 
-<p>Diese müssen in euren Programm inkludiert werden.</p>
+<pre><code>avrdude: AVR device initialized and ready to accept instructions
 
-<p>Für die C-Bibliothek gibt es <a href="https://github.com/DexterInd/BrickPi/tree/master/Software/BrickPi_C/Project_Examples">ein einfaches Beispiel</a>, um sich mit der Funktionsweise der bereitgestellten API vertraut zu machen.</p>
+Reading | ################################################## | 100% 0.00s
 
-<p>Euer Programm muss keiner bestimmen Form entsprechen, es sind jedoch einige Funktionsaufrufe in die BrickPi-Bibliothek (siehe BrickPi.h) notwendig, um die Hardware zu initialisieren.</p>
+avrdude: Device signature = 0x1e950f (probably m328p)
 
-<p>Am besten man kapselt diese in Hilfsfunktionen, damit die Program-Main übersichtlicher bleibt:</p>
+avrdude: safemode: Fuses OK (E:FF, H:D9, L:62)
 
-<pre><code>void SetUARTAtmegaPorts() {
-    //http://www.dexterindustries.com/forum/?topic=programming-in-c-2/#post-1078
-    BrickPi.Address[0] = 1; // UART AtMega 328P Address (needed by BrickPi)
-    BrickPi.Address[1] = 2; // UART AtMega 328P Address (needed by BrickPi)
-}
+avrdude done.  Thank you.
+</code></pre>
 
-void DeviceConfig() {
-    wiringPiSetup();
-    SetUARTAtmegaPorts();
-    BrickPi.MotorEnable[MOTOR_ROTATE]   = TYPE_MOTOR_SPEED;
-    BrickPi.MotorEnable[MOTOR_TILT]     = TYPE_MOTOR_SPEED;
-    BrickPi.MotorEnable[MOTOR_GRAB]     = TYPE_MOTOR_SPEED;
-    BrickPi.Timeout = ROBOTARM_DEFAULT_TIMEOUT;
-    BrickPiSetTimeout();
+<h2 id="programm">Programm</h2>
 
-    BrickPi.SensorType[SENSOR_ULTRASONIC]   = TYPE_SENSOR_ULTRASONIC_CONT;
-    BrickPi.SensorType[SENSOR_TOUCH]        = TYPE_SENSOR_TOUCH;
-    BrickPi.SensorType[SENSOR_LIGHT]        = TYPE_SENSOR_LIGHT_ON;
+<pre><code>sudo apt-get install gcc-avr avr-libc 
+</code></pre>
+
+<p>Nun kann man ein Programm erstellen, z.B. eine blinkende LED an Pin 14 bzw. PB0.
+Also Dateiname wird &ldquo;main.c&rdquo; verwendet.</p>
+
+<pre><code>#define F_CPU   1000000UL
+#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+
+#define LED _BV(PB0)     // = (1 &lt;&lt; PB0)
+#define LED_DDR DDRB
+#define LED_PORT PORTB
+
+int main (void) {
+  LED_DDR = LED;      // Set the LED pin PB0 as output
+
+  while (1) {
+    LED_PORT ^= LED;  // Toggles the LED pin on port PB
+    _delay_ms(500);
+  }
 }
 </code></pre>
 
-<p>Damit bleibt die Hauptfunktion relativ gut lesbar:</p>
+<p>Danach kann man eine &lsquo;Makefile&rsquo; Datei erstellen, die alle Schritte und Parameter enthält:</p>
 
-<pre><code>int main(int argc, char *argv[]) {
-    printf(&quot; - RobotARM -\n&quot;);
-    ClearTick();
-    int setupResult = BrickPiSetup();
-    if (setupResult) {
-        printf(&quot;ERROR! - failed to initialize BrickPi! (%d)\n&quot;, setupResult);
-        return setupResult;
-    }
-    DeviceConfig();
-    setupResult = BrickPiSetupSensors();
-    if (setupResult) {
-        printf(&quot;ERROR! - failed to setup sensors! (%d)\n&quot;, setupResult);
-        return setupResult;
-    }
-    printf(&quot; robot starting...\n\n&quot;);
-    return RobotMain();
-}
+<pre><code>MCU=m328p
+CFLAGS=-g -Wall -mcall-prologues -mmcu=$(MCU) -Os
+LDFLAGS=-Wl,-gc-sections -Wl,-relax
+CC=avr-gcc
+TARGET=main
+OBJECT_FILES=main.o
+
+all: $(TARGET).hex
+
+clean:
+	rm -f *.o *.hex *.obj *.hex
+
+%.hex: %.obj
+	avr-objcopy -R .eeprom -O ihex $&lt; $@
+
+%.obj: $(OBJECT_FILES)
+	$(CC) $(CFLAGS) $(OBJECT_FILES) $(LDFLAGS) -o $@
+
+program: $(TARGET).hex
+	sudo avrdude -p $(MCU) -c linuxspi -P /dev/spidev0.0 -U flash:w:$(TARGET).hex
 </code></pre>
 
-<p>Den kompletten Code für den RobotARM könnt ihr <a href="https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9">hier</a> beziehen.</p>
+<p>Der Aufrufe &lsquo;make&rsquo; erzeugt nun das Programm als &ldquo;main.hex&rdquo; Datei und lädt sie in den ATmega328P IC.
+Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf &lsquo;make program&rsquo; nochmals auf den IC geladen werden.</p>
             </article>
           </div>
           
@@ -410,7 +388,7 @@ void DeviceConfig() {
     <div class="entry-categories"><p><span>Kategorien</span>
   
     
-    <a href="/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
+    <a href="/categories/atmega" title="View all posts in ATmega">ATmega</a>
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
@@ -427,15 +405,15 @@ void DeviceConfig() {
 
   <div class="author">
     	
-    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Geschrieben von:<a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a> </span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>Softwareentwickler und PowerShell Evangelist.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -446,7 +424,7 @@ void DeviceConfig() {
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/schusterfredl">
+  href="https://twitter.com/m_stroh">
   <i class="fa fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -455,7 +433,7 @@ void DeviceConfig() {
 
 
 <a class="email" target="_blank"
-href="mailto:manfred.wallner@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fa fa-envelope"
 title="email icon"></i>
 </a>
@@ -467,7 +445,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/mwallner">
+href="https://github.com/mstroh76">
 <i class="fa fa-github"
 title="github icon"></i>
 </a>
