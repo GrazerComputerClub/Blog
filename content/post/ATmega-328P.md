@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/ATmega328P.jpg"
-date = "2019-02-18"
+date = "2019-02-20"
 title = "ATmega328P Programmierung"
 writer = "Martin Strohmayer"
 categories = ["ATmega", "Raspberry Pi"]
@@ -15,12 +15,12 @@ Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteig
 
 ## Beschreibung ##
 
-Der ATmega328P ist ein sehr beliebtes Atmega Mikroprozessor System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.
+Der ATmega328P ist ein sehr beliebtes Atmega Mikrokontroller System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.
 
 ## Anschluss ##
 
 Der ATmega328P kann direkt an den SPI-Bus des Raspberry Pi angeschlossen werden. Für die Reset-Funktion wird allerdings noch der GPIO25 zusätzlich benötigt.
-Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikroprozessors prüfen. 
+Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikrokontroller prüfen. 
 
 ![ATmega328 Steckplatine](../../img/ATmega328P_Steckplatine.png)
 ![ATmega328 Schaltplan](../../img/ATmega328P_Schaltplan.png) 
@@ -115,8 +115,11 @@ program: $(TARGET).hex
 	sudo avrdude -p $(MCU) -c linuxspi -P /dev/spidev0.0 -U flash:w:$(TARGET).hex
 ```
 
-Der Aufrufe 'make' erzeugt nun das Programm als "main.hex" Datei und lädt sie in den ATmega328P IC.
+Der Aufrufe 'make' erzeugt nun das Programm als "main.hex" Datei und lädt es in den ATmega328P IC.
 Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf 'make program' nochmals auf den IC geladen werden.
 
 
+## Reset-Pin Ansteuerung ##
 
+Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den interen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadruch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.  
+Wird die Versorgungsspannung des Mikrokontroller entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an. 
