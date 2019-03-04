@@ -10,12 +10,12 @@ keywords = ["EEPROM", "HAT", "24C32", "I2C0", "ID_SD", "ID_SC", "DNC"]
 weight = 1
 +++
 
-Über die zwei Anschlüsse *ID_SD* und *ID_SC* auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO-Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+Über die zwei Anschlüsse *ID_SD* und *ID_SC* auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
 <!--more-->
 
 ## Einleitung ##
 
-Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins **ID_SD** (GPIO00) und **ID_SC** (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO-Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Dies soll vorallem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.  
+Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins **ID_SD** (GPIO00) und **ID_SC** (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Dies soll vorallem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.  
 Für diese offiziellen HATs gelten einige Regeln und Vorgaben um zu gewährleisten das Standards eingehalten werden. Weitere Informationen dazu erhält man bei 
 [ADD-ON BOARDS AND HATs](https://github.com/raspberrypi/hats).  
 Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EEPROMs. 
@@ -23,7 +23,7 @@ Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EE
 ## EEPROM Anforderungen ##
 
 * Typ 24Cxx
-* 3,3 V Betriebspannung
+* 3,3 V Betriebsspannung
 * 16-Bit Addressierung
 * 8-Bit Daten
 * 100 kHz I2C-Frequenz 
@@ -35,8 +35,8 @@ Offiziell empfohlen wird das EEPROM "OnSemi CAT24C32" welches 32 kBit bzw. 4 kBy
 ## Anschluss ##
 
 Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.  
-Ein Eingang dient als Schreibschutz (WP - Write protoect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3.3 V setzen.  
-Die Addressleitunen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt. 
+Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.  
+Die Addressleitunden A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt. 
 
 ![Schaltplan](../../img/EEPROM_Schaltplan.png) 
 
@@ -51,7 +51,7 @@ dtparam=i2c_vc=on
 ```
 
 Danach muss man neu starten.
-Nun benötigt man die EEPROM Programme von Git-Hub und einen Devce-Tree Compiler. Folgende Befehle installieren bzw. erzeugen diese Programme.
+Nun benötigt man die EEPROM Programme von Git-Hub. Folgende Befehle stellen diese Programme zur Verfügung.
 
 ```
 cd ~
@@ -64,7 +64,7 @@ make
 ### Konfiguration ###
 
 
-In der Datei "eeprom_settings.txt" kann man nun seine eigene Einstellungen und HAT Kennungen erstellen.
+In der Datei "eeprom_settings.txt" kann man nun seine eigenen Einstellungen und HAT Kennungen parametrieren.
 
 ```
 # 16 bit product id
@@ -85,7 +85,7 @@ Nun kann eine binäre Form der Konfigurationsdatei mit einem beliebigen Namen un
 ./eepmake eeprom_settings.txt GC2-xHAT.eep
 ```
 
-Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen, damit man das EEPROM zuerst löschen kann. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die kBit Angabe am EEPROM durch 8 um auf die Größe in PC üblichen KB zu kommen.
+Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die KiloBit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen KiloByte zu kommen.
 
 ``` 
 dd if=/dev/zero ibs=4k count=1 of=blank.eep
@@ -93,7 +93,7 @@ ls -l *.eep
 ``` 
 
 ``` 
--rw-r--r-- 1 pi pi 4096 Mär  2 16:11 blank.eep
+-rwr--r-- 1 pi pi 4096 Mär  2 16:11 blank.eep
 -rw-r--r-- 1 pi pi  136 Mär  2 16:04 GC2-xHAT.eep
 ``` 
 ``` 
@@ -202,7 +202,7 @@ Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.
 
 ``` 
 
-Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. 
+Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.
 
 ``` 
 dtc -@ -I dts -O dtb -o led.dtbo led.dts
@@ -228,7 +228,7 @@ Closing EEPROM Device.
 Done.
 ```
 
-Nach einem Reboot müsste eine angeschlossene LED (mit Vorwiderstand) blinken.
+Nach einem Reboot müsste eine an GPIO18 angeschlossene LED (mit Vorwiderstand) blinken.
 
 
 ## Verlinkungen
