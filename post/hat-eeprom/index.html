@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "HAT EEPROM anschließen und konfigurieren",
+        "headline" : "HAT EEPROM anschließen und konfigurieren",
+        "description" : "<p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-03-03 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-03-03 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/hat-eeprom/",
+        "wordCount" : "1093",
+        "image" : https://blog.gc2.atimg/EEPROM.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>HAT EEPROM anschließen und konfigurieren </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://blog.gc2.at/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/"></a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/35c3">35C3</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/atmega">ATmega</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/programmierung">Programmierung</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/EEPROM.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">03 March</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> HAT EEPROM anschließen und konfigurieren</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+</p>
+
+<h2 id="einleitung">Einleitung</h2>
+
+<p>Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins <strong>ID_SD</strong> (GPIO00) und <strong>ID_SC</strong> (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Dies soll vorallem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.<br />
+Für diese offiziellen HATs gelten einige Regeln und Vorgaben um zu gewährleisten das Standards eingehalten werden. Weitere Informationen dazu erhält man bei
+<a href="https://github.com/raspberrypi/hats">ADD-ON BOARDS AND HATs</a>.<br />
+Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EEPROMs.</p>
+
+<h2 id="eeprom-anforderungen">EEPROM Anforderungen</h2>
+
+<ul>
+<li>Typ 24Cxx</li>
+<li>3,3 V Betriebsspannung</li>
+<li>16-Bit Addressierung</li>
+<li>8-Bit Daten</li>
+<li>100 kHz I2C-Frequenz</li>
+</ul>
+
+<p>Das EEPROM muss vom Typ &ldquo;24Cxx&rdquo; sein. Es muss eine 16-Addressierung und 8-Bit Daten haben. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe Funktionen nicht.<br />
+Offiziell empfohlen wird das EEPROM &ldquo;OnSemi CAT24C32&rdquo; welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html">M24C32</a> bzw.  <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html">M24C64</a> empfehlen würde.</p>
+
+<h2 id="anschluss">Anschluss</h2>
+
+<p>Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.<br />
+Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.<br />
+Die Addressleitunden A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
+
+<p><img src="../../img/EEPROM_Schaltplan.png" alt="Schaltplan" /></p>
+
+<h2 id="erstellung">Erstellung</h2>
+
+<p>Zuerst muss der I2C0, der für den HAT EEPROM IC benutzt wird, aktiviert werden. Dazu trägt man folgende Zeile in die Datei &ldquo;config.txt&rdquo; auf der Boot-Partition ein.</p>
+
+<pre><code>dtparam=i2c_vc=on
+</code></pre>
+
+<p>Danach muss man neu starten.
+Nun benötigt man die EEPROM Programme von Git-Hub. Folgende Befehle stellen diese Programme zur Verfügung.</p>
+
+<pre><code>cd ~
+git clone https://github.com/raspberrypi/hats.git
+cd hats/eepromutils
+make
+</code></pre>
+
+<h3 id="konfiguration">Konfiguration</h3>
+
+<p>In der Datei &ldquo;eeprom_settings.txt&rdquo; kann man nun seine eigenen Einstellungen und HAT Kennungen parametrieren.</p>
+
+<pre><code># 16 bit product id
+product_id 0x6C20
+
+# 16 bit product version
+product_ver 0x0100
+
+# ASCII vendor string  (max 255 characters)
+vendor &quot;Grazer Computer Club (Austria)&quot;
+
+# ASCII product string (max 255 characters)
+product &quot;GC2-xHAT (Raspjamming)&quot;
+</code></pre>
+
+<p>Nun kann eine binäre Form der Konfigurationsdatei mit einem beliebigen Namen und der Endung &ldquo;eep&rdquo; erzeugt werden.</p>
+
+<pre><code>./eepmake eeprom_settings.txt GC2-xHAT.eep
+</code></pre>
+
+<p>Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die KiloBit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen KiloByte zu kommen.</p>
+
+<pre><code>dd if=/dev/zero ibs=4k count=1 of=blank.eep
+ls -l *.eep
+</code></pre>
+
+<pre><code>-rwr--r-- 1 pi pi 4096 Mär  2 16:11 blank.eep
+-rw-r--r-- 1 pi pi  136 Mär  2 16:04 GC2-xHAT.eep
+</code></pre>
+
+<pre><code>hexdump blank.eep
+</code></pre>
+
+<pre><code>0000000 0000 0000 0000 0000 0000 0000 0000 0000
+*
+0001000
+</code></pre>
+
+<pre><code>hexdump GC2-xHAT.eep
+</code></pre>
+
+<pre><code>0000000 2d52 6950 0001 0002 0088 0000 0001 0000
+0000010 004c 0000 1046 2881 bd24 9ea3 4ce4 2e7b
+0000020 d99a c999 6c20 0100 161e 7247 7a61 7265
+0000030 4320 6d6f 7570 6574 2072 6c43 6275 2820
+0000040 7541 7473 6972 2961 4347 2d32 4878 5441
+0000050 2820 6152 7073 616a 6d6d 6e69 2967 27e1
+0000060 0002 0001 0020 0000 0000 0000 0000 0000
+0000070 0000 0000 0000 0000 0000 0000 0000 0000
+0000080 0000 0000 0000 6eed                    
+0000088
+</code></pre>
+
+<p>Nun kann das EEPROM beschrieben werden, dazu wird zuerst der gesamte Speicher gelöscht (auf 0 gesetzt) und dann die Daten übertragen.</p>
+
+<pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=blank.eep
+</code></pre>
+
+<pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
+Do you wish to continue? (yes/no): yes
+Writing...
+4096 Bytes (4,1 kB, 4,0 KiB) kopiert, 17,0786 s, 0,2 kB/s
+8+0 Datensätze ein
+8+0 Datensätze aus
+4096 Bytes (4,1 kB, 4,0 KiB) kopiert, 17,079 s, 0,2 kB/s
+Closing EEPROM Device.
+Done.
+</code></pre>
+
+<pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT.eep
+</code></pre>
+
+<pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
+Do you wish to continue? (yes/no): yes
+Writing...
+0+1 Datensätze ein
+0+1 Datensätze aus
+136 Bytes kopiert, 0,559799 s, 0,2 kB/s
+Closing EEPROM Device.
+Done.
+</code></pre>
+
+<p>Nun kann man den Raspberry Pi neu starten. Danach können die Kennungen ausgelesen werden.</p>
+
+<pre><code>cat  /proc/device-tree/hat/*
+</code></pre>
+
+<pre><code>hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer Computer Club (Austria)
+</code></pre>
+
+<h3 id="devicetree">Devicetree</h3>
+
+<p>Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
+Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.</p>
+
+<pre><code>/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = &quot;brcm,bcm2708&quot;;
+
+    fragment@0 {
+        target = &lt;&amp;leds&gt;;
+        __overlay__ {
+            my_led: myled {
+                label = &quot;MYLED&quot;;
+                gpios = &lt;&amp;gpio 18 0&gt;;
+                linux,default-trigger = &quot;heartbeat&quot;;
+            };
+        };
+    };
+};
+
+</code></pre>
+
+<p>Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.</p>
+
+<pre><code>dtc -@ -I dts -O dtb -o led.dtbo led.dts
+./eepmake eeprom_settings.txt GC2-xHAT-dt.eep led.dtbo
+</code></pre>
+
+<p>Die erhaltene Datei wird dann wieder auf das EEPROM geschrieben.</p>
+
+<pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT-dt.eep
+</code></pre>
+
+<pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
+Do you wish to continue? (yes/no): yes
+Writing...
+512 Bytes kopiert, 2,15489 s, 0,2 kB/s
+1+1 Datensätze ein
+1+1 Datensätze aus
+673 Bytes kopiert, 2,82303 s, 0,2 kB/s
+Closing EEPROM Device.
+Done.
+</code></pre>
+
+<p>Nach einem Reboot müsste eine an GPIO18 angeschlossene LED (mit Vorwiderstand) blinken.</p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p>Spezifikationen für Aufsteckboards und <a href="https://github.com/raspberrypi/hats">HATs</a><br />
+Raspberry Pi Forum <a href="https://lb.raspberrypi.org/forums/viewtopic.php?t=108134">HOWTO: Raspi HAT EEPROM and device-tree</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorie</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js"></script>
+
+</body>
+</html>
