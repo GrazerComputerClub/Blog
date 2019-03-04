@@ -22,10 +22,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-02-18 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-02-18 00:00:00 &#43;0000 UTC",
+        "datePublished": "2019-02-20 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-02-20 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/atmega-328p/",
-        "wordCount" : "389",
+        "wordCount" : "499",
         "image" : https://blog.gc2.atimg/ATmega328P.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -250,7 +250,7 @@ if (!doNotTrack) {
       </div>
       
         <div class="entry-meta">
-          <span class="date">18 February</span>	<span> / </span>
+          <span class="date">20 February</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -284,12 +284,12 @@ if (!doNotTrack) {
 
 <h2 id="beschreibung">Beschreibung</h2>
 
-<p>Der ATmega328P ist ein sehr beliebtes Atmega Mikroprozessor System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.</p>
+<p>Der ATmega328P ist ein sehr beliebtes Atmega Mikrokontroller System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.</p>
 
 <h2 id="anschluss">Anschluss</h2>
 
 <p>Der ATmega328P kann direkt an den SPI-Bus des Raspberry Pi angeschlossen werden. Für die Reset-Funktion wird allerdings noch der GPIO25 zusätzlich benötigt.
-Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikroprozessors prüfen.</p>
+Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikrokontroller prüfen.</p>
 
 <p><img src="../../img/ATmega328P_Steckplatine.png" alt="ATmega328 Steckplatine" />
 <img src="../../img/ATmega328P_Schaltplan.png" alt="ATmega328 Schaltplan" /></p>
@@ -376,8 +376,13 @@ program: $(TARGET).hex
 	sudo avrdude -p $(MCU) -c linuxspi -P /dev/spidev0.0 -U flash:w:$(TARGET).hex
 </code></pre>
 
-<p>Der Aufrufe &lsquo;make&rsquo; erzeugt nun das Programm als &ldquo;main.hex&rdquo; Datei und lädt sie in den ATmega328P IC.
+<p>Der Aufrufe &lsquo;make&rsquo; erzeugt nun das Programm als &ldquo;main.hex&rdquo; Datei und lädt es in den ATmega328P IC.
 Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf &lsquo;make program&rsquo; nochmals auf den IC geladen werden.</p>
+
+<h2 id="reset-pin-ansteuerung">Reset-Pin Ansteuerung</h2>
+
+<p>Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den interen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadruch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.<br />
+Wird die Versorgungsspannung des Mikrokontroller entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an.</p>
             </article>
           </div>
           

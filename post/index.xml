@@ -6,15 +6,25 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>HAT EEPROM anschließen und konfigurieren</title>
+      <link>https://blog.gc2.at/post/hat-eeprom/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/hat-eeprom/</guid>
+      <description>&lt;p&gt;Über die zwei Anschlüsse &lt;em&gt;ID_SD&lt;/em&gt; und &lt;em&gt;ID_SC&lt;/em&gt; auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ATmega328P Programmierung</title>
       <link>https://blog.gc2.at/post/atmega-328p/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
       <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
@@ -131,12 +141,12 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
     </item>
     
     <item>
-      <title>ESP8266 ESP-01</title>
+      <title>ESP8266 ESP-01(S)</title>
       <link>https://blog.gc2.at/post/esp8266-esp01/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
-      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste experimente mit dem Raspberry Pi.
+      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
@@ -170,17 +180,6 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <guid>https://blog.gc2.at/post/berryboot/</guid>
       <description>&lt;p&gt;Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Device Tree</title>
-      <link>https://blog.gc2.at/post/device-tree-kopie/</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/device-tree-kopie/</guid>
-      <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
