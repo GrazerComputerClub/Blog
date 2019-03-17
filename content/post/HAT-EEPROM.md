@@ -28,7 +28,7 @@ Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EE
 * 8-Bit Daten
 * 100 kHz I2C-Frequenz 
 
-Das EEPROM muss vom Typ "24Cxx" sein. Es muss eine 16-Addressierung und 8-Bit Daten haben. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe Funktionen nicht.  
+Das EEPROM muss vom Typ "24Cxx" sein, dann hat es eine I2C-Schnittstelle. Es muss eine 16-Addressierung haben und 8-Bit Daten verwenden. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe funktionieren nicht.  
 Offiziell empfohlen wird das EEPROM "OnSemi CAT24C32" welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics [M24C32](https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html) bzw.  [M24C64](https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html) empfehlen würde.
 
 
@@ -36,7 +36,7 @@ Offiziell empfohlen wird das EEPROM "OnSemi CAT24C32" welches 32 kBit bzw. 4 kBy
 
 Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.  
 Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.  
-Die Addressleitunden A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt. 
+Die Addressleitungen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt. 
 
 ![Schaltplan](../../img/EEPROM_Schaltplan.png) 
 
@@ -179,7 +179,7 @@ hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer 
 ### Devicetree ###
 
 Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
-Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.
+Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20. Dazu wird folgender Inhalt in der Datei led.dts erzeugt.
 
 ``` 
 /dts-v1/;
@@ -191,15 +191,25 @@ Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.
     fragment@0 {
         target = <&leds>;
         __overlay__ {
-            my_led: myled {
-                label = "MYLED";
-                gpios = <&gpio 18 0>;
+            ledred: ledred {
+                label = "LED16";
+                gpios = <&gpio 16 0>;
                 linux,default-trigger = "heartbeat";
             };
         };
     };
-};
 
+    fragment@1 {
+        target = <&leds>;
+        __overlay__ {
+            ledorange: ledorange {
+                label = "LED20";
+                gpios = <&gpio 20 0>;
+                linux,default-trigger = "mmc0";
+            };
+        };
+    };
+};
 ``` 
 
 Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.
@@ -223,12 +233,18 @@ Writing...
 512 Bytes kopiert, 2,15489 s, 0,2 kB/s
 1+1 Datensätze ein
 1+1 Datensätze aus
-673 Bytes kopiert, 2,82303 s, 0,2 kB/s
+967 Bytes kopiert, 3,97047 s, 0,2 kB/s
 Closing EEPROM Device.
 Done.
 ```
 
-Nach einem Reboot müsste eine an GPIO18 angeschlossene LED (mit Vorwiderstand) blinken.
+Wenn keine weiteren Änderungen am EEPROM durchgeführt werden, kann die Aktivierung des I2C0-Buses wieder aus der Datei "config.txt" entfernt werden.
+ 
+```
+#dtparam=i2c_vc=on
+```
+
+Nach einem Reboot müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) blinken und eine LED an GPIO20 SD-Kartenzugriffe ersichtlich machen. 
 
 
 ## Verlinkungen
