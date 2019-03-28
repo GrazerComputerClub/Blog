@@ -25,7 +25,7 @@
         "datePublished": "2018-12-20 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-20 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/esp8266-esp01/",
-        "wordCount" : "530",
+        "wordCount" : "520",
         "image" : https://blog.gc2.atimg/ESP8266_ESP-01.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -105,6 +105,10 @@ if (!doNotTrack) {
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/linuxtage">Linuxtage</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
@@ -316,14 +320,14 @@ sudo systemctl status serial-getty@ttyAMA0.service
 sudo minicom -b 115200 -o -D /dev/ttyAMA0
 </code></pre>
 
-<p>Alternativ kann auch screen zur Kommunikation benutzt werden. Allerdings muss auch hier jeder befehl mit Enter und Strg+J</p>
+<p>Alternativ kann auch screen zur Kommunikation benutzt werden.</p>
 
-<pre><code>sudo minicom -b 115200 -o -D /dev/ttyAMA0
+<pre><code>sudo screen /dev/ttyAMA0 115200
 </code></pre>
 
-<p>Bei beiden Programmen müssen alle Eingaben mit den Tasten Enter und Strg+J abgeschlossen werden.</p>
+<p>Bei beiden Programmen müssen alle Eingaben mit den Tasten Enter (CR-Zeichen) und Strg+J (LF-Zeichen) abgeschlossen werden.</p>
 
-<p>Als erstes kann man die Verbindung mit dem Befehl &ldquo;AT&rdquo; überprüfen (danach Enter Strg+J nicht vergessen). Als Antwort muss &ldquo;OK&rdquo; zurückgeschickt werden.<br />
+<p>Als erstes kann man die Verbindung mit dem Befehl &ldquo;AT&rdquo; überprüfen (danach Enter und Strg+J nicht vergessen). Als Antwort muss &ldquo;OK&rdquo; zurückgeschickt werden.<br />
 Sendet man den Reset Befehl &ldquo;AT+RST&rdquo; so wird ein Reset durchgeführt und Informationen über den Mikrocontroller ausgegeben.</p>
 
 <pre><code> ets Jan  8 2013,rst cause:2, boot mode:(3,6)

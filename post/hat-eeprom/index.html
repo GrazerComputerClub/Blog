@@ -25,7 +25,7 @@
         "datePublished": "2019-03-03 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-03 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hat-eeprom/",
-        "wordCount" : "1093",
+        "wordCount" : "1165",
         "image" : https://blog.gc2.atimg/EEPROM.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -105,6 +105,10 @@ if (!doNotTrack) {
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/linuxtage">Linuxtage</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
@@ -293,14 +297,14 @@ Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EE
 <li>100 kHz I2C-Frequenz</li>
 </ul>
 
-<p>Das EEPROM muss vom Typ &ldquo;24Cxx&rdquo; sein. Es muss eine 16-Addressierung und 8-Bit Daten haben. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe Funktionen nicht.<br />
+<p>Das EEPROM muss vom Typ &ldquo;24Cxx&rdquo; sein, dann hat es eine I2C-Schnittstelle. Es muss eine 16-Addressierung haben und 8-Bit Daten verwenden. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe funktionieren nicht.<br />
 Offiziell empfohlen wird das EEPROM &ldquo;OnSemi CAT24C32&rdquo; welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html">M24C32</a> bzw.  <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html">M24C64</a> empfehlen würde.</p>
 
 <h2 id="anschluss">Anschluss</h2>
 
 <p>Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.<br />
 Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.<br />
-Die Addressleitunden A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
+Die Addressleitungen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
 
 <p><img src="../../img/EEPROM_Schaltplan.png" alt="Schaltplan" /></p>
 
@@ -417,7 +421,7 @@ Done.
 <h3 id="devicetree">Devicetree</h3>
 
 <p>Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
-Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.</p>
+Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20. Dazu wird folgender Inhalt in der Datei led.dts erzeugt.</p>
 
 <pre><code>/dts-v1/;
 /plugin/;
@@ -428,15 +432,25 @@ Im Beispiel wird ein Blinklicht auf GPIO18 aktiviert.</p>
     fragment@0 {
         target = &lt;&amp;leds&gt;;
         __overlay__ {
-            my_led: myled {
-                label = &quot;MYLED&quot;;
-                gpios = &lt;&amp;gpio 18 0&gt;;
+            ledred: ledred {
+                label = &quot;LED16&quot;;
+                gpios = &lt;&amp;gpio 16 0&gt;;
                 linux,default-trigger = &quot;heartbeat&quot;;
             };
         };
     };
-};
 
+    fragment@1 {
+        target = &lt;&amp;leds&gt;;
+        __overlay__ {
+            ledorange: ledorange {
+                label = &quot;LED20&quot;;
+                gpios = &lt;&amp;gpio 20 0&gt;;
+                linux,default-trigger = &quot;mmc0&quot;;
+            };
+        };
+    };
+};
 </code></pre>
 
 <p>Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.</p>
@@ -457,12 +471,17 @@ Writing...
 512 Bytes kopiert, 2,15489 s, 0,2 kB/s
 1+1 Datensätze ein
 1+1 Datensätze aus
-673 Bytes kopiert, 2,82303 s, 0,2 kB/s
+967 Bytes kopiert, 3,97047 s, 0,2 kB/s
 Closing EEPROM Device.
 Done.
 </code></pre>
 
-<p>Nach einem Reboot müsste eine an GPIO18 angeschlossene LED (mit Vorwiderstand) blinken.</p>
+<p>Wenn keine weiteren Änderungen am EEPROM durchgeführt werden, kann die Aktivierung des I2C0-Buses wieder aus der Datei &ldquo;config.txt&rdquo; entfernt werden.</p>
+
+<pre><code>#dtparam=i2c_vc=on
+</code></pre>
+
+<p>Nach einem Reboot müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) blinken und eine LED an GPIO20 SD-Kartenzugriffe ersichtlich machen.</p>
 
 <h2 id="verlinkungen">Verlinkungen</h2>
 

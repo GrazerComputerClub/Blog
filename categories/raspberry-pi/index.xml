@@ -6,10 +6,30 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SoC der Einplatinencomputer</title>
+      <link>https://blog.gc2.at/post/cpu-performance/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/cpu-performance/</guid>
+      <description>&lt;p&gt;Eine interessante Kenngröße der vielen verschienen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU. Eine Diagramm soll helfen die Prozessoren bzw. Produkte einordenen zu können &amp;hellip;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Temperatursensor DS18B20</title>
+      <link>https://blog.gc2.at/post/ds18b20/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/ds18b20/</guid>
+      <description>&lt;p&gt;Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HAT EEPROM anschließen und konfigurieren</title>
