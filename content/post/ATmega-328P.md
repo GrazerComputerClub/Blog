@@ -123,3 +123,7 @@ Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf 'make pr
 
 Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den interen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadruch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.  
 Wird die Versorgungsspannung des Mikrokontroller entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an. 
+
+## Beispielvideo ##
+
+[![Atmega 328 programmed via Raspberry Pi](http://img.youtube.com/vi/WoNUi5WsEQ8/0.jpg)](https://www.youtube.com/watch?v=WoNUi5WsEQ8)

@@ -249,8 +249,10 @@ Nach einem Reboot müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) 
 
 ## Verlinkungen
 
-
 Spezifikationen für Aufsteckboards und [HATs](https://github.com/raspberrypi/hats)  
 Raspberry Pi Forum [HOWTO: Raspi HAT EEPROM and device-tree](https://lb.raspberrypi.org/forums/viewtopic.php?t=108134)
 
 
+## Beispielvideo ##
+
+[![Raspberry Pi GC2-xHAT EEPROM/LED test](http://img.youtube.com/vi/1dkpccwG0sw/0.jpg)](https://www.youtube.com/watch?v=1dkpccwG0sw)
