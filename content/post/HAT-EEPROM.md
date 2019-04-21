@@ -88,7 +88,7 @@ Nun kann eine binäre Form der Konfigurationsdatei mit einem beliebigen Namen un
 Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die KiloBit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen KiloByte zu kommen.
 
 ``` 
-dd if=/dev/zero ibs=4k count=1 of=blank.eep
+dd if=/dev/zero bs=4k count=1 of=blank.eep
 ls -l *.eep
 ``` 
 
