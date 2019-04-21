@@ -25,7 +25,7 @@
         "datePublished": "2019-02-20 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-02-20 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/atmega-328p/",
-        "wordCount" : "499",
+        "wordCount" : "500",
         "image" : https://blog.gc2.atimg/ATmega328P.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -387,6 +387,10 @@ Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf &lsquo;m
 
 <p>Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den interen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadruch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.<br />
 Wird die Versorgungsspannung des Mikrokontroller entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an.</p>
+
+<h2 id="beispielvideo">Beispielvideo</h2>
+
+<p><a href="https://www.youtube.com/watch?v=WoNUi5WsEQ8"><img src="http://img.youtube.com/vi/WoNUi5WsEQ8/0.jpg" alt="Atmega 328 programmed via Raspberry Pi" /></a></p>
             </article>
           </div>
           

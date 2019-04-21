@@ -25,7 +25,7 @@
         "datePublished": "2019-03-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-26 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/ds18b20/",
-        "wordCount" : "217",
+        "wordCount" : "348",
         "image" : https://blog.gc2.atimg/18B20.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -296,17 +296,28 @@ if (!doNotTrack) {
 
 <p>Es muss lediglich der 1-Wire-Bus über einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; parametriert werden. Daduch werden automatisch beim Starten die entsprechenden Kernel-Module (w1_gpio, w1_therm und wire) geladen.</p>
 
-<pre><code>dtoverlay=w1-gpio,gpioin=4,pullup=on
+<pre><code>dtoverlay=w1-gpio,gpiopin=4,pullup=on
+</code></pre>
+
+<p>Im Betrieb kann das Kernelmodul mit folgenden Aufruf geladen werden:</p>
+
+<pre><code>sudo dtoverlay w1-gpio gpiopin=4 pullup=on
 </code></pre>
 
 <h2 id="zugriff">Zugriff</h2>
 
-<p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung des Sonsors erfolgt über eine eindeutuge ID-Nummer.</p>
+<p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung aller Sonsoren erfolgt über eine eindeutuge ID-Nummer, die in der Datei &ldquo;w1_master_slaves&rdquo; aufgelistet sind.</p>
 
 <pre><code>ls  /sys/bus/w1/devices/
 </code></pre>
 
 <pre><code>28-03089779799c  w1_bus_master1
+</code></pre>
+
+<pre><code>cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slaves
+</code></pre>
+
+<pre><code>28-03089779799c
 </code></pre>
 
 <pre><code>cat  /sys/bus/w1/devices/28-03089779799c/w1_slave
@@ -316,7 +327,61 @@ if (!doNotTrack) {
 8d 01 55 05 7f a5 a5 66 9c t=24812
 </code></pre>
 
-<p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.</p>
+<p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
+Dies Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/python</span>
+<span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#60a0b0;font-style:italic"># read slave list from master 1</span>
+<span style="color:#007020">file</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/devices/w1_bus_master1/w1_master_slaves&#39;</span>)
+w1_slaves <span style="color:#666">=</span> <span style="color:#007020">file</span><span style="color:#666">.</span>readlines()
+<span style="color:#007020">file</span><span style="color:#666">.</span>close()
+
+<span style="color:#60a0b0;font-style:italic"># for each slave</span>
+<span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> w1_slaves:
+  <span style="color:#60a0b0;font-style:italic"># get slave id</span>
+  w1_slave <span style="color:#666">=</span> line<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">0</span>]
+  <span style="color:#60a0b0;font-style:italic"># read temp from slave id</span>
+  <span style="color:#007020">file</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/bus/w1/devices/&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(w1_slave) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;/w1_slave&#39;</span>)
+  filecontent <span style="color:#666">=</span> <span style="color:#007020">file</span><span style="color:#666">.</span>read()
+  <span style="color:#007020">file</span><span style="color:#666">.</span>close()
+  <span style="color:#60a0b0;font-style:italic"># calc and show temp</span>
+  stringvalue <span style="color:#666">=</span> filecontent<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34; &#34;</span>)[<span style="color:#40a070">9</span>]
+  temperature <span style="color:#666">=</span> <span style="color:#007020">float</span>(stringvalue[<span style="color:#40a070">2</span>:]) <span style="color:#666">/</span> <span style="color:#40a070">1000</span>
+
+  <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)</code></pre></td></tr></table>
+</div>
+</div>
+<pre><code>python3 /usr/local/bin/w1-temp.py
+</code></pre>
+
+<pre><code>26.2 °C
+</code></pre>
             </article>
           </div>
           

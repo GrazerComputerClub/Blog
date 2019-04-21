@@ -25,7 +25,7 @@
         "datePublished": "2019-03-03 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-03 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hat-eeprom/",
-        "wordCount" : "1165",
+        "wordCount" : "1166",
         "image" : https://blog.gc2.atimg/EEPROM.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -348,7 +348,7 @@ product &quot;GC2-xHAT (Raspjamming)&quot;
 
 <p>Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die KiloBit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen KiloByte zu kommen.</p>
 
-<pre><code>dd if=/dev/zero ibs=4k count=1 of=blank.eep
+<pre><code>dd if=/dev/zero bs=4k count=1 of=blank.eep
 ls -l *.eep
 </code></pre>
 
@@ -487,6 +487,10 @@ Done.
 
 <p>Spezifikationen für Aufsteckboards und <a href="https://github.com/raspberrypi/hats">HATs</a><br />
 Raspberry Pi Forum <a href="https://lb.raspberrypi.org/forums/viewtopic.php?t=108134">HOWTO: Raspi HAT EEPROM and device-tree</a></p>
+
+<h2 id="beispielvideo">Beispielvideo</h2>
+
+<p><a href="https://www.youtube.com/watch?v=1dkpccwG0sw"><img src="http://img.youtube.com/vi/1dkpccwG0sw/0.jpg" alt="Raspberry Pi GC2-xHAT EEPROM/LED test" /></a></p>
             </article>
           </div>
           
