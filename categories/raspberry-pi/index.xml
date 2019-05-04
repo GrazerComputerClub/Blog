@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP8266 ESP-01(S) Firmware aktualisieren</title>
+      <link>https://blog.gc2.at/post/esp8266-esp01-firmware/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/esp8266-esp01-firmware/</guid>
+      <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit einer neuen Firmware flashen. Man benötigt nur einige Kabelverbindungen und eine 3,3 V serielle Schnittstelle. Eine Aufgabe die man perfekt mit dem Raspberry Pi erledigen kann.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>SoC der Einplatinencomputer</title>
@@ -108,7 +118,7 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
-      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.
+      <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
