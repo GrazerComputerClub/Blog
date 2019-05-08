@@ -19,7 +19,7 @@ Der ESP8266 ist ein kostengünstiger 32-Bit-Mikrocontroller der chinesischen Fir
 Die kleinste und günstigste Platine am Markt trägt die Bezeichnung ESP-01 bzw. die verbesserte Version ESP-01S. Sie wird allerdings oft mit einer veralteten Firmware ausgeliefert. Sie kann aber mit einem Raspberry Pi sehr einfach aktualisert werden. Ein aktuelle Firmware bietet dann auch die Möglichkeit GPIOs über AT-Kommandos zu steuern.  
 Achtung die alte blaue ESP-01 Platine kann aufgrund des kleinen Speichers (512 KBit) nicht aktualisert werden. Achtung die Version 3 der Firmware setzt zwingend einen 2 MBit Speicher (1024x1024) voraus. Die letzte Firmwareversion für die schwarze ESP-01(S) Platine ist also die Version 2.2.1.
 
-![ESP8266 ESP-01](../../img/ESP8266_ESP-01.png) 
+![ESP8266 ESP-01](../../img/ESP8266_ESP-01b.png) 
  
 
 ## Anschluss ##
@@ -27,7 +27,7 @@ Achtung die alte blaue ESP-01 Platine kann aufgrund des kleinen Speichers (512 K
 Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden. 
 Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.
 
-![ESP8266 ESP-01](../../img/ESP8266_ESP-01_Pi.png) 
+![ESP8266 ESP-01](../../img/ESP8266_ESP-01b_Pi.png) 
 
 Um später ein Firmware Update ausführen zu können, muss der GPIO0 Eingang auf GND gesetzt werden. Zuerst muss der Pin allerdings offen gelassen werden.
 
