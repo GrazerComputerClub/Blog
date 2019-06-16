@@ -1,6 +1,6 @@
 +++
 showonlyimage = false
-draft = true
+draft = false
 image = "img/Raspjamming.png"
 date = "2019-06-15"
 title = "Raspjamming Distribution"
