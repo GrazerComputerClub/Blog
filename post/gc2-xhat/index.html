@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Hotkeys zuweisen ohne X11",
-        "headline" : "Hotkeys zuweisen ohne X11",
-        "description" : "<p>Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+        "name" : "GC2-xHAT Aufsteckboard",
+        "headline" : "GC2-xHAT Aufsteckboard",
+        "description" : "<p>Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +21,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-11 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-11 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/",
-        "wordCount" : "393",
-        "image" : https://blog.gc2.atimg/keys_black_vol.jpg",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-06-14 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-06-14 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/gc2-xhat/",
+        "wordCount" : "437",
+        "image" : https://blog.gc2.atimg/GC2-xHAT.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Hotkeys zuweisen ohne X11 </title>
+ <title>GC2-xHAT Aufsteckboard </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -245,11 +245,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/keys_black_vol.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/GC2-xHAT.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">11 December</span>	<span> / </span>
+          <span class="date">14 June</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -267,39 +267,55 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Hotkeys zuweisen ohne X11</h1>
+          <h1 class='entry-title'> GC2-xHAT Aufsteckboard</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+              <p>Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
 </p>
 
-<p>Triggerhappy überwacht Eingaben und gedrückte Tasten und kann dann entsprechend Befehle und Programme ausführen. Es ist ein systemweiter Dienst (Service oder Daemon), der auch ohne einer grafische Oberfäche funktioniert. Installiert wird das Programm durch die Eingabe von <code>apt-get install tiggerhappy</code>, wobei es bei Raspbian allerdings bereits vorinstalliert ist.<br />
-Die Parametrierung erfolgt über Konfigurations-Dateien die sich im Verzeichnis &ldquo;/etc/triggerhappy/triggers.d/&rdquo; befinden müssen. Als erster wird der Ereignisname angegeben. Es ist auch möglich, bis zu 5 kombinierte Ereignisnamen hinzuzufügen. Sie werden mit einem Plus-Zeichen verknüpft. Mögliche Ereignisnamen bzw. Eventcodes findet man auf der Seite <a href="https://code.woboq.org/gtk/include/linux/input-event-codes.h.html">https://code.woboq.org/gtk/include/linux/input-event-codes.h.html</a>. Dann wird der Ereigniswert bzw. die Art der Aktivierung angegeben. Ein Wert von 1 entspricht dem Drücken einer Taste, 2 entspricht der gehaltenen Taste, die Freigabe wird durch den Wert 0 definiert. Zuletzt gibt man das auszuführende Programm an.
-Eine Beispielkonfiguration für den Rasberry Pi ist das Hinterlegen der Laut- und Leise-Taste einer Multimediatastatur mit der entsprechenden Funktion. Dabei wird der PCM Audio Kanal um jeweils 2 dB verändert, wenn die Taste gedrückt wird. Wird zusätzlich die linke Shift-Taste gedrückt, verändert sich der Wert um 10 dB. Dies gilt auch, wenn die Taste gedrückt bleibt.</p>
+<p>Die Bezeichnung HAT steht für &ldquo;Hardware Attached on Top&rdquo;, also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Über die GPIO-Leiste werden so externe Komponenten an das System anschlossen. Für den Raspjamming Event, also den Raspberry Pi Jam bei den Grazer Linuxtagen, sollte Mithilfe eines eigens entwickelten HATs eine einsteigerfreundliche Hardware zur Verfügung gestellt werden. Dieser HAT vereint deshalb viele Anfängerprojekte auf einer Platine. So können Jam TeilnehmerInnen sich auf das wesentliche konzentieren, die Programmierung. Der Name dieses HAT ist GC2-xHAT. Zusätzlich zu den Raspjamming Projekten bietet der GC2-xHAT auch noch weiter Sensoren und Möglichkeiten für erfahrenere ProgrammiererInnen.</p>
 
-<p><strong>/etc/triggerhappy/triggers.d/audio.conf</strong></p>
+<p>Folgende Sensoren und Hardware sind am GC2-xHAT enthalten:</p>
 
-<pre><code># adjust volume
-KEY_VOLUMEUP			1	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP			2	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEDOWN			1	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN			2	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
-</code></pre>
+<ul>
+<li>7-Segment Display mit 4 Stellen</li>
+<li>DHT11 o. DHT22 o. AM2302 Luftdruck / Luftfeuchte Sensor</li>
+<li>AMD2320 o. AMD2322 Luftdruck / Luftfeuchte Sensor</li>
+<li>DS18B20 Temperatursensor</li>
+<li>HC-SR04 Ultraschalldistanzsensor</li>
+<li>3 x LED (Rot, Orange, Grün für Ampelfunktion)</li>
+<li>3 x Schalter</li>
+<li>Summer (Buzzer)</li>
+<li>ATmega 328P Sockel für Programmierung und Testen</li>
+<li>ESP-01 (ESP8266) Sockel für Programmierung und Testen</li>
+<li>HAT EEPROM</li>
+</ul>
 
-<p><strong>/etc/triggerhappy/triggers.d/system.conf</strong></p>
+<p>Es handle sich bei dem HAT um eine Open-Hardware. Alle Informationen, Schaltpläne sowie das Platinenlayout ist auf <a href="https://github.com/GrazerComputerClub/GC2-xHAT">Git-Hub</a> frei verfügbar. Die verwendetet Lizenz ist <a href="https://creativecommons.org/licenses/by/3.0/at/">CC-BY 3.0 AT</a> und erlaubt jedwede Nutzung, nur die Namensnennung des Grazer Computer Clubs und der Lizenz muss erhalten bleiben. Jeder kann sich also selbst, so eine Platine fertigen lassen und auch Modifikationen durchführen.</p>
 
-<pre><code># shutdown
-KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
-</code></pre>
+<p>Bei den Daten zum HAT ist auch eine EEPROM Konfiguration dabei. Diese sollte in das Speicherchip des HAT programmiert werden, wie das geht wird in Blog-Eintrag <a href="../hat-eeprom/">HAT EEPROM anschließen und konfigurieren</a> beschrieben.<br />
+Weiters ist eine <a href="https://github.com/GrazerComputerClub/GC2-xHAT/blob/master/aliases/bash_aliases_GC2xHAT">alias Konfiguration</a> enthalten die Shell-Kommandos für die Steuerung des GC2-xHAT enthält:</p>
 
-<p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
-Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
+<ul>
+<li><strong>redon</strong>/<strong>rotein</strong> &hellip; Rote LED einschalten</li>
+<li><strong>redglow</strong>/<strong>rotglimmen</strong> &hellip; Rote LED leicht leuchten lassen</li>
+<li><strong>redoff</strong>/<strong>rotaus</strong> &hellip; Rote LED ausschalten</li>
+<li><strong>ledon</strong>/<strong>ledein</strong> &hellip; Alle LEDs (Rot, Orange und Grün) einschalten</li>
+<li><strong>ledoff</strong>/<strong>ledaus</strong> &hellip; Alle LEDs (Rot, Orange und Grün) ausschalten</li>
+<li><strong>beep</strong>/<strong>piep</strong> &hellip; Summer kurz aktivieren</li>
+<li><strong>esppoweron</strong> .. 3,3 V Versorgung für ATmega328- und ESP01-Sockel einschalten</li>
+<li><strong>esppoweroff</strong> .. 3,3 V Versorgung für ATmega328- und ESP01-Sockel ausschalten</li>
+<li>usw.</li>
+</ul>
+
+<p>An einfachsten ist allerdings die Nutzung mit der GC2 Distribution <a href="https://github.com/GrazerComputerClub/Raspjamming-Image">Raspjamming</a>. Dann sind die benötigen Werkzeuge und aliases bereits vorinstaliert. Zum Programmieren des EEPROM sollte das <a href="http://www.strohmayers.com/image/2019-04-26-Raspjamming-full.img.7z">April Image</a> verwendet werden, da neuere Raspberry Pi Firmware Versionen einen Fehler beim Erkennen des EEPROM haben. Also sollte auch keine &lsquo;sudo apt-get upgrade&rsquo; vorher gemacht werden.<br />
+Mehr Informationen zur <a href="../raspjamming-distribution/">Raspjamming Distribution</a> findet man hier im Blog.</p>
+
+<h2 id="schaltplan">Schaltplan</h2>
+
+<p><img src="https://raw.githubusercontent.com/GrazerComputerClub/GC2-xHAT/master/circuit_diagram.png" alt="Schaltplan GC2-xHAT" /></p>
             </article>
           </div>
           

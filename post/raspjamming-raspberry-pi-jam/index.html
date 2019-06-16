@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Hotkeys zuweisen ohne X11",
-        "headline" : "Hotkeys zuweisen ohne X11",
-        "description" : "<p>Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+        "name" : "Raspjamming - Raspberry Pi Jam",
+        "headline" : "Raspjamming - Raspberry Pi Jam",
+        "description" : "<p>Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Jam wird vom Grazer Computer Club, kurz GC2 organisiert.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +21,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-11 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-11 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/",
-        "wordCount" : "393",
-        "image" : https://blog.gc2.atimg/keys_black_vol.jpg",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-06-16 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-06-16 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/",
+        "wordCount" : "441",
+        "image" : https://blog.gc2.atimg/Raspberry-Pi-Jam.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Hotkeys zuweisen ohne X11 </title>
+ <title>Raspjamming - Raspberry Pi Jam </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -245,11 +245,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/keys_black_vol.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Raspberry-Pi-Jam.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">11 December</span>	<span> / </span>
+          <span class="date">16 June</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -267,39 +267,47 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Hotkeys zuweisen ohne X11</h1>
+          <h1 class='entry-title'> Raspjamming - Raspberry Pi Jam</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+              <p>Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Jam wird vom Grazer Computer Club, kurz GC2 organisiert.
 </p>
 
-<p>Triggerhappy überwacht Eingaben und gedrückte Tasten und kann dann entsprechend Befehle und Programme ausführen. Es ist ein systemweiter Dienst (Service oder Daemon), der auch ohne einer grafische Oberfäche funktioniert. Installiert wird das Programm durch die Eingabe von <code>apt-get install tiggerhappy</code>, wobei es bei Raspbian allerdings bereits vorinstalliert ist.<br />
-Die Parametrierung erfolgt über Konfigurations-Dateien die sich im Verzeichnis &ldquo;/etc/triggerhappy/triggers.d/&rdquo; befinden müssen. Als erster wird der Ereignisname angegeben. Es ist auch möglich, bis zu 5 kombinierte Ereignisnamen hinzuzufügen. Sie werden mit einem Plus-Zeichen verknüpft. Mögliche Ereignisnamen bzw. Eventcodes findet man auf der Seite <a href="https://code.woboq.org/gtk/include/linux/input-event-codes.h.html">https://code.woboq.org/gtk/include/linux/input-event-codes.h.html</a>. Dann wird der Ereigniswert bzw. die Art der Aktivierung angegeben. Ein Wert von 1 entspricht dem Drücken einer Taste, 2 entspricht der gehaltenen Taste, die Freigabe wird durch den Wert 0 definiert. Zuletzt gibt man das auszuführende Programm an.
-Eine Beispielkonfiguration für den Rasberry Pi ist das Hinterlegen der Laut- und Leise-Taste einer Multimediatastatur mit der entsprechenden Funktion. Dabei wird der PCM Audio Kanal um jeweils 2 dB verändert, wenn die Taste gedrückt wird. Wird zusätzlich die linke Shift-Taste gedrückt, verändert sich der Wert um 10 dB. Dies gilt auch, wenn die Taste gedrückt bleibt.</p>
+<p>Raspjamming bei den Grazer Linuxtagen dauert nur einen Nachmittag, das sind 3-4 Stunden. Das ist nicht viel Zeit, wenn man bedenkt, dass einige Schritte nötwendig sind um zum eigentlichen Ziel, dem Programmieren zu gelangen.<br />
+Zum Jam gehören folgende Schritte:</p>
 
-<p><strong>/etc/triggerhappy/triggers.d/audio.conf</strong></p>
+<ol>
+<li>Hardware und Anleitungen ausgeben</li>
+<li>SD-Karte mit Betriebssystem und Programmen installieren</li>
+<li>Netzwerk bzw. WLAN einrichten (Evtl. Raspberry Pi Zero OTG Ethernet Modus aktivieren)</li>
+<li>Librarys und Sourcecode von Git-Hub auschecken</li>
+<li>Schaltungen auf einem Steckbrett aufbauen</li>
+<li>Programmierung der Beispielaufgaben</li>
+</ol>
 
-<pre><code># adjust volume
-KEY_VOLUMEUP			1	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP			2	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEDOWN			1	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN			2	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
-</code></pre>
+<h2 id="hardware">Hardware</h2>
 
-<p><strong>/etc/triggerhappy/triggers.d/system.conf</strong></p>
+<p>Beim Jam 2018 hatten wir einige TeilnehmerInnen die keinerlei Materialen mitgebraucht hatten. Um möglichst vielen die Möglichkeit zu geben an Raspjamming teilnehmen zu können stellen wird Hardware zum Ausleihen zur Verfügung.<br />
+Das sind hauptsächlich auf Grund des Preises Raspberry Pi Zero WH Einplatinencomputer. Sie sind bereits mit einem Pin-Header bestückt und bieten auch WLAN als Verbindungsoption. Wenngleich die CPU-Leistung und Features limitiert sind, haben wir damit gute Erfahrungen gemacht.<br />
+Für die Programmierprojekte stellen wir kleine Steckplatinen, Kabel und eine LED mit Vorwiderstand zur Verfügung. Zusätzlich gibt es noch eine Ampel und weiter Sensoren und Hardware für die vorbereitet Projekte.</p>
 
-<pre><code># shutdown
-KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
-</code></pre>
+<h2 id="anleitungen">Anleitungen</h2>
 
-<p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
-Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
+<p>Ganz wichtig bei einem geordneten Raspberry Pi Jam sind Anleitungen für die TeilnehmerInnen. Unsere Anleitung wurde in LaTex geschrieben und enthält Kapitel zur Systeminstallation und Projekte mit Schaltungen und Programmierbeispielen.<br />
+Inzwischen sind die relevanten Teile für die Einrichtung des Systems sowie die Programme für die Verbindungsaufnahme für Linux und Windows verfügbar.<br />
+Die Dokumentation ist auf <a href="https://github.com/GrazerComputerClub/Raspjamming/releases">Git-Hub</a> verfügbar und steht under der <a href="https://creativecommons.org/licenses/by-sa/3.0/at">CC-BY-SA 3.0 AT</a> Lizenz.</p>
+
+<h2 id="raspjamming-distribution">Raspjamming Distribution</h2>
+
+<p>In der Praxis hat sich gezeigt, dass auch mit einer Anleitung, die weniger vorbereiteten TeilnehmerInnen hauptsächlich mit der Einrichtung des Systems, also mit Punkt 1-3 beschäftigt waren. Diesem Umstand konnten wir entgegenwirken, indem wir ein eigenes Raspbian Image anbieten. Bei dem Image ist bereits alles eingerichtet und benötigte Programme, Bibliotheken und Source vorinstalliert. Damit erübrigt sich auch noch Punkt 4 und die TeilnehmerInnen können sich auf die Aufgaben konzentrieren.<br />
+Wir nennen dieses Image entsprechend dem Jam &ldquo;Raspjamming&rdquo;. Eigentlich möchten wir hier bereits von einer eigenen Distribution sprechen. Mehr Informationen zu diesem betroebssystem erhält man beim Blogeintrag <a href="../raspjamming-distribution/">Raspjamming Distribution</a>.</p>
+
+<h2 id="gc2-xhat-aufsteckboard">GC2-xHAT Aufsteckboard</h2>
+
+<p>Punkt 5 wurde kontrovers diskutiert, ob nun der Aufbau von Schaltungen anhand einer Anleitung zur Aufgabe dazugehört oder nicht. Schlussendlich haben wir uns aber darauf geeinigt, dass der Hauptaugenmerk auf die Programmierung gelegt wird. Darum haben wir einen eigenen HAT, den GC2-xHAT entwickelt.
+Die Bezeichnung HAT steht für &ldquo;Hardware Attached on Top&rdquo;, also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Mehr Informationen zu dieser Hardware erhält man beim Blogeintrag <a href="../gc2-xhat/">GC2-xHAT Aufsteckboard</a></p>
             </article>
           </div>
           

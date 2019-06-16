@@ -6,10 +6,40 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 03 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspjamming - Raspberry Pi Jam</title>
+      <link>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</guid>
+      <description>&lt;p&gt;Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Jam wird vom Grazer Computer Club, kurz GC2 organisiert.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspjamming Distribution</title>
+      <link>https://blog.gc2.at/post/raspjamming-distribution/</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspjamming-distribution/</guid>
+      <description>&lt;p&gt;Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) eine angepasste Raspbian Lite Version  entwickelt. Diese Distribution wird Raspjamming genannt und hat wesentliche Vorteile gegenüber der Raspbian Basis.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GC2-xHAT Aufsteckboard</title>
+      <link>https://blog.gc2.at/post/gc2-xhat/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gc2-xhat/</guid>
+      <description>&lt;p&gt;Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP8266 ESP-01(S) Firmware aktualisieren</title>
