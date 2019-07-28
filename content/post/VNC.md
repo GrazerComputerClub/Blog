@@ -24,7 +24,7 @@ VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig
 
 ```
 sudo -i
-apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev
+apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc
@@ -52,8 +52,12 @@ WantedBy=multi-user.target
 exit
 ```
 
-Danach kann der Dienst mit ``systemctl enable dmxvnc`` aktiviert werden. Dann könnte man den Dienst mit ``service dmxvnc start`` starten oder einen Neustart durchführen.
- 
+Danach kann der Dienst mit ``systemctl enable dmxvnc`` aktiviert werden. Dann könnte man den Dienst mit ``service dmxvnc start`` starten oder einen Neustart durchführen.  
+Sollte man später das Programm direkt verwenden, also ohne Kompilierung, werden folgenden Runtime Bibliotheken benötigt:
+
+```
+sudo apt-get install libvncserver1 libconfig++9v5 libgles2-mesa libegl1
+```
 
 ## VNC Viewer (Client)
 
