@@ -93,7 +93,7 @@ int main (void) {
 Danach kann man eine 'Makefile' Datei erstellen, die alle Schritte und Parameter enthält:
 
 ```
-MCU=m328p
+MCU=atmega328p
 CFLAGS=-g -Wall -mcall-prologues -mmcu=$(MCU) -Os
 LDFLAGS=-Wl,-gc-sections -Wl,-relax
 CC=avr-gcc
