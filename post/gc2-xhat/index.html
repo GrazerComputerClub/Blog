@@ -96,15 +96,19 @@ if (!doNotTrack) {
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-          <a href="/categories/35c3">35C3</a>
-        </li>
-        
-        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/atmega">ATmega</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/gc2">GC2</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
@@ -263,6 +267,12 @@ if (!doNotTrack) {
             <a href="/categories/raspberry-pi">Raspberry Pi</a>
           </span>
           
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/gc2">GC2</a>
+          </span>
+          
 
 
         </div>
@@ -275,7 +285,7 @@ if (!doNotTrack) {
               <p>Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
 </p>
 
-<p>Die Bezeichnung HAT steht für &ldquo;Hardware Attached on Top&rdquo;, also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Über die GPIO-Leiste werden so externe Komponenten an das System anschlossen. Für den Raspjamming Event, also den Raspberry Pi Jam bei den Grazer Linuxtagen, sollte Mithilfe eines eigens entwickelten HATs eine einsteigerfreundliche Hardware zur Verfügung gestellt werden. Dieser HAT vereint deshalb viele Anfängerprojekte auf einer Platine. So können Jam TeilnehmerInnen sich auf das wesentliche konzentieren, die Programmierung. Der Name dieses HAT ist GC2-xHAT. Zusätzlich zu den Raspjamming Projekten bietet der GC2-xHAT auch noch weiter Sensoren und Möglichkeiten für erfahrenere ProgrammiererInnen.</p>
+<p>Die Bezeichnung HAT steht für &ldquo;Hardware Attached on Top&rdquo;, also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Über die GPIO-Leiste werden so externe Komponenten an das System anschlossen. Für das Raspjamming Treffen, also den Raspberry Pi Jam bei den Grazer Linuxtagen, sollte Mithilfe eines eigens entwickelten HATs eine einsteigerfreundliche Hardware zur Verfügung gestellt werden. Dieser HAT vereint deshalb viele Anfängerprojekte auf einer Platine. So können Jam TeilnehmerInnen sich auf das wesentliche konzentieren, die Programmierung. Der Name dieses HAT ist GC2-xHAT. Zusätzlich zu den Raspjamming Projekten bietet der GC2-xHAT auch noch weiter Sensoren und Möglichkeiten für erfahrenere ProgrammiererInnen.</p>
 
 <p>Folgende Sensoren und Hardware sind am GC2-xHAT enthalten:</p>
 
@@ -295,7 +305,7 @@ if (!doNotTrack) {
 
 <p>Es handle sich bei dem HAT um eine Open-Hardware. Alle Informationen, Schaltpläne sowie das Platinenlayout ist auf <a href="https://github.com/GrazerComputerClub/GC2-xHAT">Git-Hub</a> frei verfügbar. Die verwendetet Lizenz ist <a href="https://creativecommons.org/licenses/by/3.0/at/">CC-BY 3.0 AT</a> und erlaubt jedwede Nutzung, nur die Namensnennung des Grazer Computer Clubs und der Lizenz muss erhalten bleiben. Jeder kann sich also selbst, so eine Platine fertigen lassen und auch Modifikationen durchführen.</p>
 
-<p>Bei den Daten zum HAT ist auch eine EEPROM Konfiguration dabei. Diese sollte in das Speicherchip des HAT programmiert werden, wie das geht wird in Blog-Eintrag <a href="../hat-eeprom/">HAT EEPROM anschließen und konfigurieren</a> beschrieben.<br />
+<p>Bei den Daten zum HAT ist auch eine EEPROM-Konfiguration dabei. Diese sollte in den Speicherchip des HAT programmiert werden. Wie das geht wird in Blog-Eintrag <a href="../hat-eeprom/">HAT EEPROM anschließen und konfigurieren</a> beschrieben.<br />
 Weiters ist eine <a href="https://github.com/GrazerComputerClub/GC2-xHAT/blob/master/aliases/bash_aliases_GC2xHAT">alias Konfiguration</a> enthalten die Shell-Kommandos für die Steuerung des GC2-xHAT enthält:</p>
 
 <ul>
@@ -310,7 +320,7 @@ Weiters ist eine <a href="https://github.com/GrazerComputerClub/GC2-xHAT/blob/ma
 <li>usw.</li>
 </ul>
 
-<p>An einfachsten ist allerdings die Nutzung mit der GC2 Distribution <a href="https://github.com/GrazerComputerClub/Raspjamming-Image">Raspjamming</a>. Dann sind die benötigen Werkzeuge und aliases bereits vorinstaliert. Zum Programmieren des EEPROM sollte das <a href="http://www.strohmayers.com/image/2019-04-26-Raspjamming-full.img.7z">April Image</a> verwendet werden, da neuere Raspberry Pi Firmware Versionen einen Fehler beim Erkennen des EEPROM haben. Also sollte auch keine &lsquo;sudo apt-get upgrade&rsquo; vorher gemacht werden.<br />
+<p>An einfachsten ist allerdings die Nutzung mit der GC2 Distribution <a href="https://github.com/GrazerComputerClub/Raspjamming-Image">Raspjamming</a>. Dann sind die benötigen Werkzeuge und aliases Einträge bereits vorinstalliert. Zum Programmieren des EEPROM sollte das <a href="http://www.strohmayers.com/image/2019-04-26-Raspjamming-full.img.7z">April Image</a> verwendet werden, da neuere Raspberry Pi Firmware Versionen einen Fehler beim Erkennen des EEPROMs haben. Also sollte auch kein &lsquo;sudo apt-get upgrade&rsquo; vorher gemacht werden.<br />
 Mehr Informationen zur <a href="../raspjamming-distribution/">Raspjamming Distribution</a> findet man hier im Blog.</p>
 
 <h2 id="schaltplan">Schaltplan</h2>
@@ -323,10 +333,11 @@ Mehr Informationen zur <a href="../raspjamming-distribution/">Raspjamming Distri
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/gc2" title="View all posts in GC2">GC2</a>
   </p>
 </div>
 

@@ -6,10 +6,20 @@
     <description>Recent content in Programmierung on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ATmega328P Programmierung</title>
+      <link>https://blog.gc2.at/post/atmega-328p/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/atmega-328p/</guid>
+      <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Lego Roboter &#43; Raspberry Pi</title>

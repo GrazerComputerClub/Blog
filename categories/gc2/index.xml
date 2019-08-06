@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GC2 on GC2 Blog</title>
+    <link>https://blog.gc2.at/categories/gc2/</link>
+    <description>Recent content in GC2 on GC2 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.gc2.at/categories/gc2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dell Laptop CPU upgrade</title>
+      <link>https://blog.gc2.at/post/gc2-laptops/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
+      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspjamming - Raspberry Pi Jam</title>
+      <link>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</guid>
+      <description>&lt;p&gt;Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Workshop wird vom Grazer Computer Club, kurz GC2 organisiert.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspjamming Distribution</title>
+      <link>https://blog.gc2.at/post/raspjamming-distribution/</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspjamming-distribution/</guid>
+      <description>&lt;p&gt;Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) eine angepasste Raspbian Lite Version entwickelt. Diese Distribution wird Raspjamming genannt und hat wesentliche Vorteile gegenüber der Raspbian Basis.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GC2-xHAT Aufsteckboard</title>
+      <link>https://blog.gc2.at/post/gc2-xhat/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gc2-xhat/</guid>
+      <description>&lt;p&gt;Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

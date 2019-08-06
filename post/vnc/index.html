@@ -25,7 +25,7 @@
         "datePublished": "2019-01-02 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-01-02 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/vnc/",
-        "wordCount" : "281",
+        "wordCount" : "304",
         "image" : https://blog.gc2.atimg/VNC-Server-PICO-8.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -96,15 +96,19 @@ if (!doNotTrack) {
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-          <a href="/categories/35c3">35C3</a>
-        </li>
-        
-        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/atmega">ATmega</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
           <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/gc2">GC2</a>
         </li>
         
         <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
@@ -283,7 +287,7 @@ VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig
 <h2 id="installation">Installation</h2>
 
 <pre><code>sudo -i
-apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev
+apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc
@@ -310,7 +314,11 @@ WantedBy=multi-user.target
 <pre><code>exit
 </code></pre>
 
-<p>Danach kann der Dienst mit <code>systemctl enable dmxvnc</code> aktiviert werden. Dann könnte man den Dienst mit <code>service dmxvnc start</code> starten oder einen Neustart durchführen.</p>
+<p>Danach kann der Dienst mit <code>systemctl enable dmxvnc</code> aktiviert werden. Dann könnte man den Dienst mit <code>service dmxvnc start</code> starten oder einen Neustart durchführen.<br />
+Sollte man später das Programm direkt verwenden, also ohne Kompilierung, werden folgenden Runtime Bibliotheken benötigt:</p>
+
+<pre><code>sudo apt-get install libvncserver1 libconfig++9v5 libgles2-mesa libegl1
+</code></pre>
 
 <h2 id="vnc-viewer-client">VNC Viewer (Client)</h2>
 
