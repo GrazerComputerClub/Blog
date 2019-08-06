@@ -5,7 +5,7 @@ image = "img/Raspberry-Pi-Jam.jpg"
 date = "2019-06-16"
 title = "Raspjamming - Raspberry Pi Jam"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi"]
+categories = ["Raspberry Pi", "GC2"]
 keywords = [ "Jam", "Raspberry Pi Jam", "Raspjamming", "GC2-xHAT", "HAT"]
 weight = 1
 +++

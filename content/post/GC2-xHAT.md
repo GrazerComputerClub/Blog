@@ -5,7 +5,7 @@ image = "img/GC2-xHAT.jpg"
 date = "2019-06-14"
 title = "GC2-xHAT Aufsteckboard"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi"]
+categories = ["Raspberry Pi", "GC2"]
 keywords = [ "Raspjamming", "GC2-xHAT", "HAT", "EEPROM"]
 weight = 1
 +++

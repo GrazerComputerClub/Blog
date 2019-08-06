@@ -1,11 +1,11 @@
-66+++
++++
 showonlyimage = false
 draft = false
 image = "img/Raspjamming.png"
 date = "2019-06-15"
 title = "Raspjamming Distribution"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi"]
+categories = ["Raspberry Pi", "GC2"]
 keywords = [ "Raspbian", "Raspjamming", "Linux", "OS", "Distribution"]
 weight = 1
 +++
