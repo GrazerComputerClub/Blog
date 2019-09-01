@@ -142,7 +142,24 @@ fbtft_device
 
 "/etc/modprobe.d/fbtft.conf":
 ```
-options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 speed=40000000 bgr=1 fps=30 custom=1 height=128 width=128 rotate=90
+options fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 speed=40000000 bgr=1 fps=30 height=128 width=128 rotate=90
+```
+
+### TFT-LCD WaveShare (ST7735, 128x128, 1,44“)
+
+Konsole Beispielaufruf:  
+``sudo modprobe fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000 debug=$((1<<5))`` 
+
+"/etc/modules-load.d/fbtft.conf":
+```
+spi-bcm2835
+fbtft dma
+fbtft_device
+```
+
+"/etc/modprobe.d/fbtft.conf":
+```
+options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000
 ```
 
 ## Verwendung
