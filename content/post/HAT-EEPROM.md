@@ -179,7 +179,7 @@ hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer 
 ### Devicetree ###
 
 Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
-Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20. Dazu wird folgender Inhalt in der Datei led.dts erzeugt.
+Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20 (mögliche Trigger-Events für den Ausgang kann man mit dem Befehl "cat /sys/devices/platform/leds/leds/led0/trigger" auflisten). Dazu wird folgender Inhalt in der Datei led.dts erzeugt.
 
 ``` 
 /dts-v1/;
@@ -211,7 +211,7 @@ Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf G
     };
 };
 ``` 
-
+ 
 Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.
 
 ``` 
