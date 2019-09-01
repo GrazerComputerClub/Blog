@@ -25,7 +25,7 @@
         "datePublished": "2019-03-03 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-03 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hat-eeprom/",
-        "wordCount" : "1166",
+        "wordCount" : "1179",
         "image" : https://blog.gc2.atimg/EEPROM.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -420,7 +420,7 @@ Done.
 <h3 id="devicetree">Devicetree</h3>
 
 <p>Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
-Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20. Dazu wird folgender Inhalt in der Datei led.dts erzeugt.</p>
+Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20 (mögliche Trigger-Events für den Ausgang kann man mit dem Befehl &ldquo;cat /sys/devices/platform/leds/leds/led0/trigger&rdquo; auflisten). Dazu wird folgender Inhalt in der Datei led.dts erzeugt.</p>
 
 <pre><code>/dts-v1/;
 /plugin/;

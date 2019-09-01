@@ -25,7 +25,7 @@
         "datePublished": "2018-12-12 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-12 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/spi-tft-lcd/",
-        "wordCount" : "591",
+        "wordCount" : "625",
         "image" : https://blog.gc2.atimg/SPI-LCD-TFT.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -434,7 +434,24 @@ fbtft_device
 
 <p>&rdquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
 
-<pre><code>options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 speed=40000000 bgr=1 fps=30 custom=1 height=128 width=128 rotate=90
+<pre><code>options fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 speed=40000000 bgr=1 fps=30 height=128 width=128 rotate=90
+</code></pre>
+
+<h3 id="tft-lcd-waveshare-st7735-128x128-1-44">TFT-LCD WaveShare (ST7735, 128x128, 1,44“)</h3>
+
+<p>Konsole Beispielaufruf:<br />
+<code>sudo modprobe fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000 debug=$((1&lt;&lt;5))</code></p>
+
+<p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
+
+<pre><code>spi-bcm2835
+fbtft dma
+fbtft_device
+</code></pre>
+
+<p>&rdquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
+
+<pre><code>options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000
 </code></pre>
 
 <h2 id="verwendung">Verwendung</h2>

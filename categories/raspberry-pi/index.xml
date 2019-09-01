@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Musik mit Piezo Signalgeber</title>
+      <link>https://blog.gc2.at/post/piezo-signalgeber/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
+      <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepenton erzeugen, sondern auch Musik abpielen.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspjamming - Raspberry Pi Jam</title>

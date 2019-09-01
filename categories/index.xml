@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GC2 Blog</title>
+    <title>Categories on GC2 Blog</title>
     <link>https://blog.gc2.at/categories/</link>
-    <description>Recent content on GC2 Blog</description>
+    <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Mon, 31 Dec 2018 00:00:00 +0000</lastBuildDate>
@@ -12,23 +12,75 @@
     
     
     <item>
-      <title>Neujahr</title>
-      <link>https://blog.gc2.at/post/neujahr/</link>
+      <title></title>
+      <link>https://blog.gc2.at/categories/</link>
       <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/post/neujahr/</guid>
-      <description>&lt;p&gt;Für das neue Jahr wünschen wir euch alles Gute und Spass bei euren Projekten!
-&lt;/p&gt;</description>
+      <guid>https://blog.gc2.at/categories/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Weihnachten</title>
-      <link>https://blog.gc2.at/post/weihnachten/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      <title>ATmega</title>
+      <link>https://blog.gc2.at/categories/atmega/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/post/weihnachten/</guid>
-      <description>&lt;p&gt;Schöne Weihnachten &amp;hellip;
-&lt;/p&gt;</description>
+      <guid>https://blog.gc2.at/categories/atmega/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CCC</title>
+      <link>https://blog.gc2.at/categories/ccc/</link>
+      <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/ccc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ESP8266</title>
+      <link>https://blog.gc2.at/categories/esp8266/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/esp8266/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GC2</title>
+      <link>https://blog.gc2.at/categories/gc2/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/gc2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programmierung</title>
+      <link>https://blog.gc2.at/categories/programmierung/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/programmierung/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://blog.gc2.at/categories/raspberry-pi/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero</title>
+      <link>https://blog.gc2.at/categories/raspberry-pi-zero/</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/raspberry-pi-zero/</guid>
+      <description></description>
     </item>
     
   </channel>
