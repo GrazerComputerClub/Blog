@@ -25,7 +25,7 @@
         "datePublished": "2018-12-10 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-10 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/gpio-tasten/",
-        "wordCount" : "273",
+        "wordCount" : "306",
         "image" : https://blog.gc2.atimg/keys_white_nav.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -384,7 +384,39 @@ if (!doNotTrack) {
 </tbody>
 </table>
 
-<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.</p>
+<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.<br />
+Eine Liste ist auch im Internet bei den <a href="https://github.com/torvalds/linux/blob/v4.12/include/uapi/linux/input-event-codes.h">Kernel-Sourcen</a> verfügbar.
+Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktionen zu finden.</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th align="center">Scancode</th>
+<th align="center">Funktion</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>KEY_POWER</td>
+<td align="center">166</td>
+<td align="center">Shutdown</td>
+</tr>
+
+<tr>
+<td>KEY_RESTART</td>
+<td align="center">408</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td>KEY_RFKILL</td>
+<td align="center">247</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 
 <p>Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
 

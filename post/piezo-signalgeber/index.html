@@ -25,7 +25,7 @@
         "datePublished": "2019-09-01 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-09-01 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/piezo-signalgeber/",
-        "wordCount" : "690",
+        "wordCount" : "721",
         "image" : https://blog.gc2.atimg/Music.png",
         "keywords" : [ "Blog" ]   
     }
@@ -454,10 +454,9 @@ p<span style="color:#666">.</span>stop()</code></pre></td></tr></table>
 <h2 id="music">Music</h2>
 
 <p>Man darf sich nicht zu viel erwarten, wenn man über einen Piezo Signalgeber Music ausgeben will, aber einzelne Tonfolgen funktionieren.
-Auf der Seite <a href="https://www.mutopiaproject.org/">MUTOPIA PROJECT</a> kann man sich viele klassische Musikstücke im Midi-Format herunterladen.
-Auf der Seite <a href="https://www.extramaster.net/tools/midiToArduino/">Midi To Arduino</a> kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Datein haben zumeist mehrere Spuren (Track), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Track vor, überlicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft der Track &ldquo;up&rdquo;. Danach muss man noch das Zielsystem (Device) auswählen. Hier muss &ldquo;Raspberry Pi (Python, GPIO)&rdquo; aktiviert werden. Nach dem Drücken der Schaltfläche &ldquo;Convert to Arduino&rdquo;, wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. Allerdings sind noch ein paar Anpassungen nötig:<br />
+Auf der Seite <a href="https://www.mutopiaproject.org/">MUTOPIA PROJECT</a> kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei <a href="https://bitmidi.com/">BitMidi</a> kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite <a href="https://www.extramaster.net/tools/midiToArduino/">Midi To Arduino</a> kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Datein haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, überlicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft &ldquo;up&rdquo;. Danach muss man noch das Zielsystem (Device) auswählen. Hier muss &ldquo;Raspberry Pi (Python, GPIO)&rdquo; aktiviert werden. Nach dem Drücken der Schaltfläche &ldquo;Convert to Arduino&rdquo;, wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. Allerdings sind noch ein paar Anpassungen nötig:<br />
  - Bei &ldquo;tonePin = 21&rdquo; muss der korrekte GPIO also z. B. 18 eingegeben werden.<br />
- - Die Zeile &ldquo;p = GPIO.PWM(tonePin, pitch)&rdquo; ist leider falsch und muss durch &ldquo;p.ChangeFrequency(pitch)&rdquo; ersetzt werden.
+ - Die Zeile &ldquo;p = GPIO.PWM(tonePin, pitch)&rdquo; ist leider falsch und muss durch &ldquo;p.ChangeFrequency(pitch)&rdquo; ersetzt werden.<br />
  - Die Zeile &ldquo;delay(duration)&rdquo; entspricht der Dauer der Note, hier kann man mit einem Faktor noch eine generelle Geschwindigkeitsanpassung des Stücks vornehmen, &ldquo;delay(duration*1.5)&ldquo;.<br />
 Danach kann man sich das Stück anhören, indem man mit python3 die Datei ausführt.</p>
 
