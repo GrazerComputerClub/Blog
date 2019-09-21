@@ -6,7 +6,7 @@ date = "2019-09-15"
 title = "SoC der Einplatinencomputer"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
-keywords = ["CPU", "Cortex", "ARM11", "A72", "A7", "A53", "BCM2835", "BCM2836", "BCM2837", "A20", "H2+", "H3", "H5"]
+keywords = ["CPU", "ARM", "Cortex", "ARM11", "A7", "A53", "A72", "BCM2835", "BCM2836", "BCM2837", "BCM2711", "A20", "H2+", "H3", "H5"]
 weight = 1
 +++
 
@@ -124,6 +124,40 @@ CPU revision    : 7
 Hardware        : BCM2835
 Revision        : 900093
 Serial          : 0000000076def51e
+```
+```
+Architecture:        armv6l
+Byte Order:          Little Endian
+CPU(s):              1
+On-line CPU(s) list: 0
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           1
+Vendor ID:           ARM
+Model:               7
+Model name:          ARM1176
+Stepping:            r0p7
+CPU max MHz:         1000,0000
+CPU min MHz:         700,0000
+BogoMIPS:            697.95
+Flags:               half thumb fastmult vfp edsp java tls
+```
+
+#### Raspberry Pi Zero W Rev 1.1
+```
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 997.08
+Features	: half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2835
+Revision	: 9000c1
+Serial		: 000000007841a2bd
 ```
 ```
 Architecture:        armv6l
