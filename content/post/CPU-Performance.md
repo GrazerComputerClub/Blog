@@ -17,7 +17,7 @@ Eine interessante Kenngröße der vielen verschienen Einplatinencomputer-Variant
 
 ### Raspberry Pi Boards
 
-Der Raspberry B+ und Zero setzen noch auf den SoC (System-on-a-Chip) BCM2835 von Broadcom. Dieser enthält einen alten ARM11 Prozessorkern. Dadurch sind die Messergebnisse vom Raspberry Pi B+ mit Turbo Einstellung identisch zum Raspberry Pi Zero. Der Raspberry Pi 2 verwendet den SoC BCM2836 von Broadcom. Darin enthalten sind vier ARM Cortex-A7 Prozessorkerne. Der Standardtakt beträgt 900 MHz, es kann aber ein Turbo Modus mit 1 GHz aktiviert werden. Der Raspberry Pi 3 verwendet den SoC BCM2837 von Broadcom mit einer Taktrate von maximal 1200 MHz. Der Raspberry Pi 3+ verwendet eine verbesserte Version des selben SoC mit der Bezeinchnung BCM2837B0. Er wird mit einem Heatspreader ausgeliefert und die Taktrate beträgt nun maximal 1400 MHz. Im SoC enthalten sind vier ARM Cortex-A53 Prozessorkerne. Der Raspberry Pi 4 verwendet den SoC BCM2711B0 von Broadcom mit vier ARM Cortex A72 Prozessorkernen die eine Taktrate von 1,5 GHz aufweisen. Die CPU-Leistung ist dadurch enorm gestiegen und liegt beinahe doppelt so hoch als beim Raspberry Pi 3. Die Leistungsaufnahme des SoC ist unter Belastung auch gestiegen, weshalb der Einsatz eines CPU Lüfters empfohlen wird. Ein Kühlkörper wird dann nicht mehr benötigt den der SoC ist mit einem Heatspreader ausgestattet.
+Der Raspberry B+ und Zero setzen noch auf den SoC (System-on-a-Chip) BCM2835 von Broadcom. Dieser enthält einen alten ARM11 Prozessorkern. Dadurch sind die Messergebnisse vom Raspberry Pi B+ mit Turbo Einstellung identisch zum Raspberry Pi Zero. Der Raspberry Pi 2 verwendet den SoC BCM2836 von Broadcom. Darin enthalten sind vier ARM Cortex-A7 Prozessorkerne. Der Standardtakt beträgt 900 MHz, es kann aber ein Turbo Modus mit 1 GHz aktiviert werden. Der Raspberry Pi 3 verwendet den SoC BCM2837 von Broadcom mit einer Taktrate von maximal 1200 MHz. Der Raspberry Pi 3+ verwendet eine verbesserte Version des selben SoC mit der Bezeinchnung BCM2837B0. Er wird mit einem Heatspreader ausgeliefert und die Taktrate beträgt nun maximal 1400 MHz. Im SoC enthalten sind vier ARM Cortex-A53 Prozessorkerne. Der Raspberry Pi 4 verwendet den SoC BCM2711B0 von Broadcom mit vier ARM Cortex A72 Prozessorkernen die eine Taktrate von 1,5 GHz aufweisen. Die CPU-Leistung ist dadurch enorm gestiegen und liegt beinahe doppelt so hoch als beim Raspberry Pi 3. Die Leistungsaufnahme des SoC ist unter Belastung auch gestiegen, weshalb der Einsatz eines CPU Lüfters empfohlen wird. Ein Kühlkörper wird dann nicht mehr benötigt den der SoC ist mit einem Heatspreader ausgestattet (siehe [Raspberry Pi 4 thermals and Fan SHIM](https://blog.pimoroni.com/raspberry-pi-4-thermals-and-fan-shim/)).
 
 ### Allwinner CPU Boards 
 
@@ -212,6 +212,23 @@ Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idi
 ```
 
 #### Raspberry Pi 3 Model B Rev 1.2
+```
+Architecture:        armv7l
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  1
+Core(s) per socket:  4
+Socket(s):           1
+Vendor ID:           ARM
+Model:               4
+Model name:          Cortex-A53
+Stepping:            r0p4
+CPU max MHz:         1200,0000
+CPU min MHz:         600,0000
+BogoMIPS:            38.40
+Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
+```
 ```
 processor       : 0-3
 model name      : ARMv7 Processor rev 4 (v7l)
