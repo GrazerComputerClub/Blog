@@ -110,4 +110,13 @@ sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_arm
 ```
 
 
+## Fernbedienung anlernen und parametrieren  ##
+
+```
+sudo service lircd stop
+sudo irrecord -H default
+```
+
+
 < Anleitung in Arbeit ... >
+
