@@ -35,7 +35,7 @@ Zum Schluss verglichen wir Lubuntu und Mint XFCE.
 
 Beim Booten waren die Systeme ziemlich gleich schnell aber was Fehlermeldungen und Hardwareuntertütztung anging, war Mint XFCE eindeutig das bessere System. Es werden die Architektur 32-Bit (i386) und 64-bit (x86_64) angeboten und damit auch die alten Intel Pentium M und Core Duo Prozessoren unterstützt, die noch keine 64-Bit Erweiterung besitzen. Wir entschlossen uns ausschließlich 32-Bit zu verwenden um ein einheitliches System zu haben. 
 
-### Perfomance 32- vs 64-Bit Architektur
+## Perfomance 32- vs 64-Bit Architektur
 
 ### AMD Turion
 
@@ -65,10 +65,10 @@ Zuerst stellte sich die Frage ob man die Laptops sinnvoll und günstig mit besse
 
 Bei den [Intel Pentium M](https://de.wikipedia.org/wiki/Intel_Pentium_M) Prozessoren können leider keine neueren Prozessortypen eingesetzt werden. Nur innerhalb der Serie kann auf höher getaktete Modelle gewechselt werden. Im Latitide D510 ist ein 730 (1,6 GHz) und beim Latitide 120L ein 740 (1,73 GHz) Prozessoren verbaut. Das schnellste Modell ist der 780 mit 2,26 GHz, wobei dieser sehr teuer ist. Der zweitschnellste ist der 770 mit 2,13 GHz, er kostet gebraucht ca. 6 Euro. Trotz 30 % Mehrleistung wird die selbe TDP von 27 Watt angeben. 
 
-Bei den neuer Intel Prozessoren der [Core Duo](https://de.wikipedia.org/wiki/Intel_Core_Duo) und [Core 2 Duo](https://de.wikipedia.org/wiki/Intel_Core_2) Serie kommt es vorallen auf dem verwendeten Chipsatz an welche Prozessoren man einsetzen kann. Prinzibell können Core Duo durch Core 2 Duo ersetzt werden, was viel Spielraum beim Upgrade ermöglicht. Die Core Duo Prozessoren können noch keine 64-Bit Erweiterung und haben fast die gleiche Single-Core Performance wie die Pentium M Prozessoren. Ein Core 2 Duo unterstützt die 64-Bit Architektur und hat eine gesteigerte Leistung bei gleichem Takt, er ist also die bessere Wahl.
-Beim Latitide D520 wird ein 945 Chipsatz von Intel verwendet. Auf der Internet Seite [Intel 945GM Express chipset processor support](http://www.cpu-upgrade.com/mb-Intel_(chipsets)/945GM_Express.html) wird eine Tabelle mit möglichen Prozessoren angezeigt. Ob wirklich nur diese eingesetzt werden können, ist nicht sicher aber zumindest eine Anhaltspunkt. Als Topmodell wird der T7600 mit 2,33 GHz Taktfrequenz und 4 MB Cache angeben. Dieser ist aber natürlich vergleichsweise teuer. Darum haben ich mich für den günstigen T7200 mit 2,0 GHz Taktfrequenz und 667 MHz FSB entschieden.  
+Bei den neuer Intel Prozessoren der [Core Duo](https://de.wikipedia.org/wiki/Intel_Core_Duo) und [Core 2 Duo](https://de.wikipedia.org/wiki/Intel_Core_2) Serie kommt es vorallen auf dem verwendeten Chipsatz an welche Prozessoren man einsetzen kann. Prinzipiell können Core Duo durch Core 2 Duo ersetzt werden, was viel Spielraum beim Upgrade ermöglicht. Die Core Duo Prozessoren können noch keine 64-Bit Erweiterung und haben fast die gleiche Single-Core Performance wie die Pentium M Prozessoren. Ein Core 2 Duo unterstützt die 64-Bit Architektur und hat eine gesteigerte Leistung bei gleichem Takt, er ist also die bessere Wahl.
+Beim Latitide D520 wird ein 945 Chipsatz von Intel verwendet. Auf der Internet Seite [Intel 945GM Express chipset processor support](http://www.cpu-upgrade.com/mb-Intel_(chipsets)/945GM_Express.html) wird eine Tabelle mit möglichen Prozessoren angezeigt. Ob wirklich nur diese eingesetzt werden können, ist nicht sicher aber zumindest eine Anhaltspunkt. Wichtig ist, dass nur Prozessoren mit 667 MHz FSB eingesetzt werden können. Als Topmodell wird der T7600 mit 2,33 GHz Taktfrequenz und 4 MB Cache angeben. Dieser ist aber natürlich vergleichsweise teuer. Darum ist die günstigste Variante der T7200 mit 2,0 GHz Taktfrequenz. Es ist teilweise für nur etwas mehr als einem Euro erhältlich.  
 
-Beim Latitide D530 wird ein 965 Chipsatz von Intel verwendet. Auf der Internet Seite [Intel GM965 Express chipset processor support](http://www.cpu-upgrade.com/mb-Intel_(chipsets)/GM965_Express.html) wird eine Tabelle mit möglichen Prozessoren angezeigt. Als Topmodell, fern der Extreme Edition, wird der T9500 mit 2,6 GHz Taktfrequnz und 6 MB Cache angeben. Dieser ist aber wieder sehr teuer. Darum haben wir uns vorserst für den günstigen T8300 mit 2,4 GHz und 4 MB Cache entschieden. Hier mussten wir aber feststellen, dass selbst das neueste BIOS die T8 und T9 Serie gar nicht unterstützt. Damit muss man bei einen Prozessor aus der T7 Serie bleiben. Der schnellste wäre der T7800, er ist allerdings wieder sehr teuer. Die Modelle T7700 und T7500 wären die kostengünstigere Variante.  
+Beim Latitide D530 wird ein 965 Chipsatz von Intel verwendet. Auf der Internet Seite [Intel GM965 Express chipset processor support](http://www.cpu-upgrade.com/mb-Intel_(chipsets)/GM965_Express.html) wird eine Tabelle mit möglichen Prozessoren angezeigt. Wichtig ist, dass nur Prozessoren mit 800 MHz FSB eingesetzt werden können. Als Topmodell, fern der Extreme Edition, wird der T9500 mit 2,6 GHz Taktfrequnz und 6 MB Cache angeben. Dieser ist aber wieder sehr teuer. Darum haben wir uns vorserst für den günstigen T8300 mit 2,4 GHz und 4 MB Cache entschieden. Hier mussten wir aber feststellen, dass selbst das neueste BIOS die T8- und T9-Serie gar nicht unterstützt. Damit muss man bei einen Prozessor aus der T7-Serie bleiben. Der schnellste wäre der T7800, er ist allerdings wieder sehr teuer. Die Modelle T7700 und T7500 wären kostengünstigere Alternativen. Wobei der bereits vorhanden T7250 eine recht ordenliche Leistung bietet und nicht unbedingt ausgetauscht werden muss.  
 
 Insgesamt wurde zumindest eine um 20 % hohere Taktrate bei weniger als 4 Euro Kosten angestrebt. Beim Wechsel von Core Duo auf Core 2 Duo ist allerings aufgrund des besseren Single-Core Performance bereits eine Verbesserung vorhanden.  
 Bei Latitide D530 wurde auf eine Prozessorwechsel verzichtet nachdem der T8300 nicht funktionierte. 
@@ -96,13 +96,18 @@ Die Durchführung des Umbaus der CPU beim Latitude D531, lief ohne Probleme. Es 
   
 ### Performance 
 
-Der Wechsel von AMD Sempron Einkern- auf Turion Zweikern-Prozessor bringt natürlich einen deutlichen Leistungsschub, die Singlecore-Leistung profitiert aber kaum vom Wechsel.
-Wird innerhalb der gleichen Serie aufgerüstet, steigt die Leistung linear mit der Taktrate. Beim Wechsel von Intel Core auf Intel Core 2 bringt der Wechsel ca. 17 % wie man beim Vergleich T2300 zu T7200 sehen kann.  
+Der Wechsel von AMD Sempron Einkern- auf Turion Zweikern-Prozessor bringt natürlich einen deutlichen Leistungsschub, die Singlecore-Leistung profitiert aber nur geringt vom Wechsel.  
+Wird innerhalb der gleichen Serie aufgerüstet, steigt die Leistung linear mit der Taktrate. Beim Wechsel von Intel Core auf Intel Core 2 bringt der Wechsel ca. 17 % wie man beim Vergleich T2300 zu T5500 sehen kann.  Wechsel man von T2300 auf T7200 bringt das insgesamt sogar knapp 40 % mehr Leistung.
 Als Vergleich wurde mit dem alten [nbench](https://www.math.utah.edu/~mayer/linux/bmark.html) Benchmark Programm alle CPUs vermessen und in einem Diagramm dargestellt. Als Referenz wurde in Grau ein Intel Atom N280 Prozessor und ein i5-M450 sowie ein aktuellerer i7-4600U Prozessor (amd64 Architektur) hinzugefügt. Auch die Performancewerte der Raspberry Pi Zero, 3+ und 4 sind als Vergleich im Diagramm (armhf Architektur) enthalten. Im Diagramm wurden Einkern-Prozessoren in helleren Farben dargestellt.
 
 ![nBench Single Core CPU Leistung](../../img/Single-Core_Performance_GC2-Laptop_CPU.png)
 
 
+## RAM Aufrüstung ##
+
+Die AMD- und Intel-Systeme unterstützen DDR2 SODIMM RAM bis 667 MHz. Es wurde bei allen Dual Core Systemen eine mind. 2 GB Speichergröße angestrebt. 
+Dazu wurden mehrere 2 GB Module mit 800 MHz bestellt, die pro Modul ca. 3-4 Euro kosten. Eine geringere Frequenz bringt keine Kostenersparnis.
+Alle System sind mit 2 Speicherslots ausgeführt, sodass zumeist 2,5 GB erreicht wurden. Teilweise werden Teile des Speichers für die Grafikkarte benutzt, diese Zuordnung wurde auf 128 MB begrenzt.  
 
 
 ## Display Reparatur ##
