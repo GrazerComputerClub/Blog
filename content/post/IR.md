@@ -10,7 +10,7 @@ keywords = ["IR", "infrarot", "GPIO"]
 weight = 1
 +++
 
-Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde hat sie Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier... 
+Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier... 
 <!--more-->
 
 ## Beschreibung ##
@@ -36,7 +36,7 @@ Es muss lediglich ein Devicetree Eintrag in der Konfigurationsdatei "config.txt"
 dtoverlay=gpio-ir,gpio_pin=27
 ```
 
-Nach einem Neustart kann Lirc installiert werden.
+Nach einem Neustart kann LIRC installiert werden.
 
 ```
 sudo apt-get install lirc
@@ -53,7 +53,7 @@ Zuerst sollte man überprüfen ob das Kernel Modul korrekt geladen wurde und dam
 ls /dev/lirc* 
 ```
 Als Ausgabe sollte man "/dev/lirc0" finden.  
-Beispielkonfigurationen für lirc wurden bereits abgelegt, müssen aber noch umbenannt bzw. umkopiert und modifiziert werden.
+Beispielkonfigurationen für LIRC wurden bereits abgelegt, müssen aber noch umbenannt bzw. umkopiert und modifiziert werden.
 
 ```
 sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
@@ -86,9 +86,9 @@ Bei einem Tastendruck werden Pulsdauer bzw. Pulspausen ausgegeben.
 Allerdings ist eine Programmierung oder Verwendung noch nicht möglich!
 
 
-## lirc-Dienst anpassen ##
+## LIRC-Dienst anpassen ##
 
-Leider versteht der lirc Dienst das Kernel Modul nicht korrekt und muss deshalb modifiziert werden.
+Leider versteht der LIRC Dienst das Kernel Modul nicht korrekt und muss deshalb modifiziert werden.
 Wie das Funktioniert wird im Raspberry Pi Forum im Beitrag [Using LIRC with kernel 4.19.X and gpio-ir](https://www.raspberrypi.org/forums/viewtopic.php?p=1438740&sid=1a1aa370b94e5b2f20158d64d1b0b254#p1438740) beschrieben.  
 
 Folgend ist eine Anleitung für die Erzeugung der aktualisierten Pakete für das aktuelle Debian 10 (Buster) aufgeführt:
@@ -130,7 +130,7 @@ Nun kann man noch zukünftige automatische Updates für die Pakete abschalten.
 sudo apt-mark hold liblirc0 liblirc-client0 lirc
 ```
 
-Bei unserer Raspjamming Distribution ab Version 10.11.2019 sind die modifizierten lirc Pakete bereits vorinstalliert! 
+Bei unserer Raspjamming Distribution ab Version 10.11.2019 sind die modifizierten LIRC Pakete bereits vorinstalliert! 
 
 ## Fernbedienung anlernen und parametrieren  ##
 
@@ -192,7 +192,7 @@ begin remote
 end remote
 ```
 
-Nun muss sie in das lirc Konfigurationsverzeichnis kopiert werden.
+Nun muss sie in das LIRC Konfigurationsverzeichnis kopiert werden.
 
 ```
 sudo cp ZugB.lircd.conf  /etc/lirc/lircd.conf.d/
