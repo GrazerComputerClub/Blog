@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "CIRCLean USB Sanitizer",
+        "headline" : "CIRCLean USB Sanitizer",
+        "description" : "<p>USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-11-16 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-11-16 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/sanitizer/",
+        "wordCount" : "957",
+        "image" : https://blog.gc2.atimg/USB-Sanitizer.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>CIRCLean USB Sanitizer </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://blog.gc2.at/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/"></a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/atmega">ATmega</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/gc2">GC2</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/programmierung">Programmierung</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/USB-Sanitizer.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">16 November</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> CIRCLean USB Sanitizer</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.
+</p>
+
+<h2 id="beschreibung">Beschreibung</h2>
+
+<p>USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten oder sich als Hacker Tool erweisen. Malware, Ransomware, Macroviren und andere Schafsoftware kann sich darauf befinden und verbreitet werden. Eine veränderte Firmware kann als Einfallstor, Trojaner oder Keylogger genutzt werden. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.</p>
+
+<p><strong>Beispiele:</strong></p>
+
+<ul>
+<li><a href="https://usbkill.com">USB-Killer Gerät</a></li>
+<li><a href="https://www.itsb.ruhr-uni-bochum.de/themen/badusb.html">BadUSB</a></li>
+<li><a href="https://www.heise.de/security/meldung/SyncCrypt-Neue-Ransomware-lauert-in-JPG-Dateien-3808437.html">SyncCrypt: Neue Ransomware lauert in JPG-Dateien</a></li>
+<li><a href="https://www.heise.de/security/artikel/Analysiert-Alte-Masche-neue-Verpackung-Infektion-durch-PDFs-3722708.html">Analysiert: Alte Masche, neue Verpackung - Infektion durch PDFs</a></li>
+</ul>
+
+<p>CIRCLean USB-Sanitizer ist eine freie Hardwarelösung zum Überprüfen von Dokumenten auf einem nicht vertrauenswürdigen USB-Stick. Das Gerät kopiert automatisch Dateien und speichert sie auf einem eigenen vertrauenswürdigen USB-Stick. Der Fokus vom USB-Sanitizer liegt auf der Dokumentenprüfung, auch wenn die verwendete Transportschicht (der USB-Stick) nicht vertrauenswürdig ist oder ein Verdacht besteht. Im schlimmsten Fall wäre nur das USB-Sanitizer Gerät gefährdet, nicht jedoch der eigene Computer, der die Daten liest.<br />
+Das System wurde speziell für den Einsatz mit einer Raspberry Pi Hardware vorbereitet. Weitere Informationen kann der <a href="https://www.circl.lu/projects/CIRCLean/">Projektseite</a> entnommen werden. Dokumentation, Source Code und das offizielle Image wird auch auf der <a href="https://github.com/CIRCL">GitHub</a> Seite zur Verfügung gestellt.</p>
+
+<p>Sehr zu empfehlen ist auch der Blog-Eintrag von Michael Kofler <a href="https://kofler.info/circlean-usb-stick-checker/">CIRCLean USB-Stick-Checker</a>.</p>
+
+<h2 id="usb-sanitizer-vom-grazer-computer-club">USB Sanitizer vom Grazer Computer Club</h2>
+
+<p>Der Grazer Computer Club hat über einen GitHub Fork Erweiterungen zum Projekt hinzugefügt und ein eigenes Image erstellt. Über die <a href="https://github.com/GrazerComputerClub/Circlean">GitHub</a> Seite wird alles zur Verfügung gestellt.<br />
+Beim dem GC2-Image werden alle bisherigen Raspberry Pi Typen und Varianten unterstützt. Bei den Raspberry Pi Zero und den A Varianten muss ein USB-Hub bzw. USB-Hub-HAT eingesetzt werden, da Quell- und Ziel-USB-Stick gleichzeitig angeschlossen sein müssen. Das GC2-Image hat zum original Projekt noch Optimierungen, Features in Bereich Visualisierung sowie Kompatibilität hinzugefügt. An der generellen Funktionalität wurden keine Änderungen durchgeführt. Das GC2-Image bzw. das Raspbian Betriebssystem darauf wurde nicht extra gegen Beeinflussung oder mögliche Schwachstellen geschützt, es ist eher als Entwicklungs- und Versuchsversion zu sehen.<br />
+Als visuelle Rückmeldung werden 3 LEDs an unterschiedlichen Positionen genutzt. Die rote LED leuchtet, wenn der nicht vertrauenswürdigen USB-Stick, also die Quelle eingesteckt wurde. Die grüne LED leuchtet wenn der vertrauenswürdigen USB-Stick, also das Ziel, eingesteckt wurde. Die mittlere orange LED leuchtet, wenn der Synchronisierungsvorgang gestartet wurde. Sie blinkt dabei, wenn eine Übertragung am USB-Bus stattfindet.<br />
+Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi und Starten der Synchronisierung.</p>
+
+<h2 id="anschluss">Anschluss</h2>
+
+<p>Es wurden zwei mögliche Positionen für die LEDs vorgesehen. Eine Position ist kompatibel mit der PiStop Ampel (Bezug <a href="https://bit.ly/2VVJ1Sd">PIMORONI</a>) die direkt auf die GPIO-Leiste gesteckt wird. Diese Position bei GPIO25, GPIO8 und GPIO7 ist kompatibel mit allen Raspberry P Versionen.<br />
+Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel ist die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechende Ampel-LEDs vorhanden.<br />
+Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde.</p>
+
+<p><img src="../../img/USB-Sanitizer_26pin_IO.png" alt="Belegung GPIO 26-Pin" /></p>
+
+<p><img src="../../img/USB-Sanitizer_40pin_IO.png" alt="Belegung GPIO 40-Pin" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Bauteil</th>
+<th>Aktiv</th>
+<th>Funktion</th>
+<th>Pos. A</th>
+<th>Pos. B</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Rote LED</td>
+<td>High</td>
+<td>Nicht vertrauenswürdigen USB-Stick angesteckt</td>
+<td>GPIO07</td>
+<td>GPIO21</td>
+</tr>
+
+<tr>
+<td>Orange LED</td>
+<td>High</td>
+<td>Synchroniserungsvorgang läuft</td>
+<td>GPIO08</td>
+<td>GPIO20</td>
+</tr>
+
+<tr>
+<td>Grüne LED</td>
+<td>High</td>
+<td>Vertrauenswürdigen USB-Stick angesteckt</td>
+<td>GPIO25</td>
+<td>GPIO21</td>
+</tr>
+
+<tr>
+<td>Sync Taste</td>
+<td>Low</td>
+<td>Synchroniserungsvorgang starten</td>
+<td>GPIO17</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>Sync Taste</td>
+<td>High</td>
+<td>Synchroniserungsvorgang starten</td>
+<td>-</td>
+<td>GPIO13</td>
+</tr>
+
+<tr>
+<td>Shutdown Taste</td>
+<td>Low</td>
+<td>System herunterfahren bzw. starten</td>
+<td>GPIO03</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>Shutdown Taste</td>
+<td>High</td>
+<td>System herunterfahren</td>
+<td>-</td>
+<td>GPIO26</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="installation">Installation</h2>
+
+<p>Nach dem Download der neuesten Release-Version von <a href="https://github.com/GrazerComputerClub/Circlean/releases">Git-Hub</a> liegt das Image &ldquo;image_20<strong>-</strong>-__-CIRCLean-USB-Sanitizer-full.zip&rdquo; als komprimierte ZIP-Datei vor und kann direkt auf eine SD-Karte übertragen werden. Hierzu wird eine mindesten 4 GB große SD- bzw. MicroSD-Karte benötigt.<br />
+Unter Linux kann dazu das grafische Programm <a href="https://www.balena.io/etcher/">Etcher</a> verwendet werden. Unter Windows kann mit dem Programm <a href="https://rufus.akeo.ie/">Rufus</a> die Übertragung durchgeführt werden. Danach kann die SD-Karte in den Raspberry Pi gesteckt werden.</p>
+
+<h2 id="funktionsweise">Funktionsweise</h2>
+
+<p>Man steckt den nicht vertrauenswürdigen USB-Stick links oben in die USB-Buchse. Dann steckt man den vertrauenswürdigen USB-Stick auf eine weitere USB-Buchse. danach wird die Versorgung (Micro USB Power) angeschlossen. Damit fährt das System hoch und der Synchronisierungsvorgang startet ohne Interaktion. Während des Synchronisierungsvorgangs wird Musik abgespielt, sofern Kopfhörer oder Lautsprecher angeschlossen wurden. Danach stoppt die Musik und das System fährt wieder automatisch herunter. Die USB-Sticks können entfernt werden.<br />
+Beim GC2-Image kann auch zur Laufzeit der Vorgang gestartet werden. Wird das System ohne USB-Sticks gestartet, so verbleibt es im aktiven Zustand. Beim Einstecken der USB-Sticks wird die entsprechende LED eingeschaltet. Die Synchronisierung starten dann nach betätigen der Sync-Taste. Nach dem Synchronisierungsvorgangs erlischt die orange LED und die Musik hört zu spielen auf. Dann können die USB-Sticks entfernt werden. Das Herunterfahren des Systems wird über eine eigene Shutdown-Taste gestartet.</p>
+
+<p><img src="../../img/Circlean_-_howto-visual-horizontal.png" alt="Anleitung" />
+<em><a href="https://creativecommons.org/licenses/by-sa/3.0/at/">CC BY-SA</a> , Alexandre Dulaunoy CIRCL - Computer Incident Response Center Luxembourg</em></p>
+
+<h2 id="resultat">Resultat</h2>
+
+<p>Nach dem Synchronisierungsvorgang wurden alle Daten von Quell- auf den Ziel-USB-Stick kopiert. Dabei wurden Archive wie zip- und 7zip-Dateien entpackt und in einem eigenen Verzeichnis geprüft.<br />
+Möglicherweise gefährliche Dateien wie z. B. Ausführbare- und Scripting-Dateien, Boot-Dateien, Office Dateien mit Macros, WVF-Videos wurden als potentiell gefährlich markiert.<br />
+Auf dem Quell USB-Stick wurde die Datei autorun.inf umbenannt. Sie ist potentiell sehr gefährlich, wenn sie mit alten Windows Versionen automatisch ein Programm ausführt. Ab Windows XP wurde dieses Verhalten aber bereits aus Sicherheitsgründen deaktiviert <a href="http://technet.microsoft.com/en-us/security/advisory/967940">Update for Windows Autorun</a>.</p>
+
+<p><img src="../../img/USB-Sanitizer_Src.png" alt="Dateien Quelle" /></p>
+
+<p><img src="../../img/USB-Sanitizer_Des.png" alt="Dateien Ziel" /></p>
+
+<h2 id="nachteil">Nachteil</h2>
+
+<p>Es wird keine echte Überprüfungen der Dateien auf Schadsoftware durchgeführt. Es erfolgt lediglich eine Analyse des Dateityps auf potentielle Gefährdung.</p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p>Review von Michael Kofler Blog <a href="https://kofler.info/circlean-usb-stick-checker/">CIRCLean USB-Stick-Checker</a><br />
+<a href="https://www.circl.lu/projects/CIRCLean/">Projektseite</a><br />
+<a href="https://github.com/GrazerComputerClub/Circlean">GC2 Git-Hub Projekt</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorie</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js"></script>
+
+</body>
+</html>

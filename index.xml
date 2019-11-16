@@ -6,10 +6,30 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 10 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CIRCLean USB Sanitizer</title>
+      <link>https://blog.gc2.at/post/sanitizer/</link>
+      <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/sanitizer/</guid>
+      <description>&lt;p&gt;USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Geany mit GTK2</title>
+      <link>https://blog.gc2.at/post/geany/</link>
+      <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/geany/</guid>
+      <description>&lt;p&gt;Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>IR-Empfänger</title>
@@ -17,7 +37,7 @@
       <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/ir/</guid>
-      <description>&lt;p&gt;Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde hat sie Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&amp;hellip;
+      <description>&lt;p&gt;Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&amp;hellip;
 &lt;/p&gt;</description>
     </item>
     

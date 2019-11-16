@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "IR-Empfänger",
-        "headline" : "IR-Empfänger",
-        "description" : "<p>Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
+        "name" : "Geany mit GTK2",
+        "headline" : "Geany mit GTK2",
+        "description" : "<p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -24,15 +24,15 @@
         "copyrightYear" : "2019",
         "datePublished": "2019-11-10 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-11-10 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/ir/",
-        "wordCount" : "1128",
-        "image" : https://blog.gc2.atimg/IR.jpg",
+        "url" : "https://blog.gc2.at/post/geany/",
+        "wordCount" : "252",
+        "image" : https://blog.gc2.atimg/geany.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>IR-Empfänger </title>
+ <title>Geany mit GTK2 </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -249,7 +249,7 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/IR.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/geany.png">
       </div>
       
         <div class="entry-meta">
@@ -264,256 +264,85 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> IR-Empfänger</h1>
+          <h1 class='entry-title'> Geany mit GTK2</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
+              <p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
 </p>
 
 <h2 id="beschreibung">Beschreibung</h2>
 
-<p>Über einen GPIO Pin lässt sich eine IR-Empfängerbauteil z.B. den Typ TSOP4838 ganz leicht an den Raspberry Pi anschließen. Zusätzliche Bauteile werden nicht benötigt. So lassen sich über eine IR-Fernbedienung Kommandos am System ausführen. Leider hat sich mit dem letzten 4er Kernel bei Raspbian Stretch und Buster einiges geändert, sodass viele Anleitungen im Internet nicht mehr funktionieren. Das neue Kernel-Modul benutzt nun ein anderes Protokoll wodurch der <a href="http://www.lirc.org/">LIRC - Linux Infrared Remote Control</a> Dienst nun nicht mehr korrekt funktioniert. Es bedarf eines Patch (Softwareänderung) des LIRC Programms um den korrekten Betrieb zu gewährleisten.</p>
-
-<h2 id="anschluss">Anschluss</h2>
-
-<p>Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).</p>
-
-<p><img src="../../img/IR-Sensor_Schaltplan.png" alt="IR-Sensor Schaltplan" /></p>
-
-<p><img src="../../img/IR-Sensor_Steckplatine.png" alt="IR-Sensor Steckplatine" /></p>
+<p>Beim Wechsel von Raspbian mit Basis Debian 9 Stretch auf Raspbian mit Debian 10 Buster gab es auch einen Wechsel bei der Entwicklungsumgebung Geany. Statt der Version 1.29 mit GTK2, wird nun die Version 1.33 mit GTK3 zur Verfügung gestellt. GTK ist eine Bibliothek für die grafische Benutzeroberflächen (GUI) mit der Fenster, Dialog und sonstige Anzeigeelemente erzeugt werden. Leider ist die Performance von GTK3 auf der Raspberry Pi Zero merklich schlechter als bei GTK2. Falls man die alte Version als zusätzliches Programm bereitstellen möchte, hier eine Anleitung.</p>
 
 <h2 id="installation">Installation</h2>
 
-<p>Es muss lediglich ein Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.</p>
+<!--
+Wird ein externes Terminal Programm benutzt so können die kleinen Terminals sterm und lilyterm installiert werden. Die Umschaltung des standard X-Terminals erfolgt mit dem Befehl ``sudo update-alternatives --config x-terminal-emulator``.
+-->
 
-<pre><code># TSOP4838 IR-receiver at GPIO27
-dtoverlay=gpio-ir,gpio_pin=27
+<h3 id="geany-1-33-gtk3">Geany 1.33 GTK3</h3>
+
+<pre><code>sudo apt-get install geany stterm libvte9 libvte-2.91-0
 </code></pre>
 
-<p>Nach einem Neustart kann LIRC installiert werden.</p>
+<h3 id="geany-1-29-gtk2">Geany 1.29 GTK2</h3>
 
-<pre><code>sudo apt-get install lirc
-</code></pre>
+<pre><code>mkdir geany
+cd geany
+wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany_1.29-1_armhf.deb
+unp geany_1.29-1_armhf.deb
+unp data.tar.xz
+sudo cp usr/bin/geany /usr/bin/geany-gtk2
+sudo mkdir /usr/lib/arm-linux-gnueabihf/geany-gtk2/
+sudo cp -rv usr/lib/arm-linux-gnueabihf/* /usr/lib/arm-linux-gnueabihf/geany-gtk2/
+mkdir common
+cd common 
+wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany-common_1.29-1_all.deb
+unp geany-common_1.29-1_all.deb
+unp data.tar.xz
+sudo cp usr/share/geany/geany.gtkrc /usr/share/geany/
 
-<p>Der Dienst startet allerdings nicht, da die Parametrierung fehlt.</p>
-
-<h2 id="parametrierung">Parametrierung</h2>
-
-<p>Zuerst sollte man überprüfen ob das Kernel Modul korrekt geladen wurde und damit das lirc-Device vorhanden ist.</p>
-
-<pre><code>ls /dev/lirc* 
-</code></pre>
-
-<p>Als Ausgabe sollte man &ldquo;/dev/lirc0&rdquo; finden.<br />
-Beispielkonfigurationen für LIRC wurden bereits abgelegt, müssen aber noch umbenannt bzw. umkopiert und modifiziert werden.</p>
-
-<pre><code>sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
-sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
-sudo mv /etc/lirc/lircd.conf.d/devinput.lircd.conf /etc/lirc/lircd.conf.d/devinput.lircd.dist
+sudo apt-get install libfreetype6 libfontconfig1 libgtk2.0-0 libpangoft2-1.0-0
 </code></pre>
 
 <!--
-sudo cp irexec.lircrc.dist /home/pi/.lircrc
-sudo cp /etc/lirc/irexec.lircrc.dist /etc/lirc/irexec.lircrc
+Error nur exe:
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
+
+
+ldd /usr/bin/geany-gtk2 
+  libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6cd8000)
+
+ldd /usr/bin/geany
+    libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6d58000)
 -->
 
-<p>In der Datei &ldquo;/etc/lirc/lirc_options.conf&rdquo; müssen folgenden Zeile angepasst werden (Werte sind anders gesetzt).</p>
+<p><strong>Aufruf geany mit GTK2:</strong></p>
 
-<pre><code>    driver = default
-    device = /dev/lirc0
+<pre><code>LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/  geany-gtk2 &amp;
 </code></pre>
 
-<pre><code>sudo service lircd restart
-</code></pre>
+<h2 id="einstellungen">Einstellungen</h2>
 
-<p>Nun könnte man den IR-Empfänger bereits mit &ldquo;mode2&rdquo; und einer beliebigen Fernbedienung testen.</p>
+<p>Nach der Installation gab es beim Starten eines Programms immer das Problem, dass das Terminal Programm mit dem entwickelten Programm nicht ausgeführt wurde.</p>
 
-<pre><code>mode2
-</code></pre>
+<p><img src="../../img/geany_Fehler.png" alt="Fehler" /></p>
 
-<p>Bei einem Tastendruck werden Pulsdauer bzw. Pulspausen ausgegeben.<br />
-Allerdings ist eine Programmierung oder Verwendung noch nicht möglich!</p>
+<p>Das Problem kann gelöst werden indem man den internen Terminal für das Ausführen des Programm benutzt.</p>
 
-<h2 id="lirc-dienst-anpassen">LIRC-Dienst anpassen</h2>
+<p>Bearbeiten -&gt; Einstellungen bzw. <kbd>Strg</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> , Reiter Terminal<br />
+Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Skript nicht benutzen&rdquo; müssen aktiviert werden.</p>
 
-<p>Leider versteht der LIRC Dienst das Kernel Modul nicht korrekt und muss deshalb modifiziert werden.
-Wie das Funktioniert wird im Raspberry Pi Forum im Beitrag <a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1438740&amp;sid=1a1aa370b94e5b2f20158d64d1b0b254#p1438740">Using LIRC with kernel 4.19.X and gpio-ir</a> beschrieben.</p>
-
-<p>Folgend ist eine Anleitung für die Erzeugung der aktualisierten Pakete für das aktuelle Debian 10 (Buster) aufgeführt:</p>
-
-<pre><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
-sudo apt update
-sudo apt install devscripts
-
-sudo apt install dh-exec doxygen expect libasound2-dev libftdi1-dev libsystemd-dev libudev-dev libusb-1.0-0-dev libusb-dev man2html-base portaudio19-dev socat xsltproc python3-yaml dh-python libx11-dev python3-dev python3-setuptools
-mkdir build
-cd build
-apt source lirc
-wget https://raw.githubusercontent.com/neuralassembly/raspi/master/lirc-gpio-ir-0.10.patch
-patch -p0 -i lirc-gpio-ir-0.10.patch
-cd lirc-0.10.1
-debuild -uc -us -b
-cd ..
-</code></pre>
-
-<p>Alternativ können sie auch von unserem GitHub Repository heruntergeladen werden.</p>
-
-<pre><code>wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc-client0_0.10.1-5.2_armhf.deb
-wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc0_0.10.1-5.2_armhf.deb
-wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/lirc_0.10.1-5.2_armhf.deb
-
-</code></pre>
-
-<p>Nachdem die Pakete bereitgestellt wurden, müssen sie noch installieren werden.</p>
-
-<pre><code>sudo apt remove lirc liblirc0 liblirc-client0
-sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblirc-client0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb 
-</code></pre>
-
-<p>Wenn nachgefragt wird wie mit den geänderten Konfigurationsdaten umgegangen werden soll, soll wählt man N für &ldquo;Die momentan installierte Version beibehalten&rdquo;.<br />
-Nun kann man noch zukünftige automatische Updates für die Pakete abschalten.</p>
-
-<pre><code>sudo apt-mark hold liblirc0 liblirc-client0 lirc
-</code></pre>
-
-<p>Bei unserer Raspjamming Distribution ab Version 10.11.2019 sind die modifizierten LIRC Pakete bereits vorinstalliert!</p>
-
-<h2 id="fernbedienung-anlernen-und-parametrieren">Fernbedienung anlernen und parametrieren</h2>
-
-<p>In diesem Fall wird eine Fernbedienung für einen Holzbahnzug (Brio oder ähnliche Modelle) angelernt. Es gibt bei der Steuerung nur 4 Tasten. Vorwärts, Rückwerts, Licht und Hupe.</p>
-
-<pre><code>sudo service lircd stop
-sudo irrecord -H default --disable-namespace
-</code></pre>
-
-<p>&rdquo;&ndash;disable-namespace&rdquo; benötigt man, wenn man eigene Namen für Tasten vorgeben möchte.</p>
-
-<ul>
-<li>Press RETURN to continue. [<kbd>Enter</kbd>]</li>
-<li>Nun muss man ein paar Sekunden warten bei denen gemessen wird ob Störungen (z. B. von Leuchtstofflampen) auftreten.</li>
-<li>Enter name of remote (only ascii, no spaces) :ZugB [<kbd>Enter</kbd>]</li>
-<li>Press RETURN now to start recording. [<kbd>Enter</kbd>]</li>
-<li>Nun muss man einige Tasten abwechselnd für 1 Sekunde drücken, bis eine Zeile mit Punkten voll ist</li>
-<li>Got gap (142596 us)}, Please keep on pressing buttons like described above.</li>
-<li>Nun muss man einige Tasten nochmal abwechselnd für 1 Sekunde drücken bis eine zweite Zeile mit Punkten voll ist</li>
-<li>Please enter the name for the next button (press ENTER to finish recording): UP_B[<kbd>Enter</kbd>]</li>
-<li>Taste auf der Fenbedingung drücken</li>
-<li>Please enter the name for the next button (press ENTER to finish recording): DOWN_B[<kbd>Enter</kbd>]</li>
-<li>Taste auf der Fenbedingung drücken</li>
-<li>Please enter the name for the next button (press ENTER to finish recording): LIGHT_B[<kbd>Enter</kbd>]</li>
-<li>Taste auf der Fenbedingung drücken</li>
-<li>Please enter the name for the next button (press ENTER to finish recording): SOUND_B[<kbd>Enter</kbd>]</li>
-<li>Taste auf der Fenbedingung drücken</li>
-<li>[<kbd>Enter</kbd>] drücken</li>
-<li>Checking for toggle bit mask. Press RETURN to continue.: [<kbd>Enter</kbd>]</li>
-<li>Nun muss eine Taste immer wieder gedrückt werden ohne, dass man auf der Taste bleibt.</li>
-</ul>
-
-<p>Danach wird eine Konfigurationsdatei mit dem Namen &ldquo;ZugB.lircd.conf ins&rdquo; aktuelle Verszeichnis geschrieben.<br />
-Die Datei sieht ungefähr so aus:</p>
-
-<pre><code>begin remote
-
-  name  ZugB
-  bits           16
-  flags SPACE_ENC|CONST_LENGTH
-  eps            30
-  aeps          100
-
-  header       3032   954
-  one          2010   959
-  zero         1026   959
-  gap          142587
-  toggle_bit_mask 0x3030
-  frequency    38000
-
-      begin codes
-          UP_B                       0x916E
-          DOWN_B                     0x8976
-          SOUND_B                    0x837C 0x8683900
-          LIGHT_B                    0x857A 0x8683900
-      end codes
-
-end remote
-</code></pre>
-
-<p>Nun muss sie in das LIRC Konfigurationsverzeichnis kopiert werden.</p>
-
-<pre><code>sudo cp ZugB.lircd.conf  /etc/lirc/lircd.conf.d/
-service lircd restart
-</code></pre>
-
-<h2 id="tasten-einem-befehl-zuordnen">Tasten einem Befehl zuordnen</h2>
-
-<p>Nach dem Anlernen der Fernbedienung kann die irexec.lircrc Konfigurationsdatei erstellt werden, um Befehle mit dem Programm &ldquo;irexec&rdquo; ausführen zu können.
-Eine Beispieldatei wurde bei der Installation mit dem Namen &ldquo;/etc/lirc/irexec.lircrc.dist&rdquo; angelegt.<br />
-Durch das Anlegen folgender Befehle in der &ldquo;/etc/lirc/irexec.lircrc&rdquo; Konfigurationsdatei, wird anfänglich aber nur die Taste auf der Konsole ausgegeben.</p>
-
-<pre><code>begin
-    prog   = irexec
-    button = UP_B
-    config = echo &quot;UP-B&quot;
-end
-
-begin
-    prog   = irexec
-    button = DOWN_B
-    config = echo &quot;DOWN-B&quot;
-end
-
-begin
-    prog   = irexec
-    button = SOUND_B
-    config = echo &quot;SOUND-B&quot;
-end
-
-begin
-    prog   = irexec
-    button = LIGHT_B
-    config = echo &quot;LIGHT-B&quot;
-end
-</code></pre>
-
-<p>Für einen Testlauf muss das Programm mit der Konfigurationsdatei gestartet werden.</p>
-
-<pre><code>irexec  /etc/lirc/irexec.lircrc
-</code></pre>
-
-<p>Wenn das geht, kann eine Konfiguration als Hintergrunddienst erfolgen. Man könnte z. B. eine LED am GPIO schalten. Hierzu verwenden wir eine Low Power LED, die über den internen Pull-Up Widerstand von ca. 50 KOhm angesteuert wird. Hierzu bleibt der GPIO16 auf Eingang, wir schalten aber bei Eingang einmal den internen Pull Widerstand auf 3,3 V und GND. Die Low Power LEDs können auch bei dem geringen Strom von ca. 25 µA noch merklich leuchten.</p>
-
-<pre><code>begin
-    prog   = irexec
-    button = UP_B
-    config = gpio -g mode 16 up
-end
-
-begin
-    prog   = irexec
-    button = DOWN_B
-    config = gpio -g mode 16 down
-end
-</code></pre>
-
-<p>Wenn man den Dienst aktivieren und starten möchte, so muss man folgende Befehle eingeben (Service Datei: /lib/systemd/system/irexec.service):</p>
-
-<pre><code>sudo systemctl unmask irexec.service
-sudo systemctl enable irexec.service
-sudo service irexec start
-</code></pre>
-
-<h2 id="verlinkungen">Verlinkungen</h2>
-
-<p>Datenblatt <a href="https://produktinfo.conrad.com/datenblaetter/150000-174999/171115-da-01-en-IR_EMPFAENGER_MODUL_TSOP_4838__VIS.pdf">TSOP48..</a><br />
-Raspberry Pi Forum <a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1438740&amp;sid=1a1aa370b94e5b2f20158d64d1b0b254#p1438740">Using LIRC with kernel 4.19.X and gpio-ir</a></p>
+<p><img src="../../img/geany_Einstellungen.png" alt="Einstellungen" /></p>
             </article>
           </div>
           
@@ -524,7 +353,7 @@ Raspberry Pi Forum <a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1
     <div class="entry-categories"><p><span>Kategorie</span>
   
     
-    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
 
