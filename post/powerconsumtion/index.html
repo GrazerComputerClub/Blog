@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Geany mit GTK2",
-        "headline" : "Geany mit GTK2",
-        "description" : "<p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
+        "name" : "Raspberry Pi am USB-Anschluss betreiben",
+        "headline" : "Raspberry Pi am USB-Anschluss betreiben",
+        "description" : "<p>Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -22,17 +22,17 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-11-10 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-11-10 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/geany/",
-        "wordCount" : "361",
-        "image" : https://blog.gc2.atimg/geany.png",
+        "datePublished": "2019-11-24 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-11-24 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/powerconsumtion/",
+        "wordCount" : "344",
+        "image" : https://blog.gc2.atimg/Strommesser.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Geany mit GTK2 </title>
+ <title>Raspberry Pi am USB-Anschluss betreiben </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -249,11 +249,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/geany.png">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Strommesser.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">10 November</span>	<span> / </span>
+          <span class="date">24 November</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -264,209 +264,269 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/gc2">GC2</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Geany mit GTK2</h1>
+          <h1 class='entry-title'> Raspberry Pi am USB-Anschluss betreiben</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
+              <p>Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?
 </p>
 
 <h2 id="beschreibung">Beschreibung</h2>
 
-<p>Beim Wechsel von Raspbian mit Basis Debian 9 Stretch auf Raspbian mit Debian 10 Buster gab es auch einen Wechsel bei der Entwicklungsumgebung Geany. Statt der Version 1.29 mit GTK2, wird nun die Version 1.33 mit GTK3 zur Verfügung gestellt. GTK ist eine Bibliothek für die grafische Benutzeroberflächen (GUI) mit der Fenster, Dialog und sonstige Anzeigeelemente erzeugt werden. Leider ist die Performance von GTK3 auf der Raspberry Pi Zero merklich schlechter als bei GTK2. Falls man die alte Version als zusätzliches Programm bereitstellen möchte, hier eine Anleitung.</p>
+<p>Bei den Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache Aufbauten zu haben wollen wir die Raspberry Pi mit einem USB-Kabel direkt
+über den  vorhanden USB-Anschluss versorgen. Anfänglich hatten wir nur Raspberry Pi Zero Modelle, hier war das kein Problem. Die Stromaufnahme liget bei ihnen unter 500 mA. Nun haben wir aber Raspberry Pi 2 und 3 Modelle bekommen. Nun soll untersucht werden ob diese auch mit dem USB-Anschluss versorgt werden können.</p>
 
-<h2 id="installation">Installation</h2>
+<h2 id="testaufbau">Testaufbau</h2>
+
+<p>Die Stromaufnahme des System wurden über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm &ldquo;sysbench&rdquo; CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.</p>
+
+<pre><code>apt-get install sysbench
+sysbench --num-threads=1 --test=cpu --cpu-max-prime=20000 run
+sysbench --num-threads=2 --test=cpu --cpu-max-prime=20000 run
+sysbench --num-threads=3 --test=cpu --cpu-max-prime=20000 run
+sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
+</code></pre>
+
+<h2 id="ergebnis">Ergebnis</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left"><em>System</em></th>
+<th><em>Idle [mA]</em></th>
+<th><em>1-Core [mA]</em></th>
+<th><em>2-Core [mA]</em></th>
+<th><em>3-Core [mA]</em></th>
+<th><em>4-Core [mA]</em></th>
+<th>CPU-Temp [°C]</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Pi 2 ( 900 MHz)</td>
+<td>230</td>
+<td>280</td>
+<td>320</td>
+<td>360</td>
+<td>400</td>
+<td>53</td>
+</tr>
+
+<tr>
+<td align="left">Pi 2 (1000 MHz)</td>
+<td>230</td>
+<td>320</td>
+<td>360</td>
+<td>400</td>
+<td>450</td>
+<td>59</td>
+</tr>
+
+<tr>
+<td align="left">Pi 3 (1200 MHz)</td>
+<td>260</td>
+<td>370</td>
+<td>470</td>
+<td>570</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../../img/StromaufnamhePi2u3.png" alt="Diagramm" /></p>
+
+<h2 id="schlussfolgerung">Schlussfolgerung</h2>
+
+<p>Die Raspberry Pi 2 ist für den Betrieb am USB-Anschluss gut geeignet. Selbst im Turbo-Modus bleibt man unterhalb der 500 mA Grenze. Zu bedenken ist allerdings das zusätzliche Hardware auf den GPIOs auch noch Verbrauch generiert. Eine ausreichende Reserve sollte vorhanden sein. Andererseits ist eine Auslastung auf allen vier Kernen im Normalbetrieb eher unwahrscheinlich. Es ist als zu überlegen ob man mit dem Basistakt oder dem Turbo (1000 MHz) arbeitet.<br />
+Die Raspberry Pi 3 hat bereits bei einer Auslastung von zwei Kernen den maximalen Strom fast erreicht. Sie eignet sich weniger für den Betrieb am USB-Anschluss.</p>
+
+<p>Wer auf Nummer sicher gehen will kann in der Datei &ldquo;/boot/cmdline.txt&rdquo; die Anzahl der Kerne limitieren. Man könnte nur drei Kerne freischalten, um so Reserven zu schaffen und mit dem Turbo Modus die Einzelkernleistung erhöhen. So würde das System nie mehr als 400 mA aufnehmen.</p>
+
+<pre><code>maxcpus=3
+</code></pre>
 
 <!--
-Wird ein externes Terminal Programm benutzt so können die kleinen Terminals sterm und lilyterm installiert werden. Die Umschaltung des standard X-Terminals erfolgt mit dem Befehl ``sudo update-alternatives --config x-terminal-emulator``.
+Pi3 xxxx MHz - passiv
+idle    260 mA
+1 Core  370 mA
+2 Core  470 mA
+3 Core  570 mA
+~4 Core  700 mA   ~53°C
+
+
+Pi2 900 MHz - passiv
+idle    230 mA
+1 Core  280 mA
+2 Core  320 mA
+3 Core  360 mA
+4 Core  400 mA   ~53°C
+
+
+Pi2 1000 MHz - ARM:1000/Core:500/RAM: 500 - passiv
+idle    230 mA
+1 Core  320 mA
+2 Core  360 mA
+3 Core  400 mA
+4 Core  450 mA   ~59°C
+    
+
+Pi2 1000 MHz - ARM:1000/Core:250/RAM:450 -passiv - 3Core
+idle    230 mA
+1 Core  290 mA
+2 Core  350 mA
+3 Core  390 mA   ~54°C
+4 Core  440 mA 
+    
+
+
+ARM:1000/Core:250/RAM:450
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NUMERIC SORT        :          489.16  :      12.54  :       4.12
+STRING SORT         :          41.819  :      18.69  :       2.89
+BITFIELD            :      1.2403e+08  :      21.28  :       4.44
+FP EMULATION        :          109.17  :      52.39  :      12.09
+FOURIER             :          6908.2  :       7.86  :       4.41
+ASSIGNMENT          :          7.6104  :      28.96  :       7.51
+IDEA                :            1537  :      23.51  :       6.98
+HUFFMAN             :          723.83  :      20.07  :       6.41
+NEURAL NET          :          7.2727  :      11.68  :       4.91
+LU DECOMPOSITION    :          261.93  :      13.57  :       9.80
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 23.156
+FLOATING-POINT INDEX: 10.759
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
+L2 Cache            : 
+OS                  : Linux 4.19.75-v7+
+C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
+libc                : 
+MEMORY INDEX        : 4.587
+INTEGER INDEX       : 6.870
+FLOATING-POINT INDEX: 5.967
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+
+
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NUMERIC SORT        :          492.81  :      12.64  :       4.15
+STRING SORT         :          42.059  :      18.79  :       2.91
+BITFIELD            :       1.247e+08  :      21.39  :       4.47
+FP EMULATION        :          109.84  :      52.71  :      12.16
+FOURIER             :          6952.2  :       7.91  :       4.44
+ASSIGNMENT          :          7.7016  :      29.31  :       7.60
+IDEA                :          1545.4  :      23.64  :       7.02
+HUFFMAN             :          728.15  :      20.19  :       6.45
+NEURAL NET          :          7.3119  :      11.75  :       4.94
+LU DECOMPOSITION    :          263.64  :      13.66  :       9.86
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 23.315
+FLOATING-POINT INDEX: 10.825
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
+L2 Cache            : 
+OS                  : Linux 4.19.75-v7+
+C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
+libc                : 
+MEMORY INDEX        : 4.623
+INTEGER INDEX       : 6.913
+FLOATING-POINT INDEX: 6.004
+
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NUMERIC SORT        :          437.08  :      11.21  :       3.68
+STRING SORT         :          37.709  :      16.85  :       2.61
+BITFIELD            :      1.1218e+08  :      19.24  :       4.02
+FP EMULATION        :           98.81  :      47.41  :      10.94
+FOURIER             :          6256.6  :       7.12  :       4.00
+ASSIGNMENT          :          6.8636  :      26.12  :       6.77
+IDEA                :          1388.5  :      21.24  :       6.31
+HUFFMAN             :          655.22  :      18.17  :       5.80
+NEURAL NET          :          6.5715  :      10.56  :       4.44
+LU DECOMPOSITION    :             238  :      12.33  :       8.90
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 20.891
+FLOATING-POINT INDEX: 9.747
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
+L2 Cache            : 
+OS                  : Linux 4.19.75-v7+
+C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
+libc                : 
+MEMORY INDEX        : 4.141
+INTEGER INDEX       : 6.196
+FLOATING-POINT INDEX: 5.406
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+
+
+Pi 3:
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NUMERIC SORT        :          711.67  :      18.25  :       5.99
+STRING SORT         :          70.266  :      31.40  :       4.86
+BITFIELD            :      1.9967e+08  :      34.25  :       7.15
+FP EMULATION        :          154.13  :      73.96  :      17.07
+FOURIER             :           10355  :      11.78  :       6.61
+ASSIGNMENT          :          9.2524  :      35.21  :       9.13
+IDEA                :          2223.4  :      34.01  :      10.10
+HUFFMAN             :          899.15  :      24.93  :       7.96
+NEURAL NET          :          11.475  :      18.43  :       7.75
+LU DECOMPOSITION    :          402.65  :      20.86  :      15.06
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 33.078
+FLOATING-POINT INDEX: 16.544
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : 4 CPU ARMv7 Processor rev 4 (v7l)
+L2 Cache            : 
+OS                  : Linux 4.19.75-v7+
+C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
+libc                : 
+MEMORY INDEX        : 6.822
+INTEGER INDEX       : 9.523
+FLOATING-POINT INDEX: 9.176
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+
 -->
-
-<h3 id="geany-1-33-gtk3">Geany 1.33 GTK3</h3>
-
-<pre><code>sudo apt-get install geany stterm libvte9 libvte-2.91-0
-</code></pre>
-
-<h3 id="geany-1-29-gtk2">Geany 1.29 GTK2</h3>
-
-<pre><code>mkdir geany
-cd geany
-wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany_1.29-1_armhf.deb
-unp geany_1.29-1_armhf.deb
-unp data.tar.xz
-sudo cp usr/bin/geany /usr/bin/geany-gtk2
-sudo mkdir /usr/lib/arm-linux-gnueabihf/geany-gtk2/
-sudo cp -rv usr/lib/arm-linux-gnueabihf/* /usr/lib/arm-linux-gnueabihf/geany-gtk2/
-mkdir common
-cd common 
-wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany-common_1.29-1_all.deb
-unp geany-common_1.29-1_all.deb
-unp data.tar.xz
-sudo cp usr/share/geany/geany.gtkrc /usr/share/geany/
-
-sudo apt-get install libfreetype6 libfontconfig1 libgtk2.0-0 libpangoft2-1.0-0
-</code></pre>
-
-<!--
-Error nur exe:
-GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
-
-
-ldd /usr/bin/geany-gtk2 
-  libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6cd8000)
-
-ldd /usr/bin/geany
-    libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6d58000)
--->
-
-<p><strong>Aufruf geany mit GTK2:</strong></p>
-
-<pre><code>LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2
-</code></pre>
-
-<p><strong>Alias für Aufruf &ldquo;~/.bash_aliases&rdquo;:</strong></p>
-
-<pre><code>alias geany-gtk2=&quot;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/  geany-gtk2&quot;
-alias geany-gtk3=&quot;/usr/bin/geany&quot;
-</code></pre>
-
-<h2 id="einstellungen">Einstellungen</h2>
-
-<p>Nach der Installation gab es beim Starten eines Programms immer das Problem, dass das Terminal Programm mit dem entwickelten Programm nicht ausgeführt werden konnte.</p>
-
-<p><img src="../../img/geany_Fehler.png" alt="Fehler beim Ausführen" /></p>
-
-<p>Das Problem kann gelöst werden indem man den internen Terminal für das Ausführen des Programms benutzt.</p>
-
-<p>Bearbeiten -&gt; Einstellungen bzw. <kbd>Strg</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> , Reiter Terminal<br />
-Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Skript nicht benutzen&rdquo; müssen aktiviert werden.</p>
-
-<p><img src="../../img/geany_Einstellungen.png" alt="Einstellungen" /></p>
-
-<h2 id="performancevergleich-gtk3-zu-gtk2">Performancevergleich GTK3 zu GTK2</h2>
-
-<p>Folgende Zeit wurde ohne exakte Messung ermittelt und sind deshalb nur als Richtwert zu sehen.</p>
-
-<h3 id="raspberry-pi-zero">Raspberry Pi Zero</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left"><em>Aktion</em></th>
-<th><em>GTK3 (Sek.)</em></th>
-<th><em>GTK2 (Sek.)</em></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Start</td>
-<td>11</td>
-<td>6</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>4</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Einstellungen</td>
-<td>10</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td align="left">Beenden</td>
-<td>3</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="raspberry-pi-2">Raspberry Pi 2</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left"><em>Aktion</em></th>
-<th><em>GTK3 (Sek.)</em></th>
-<th><em>GTK2 (Sek.)</em></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Start</td>
-<td>5</td>
-<td>3</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>2</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Einstellungen</td>
-<td>6</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td align="left">Beenden</td>
-<td>2</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="raspberry-pi-3">Raspberry Pi 3</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left"><em>Aktion</em></th>
-<th><em>GTK3 (Sek.)</em></th>
-<th><em>GTK2 (Sek.)</em></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Start</td>
-<td>3</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>1</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Einstellungen</td>
-<td>4</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Beenden</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
             </article>
           </div>
           
@@ -474,10 +534,11 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
-    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/gc2" title="View all posts in GC2">GC2</a>
   </p>
 </div>
 

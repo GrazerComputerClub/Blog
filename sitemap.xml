@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.gc2.at/post/powerconsumtion/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.gc2.at/post/sanitizer/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url>
@@ -259,19 +264,19 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/gc2/</loc>
-    <lastmod>2019-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/post/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -283,7 +288,7 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/raspberry-pi/</loc>
-    <lastmod>2019-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
