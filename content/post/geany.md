@@ -6,7 +6,7 @@ date = "2019-11-10"
 title = "Geany mit GTK2"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi Zero"]
-keywords = ["geany", "GTK2", "GTK3", "VTE"]
+keywords = ["geany", "GTK", "GTK2", "GTK3", "VTE"]
 weight = 1
 +++
 
@@ -65,21 +65,60 @@ ldd /usr/bin/geany
 **Aufruf geany mit GTK2:**
 
 ```
-LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/  geany-gtk2 &
+LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2
 ```
 
+**Alias für Aufruf "~/.bash_aliases":**
+
+```
+alias geany-gtk2="LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/  geany-gtk2"
+alias geany-gtk3="/usr/bin/geany"
+```
 
 ## Einstellungen ##
 
-Nach der Installation gab es beim Starten eines Programms immer das Problem, dass das Terminal Programm mit dem entwickelten Programm nicht ausgeführt wurde.
+Nach der Installation gab es beim Starten eines Programms immer das Problem, dass das Terminal Programm mit dem entwickelten Programm nicht ausgeführt werden konnte.
 
-![Fehler](../../img/geany_Fehler.png) 
+![Fehler beim Ausführen](../../img/geany_Fehler.png) 
 
 
-Das Problem kann gelöst werden indem man den internen Terminal für das Ausführen des Programm benutzt. 
+Das Problem kann gelöst werden indem man den internen Terminal für das Ausführen des Programms benutzt. 
 
 Bearbeiten -> Einstellungen bzw. <kbd>Strg</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> , Reiter Terminal  
 Die Optionen "Führe Programme in der VTE aus" und "Das Run-Skript nicht benutzen" müssen aktiviert werden.
 
 ![Einstellungen](../../img/geany_Einstellungen.png) 
 
+
+## Performancevergleich GTK3 zu GTK2 ##
+
+Folgende Zeit wurde ohne exakte Messung ermittelt und sind deshalb nur als Richtwert zu sehen. 
+
+### Raspberry Pi Zero
+
+| *Aktion*     | *GTK3 (Sek.)* | *GTK2 (Sek.)* |
+|:-------------|--------|--------|
+| Start        | 11     | 6      |
+| Fenster öffnen: Kommandos zum Erstellen konfigurieren | 4  | 1 |
+| Fenster öffnen: Einstellungen                         | 10 | 2 |
+| Beenden        | 3    | 2      |
+
+
+### Raspberry Pi 2
+
+| *Aktion*     | *GTK3 (Sek.)* | *GTK2 (Sek.)* |
+|:-------------|--------|--------|
+| Start        | 5      | 3      |
+| Fenster öffnen: Kommandos zum Erstellen konfigurieren | 2 | 1 |
+| Fenster öffnen: Einstellungen                         | 6 | 2 |
+| Beenden      | 2      | 1      |
+
+
+### Raspberry Pi 3
+
+| *Aktion*     | *GTK3 (Sek.)* | *GTK2 (Sek.)* |
+|:-------------|--------|--------|
+| Start        | 3      | 2      |
+| Fenster öffnen: Kommandos zum Erstellen konfigurieren | 1 | 1 |
+| Fenster öffnen: Einstellungen                         | 4 | 1 |
+| Beenden      | 1      | 1      |
