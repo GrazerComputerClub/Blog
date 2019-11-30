@@ -22,10 +22,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-11-10 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-11-10 00:00:00 &#43;0000 UTC",
+        "datePublished": "2019-11-30 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-11-30 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/geany/",
-        "wordCount" : "361",
+        "wordCount" : "706",
         "image" : https://blog.gc2.atimg/geany.png",
         "keywords" : [ "Blog" ]   
     }
@@ -253,7 +253,7 @@ if (!doNotTrack) {
       </div>
       
         <div class="entry-meta">
-          <span class="date">10 November</span>	<span> / </span>
+          <span class="date">30 November</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -265,6 +265,12 @@ if (!doNotTrack) {
             <span> / </span>
 
             <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
           </span>
           
 
@@ -326,16 +332,84 @@ ldd /usr/bin/geany
     libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6d58000)
 -->
 
+<h3 id="geany-1-33-gtk2-erstellen">Geany 1.33 GTK2 erstellen</h3>
+
+<p>Die Geany Version 1.33 mit der GTK2 Bibliothek kann selbst erstellt werden. Dies ist allerdings ein aufwendiger Prozess.
+Würde man das resultierende Debian Paket dann installieren wird die GTK3 Version ersetzt. Wir kopieren aber wieder die erzeugten Dateien zusätzlich
+auf das Raspbian System.</p>
+
+<p>Zuerst besorgt man sich den Source-Code des Debian Paketes. Dann benötigt man noch alle Abhängigkeiten des Paketes und die GTK2 Development Library.
+Nun muss man den Source-Code entpacken. In der Datei &ldquo;debian/rules&rdquo; muss der Parameter &ldquo;&ndash;enable-gtk3&rdquo; entfernt werden. Danach kann das Paket neu erzeugt werden. Nun kopieren wir das neue Programm und die Bibliothekdateien in eine neue Datei bzw. Verzeichnis.</p>
+
+<p>geany-gtk2.patch:</p>
+
+<pre><code>--- geany-1.33/debian/rules.old	2019-11-27 21:55:31.871256842 +0100
++++ geany-1.33/debian/rules	2019-11-28 22:27:55.832759732 +0100
+@@ -10,7 +10,7 @@
+ 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+ 
+ override_dh_auto_configure:
+-	dh_auto_configure -- --enable-vte --enable-the-force --enable-gtk3
++	dh_auto_configure -- --enable-vte --enable-the-force 
+ 	sed -i -r 's,^sys_lib_dlsearch_path_spec=&quot;(.*)$$,sys_lib_dlsearch_path_spec=&quot;/usr/lib /lib \1,' $(CURDIR)/libtool
+ 
+ override_dh_auto_install:
+</code></pre>
+
+<!--
+pkg-config --libs gtk+-2.0
+-lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
+-->
+
+<pre><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
+sudo apt update
+sudo apt install build-essential fakeroot devscripts
+sudo apt-get build-dep geany
+sudo apt-get install libgtk2.0-dev libgdk-pixbuf2.0-dev libatk1.0-dev libcairo2-dev libgio2.0-cil-dev libfreetype6-dev libpango1.0-dev
+mkdir build
+cd build
+apt-get source geany
+patch -p0 -i geany-gtk2.patch
+cd geany-1.33
+debuild -uc -us -b
+sudo cp usr/bin/geany /usr/bin/geany-gtk2
+sudo mkdir /usr/lib/arm-linux-gnueabihf/geany-gtk2/
+sudo cp -rv usr/lib/arm-linux-gnueabihf/* /usr/lib/arm-linux-gnueabihf/geany-gtk2/
+cd ..
+</code></pre>
+
+<h2 id="start">Start</h2>
+
+<p>Bei Aufruf der GTK2 version muss man die Pfad für die Bibliothek setzen damit nicht die GTK3 Bibliothek geladen wird.</p>
+
 <p><strong>Aufruf geany mit GTK2:</strong></p>
 
 <pre><code>LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2
 </code></pre>
 
+<p>Bei einem alias Eintrag können die zwei Version direkt gestartet werden.</p>
+
 <p><strong>Alias für Aufruf &ldquo;~/.bash_aliases&rdquo;:</strong></p>
 
-<pre><code>alias geany-gtk2=&quot;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/  geany-gtk2&quot;
+<pre><code>alias geany-gtk2=&quot;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2&quot;
 alias geany-gtk3=&quot;/usr/bin/geany&quot;
 </code></pre>
+
+<p>Mit dem Aufruf geany kann dann je nach Systemleistung die GTK2 oder GTK3 Version gestartet werden.</p>
+
+<p><strong>Alias für Aufruf &ldquo;~/.profile&rdquo;:</strong></p>
+
+<pre><code>function geany() { 
+	if [ `cat /proc/cpuinfo | grep -e &quot;^processor&quot; | wc -l` = 1 ]; then 
+    echo &quot;start geany with GTK 2 (slow single core cpu)&quot; 
+		geany-gtk2 &quot;$@&quot;
+	else 
+		geany-gtk3 &quot;$@&quot;
+	fi
+}
+</code></pre>
+
+<p>Optischer Vergleich der beiden Versionen siehe Titelbild (GTK2 Clearlooks theme links, GTK3 rechts).</p>
 
 <h2 id="einstellungen">Einstellungen</h2>
 
@@ -368,26 +442,26 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 <tbody>
 <tr>
 <td align="left">Start</td>
-<td>11</td>
-<td>6</td>
+<td>8</td>
+<td>4</td>
 </tr>
 
 <tr>
 <td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>4</td>
+<td>2</td>
 <td>1</td>
 </tr>
 
 <tr>
 <td align="left">Fenster öffnen: Einstellungen</td>
-<td>10</td>
+<td>7</td>
 <td>2</td>
 </tr>
 
 <tr>
 <td align="left">Beenden</td>
-<td>3</td>
 <td>2</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -406,57 +480,19 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 <tbody>
 <tr>
 <td align="left">Start</td>
-<td>5</td>
-<td>3</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>2</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Einstellungen</td>
-<td>6</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td align="left">Beenden</td>
-<td>2</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="raspberry-pi-3">Raspberry Pi 3</h3>
-
-<table>
-<thead>
-<tr>
-<th align="left"><em>Aktion</em></th>
-<th><em>GTK3 (Sek.)</em></th>
-<th><em>GTK2 (Sek.)</em></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Start</td>
-<td>3</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
-<td>1</td>
-<td>1</td>
-</tr>
-
-<tr>
-<td align="left">Fenster öffnen: Einstellungen</td>
 <td>4</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td align="left">Fenster öffnen: Einstellungen</td>
+<td>3</td>
 <td>1</td>
 </tr>
 
@@ -467,6 +503,80 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 </tr>
 </tbody>
 </table>
+
+<!--
+### Raspberry Pi 3
+
+| *Aktion*     | *GTK3 (Sek.)* | *GTK2 (Sek.)* |
+|:-------------|--------|--------|
+| Start        | 3      | 2      |
+| Fenster öffnen: Kommandos zum Erstellen konfigurieren | 1 | 1 |
+| Fenster öffnen: Einstellungen                         | 4 | 1 |
+| Beenden      | 1      | 1      |
+-->
+
+<!--
+Fehler reparieren funktioniert nicht!:
+/usr/lib/arm-linux-gnueabihf/gdk-pixbuf-2.0
+sudo ./gdk-pixbuf-query-loaders --update-cache
+sudo update-mime-database /usr/share/mime
+sudo gtk-update-icon-cache -fv /usr/share/icons/hicolor/ /usr/share/icons/Adwaita/
+sudo apt-get install papirus-icon-theme
+-->
+
+<h1 id="style-für-gtk2-ändern">Style für GTK2 ändern</h1>
+
+<!-- gtk-theme-switch gtk2-engines-cleanice gtk2-engines-magicchicken 
+gtk-theme-switch2
+
+cat gtk-icon-theme-name="breeze" >> /home/pi/.gtkrc-2.0
+
+-->
+
+<p>Die Optik der alten GTK2 Version schaut in der default Konfiguration recht altbacken aus. Eine anderes Theme wie z.B. &ldquo;Clearlooks&rdquo; gibt dem Programm einen
+ modernen Look.</p>
+
+<pre><code>sudo apt-get install gtk-theme-switch gtk2-engines
+gtk-theme-switch2
+</code></pre>
+
+<p>/home/pi/.gtkrc-2.0:</p>
+
+<pre><code># -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
+include &quot;/usr/share/themes/Clearlooks/gtk-2.0/gtkrc&quot;
+
+include &quot;/home/pi/.gtkrc-2.0.mine&quot;
+
+# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
+</code></pre>
+
+<!--
+sudo apt-get install lxappearance 
+lxappearance
+
+/home/pi/.gtkrc-2.0:
+```
+# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# Any customization should be done in ~/.gtkrc-2.0.mine instead.
+
+include "/home/pi/.gtkrc-2.0.mine"
+gtk-theme-name="Clearlooks"
+gtk-icon-theme-name="hicolor"
+gtk-font-name="Noto Sans 9"
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=0
+gtk-menu-images=1
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+```
+
+-->
             </article>
           </div>
           
@@ -474,10 +584,11 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
     <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
 

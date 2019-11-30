@@ -25,7 +25,7 @@
         "datePublished": "2019-11-24 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-11-24 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/powerconsumtion/",
-        "wordCount" : "344",
+        "wordCount" : "370",
         "image" : https://blog.gc2.atimg/Strommesser.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -294,7 +294,7 @@ if (!doNotTrack) {
 
 <p>Die Stromaufnahme des System wurden über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm &ldquo;sysbench&rdquo; CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.</p>
 
-<pre><code>apt-get install sysbench
+<pre><code>sudo apt-get install sysbench
 sysbench --num-threads=1 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=2 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=3 --test=cpu --cpu-max-prime=20000 run
@@ -302,6 +302,9 @@ sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
 </code></pre>
 
 <h2 id="ergebnis">Ergebnis</h2>
+
+<p>Verwendet wurde eine Transcend 8 GB class 10 MicroSD-Karte.  <!-- Die Karte kann einen wesetlichen einfluss auf die Strohmaufnamhe haben! -->
+Ansonsten wurde nichts angesteckt.</p>
 
 <table>
 <thead>
@@ -317,6 +320,26 @@ sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
 </thead>
 
 <tbody>
+<tr>
+<td align="left">Pi Zero V1.3</td>
+<td>90</td>
+<td>160</td>
+<td></td>
+<td></td>
+<td></td>
+<td>49</td>
+</tr>
+
+<tr>
+<td align="left">Pi Zero W</td>
+<td>90</td>
+<td>170</td>
+<td></td>
+<td></td>
+<td></td>
+<td>53</td>
+</tr>
+
 <tr>
 <td align="left">Pi 2 ( 900 MHz)</td>
 <td>230</td>

@@ -6,7 +6,7 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 10 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Geany mit GTK2</title>
       <link>https://blog.gc2.at/post/geany/</link>
-      <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/geany/</guid>
       <description>&lt;p&gt;Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
