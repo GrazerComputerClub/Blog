@@ -24,7 +24,7 @@ Bei den Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache
 Die Stromaufnahme des System wurden über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm "sysbench" CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.  
 
 ```
-apt-get install sysbench
+sudo apt-get install sysbench
 sysbench --num-threads=1 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=2 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=3 --test=cpu --cpu-max-prime=20000 run
@@ -33,12 +33,18 @@ sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
 
 ## Ergebnis ##
 
+Verwendet wurde eine Transcend 8 GB class 10 MicroSD-Karte.  <!-- Die Karte kann einen wesetlichen einfluss auf die Strohmaufnamhe haben! -->
+Ansonsten wurde nichts angesteckt. 
 
 | *System*        | *Idle [mA]* | *1-Core [mA]* | *2-Core [mA]* | *3-Core [mA]* | *4-Core [mA]* | CPU-Temp [°C] |
 |:----------------|--------|----------|----------|----------|----------|----------|
+| Pi Zero V1.3    |  90    | 160      |       |       |       | 49       |
+| Pi Zero W       |  90    | 170      |       |       |       | 53       |
 | Pi 2 ( 900 MHz) | 230    | 280      | 320      | 360      | 400      | 53       |
 | Pi 2 (1000 MHz) | 230    | 320      | 360      | 400      | 450      | 59       |
 | Pi 3 (1200 MHz) | 260    | 370      | 470      | 570      |          |          |
+
+
 
 ![Diagramm](../../img/StromaufnamhePi2u3.png)
 
