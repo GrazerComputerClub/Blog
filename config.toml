@@ -127,3 +127,10 @@ pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=tru
     ]
     twitter       = "https://twitter.com/chirndler"
     github        = "https://github.com/chirndler"
+
+  [params.utterances]
+  #comment system Utterances, using GitHub issues with blog title
+  enable = true
+  GitHubRepro="GrazerComputerClub/Blog"
+  themelight = true
+

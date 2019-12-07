@@ -39,7 +39,15 @@ Mithilfe der Devicetree Funktion 'gpio-key' können ganz einfach GPIO-Eingänge 
 | z   | 21     |
 | p   | 28     |
 
-Alternativ kann auch das Programm 'dumpkeys' mit dem Aufruf ``sudo dumpkeys -f > dumpkeys.txt`` verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.
+Alternativ kann auch das Programm 'dumpkeys' mit dem Aufruf ``sudo dumpkeys -f > dumpkeys.txt`` verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.  
+Eine Liste ist auch im Internet bei den [Kernel-Sourcen](https://github.com/torvalds/linux/blob/v4.12/include/uapi/linux/input-event-codes.h) verfügbar.
+Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktionen zu finden. 
+
+| Name          | Scancode | Funktion |
+| ------------- |:--------:|:--------:|
+| KEY_POWER     | 166      | Shutdown |
+| KEY_RESTART   | 408      |          |
+| KEY_RFKILL    | 247      |          |
 
 Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:
 
