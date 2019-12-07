@@ -42,7 +42,7 @@ In Python geht das über eine Library wie z. B. RPi.GPIO:
 import RPi.GPIO as GPIO
 import time
 
-tonePin = 21
+tonePin = 18
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(tonePin, GPIO.IN)
@@ -85,23 +85,22 @@ void tone(int pin, unsigned int freq, float duration) {
 }
 
 void play(int tonePin) {
-
-  tone(tonePin, 659, 195);
-  tone(tonePin, 830, 195);
-  tone(tonePin, 830, 195);
-  tone(tonePin, 830, 195);
-  tone(tonePin, 739, 97);
+  tone(tonePin, 697, 195);
+  tone(tonePin,1209, 195);
+  tone(tonePin, 770, 195);
+  tone(tonePin, 852, 195);
+  tone(tonePin, 941, 195);
 }
 
 
 int main(void) {
-  if(-1 == wiringPiSetup()) {
+  if (-1 == wiringPiSetup()) {
     printf("Init wiringPi failed!");
     return 1;
   }
   const int tonePin = 1; //GPIO18
   pinMode(tonePin, OUTPUT);
-  play();
+  play(tonePin);
   digitalWrite(tonePin, LOW);
   pinMode(tonePin, INPUT);
 
@@ -110,18 +109,23 @@ int main(void) {
 ```
 
 ```
-gcc -o tone tone.c -lwiringPi
+gcc -o tone tone.c -lwiringPi -Wall
 ./tone
 ```
 
 ## Music ##
 
 Man darf sich nicht zu viel erwarten, wenn man über einen Piezo Signalgeber Music ausgeben will, aber einzelne Tonfolgen funktionieren.
-Auf der Seite [MUTOPIA PROJECT](https://www.mutopiaproject.org/) kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei [BitMidi](https://bitmidi.com/) kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite [Midi To Arduino](https://www.extramaster.net/tools/midiToArduino/) kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Datein haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, überlicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft "up". Danach muss man noch das Zielsystem (Device) auswählen. Hier muss "Raspberry Pi (Python, GPIO)" aktiviert werden. Nach dem Drücken der Schaltfläche "Convert to Arduino", wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. Allerdings sind noch ein paar Anpassungen nötig:  
- - Bei "tonePin = 21" muss der korrekte GPIO also z. B. 18 eingegeben werden.  
- - Die Zeile "p = GPIO.PWM(tonePin, pitch)" ist leider falsch und muss durch "p.ChangeFrequency(pitch)" ersetzt werden.  
- - Die Zeile "delay(duration)" entspricht der Dauer der Note, hier kann man mit einem Faktor noch eine generelle Geschwindigkeitsanpassung des Stücks vornehmen, "delay(duration*1.5)".  
+Auf der Seite [MUTOPIA PROJECT](https://www.mutopiaproject.org/) kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei [BitMidi](https://bitmidi.com/) kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite [Midi To Arduino](https://www.extramaster.net/tools/midiToArduino/) kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Datein haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, überlicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft "up". Danach muss man noch das Zielsystem (Device) auswählen. Hier muss "Raspberry Pi (Python, GPIO)" aktiviert werden. Nach dem Drücken der Schaltfläche "Convert to Arduino", wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. 
+  
+Allerdings sind noch ein paar Anpassungen nötig:  
+- Bei "tonePin = 21" muss der korrekte GPIO also z. B. 18 eingegeben werden.  
+- Die Zeile "p = GPIO.PWM(tonePin, pitch)" ist leider falsch und muss durch "p.ChangeFrequency(pitch)" ersetzt werden.  
+- Die Zeile "delay(duration)" entspricht der Dauer der Note, hier kann man mit einem Faktor noch eine generelle Geschwindigkeitsanpassung des Stücks vornehmen, "delay(duration*1.5)".  
+
 Danach kann man sich das Stück anhören, indem man mit python3 die Datei ausführt.
+
+<!--wget https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/fur_Elise_WoO59.mid -->
 
 ## Beispielvideo ##
 
