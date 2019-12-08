@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.gc2.at/post/zram/</loc>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.gc2.at/post/geany/</loc>
     <lastmod>2019-11-30T00:00:00+00:00</lastmod>
   </url>
@@ -78,8 +83,8 @@
   </url>
   
   <url>
-    <loc>https://blog.gc2.at/post/neujahr/</loc>
-    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+    <loc>https://blog.gc2.at/post/35c3_4/</loc>
+    <lastmod>2018-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -100,11 +105,6 @@
   <url>
     <loc>https://blog.gc2.at/post/wavesharelcdhat/</loc>
     <lastmod>2018-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.gc2.at/post/weihnachten/</loc>
-    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -228,13 +228,8 @@
   </url>
   
   <url>
-    <loc>https://blog.gc2.at/contact/</loc>
-    <lastmod>2018-10-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.gc2.at/categories/</loc>
-    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+    <loc>https://blog.gc2.at/categories/35c3/</loc>
+    <lastmod>2018-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -252,7 +247,7 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/</loc>
-    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -270,13 +265,13 @@
   
   <url>
     <loc>https://blog.gc2.at/</loc>
-    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/post/</loc>
-    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -288,7 +283,7 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/raspberry-pi/</loc>
-    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,17 +6,17 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 31 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
-      <link>https://blog.gc2.at/categories/</link>
-      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
+      <title>35C3</title>
+      <link>https://blog.gc2.at/categories/35c3/</link>
+      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/categories/</guid>
+      <guid>https://blog.gc2.at/categories/35c3/</guid>
       <description></description>
     </item>
     
@@ -68,7 +68,7 @@
     <item>
       <title>Raspberry Pi</title>
       <link>https://blog.gc2.at/categories/raspberry-pi/</link>
-      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
       <description></description>

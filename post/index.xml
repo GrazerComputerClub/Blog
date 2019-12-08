@@ -6,10 +6,20 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>
+      <link>https://blog.gc2.at/post/zram/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/zram/</guid>
+      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Geany mit GTK2</title>
@@ -162,12 +172,13 @@
     </item>
     
     <item>
-      <title>Neujahr</title>
-      <link>https://blog.gc2.at/post/neujahr/</link>
-      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
+      <title>GC²@35C3 - The End</title>
+      <link>https://blog.gc2.at/post/35c3_4/</link>
+      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/post/neujahr/</guid>
-      <description>&lt;p&gt;Für das neue Jahr wünschen wir euch alles Gute und Spass bei euren Projekten!
+      <guid>https://blog.gc2.at/post/35c3_4/</guid>
+      <description>&lt;p&gt;Vier Tage voller bunter Dinger und verrückter Menschen geht zu Ende. Der 35C3
+ist vorbei. Dementsprechend ist dies unser letzer Erfahrungsbericht aus Leipzig.
 &lt;/p&gt;</description>
     </item>
     
@@ -216,16 +227,6 @@ Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.
       
       <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
       <description>&lt;p&gt;Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Weihnachten</title>
-      <link>https://blog.gc2.at/post/weihnachten/</link>
-      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/weihnachten/</guid>
-      <description>&lt;p&gt;Schöne Weihnachten &amp;hellip;
 &lt;/p&gt;</description>
     </item>
     

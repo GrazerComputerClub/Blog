@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>
+      <link>https://blog.gc2.at/post/zram/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/zram/</guid>
+      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Geany mit GTK2</title>
