@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Die Lebensdauer der SD-Karte verlängern mit ZRAM",
         "headline" : "Die Lebensdauer der SD-Karte verlängern mit ZRAM",
-        "description" : "<p>Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger.
+        "description" : "<p>Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2019-12-07 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-12-07 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/zram/",
-        "wordCount" : "454",
+        "wordCount" : "496",
         "image" : https://blog.gc2.atimg/zram.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1575834725" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1575922999" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1575834725" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1575922999" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -91,10 +91,6 @@ if (!doNotTrack) {
     <div class="menu">
 
       <ul id="menu-secondary-items" class="menu-secondary-items">
-        
-        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/35c3">35C3</a>
-        </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
           <a href="/categories/atmega">ATmega</a>
@@ -278,7 +274,7 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger.
+              <p>Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.
 </p>
 
 <h2 id="beschreibung">Beschreibung</h2>
@@ -290,7 +286,7 @@ if (!doNotTrack) {
 <pre><code>apt-get install zram-tools
 </code></pre>
 
-<p>In der Datei &ldquo;/etc/default/zramswap&rdquo; erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieten Auslagerungspartition in Prozent oder absolut Angegeben werden.</p>
+<p>In der Datei &ldquo;/etc/default/zramswap&rdquo; erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieren Auslagerungspartition in Prozent (PERCENTAGE) oder absolut (ALLOCATION) in MB angegeben werden.</p>
 
 <pre><code># Specifies amount of zram devices to create.
 # By default, zramswap-start will use all available cores.
@@ -310,12 +306,20 @@ PRIORITY=100
 </code></pre>
 
 <p>Mit dem Befehl &ldquo;swapon -s&rdquo; können die aktiven Auslagerungsspeicher aufgelistet werden.
-Es stehen dann 48 MB ZRAM und 100 MB Auslagerungsdatei zur Verfügung.</p>
+Es stehen dann 48 MB ZRAM Speicher und 100 MB Auslagerungsdatei zur Verfügung.</p>
 
 <pre><code>Filename				Type		Size	Used	Priority
 /dev/zram0                             	partition	49148	0	100
 /var/swap                              	file    	102396	0	-2
 </code></pre>
+
+<p>Mit dem Befehl &ldquo;zramctl&rdquo; können Informationen zum ZRAM ausgegeben werden.</p>
+
+<pre><code>NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
+/dev/zram0 lzo            48M   4K   76B    4K       1 [SWAP]
+</code></pre>
+
+<p>Aktivieren und deaktivieren kann man den ZRAM Swap-Speicher über den Dienst &ldquo;zramswap&rdquo;.</p>
 
 <pre><code>service zramswap stop
 free -h
@@ -337,14 +341,14 @@ Swap:         147Mi          0B       147Mi
 
 <h2 id="vergleichsmesssung">Vergleichsmesssung</h2>
 
-<p>Zum Vergeleich der Performance wurde auf einem Raspberry Pi 3 A+ unser Raspbian Image erzeugt. Die Raspberry Pi A hat nur 512 MB RAM, von dem nach dem booten nur 446 MB zur Verfügung stehen. Bei der Erzeugung wird ein wenig vom Swapspeicher verwendet. Diese Auktion wurde einmal mit aktivem ZRAM und einem nur mit der Auslagerungsdatei durchgeführt.</p>
+<p>Zum Vergleich der Performance wurde auf einem Raspberry Pi 3 A+ unser Raspbian Image erzeugt. Die Raspberry Pi A hat nur 512 MB RAM, von dem nach dem Start nur 446 MB zur Verfügung stehen. Bei der Erzeugung wird ein wenig vom Swap-Speicher verwendet. Diese Aktion wurde einmal mit aktivem ZRAM und einmal nur mit der Auslagerungsdatei durchgeführt.</p>
 
 <pre><code>              total        used        free      shared  buff/cache   available
 Mem:          446Mi        50Mi       301Mi       8,0Mi        95Mi       336Mi
 Swap:         147Mi          0B       147Mi
 </code></pre>
 
-<h3 id="zram-48-mb-auslagerungsdatei-100-mb">ZRAM (48 MB) &amp; Auslagerungsdatei (100 MB)</h3>
+<h3 id="zram-swap-bereich-48-mb-auslagerungsdatei-100-mb">ZRAM Swap-Bereich (48 MB) &amp; Auslagerungsdatei (100 MB)</h3>
 
 <p><strong>Dauer:</strong><br />
 real    54m17,618s<br />
@@ -381,7 +385,7 @@ sys     7m0,105s</p>
 
 <h3 id="auswertung">Auswertung</h3>
 
-<p>Bei Erzeugungsprozess werden ca. 20 MB von der Swap-Speicher benutzt. Mit aktiven ZRAM wird die Auslagerungsdatei auf der SD-Karte kaum verwendet. Auf die Ausführung hat sich ZRAM als schneller erwiesen. Die Verwendung hat also insgesamt einen positiven Effekt</p>
+<p>Bei Erzeugungsprozess werden ca. 20 MB von der Swap-Speicher benutzt. Mit aktiven ZRAM wird die Auslagerungsdatei auf der SD-Karte kaum verwendet. Auch die Ausführungsdauer hat sich mit ZRAM verringert. Die Verwendung hat also einen doppelt positiven Effekt.</p>
             </article>
           </div>
           
@@ -587,7 +591,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1575834725"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1575922999"></script>
 
 </body>
 </html>

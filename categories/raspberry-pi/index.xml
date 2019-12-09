@@ -17,7 +17,7 @@
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/zram/</guid>
-      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger.
+      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.
 &lt;/p&gt;</description>
     </item>
     

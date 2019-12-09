@@ -6,19 +6,10 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 30 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>35C3</title>
-      <link>https://blog.gc2.at/categories/35c3/</link>
-      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/35c3/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>ATmega</title>
@@ -32,7 +23,7 @@
     <item>
       <title>CCC</title>
       <link>https://blog.gc2.at/categories/ccc/</link>
-      <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/ccc/</guid>
       <description></description>
