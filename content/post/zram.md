@@ -10,7 +10,7 @@ keywords = ["ZRAM", "SWAP", "Auslagerungsdatei", "SD-Karte"]
 weight = 1
 +++
 
-Immer wieder kommt es zu Problemen mit der SD-Karte bei der Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher benutzt. So kann dies SD-Karte entlasten werden und hält dann hoffentlich länger. 
+Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger. 
 <!--more-->
 
 ## Beschreibung ##
@@ -23,7 +23,7 @@ Raspbian ist so konfiguriert das eine 100 MB Auslagerungsdatei auf der SD-Karte 
 apt-get install zram-tools
 ```
 
-In der Datei "/etc/default/zramswap" erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieten Auslagerungspartition in Prozent oder absolut Angegeben werden. 
+In der Datei "/etc/default/zramswap" erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieren Auslagerungspartition in Prozent (PERCENTAGE) oder absolut (ALLOCATION) in MB angegeben werden. 
 
 ```
 # Specifies amount of zram devices to create.
@@ -44,7 +44,7 @@ PRIORITY=100
 ```
 
 Mit dem Befehl "swapon -s" können die aktiven Auslagerungsspeicher aufgelistet werden. 
-Es stehen dann 48 MB ZRAM und 100 MB Auslagerungsdatei zur Verfügung. 
+Es stehen dann 48 MB ZRAM Speicher und 100 MB Auslagerungsdatei zur Verfügung. 
 
 ```
 Filename				Type		Size	Used	Priority
@@ -52,6 +52,13 @@ Filename				Type		Size	Used	Priority
 /var/swap                              	file    	102396	0	-2
 ```
 
+Mit dem Befehl "zramctl" können Informationen zum ZRAM ausgegeben werden.
+```
+NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
+/dev/zram0 lzo            48M   4K   76B    4K       1 [SWAP]
+```
+
+Aktivieren und deaktivieren kann man den ZRAM Swap-Speicher über den Dienst "zramswap".
 ```
 service zramswap stop
 free -h
@@ -74,7 +81,7 @@ Swap:         147Mi          0B       147Mi
 
 ## Vergleichsmesssung 
 
-Zum Vergeleich der Performance wurde auf einem Raspberry Pi 3 A+ unser Raspbian Image erzeugt. Die Raspberry Pi A hat nur 512 MB RAM, von dem nach dem booten nur 446 MB zur Verfügung stehen. Bei der Erzeugung wird ein wenig vom Swapspeicher verwendet. Diese Auktion wurde einmal mit aktivem ZRAM und einem nur mit der Auslagerungsdatei durchgeführt. 
+Zum Vergleich der Performance wurde auf einem Raspberry Pi 3 A+ unser Raspbian Image erzeugt. Die Raspberry Pi A hat nur 512 MB RAM, von dem nach dem Start nur 446 MB zur Verfügung stehen. Bei der Erzeugung wird ein wenig vom Swap-Speicher verwendet. Diese Aktion wurde einmal mit aktivem ZRAM und einmal nur mit der Auslagerungsdatei durchgeführt. 
 
 ```
               total        used        free      shared  buff/cache   available
@@ -82,7 +89,7 @@ Mem:          446Mi        50Mi       301Mi       8,0Mi        95Mi       336Mi
 Swap:         147Mi          0B       147Mi
 ```
 
-### ZRAM (48 MB) & Auslagerungsdatei (100 MB)
+### ZRAM Swap-Bereich (48 MB) & Auslagerungsdatei (100 MB)
 
 **Dauer:**  
 real    54m17,618s  
@@ -118,4 +125,4 @@ Filename                                Type            Size    Used    Priority
 
 ### Auswertung
 
-Bei Erzeugungsprozess werden ca. 20 MB von der Swap-Speicher benutzt. Mit aktiven ZRAM wird die Auslagerungsdatei auf der SD-Karte kaum verwendet. Auf die Ausführung hat sich ZRAM als schneller erwiesen. Die Verwendung hat also insgesamt einen positiven Effekt
+Bei Erzeugungsprozess werden ca. 20 MB von der Swap-Speicher benutzt. Mit aktiven ZRAM wird die Auslagerungsdatei auf der SD-Karte kaum verwendet. Auch die Ausführungsdauer hat sich mit ZRAM verringert. Die Verwendung hat also einen doppelt positiven Effekt.
