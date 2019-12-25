@@ -6,10 +6,30 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SD-Karte für Raspberry Pi</title>
+      <link>https://blog.gc2.at/post/sdcards/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/sdcards/</guid>
+      <description>&lt;p&gt;Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Weihnachten</title>
+      <link>https://blog.gc2.at/post/weihnachten/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/weihnachten/</guid>
+      <description>&lt;p&gt;Schöne Weihnachten &amp;hellip;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>

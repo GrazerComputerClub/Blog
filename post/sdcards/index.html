@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "SD-Karte für Raspberry Pi",
+        "headline" : "SD-Karte für Raspberry Pi",
+        "description" : "<p>Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-12-25 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2019-12-25 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/sdcards/",
+        "wordCount" : "1265",
+        "image" : https://blog.gc2.atimg/sdcards.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>SD-Karte für Raspberry Pi </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1577295758" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1577295758" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/"></a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/atmega">ATmega</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/esp8266">ESP8266</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">GC2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">Programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/sdcards.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">25 December</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/gc2">GC2</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> SD-Karte für Raspberry Pi</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
+</p>
+
+<h2 id="beschreibung">Beschreibung</h2>
+
+<p>Die SD-Karte hat einen wesentlichen Anteil an der Performance der Raspberry Pi, immerhin läuft das gesamt Betriebssystem auf der Karte. Langsame SD-Karten führen zu einer merklichen Verzögerung. Doch schnellere Karten sind auch um einiges teurer. Wenn man viele System ausrüsten muss und hierfür ein begrenztes Budget zur Verfügung hat, ist guter Rat teuer. Dieser Benchmark soll eine Orientierungshilfe bieten.<br />
+So nebenbei konnten auch billige China Karten auf ihre Performance überprüft werden.<br />
+Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.</p>
+
+<h2 id="installation-und-vorbereitung">Installation und Vorbereitung</h2>
+
+<p>Leider ist das Benchmark-Programm iozone nicht in Raspbian vorhanden. Deshalb muss die aktuelle Version heruntergeladen und kompiliert werden. Bei der GC2 Image Raspjamming wird das Programm in Zukunft bereits vorinstalliert sein. Bei anderen Distributionen wie z. B. Mint kann es mit &ldquo;sudo apt-get install iozone3&rdquo; installiert werden.</p>
+
+<pre><code>wget http://www.iozone.org/src/current/iozone3_488.tar
+cat iozone3_488.tar | tar -x
+cd iozone3_488/src/current
+make linux-arm
+cp iozone /usr/local/bin
+</code></pre>
+
+<p>Das Dateisystem benutzt eine Blockgroße, es kann mit &ldquo;blockdev&rdquo; ausgelesen werden. Sie beträgt bei der SD-Karte mit ext4-Formatierung 4K, darum wurde auch dieser Wert für den Test mit zufälligen Zugriff (random read/write) gewählt. Damit sollten die Ergebnisse nahe an der Realität liegen.</p>
+
+<pre><code>sudo blockdev --getbsz /dev/mmcblk0p2 
+</code></pre>
+
+<pre><code>4096
+</code></pre>
+
+<p>Vor dem Test wurden einige Dienste der Raspjamming Distribution beendet, um die Messdaten nicht zu verfälschen.</p>
+
+<pre><code>sudo service dmxvnc stop
+sudo service blockly-gpio stop
+sudo service mcp3202 stop
+sudo service lighttpd stop
+</code></pre>
+
+<p>Bei den Intenso Karten gab es Probleme, diese haben nicht korrekt gebootet was in weiter Folge zu einem Absturz geführt hat. Durch das Umschalten auf den alten Treiber für den Kartenslot, konnte das Problem behoben werden und der Test normal durchgeführt werden. In der Konfigurationsdatei „config.txt“ muss dazu folgender Eintrag eingefügt werden.</p>
+
+<pre><code>dtoverlay=mmc
+</code></pre>
+
+<h2 id="ergebnisse-raspberry-pi-2">Ergebnisse - Raspberry Pi 2</h2>
+
+<p>Es wurden zwei Test mit zwei Blockgrößen für den Vergleichstest gewählt. Einmal zufälliges lesen und schreiben mit 4K und lesen und schreiben mit 512 KB. Beim zweiten Test sollte man recht nahe an die maximale Transferraten kommen.</p>
+
+<pre><code>iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
+</code></pre>
+
+<p>-e  Include flush (fsync,fflush) in the timing calculations<br />
+-I  Use VxFS VX_DIRECT, O_DIRECT,or O_DIRECTIO for all file operations<br />
+<!-- a  Auto mode -->
+-s #  file size in Kb<br />
+-i #  Test to run (0=write/rewrite, 1=read/re-read, 2=random-read/write</p>
+
+<h3 id="sandisk-ulta-8gb-class-10">Sandisk Ulta 8GB Class 10</h3>
+
+<pre><code>                                                             random    random  
+              kB  reclen    write  rewrite    read    reread    read     write 
+           32768       4     1724     1897     6788     6791     6748      920 
+           32768     512    13032    13156    22507    22508    22503     2927 
+</code></pre>
+
+<h3 id="transcend-8gb-class-10">Transcend 8GB Class 10</h3>
+
+<pre><code>                                                             random    random  
+              kB  reclen    write  rewrite    read    reread    read     write   
+           32768       4     1112     1197     6229     6230     4910      772   
+           32768     512     7337     8654    22598    22602    22572     5709   
+</code></pre>
+
+<h3 id="kingston-8gb-class-10">Kingston 8GB Class 10</h3>
+
+<pre><code>                                                             random    random    
+              kB  reclen    write  rewrite    read    reread    read     write   
+           32768       4     1153     1167     6015     6008     4692      171   
+           32768     512     7816     7178    15467    15470    15392     1252   
+</code></pre>
+
+<h3 id="intenso-8gb-class-10-mmc-treiber">Intenso 8GB Class 10 (mmc Treiber)</h3>
+
+<pre><code>                                                             random    random   
+              kB  reclen    write  rewrite    read    reread    read     write   
+           32768       4     1013     1058     4265     4271     3016      615  
+           32768     512     7241     7495    22375    22381    22145     7051  
+</code></pre>
+
+<h3 id="mixza-tohaoll-16-gb-class-10-shark-edition">Mixza Tohaoll 16 GB Class 10 (Shark Edition)</h3>
+
+<pre><code>                                                            random    random    
+              kB  reclen    write  rewrite    read    reread    read     write  
+           32768       4     1050     1048     3185     3193     3183      953  
+           32768     512    10676    10699    11385    11388    11385    10682  
+</code></pre>
+
+<h3 id="mixza-tohaoll-16-gb-class-10-bund">Mixza Tohaoll 16 GB Class 10 (Bund)</h3>
+
+<pre><code>                                                            random    random    
+              kB  reclen    write  rewrite    read    reread    read     write  
+           32768       4     1005     1178     4026     4038     3370      803  
+           32768     512     8437     8755    11452    11454    11424     9904  
+</code></pre>
+
+<h3 id="binful-16-gb-class-10">Binful 16 GB Class 10</h3>
+
+<pre><code>                                                             random    random   
+              kB  reclen    write  rewrite    read    reread    read     write    
+           32768       4     1258     1276     3559     3561     3462     1128  
+           32768     512    10381    10657    11382    11384    11382    10616  
+</code></pre>
+
+<h2 id="zusammenfassung-vergleich-und-auswertung">Zusammenfassung/Vergleich und Auswertung</h2>
+
+<p><strong>4K - read/write random:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><em>Marke</em></th>
+<th align="right"><em>read</em></th>
+<th align="right"><em>write</em></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Sandisk</td>
+<td align="right">6748</td>
+<td align="right">920</td>
+</tr>
+
+<tr>
+<td align="left">Transcend</td>
+<td align="right">4910</td>
+<td align="right">772</td>
+</tr>
+
+<tr>
+<td align="left">Kingston</td>
+<td align="right">4692</td>
+<td align="right">171</td>
+</tr>
+
+<tr>
+<td align="left">Intenso</td>
+<td align="right">3016</td>
+<td align="right">615</td>
+</tr>
+
+<tr>
+<td align="left">Mixza Shark</td>
+<td align="right">3183</td>
+<td align="right">953</td>
+</tr>
+
+<tr>
+<td align="left">Mixza Bund</td>
+<td align="right">3370</td>
+<td align="right">803</td>
+</tr>
+
+<tr>
+<td align="left">Binful</td>
+<td align="right">3462</td>
+<td align="right">1128</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../../img/sdcards_4KB_random_transfer.png" alt="Diagramm 4 KB random transfer" /></p>
+
+<p><strong>512K - read/write:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><em>Marke</em></th>
+<th align="right"><em>read</em></th>
+<th align="right"><em>write</em></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Sandisk</td>
+<td align="right">22507</td>
+<td align="right">13032</td>
+</tr>
+
+<tr>
+<td align="left">Transcend</td>
+<td align="right">22598</td>
+<td align="right">7337</td>
+</tr>
+
+<tr>
+<td align="left">Kingston</td>
+<td align="right">15467</td>
+<td align="right">7816</td>
+</tr>
+
+<tr>
+<td align="left">Intenso</td>
+<td align="right">22375</td>
+<td align="right">7241</td>
+</tr>
+
+<tr>
+<td align="left">Mixza Shark</td>
+<td align="right">11385</td>
+<td align="right">10676</td>
+</tr>
+
+<tr>
+<td align="left">Mixza Bund</td>
+<td align="right">11452</td>
+<td align="right">8437</td>
+</tr>
+
+<tr>
+<td align="left">Binful</td>
+<td align="right">11382</td>
+<td align="right">10556</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../../img/sdcards_512KB_transfer.png" alt="Diagramm 512 KB transfer" /></p>
+
+<p>Die meisten Karten habe ein akzeptable Geschwindigkeit. Ausreißer ist vor allem die Kingston 8 GB Class 10 Karte, die beim 4 KByte Block wesentlich langsamer ist als alle anderen Karten. Die China Karten schlagen sich in dieser Disziplin recht gut und sind im Fall Binful sogar führend.<br />
+Weniger beeindruckend sind die China Karten bei der Lesegeschwindigkeit mit 512 KByte. Hier sind sie mit rund 11 MB/s meist halb so schnell als die namhaften Hersteller. Die Kingston Karte bildet mit nur 15 statt 22 MB/s das schlusslicht bei den EU Karten.
+Insgesamt schneidet die Sandisk Ultra Karte am besten ab. Sie ist aber auch die teuerste. Die Transcend ist möglicherweise ein günstigere Alternative.
+China Karten sind nicht schlecht, können also auch überzeugen bis auf die 512 KB Leseschwäche. Allerdings sind China Karte ein eigenes Thema, dem sich das nächste Kapitel widmet.</p>
+
+<h2 id="china-sd-karten">China SD Karten</h2>
+
+<p>Durch einige Käufe von SD-Karten von Aliexpress aus China, habe ich Erfahrungswerte erlangt, die ich hier teilen möchte.<br />
+Bei den China Produkten gibt es Marken die nur kurzzeitig verfügbar sind und dann im nächsten Jahr verschwunden sind. Das sind z.B. Rondaful, KingStick und Binful. Diese Marken sind deshalb wenig vertrauensvoll, auch wenn Binful im Test durchaus ordentlich funktioniert hat. Kaufen kann man diese Marke nun nicht mehr.<br />
+Bei der Marke KingStick gab es viele SD-Karten die zwar einwandfrei am Laptop gelesen und geschrieben werden konnten, sie haben aber im Raspberry Pi nicht gebootet. Dabei gab es innerhalb der selben Bestellung funktionierende und welche die einfach nicht starten wollten. In einem Orange Pi Einplatinencomputer konnte sie aber erfolgreich eingesetzt werden. Einige Zeit später ist eine dieser Karten im Raspberry Pi Slot durchgebrannt. Zum Glück ohne Folgeschäden für den Raspberry Pi. Bei einem Verbrauchstest kam es zu überhörter Stromaufnahme, die Schlussendlich auf die Kingstick Karte zurückzuführen war. Mit der Transcend Karte war der Leerlauf-Verbrauch dann normal.<br />
+Die Marke Rondaful war der totale Reinfall, diese wurde als Class 10 verkauft und schaffte gerade mal 2-3 MB/s. Da war es schon kaum mehr von Relevanz, dass der Raspberry Pi auch nicht gebootet hat.<br />
+Nach längerer Suche hat sich dann die Marke Mixza als offensichtlich bekannte China Marke herausgestellt. Die Karten sind langfristig vorhanden. Es gibt immer wieder Serien die z. B. das Tier des chinesischen Sternzeichens (Affe, Hahn usw.) zeigen. Manchmal einen Weihnachtsmann oder auch die Haifisch Edition, die ich vorrangig erworben habe. Eine nette Idee, auf die man in Europa offensichtlich nicht kommt. Die Geschwindigkeiten sind ok, wie man am Test sieht.<br />
+Allerdings kaufte ich einmal die bunden Mixza Karten. Hier musste ich eine Enttäuschung erleben, denn mindestens 2 von 5 Stück waren kaum verwendbar, weil sie extrem langsam waren. Eine Karte hatte nur eine Speicherkapazität von 8 GB anstatt der aufgedruckten 16 GB. Wie solche Fehler passieren können ist mir schleierhaft und rückt den Hersteller in ein schlechtes Licht.<br />
+Zusammengefasst kann beim SD-Karten Kauf in China folgendes schiefgehen:</p>
+
+<ul>
+<li>Falsche Angabe bei Speicherkapazität</li>
+<li>Falsche Angabe bei Geschwindigkeitsklasse</li>
+<li>Schlechte Performance</li>
+<li>Erhöhter Stromverbrauch</li>
+<li>Nicht kompatibel mit Raspberry Pi</li>
+<li>Marke bzw. Hersteller nur kurzfristig verfügbar</li>
+</ul>
+
+<p>Wer nach dieser Zusammenfassung noch in China kaufen will, kennt nun das Risiko. Wenn überhaupt, dann sollte man bei einem renommierten Hersteller wie Mixza bleiben und im offiziellen Mixza Store kaufen. Ich würde aber sagen, lasst es und wartet auf ein Angebot von lokalen Shops!</p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorien</span>
+  
+    
+    <a href="/categories/gc2" title="View all posts in GC2">GC2</a>
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1577295758"></script>
+
+</body>
+</html>
