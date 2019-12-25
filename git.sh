@@ -17,8 +17,8 @@ git status
 while true; do
 	read -p "Alle Änderungen übertragen? (ja/nein): " jn
 	case $jn in
-		ja | js ) break;;
-		nein | No ) exit;;
+		ja | yes ) break;;
+		nein | no ) exit;;
 		* ) echo "Bitte ja oder nein eingeben.";;
 	esac
 done
