@@ -6,18 +6,18 @@ date = "2019-12-25"
 title = "SD-Karte für Raspberry Pi"
 writer = "Martin Strohmayer"
 categories = ["GC2", "Raspberry Pi"]
-keywords = ["SD", "microSD", "iozone", "benchmark", "Sandisk", "Transcend", "Kingston", "Intenso", "Mixza", "Binful", "Rondaful" ]
+keywords = ["SD", "microSD", "mmc", "iozone", "benchmark", "Sandisk", "Transcend", "Kingston", "Intenso", "Mixza", "Binful", "Rondaful" ]
 weight = 1
 +++
 
-Immer wider steht man vor der Frage. Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen. Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben. 
+Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben. 
 <!--more-->
 
 ## Beschreibung ##
 
 Die SD-Karte hat einen wesentlichen Anteil an der Performance der Raspberry Pi, immerhin läuft das gesamt Betriebssystem auf der Karte. Langsame SD-Karten führen zu einer merklichen Verzögerung. Doch schnellere Karten sind auch um einiges teurer. Wenn man viele System ausrüsten muss und hierfür ein begrenztes Budget zur Verfügung hat, ist guter Rat teuer. Dieser Benchmark soll eine Orientierungshilfe bieten.  
-So nebenbei konnten auch billige China Karten auf ihre Performance überprüft werden.   
-Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.  
+So nebenbei konnten auch billige China Karten auf ihre Performance überprüft werden.  
+Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.
 
 
 ## Installation und Vorbereitung ##
@@ -178,7 +178,7 @@ Durch einige Käufe von SD-Karten von Aliexpress aus China, habe ich Erfahrungsw
 Bei den China Produkten gibt es Marken die nur kurzzeitig verfügbar sind und dann im nächsten Jahr verschwunden sind. Das sind z.B. Rondaful, KingStick und Binful. Diese Marken sind deshalb wenig vertrauensvoll, auch wenn Binful im Test durchaus ordentlich funktioniert hat. Kaufen kann man diese Marke nun nicht mehr.  
 Bei der Marke KingStick gab es viele SD-Karten die zwar einwandfrei am Laptop gelesen und geschrieben werden konnten, sie haben aber im Raspberry Pi nicht gebootet. Dabei gab es innerhalb der selben Bestellung funktionierende und welche die einfach nicht starten wollten. In einem Orange Pi Einplatinencomputer konnte sie aber erfolgreich eingesetzt werden. Einige Zeit später ist eine dieser Karten im Raspberry Pi Slot durchgebrannt. Zum Glück ohne Folgeschäden für den Raspberry Pi. Bei einem Verbrauchstest kam es zu überhörter Stromaufnahme, die Schlussendlich auf die Kingstick Karte zurückzuführen war. Mit der Transcend Karte war der Leerlauf-Verbrauch dann normal.  
 Die Marke Rondaful war der totale Reinfall, diese wurde als Class 10 verkauft und schaffte gerade mal 2-3 MB/s. Da war es schon kaum mehr von Relevanz, dass der Raspberry Pi auch nicht gebootet hat.  
-Nach längerer Suche hat sich dann die Marke Mixza als offensichtlich bekannte China Marke herausgestellt. Die Karten sind langfristig vorhanden. Es gibt immer wieder Serien die z. B. das Tier des chinesischen Sternzeichens (Affe, Hahn usw.) zeigen. Manchmal einen Weihnachtsmann oder auch die Haifisch Edition, die ich vorrangig erworben habe. Eine nette Idee, auf die man in Europa offensichtlich nicht kommt. Die Geschwindigkeiten sind ok, wie man am Test sieht.   
+Nach längerer Suche hat sich dann die Marke Mixza als offensichtlich bekannte China Marke herausgestellt. Die Karten sind langfristig vorhanden. Es gibt immer wieder Serien die z. B. das Tier des chinesischen Sternzeichens (Affe, Hahn usw.) zeigen. Manchmal einen Weihnachtsmann oder auch die Haifisch Edition, die ich vorrangig erworben habe. Eine nette Idee, auf die man in Europa offensichtlich nicht kommt. Die Geschwindigkeiten sind ok, wie man am Test sieht.  
 Allerdings kaufte ich einmal die bunden Mixza Karten. Hier musste ich eine Enttäuschung erleben, denn mindestens 2 von 5 Stück waren kaum verwendbar, weil sie extrem langsam waren. Eine Karte hatte nur eine Speicherkapazität von 8 GB anstatt der aufgedruckten 16 GB. Wie solche Fehler passieren können ist mir schleierhaft und rückt den Hersteller in ein schlechtes Licht.  
 Zusammengefasst kann beim SD-Karten Kauf in China folgendes schiefgehen:
 
