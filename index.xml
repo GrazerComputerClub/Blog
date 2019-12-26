@@ -6,10 +6,20 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C# Installation</title>
+      <link>https://blog.gc2.at/post/cs/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/cs/</guid>
+      <description>&lt;p&gt;Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>SD-Karte für Raspberry Pi</title>
