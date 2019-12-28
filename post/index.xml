@@ -6,10 +6,25 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 27 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GC²@36C3</title>
+      <link>https://blog.gc2.at/post/36c3_2/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/36c3_2/</guid>
+      <description>&lt;!-- title-img should have a width of 100px --&gt;
+
+&lt;p&gt;Tag 2 und nach einem erhohlsamen Schlaf im Doppelbett begeben wir uns wieder
+in das 36C3 getümmel&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Distanz: xxx Schritte / xxx km&lt;br&gt;
+Uhrzeit: xxx&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GC²@36C3</title>
@@ -25,20 +40,6 @@ berichten.&lt;/p&gt;
 
 &lt;p&gt;Distanz: 15723 Schritte / 12.2 km&lt;br&gt;
 Uhrzeit: 3:24&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>GC²@36C3</title>
-      <link>https://blog.gc2.at/post/36c3_2/</link>
-      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/36c3_2/</guid>
-      <description>&lt;!-- title-img should have a width of 100px --&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
-
-&lt;p&gt;Distanz: xxx Schritte / xxx km&lt;br&gt;
-Uhrzeit: xxx&lt;/p&gt;</description>
     </item>
     
     <item>
