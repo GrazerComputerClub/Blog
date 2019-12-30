@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.gc2.at/post/36c3_4/</loc>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.gc2.at/post/36c3_3/</loc>
     <lastmod>2019-12-29T00:00:00+00:00</lastmod>
   </url>
@@ -276,7 +281,7 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/ccc/</loc>
-    <lastmod>2019-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -300,13 +305,13 @@
   
   <url>
     <loc>https://blog.gc2.at/</loc>
-    <lastmod>2019-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/post/</loc>
-    <lastmod>2019-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
