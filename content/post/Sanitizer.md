@@ -87,6 +87,11 @@ Auf dem Quell USB-Stick wurde die Datei autorun.inf umbenannt. Sie ist potentiel
 
 Es wird keine echte Überprüfungen der Dateien auf Schadsoftware durchgeführt. Es erfolgt lediglich eine Analyse des Dateityps auf potentielle Gefährdung. 
 
+## Beispielvideo ##
+
+[![Sanitizer Handhabung](http://img.youtube.com/vi/Btt9vMWdg64/0.jpg)](https://www.youtube.com/watch?v=Btt9vMWdg64)
+
+
 ## Verlinkungen
 
 Review von Michael Kofler Blog [CIRCLean USB-Stick-Checker](https://kofler.info/circlean-usb-stick-checker/)  

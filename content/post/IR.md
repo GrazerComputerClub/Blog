@@ -263,6 +263,11 @@ sudo systemctl enable irexec.service
 sudo service irexec start
 ```
 
+## Beispielvideo ##
+
+[![Sanitizer Handhabung](http://img.youtube.com/vi/15_rlINwO8A/0.jpg)](https://www.youtube.com/watch?v=15_rlINwO8A)
+
+
 ## Verlinkungen
 
 Datenblatt [TSOP48..](https://produktinfo.conrad.com/datenblaetter/150000-174999/171115-da-01-en-IR_EMPFAENGER_MODUL_TSOP_4838__VIS.pdf)  

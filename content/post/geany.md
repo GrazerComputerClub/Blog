@@ -257,3 +257,8 @@ gtk-xft-rgba="rgb"
 ```
 
 -->
+
+## Youtube Video Review ##
+
+[![Geany GTK2 vs GTK3 @ Raspberry Pi Zero](http://img.youtube.com/vi/NLOSguwMeAI/0.jpg)](https://www.youtube.com/watch?v=NLOSguwMeAI)
+
