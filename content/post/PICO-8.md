@@ -78,6 +78,14 @@ Version 0.1.12c2:
 	libcrypt.so.1 => /lib/arm-linux-gnueabihf/libcrypt.so.1 (0xb6c60000)
 -->
 
+Versionen PICO-8:
+
+| *Version* | *MD5 Checksumme*                 | *Datei* |
+|:----------|:---------------------------------|:--------| 
+| 0.1.11g   | 1b6d7b896e536073bab99a92039b222c | pico8   |
+| 0.1.12c   | 7769d451fb4b97e409d38b5d24280902 | pico8   |
+| 0.1.12c2  | 0fbbcb9d88f48d5f67b68a39412c962c | pico8   |
+
 ## Technische Daten
 
 **Auflösung:** 128 x 128 Pixel  
