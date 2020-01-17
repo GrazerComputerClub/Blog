@@ -140,7 +140,7 @@ Verbesserung: 3,3 %
 Stromaufnahme: 180-190 mA
 
 
-### Hoche Übertaktung (1150 MHz)
+### Hohe Übertaktung (1150 MHz)
 
 Bei einer hohen Übertaktung von ca. 15 % muss die Spannung der CPU auf 1,4 V erhöht werden. Folgende Werte wurden in die
 Konfigurationsdatei "config.txt" eingetragen:
