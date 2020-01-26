@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi Zero Spannungsversorgung</title>
+      <link>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</guid>
+      <description>&lt;p&gt;Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben. Bei der Überspannung liegt der Grenzwert dann bei 6,5 V.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Zero Übertakten</title>

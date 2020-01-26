@@ -6,19 +6,10 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ATmega</title>
-      <link>https://blog.gc2.at/categories/atmega/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/atmega/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>CCC</title>
@@ -26,15 +17,6 @@
       <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/ccc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ESP8266</title>
-      <link>https://blog.gc2.at/categories/esp8266/</link>
-      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/esp8266/</guid>
       <description></description>
     </item>
     
@@ -68,9 +50,18 @@
     <item>
       <title>Raspberry Pi Zero</title>
       <link>https://blog.gc2.at/categories/raspberry-pi-zero/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/raspberry-pi-zero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UC</title>
+      <link>https://blog.gc2.at/categories/uc/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/uc/</guid>
       <description></description>
     </item>
     

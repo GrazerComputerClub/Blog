@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Temperatursensor DS18B20",
-        "headline" : "Temperatursensor DS18B20",
-        "description" : "<p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+        "name" : "Raspberry Pi Zero Spannungsversorgung",
+        "headline" : "Raspberry Pi Zero Spannungsversorgung",
+        "description" : "<p>Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben. Bei der Überspannung liegt der Grenzwert dann bei 6,5 V.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +21,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-03-26 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-03-26 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/ds18b20/",
-        "wordCount" : "348",
-        "image" : https://blog.gc2.atimg/18B20.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-01-26 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-01-26 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/raspberry-pi-zero-versorgung/",
+        "wordCount" : "1110",
+        "image" : https://blog.gc2.atimg/pi0-accu-powered.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Temperatursensor DS18B20 </title>
+ <title>Raspberry Pi Zero Spannungsversorgung </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -243,11 +243,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/18B20.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/pi0-accu-powered.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">26 March</span>	<span> / </span>
+          <span class="date">26 January</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -258,123 +258,221 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Temperatursensor DS18B20</h1>
+          <h1 class='entry-title'> Raspberry Pi Zero Spannungsversorgung</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+              <p>Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben. Bei der Überspannung liegt der Grenzwert dann bei 6,5 V.
 </p>
 
-<h2 id="beschreibung">Beschreibung</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Mit dem 1-Wire Sensor DS18B20 von Dallas oder einen eine kompatiblen Sensor, kann ganz einfach die Umgebungstempertur gemessen werden. Man benötigt lediglich den Sensor einen Pull-up Widerstand und einen Devicetree Eintrag in der Konfigurationsdatei. Dann steht der Temperaturwert über das virtuelle Filesystem zur Verfügung. Eine extra Software oder Library ist nicht nötig.</p>
+<p>Normalerweise wird der Raspberry Pi Zero über den Micro-USB für Power oder OTG versorgt. Man kann ihn aber wie bei allen Raspberry Pis auch über den 5 V GPIO Anschluss versorgen. Bei den normalen Pis ist das nicht ratsam, weil damit die Poly-Fuse also die Sicherung umgangen wird. Doch bei dem Raspberry Pi Zero ist das unerheblich weil er keinen Sicherung hat. Weiters fehlt ihm auch der Überspannungsschutz von ca. 6 V der anderen Pi Varianten.<br />
+Die geringe Leistungsaufnahme des Raspberry Pi Zero macht ihn zum optimalen Kanditaten für einen Batteriebetrieb. Damit stellt sich die Frage welche minimale und maximale Spannungen sind zulässig bzw. werden benötigt.</p>
 
-<h2 id="anschluss">Anschluss</h2>
+<h2 id="spannungen">Spannungen</h2>
 
-<p>Der 1-Wire Sensor wird mit 3,3 V versorgt und über den GPIO-Pin 4 erfolgt die standardisierte Kommunikation. Lediglich ein zusätzlichen Pull-up Widerstand mit 4,7 KOhm muss man noch hinzuschalten.</p>
+<p>Die Raspberry Pi Zero hat 3 Versorgungsspannungen, einmal 5 V von extern und dann 3,3 V und 1,8 V die intern erzeugt werden. Aus der externen 5 V Versorgung wird mit dem Bauteil PAM2306 die 1,8 und 3,3 V Spannung erzeugt. Bei dem Bauteil handelt es sich um einen effizienten DC/DC Step-Down-Wandler. Über das Datenblatt kann man sich die maximale und minimale Spannungen heraussuchen. Bei der üblichen bzw. empfohlenen Betriebszuständen wird eine Spannung von 2,5 bis 5,5 V angegeben. Wobei 2,5 V natürlich für die Erzeugung von 3,3 V nicht ausreicht. Hier bedarf es eines geringfügig höheren Wert, da nur Abwärts gewandelt werden kann. Beim absolut maximalen Wert für die Betriebsspannung wird 6,5 V angegeben. Damit sind die Werte für die externe Versorgung also mit größer 3,3 V bis 6,5 V definiert. Wozu wird nun die 5 V Spannung bei Raspberry Pi Zero verwendet? Dies kann man herausfinden indem man den Schaltplan analysiert. Nur der HDMI-Anschluss, der USB-Anschluss, der 5 V GPIO, sowie die Zuleitung zum DC/DC Wandler benötigt die 5 V Spannung.<br />
+Wird also weder am HDMI noch am USB Anschluss noch am 5 V GPIO etwas angeschlossen, so darf die Betriebsspannung bis auf knapp 3,3 V sinken. Diese Erkenntnis eröffnet neue Möglichkeiten bzgl. des Einsatzes von alternativen Spannungsversorgungen.</p>
 
-<p><img src="../../img/18B20_Schaltplan.png" alt="DS18B20 Schaltplan" /></p>
+<h2 id="ni-mh-akkus">Ni-MH Akkus</h2>
 
-<p><img src="../../img/18B20_Steckplatine.png" alt="DS18B20 Steckplatine" /></p>
+<p>Wenn man mit Ni-HM Akkus die Raspberry Pi versorgen will, dann empfehlen sich 4 Akkus zu verwenden. Die Einzelspannung der Akkus beträgt 1,2 V. Damit wird also eine Summenspannung von ca. 4,8 Volt erreicht. Die Spannung von diesen Akkus wird bei der Endladung auf ca. 1,1 V absinken. Dann wären immer noch 4,4 V vorhanden.<br />
+Geht man von der ermittelten Minimalspannung aus, so könnte man die Raspberry Pi Zero auch mit nur 3 Akkus betreiben dann wäre aber bei ca. 1,1 V Schluss. Dies entspricht dann allerdings auch einer sehr starken Entladung der Akkus.<br />
+2 Akkus mit einer Spannung von ca. 2,2-2,4 V können die Raspberry Pi Zero nicht direkt versorgen. Koppelt man die 2 Akkus aber mit einem DC-DC Step-Up Wandler, so kann die benötigte Spannung erreicht werden. Ich habe mich hier für die Platine DD0606SA entschlossen.</p>
 
-<h2 id="konfiguration">Konfiguration</h2>
+<p><img src="../../img/DD0606SA.jpg" alt="DD0606SA" /></p>
 
-<p>Es muss lediglich der 1-Wire-Bus über einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; parametriert werden. Daduch werden automatisch beim Starten die entsprechenden Kernel-Module (w1_gpio, w1_therm und wire) geladen.</p>
+<p>Zuerst wählte ich dafür eine 5 V Version eines solchen Wandlers. Allerdings ergaben sich Probleme durch plötzliche Neustarts des Systems bei WLAN Nutzung. Die ist vermutlich auf eine unzureichende Stromversorgung durch den DC/DC Wandler zurückzuführen.<br />
+Laut Hersteller kann bei 2 V Eingangspannung und 5 V Ausgangsspannung 410 mA bereitgestellt werden können.</p>
 
-<pre><code>dtoverlay=w1-gpio,gpiopin=4,pullup=on
-</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">Eingangsspannung</th>
+<th align="center">Eingangstrom</th>
+<th align="center">Ausgangsspannung</th>
+<th align="center">Ausgangsstrom</th>
+</tr>
+</thead>
 
-<p>Im Betrieb kann das Kernelmodul mit folgenden Aufruf geladen werden:</p>
+<tbody>
+<tr>
+<td align="center">2,0 V</td>
+<td align="center">1,24 A</td>
+<td align="center">4,99 V</td>
+<td align="center">0,41 A</td>
+</tr>
 
-<pre><code>sudo dtoverlay w1-gpio gpiopin=4 pullup=on
-</code></pre>
+<tr>
+<td align="center">2,5 V</td>
+<td align="center">1,3 A</td>
+<td align="center">4,98 V</td>
+<td align="center">0,55 A</td>
+</tr>
 
-<h2 id="zugriff">Zugriff</h2>
+<tr>
+<td align="center">3,0 V</td>
+<td align="center">1,3 A</td>
+<td align="center">4,97 V</td>
+<td align="center">0,68 A</td>
+</tr>
 
-<p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung aller Sonsoren erfolgt über eine eindeutuge ID-Nummer, die in der Datei &ldquo;w1_master_slaves&rdquo; aufgelistet sind.</p>
+<tr>
+<td align="center">3,3 V</td>
+<td align="center">1,34 A</td>
+<td align="center">4,96 V</td>
+<td align="center">0,79 A</td>
+</tr>
 
-<pre><code>ls  /sys/bus/w1/devices/
-</code></pre>
+<tr>
+<td align="center">3,7 V</td>
+<td align="center">1,22 A</td>
+<td align="center">4,96 V</td>
+<td align="center">0,8 A</td>
+</tr>
 
-<pre><code>28-03089779799c  w1_bus_master1
-</code></pre>
+<tr>
+<td align="center">4,2 V</td>
+<td align="center">1,0 A</td>
+<td align="center">4,95 V</td>
+<td align="center">0,8 A</td>
+</tr>
+</tbody>
+</table>
 
-<pre><code>cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slaves
-</code></pre>
+<p>Bessere Ergebnisse hatte ich indem der Wandler die Spannung der Akkus auf 3,7 V statt 5 V erhöhte.
+Laut Hersteller kann bei 2 V Eingangspannung und 3,7 V Ausgangsspannung 480 mA bereitgestellt werden können.</p>
 
-<pre><code>28-03089779799c
-</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">Eingangsspannung</th>
+<th align="center">Eingangstrom</th>
+<th align="center">Ausgangsspannung</th>
+<th align="center">Ausgangsstrom</th>
+</tr>
+</thead>
 
-<pre><code>cat  /sys/bus/w1/devices/28-03089779799c/w1_slave
-</code></pre>
+<tbody>
+<tr>
+<td align="center">2,0 V</td>
+<td align="center">1,2 A</td>
+<td align="center">3,73 V</td>
+<td align="center">0,48 A</td>
+</tr>
 
-<pre><code>8d 01 55 05 7f a5 a5 66 9c : crc=9c YES
-8d 01 55 05 7f a5 a5 66 9c t=24812
-</code></pre>
+<tr>
+<td align="center">2,5 V</td>
+<td align="center">1,24 A</td>
+<td align="center">3,72 V</td>
+<td align="center">0,66 A</td>
+</tr>
 
-<p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
-Dies Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/python</span>
-<span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
+<tr>
+<td align="center">3,0 V</td>
+<td align="center">1 A</td>
+<td align="center">3,66 V</td>
+<td align="center">0,69 A</td>
+</tr>
 
-<span style="color:#60a0b0;font-style:italic"># read slave list from master 1</span>
-<span style="color:#007020">file</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/devices/w1_bus_master1/w1_master_slaves&#39;</span>)
-w1_slaves <span style="color:#666">=</span> <span style="color:#007020">file</span><span style="color:#666">.</span>readlines()
-<span style="color:#007020">file</span><span style="color:#666">.</span>close()
+<tr>
+<td align="center">3,3 V</td>
+<td align="center">1 A</td>
+<td align="center">3,65 V</td>
+<td align="center">0,8 A</td>
+</tr>
+</tbody>
+</table>
 
-<span style="color:#60a0b0;font-style:italic"># for each slave</span>
-<span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> w1_slaves:
-  <span style="color:#60a0b0;font-style:italic"># get slave id</span>
-  w1_slave <span style="color:#666">=</span> line<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">0</span>]
-  <span style="color:#60a0b0;font-style:italic"># read temp from slave id</span>
-  <span style="color:#007020">file</span> <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/bus/w1/devices/&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(w1_slave) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;/w1_slave&#39;</span>)
-  filecontent <span style="color:#666">=</span> <span style="color:#007020">file</span><span style="color:#666">.</span>read()
-  <span style="color:#007020">file</span><span style="color:#666">.</span>close()
-  <span style="color:#60a0b0;font-style:italic"># calc and show temp</span>
-  stringvalue <span style="color:#666">=</span> filecontent<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34; &#34;</span>)[<span style="color:#40a070">9</span>]
-  temperature <span style="color:#666">=</span> <span style="color:#007020">float</span>(stringvalue[<span style="color:#40a070">2</span>:]) <span style="color:#666">/</span> <span style="color:#40a070">1000</span>
+<p>Auch wenn sich die Stabilität dadurch erhöhte, gab es immer noch Zustände bei denen es zu plötzlichen Neustarts kam. Nur nach Abschalten der WLAN Funktion bzw. Einsatz einen Raspberry Zero V1.3 (ohne WLAN), war ein fehlerfreier Betrieb möglich.</p>
 
-  <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)</code></pre></td></tr></table>
-</div>
-</div>
-<pre><code>python3 /usr/local/bin/w1-temp.py
-</code></pre>
+<h2 id="batterien">Batterien</h2>
 
-<pre><code>26.2 °C
-</code></pre>
+<p>Wenn man eine Versorgung mit 4 AA Akkus vorsieht, könnte es allerdings auch auftreten das jemand statt NiMH-Akkus normale Batterien mit einer Spannung von 1,5 V einsetzt. Wie wir aber aus dem oberen Ermittlung wissen, liegt die Maximalspannung bei 6,5 V. Auch bei den 4 Batterien mit der Summenspannung von 6 V liegt man darunter und es sollte zu keinen Problemen kommen. Natürlich nur sofern am HDMI, 5 V GPIO und USB nichts angeschlossen ist.</p>
+
+<h2 id="lithium-akkus">Lithium Akkus</h2>
+
+<p>Ein Raspberry Pi Zero kann mit einer Lithium Zelle mit ca. 3,7 V gut betrieben werden. Als Lithium-Ionen Akku bietet sich der standardisierte Typ 18650 mit 2500 bis 3500 mAh an.<br />
+Lithium-Polymer Akku sind empfindlicher, dafür aber in einer flachen Bauform erhältlich. Der Typ 503035 mit 500 mAh wird bereits mit einer integrierten Schutzelektronik kostengünstig verkauft. So ist er vor Überladung, Tiefentladung und Kurzschluss geschützt. Der Ladestrom darf aber maximal 1C also 500 mA betragen! Empfohlen wird 0,5C also 250 mA. Der maximale Entladestrom wird mit ausreichenden 1500 mA angegeben. Die Betriebstemperatur liegt zwischen 0 und 45 °C.</p>
+
+<p>Zusätzlich zur Lithium Zelle wird noch eine Ladeelektronik benötigt. Die Platine FC-75 bzw. TP4056 auf Basis des ICs TP4056 bietet sich dafür an.</p>
+
+<p><img src="../../img/FC-75.jpg" alt="FC-75" />
+<img src="../../img/TP4056.jpg" alt="TP4056" /></p>
+
+<p>Achtung der Ladestrom ist über einen Widerstand anpassbar und muss zur Lithium Zelle passen! Zumeist sind die Platinen auf 1 A voreingestellt, was für keine Zellen viel zu hoch ist.<br />
+Laut <a href="https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf">Datenblatt</a> lautet die Formel für den Ladestrom IBAT:</p>
+
+<p>IBAT = VPROG / RPROG * 1200 ,  VPROG=1 V</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">RPROG (kOhm)</th>
+<th align="center">IBAT (mA)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">10</td>
+<td align="center">130</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="center">250</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="center">300</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">400</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">580</td>
+</tr>
+
+<tr>
+<td align="center">1.66</td>
+<td align="center">690</td>
+</tr>
+
+<tr>
+<td align="center">1.5</td>
+<td align="center">780</td>
+</tr>
+
+<tr>
+<td align="center">1.33</td>
+<td align="center">900</td>
+</tr>
+
+<tr>
+<td align="center">1.2</td>
+<td align="center">1000</td>
+</tr>
+</tbody>
+</table>
+
+<p>Beim 503035 Akku müsste also der Widerstand von 1,2 kOhm durch 5 kOhm getauscht werden.<br />
+Es gibt auch noch Platinen mit dem TP4056 IC die einen eigenen OUT+ und OUT- Pin besitzen. Sie haben zusätzlich eine Batterieschutzschaltung integriert. Hier ist aber darauf zu Achten, dass bei Ladung des Akkus die Last also die Raspberry Pi Zero abgeschaltet ist. Es sollte also ein Wechselschalter oder ähnliches benutzt werden. Wobei der Typ 503035 eine eigene Schutzschaltung besitzt.<br />
+Die Ladespannung beträgt maximal 4,2 V. Beim Entladen sinkt die Spannung wieder von 4,2 V bis minimal 2,5 V. Danach schaltet die Schutzschaltung ab. Wobei bei 3,3 V bereits ein sehr niedriger Ladezustand herrscht und die Raspberry Pi Zero nicht mehr funktioniert.</p>
             </article>
           </div>
           
@@ -385,7 +483,7 @@ w1_slaves <span style="color:#666">=</span> <span style="color:#007020">file</sp
     <div class="entry-categories"><p><span>Kategorie</span>
   
     
-    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
 

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</loc>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/</loc>
     <lastmod>2020-01-17T00:00:00+00:00</lastmod>
   </url>
@@ -273,12 +278,6 @@
   </url>
   
   <url>
-    <loc>https://blog.gc2.at/categories/atmega/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.gc2.at/categories/ccc/</loc>
     <lastmod>2019-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -286,13 +285,7 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.gc2.at/categories/esp8266/</loc>
-    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -304,13 +297,13 @@
   
   <url>
     <loc>https://blog.gc2.at/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/post/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -328,12 +321,18 @@
   
   <url>
     <loc>https://blog.gc2.at/categories/raspberry-pi-zero/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.gc2.at/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.gc2.at/categories/uc/</loc>
+    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
