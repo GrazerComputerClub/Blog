@@ -5,7 +5,7 @@ image = "img/ESP8266_ESP-01S.jpg"
 date = "2019-05-03"
 title = "ESP8266 ESP-01(S) Firmware aktualisieren"
 writer = "Martin Strohmayer"
-categories = ["ESP8266", "Raspberry Pi"]
+categories = ["uC", "Raspberry Pi"]
 keywords = ["WiFi", "WLAN", "IoT", "ESP8266", "ESP-01", "ESP-01S", "Firmware", "Update"]
 weight = 1
 +++

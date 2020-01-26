@@ -5,7 +5,7 @@ image = "img/ATmega328P.jpg"
 date = "2019-02-20"
 title = "ATmega328P Programmierung"
 writer = "Martin Strohmayer"
-categories = ["ATmega", "Raspberry Pi", "Programmierung"]
+categories = ["uC", "Raspberry Pi", "Programmierung"]
 keywords = ["Microcontroller", "ATmega", "328"]
 weight = 1
 +++
