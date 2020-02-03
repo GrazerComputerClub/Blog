@@ -37,11 +37,8 @@ chmod +x build-berryboot.sh
 
 Die erzeugten bzw. heruntergeladen und entpackten Dateien muss man lediglich auf eine SD-Karte kopieren und damit den Raspberry Pi starten.
 
-![BerryBoot - Installation](https://www.berryterminal.com/lib/exe/fetch.php/bb1.png)
 
 Beim initialen Start wird was Basissystem installiet, von dort an hat man die Möglichkeit über einen grafischen Auswahldialog weitere Betriebssysteme, wie z. B. Raspbian, Ubuntu oder sogar Android installieren.
-
-![BerryBoot - Installer UI](https://www.berryterminal.com/lib/exe/fetch.php/bb3.png)
 
 
 
