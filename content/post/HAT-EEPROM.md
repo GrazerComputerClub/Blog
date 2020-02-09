@@ -160,13 +160,8 @@ Done.
 ``` 
 
 
-[//]: # (sudo echo "24c32 0x50" > /sys/class/i2c-adapter/i2c-0/new_device)
-
-
 Nun kann man den Raspberry Pi neu starten. Danach können die Kennungen ausgelesen werden. 
 
-
-[//]: # (name  product  product_id  product_ver  uuid  vendor)
 
 ``` 
 cat  /proc/device-tree/hat/*
