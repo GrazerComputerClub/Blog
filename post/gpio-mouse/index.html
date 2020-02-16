@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "Raspberry Pi GPIO Maus Emulation",
+        "headline" : "Raspberry Pi GPIO Maus Emulation",
+        "description" : "<p>Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-02-14 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-02-14 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/gpio-mouse/",
+        "wordCount" : "760",
+        "image" : https://blog.gc2.atimg/GPIO-Input-Mouse.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Raspberry Pi GPIO Maus Emulation </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">GC2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">Programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/uc">uC</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/GPIO-Input-Mouse.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">14 February</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/programmierung">Programmierung</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Raspberry Pi GPIO Maus Emulation</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.
+</p>
+
+<h2 id="aufgabe">Aufgabe</h2>
+
+<p>Es gibt verschiedene Game-HATs oder auch Gaming Gehäuse für den Raspberry Pi. Die werden zumeist für die Emulation von alten Konsolen wie Gameboy, NES, Mega Drive usw. verwendet. Was ist aber wenn man sie für Point-and-Click-Adventure oder alte DOS-Spiele benutzen will. Dann würde man eine Maus benötigen oder zumindest eine Maus Emulation. ScummVM kann den analogen Stick eines Joysticks oder Jopads als Maus interpretieren. Dazu muss man in der Konfigurationsdatei &ldquo;/home/pi/.config/scummvm/scummvm.ini&rdquo; das Joypad mit dem Eintrag &ldquo;joystick_num=0&rdquo; hinzufügen. Was aber wenn man gar keinen analogen Stick bzw. Eingabenmöglichkeit hat. Dann könnte man mit wenigen Codezeilen eine Mausemulation via GPO-Eingänge realisieren.</p>
+
+<h2 id="uinput-library">uinput Library</h2>
+
+<p>uinput ist ein Kernelmodul, mit dem Eingabegeräte aus dem Userspace emuliert werden können. Durch Schreiben auf das Gerät /dev/uinput kann ein Programm ein virtuelles Eingabegerät mit bestimmten Funktionen erstellen. Dieses Eingabegerät kann eine Tastatur, Maus oder Joypad bzw. Joystick sein.<br />
+libsuinput ist eine einfache C-Library die den Zugriff auf uinput etwas erleichtert. Es ist kein Hexenwert direkt ohne Library zu arbeiten, in dem Fall benutzen wir aber die Library um so den Programmieraufwand zu reduzieren.<br />
+Zuerst muss die Library aus den Sourcecode erstellt und dann am System installiert werden.</p>
+
+<pre><code>git clone https://github.com/tuomasjjrasanen/libsuinput.git
+cd libsuinput
+sudo apt-get install libtool
+./autogen.sh
+./configure &amp;&amp; make 
+sudo make install
+sudo sh -c &quot;echo /usr/local/lib &gt; /etc/ld.so.conf.d/user.conf&quot;
+sudo ldconfig
+</code></pre>
+
+<!--
+Sichern:
+
+```
+cd /usr/local
+tar -czvf ~/libsuinput.tar.gz lib/libsuinput* include/suinput.h
+```
+
+Auf neuem Zielsystem entpacken:
+sudo tar -C /usr/local -xzvf libsuinput.tar.gz
+-->
+
+<h2 id="gpio-schaltplan">GPIO Schaltplan</h2>
+
+<p>Es werden mindestens 6 GPIO-Eingänge benötigt:</p>
+
+<ul>
+<li>Rauf</li>
+<li>Runter</li>
+<li>Links</li>
+<li>Rechts</li>
+<li>Linke Maustaste</li>
+<li>Rechte Maustaste</li>
+</ul>
+
+<p><img src="../../img/GPIO-Input-Mouse.png" alt="Schaltplan GPIO-Input" /></p>
+
+<h2 id="gpio-maus">GPIO Maus</h2>
+
+<p>Das Programm führt folgende Schritte aus:</p>
+
+<ul>
+<li>Wiring Pi GPIO-Library initalisieren</li>
+<li>GPIO-Eingänge konfigurieren</li>
+<li>Maus Achsen und Tasten anlegen bzw. bekannt geben</li>
+<li>Bei entsprechenden GPIO-Eingang die Maus in X- oder Y-Richtung verschieben</li>
+<li>Bei entsprechenden GPIO-Eingang die Maustaste drücken</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;err.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;string.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;unistd.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;time.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;suinput.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;signal.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdlib.h&gt;</span><span style="color:#007020">
+</span><span style="color:#007020"></span>
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT_CLICK<span style="color:#666">=</span><span style="color:#40a070">15</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT_CLICK<span style="color:#666">=</span><span style="color:#40a070">14</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_UP<span style="color:#666">=</span><span style="color:#40a070">16</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_DOWN<span style="color:#666">=</span><span style="color:#40a070">21</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT<span style="color:#666">=</span><span style="color:#40a070">26</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT<span style="color:#666">=</span><span style="color:#40a070">20</span>;
+
+<span style="color:#007020;font-weight:bold">static</span> sig_atomic_t end <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> LED <span style="color:#666">=</span> <span style="color:#40a070">16</span>;
+
+<span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">sighandler</span>(<span style="color:#902000">int</span> signo) {
+  end <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
+}
+
+<span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>) {
+  <span style="color:#007020;font-weight:bold">struct</span> sigaction sa;
+  <span style="color:#902000">int</span> GPIO_btns[] <span style="color:#666">=</span> {GPIO_BTN_LEFT_CLICK, GPIO_BTN_RIGHT_CLICK, GPIO_BTN_UP, GPIO_BTN_DOWN, GPIO_BTN_LEFT, GPIO_BTN_RIGHT};
+
+  setbuf(stdout, <span style="color:#007020">NULL</span>); <span style="color:#60a0b0;font-style:italic">// deactivate stdout buffering 
+</span><span style="color:#60a0b0;font-style:italic"></span>  printf(<span style="color:#4070a0">&#34;Raspberry Pi GPIO button mouse</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+  <span style="color:#007020;font-weight:bold">if</span> (wiringPiSetupGpio() <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) { <span style="color:#60a0b0;font-style:italic">// Init with BCM GPIO numering
+</span><span style="color:#60a0b0;font-style:italic"></span>    perror(<span style="color:#4070a0">&#34;wiringPiSetup failed&#34;</span>);
+    exit(<span style="color:#40a070">1</span>);
+  }
+  <span style="color:#60a0b0;font-style:italic">//Buttons with internal pull-up, connected to GND by activation
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> count<span style="color:#666">=</span><span style="color:#40a070">0</span>, end<span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns)<span style="color:#666">/</span><span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns[<span style="color:#40a070">0</span>]); count<span style="color:#666">&lt;</span>end; count<span style="color:#666">++</span>) {
+    pinMode(GPIO_btns[count], INPUT);
+    pullUpDnControl(GPIO_btns[count], PUD_UP); 
+  }
+
+  memset(<span style="color:#666">&amp;</span>sa, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> sigaction)); <span style="color:#60a0b0;font-style:italic">//Handling stop events, like ctrl+c 
+</span><span style="color:#60a0b0;font-style:italic"></span>  sa.sa_handler <span style="color:#666">=</span> sighandler;
+  sigaction(SIGINT, <span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
+  sigaction(SIGQUIT,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
+  sigaction(SIGTERM,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>); 
+        
+  <span style="color:#902000">int</span> uinput_fd;
+  <span style="color:#902000">int</span> btns[] <span style="color:#666">=</span> {BTN_LEFT, BTN_RIGHT, BTN_MIDDLE};
+  <span style="color:#902000">int</span> rel_axes[] <span style="color:#666">=</span> {REL_X, REL_Y, REL_WHEEL};
+  <span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev user_dev;
+
+  memset(<span style="color:#666">&amp;</span>user_dev, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev));
+  strcpy(user_dev.name, <span style="color:#4070a0">&#34;GPIO Mouse&#34;</span>);
+  uinput_fd <span style="color:#666">=</span> suinput_open();
+  <span style="color:#007020;font-weight:bold">if</span> (uinput_fd <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) {
+    err(<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;suinput_open&#34;</span>);
+  }
+  <span style="color:#60a0b0;font-style:italic">/* Error handling is omitted to keep code as readible as possible. */</span>
+  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
+    suinput_enable_event(uinput_fd, EV_KEY, btns[i]);
+  }
+  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
+    suinput_enable_event(uinput_fd, EV_REL, rel_axes[i]);
+  }
+  suinput_create(uinput_fd, <span style="color:#666">&amp;</span>user_dev);
+
+  <span style="color:#007020;font-weight:bold">struct</span> timespec sleeptime <span style="color:#666">=</span> {<span style="color:#40a070">0</span>, <span style="color:#40a070">60000000</span>};
+  <span style="color:#007020;font-weight:bold">while</span> (<span style="color:#666">!</span>end) {
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_UP)) {
+      suinput_emit(uinput_fd, EV_REL, REL_Y, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
+    }
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_DOWN)) {
+      suinput_emit(uinput_fd, EV_REL, REL_Y, <span style="color:#40a070">5</span>);
+    }
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_LEFT)) {
+      suinput_emit(uinput_fd, EV_REL, REL_X, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
+    }
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_RIGHT)) {
+      suinput_emit(uinput_fd, EV_REL, REL_X, <span style="color:#40a070">5</span>);
+    }
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_LEFT_CLICK)) {
+      suinput_emit_click(uinput_fd, BTN_LEFT);
+    }
+    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_RIGHT_CLICK)) {
+      suinput_emit_click(uinput_fd, BTN_RIGHT);
+    }
+    suinput_syn(uinput_fd);
+    nanosleep(<span style="color:#666">&amp;</span>sleeptime, <span style="color:#007020">NULL</span>);
+  }
+  suinput_destroy(uinput_fd);
+  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<pre><code>gcc -Wall -o gpiomouse gpiomouse.c -lsuinput -lwiringPi
+sudo ./gpiomouse &amp;
+</code></pre>
+
+<!--
+```
+sudo LD_LIBRARY_PATH=/usr/local/lib/ ./gpiomouse
+```
+-->
+
+<p>Wenn der Fehler &ldquo;suinput_open: No such device&rdquo; ausgegeben wird, so ist das uinput Device nicht verfügbar. Dann kann mit &ldquo;sudo modprobe uinput&rdquo; das Kernel-Modul geladen werden.</p>
+
+<h2 id="testen-mit-scummvm-emulation">Testen mit ScummVM Emulation</h2>
+
+<p>Testen kann man die Funktion mit dem Point-and-Click-Adventure Emulationsprogramm ScummVM.</p>
+
+<pre><code>sudo apt-get install scummvm lure-of-the-temptress
+scummvm
+</code></pre>
+
+<p>Danach kann man &ldquo;Spiel hinzufügen&rdquo; drücken und den Pfad &ldquo;/usr/share/scummvm/lure-of-the-temptress/de&rdquo; angeben, um das Spiel &ldquo;Lure of the Temptress (DOS/German)&rdquo; im Menü zu erhalten. Mit einem Doppelklick auf den Namen kann man das Speil dann starten, sofern die GPIO-Maus funktioniert.</p>
+
+<h2 id="youtube-video">Youtube Video</h2>
+
+<p><a href="https://www.youtube.com/watch?v=9YzMNbByE_w"><img src="http://img.youtube.com/vi/9YzMNbByE_w/0.jpg" alt="GPIO Maus Video" /></a></p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p><a href="https://github.com/tuomasjjrasanen/python-uinput/tree/master/libsuinput">Libsuinput Library</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorien</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+
+</body>
+</html>
