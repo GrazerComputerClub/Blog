@@ -59,7 +59,7 @@ Laut Hersteller kann bei 2 V Eingangspannung und 3,7 V Ausgangsspannung 480 mA b
 
 
 Auch wenn sich die Stabilität dadurch erhöhte, gab es immer noch Zustände bei denen es zu plötzlichen Neustarts kam. Nur nach Abschalten der WLAN Funktion bzw. Einsatz einen Raspberry Zero V1.3 (ohne WLAN), war ein fehlerfreier Betrieb möglich.
-
+Ohne zusätzliche Beschaltung besteht beim Einsatz von NiMH-Akkus keine Tiefentladungsschutz. Ein Beispiel für so eine einfache Schaltung bietet der Make Bericht [Tiefentladeschutz für Akkus](https://www.heise.de/make/artikel/Tiefentladeschutz-fuer-Akkus-3276794.html).
 
 
 
@@ -98,5 +98,8 @@ IBAT = VPROG / RPROG * 1200 ,  VPROG=1 V
 
 Beim 503035 Akku müsste also der Widerstand von 1,2 kOhm durch 5 kOhm getauscht werden.  
 Es gibt auch noch Platinen mit dem TP4056 IC die einen eigenen OUT+ und OUT- Pin besitzen. Sie haben zusätzlich eine Batterieschutzschaltung integriert. Hier ist aber darauf zu Achten, dass bei Ladung des Akkus die Last also die Raspberry Pi Zero abgeschaltet ist. Es sollte also ein Wechselschalter oder ähnliches benutzt werden. Wobei der Typ 503035 eine eigene Schutzschaltung besitzt.  
-Die Ladespannung beträgt maximal 4,2 V. Beim Entladen sinkt die Spannung wieder von 4,2 V bis minimal 2,5 V. Danach schaltet die Schutzschaltung ab. Wobei bei 3,3 V bereits ein sehr niedriger Ladezustand herrscht und die Raspberry Pi Zero nicht mehr funktioniert.
+Die Ladespannung beträgt maximal 4,2 V. Beim Entladen sinkt die Spannung wieder von 4,2 V bis minimal 2,5 V. Die Schutzschaltung des TP4056 Platine schaltet irgendwo zwischen 2,5 V und 3 V ab. Die Schutzschaltung des 503035 Lithium-Polymer Akku, sollte auch bei 3 V abschalten. Dies konnte aber nicht verifiziert werden.  
+Kurz vor dem Erreichen der Schutzabschaltung funktioniert die Raspberry Pi Zero nicht mehr, weil der Spannung zu gering ist.
 
+Es gibt auch Ladeelektronik die einen DC/DC Step-Up-Wandler integriert hat. So eine Patine ist unter den Namen DD05CVSA erhältlich. Sie kann über VIN und GND mit einer Micro-USB Buchse für das Laden verbunden werden. Der Anschluss BAT und GND wird mit dem Lithium Akku verbunden. Am Ausgang VOUT und GND kann dann 5 V abgegriffen werden. Achtung die Platine hat keine Schutzmechanissmen integriert. Darum kombiniert man sie am besten noch mit einem Schutzschaltung von Type DD04CPMA. So ist der Akku vor Überladung, Tiefentladung und Kurzschluss geschützt.
+ 
