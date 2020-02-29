@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/geany.png"
@@ -20,7 +20,7 @@ Beim Wechsel von Raspbian mit Basis Debian 9 Stretch auf Raspbian mit Debian 10 
 ## Installation ##
 
 <!--
-Wird ein externes Terminal Programm benutzt so können die kleinen Terminals sterm und lilyterm installiert werden. Die Umschaltung des standard X-Terminals erfolgt mit dem Befehl ``sudo update-alternatives --config x-terminal-emulator``.
+Wird ein externes Terminal Programm benutzt so können die kleinen Terminals sterm und lilyterm installiert werden. Die Umschaltung des Standard X-Terminals erfolgt mit dem Befehl ``sudo update-alternatives --config x-terminal-emulator``.
 -->
 
 ### Geany 1.33 GTK3
@@ -112,7 +112,7 @@ cd ..
 
 ## Start ##
 
-Bei Aufruf der GTK2 version muss man die Pfad für die Bibliothek setzen damit nicht die GTK3 Bibliothek geladen wird. 
+Bei Aufruf der GTK2 Version muss man den Pfad für die Bibliothek setzen, damit nicht die Version mit GTK3 Bibliothek geladen wird. 
 
 **Aufruf geany mit GTK2:**
 ```
@@ -215,8 +215,7 @@ cat gtk-icon-theme-name="breeze" >> /home/pi/.gtkrc-2.0
 
 -->
 
-Die Optik der alten GTK2 Version schaut in der default Konfiguration recht altbacken aus. Eine anderes Theme wie z.B. "Clearlooks" gibt dem Programm einen 
- modernen Look.
+Die Optik der alten GTK2 Version schaut in der Standardkonfiguration recht altbacken aus. Ein anderes Theme wie z.B. "Clearlooks" gibt dem Programm einen modernen Look.
 
 ```
 sudo apt-get install gtk-theme-switch gtk2-engines

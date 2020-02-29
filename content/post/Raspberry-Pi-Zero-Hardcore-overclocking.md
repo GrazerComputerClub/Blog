@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Pi0_CPU.jpg"
@@ -14,9 +14,9 @@ weight = 1
 Der Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird. 
 <!--more-->
 
-## Grundsetzliches
+## Grundsätzliches
 
-Zur Übertaktung der CPU sind zunächst zwei Parameter in der Konfigurationsdatei wichtig "arm_freq" und "over_voltage". Der erste Parameter setz direkt die Taktfrequenz der CPU. Der zweite Parameter verändert die CPU-Spannung um 0.025 V pro Wert. Zusätzlich gibt es noch den Wert "force_turbo". Wird dieser auf 1 gesetzt so wird die CPU-Frequenz nicht geregelt sondern bleibt fix auf den eingstellten Maximalwert. Weiters kann noch die "arm_core" Frequenz erhöht werden, die noch geringen Einfluss auf die Performance hat. Die Frequenz des Arbeitsspeichers kann mit "sdram_freq" gesetzt werden.  
+Zur Übertaktung der CPU sind zunächst zwei Parameter in der Konfigurationsdatei wichtig "arm_freq" und "over_voltage". Der erste Parameter setzt direkt die Taktfrequenz der CPU. Der zweite Parameter verändert die CPU-Spannung um 0.025 V pro Wert. Zusätzlich gibt es noch den Wert "force_turbo". Wird dieser auf 1 gesetzt so wird die CPU-Frequenz nicht geregelt sondern bleibt fix auf den eingestellten Maximalwert. Weiters kann noch die "arm_core" Frequenz erhöht werden, die noch geringen Einfluss auf die Performance hat. Die Frequenz des Arbeitsspeichers kann mit "sdram_freq" gesetzt werden.  
 Der Raspberry Pi Zero hat den gleichen BCM2835 Prozessor wie der Raspberry Pi 1. Dieser wurde von den ersten Raspberry Pi Varianten bis zum Raspberry Pi B+ mit 700 MHz getaktet. Die CPU-Spannung beträgt in dem Fall 1,2 V. Bei der Raspberry Pi Zero wird der gleiche Prozessor nun mit 1000 MHz getaktet. Dazu musste die CPU-Spannung auf 1,35 V erhöht werden. Hier ist also bereits eine erhöhte CPU-Spannung gesetzt, sodass man diesen nicht mehr viel erhöhen sollte. Diese kann allerdings sowieso nicht über 1,4 V gebracht werden. Auch wenn man "force_turbo" setzt und "over_voltage" auf 4, so bleibt dennoch die CPU-Spannung auf 1,4 V stehen. Hier ist also das maximale Limit erreicht. Interessant ist aber, obwohl die Erhöhung von "over_voltage" über 2 keine Veränderung mehr bringt, bleibt die Regel für das Garantieverlustbit aufrecht.
 
 Originale Beschreibung des "over_voltage" Parameters:  
@@ -26,7 +26,7 @@ Originale Beschreibung des "over_voltage" Parameters:
 
 ### Garantieverlustbit (warranty bit)
 
-Achtung wenn man "force_turbo" auf 1 setzt und einen "over_voltage" Wert von mehr als 6 eingibt, wird eine Garantieverlustbit gesetzt. 
+Achtung wenn man "force_turbo" auf 1 setzt und einen "over_voltage" Wert von mehr als 6 eingibt, wird ein Garantieverlustbit gesetzt. 
 Dieses Bit ist Teil der Revisionsnummer und wird vorne also an achter Stelle gesetzt. Ausgeben kann man es mit "cat /proc/cpuinfo".
 Dies konnte mit einem Raspberry Pi Zero v1.3 verifiziert werden.
 
@@ -73,8 +73,8 @@ Beim Raspberry Pi Zero W 1.1 wurde das Garantieverlustbit auch gesetzt obwohl nu
 
 Es wurden Performancewerte und Stabilität bei verschiedenen Übertaktungsstufen getestet. Langsam wurde versucht sich an die maximale stabile Taktrate anzunähern. Als Benchmark wurde [nbench](https://www.math.utah.edu/~mayer/linux/bmark.html) verwendet, der bei zu hohen Taktfrequenzen mit Programmabsturz reagiert. Der Benchmark wurde also zur Leistungsmessung und Stabilitätsbewertung verwendet. 
 Es wurden 3 Taktfrequenzen überprüft. Einmal ohne Übertaktung dann eine erhöhte Taktfrequenz ohne Spannungserhöhung und einmal mit maximalen Takt bei 1,4 V CPU-Spannung.  
-Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputern). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird. Ich gehe aber davon aus das, 1150 MHz als oberes Limit möglich ist.  
-Für die Benchmarkmessung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.
+Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputer). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird. Ich gehe aber davon aus das, 1150 MHz als oberes Limit möglich ist.  
+Für die Benchmark Messung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.
  
 ### Stromaufnahme Leerlauf
 
@@ -177,7 +177,7 @@ Stromaufnahme: 180-210 mA
 ### Zusammenfassung
 
 Durch eine hohe Übertaktung von 150 MHz kann man rund 16% Mehrleistung aus dem Raspberry Pi Zero herausholen. Damit verringert sich der Abstand zu Raspberry Pi 2 (Basistakt) von ca. 30 % auf 14 %.  
-Natürtlich steigt der Stromverbrauch dann auch an, aber im Grunde nur geringfügig. Der Verbrauch im Leerlauf bleibt aber gleich. Zumindest die Erhöhung um 30 MHz bringt etwas Mehrleitung ohne die CPU-Spannung erhöhen zu müssen.
+Natürlich steigt der Stromverbrauch dann auch an, aber im Grunde nur geringfügig. Der Verbrauch im Leerlauf bleibt aber gleich. Zumindest die Erhöhung um 30 MHz bringt etwas Mehrleitung ohne die CPU-Spannung erhöhen zu müssen.
 
 ![Diagramm nbench Index Pi zero overclocking](../../img/nBenchIndex_PiZeroOverclocking.png) 
 

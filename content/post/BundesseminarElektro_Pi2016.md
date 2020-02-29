@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/fortbildungE_demo.jpg"
@@ -39,7 +39,7 @@ Die dabei erstellten Programme wurden in C, mit der [wiringPi](http://wiringpi.c
 
 ### Materialen - Aufgabe 3
 
-* Kabelkanal (ca 1m)
+* Kabelkanal (ca. 1m)
 * Heißkleber
 * **Matchboxautos**
 

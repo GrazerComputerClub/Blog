@@ -31,7 +31,7 @@ Folgende Sensoren und Hardware sind am GC2-xHAT enthalten:
 
 Es handle sich bei dem HAT um eine Open-Hardware. Alle Informationen, Schaltpläne sowie das Platinenlayout ist auf [Git-Hub](https://github.com/GrazerComputerClub/GC2-xHAT) frei verfügbar. Die verwendetet Lizenz ist [CC-BY 3.0 AT](https://creativecommons.org/licenses/by/3.0/at/) und erlaubt jedwede Nutzung, nur die Namensnennung des Grazer Computer Clubs und der Lizenz muss erhalten bleiben. Jeder kann sich also selbst, so eine Platine fertigen lassen und auch Modifikationen durchführen.  
 
-Bei den Daten zum HAT ist auch eine EEPROM-Konfiguration dabei. Diese sollte in den Speicherchip des HAT programmiert werden. Wie das geht wird in Blog-Eintrag [HAT EEPROM anschließen und konfigurieren](../hat-eeprom/) beschrieben.  
+Bei den Daten zum HAT ist auch eine EEPROM-Konfiguration dabei. Diese sollte in den Speicherchip des HAT programmiert werden. Wie das geht wird in Kapitel [HAT EEPROM anschließen und konfigurieren](../hat-eeprom/) beschrieben.  
 Weiters ist eine [alias Konfiguration](https://github.com/GrazerComputerClub/GC2-xHAT/blob/master/aliases/bash_aliases_GC2xHAT) enthalten die Shell-Kommandos für die Steuerung des GC2-xHAT enthält:
 
 * **redon**/**rotein** ... Rote LED einschalten
@@ -44,8 +44,8 @@ Weiters ist eine [alias Konfiguration](https://github.com/GrazerComputerClub/GC2
 * **esppoweroff** .. 3,3 V Versorgung für ATmega328- und ESP01-Sockel ausschalten
 * usw.
 
-An einfachsten ist allerdings die Nutzung mit der GC2 Distribution [Raspjamming](https://github.com/GrazerComputerClub/Raspjamming-Image). Dann sind die benötigen Werkzeuge und aliases Einträge bereits vorinstalliert. Zum Programmieren des EEPROM sollte das [April Image](http://www.strohmayers.com/image/2019-04-26-Raspjamming-full.img.7z) verwendet werden, da neuere Raspberry Pi Firmware Versionen einen Fehler beim Erkennen des EEPROMs haben. Also sollte auch kein 'sudo apt-get upgrade' vorher gemacht werden.  
-Mehr Informationen zur [Raspjamming Distribution](../raspjamming-distribution/) findet man hier im Blog.
+An einfachsten ist allerdings die Nutzung mit der GC2 Distribution [Raspjamming](https://github.com/GrazerComputerClub/Raspjamming-Image). Dann sind die benötigen Werkzeuge und aliases Einträge bereits vorinstalliert. Zum Programmieren des EEPROM kann ein aktuelles [Image](https://github.com/GrazerComputerClub/Raspjamming-Image/releases) verwendet werden. 
+Mehr Informationen zur [Raspjamming Distribution](../raspjamming-distribution/) findet man im entsprechenden Kapitel.
 
 ## Schaltplan
 

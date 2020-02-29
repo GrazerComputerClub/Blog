@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/gpio-shutdown.jpg"
@@ -10,12 +10,12 @@ keywords = ["shutdown", "herunterfahren", "gpio-shutdown", "gpio"]
 weight = 1
 +++
 
-Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei "config.txt".
+Leider fehlt dem Raspberry Pi Einplatinencomputer eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch die Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei "config.txt".
 <!--more-->
 
 ## Herunterfahren
 
-Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des System auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Devicetree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Verantwortlich dafür ist die Funktion 'gpio-shutdown'.
+Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des Systems auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Device Tree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Verantwortlich dafür ist die Funktion 'gpio-shutdown'.
 
 ``
 dtoverlay=gpio-shutdown
@@ -35,13 +35,13 @@ Parameter für gpio-shutdown Overlay:
 | gpio_pull     | Aktivierung Pull-up/Pull-down Widerstand; off = Keiner; down = Pull-down; up = Pull-up (Standard-Einstellung)   |
 | active_low    | Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND     |
 
-Der Taster führt im übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.  
+Der Taster führt im Übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.  
 Achtung: Der Overlay darf nur einmal angegeben werden. Wenn man ihn zweimal zuweist, funktioniert nur der zuletzt zugewiesene GPIO-Eingang. Dieses Problem lässt sich allerdings leicht umgehen. Die Zuweisung der Taste KEY_POWER bewirkt nämlich auch einen Shutdown, siehe [GPIO-Eingang als Tastaturtaste](../gpio-tasten/).
 
 
 ## Status
 
-Nicht verwechseln darf man den Devicetree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs, wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der standard Ausgang GPIO26 nicht gewünscht ist.
+Nicht verwechseln darf man den Device Tree Eintrag mit 'gpio-poweroff'. Dieser dient zum Aktivieren eines Ausgangs, wenn sich der Raspberry Pi im Zustand "Halt" befindet. Hier gibt es den Parameter 'gpiopin' falls der Standardausgang GPIO26 nicht gewünscht ist.
 
 ``
 dtoverlay=gpio-poweroff,gpiopin=20

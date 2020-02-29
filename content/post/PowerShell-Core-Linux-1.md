@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/posh_linux.jpg"
@@ -10,14 +10,14 @@ keywords = ["powershell", "raspbian", "programming", "shell"]
 weight = 1
 +++
 
-Seit .Net Core offiziell auf der Rapsberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
+Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
 Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
 <!--more-->
 
 ## Setup
 Die Installation auf Windows wird ausführlich auf [docs.microsoft.com](https://docs.microsoft.com/de-de/powershell/scripting/setup/installing-powershell-core-on-windows?view=powershell-6) erklärt.
 
-Um PowerShell Core auf Linux bzw. Raspbian zu installieren, kann man folgenden Schritte befolgen.
+Um PowerShell Core auf Linux bzw. Raspbian zu installieren, kann man folgende Schritte befolgen.
 
 1. git Client und Voraussetzungen installieren/updaten
 ```

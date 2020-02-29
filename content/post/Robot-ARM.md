@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/brickPi_explorer.jpg"
@@ -69,7 +69,7 @@ cp BrickPi/Software/BrickPi_C/Drivers/ RobotArm/ -r
 cd RobotArm/
 ```
 
-Die C-Bibliothek kommt in Fom von zwei Dateien - "BrickPi.h" und "tick.h"
+Die C-Bibliothek kommt in Form von zwei Dateien - "BrickPi.h" und "tick.h"
 ```
 [mw@mwmaster RobotArm]$ ll
 insgesamt 36K
@@ -78,13 +78,13 @@ drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
 -rw-r--r--  1 mw mw  24K 22. Dez 16:51 BrickPi.h
 -rw-r--r--  1 mw mw 1,1K 22. Dez 16:51 tick.h
 ```
-Diese müssen in euren Programm inkludiert werden.
+Diese müssen in euer Programm inkludiert werden.
 
 Für die C-Bibliothek gibt es [ein einfaches Beispiel](https://github.com/DexterInd/BrickPi/tree/master/Software/BrickPi_C/Project_Examples), um sich mit der Funktionsweise der bereitgestellten API vertraut zu machen.
 
 Euer Programm muss keiner bestimmen Form entsprechen, es sind jedoch einige Funktionsaufrufe in die BrickPi-Bibliothek (siehe BrickPi.h) notwendig, um die Hardware zu initialisieren.
 
-Am besten man kapselt diese in Hilfsfunktionen, damit die Program-Main übersichtlicher bleibt:
+Am besten man kapselt diese in Hilfsfunktionen, damit Program-Main übersichtlicher bleibt:
 ```
 void SetUARTAtmegaPorts() {
     //http://www.dexterindustries.com/forum/?topic=programming-in-c-2/#post-1078
@@ -128,5 +128,5 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-Den kompletten Code für den RobotARM könnt ihr [hier](https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9) beziehen.
+Den kompletten Sourcecode für den RobotARM könnt ihr [hier](https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9) beziehen.
 

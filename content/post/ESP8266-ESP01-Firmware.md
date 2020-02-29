@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/ESP8266_ESP-01S.jpg"
@@ -16,8 +16,8 @@ Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man
 ## Beschreibung ##
 
 Der ESP8266 ist ein kostengünstiger 32-Bit-Mikrocontroller der chinesischen Firma Espressif und ermöglicht durch sein integriertes WLAN viele einfache IoT Anwendungen.  
-Die kleinste und günstigste Platine am Markt trägt die Bezeichnung ESP-01 bzw. die verbesserte Version ESP-01S. Sie wird allerdings oft mit einer veralteten Firmware ausgeliefert. Sie kann aber mit einem Raspberry Pi sehr einfach aktualisert werden. Ein aktuelle Firmware bietet dann auch die Möglichkeit GPIOs über AT-Kommandos zu steuern.  
-Achtung die alte blaue ESP-01 Platine kann aufgrund des kleinen Speichers (512 KBit) nicht aktualisert werden. Achtung die Version 3 der Firmware setzt zwingend einen 2 MBit Speicher (1024x1024) voraus. Die letzte Firmwareversion für die schwarze ESP-01(S) Platine ist also die Version 2.2.1.
+Die kleinste und günstigste Platine am Markt trägt die Bezeichnung ESP-01 bzw. die verbesserte Version ESP-01S. Sie wird allerdings oft mit einer veralteten Firmware ausgeliefert. Sie kann aber mit einem Raspberry Pi sehr einfach aktualisiert werden. Eine aktuelle Firmware bietet dann auch die Möglichkeit GPIOs über AT-Kommandos zu steuern.  
+Achtung die alte blaue ESP-01 Platine kann aufgrund des kleinen Speichers (512 KBit) nicht aktualisiert werden. Achtung die Version 3 der Firmware setzt zwingend einen 2 MBit Speicher (1024x1024) voraus. Die letzte Firmware Version für die schwarze ESP-01(S) Platine ist also die Version 2.2.1.
 
 ![ESP8266 ESP-01](../../img/ESP8266_ESP-01b.png) 
  
@@ -41,9 +41,9 @@ sudo systemctl stop serial-getty@ttyAMA0.service
 sudo systemctl status serial-getty@ttyAMA0.service
 ``` 
 
-*Verwendet man den GC2-xHAT, so kann die Versorung der Platine sowie die Deaktivierung des Services über den Befehl "esppoweron" erfolgen.*
+*Verwendet man den GC2-xHAT, so kann die Versorgung der Platine sowie die Deaktivierung des Services über den Befehl "esppoweron" erfolgen.*
 
-Danach kann das Programm "screen" zur serielles Kommunikations genutzt werden.
+Danach kann das Programm "screen" zur seriellen Kommunikation genutzt werden.
 
 ```
 sudo apt-get install screen
@@ -54,7 +54,7 @@ Alle Eingaben müssen mit den Tasten Enter (CR-Zeichen) und Strg+J (LF-Zeichen) 
 
 Als erstes kann man die Verbindung mit dem Befehl "AT" überprüfen (danach Enter und Strg+J nicht vergessen). Als Antwort muss "OK" zurückgeschickt werden.  
 
-Der Befehl "AT+GMR" liest die Firmwareversion aus.
+Der Befehl "AT+GMR" liest die Firmware Version aus.
 ```
 AT version:1.3.0.0(Jul 14 2016 18:54:01)
 SDK version:2.0.0(5a875ba)
@@ -191,13 +191,13 @@ Hard resetting via RTS pin...
 
 Nun muss beim GPIO0 die GND Verbindung entfernt werden. Danach muss der ESP-01(S) aus- und angesteckt oder ein Reset ausgelöst werden. Der Reset kann wieder durch kurzzeitige setzen des RST-Anschlusses auf GND erfolgen.  
 *Verwendet man den GC2-xHAT, so kann der Programmiermodus mit dem Befehl  "espflashingoff" deaktiviert werden.*  
-Dann ist der Programmiermodus inaktiv und die folgende AT-Befehle können ausgeführt werden.
+Dann ist der Programmiermodus inaktiv und die folgenden AT-Befehle können ausgeführt werden.
 
 ```
 sudo screen /dev/ttyAMA0 115200
 ```
 
-Der Befehl "AT+GMR" liest die Firmwareversion aus.
+Der Befehl "AT+GMR" liest die Firmware Version aus.
 
 ```
 AT version:1.6.2.0(Apr 13 2018 11:10:59)
@@ -241,7 +241,7 @@ Nun ist die "boot version" 1.7 aktiv und die SPI-Übertragung erfolgt im schnell
 
 Hat man eine aktuelle Firmware (Version 2.1 oder neuer) auf dem ESP-01S, so kann man die blaue LED am GPIO2 über den neuen [AT-Befehlssatz](https://www.espressif.com/sites/default/files/documentation/4a-esp8266_at_instruction_set_en.pdf) steuern.  
 
-Zuerst muss der Pin GPIO2 mit dem Befehl "AT+SYSIOSETCFG" als GPIO parametiert werden.  
+Zuerst muss der Pin GPIO2 mit dem Befehl "AT+SYSIOSETCFG" als GPIO parametriert werden.  
 Der erste Parameter ist die Pin Nummer.  
 Der zweite Parameter ist der IO-Mode. Um heraus zu finden welchen Wert man vorgeben muss, benötigt man die [ESP8266 Pin List](https://www.espressif.com/sites/default/files/documentation/ESP8266_Pin_List_0.xls). In der Tabelle muss man nachsehen welche Funktion 1-4 die GPIO-Funktion ist. Bei GPIO2 ist Funktion1 die richtige, also muss man als IO-Mode Parameter einen um eins kleineren Wert, also 0 vorgeben. Beispielsweise müsste man bei GPIO12 für GPIO die Funktion 4, also den Wert 3 vorgeben.  
 Der letzte Parameter ist die Aktivierung des Pull-up Widerstandes.
@@ -279,7 +279,8 @@ Der [AT-Befehlssatz](https://www.espressif.com/sites/default/files/documentation
 
 [Pin List](https://www.espressif.com/en/support/download/documents?keys=ESP8266+Pin+List)
 
-
-## Blog Referenzen
+<!--
+## Referenzen
 
 [ESP8266 ESP-01(S)](../esp8266-esp01/)  
+-->

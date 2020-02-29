@@ -1,9 +1,9 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/keys_white_nav.jpg"
 date = "2018-12-10"
-title = "GPIO-Eingang als Tastaturtaste"
+title = "GPIO-Eingang zur Tastaturtaste"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["Taste", "Tastatur", "gpio-key", "gpio"]
@@ -11,12 +11,12 @@ weight = 1
 +++
 
 
-Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei "config.txt" wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei "config.txt" wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 <!--more-->
 
 ## Umsetzung
 
-Mithilfe der Devicetree Funktion 'gpio-key' können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm 'showkey' ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.
+Mithilfe der Device Tree Funktion 'gpio-key' können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm 'showkey' ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.
 
 | Taste         | Scancode |
 | ------------- |:--------:|
@@ -49,7 +49,7 @@ Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktio
 | KEY_RESTART   | 408      |          |
 | KEY_RFKILL    | 247      |          |
 
-Folgende DeviceTree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:
+Folgende Device Tree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:
 
 ```
 dtoverlay=gpio-key,gpio=16,keycode=103,label="KEY_UP",gpio_pull=2
@@ -76,7 +76,7 @@ sudo dtoverlay gpio-key gpio=19 keycode=28 label="KEY_ENTER" gpio_pull=2
 
 ## Verlinkungen
 
-Weitere Infos bezüglich der DeviceTree Funktion ‚gpio-keys‘, erhält man unter [https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt](https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt) 
+Weitere Infos bezüglich der Device Tree Funktion ‚gpio-keys‘, erhält man unter [https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt](https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt) 
 
 
 

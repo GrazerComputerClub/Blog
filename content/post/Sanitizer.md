@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/USB-Sanitizer.jpg"
@@ -40,8 +40,8 @@ Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi un
 ## Anschluss ##
 
 Es wurden zwei mögliche Positionen für die LEDs vorgesehen. Eine Position ist kompatibel mit der PiStop Ampel (Bezug [PIMORONI](https://bit.ly/2VVJ1Sd)) die direkt auf die GPIO-Leiste gesteckt wird. Diese Position bei GPIO25, GPIO8 und GPIO7 ist kompatibel mit allen Raspberry P Versionen.  
-Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel ist die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechende Ampel-LEDs vorhanden.  
-Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde. 
+Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel sind die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechenden Ampel-LEDs vorhanden.  
+Für die Tasten wurde wieder eine Position für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde. 
 
 
 ![Belegung GPIO 26-Pin](../../img/USB-Sanitizer_26pin_IO.png) 
@@ -52,10 +52,10 @@ Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Variant
 |Bauteil| Aktiv | Funktion | Pos. A | Pos. B |
 |-------|-------|----------|--------|--------|
 | Rote LED | High | Nicht vertrauenswürdigen USB-Stick angesteckt | GPIO07 | GPIO21  |
-| Orange LED | High | Synchroniserungsvorgang läuft | GPIO08 | GPIO20 |
+| Orange LED | High | Synchronisierungsvorgang läuft | GPIO08 | GPIO20 |
 | Grüne LED | High | Vertrauenswürdigen USB-Stick angesteckt | GPIO25 | GPIO21 |
-| Sync Taste | Low | Synchroniserungsvorgang starten | GPIO17 | - |
-| Sync Taste | High | Synchroniserungsvorgang starten | - | GPIO13 |
+| Sync Taste | Low | Synchronisierungsvorgang starten | GPIO17 | - |
+| Sync Taste | High | Synchronisierungsvorgang starten | - | GPIO13 |
 | Shutdown Taste | Low | System herunterfahren bzw. starten | GPIO03 | - |
 | Shutdown Taste | High | System herunterfahren | - | GPIO26 |
 

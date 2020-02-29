@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/CPU.jpg"
@@ -10,32 +10,32 @@ keywords = ["CPU", "ARM", "Cortex", "ARM11", "A7", "A53", "A72", "BCM2835", "BCM
 weight = 1
 +++
 
-Eine interessante Kenngröße der vielen verschienen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Eine Diagramm soll helfen die Prozessoren bzw. Produkte einordenen zu können ...
+Eine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können ...
 <!--more-->
 
 ## Beschreibung ##
 
 ### Raspberry Pi Boards
 
-Der Raspberry B+ und Zero setzen noch auf den SoC (System-on-a-Chip) BCM2835 von Broadcom. Dieser enthält einen alten ARM11 Prozessorkern. Dadurch sind die Messergebnisse vom Raspberry Pi B+ mit Turbo Einstellung identisch zum Raspberry Pi Zero. Der Raspberry Pi 2 verwendet den SoC BCM2836 von Broadcom. Darin enthalten sind vier ARM Cortex-A7 Prozessorkerne. Der Standardtakt beträgt 900 MHz, es kann aber ein Turbo Modus mit 1 GHz aktiviert werden. Der Raspberry Pi 3 verwendet den SoC BCM2837 von Broadcom mit einer Taktrate von maximal 1200 MHz. Der Raspberry Pi 3+ verwendet eine verbesserte Version des selben SoC mit der Bezeinchnung BCM2837B0. Er wird mit einem Heatspreader ausgeliefert und die Taktrate beträgt nun maximal 1400 MHz. Im SoC enthalten sind vier ARM Cortex-A53 Prozessorkerne. Der Raspberry Pi 4 verwendet den SoC BCM2711B0 von Broadcom mit vier ARM Cortex A72 Prozessorkernen die eine Taktrate von 1,5 GHz aufweisen. Die CPU-Leistung ist dadurch enorm gestiegen und liegt beinahe doppelt so hoch als beim Raspberry Pi 3. Die Leistungsaufnahme des SoC ist unter Belastung auch gestiegen, weshalb der Einsatz eines CPU Lüfters empfohlen wird. Ein Kühlkörper wird dann nicht mehr benötigt den der SoC ist mit einem Heatspreader ausgestattet (siehe [Raspberry Pi 4 thermals and Fan SHIM](https://blog.pimoroni.com/raspberry-pi-4-thermals-and-fan-shim/)).
+Der Raspberry B+ und Zero setzen noch auf den SoC (System-on-a-Chip) BCM2835 von Broadcom. Dieser enthält einen alten ARM11 Prozessorkern. Dadurch sind die Messergebnisse vom Raspberry Pi B+ mit Turbo Einstellung identisch zum Raspberry Pi Zero. Der Raspberry Pi 2 verwendet den SoC BCM2836 von Broadcom. Darin enthalten sind vier ARM Cortex-A7 Prozessorkerne. Der Standardtakt beträgt 900 MHz, es kann aber ein Turbo Modus mit 1 GHz aktiviert werden. Der Raspberry Pi 3 verwendet den SoC BCM2837 von Broadcom mit einer Taktrate von maximal 1200 MHz. Der Raspberry Pi 3+ verwendet eine verbesserte Version desselben SoC mit der Bezeichnung BCM2837B0. Er wird mit einem Heatspreader ausgeliefert und die Taktrate beträgt nun maximal 1400 MHz. Im SoC enthalten sind vier ARM Cortex-A53 Prozessorkerne. Der Raspberry Pi 4 verwendet den SoC BCM2711B0 von Broadcom mit vier ARM Cortex A72 Prozessorkernen die eine Taktrate von 1,5 GHz aufweisen. Die CPU-Leistung ist dadurch enorm gestiegen und liegt beinahe doppelt so hoch als beim Raspberry Pi 3. Die Leistungsaufnahme des SoC ist unter Belastung auch gestiegen, weshalb der Einsatz eines CPU Lüfters empfohlen wird. Ein Kühlkörper wird dann nicht mehr benötigt den der SoC ist mit einem Heatspreader ausgestattet (siehe [Raspberry Pi 4 thermals and fan SHIM](https://blog.pimoroni.com/raspberry-pi-4-thermals-and-fan-shim/)).
 
 ### Allwinner CPU Boards 
 
-Andere preisgünstge Einplatinencomputer wie der Banana Pi, Orange Pi oder Nano Pi setzen auf SoCs von Allwinner. Der SoC A20 wird bei der Banana Pi und Banana Pi Pro eingesetzt. Enthalten sind zwei ARM Cortex-A7 Prozessorkerne mit einer Taktrate von 960 MHz. Die Besonderheit des SoC ist das er zusätzlich einen nativen SATA Anschluss unterstützt.  
-Die SoCs H2+ und H3 enthalten wie wie beim Raspberry Pi 2, vier ARM Cortex-A7 Prozessorkerne. Beim H3 wird je nach Modell bzw. CPU-Spanungsregler eine  Taktraten von 1,2 bis 1,4 GHz unterstützt. Der H2+ ist eine abgespreckte Version des H3 Prozessors, der keine 4K HDMI und kein Gigbit Netzwerk unterstützt. Die Kerne sind identisch zum H3, allerdings kann er seit Kernel 4 nur mit maximal 1 GHz Taktrate betrieben werden. Zu finden sind die Prozessoren z.B. bei    Orange Pi PC, Orange Pi Lite und Orange Pi Zero aber auch beim Nano Pi von FrendlyARM.  
+Andere preisgünstige Einplatinencomputer wie der Banana Pi, Orange Pi oder Nano Pi setzen auf SoCs von Allwinner. Der SoC A20 wird bei der Banana Pi und Banana Pi Pro eingesetzt. Enthalten sind zwei ARM Cortex-A7 Prozessorkerne mit einer Taktrate von 960 MHz. Die Besonderheit des SoC ist das er zusätzlich einen nativen SATA Anschluss unterstützt.  
+Die SoCs H2+ und H3 enthalten wie beim Raspberry Pi 2, vier ARM Cortex-A7 Prozessorkerne. Beim H3 wird je nach Modell bzw. CPU-Spanungsregler eine  Taktrate von 1,2 bis 1,4 GHz unterstützt. Der H2+ ist eine abgespeckte Version des H3 Prozessors, der keine 4K HDMI und kein Gigabit Netzwerk unterstützt. Die Kerne sind identisch zum H3, allerdings kann er seit Kernel 4 nur mit maximal 1 GHz Taktrate betrieben werden. Zu finden sind die Prozessoren z.B. bei    Orange Pi PC, Orange Pi Lite und Orange Pi Zero aber auch beim Nano Pi von FriendlyARM.  
 Neuere Orange Pi Einplatinencomputer wie z. B. Orange Pi PC 2 setzt den Allwinner SoC H5 ein. Dieser hat wie der Raspberry Pi 3(+) vier 64-Bit fähige ARM Cortex-A53 Prozessorkerne. Hier wird schon die 64-Bit ARM Architektur "aarch64" unterstützt. Die Standard-Taktrate ist bei Armbian auf 1 GHz eingestellt, kann aber bis auf 1,4 GHz erhöht werden. 
  
 ### Leistungsvergleich
 
 Für die Ermittlung der CPU-Singlecore-Leistung wurde das alte Testprogramm [nbench](https://www.math.utah.edu/~mayer/linux/bmark.html) verwendet. Auf der [Homepage](https://www.math.utah.edu/~mayer/linux/results2.html) des Projekts sind viele Messergebnisse von anderen Systemen als Referenz verfügbar.  
-Zum Vergleich wurde ein Intel Atom N280 und auch ein Intel Pentium M Prozessor mit 1,6 GHz ins Diagramm übernommen. Um beim Raspberry Pi 4 einen vergleich zu haben, wurde auch noch ein 2 GHz Intel Core 2 Duo hinzugefügt.
+Zum Vergleich wurde ein Intel Atom N280 und auch ein Intel Pentium M Prozessor mit 1,6 GHz ins Diagramm übernommen. Um beim Raspberry Pi 4 einen Vergleich zu haben, wurde auch noch ein 2 GHz Intel Core 2 Duo hinzugefügt.
 
 ![Diagramm CPU-Performance SoC](../../img/CPU_Performance.png) 
 
 
 ## Systemausgaben ##
 
-Hier wird des Device-tree Modell (/proc/device-tree/model) als Überschrift angegeben. Dann werden die Sytemausgaben für CPU (/proc/cpuinfo) und das Kommando "lscpu" bei verschiedenen Einplatinencomputer aufgelistet.
+Hier wird des Device-tree Modell (/proc/device-tree/model) als Überschrift angegeben. Dann werden die Systemausgaben für CPU (/proc/cpuinfo) und das Kommando "lscpu" bei verschiedenen Einplatinencomputer aufgelistet.
 
 ### Raspberry Pi Foundation - Raspberry Pi ###
 

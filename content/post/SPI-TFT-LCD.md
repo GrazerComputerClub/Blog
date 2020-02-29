@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/SPI-LCD-TFT.jpg"
@@ -15,7 +15,7 @@ Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT L
 
 ## Allgemeines
 
-SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Die Einbindung kann über eine Library und ein Programm erfolgen. Flexibler und einfacher ist allerdings die Einbindung in das Linux-System bzw. in den Kernel. Dazu benötigt man ein Kernel-Modul, das den Kontrolle des Displays unterstützt. Eine Viehlzahl von diesen Display bzw. Displaykontrollern wird vom Modul 'fbtft_device' unterstützt.
+SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Die Einbindung kann über eine Library und ein Programm erfolgen. Flexibler und einfacher ist allerdings die Einbindung in das Linux-System bzw. in den Kernel. Dazu benötigt man ein Kernel-Modul, das den Kontroller des Displays unterstützt. Eine Vielzahl von diesen Display bzw. Displaykontrollern wird vom Modul 'fbtft_device' unterstützt.
 Nach dem Laden wird ein zweiter Framebuffer '/dev/fb1' für das Display erzeugt. '/dev/fb0' ist dabei der Framebuffer des Grafikkarte (also des HDMI- oder Composite-Ausgangs). 
 
 Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:
@@ -50,7 +50,7 @@ Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewies
 
 Das Kernel Modul 'fbtft_device' unterstützt viele Parameter:  
 **name** ... Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)  
-**gpios** ... gibt die GPIO-Nummer (BCM) für die angegebenen Anschlusse an (reset, dc, cs)  
+**gpios** ... gibt die GPIO-Nummer (BCM) für den angegebenen Anschluss an (reset, dc, cs)  
 **rotate** ... Drehung des Displays  
 **speed** ... SPI-Takt  
 **fps** ... Bilder pro Sekunde (wird möglicherweise nicht erreicht)  

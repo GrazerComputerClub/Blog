@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/pihole_homepage.png"
@@ -38,7 +38,7 @@ Um Pi-hole für das gesamte Heimnetz zu nutzen, kann einfach der 1. DNS-Server i
 
 ## Ausnahmen hinzufügen
 
-Stellt man fest, dass die Werbung von bestimmten Websiten nicht geblockt wird, oder lassen sich gewisse Webseiten mit aktiviertem Werbeblocker nicht öffnen, so kann man diese in den Ausnahmeregeln **Whitelist** bzw. **Blacklist** explizit hinzufügen oder ausnehmen.
+Stellt man fest, dass die Werbung von bestimmten Webseiten nicht geblockt wird, oder lassen sich gewisse Webseiten mit aktiviertem Werbeblocker nicht öffnen, so kann man diese in den Ausnahmeregeln **Whitelist** bzw. **Blacklist** explizit hinzufügen oder ausnehmen.
 
 Whitelist: Es wird keine Werbung von Domains in dieser Liste blockiert
 
@@ -46,6 +46,6 @@ Blacklist: Diese Domain wird blockiert, d. h. DNS-Anfragen werden einfach nicht 
 
 ![Pi-hole Admin Panel](../../img/pihole_panel.png)
 
-Möchte man den Werbeblocker temporär komplett deaktiveren kann man das über das über den Menüeintrag "Disable->" bewerkstelligen.
+Möchte man den Werbeblocker temporär komplett deaktivieren kann man das über das über den Menüeintrag "Disable->" bewerkstelligen.
 
 ![Pi-hole temporär deaktivieren](../../img/pihole_disable.png)

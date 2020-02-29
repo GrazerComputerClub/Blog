@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/IR.jpg"
@@ -10,7 +10,7 @@ keywords = ["IR", "infrarot", "GPIO"]
 weight = 1
 +++
 
-Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier... 
+Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier... 
 <!--more-->
 
 ## Beschreibung ##
@@ -20,7 +20,7 @@ Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos m
 
 ## Anschluss ##
 
-Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).  
+Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (Mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).  
 
 ![IR-Sensor Schaltplan](../../img/IR-Sensor_Schaltplan.png) 
 
@@ -29,7 +29,7 @@ Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 
 
 ## Installation ##
 
-Es muss lediglich ein Devicetree Eintrag in der Konfigurationsdatei "config.txt" eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.
+Es muss lediglich ein Device Tree Eintrag in der Konfigurationsdatei "config.txt" eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.
 
 ```
 # TSOP4838 IR-receiver at GPIO27
@@ -265,7 +265,7 @@ sudo service irexec start
 
 ## Beispielvideo ##
 
-[![Sanitizer Handhabung](http://img.youtube.com/vi/15_rlINwO8A/0.jpg)](https://www.youtube.com/watch?v=15_rlINwO8A)
+[![IR Empfänger](http://img.youtube.com/vi/15_rlINwO8A/0.jpg)](https://www.youtube.com/watch?v=15_rlINwO8A)
 
 
 ## Verlinkungen

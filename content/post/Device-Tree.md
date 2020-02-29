@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Device-Tree.jpg"
@@ -10,29 +10,29 @@ keywords = ["SPI", "TFT", "LCD", "Device Tree", "dts", "dtb", "dtc"]
 weight = 1
 +++
 
-Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.
+Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Display ein Device Tree Blob erzeugt und geladen.
    
 <!--more-->
 
 ## Allgemeines
 
 Device Tree ist eine Datenstruktur zur Beschreibung von Hardware. Besonders bei ARM-Systemen kann die Hardware unterschiedlich verwendet und konfiguriert werden. Anstatt alle Details im Betriebssystem fest zu kodieren, können viele Aspekte der Hardware in einer Datenstruktur beschrieben werden, die beim Booten an das Betriebssystem übergeben wird. Der Device Tree wird für diese Aufgabe verwendet.  
-Device Tree verwendet Dateien mit einer einfache Baumstruktur aus Knoten und Eigenschaften. Die Eigenschaften sind Schlüsselwertpaare, und der Knoten kann sowohl Eigenschaften als auch untergeordnete Knoten enthalten. Die Datei wird mit der Extention "dts" gespeichert.  
-Mit Hilfe eines Device Tree Compilers (DTC) wird aus der dts-Datei die binäre Device Tree Blob Datei mit der Extention "dtb" erzeugen.  
+Device Tree verwendet Dateien mit einer einfachen Baumstruktur aus Knoten und Eigenschaften. Die Eigenschaften sind Schlüsselwertpaare, und der Knoten kann sowohl Eigenschaften als auch untergeordnete Knoten enthalten. Die Datei wird mit der Extension "dts" gespeichert.  
+Mit Hilfe eines Device Tree Compilers (DTC) wird aus der dts-Datei die binäre Device Tree Blob Datei mit der Extension "dtb" erzeugen.  
 Diese wird beim Bootvorgang gelesen und angewendet. Eine Vielzahl an Device Tree Blob Datei sind bereits auf der Boot-Partition im Verzeichnis "overlays" der Raspberry Pi zu finden. 
 
 ## Verwendung
 
-Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit den Device Tree Einträgen in der Konfigurationsdatei "config.txt" zu tun gehabt. 
+Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit Device Tree Einträgen in der Konfigurationsdatei "config.txt" zu tun gehabt. 
 Diese werden einfach als eigene Zeile mit ``dtoverlay={Overlay-Name},{Parameter1},{Parameter2}`` eingetragen und damit aktiviert.  
-Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Blog-Eintrag "GPIO-Eingang als Tastaturtaste" bereits beschrieben wurde.
+Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Kapitel "GPIO-Eingang als Tastaturtaste" bereits beschrieben wurde.
 ```
 dtoverlay=gpio-key,gpio=21,keycode=108,label="KEY_DOWN",gpio_pull=2
 ```
 
 ## Erstellung
 
-Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine "dts" Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie Blog-Eintrag "SPI TFT LCD - Teil 1".
+Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine "dts" Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie im Kapitel "SPI TFT LCD - Teil 1".
 
 "st7735r.dts":
 ```
@@ -88,8 +88,8 @@ Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu mu
 };
 ```
 
-Darin sind alle Parameter die benötigt werden, wie z. B. Kontroller, Anschlüsse, Geschwinigkeit usw. enthalten.  
-Man kann sich auch Beispielkonfiguraionen von userer [Git-Hub](https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays) Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im "overlays" Verzeichnis abgelegt.
+Darin sind alle Parameter die benötigt werden, wie z. B. Kontroller, Anschlüsse, Geschwindigkeit usw. enthalten.  
+Man kann sich auch Beispielkonfigurationen von der GC2 [Git-Hub](https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays) Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im "overlays" Verzeichnis abgelegt.
 
 ```
 wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/st7735r.dts
@@ -97,7 +97,7 @@ sudo dtc -@ -I dts -O dtb -o st7735r.dtbo st7735r.dts
 cp st7735r.dtbo /boot/overlays
 ```
 
-Der neune Device Tree Blob kann nun in der Konfigurationdatei "config.txt" geladen werden.
+Der neune Device Tree Blob kann nun in der Konfigurationsdatei "config.txt" geladen werden.
 ```
 dtoverlay=st7735r
 ```

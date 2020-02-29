@@ -1,9 +1,9 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/GPIO-Input-Mouse.jpg"
 date = "2020-02-14"
-title = "Raspberry Pi GPIO Maus Emulation"
+title = " GPIO-Eingang zur Maus Emulation"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Programmierung"]
 keywords = ["GPIO", "maus", "uinput", "scummvm", "Point-and-Click-Adventure", "C"]
@@ -17,13 +17,13 @@ Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erst
 
 ## Aufgabe
 
-Es gibt verschiedene Game-HATs oder auch Gaming Gehäuse für den Raspberry Pi. Die werden zumeist für die Emulation von alten Konsolen wie Gameboy, NES, Mega Drive usw. verwendet. Was ist aber wenn man sie für Point-and-Click-Adventure oder alte DOS-Spiele benutzen will. Dann würde man eine Maus benötigen oder zumindest eine Maus Emulation. ScummVM kann den analogen Stick eines Joysticks oder Jopads als Maus interpretieren. Dazu muss man in der Konfigurationsdatei "/home/pi/.config/scummvm/scummvm.ini" das Joypad mit dem Eintrag "joystick_num=0" hinzufügen. Was aber wenn man gar keinen analogen Stick bzw. Eingabenmöglichkeit hat. Dann könnte man mit wenigen Codezeilen eine Mausemulation via GPO-Eingänge realisieren.   
+Es gibt verschiedene Game-HATs oder auch Gaming Gehäuse für den Raspberry Pi. Die werden zumeist für die Emulation von alten Konsolen wie Gameboy, NES, Mega Drive usw. verwendet. Was ist aber wenn man sie für Point-and-Click-Adventure oder alte DOS-Spiele benutzen will. Dann würde man eine Maus benötigen oder zumindest eine Maus Emulation. ScummVM kann den analogen Stick eines Joysticks oder Joypads als Maus interpretieren. Dazu muss man in der Konfigurationsdatei "/home/pi/.config/scummvm/scummvm.ini" das Joypad mit dem Eintrag "joystick_num=0" hinzufügen. Was aber wenn man gar keinen analogen Stick bzw. Eingabemöglichkeit hat. Dann könnte man mit wenigen Codezeilen eine Mausemulation via GPO-Eingänge realisieren.   
 
    
-## uinput Library 
+## uinput Bibliothek
 
 uinput ist ein Kernelmodul, mit dem Eingabegeräte aus dem Userspace emuliert werden können. Durch Schreiben auf das Gerät /dev/uinput kann ein Programm ein virtuelles Eingabegerät mit bestimmten Funktionen erstellen. Dieses Eingabegerät kann eine Tastatur, Maus oder Joypad bzw. Joystick sein.  
-libsuinput ist eine einfache C-Library die den Zugriff auf uinput etwas erleichtert. Es ist kein Hexenwert direkt ohne Library zu arbeiten, in dem Fall benutzen wir aber die Library um so den Programmieraufwand zu reduzieren.  
+libsuinput ist eine einfache C-Bibliothek die den Zugriff auf uinput etwas erleichtert. Es ist kein Hexenwerk direkt ohne Bibliothek zu arbeiten, in dem Fall benutzen wir aber die Bibliothek umso den Programmieraufwand zu reduzieren.  
 Zuerst muss die Library aus den Sourcecode erstellt und dann am System installiert werden. 
 
 ```
@@ -69,7 +69,7 @@ Es werden mindestens 6 GPIO-Eingänge benötigt:
 
 Das Programm führt folgende Schritte aus:  
 
-* Wiring Pi GPIO-Library initalisieren
+* Wiring Pi GPIO-Bibliothek initialisieren
 * GPIO-Eingänge konfigurieren
 * Maus Achsen und Tasten anlegen bzw. bekannt geben
 * Bei entsprechenden GPIO-Eingang die Maus in X- oder Y-Richtung verschieben
@@ -196,7 +196,7 @@ scummvm
 
 Danach kann man "Spiel hinzufügen" drücken und den Pfad "/usr/share/scummvm/lure-of-the-temptress/de" angeben, um das Spiel "Lure of the Temptress (DOS/German)" im Menü zu erhalten. Mit einem Doppelklick auf den Namen kann man das Speil dann starten, sofern die GPIO-Maus funktioniert. 
 
-## Youtube Video
+## YouTube Video
 
 [![GPIO Maus Video](http://img.youtube.com/vi/9YzMNbByE_w/0.jpg)](https://www.youtube.com/watch?v=9YzMNbByE_w)
 

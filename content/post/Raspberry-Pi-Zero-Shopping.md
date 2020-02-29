@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Raspberry-Pi-Zero-WH.jpg"
@@ -30,6 +30,6 @@ Zuletzt konnte ich allerdings auch bei [PiHut](https://thepihut.com) Raspberry P
 
 In Österreich gibt es den Shop [semaf electronics](https://electronics.semaf.at) der ab 150 Euro kostenlos liefert. Für größere Bestellung würde ich diesen Shop empfehlen, obwohl ich selbst dort noch nicht eingekauft habe. Der Preis für die [Raspberry Pi Zero WH](https://electronics.semaf.at/Raspberry-Pi-Zero-W-mit-Stiftleiste-angeloetet) von aktuell 14,87 Euro, ist günstig.
 
-Benötigt man mehrere Raspberry Pi Zero für z.B. einem Workshop, so landet man zwangsläuft bei der WH Version. Man muss auch bedenken, dass das manuelle Einlöten der Steckerleiste nicht gerade wenig Arbeit ist. Ganz zu schweigen vom aufwendigen Bestellprozess und der geringeren Preisreduktion wegen der Versandkosten.  
-Im übrigen habe ich auch bei der Raspberry Pi Foundation nachgefragt, ob es möglich ist für einem Raspberry Pi Jam mehrere Raspberry Pi Zero V1.3 zu bestellen.
+Benötigt man mehrere Raspberry Pi Zeros für z.B. einen Workshop, so landet man zwangsläuft bei der WH Version. Man muss auch bedenken, dass das manuelle Einlöten der Steckerleiste nicht gerade wenig Arbeit ist. Ganz zu schweigen vom aufwendigen Bestellprozess und der geringeren Preisreduktion wegen der Versandkosten.  
+Im Übrigen habe ich auch bei der Raspberry Pi Foundation nachgefragt, ob es möglich ist für einen Raspberry Pi Jam mehrere Raspberry Pi Zero V1.3 zu bestellen.
 Dies wurde mir nicht ermöglicht, da es so einen Support nur für Jams im Vereinigtem Königreich (UK) gibt.

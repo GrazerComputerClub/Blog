@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Raspberry-Pi-USB-Gadget.jpg"
@@ -22,7 +22,7 @@ Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozes
 
 ## Netzwerkgerät
 
-Besonders interessant für den Bastellbetrieb ist der Einsatz als Netzwerkgerät, dann kann der Raspberry Pi Zero direkt an einem PC oder Laptop per USB angeschlossen werden. Die Versorgung und die Netzwerk-Kommunikation erfolgen über USB. Man benötigt für diese Betrieb also nur ein Mirco-USB Kabel. WLAN ist nicht nötig weil die Verbindung über einen virtuellen Netzwerkanschluss läuft. Das funktioniert dann auch mit dem billigen Raspberry Pi Zero der kein WLAN integriert hat.
+Besonders interessant für den Bastellbetrieb ist der Einsatz als Netzwerkgerät, dann kann der Raspberry Pi Zero direkt an einem PC oder Laptop per USB angeschlossen werden. Die Versorgung und die Netzwerk-Kommunikation erfolgen über USB. Man benötigt für diesen Betrieb also nur ein Mirco-USB Kabel. WLAN ist nicht nötig weil die Verbindung über einen virtuellen Netzwerkanschluss läuft. Das funktioniert dann auch mit dem billigen Raspberry Pi Zero der kein WLAN integriert hat.
 
 ### Einrichtung Raspberry Pi Zero
 
@@ -40,6 +40,6 @@ Die Anleitung [Raspberry Pi Jam - Raspjamming](http://raspjamming.at/PDF/Raspjam
 Für Linux steht das Script [PiConnect.sh](https://raw.githubusercontent.com/woergi/Raspjamming_Scripts/master/PiConnect.sh)
  zur Verfügung das die Verbindung zur Raspberry Pi herstellt und Internet zur Verfügung stellt bzw. "routing" einrichtet.
 
-Diese Konfiguration wurde auch bei meinem Vortrag bei den Grazer Linuxtage 2018 beschrieben.
+Diese Konfiguration wurde auch bei einem Vortrag bei den Grazer Linuxtagen 2018 beschrieben.
 
 [![Raspberry Pi Projekte Vortrag GLT18](https://img.youtube.com/vi/zny9Ry7ssU0/0.jpg)](https://www.youtube.com/watch?v=zny9Ry7ssU0&t=694s)

@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/SPI-LCD-TFT2.jpg"
@@ -22,8 +22,8 @@ Nach dem Anschließen des SPI TFT LCD und dem Laden des Kernelmoduls 'fbtft_devi
 
 ```
 sudo apt-get install fbi
-wget http://shorturl.at/gvAO1 -O sample.jpg
-sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
+wget https://git.io/JvgXf -O sample-128x128.jpg
+sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample-128x128.jpg
 ```
 
 Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.
@@ -79,7 +79,7 @@ Als Test könnte man nun ein Video abspielen.
 
 ```
 sudo apt-get install omxplayer
-wget http://shorturl.at/ahD23
+wget https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4
 fbcp &
 omxplayer sintel_trailer-480p.mp4
 ```

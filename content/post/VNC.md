@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/VNC-Server-PICO-8.jpg"
@@ -16,7 +16,7 @@ Wer sich gerne per Remote Control auf die grafische Oberfläche des Raspberry Pi
 
 ## Grundsätzliches
 
-Virtual Network Computing, kurz VNC ist ein Dienst bei dem der grafische Oberfläche eines entfernten Computers auf einem anderen angezeigt wird. Die Tastatur- und Mauseingabeneingaben werden vom lokalen an den entfernten Computer übertragen.  
+Virtual Network Computing, kurz VNC ist ein Dienst bei dem die grafische Oberfläche eines entfernten Computers auf einem anderen angezeigt wird. Die Tastatur- und Mauseingaben werden vom lokalen an den entfernten Computer übertragen.  
 VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig benutzbar. Für den Raspberry Pi ist eine eigens angepasste Version verfügbar, die per Dispmanx API direkt GPU Funktionen nutzt.
 
 
@@ -61,7 +61,7 @@ sudo apt-get install libvncserver1 libconfig++9v5 libgles2-mesa libegl1
 
 ## VNC Viewer (Client)
 
-Es gibt eine Vielzahl an VNC Viewern, z. B. xvnc4viewer der mit dem Aufruf ``apt-get install xvnc4viewer`` installiert wird. Ein VNC Viewer auf Java Basis ist direkt portabel und kann auf allen Plattformen verwendet werden. Ich kann hier TigerVNC empfehlen, den dieser Client kann auch den Bildschirm vergrößern. Er wird für alle Plattformen und auch für Java auf [GitHub](https://github.com/TigerVNC/tigervnc/releases) zur Verfügung gestellt.  
+Es gibt eine Vielzahl an VNC Viewern, z. B. xvnc4viewer der mit dem Aufruf ``apt-get install xvnc4viewer`` installiert wird. Ein VNC Viewer auf Java Basis ist direkt portabel und kann auf allen Plattformen verwendet werden. Ich kann hier TigerVNC empfehlen, denn dieser Client kann auch den Bildschirm vergrößern. Er wird für alle Plattformen und auch für Java auf [GitHub](https://github.com/TigerVNC/tigervnc/releases) zur Verfügung gestellt.  
 
 Die Verbindung zur Raspberry Pi erfolgt über den Namen 'raspberrypi.local' und dem Port 5900.
 
@@ -75,11 +75,11 @@ Dann kann die grafische Oberfläche des Raspberry Pi direkt angezeigt und bedien
 
 ![VNC Viewer 200% PICO-8 Splore](../../img/VNC-Server-PICO-8.png)
 
+<!--
+## Referenzen
 
-## Blog Referenzen
-
-[PICO-8 Konsole mit WaveShare LCD HAT](../wavesharelcdhat)  
-
+[PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT](../wavesharelcdhat)  
+-->
 
 
 

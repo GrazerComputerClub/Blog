@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Strommesser.jpg"
@@ -16,12 +16,12 @@ Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man 
 
 ## Beschreibung ##
 
-Bei den Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache Aufbauten zu haben wollen wir die Raspberry Pi mit einem USB-Kabel direkt
-über den  vorhanden USB-Anschluss versorgen. Anfänglich hatten wir nur Raspberry Pi Zero Modelle, hier war das kein Problem. Die Stromaufnahme liget bei ihnen unter 500 mA. Nun haben wir aber Raspberry Pi 2 und 3 Modelle bekommen. Nun soll untersucht werden ob diese auch mit dem USB-Anschluss versorgt werden können.
+Bei dem Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache Aufbauten zu haben wollen wir die Raspberry Pi mit einem USB-Kabel direkt
+über den vorhandenen USB-Anschluss versorgen. Anfänglich hatten wir nur Raspberry Pi Zero Modelle, hier war das kein Problem. Die Stromaufnahme liegt bei ihnen unter 500 mA. Nun haben wir aber Raspberry Pi 2 und 3 Modelle bekommen. Nun soll untersucht werden ob diese auch mit dem USB-Anschluss versorgt werden können.
 
 ## Testaufbau ##
 
-Die Stromaufnahme des System wurden über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm "sysbench" CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.  
+Die Stromaufnahme des Systems wurde über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm "sysbench" CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.  
 
 ```
 sudo apt-get install sysbench
@@ -33,7 +33,7 @@ sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
 
 ## Ergebnis ##
 
-Verwendet wurde eine Transcend 8 GB class 10 MicroSD-Karte.  <!-- Die Karte kann einen wesetlichen einfluss auf die Strohmaufnamhe haben! -->
+Verwendet wurde eine Transcend 8 GB Class 10 MicroSD-Karte.  <!-- Die Karte kann einen wesentlichen Einfluss auf die Strohmaufnahme haben! -->
 Ansonsten wurde nichts angesteckt. 
 
 | *System*        | *Idle [mA]* | *1-Core [mA]* | *2-Core [mA]* | *3-Core [mA]* | *4-Core [mA]* | CPU-Temp [°C] |
@@ -52,7 +52,7 @@ Ansonsten wurde nichts angesteckt.
 
 ## Schlussfolgerung ##
 
-Die Raspberry Pi 2 ist für den Betrieb am USB-Anschluss gut geeignet. Selbst im Turbo-Modus bleibt man unterhalb der 500 mA Grenze. Zu bedenken ist allerdings das zusätzliche Hardware auf den GPIOs auch noch Verbrauch generiert. Eine ausreichende Reserve sollte vorhanden sein. Andererseits ist eine Auslastung auf allen vier Kernen im Normalbetrieb eher unwahrscheinlich. Es ist als zu überlegen ob man mit dem Basistakt oder dem Turbo (1000 MHz) arbeitet.  
+Die Raspberry Pi 2 ist für den Betrieb am USB-Anschluss gut geeignet. Selbst im Turbo-Modus bleibt man unterhalb der 500 mA Grenze. Zu bedenken ist allerdings, dass zusätzliche Hardware auf den GPIOs auch noch Verbrauch generiert. Eine ausreichende Reserve sollte vorhanden sein. Andererseits ist eine Auslastung auf allen vier Kernen im Normalbetrieb eher unwahrscheinlich. Es ist als zu überlegen ob man mit dem Basistakt oder dem Turbo (1000 MHz) arbeitet.  
 Die Raspberry Pi 3 hat bereits bei einer Auslastung von zwei Kernen den maximalen Strom fast erreicht. Sie eignet sich weniger für den Betrieb am USB-Anschluss.  
 
 Wer auf Nummer sicher gehen will kann in der Datei "/boot/cmdline.txt" die Anzahl der Kerne limitieren. Man könnte nur drei Kerne freischalten, um so Reserven zu schaffen und mit dem Turbo Modus die Einzelkernleistung erhöhen. So würde das System nie mehr als 400 mA aufnehmen. 

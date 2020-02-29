@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/PICO-8.jpg"
@@ -11,7 +11,7 @@ weight = 1
 +++
 
 
-Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese "virtuelle Konsole" mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese "virtuelle Konsole" mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 <!--more-->
 
 ## Grundsätzliches
@@ -21,9 +21,9 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 
 ## Installation
 
-PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringpi) verwendet.  
+PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringPi) verwendet.  
 Nach dem Kauf kann man sich die Zip-Datei "pico-8_0.1.12c2_raspi.zip" herunterladen. Darin ist das Verzeichnis "pico-8" mit allen Dateien. Es enthält zwei ausführbare Dateien "pico8" und "pico8_dyn". Bei "pico8_dyn" wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. "pico8" benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle "pico8" zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird später noch erläutert.  
-Achtung, wenn der Fehler "pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory" auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgener Trick angewendet werden:
+Achtung, wenn der Fehler "pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory" auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgender Trick angewendet werden:
 
 ```
 sudo apt-get install libsndio7.0
@@ -114,7 +114,7 @@ D-PAD = S D E F
 Aktionstaste 1 (O): Tab bzw. Shift  
 Aktionstaste 2 (X): Q bzw. A  
 
-### Modul (Catridge)
+### Modul (Cartridge)
 
 Vielfach wird beim Programmspeicher von Cartridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Cartridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.
 
@@ -191,7 +191,7 @@ END
 
 ## Pi-XO Spielkonsole
 
-Der GC2 hat in einem Projekt, eine kleine Gameboy Advance ännliche Handheld-Konsole entwickelt. Sie ist speziell für PICO-8 geeignet und nennt sich Pi-XO. Sie besteht aus einem Raspberry Pi Zero und einer Platine mit Tasten, einem SPI-Display und Soundausgabe. Mit den ersten 8 GPIOs können Vibrationsmotoren und LEDs aktiviert werden. Weitere Informationen findet man auf der [GitHub Projektseite](https://github.com/GrazerComputerClub/Pi-XO). 
+Der GC2 hat in einem Projekt, eine kleine Gameboy Advance ähnliche Handheld-Konsole entwickelt. Sie ist speziell für PICO-8 geeignet und nennt sich Pi-XO. Sie besteht aus einem Raspberry Pi Zero und einer Platine mit Tasten, einem SPI-Display und Soundausgabe. Mit den ersten 8 GPIOs können Vibrationsmotoren und LEDs aktiviert werden. Weitere Informationen findet man auf der [GitHub Projektseite](https://github.com/GrazerComputerClub/Pi-XO). 
 
 [![Pi-XO Gaming](http://img.youtube.com/vi/vgGREFB0JgY/0.jpg)](https://www.youtube.com/watch?v=vgGREFB0JgY)
 

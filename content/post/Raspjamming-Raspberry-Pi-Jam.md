@@ -38,9 +38,9 @@ Die Dokumentation ist auf [Git-Hub](https://github.com/GrazerComputerClub/Raspja
 ## Raspjamming Distribution
 
 In der Praxis hat sich gezeigt, dass auch mit einer Anleitung, die weniger vorbereiteten TeilnehmerInnen hauptsächlich mit der Einrichtung des Systems, also mit Punkt 1-3 beschäftigt waren. Diesem Umstand konnten wir entgegenwirken, indem wir ein eigenes Raspbian Image anbieten. Bei dem Image ist bereits alles eingerichtet und benötigte Programme, Bibliotheken und Source vorinstalliert. Damit erübrigt sich auch noch Punkt 4 und die TeilnehmerInnen können sich auf die Aufgaben konzentrieren.  
-Wir nennen dieses Image entsprechend dem Jam "Raspjamming". Eigentlich möchten wir hier bereits von einer eigenen Distribution sprechen. Mehr Informationen zu diesem Betriebssystem erhält man beim Blogeintrag [Raspjamming Distribution](../raspjamming-distribution/).
+Wir nennen dieses Image entsprechend dem Jam "Raspjamming". Eigentlich möchten wir hier bereits von einer eigenen Distribution sprechen. Mehr Informationen zu diesem Betriebssystem erhält man beim Kapitel [Raspjamming Distribution](../raspjamming-distribution/).
 
 ## GC2-xHAT Aufsteckboard
 
 Punkt 5 wurde kontrovers diskutiert, ob nun der Aufbau von Schaltungen anhand einer Anleitung zur Aufgabe dazugehört oder nicht. Schlussendlich haben wir uns aber darauf geeinigt, dass der Hauptaugenmerk auf die Programmierung gelegt wird. Darum haben wir einen eigenen HAT, den GC2-xHAT entwickelt.
-Die Bezeichnung HAT steht für "Hardware Attached on Top", also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Mehr Informationen zu dieser Hardware erhält man beim Blogeintrag [GC2-xHAT Aufsteckboard](../gc2-xhat/).
+Die Bezeichnung HAT steht für "Hardware Attached on Top", also im Grunde ist es ein Aufsteckboard für den Raspberry Pi. Mehr Informationen zu dieser Hardware erhält man beim Kapitel [GC2-xHAT Aufsteckboard](../gc2-xhat/).

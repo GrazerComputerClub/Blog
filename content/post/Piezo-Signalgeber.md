@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Music.png"
@@ -10,24 +10,24 @@ keywords = ["Buzzer", "beep", "piep", "Piezo", "midi", "tone"]
 weight = 1
 +++
 
-Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepenton erzeugen, sondern auch Musik abpielen.
+Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.
 <!--more-->
 
 ## Einleitung ##
 
-An den Raspberry Pi kann einePiezo Signalgeber, oft wird er auch also Buzzer bezeichnet, angeschlossen werden. Ein Piepen zu erezugen ist dann ganz leicht. Intressanter ist aber ein Musikstück darauf spielen zu lassen.
+Am Raspberry Pi kann ein Piezo Signalgeber, oft wird er auch als Buzzer bezeichnet, angeschlossen werden. Ein Piepen zu erzeugen ist dann ganz leicht. Interessanter ist es aber ein Musikstück darauf spielen zu lassen.
 
 ## Schaltung ##
 
 Der Piezo Signalgeber sollte nicht direkt an den GPIO geschlossen werden, da die Stromaufnahme für den Ausgang zumeist zu hoch ist (30 mA). Über einen 
-Transisitor kann, die Ansteuerung nahezu stromlos erfolgen. Dadurch kann das Piezo Element auch mit 5 V versorgt werden.  
-Im Schaltungsbeispiel wurde der GPIO18, also bei WiringPi Nummerierung der Pin 1, verwendet. Über den Basis-Vorwiderstand kann man auch die Lautstäke etwas reduzieren - wenn dann der Transistor nicht komplett durchschaltet und dann die Spannung nicht 5 V erreicht. Darum haben ich einen Vorwiderstand von 4,7 KOhm gewählt. Per Software lässt sich das eingeschrenkt über das Puls-Pauseverhältnis anpassen.
+Transistor kann, die Ansteuerung nahezu stromlos erfolgen. Dadurch kann das Piezo Element auch mit 5 V versorgt werden.  
+Im Schaltungsbeispiel wurde der GPIO18, also bei WiringPi Nummerierung der Pin 1, verwendet. Über den Basis-Vorwiderstand kann man auch die Lautstäke etwas reduzieren - wenn dann der Transistor nicht komplett durchschaltet und dann die Spannung nicht 5 V erreicht. Darum kann ein Vorwiderstand von 4,7 KOhm gewählt werden. Per Software lässt sich das eingeschränkt über das Puls-Pause-Verhältnis anpassen.
 
 ![Schaltplan](../../img/Buzzer_Schaltplan.png) 
 
 ## Ansteuerung ##
 
-Ein einfacher Piep geht in der Konsole mit WringPi gpio Komandos:
+Ein einfacher Piep geht in der Konsole mit WiringPi gpio Kommandos:
  
 ```
 gpio mode 1 out; gpio write 1 1; sleep 0.1; gpio write 1 0; gpio mode 1 in
@@ -116,7 +116,7 @@ gcc -o tone tone.c -lwiringPi -Wall
 ## Music ##
 
 Man darf sich nicht zu viel erwarten, wenn man über einen Piezo Signalgeber Music ausgeben will, aber einzelne Tonfolgen funktionieren.
-Auf der Seite [MUTOPIA PROJECT](https://www.mutopiaproject.org/) kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei [BitMidi](https://bitmidi.com/) kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite [Midi To Arduino](https://www.extramaster.net/tools/midiToArduino/) kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Datein haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, überlicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft "up". Danach muss man noch das Zielsystem (Device) auswählen. Hier muss "Raspberry Pi (Python, GPIO)" aktiviert werden. Nach dem Drücken der Schaltfläche "Convert to Arduino", wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. 
+Auf der Seite [MUTOPIA PROJECT](https://www.mutopiaproject.org/) kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei [BitMidi](https://bitmidi.com/) kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite [Midi To Arduino](https://www.extramaster.net/tools/midiToArduino/) kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Dateien haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, üblicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft "up". Danach muss man noch das Zielsystem (Device) auswählen. Hier muss "Raspberry Pi (Python, GPIO)" aktiviert werden. Nach dem Drücken der Schaltfläche "Convert to Arduino", wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden. 
   
 Allerdings sind noch ein paar Anpassungen nötig:  
 - Bei "tonePin = 21" muss der korrekte GPIO also z. B. 18 eingegeben werden.  

@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/consumtion.jpg"
@@ -16,7 +16,7 @@ Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verf�
 
 ## Messaufbau
 
-Beim Test wurde nichts außer eine MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb ohne aktiver Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm 'stress' erzeugt. 
+Beim Test wurde nichts außer einer MicroSD-Karte und ein USB-Kabel für den OTG-Betrieb angeschlossen. WLAN war verbunden, im Idle-Betrieb ohne aktive Kommunikation. Gemessen wurde mit einem USB-Messgerät. CPU-Last wurde mit dem Programm 'stress' erzeugt. 
 
 
 ## Messung

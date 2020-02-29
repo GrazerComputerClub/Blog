@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/config-txt.jpg"
@@ -17,12 +17,12 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
 
 ## Allgemeines
 
-Anders als bei jeder anderen System werden Parametrierungen bei dem Raspberry Pi über die Datei "config.txt" vorgenommen. Die Datei liegt auf der 
+Anders als bei jedem anderem System werden Parametrierungen bei dem Raspberry Pi über die Datei "config.txt" vorgenommen. Die Datei liegt auf der 
 ersten Partition, die mit dem Windows FAT Dateisystem formatiert ist. Dadurch kann sie sehr leicht auch aus einem Windows System verändert werden.
 Es ist nur darauf zu achten, dass man die Datei mit einem Editor öffnet, der mit einem Linux Zeilenumbruch (LF statt CR-LF) umgehen kann. Ich empfehle [Notepad++](https://notepad-plus-plus.org/download/), obwohl der integrierte Notepad Editor von Windows 10 nun auch endlich diese [Funktion](https://blogs.msdn.microsoft.com/commandline/2018/05/08/extended-eol-in-notepad/) beherrscht. **\o/**
 
 
-## Spezielle Konfiguationsmöglichkeiten
+## Spezielle Konfigurationsmöglichkeiten
  
 Eine Auflistung der gängigsten Parametrierungen erspare ich mir, die gibt es bereits unzählige Male im Internet zu finden. 
 Bei der Raspberry Pi Foundation gibt es zum Beispiel umfassende Informationen bei [documentation > configuration > config-txt](https://www.raspberrypi.org/documentation/configuration/config-txt/). Ich möchte mich auf weniger bekannte Möglichkeiten konzentrieren.

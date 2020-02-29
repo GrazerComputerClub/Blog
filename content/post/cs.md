@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/cs.png"
@@ -67,14 +67,14 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
 	GC:            sgen (concurrent by default)
 ```
 
-## Rasperry Pi Zero ##
+## Raspberry Pi Zero ##
 
 ### Problembeschreibung ###
 
-Untypisch bei der Installation des mono-complete Paketes ist, dass Librarys am Zielsystem kompiliert werden. 
+Untypisch bei der Installation des mono-complete Paketes ist, dass Bibliotheken am Zielsystem kompiliert werden. 
 Auf den ersten Blick kann man das ja als verständlich erachten, bei näherer Betrachtung ergeben sich aber Probleme.  
-Ja nach System auf dem installiert wird, werden binär unterschiedliche Librarys erzeugt. Wird nun mono auf einer neueren Raspberry Pi (ab Version 2) erzeugt, so kann diese SD-Karte nicht mehr in einer Raspberry Pi Zero eingesetzt werden. Offensichtlich sind die erzeugen Librarys nicht kompatibel mit der alten ARMv6 Architektur.Sobald das Programm "mono" bzw. "/usr/bin/mono-sgen" ausgeführt wird, kommt es zum Absturz.  
-Durch den Aufruf von "dpkg-reconfigure" können die Librarys am Zielsystem neu erzeugt werden. Dazu muss man aber jedes der problematischen Pakete kennen.
+Ja nach System auf dem installiert wird, werden binär unterschiedliche Bibliotheken erzeugt. Wird nun mono auf einer neueren Raspberry Pi (ab Version 2) erzeugt, so kann diese SD-Karte nicht mehr in einer Raspberry Pi Zero eingesetzt werden. Offensichtlich sind die erzeugen Bibliotheken nicht kompatibel mit der alten ARMv6 Architektur. Sobald das Programm "mono" bzw. "/usr/bin/mono-sgen" ausgeführt wird, kommt es zum Absturz.  
+Durch den Aufruf von "dpkg-reconfigure" können die Bibliotheken am Zielsystem neu erzeugt werden. Dazu muss man aber jedes der problematischen Pakete kennen.
 Mir ist es bisher nicht gelungen auf diese Art mono korrekt neu zu erzeugen! Die folgende unvollständige Liste der Pakte habe ich bisher ermittelt:
 
 ```
@@ -97,7 +97,7 @@ Mono precompiling /usr/lib/mono/4.5/System.Collections.Immutable.dll for arm (LL
 Mono precompiling /usr/lib/mono/4.5/System.Reflection.Metadata.dll for arm (LLVM disabled due to missing SSE4.1)...
 ```
 
-Die besagten problematischen Librarys befinden sich alle im Verzeichnis "/usr/lib/mono/aot-cache/arm". Mit dem dem Tool "md5sum" kann man einen Hash über die binären Dateien errechnen und sieht das auf unterschiedlichen Systemen andere Librarys erzeugt wurden.  
+Die besagten problematischen Bibliotheken befinden sich alle im Verzeichnis "/usr/lib/mono/aot-cache/arm". Mit dem Tool "md5sum" kann man einen Hash der binären Dateien errechnen und erkennt dann, dass auf unterschiedlichen Systemen andere Bibliotheken erzeugt wurden.  
 
 
 **Raspberry Pi 3+:**
@@ -128,11 +128,11 @@ be3df82bb795a9224f916113f5bbeeab  System.Reflection.Metadata.dll.so
 bd646f0b1c23b90cf0ea90f15231e439  VBCSCompiler.exe.so
 ```
 
-Der genaue Grund warum die Librarys im Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assambler "as" erzeugt. Hier wird der Optimierungsparameter "-mfpu=vfp3" verwendet. Als Beschreibung findet man "Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension". Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.
+Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler "as" erzeugt. Hier wird der Optimierungsparameter "-mfpu=vfp3" verwendet. Als Beschreibung findet man "Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension". Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.
 
 ### Lösung (GC2 Raspjamming) ###
 
-Das Problem triff vor allem bei unserem Raspjamming Image auf, wenn das Image auf einem ARMv7 System erzeugt wird. Auf einem x86_64-System bei dem ein qemu Verwendung findet, tritt das Problem nicht auf.  
+Das Problem trifft vor allem bei unserem Raspjamming Image auf, wenn das Image auf einem ARMv7 System erzeugt wird. Auf einem x86_64-System bei dem eine Emulation (qemu) Verwendung findet, tritt das Problem nicht auf.  
 Als Lösung wird von uns nach der Installation von mono, die Library-Dateien überschrieben. Sie wurden einmalig von einem Raspberry Pi Zero System gesichert. 
 Diese sind dann auch für neue Raspberry Pi Einplatinencomputer geeignet. 
 

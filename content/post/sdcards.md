@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/sdcards.jpg"
@@ -6,18 +6,18 @@ date = "2019-12-25"
 title = "SD-Karte für Raspberry Pi"
 writer = "Martin Strohmayer"
 categories = ["GC2", "Raspberry Pi"]
-keywords = ["SD", "microSD", "mmc", "iozone", "benchmark", "Sandisk", "Transcend", "Kingston", "Intenso", "Mixza", "Binful", "Rondaful" ]
+keywords = ["SD", "microSD", "mmc", "iozone", "benchmark", "SanDisk", "Transcend", "Kingston", "Intenso", "Mixza", "Binful", "Kingstick", "Rondaful" ]
 weight = 1
 +++
 
-Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben. 
+Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben. 
 <!--more-->
 
 ## Beschreibung ##
 
-Die SD-Karte hat einen wesentlichen Anteil an der Performance der Raspberry Pi, immerhin läuft das gesamt Betriebssystem auf der Karte. Langsame SD-Karten führen zu einer merklichen Verzögerung. Doch schnellere Karten sind auch um einiges teurer. Wenn man viele System ausrüsten muss und hierfür ein begrenztes Budget zur Verfügung hat, ist guter Rat teuer. Dieser Benchmark soll eine Orientierungshilfe bieten.  
+Die SD-Karte hat einen wesentlichen Anteil an der Performance der Raspberry Pi, immerhin läuft das gesamt Betriebssystem auf der Karte. Langsame SD-Karten führen zu einer merklichen Verzögerung. Doch schnellere Karten sind auch um einiges teurer. Wenn man viele Systeme ausrüsten muss und hierfür ein begrenztes Budget zur Verfügung hat, ist guter Rat teuer. Dieser Benchmark soll eine Orientierungshilfe bieten.  
 So nebenbei konnten auch billige China Karten auf ihre Performance überprüft werden.  
-Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.
+Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur Verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.
 
 
 ## Installation und Vorbereitung ##
@@ -32,7 +32,7 @@ make linux-arm
 cp iozone /usr/local/bin
 ```
 
-Das Dateisystem benutzt eine Blockgroße, es kann mit "blockdev" ausgelesen werden. Sie beträgt bei der SD-Karte mit ext4-Formatierung 4K, darum wurde auch dieser Wert für den Test mit zufälligen Zugriff (random read/write) gewählt. Damit sollten die Ergebnisse nahe an der Realität liegen.
+Das Dateisystem benutzt eine Blockgroße, es kann mit "blockdev" ausgelesen werden. Sie beträgt bei der SD-Karte mit ext4-Formatierung 4K, darum wurde auch dieser Wert für den Test mit zufälligem Zugriff (random read/write) gewählt. Damit sollten die Ergebnisse nahe an der Realität liegen.
 
 ```
 sudo blockdev --getbsz /dev/mmcblk0p2 
@@ -50,7 +50,7 @@ sudo service mcp3202 stop
 sudo service lighttpd stop
 ```
 
-Bei den Intenso Karten gab es Probleme, diese haben nicht korrekt gebootet was in weiter Folge zu einem Absturz geführt hat. Durch das Umschalten auf den alten Treiber für den Kartenslot, konnte das Problem behoben werden und der Test normal durchgeführt werden. In der Konfigurationsdatei „config.txt“ muss dazu folgender Eintrag eingefügt werden.
+Bei den Intenso Karten kam es zu einem Problem, diese haben nicht korrekt gebootet was in weiter Folge zu einem Absturz geführt hat. Durch das Umschalten auf den alten Treiber für den Kartenslot, konnte das Problem behoben werden und der Test normal durchgeführt werden. In der Konfigurationsdatei „config.txt“ muss dazu folgender Eintrag eingefügt werden.
 
 ```
 dtoverlay=mmc
@@ -59,7 +59,7 @@ dtoverlay=mmc
 
 ## Ergebnisse - Raspberry Pi 2 ##
 
-Es wurden zwei Test mit zwei Blockgrößen für den Vergleichstest gewählt. Einmal zufälliges lesen und schreiben mit 4K und lesen und schreiben mit 512 KB. Beim zweiten Test sollte man recht nahe an die maximale Transferraten kommen. 
+Es wurden zwei Test mit zwei Blockgrößen für den Vergleichstest gewählt. Einmal zufälliges lesen und schreiben mit 4K und lesen und schreiben mit 512 KB. Beim zweiten Test sollte man recht nahe an die maximalen Transferrate kommen. 
 
 ```
 iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
@@ -72,7 +72,7 @@ iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
 -i #  Test to run (0=write/rewrite, 1=read/re-read, 2=random-read/write  
 
 
-### Sandisk Ulta 8GB Class 10 ###
+### SanDisk Ultra 8GB Class 10 ###
 
 ```
                                                              random    random  
@@ -141,7 +141,7 @@ iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
 
 | *Marke*     | *read* | *write* |
 |:------------|-------:|--------:|
-| Sandisk     | 6748   | 920     |
+| SanDisk     | 6748   | 920     |
 | Transcend   | 4910   | 772     |
 | Kingston    | 4692   | 171     |
 | Intenso     | 3016   | 615     |
@@ -155,7 +155,7 @@ iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
 
 | *Marke*     | *read* | *write* |
 |:------------|-------:|--------:|
-| Sandisk     | 22507   | 13032  |
+| SanDisk     | 22507   | 13032  |
 | Transcend   | 22598   | 7337   |
 | Kingston    | 15467   | 7816   |
 | Intenso     | 22375   | 7241   |
@@ -163,23 +163,23 @@ iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
 | Mixza Bund  | 11452   | 8437   |
 | Binful      | 11382   | 10556  |
 
-![Diagramm 512 KB transfer](../../img/sdcards_512KB_transfer.png) 
+![Diagramm 512 KB Transfer](../../img/sdcards_512KB_transfer.png) 
 
 
-Die meisten Karten habe ein akzeptable Geschwindigkeit. Ausreißer ist vor allem die Kingston 8 GB Class 10 Karte, die beim 4 KByte Block wesentlich langsamer ist als alle anderen Karten. Die China Karten schlagen sich in dieser Disziplin recht gut und sind im Fall Binful sogar führend.  
-Weniger beeindruckend sind die China Karten bei der Lesegeschwindigkeit mit 512 KByte. Hier sind sie mit rund 11 MB/s meist halb so schnell als die namhaften Hersteller. Die Kingston Karte bildet mit nur 15 statt 22 MB/s das schlusslicht bei den EU Karten.
-Insgesamt schneidet die Sandisk Ultra Karte am besten ab. Sie ist aber auch die teuerste. Die Transcend ist möglicherweise ein günstigere Alternative.
+Die meisten Karten habe eine akzeptable Geschwindigkeit. Ausreißer ist vor allem die Kingston 8 GB Class 10 Karte, die beim 4 KByte Block wesentlich langsamer ist als alle anderen Karten. Die China Karten schlagen sich in dieser Disziplin recht gut und sind im Fall Binful sogar führend.  
+Weniger beeindruckend sind die China Karten bei der Lesegeschwindigkeit mit 512 KByte. Hier sind sie mit rund 11 MB/s meist halb so schnell als die namhaften Hersteller. Die Kingston Karte bildet mit nur 15 statt 22 MB/s das Schlusslicht bei den EU Karten.
+Insgesamt schneidet die SanDisk Ultra Karte am besten ab. Sie ist aber auch die teuerste. Die Transcend Karte ist möglicherweise eine günstigere Alternative.
 China Karten sind nicht schlecht, können also auch überzeugen bis auf die 512 KB Leseschwäche. Allerdings sind China Karte ein eigenes Thema, dem sich das nächste Kapitel widmet.
 
  
 ## China SD Karten ##
 
 Durch einige Käufe von SD-Karten von Aliexpress aus China, habe ich Erfahrungswerte erlangt, die ich hier teilen möchte.  
-Bei den China Produkten gibt es Marken die nur kurzzeitig verfügbar sind und dann im nächsten Jahr verschwunden sind. Das sind z.B. Rondaful, KingStick und Binful. Diese Marken sind deshalb wenig vertrauensvoll, auch wenn Binful im Test durchaus ordentlich funktioniert hat. Kaufen kann man diese Marke nun nicht mehr.  
-Bei der Marke KingStick gab es viele SD-Karten die zwar einwandfrei am Laptop gelesen und geschrieben werden konnten, sie haben aber im Raspberry Pi nicht gebootet. Dabei gab es innerhalb der selben Bestellung funktionierende und welche die einfach nicht starten wollten. In einem Orange Pi Einplatinencomputer konnte sie aber erfolgreich eingesetzt werden. Einige Zeit später ist eine dieser Karten im Raspberry Pi Slot durchgebrannt. Zum Glück ohne Folgeschäden für den Raspberry Pi. Bei einem Verbrauchstest kam es zu überhörter Stromaufnahme (180 mA statt 90 mA), die Schlussendlich auf die Kingstick Karte zurückzuführen war. Mit der Transcend Karte war der Leerlauf-Verbrauch dann normal.  
+Bei den China Produkten gibt es Marken die nur kurzzeitig verfügbar sind und dann im nächsten Jahr verschwunden sind. Das sind z.B. Rondaful, Kingstick und Binful. Diese Marken sind deshalb wenig vertrauensvoll, auch wenn Binful im Test durchaus ordentlich funktioniert hat. Kaufen kann man diese Marke nun nicht mehr.  
+Bei der Marke Kingstick gab es viele SD-Karten die zwar einwandfrei am Laptop gelesen und geschrieben werden konnten, sie haben aber im Raspberry Pi nicht gebootet. Dabei gab es innerhalb derselben Bestellung funktionierende und welche die einfach nicht starten wollten. In einem Orange Pi Einplatinencomputer konnte sie aber erfolgreich eingesetzt werden. Einige Zeit später ist eine dieser Karten im Raspberry Pi Slot durchgebrannt. Zum Glück ohne Folgeschäden für den Raspberry Pi. Bei einem Verbrauchstest kam es zu überhörter Stromaufnahme (180 mA statt 90 mA), die Schlussendlich auf die Kingstick Karte zurückzuführen war. Mit der Transcend Karte war der Leerlauf-Verbrauch dann normal.  
 Die Marke Rondaful war der totale Reinfall, diese wurde als Class 10 verkauft und schaffte gerade mal 2-3 MB/s. Da war es schon kaum mehr von Relevanz, dass der Raspberry Pi auch nicht gebootet hat.  
 Nach längerer Suche hat sich dann die Marke Mixza als offensichtlich bekannte China Marke herausgestellt. Die Karten sind langfristig vorhanden. Es gibt immer wieder Serien die z. B. das Tier des chinesischen Sternzeichens (Affe, Hahn usw.) zeigen. Manchmal einen Weihnachtsmann oder auch die Haifisch Edition, die ich vorrangig erworben habe. Eine nette Idee, auf die man in Europa offensichtlich nicht kommt. Die Geschwindigkeiten sind ok, wie man am Test sieht.  
-Allerdings kaufte ich einmal die bunden Mixza Karten. Hier musste ich eine Enttäuschung erleben, denn mindestens 2 von 5 Stück waren kaum verwendbar, weil sie extrem langsam waren. Eine Karte hatte nur eine Speicherkapazität von 8 GB anstatt der aufgedruckten 16 GB. Wie solche Fehler passieren können ist mir schleierhaft und rückt den Hersteller in ein schlechtes Licht.  
+Allerdings kaufte ich einmal die bunten Mixza Karten. Hier musste ich eine Enttäuschung erleben, denn mindestens 2 von 5 Stück waren kaum verwendbar, weil sie extrem langsam waren. Eine Karte hatte nur eine Speicherkapazität von 8 GB anstatt der aufgedruckten 16 GB. Wie solche Fehler passieren können ist mir schleierhaft und rückt den Hersteller in ein schlechtes Licht.  
 Zusammengefasst kann beim SD-Karten Kauf in China folgendes schiefgehen:
 
 * Falsche Angabe bei Speicherkapazität
@@ -194,8 +194,8 @@ Wer nach dieser Zusammenfassung noch in China kaufen will, kennt nun das Risiko.
 <!--
 ## Stromaufnahme - Raspberry Pi Zero W ##
 
-Aufgrund der hohe Stromaufnahme bei einer China Karte habe ich die Stromaufnahme aller Karten geprüft. Ich kann bei allen getesteten Karten Entwarung geben.
-Die Stromaufname ist bei allen gleich niedrig bis auf die besagte Kingstick Karte.
+Aufgrund der hohen Stromaufnahme bei einer China Karte habe ich die Stromaufnahme aller Karten geprüft. Ich kann bei allen getesteten Karten Entwarnung geben.
+Die Stromaufnahme ist bei allen gleich niedrig bis auf die besagte Kingstick Karte.
 
 
 | *Marke*     | *Leerlauf (mA)* | *iozone (mA)* |

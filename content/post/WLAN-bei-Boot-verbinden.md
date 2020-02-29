@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/wlan-bei-boot-verbinden.jpg"
@@ -17,7 +17,7 @@ Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot i
 ## Umsetzung
 
 Damit sich der Raspberry Pi direkt nach dem ersten Boot ins lokale WLAN verbinden kann, müssen die Zugangsdaten in der Boot-Partition hinterlegt werden.
-Man muss dort die Datei "wpa_supplicant.conf" mit folgenden Inhalt anlegen:
+Man muss dort die Datei "wpa_supplicant.conf" mit folgendem Inhalt anlegen:
 
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev

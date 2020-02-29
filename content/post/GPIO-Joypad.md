@@ -1,9 +1,9 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/GPIO-Input-Joypad.jpg"
 date = "2020-02-16"
-title = "Raspberry Pi GPIO Joypad Emulation"
+title = " GPIO-Eingang zur Joypad Emulation"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Programmierung"]
 keywords = ["GPIO", "joypad", "joystick", "uinput", "gambatte", "gameboy", "python"]
@@ -17,7 +17,7 @@ Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Joypad am System er
 
 ## Aufgabe
 
-Wenn man mit einem Raspberry Pi alten Konsolen wie Gameboy, NES Emulieren will benötigt man eigentlich ein Joypad oder eine Tastatur. Tasten-Eingaben mit GPIO Eingänge zu erzeugen ist sehr einfach, aber wenn man ein Joypad Emulieren möchte, so geht das nicht ohne einen entsprechendes Programm. Mit Python und uInput kann aber so ein Programm erzeugen. Dann kann man mit 8 Tasten ein virtuelles Joypad erstellen, das kompatibel mit NES bzw. Gameboy Eingaben ist. Dies kann für Game-HATs oder auch Gaming Gehäuse für den Raspberry Pi verwendet werden.
+Wenn man mit einem Raspberry Pi alten Konsolen wie Gameboy, NES Emulieren will benötigt man eigentlich ein Joypad oder eine Tastatur. Tasten-Eingaben mit GPIO Eingänge zu erzeugen ist sehr einfach, aber wenn man ein Joypad Emulieren möchte, so geht das nicht ohne einen entsprechendes Programm. Mit Python und uinput kann aber so ein Programm erzeugen. Dann kann man mit 8 Tasten ein virtuelles Joypad erstellen, das kompatibel mit NES bzw. Gameboy Eingaben ist. Dies kann für Game-HATs oder auch Gaming Gehäuse für den Raspberry Pi verwendet werden.
 
  
 ## uinput Interface 

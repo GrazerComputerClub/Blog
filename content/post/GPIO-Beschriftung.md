@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/pileaf.jpg"
@@ -16,7 +16,7 @@ Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die un
 
 ## Erstellung
 
-Die GPIO-Kontakte der Raspberry sind nicht beschriftet. Es werden im einschlägigen Handel Beschriftungskarten, sie werden auch als Referenzkarten ("Reference Card") bezeichnet, angeboten. Man steckt sie über die GPIO-Steckerleiste. Diese Referenzkarten müssen natürlich nicht aus einem harten Material bestehen. Sie können, mit etwas Handarbeit, auch leicht selbst aus Papier hergestellt werden. Sie werden ausgedruckt und dann zurecht geschnitten. Die Löcher kann man z. B. mit einem Nagel vorstechen. Solche PDF-Vorlagen gibt es vielfach im Internet zu finden z. B. [http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf](http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf). Eine besondere Möglichkeit bietet hier das Projekt Pi Leaf [https://www.raspberrypi.org/blog/raspberry-leaf](https://www.raspberrypi.org/blog/raspberry-leaf). Dabei wurde die Zeichnung nicht in einem Grafikprogramm erzeugt, sondern über eine Beschreibungssprache definiert. Ursprünglich wurde das Projekt auf [Dr. Monk's DIY Electronics Blog](http://www.doctormonk.com/2013/02/raspberry-pi-and-breadboard-raspberry.html) beschrieben und auf [Sourceforge](https://sourceforge.net/projects/pileaf/) publiziert.
+Die GPIO-Kontakte der Raspberry sind nicht beschriftet. Es werden im einschlägigen Handel Beschriftungskarten, sie werden auch als Referenzkarten ("Reference Card") bezeichnet, angeboten. Man steckt sie über die GPIO-Steckerleiste. Diese Referenzkarten müssen natürlich nicht aus einem harten Material bestehen. Sie können, mit etwas Handarbeit, auch leicht selbst aus Papier hergestellt werden. Sie werden ausgedruckt und dann zurechtgeschnitten. Die Löcher kann man z. B. mit einem Nagel vorstechen. Solche PDF-Vorlagen gibt es vielfach im Internet zu finden z. B. [http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf](http://noxmiles.de/Raspberry-Pi-GPIO-Beschriftung.pdf). Eine besondere Möglichkeit bietet hier das Projekt Pi Leaf [https://www.raspberrypi.org/blog/raspberry-leaf](https://www.raspberrypi.org/blog/raspberry-leaf). Dabei wurde die Zeichnung nicht in einem Grafikprogramm erzeugt, sondern über eine Beschreibungssprache definiert. Ursprünglich wurde das Projekt auf [Dr. Monk's DIY Electronics Blog](http://www.doctormonk.com/2013/02/raspberry-pi-and-breadboard-raspberry.html) beschrieben und auf [Sourceforge](https://sourceforge.net/projects/pileaf/) publiziert.
 
 Für das veraltete Projekt wurde ein Fork von "Sanderr" auf [Sourceforge](https://sourceforge.net/u/sanderr/pileaf) erstellt. Diese Version enthält auch eine Vorlage für den 40-Pin Anschluss der aktuellen Raspberry Pi Varianten. Aus der Beschreibungsdatei "pi-leaf.asy" kann mit dem Programm Asymptote die PDF-Datei erstellt werden.
 

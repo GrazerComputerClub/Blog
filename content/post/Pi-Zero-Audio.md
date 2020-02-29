@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/Raspberry-Pi-Zero-Audio.jpg"
@@ -38,13 +38,13 @@ Möchte man allerdings einen Lautsprecher anschließen so benötigt man noch ein
 
 Wenn eine Mono Lautsprecher verwendet wird, aber Stereo-Audio vorhanden ist, so kann man die Ausgänge vor dem Verstärker über zwei 100 Ohm Widerstände zusammenführen (so wie in der Schaltung zu sehen). Achtung das Zusammenführen ohne Widerstände ergibt einen Kurzschluss!
 
-Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechner mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.
+Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechern mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.
  
 
 ### Konfiguration
 
-Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so umkonfigurieren, dass das Audio-Signal erzeugt wird.
-Dazu muss man lediglich einen Devicetree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.
+Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so um konfigurieren, dass das Audio-Signal erzeugt wird.
+Dazu muss man lediglich einen Device Tree Eintrag in der Konfigurationsdatei "config.txt" einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.
 
 **Mono:**
 ```

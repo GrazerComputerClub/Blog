@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/PIsInABox.jpg"
@@ -23,7 +23,7 @@ Wenn man eine SD-Karte mit genügend Kapazität (16GB+ empfohlen) besitzt, kann 
 Man kann BerryBoot entweder selbst bauen, siehe Anleitung auf [GitHub](https://github.com/maxnet/berryboot), oder man lädt einfach eine vorbereitete Version von [SourceForge](http://downloads.sourceforge.net/project/berryboot/berryboot-20181211-pi2-pi3.zip) herunter.
 
 
-Um BerryBoot selbst zu bauen kann man einfach den aktuellen Sourcode von GitHub auschecken und mit dem vorbereiteten Bulidscript bauen:
+Um BerryBoot selbst zu bauen kann man einfach den aktuellen Sourecode von GitHub auschecken und mit dem vorbereiteten Bulidscript bauen:
 
 ```
 git clone https://github.com/maxnet/berryboot.git
@@ -38,7 +38,7 @@ chmod +x build-berryboot.sh
 Die erzeugten bzw. heruntergeladen und entpackten Dateien muss man lediglich auf eine SD-Karte kopieren und damit den Raspberry Pi starten.
 
 
-Beim initialen Start wird was Basissystem installiet, von dort an hat man die Möglichkeit über einen grafischen Auswahldialog weitere Betriebssysteme, wie z. B. Raspbian, Ubuntu oder sogar Android installieren.
+Beim initialen Start wird was Basissystem installiert, von dort an hat man die Möglichkeit über einen grafischen Auswahldialog weitere Betriebssysteme, wie z. B. Raspbian, Ubuntu oder sogar Android installieren.
 
 
 
