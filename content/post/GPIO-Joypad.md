@@ -190,10 +190,17 @@ Zuerst muss der Emulator Gambatte aber noch kompiliert und installiert werden, d
 
 ```
 git clone https://github.com/sinamas/gambatte
+cd gambatte
 sudo apt-get install scons libsdl1.2-dev zlib1g-dev
-sudo ./build_sdl.sh
+sed -i "2 i\global_cflags = global_cflags + \' -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\'" libgambatte/SConstruct
+sed -i "4 i\cflags = cflags + \' -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\'" gambatte_sdl/SConstruct
+./build_sdl.sh
 sudo mv gambatte_sdl/gambatte_sdl /usr/local/bin/gambatte
 ```
+
+Benötigte Laufzeit Bibliotheken:  
+sudo apt-get install libsdl1.2debian zlib1g
+
 
 Nun wird noch ein Freeware Gameboy Color Spiel wie z.B. Skoardy benötigt.
 
