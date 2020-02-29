@@ -79,9 +79,8 @@ Möglicherweise gefährliche Dateien wie z. B. Ausführbare- und Scripting-Datei
 Auf dem Quell USB-Stick wurde die Datei autorun.inf umbenannt. Sie ist potentiell sehr gefährlich, wenn sie mit alten Windows Versionen automatisch ein Programm ausführt. Ab Windows XP wurde dieses Verhalten aber bereits aus Sicherheitsgründen deaktiviert [Update for Windows Autorun](http://technet.microsoft.com/en-us/security/advisory/967940).
 
 
-![Dateien Quelle](../../img/USB-Sanitizer_Src.png) 
+![Dateien Quelle und Ziel USB-Stick](../../img/USB-Sanitizer_SrcDes.png) 
 
-![Dateien Ziel](../../img/USB-Sanitizer_Des.png) 
 
 ## Nachteil ##
 

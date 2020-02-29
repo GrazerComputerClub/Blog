@@ -142,7 +142,9 @@ function geany() {
 }
 ```
 
-Optischer Vergleich der beiden Versionen siehe Titelbild (GTK2 Clearlooks theme links, GTK3 rechts).
+Für einen optischer Vergleich der beiden Versionen siehe Bild (GTK2 Clearlooks Theme links, GTK3 rechts).
+
+![Vergleich Geany GTK2 (Clearlooks) vs GTK3](../../img/geany_GTK3vsGTK2.png) 
 
 
 ## Einstellungen ##
