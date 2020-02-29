@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/ATmega328P.jpg"
@@ -10,17 +10,17 @@ keywords = ["Microcontroller", "ATmega", "328"]
 weight = 1
 +++
 
-Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen. 
+Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen. 
 <!--more-->
 
 ## Beschreibung ##
 
-Der ATmega328P ist ein sehr beliebtes Atmega Mikrokontroller System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.
+Der ATmega328P ist ein sehr beliebtes ATmega Mikrokontroller System mit einigen GPIOs und Funktionen. Der IC kann für rund 2 Euro erworben werden. Auf den Raspberry Pi können Programme erstellt, übersetzt und schlussendlich auf den IC übertragen werden.
 
 ## Anschluss ##
 
 Der ATmega328P kann direkt an den SPI-Bus des Raspberry Pi angeschlossen werden. Für die Reset-Funktion wird allerdings noch der GPIO25 zusätzlich benötigt.
-Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikrokontroller prüfen. 
+Schließt man noch eine LED an einem Pin an, so kann man gleich die Programmierung und Funktion des Mikrokontrollers prüfen. 
 
 ![ATmega328 Steckplatine](../../img/ATmega328P_Steckplatine.png)
 ![ATmega328 Schaltplan](../../img/ATmega328P_Schaltplan.png) 
@@ -44,7 +44,7 @@ programmer
 ;
 ```
 
-Danach kann mit 'avrdude' der Chiptyp ausgelesen bzw. die Kommunikation geprüft werden.  
+Danach kann mit 'avrdude' der Chip Typ ausgelesen bzw. die Kommunikation geprüft werden.  
 ```
 sudo avrdude -c linuxspi -p m328p -P /dev/spidev0.0
 ```
@@ -121,9 +121,9 @@ Falls es nicht beim ersten Mal klappt, kann das Programm mit dem Aufruf 'make pr
 
 ## Reset-Pin Ansteuerung ##
 
-Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den interen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadruch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.  
-Wird die Versorgungsspannung des Mikrokontroller entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an. 
+Als Reset-Pin wird GPIO25 des Raspberry Pi benutzt. Dieser ist standardmäßig als Eingang mit einem Pull-down Widerstand (ca. 50 kOhm) beschaltet. Durch den internen Pull-up Widerstand des ATmega liegt am Reset-Pin eine Spannung von ca. 1,5 V an. Dies entspricht einem High-Pegel, da die Schwelle bei ca. 0,6 V liegt. Dadurch arbeitet der Mikrokontroller sein internes programmiertes Programm ab. Beim Übertragen eines neuen Programms wird GPIO25 als Ausgang mit Pegel Low aktiviert, um so den Reset-Pin auf Low zu ziehen. Danach wird er wieder zum Eingang.  
+Wird die Versorgungsspannung des Mikrokontrollers entfernt oder ausgeschaltet, so fällt der ATmega Pull-up Widerstand weg und am Reset-Pin liegt ein Low-Pegel an. 
 
 ## Beispielvideo ##
 
-[![Atmega 328 programmed via Raspberry Pi](http://img.youtube.com/vi/WoNUi5WsEQ8/0.jpg)](https://www.youtube.com/watch?v=WoNUi5WsEQ8)
+[![ATmega 328 programmed via Raspberry Pi](http://img.youtube.com/vi/WoNUi5WsEQ8/0.jpg)](https://www.youtube.com/watch?v=WoNUi5WsEQ8)
