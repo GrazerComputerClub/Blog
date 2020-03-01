@@ -133,8 +133,8 @@ Nun kann das System neu gestartet werden. Damit ist die PICO-8 Handheld-Spielkon
 
 ## Akku Erweiterung
 
-Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb des Raspberry Pi Zeros angeschraubt werden.  
-Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und WaveShare HAT) für ca. 90 Minuten betrieben werden. Als PICO-8 Referenzspiel wurde [PicoFox](https://www.lexaloffle.com/bbs/?tid=28067) benutzt.
+Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium-Polymer-Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb des Raspberry Pi Zeros angeschraubt werden.  
+Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und Waveshare HAT) für ca. 90 Minuten betrieben werden. Als PICO-8 Referenzspiel wurde [PicoFox](https://www.lexaloffle.com/bbs/?tid=28067) benutzt.
 
 ![Platine mit Akku](../../img/WaveShareLCDHAT-Accu2.jpg) 
 ![Platine auf Raspberry Pi](../../img/WaveShareLCDHAT-Accu.jpg)
@@ -146,7 +146,7 @@ Da das Steuerkreuz ohne Modifikation nicht schmerzfrei verwendet werden kann, ha
 
 ![Steuerkreuz mit M2.5 Mutter](../../img/WaveShareLCDHAT-Joystick.jpg) 
 
-Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen, wie z. B. das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation.
+Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thinigverse findet man das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation.
 
 <!--
 ## Referenzen
