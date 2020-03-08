@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "PICO-8 Konsole mit WaveShare LCD HAT",
-        "headline" : "PICO-8 Konsole mit WaveShare LCD HAT",
-        "description" : "<p>Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
+        "name" : "PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT",
+        "headline" : "PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT",
+        "description" : "<p>Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,14 +25,14 @@
         "datePublished": "2018-12-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-26 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/wavesharelcdhat/",
-        "wordCount" : "784",
+        "wordCount" : "813",
         "image" : https://blog.gc2.atimg/WaveShareLCDHAT.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>PICO-8 Konsole mit WaveShare LCD HAT </title>
+ <title>PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -265,29 +265,29 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> PICO-8 Konsole mit WaveShare LCD HAT</h1>
+          <h1 class='entry-title'> PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
+              <p>Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
 </p>
 
 <h2 id="grundsätzliches">Grundsätzliches</h2>
 
 <p>PICO-8 ist eine erfundene „Fantasy Console“ die auch am Raspberry Pi Zero emuliert werden kann. Die Auflösung beträgt 128x128 Pixel. Es wird mit einem D-PAD, 2 Aktionstasten und einer Menütaste gesteuert. Es gibt eine Oberfächer, &ldquo;splore&rdquo; genannt mit der man auf eine Vielzahl von Community Spiele direkt Zugriff hat.<br />
-Von WaveShare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei <a href="https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi">semaf electronics</a> für 14 Euro kaufen. Dieses Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.<br />
+Von Waveshare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei <a href="https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi">semaf electronics</a> für 14 Euro kaufen. Diese Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.<br />
 Mit etwas Konfigurationsarbeit lässt sich daraus recht einfach eine PICO-8 Spielkonsole bauen.</p>
 
 <h2 id="was-ist-zu-erwarten">Was ist zu erwarten?</h2>
 
-<p>Bevor nun die Begeisterung und die Erwartungshaltung zu sehr steigt, muss man sich die Vor- und Nachteile dieses Projekts klarmachen.<br />
+<p>Bevor nun die Begeisterung und die Erwartungshaltung zu sehr steigen, muss man sich die Vor- und Nachteile dieses Projekts klarmachen.<br />
 Der Vorteil ist, mit nur 14 Euro kann man sich so eine PICO-8 Spielkonsole selbst zusammenbauen ohne Lötarbeit und Wissen über Elektronik.<br />
 Es gibt aber einige Nachteile bei der Nutzung. Es fehlt an Musikausgabe, was den Spielpass trübt.<br />
 Das Steuerkreuz führt bereits nach wenigen Sekunden zu Schmerzen im linken Daumen. Ein kleiner Steuerknüppel als Aufsatz, könnte hier vielleicht helfen.<br />
 Die Plattform kann nicht mobil als Handheld genutzt werden.</p>
 
-<p>Ich habe mir teilweise für die Probleme eine Lösung überlegt, allerdings ganz zufrieden konnte ich mit der Plattform nicht werden. Einzig der einfach und günstige Zusammenbau begeistert.</p>
+<p>Ich habe mir teilweise für die Probleme eine Lösung überlegt, allerdings ganz zufrieden konnte ich mit der Plattform nicht werden. Einzig der einfache und günstige Zusammenbau begeistert.</p>
 
 <h2 id="installation">Installation</h2>
 
@@ -295,7 +295,7 @@ Die Plattform kann nicht mobil als Handheld genutzt werden.</p>
 
 <h3 id="display">Display</h3>
 
-<p>Zur Aktivierung des Displays muss man das SPI-TFT-LCD in den Kernel einbinden. Hierfür habe ich bereits einen Devicetree Overlay erstellt, es kann einfach in &ldquo;/boot/overlays/&rdquo; abgelegt werden und wird dann in der Konfigurationsdatei &ldquo;config.txt&rdquo; geladen. Nun muss noch ein angepasster HDMI Video Mode aktiviert werden. Dafür habe ich eigene Sub-Konfigurationsdateien erstellt. In dem Fall würde ich den Videomodus 256x256 empfehlen, dieser wird automatisch auf 128x128 heruntergerechnet und damit geglättet.</p>
+<p>Zur Aktivierung des Displays muss man das SPI-TFT-LCD in den Kernel einbinden. Hierfür habe ich bereits einen Device Tree Overlay erstellt, es kann einfach in &ldquo;/boot/overlays/&rdquo; abgelegt werden und wird dann in der Konfigurationsdatei &ldquo;config.txt&rdquo; geladen. Nun muss noch ein angepasster HDMI Video Mode aktiviert werden. Dafür habe ich eigene Sub-Konfigurationsdateien erstellt. In dem Fall würde ich den Videomodus 256x256 empfehlen, dieser wird automatisch auf 128x128 heruntergerechnet und damit geglättet.</p>
 
 <pre><code>cd /boot/overlays
 wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/WaveshareLCDHAT.dtbo
@@ -311,7 +311,7 @@ dtoverlay=WaveshareLCDHAT
 include Video-256x256.txt
 </code></pre>
 
-<p>Nun muss der &ldquo;fbcp&rdquo; Dienst installiert und gestarten werden. Die wurde bereits im einem Blog Post beschrieben, hier nochmal die Kurzfassung.</p>
+<p>Nun muss der &ldquo;fbcp&rdquo; Dienst installiert und gestartet werden. Dies wurde bereits im einen anderen Kapitel, hier nochmal die Kurzfassung.</p>
 
 <p><strong>Installation:</strong></p>
 
@@ -352,7 +352,7 @@ WantedBy=multi-user.target
 
 <h3 id="tasten">Tasten</h3>
 
-<p>Nun müssen noch die Tasten entsprechend der PICO-8 Tastaturbelegung konfiguriert werden. Dazu wird der Overlay &lsquo;gpio-key&rsquo; verwendet, um GPIO Eingänge Tastatureingaben zuweisen zu können. Auch zu diesem Thema gibt es bereits einen Blog Post. Damit das einfacher wird, habe ich auch hierfür bereits eigene Sub-Konfigurationsdateien erstellt. Nach dem Download muss die Datei mit &lsquo;include&rsquo; in der Konfigurationsdatei &ldquo;config.txt&rdquo; referenziert werden.</p>
+<p>Nun müssen noch die Tasten entsprechend der PICO-8 Tastaturbelegung konfiguriert werden. Dazu wird der Overlay &lsquo;gpio-key&rsquo; verwendet, um GPIO Eingänge Tastatureingaben zuweisen zu können. Auch zu diesem Thema gibt es bereits ein Kapitel. Damit das einfacher wird, habe ich auch hierfür bereits eigene Sub-Konfigurationsdateien erstellt. Nach dem Download muss die Datei mit &lsquo;include&rsquo; in der Konfigurationsdatei &ldquo;config.txt&rdquo; referenziert werden.</p>
 
 <pre><code>cd /boot/
 wget https://raw.githubusercontent.com/GrazerComputerClub/rpi-boot/master/WS_TFT_HAT_Keys_Pico8.txt
@@ -370,7 +370,7 @@ include WS_TFT_HAT_Keys_Pico8.txt
 Nach dem Download der Raspberry Pi Version, muss das Zip-Archiv auf die Bootpartition kopiert und entpackt werden.</p>
 
 <pre><code>cd /boot
-unzip pico-8_0.1.11g_raspi.zip 
+unzip pico-8_0.1.12c2_raspi.zip 
 </code></pre>
 
 <p>Nun muss PICO-8 nach dem Boot automatisch gestartet werden. Dies kann über die &ldquo;rc.local&rdquo; Datei erfolgen. Am Ende des Scripts muss die Zeile &ldquo;exit 0&rdquo; erhalten bleiben! Der folgenden Block muss also davor eingefügt werden.</p>
@@ -385,12 +385,12 @@ unzip pico-8_0.1.11g_raspi.zip
 fi
 </code></pre>
 
-<p>Nun kann das System neu gestartet werden und fertig ist die PICO-8 Spielkonsole.</p>
+<p>Nun kann das System neu gestartet werden. Damit ist die PICO-8 Handheld-Spielkonsole spielbereit.</p>
 
 <h2 id="akku-erweiterung">Akku Erweiterung</h2>
 
-<p>Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb des Raspberry Pi Zeros angeschraubt werden.<br />
-Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und WaveShare HAT) für ca. 90 Minuten betrieben werden. Als PICO-8 Referenzspiel wurde PicoFox benutzt.</p>
+<p>Um eine mobile Nutzung möglich zu machen, erstellte ich noch einen Platine mit einem kleinen Lithium-Polymer-Akku mit 500 mAh. Dieser wurde an die Ladeelektronikplatine TP4056 angeschlossen. Die Platine kann unterhalb des Raspberry Pi Zeros angeschraubt werden.<br />
+Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und Waveshare HAT) für ca. 90 Minuten betrieben werden. Als PICO-8 Referenzspiel wurde <a href="https://www.lexaloffle.com/bbs/?tid=28067">PicoFox</a> benutzt.</p>
 
 <p><img src="../../img/WaveShareLCDHAT-Accu2.jpg" alt="Platine mit Akku" />
 <img src="../../img/WaveShareLCDHAT-Accu.jpg" alt="Platine auf Raspberry Pi" /></p>
@@ -402,14 +402,27 @@ Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und WaveShare HAT) für
 
 <p><img src="../../img/WaveShareLCDHAT-Joystick.jpg" alt="Steuerkreuz mit M2.5 Mutter" /></p>
 
-<h2 id="blog-referenzen">Blog Referenzen</h2>
+<h2 id="gehäuse">Gehäuse</h2>
 
-<p><a href="../pico-8/">PICO-8</a><br />
-<a href="../spi-tft-lcd">SPI TFT LCD - Teil 1</a><br />
-<a href="../spi-tft-lcd2">SPI TFT LCD - Teil 2</a><br />
-<a href="../device-tree">Devicetree</a><br />
-<a href="../gpio-tasten">GPIO-Eingang als Tastaturtaste</a><br />
-<a href="../hotkeys-zuweisen-ohne-x11">Hotkeys zuweisen ohne X11</a></p>
+<p>Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thinigverse findet man das <a href="https://www.thingiverse.com/thing:3328994">1.3 Inches RetroPie Zero</a> Gehäuse von moononournation. Es ist eigentlich für den kleineren 1,3&rdquo; Zoll LCD HAT von Waveshare vorgesehen, aber mit einem Taschenmesser kann der Displayausschnitt leicht vergrößert werden.</p>
+
+<p><img src="../../img/waveshare_pico8_gaming_device.jpg" alt="3D-Druckgehäuse" /></p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p><a href="https://www.waveshare.com/wiki/1.44inch_LCD_HAT">Waveshare 1.44inch LCD HAT product page</a><br />
+<a href="https://www.thingiverse.com/thing:3328994">Thinigverse 3D-Druck Gehäuse</a></p>
+
+<!--
+## Referenzen
+
+[PICO-8](../pico-8/)  
+[SPI TFT LCD - Teil 1](../spi-tft-lcd)  
+[SPI TFT LCD - Teil 2](../spi-tft-lcd2)  
+[Device Tree](../device-tree)  
+[GPIO-Eingang als Tastaturtaste](../gpio-tasten)  
+[Hotkeys zuweisen ohne X11](../hotkeys-zuweisen-ohne-x11)  
+-->
             </article>
           </div>
           
@@ -615,7 +628,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

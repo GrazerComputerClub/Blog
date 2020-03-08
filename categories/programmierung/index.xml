@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Raspberry Pi GPIO Joypad Emulation</title>
+      <title> GPIO-Eingang zur Joypad Emulation</title>
       <link>https://blog.gc2.at/post/gpio-joypad/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Raspberry Pi GPIO Maus Emulation</title>
+      <title> GPIO-Eingang zur Maus Emulation</title>
       <link>https://blog.gc2.at/post/gpio-mouse/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
@@ -37,7 +37,7 @@
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
-      <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepenton erzeugen, sondern auch Musik abpielen.
+      <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.
 &lt;/p&gt;</description>
     </item>
     
@@ -47,7 +47,7 @@
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
-      <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
+      <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen.
 &lt;/p&gt;</description>
     </item>
     
@@ -68,7 +68,7 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/pico-8/</guid>
-      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     

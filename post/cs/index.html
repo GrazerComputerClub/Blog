@@ -25,7 +25,7 @@
         "datePublished": "2019-12-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-12-26 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/cs/",
-        "wordCount" : "1053",
+        "wordCount" : "1054",
         "image" : https://blog.gc2.atimg/cs.png",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -334,14 +334,14 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
 	GC:            sgen (concurrent by default)
 </code></pre>
 
-<h2 id="rasperry-pi-zero">Rasperry Pi Zero</h2>
+<h2 id="raspberry-pi-zero">Raspberry Pi Zero</h2>
 
 <h3 id="problembeschreibung">Problembeschreibung</h3>
 
-<p>Untypisch bei der Installation des mono-complete Paketes ist, dass Librarys am Zielsystem kompiliert werden.
+<p>Untypisch bei der Installation des mono-complete Paketes ist, dass Bibliotheken am Zielsystem kompiliert werden.
 Auf den ersten Blick kann man das ja als verständlich erachten, bei näherer Betrachtung ergeben sich aber Probleme.<br />
-Ja nach System auf dem installiert wird, werden binär unterschiedliche Librarys erzeugt. Wird nun mono auf einer neueren Raspberry Pi (ab Version 2) erzeugt, so kann diese SD-Karte nicht mehr in einer Raspberry Pi Zero eingesetzt werden. Offensichtlich sind die erzeugen Librarys nicht kompatibel mit der alten ARMv6 Architektur.Sobald das Programm &ldquo;mono&rdquo; bzw. &ldquo;/usr/bin/mono-sgen&rdquo; ausgeführt wird, kommt es zum Absturz.<br />
-Durch den Aufruf von &ldquo;dpkg-reconfigure&rdquo; können die Librarys am Zielsystem neu erzeugt werden. Dazu muss man aber jedes der problematischen Pakete kennen.
+Ja nach System auf dem installiert wird, werden binär unterschiedliche Bibliotheken erzeugt. Wird nun mono auf einer neueren Raspberry Pi (ab Version 2) erzeugt, so kann diese SD-Karte nicht mehr in einer Raspberry Pi Zero eingesetzt werden. Offensichtlich sind die erzeugen Bibliotheken nicht kompatibel mit der alten ARMv6 Architektur. Sobald das Programm &ldquo;mono&rdquo; bzw. &ldquo;/usr/bin/mono-sgen&rdquo; ausgeführt wird, kommt es zum Absturz.<br />
+Durch den Aufruf von &ldquo;dpkg-reconfigure&rdquo; können die Bibliotheken am Zielsystem neu erzeugt werden. Dazu muss man aber jedes der problematischen Pakete kennen.
 Mir ist es bisher nicht gelungen auf diese Art mono korrekt neu zu erzeugen! Die folgende unvollständige Liste der Pakte habe ich bisher ermittelt:</p>
 
 <pre><code>sudo dpkg-reconfigure libmono-corlib4.5-cil 
@@ -363,7 +363,7 @@ Mono precompiling /usr/lib/mono/4.5/System.Collections.Immutable.dll for arm (LL
 Mono precompiling /usr/lib/mono/4.5/System.Reflection.Metadata.dll for arm (LLVM disabled due to missing SSE4.1)...
 </code></pre>
 
-<p>Die besagten problematischen Librarys befinden sich alle im Verzeichnis &ldquo;/usr/lib/mono/aot-cache/arm&rdquo;. Mit dem dem Tool &ldquo;md5sum&rdquo; kann man einen Hash über die binären Dateien errechnen und sieht das auf unterschiedlichen Systemen andere Librarys erzeugt wurden.</p>
+<p>Die besagten problematischen Bibliotheken befinden sich alle im Verzeichnis &ldquo;/usr/lib/mono/aot-cache/arm&rdquo;. Mit dem Tool &ldquo;md5sum&rdquo; kann man einen Hash der binären Dateien errechnen und erkennt dann, dass auf unterschiedlichen Systemen andere Bibliotheken erzeugt wurden.</p>
 
 <p><strong>Raspberry Pi 3+:</strong></p>
 
@@ -393,11 +393,11 @@ be3df82bb795a9224f916113f5bbeeab  System.Reflection.Metadata.dll.so
 bd646f0b1c23b90cf0ea90f15231e439  VBCSCompiler.exe.so
 </code></pre>
 
-<p>Der genaue Grund warum die Librarys im Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assambler &ldquo;as&rdquo; erzeugt. Hier wird der Optimierungsparameter &ldquo;-mfpu=vfp3&rdquo; verwendet. Als Beschreibung findet man &ldquo;Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension&rdquo;. Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.</p>
+<p>Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler &ldquo;as&rdquo; erzeugt. Hier wird der Optimierungsparameter &ldquo;-mfpu=vfp3&rdquo; verwendet. Als Beschreibung findet man &ldquo;Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension&rdquo;. Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.</p>
 
 <h3 id="lösung-gc2-raspjamming">Lösung (GC2 Raspjamming)</h3>
 
-<p>Das Problem triff vor allem bei unserem Raspjamming Image auf, wenn das Image auf einem ARMv7 System erzeugt wird. Auf einem x86_64-System bei dem ein qemu Verwendung findet, tritt das Problem nicht auf.<br />
+<p>Das Problem trifft vor allem bei unserem Raspjamming Image auf, wenn das Image auf einem ARMv7 System erzeugt wird. Auf einem x86_64-System bei dem eine Emulation (qemu) Verwendung findet, tritt das Problem nicht auf.<br />
 Als Lösung wird von uns nach der Installation von mono, die Library-Dateien überschrieben. Sie wurden einmalig von einem Raspberry Pi Zero System gesichert.
 Diese sind dann auch für neue Raspberry Pi Einplatinencomputer geeignet.</p>
 
@@ -810,7 +810,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

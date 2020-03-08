@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -275,7 +275,7 @@ if (!doNotTrack) {
 
 <h2 id="allgemeines">Allgemeines</h2>
 
-<p>SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Die Einbindung kann über eine Library und ein Programm erfolgen. Flexibler und einfacher ist allerdings die Einbindung in das Linux-System bzw. in den Kernel. Dazu benötigt man ein Kernel-Modul, das den Kontrolle des Displays unterstützt. Eine Viehlzahl von diesen Display bzw. Displaykontrollern wird vom Modul &lsquo;fbtft_device&rsquo; unterstützt.
+<p>SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Die Einbindung kann über eine Library und ein Programm erfolgen. Flexibler und einfacher ist allerdings die Einbindung in das Linux-System bzw. in den Kernel. Dazu benötigt man ein Kernel-Modul, das den Kontroller des Displays unterstützt. Eine Vielzahl von diesen Display bzw. Displaykontrollern wird vom Modul &lsquo;fbtft_device&rsquo; unterstützt.
 Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. &lsquo;/dev/fb0&rsquo; ist dabei der Framebuffer des Grafikkarte (also des HDMI- oder Composite-Ausgangs).</p>
 
 <p>Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:</p>
@@ -338,7 +338,7 @@ Im Test lag die maximale SPI-Taktfrequenz des ST7735-Controllers bei 64 MHz und 
 
 <p>Das Kernel Modul &lsquo;fbtft_device&rsquo; unterstützt viele Parameter:<br />
 <strong>name</strong> &hellip; Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)<br />
-<strong>gpios</strong> &hellip; gibt die GPIO-Nummer (BCM) für die angegebenen Anschlusse an (reset, dc, cs)<br />
+<strong>gpios</strong> &hellip; gibt die GPIO-Nummer (BCM) für den angegebenen Anschluss an (reset, dc, cs)<br />
 <strong>rotate</strong> &hellip; Drehung des Displays<br />
 <strong>speed</strong> &hellip; SPI-Takt<br />
 <strong>fps</strong> &hellip; Bilder pro Sekunde (wird möglicherweise nicht erreicht)<br />
@@ -661,7 +661,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

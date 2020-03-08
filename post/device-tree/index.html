@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Device Tree",
         "headline" : "Device Tree",
-        "description" : "<p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
+        "description" : "<p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Display ein Device Tree Blob erzeugt und geladen.</p>
 
 <p></p>",
         "inLanguage" : "en",
@@ -26,7 +26,7 @@
         "datePublished": "2018-12-16 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-16 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/device-tree/",
-        "wordCount" : "504",
+        "wordCount" : "505",
         "image" : https://blog.gc2.atimg/Device-Tree.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -271,29 +271,29 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.</p>
+              <p>Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Display ein Device Tree Blob erzeugt und geladen.</p>
 
 <p></p>
 
 <h2 id="allgemeines">Allgemeines</h2>
 
 <p>Device Tree ist eine Datenstruktur zur Beschreibung von Hardware. Besonders bei ARM-Systemen kann die Hardware unterschiedlich verwendet und konfiguriert werden. Anstatt alle Details im Betriebssystem fest zu kodieren, können viele Aspekte der Hardware in einer Datenstruktur beschrieben werden, die beim Booten an das Betriebssystem übergeben wird. Der Device Tree wird für diese Aufgabe verwendet.<br />
-Device Tree verwendet Dateien mit einer einfache Baumstruktur aus Knoten und Eigenschaften. Die Eigenschaften sind Schlüsselwertpaare, und der Knoten kann sowohl Eigenschaften als auch untergeordnete Knoten enthalten. Die Datei wird mit der Extention &ldquo;dts&rdquo; gespeichert.<br />
-Mit Hilfe eines Device Tree Compilers (DTC) wird aus der dts-Datei die binäre Device Tree Blob Datei mit der Extention &ldquo;dtb&rdquo; erzeugen.<br />
+Device Tree verwendet Dateien mit einer einfachen Baumstruktur aus Knoten und Eigenschaften. Die Eigenschaften sind Schlüsselwertpaare, und der Knoten kann sowohl Eigenschaften als auch untergeordnete Knoten enthalten. Die Datei wird mit der Extension &ldquo;dts&rdquo; gespeichert.<br />
+Mit Hilfe eines Device Tree Compilers (DTC) wird aus der dts-Datei die binäre Device Tree Blob Datei mit der Extension &ldquo;dtb&rdquo; erzeugen.<br />
 Diese wird beim Bootvorgang gelesen und angewendet. Eine Vielzahl an Device Tree Blob Datei sind bereits auf der Boot-Partition im Verzeichnis &ldquo;overlays&rdquo; der Raspberry Pi zu finden.</p>
 
 <h2 id="verwendung">Verwendung</h2>
 
-<p>Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit den Device Tree Einträgen in der Konfigurationsdatei &ldquo;config.txt&rdquo; zu tun gehabt.
+<p>Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit Device Tree Einträgen in der Konfigurationsdatei &ldquo;config.txt&rdquo; zu tun gehabt.
 Diese werden einfach als eigene Zeile mit <code>dtoverlay={Overlay-Name},{Parameter1},{Parameter2}</code> eingetragen und damit aktiviert.<br />
-Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Blog-Eintrag &ldquo;GPIO-Eingang als Tastaturtaste&rdquo; bereits beschrieben wurde.</p>
+Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Kapitel &ldquo;GPIO-Eingang als Tastaturtaste&rdquo; bereits beschrieben wurde.</p>
 
 <pre><code>dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
 </code></pre>
 
 <h2 id="erstellung">Erstellung</h2>
 
-<p>Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine &ldquo;dts&rdquo; Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie Blog-Eintrag &ldquo;SPI TFT LCD - Teil 1&rdquo;.</p>
+<p>Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine &ldquo;dts&rdquo; Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie im Kapitel &ldquo;SPI TFT LCD - Teil 1&rdquo;.</p>
 
 <p>&ldquo;st7735r.dts&rdquo;:</p>
 
@@ -349,15 +349,15 @@ Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Blog-Eintrag &
 };
 </code></pre>
 
-<p>Darin sind alle Parameter die benötigt werden, wie z. B. Kontroller, Anschlüsse, Geschwinigkeit usw. enthalten.<br />
-Man kann sich auch Beispielkonfiguraionen von userer <a href="https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays">Git-Hub</a> Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im &ldquo;overlays&rdquo; Verzeichnis abgelegt.</p>
+<p>Darin sind alle Parameter die benötigt werden, wie z. B. Kontroller, Anschlüsse, Geschwindigkeit usw. enthalten.<br />
+Man kann sich auch Beispielkonfigurationen von der GC2 <a href="https://github.com/GrazerComputerClub/rpi-boot/tree/master/overlays">Git-Hub</a> Seite herunterladen. Mit folgenden Device Tree Compiler Aufruf wird nun die binäre Device Tree Blob Datei erzeugt und im &ldquo;overlays&rdquo; Verzeichnis abgelegt.</p>
 
 <pre><code>wget https://github.com/GrazerComputerClub/rpi-boot/raw/master/overlays/st7735r.dts
 sudo dtc -@ -I dts -O dtb -o st7735r.dtbo st7735r.dts
 cp st7735r.dtbo /boot/overlays
 </code></pre>
 
-<p>Der neune Device Tree Blob kann nun in der Konfigurationdatei &ldquo;config.txt&rdquo; geladen werden.</p>
+<p>Der neune Device Tree Blob kann nun in der Konfigurationsdatei &ldquo;config.txt&rdquo; geladen werden.</p>
 
 <pre><code>dtoverlay=st7735r
 </code></pre>
@@ -572,7 +572,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

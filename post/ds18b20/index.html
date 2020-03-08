@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Temperatursensor DS18B20",
         "headline" : "Temperatursensor DS18B20",
-        "description" : "<p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+        "description" : "<p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2019-03-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-26 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/ds18b20/",
-        "wordCount" : "348",
+        "wordCount" : "350",
         "image" : https://blog.gc2.atimg/18B20.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -270,16 +270,16 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+              <p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.
 </p>
 
 <h2 id="beschreibung">Beschreibung</h2>
 
-<p>Mit dem 1-Wire Sensor DS18B20 von Dallas oder einen eine kompatiblen Sensor, kann ganz einfach die Umgebungstempertur gemessen werden. Man benötigt lediglich den Sensor einen Pull-up Widerstand und einen Devicetree Eintrag in der Konfigurationsdatei. Dann steht der Temperaturwert über das virtuelle Filesystem zur Verfügung. Eine extra Software oder Library ist nicht nötig.</p>
+<p>Mit dem 1-Wire Sensor DS18B20 von Dallas oder einen eine kompatiblen Sensor, kann ganz einfach die Umgebungstemperatur gemessen werden. Man benötigt lediglich den Sensor einen Pull-up Widerstand und einen Device Tree Eintrag in der Konfigurationsdatei. Dann steht der Temperaturwert über das virtuelle Filesystem zur Verfügung. Eine extra Software oder Library ist nicht nötig.</p>
 
 <h2 id="anschluss">Anschluss</h2>
 
-<p>Der 1-Wire Sensor wird mit 3,3 V versorgt und über den GPIO-Pin 4 erfolgt die standardisierte Kommunikation. Lediglich ein zusätzlichen Pull-up Widerstand mit 4,7 KOhm muss man noch hinzuschalten.</p>
+<p>Der 1-Wire Sensor wird mit 3,3 V versorgt und über den GPIO-Pin 4 erfolgt die standardisierte Kommunikation. Lediglich einen zusätzlichen Pull-up Widerstand mit 4,7 KOhm muss man noch hinzuschalten.</p>
 
 <p><img src="../../img/18B20_Schaltplan.png" alt="DS18B20 Schaltplan" /></p>
 
@@ -287,19 +287,19 @@ if (!doNotTrack) {
 
 <h2 id="konfiguration">Konfiguration</h2>
 
-<p>Es muss lediglich der 1-Wire-Bus über einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; parametriert werden. Daduch werden automatisch beim Starten die entsprechenden Kernel-Module (w1_gpio, w1_therm und wire) geladen.</p>
+<p>Es muss lediglich der 1-Wire-Bus über einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; parametriert werden. Dadurch werden automatisch beim Starten die entsprechenden Kernel-Module (w1_gpio, w1_therm und wire) geladen.</p>
 
 <pre><code>dtoverlay=w1-gpio,gpiopin=4,pullup=on
 </code></pre>
 
-<p>Im Betrieb kann das Kernelmodul mit folgenden Aufruf geladen werden:</p>
+<p>Im Betrieb kann das Kernelmodul mit folgendem Aufruf geladen werden:</p>
 
 <pre><code>sudo dtoverlay w1-gpio gpiopin=4 pullup=on
 </code></pre>
 
 <h2 id="zugriff">Zugriff</h2>
 
-<p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung aller Sonsoren erfolgt über eine eindeutuge ID-Nummer, die in der Datei &ldquo;w1_master_slaves&rdquo; aufgelistet sind.</p>
+<p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung aller Sensoren erfolgt über eine eindeutige ID-Nummer, die in der Datei &ldquo;w1_master_slaves&rdquo; aufgelistet sind.</p>
 
 <pre><code>ls  /sys/bus/w1/devices/
 </code></pre>
@@ -321,7 +321,7 @@ if (!doNotTrack) {
 </code></pre>
 
 <p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
-Dies Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
+Diese Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
@@ -580,7 +580,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

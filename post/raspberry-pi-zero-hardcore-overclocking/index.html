@@ -25,7 +25,7 @@
         "datePublished": "2020-01-17 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-01-17 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/",
-        "wordCount" : "1384",
+        "wordCount" : "1385",
         "image" : https://blog.gc2.atimg/Pi0_CPU.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -273,9 +273,9 @@ if (!doNotTrack) {
               <p>Der Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird.
 </p>
 
-<h2 id="grundsetzliches">Grundsetzliches</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Zur Übertaktung der CPU sind zunächst zwei Parameter in der Konfigurationsdatei wichtig &ldquo;arm_freq&rdquo; und &ldquo;over_voltage&rdquo;. Der erste Parameter setz direkt die Taktfrequenz der CPU. Der zweite Parameter verändert die CPU-Spannung um 0.025 V pro Wert. Zusätzlich gibt es noch den Wert &ldquo;force_turbo&rdquo;. Wird dieser auf 1 gesetzt so wird die CPU-Frequenz nicht geregelt sondern bleibt fix auf den eingstellten Maximalwert. Weiters kann noch die &ldquo;arm_core&rdquo; Frequenz erhöht werden, die noch geringen Einfluss auf die Performance hat. Die Frequenz des Arbeitsspeichers kann mit &ldquo;sdram_freq&rdquo; gesetzt werden.<br />
+<p>Zur Übertaktung der CPU sind zunächst zwei Parameter in der Konfigurationsdatei wichtig &ldquo;arm_freq&rdquo; und &ldquo;over_voltage&rdquo;. Der erste Parameter setzt direkt die Taktfrequenz der CPU. Der zweite Parameter verändert die CPU-Spannung um 0.025 V pro Wert. Zusätzlich gibt es noch den Wert &ldquo;force_turbo&rdquo;. Wird dieser auf 1 gesetzt so wird die CPU-Frequenz nicht geregelt sondern bleibt fix auf den eingestellten Maximalwert. Weiters kann noch die &ldquo;arm_core&rdquo; Frequenz erhöht werden, die noch geringen Einfluss auf die Performance hat. Die Frequenz des Arbeitsspeichers kann mit &ldquo;sdram_freq&rdquo; gesetzt werden.<br />
 Der Raspberry Pi Zero hat den gleichen BCM2835 Prozessor wie der Raspberry Pi 1. Dieser wurde von den ersten Raspberry Pi Varianten bis zum Raspberry Pi B+ mit 700 MHz getaktet. Die CPU-Spannung beträgt in dem Fall 1,2 V. Bei der Raspberry Pi Zero wird der gleiche Prozessor nun mit 1000 MHz getaktet. Dazu musste die CPU-Spannung auf 1,35 V erhöht werden. Hier ist also bereits eine erhöhte CPU-Spannung gesetzt, sodass man diesen nicht mehr viel erhöhen sollte. Diese kann allerdings sowieso nicht über 1,4 V gebracht werden. Auch wenn man &ldquo;force_turbo&rdquo; setzt und &ldquo;over_voltage&rdquo; auf 4, so bleibt dennoch die CPU-Spannung auf 1,4 V stehen. Hier ist also das maximale Limit erreicht. Interessant ist aber, obwohl die Erhöhung von &ldquo;over_voltage&rdquo; über 2 keine Veränderung mehr bringt, bleibt die Regel für das Garantieverlustbit aufrecht.</p>
 
 <p>Originale Beschreibung des &ldquo;over_voltage&rdquo; Parameters:<br />
@@ -283,7 +283,7 @@ Der Raspberry Pi Zero hat den gleichen BCM2835 Prozessor wie der Raspberry Pi 1.
 
 <h3 id="garantieverlustbit-warranty-bit">Garantieverlustbit (warranty bit)</h3>
 
-<p>Achtung wenn man &ldquo;force_turbo&rdquo; auf 1 setzt und einen &ldquo;over_voltage&rdquo; Wert von mehr als 6 eingibt, wird eine Garantieverlustbit gesetzt.
+<p>Achtung wenn man &ldquo;force_turbo&rdquo; auf 1 setzt und einen &ldquo;over_voltage&rdquo; Wert von mehr als 6 eingibt, wird ein Garantieverlustbit gesetzt.
 Dieses Bit ist Teil der Revisionsnummer und wird vorne also an achter Stelle gesetzt. Ausgeben kann man es mit &ldquo;cat /proc/cpuinfo&rdquo;.
 Dies konnte mit einem Raspberry Pi Zero v1.3 verifiziert werden.</p>
 
@@ -328,8 +328,8 @@ Beim Raspberry Pi Zero W 1.1 wurde das Garantieverlustbit auch gesetzt obwohl nu
 
 <p>Es wurden Performancewerte und Stabilität bei verschiedenen Übertaktungsstufen getestet. Langsam wurde versucht sich an die maximale stabile Taktrate anzunähern. Als Benchmark wurde <a href="https://www.math.utah.edu/~mayer/linux/bmark.html">nbench</a> verwendet, der bei zu hohen Taktfrequenzen mit Programmabsturz reagiert. Der Benchmark wurde also zur Leistungsmessung und Stabilitätsbewertung verwendet.
 Es wurden 3 Taktfrequenzen überprüft. Einmal ohne Übertaktung dann eine erhöhte Taktfrequenz ohne Spannungserhöhung und einmal mit maximalen Takt bei 1,4 V CPU-Spannung.<br />
-Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputern). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird. Ich gehe aber davon aus das, 1150 MHz als oberes Limit möglich ist.<br />
-Für die Benchmarkmessung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.</p>
+Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputer). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird. Ich gehe aber davon aus das, 1150 MHz als oberes Limit möglich ist.<br />
+Für die Benchmark Messung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.</p>
 
 <h3 id="stromaufnahme-leerlauf">Stromaufnahme Leerlauf</h3>
 
@@ -423,7 +423,7 @@ Stromaufnahme: 180-210 mA</p>
 <h3 id="zusammenfassung">Zusammenfassung</h3>
 
 <p>Durch eine hohe Übertaktung von 150 MHz kann man rund 16% Mehrleistung aus dem Raspberry Pi Zero herausholen. Damit verringert sich der Abstand zu Raspberry Pi 2 (Basistakt) von ca. 30 % auf 14 %.<br />
-Natürtlich steigt der Stromverbrauch dann auch an, aber im Grunde nur geringfügig. Der Verbrauch im Leerlauf bleibt aber gleich. Zumindest die Erhöhung um 30 MHz bringt etwas Mehrleitung ohne die CPU-Spannung erhöhen zu müssen.</p>
+Natürlich steigt der Stromverbrauch dann auch an, aber im Grunde nur geringfügig. Der Verbrauch im Leerlauf bleibt aber gleich. Zumindest die Erhöhung um 30 MHz bringt etwas Mehrleitung ohne die CPU-Spannung erhöhen zu müssen.</p>
 
 <p><img src="../../img/nBenchIndex_PiZeroOverclocking.png" alt="Diagramm nbench Index Pi zero overclocking" /></p>
             </article>
@@ -631,7 +631,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

@@ -25,7 +25,7 @@
         "datePublished": "2018-12-20 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-20 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/esp8266-esp01/",
-        "wordCount" : "645",
+        "wordCount" : "647",
         "image" : https://blog.gc2.atimg/ESP8266_ESP-01.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -282,8 +282,8 @@ if (!doNotTrack) {
 <h2 id="beschreibung">Beschreibung</h2>
 
 <p>Der ESP8266 ist ein kostengünstiger 32-Bit-Mikrocontroller der chinesischen Firma Espressif und ermöglicht durch sein integriertes WLAN viele einfache IoT Anwendungen.<br />
-Der Mikrocontroller hat mehere GPIOs die unter anderem SPI, I2C, UART, ADC, RTC und mehr unterstützen. Die Betriebsspannung beträgt 3,3 V, weshalb er sich auch gut mit dem Raspberry Pi kombinieren lässt.<br />
-Es gibt in auf unterschiedlichen Experimentierboards zu kaufen. Die kleinste und günstigste Platine ist der ESP-01. Auf den 8 Kontakten ist ein UART (RX, TX, GND) und 2 GPIO Pins vorhanden.<br />
+Der Mikrocontroller hat mehrere GPIOs die unter anderem SPI, I2C, UART, ADC, RTC und mehr unterstützen. Die Betriebsspannung beträgt 3,3 V, weshalb er sich auch gut mit dem Raspberry Pi kombinieren lässt.<br />
+Es gibt in auf unterschiedlichen Experimentierboards zu kaufen. Die kleinste und günstigste Platine ist der ESP-01. Auf den 8 Kontakten sind ein UART (RX, TX, GND) und 2 GPIO Pins vorhanden.<br />
 Über den UART kann mit der enthaltenen Firmware verschiedene Netzwerkunktionen über WLAN genutzt werden. Unter der Rubrik Verlinkungen ist eine Befehlsliste bei der alle Funktionen aufgelistet und beschrieben sind.</p>
 
 <p><img src="../../img/ESP8266_ESP-01.png" alt="ESP8266 ESP-01" /></p>
@@ -294,13 +294,13 @@ Es gibt in auf unterschiedlichen Experimentierboards zu kaufen. Die kleinste und
 <li>Keine rote LED für die Versorgungsanzeige (weniger Verbrauch)</li>
 <li>Die blaue LED ist bei GPIO2 (Active Low) angeschlossen anstatt bei TX</li>
 <li>Die Eingänge EN, RST und GPI0 sind bereits über einen Pull-up Widerstand (12 kOhm) auf 3,3 V gesetzt (RST auch bei schwarzer ESP01 Platine)</li>
-<li>1 MBit Flash Speicher, die blaue ESP01 Platine hatt nur 512 kBit, die schwarze ESP01 Platine hatte allerdings ebenfalls 1 MBit Speicher</li>
+<li>1 MBit Flash Speicher, die blaue ESP01 Platine hat nur 512 kBit, die schwarze ESP01 Platine hatte allerdings ebenfalls 1 MBit Speicher</li>
 <li>Pins sind auf der Platine beschriftet</li>
 <li>Eine neuere Firmware ist vorinstalliert</li>
 <li>Wegen der neuen Firmware, ist der schnellere QIO SPI-Modus mit 80 % höherer Übertragungsgeschwindigkeit aktiv</li>
 </ul>
 
-<p>Insgesamt bietet die ESP-01S Platine einige Vorteile, weshalb man sie bevorzugt erweben sollte. Vorallem sind die Anschlusse EN, RST und GPI0 bereits für den korrekten Betrieb vorkonfiguiert, sodass man nur die Versorgung (3,3 V und GND) und eventuell den UART anschließen muss. Von der alten blauen ESP01 Platine ist wegen des geringen Speichers generell abzuraten.</p>
+<p>Insgesamt bietet die ESP-01S Platine einige Vorteile, weshalb man sie bevorzugt erwerben sollte. Vor allem sind die Anschlüsse EN, RST und GPI0 bereits für den korrekten Betrieb vorkonfiguriert, sodass man nur die Versorgung (3,3 V und GND) und eventuell den UART anschließen muss. Von der alten blauen ESP01 Platine ist wegen des geringen Speichers generell abzuraten.</p>
 
 <h2 id="anschluss">Anschluss</h2>
 
@@ -386,7 +386,7 @@ ready
 ```
 -->
 
-<p>Der Befehl &ldquo;AT+GMR&rdquo; liest die Firmwareversion aus.</p>
+<p>Der Befehl &ldquo;AT+GMR&rdquo; liest die Firmware Version aus.</p>
 
 <pre><code>AT version:0.40.0.0(Aug  8 2015 14:45:58)
 SDK version:1.3.0
@@ -405,7 +405,7 @@ OK
 ```
 -->
 
-<p>Der Befehl &ldquo;AT+CWLAP&rdquo; listet die gefundenen WLAN-Netze mit Zustazinformationen auf.</p>
+<p>Der Befehl &ldquo;AT+CWLAP&rdquo; listet die gefundenen WLAN-Netze mit Zusatzinformationen auf.</p>
 
 <pre><code>+CWLAP:(3,&quot;NETGEAR23&quot;,-86,&quot;a0:63:91:ca:98:ca&quot;,6,-14)
 +CWLAP:(4,&quot;A1-XZY&quot;,-78,&quot;a4:b1:e9:43:f4:d3&quot;,11,-41)
@@ -635,7 +635,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

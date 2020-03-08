@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Raspberry Pi GPIO Joypad Emulation</title>
+      <title> GPIO-Eingang zur Joypad Emulation</title>
       <link>https://blog.gc2.at/post/gpio-joypad/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Raspberry Pi GPIO Maus Emulation</title>
+      <title> GPIO-Eingang zur Maus Emulation</title>
       <link>https://blog.gc2.at/post/gpio-mouse/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
@@ -37,7 +37,7 @@
       <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</guid>
-      <description>&lt;p&gt;Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben. Bei der Überspannung liegt der Grenzwert dann bei 6,5 V.
+      <description>&lt;p&gt;Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben.
 &lt;/p&gt;</description>
     </item>
     
@@ -146,7 +146,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/sdcards/</guid>
-      <description>&lt;p&gt;Immer wider steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karte aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
+      <description>&lt;p&gt;Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
 &lt;/p&gt;</description>
     </item>
     
@@ -196,7 +196,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/ir/</guid>
-      <description>&lt;p&gt;Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&amp;hellip;
+      <description>&lt;p&gt;Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&amp;hellip;
 &lt;/p&gt;</description>
     </item>
     
@@ -206,7 +206,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/cpu-performance/</guid>
-      <description>&lt;p&gt;Eine interessante Kenngröße der vielen verschienen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Eine Diagramm soll helfen die Prozessoren bzw. Produkte einordenen zu können &amp;hellip;
+      <description>&lt;p&gt;Eine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können &amp;hellip;
 &lt;/p&gt;</description>
     </item>
     
@@ -216,7 +216,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
-      <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepenton erzeugen, sondern auch Musik abpielen.
+      <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.
 &lt;/p&gt;</description>
     </item>
     
@@ -276,7 +276,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/ds18b20/</guid>
-      <description>&lt;p&gt;Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles nötige ist im Linux-Kernel integriert.
+      <description>&lt;p&gt;Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.
 &lt;/p&gt;</description>
     </item>
     
@@ -286,7 +286,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/hat-eeprom/</guid>
-      <description>&lt;p&gt;Über die zwei Anschlüsse &lt;em&gt;ID_SD&lt;/em&gt; und &lt;em&gt;ID_SC&lt;/em&gt; auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+      <description>&lt;p&gt;Über die zwei Anschlüsse &lt;em&gt;ID_SD&lt;/em&gt; und &lt;em&gt;ID_SC&lt;/em&gt; auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
 &lt;/p&gt;</description>
     </item>
     
@@ -296,7 +296,7 @@ Uhrzeit: 3:24&lt;/p&gt;
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
-      <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt ich aber ganz einfach mit einem Raspberry Pi lösen.
+      <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen.
 &lt;/p&gt;</description>
     </item>
     
@@ -360,12 +360,12 @@ Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.
     </item>
     
     <item>
-      <title>PICO-8 Konsole mit WaveShare LCD HAT</title>
+      <title>PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT</title>
       <link>https://blog.gc2.at/post/wavesharelcdhat/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
-      <description>&lt;p&gt;Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Konsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
+      <description>&lt;p&gt;Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
 &lt;/p&gt;</description>
     </item>
     
@@ -396,7 +396,7 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/pico-8/</guid>
-      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+      <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 &lt;/p&gt;</description>
     </item>
     
@@ -448,7 +448,7 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/device-tree/</guid>
-      <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Displays ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;
+      <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Display ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -470,7 +470,7 @@ So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und divers
       <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/powershell-core-linux-1/</guid>
-      <description>&lt;p&gt;Seit .Net Core offiziell auf der Rapsberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
+      <description>&lt;p&gt;Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
 Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
 &lt;/p&gt;</description>
     </item>
@@ -504,17 +504,17 @@ mit Daten von OpenWeather befüllt.
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/</guid>
-      <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafischer Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
+      <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafische Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.
 &lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>GPIO-Eingang als Tastaturtaste</title>
+      <title>GPIO-Eingang zur Tastaturtaste</title>
       <link>https://blog.gc2.at/post/gpio-tasten/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/gpio-tasten/</guid>
-      <description>&lt;p&gt;Oft sollen per GPIO-Taste Programme gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Devicetree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+      <description>&lt;p&gt;Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
 &lt;/p&gt;</description>
     </item>
     
@@ -586,7 +586,7 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/pi-herunterfahren/</guid>
-      <description>&lt;p&gt;Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
+      <description>&lt;p&gt;Leider fehlt dem Raspberry Pi Einplatinencomputer eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch die Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.
 &lt;/p&gt;</description>
     </item>
     

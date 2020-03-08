@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "PICO-8",
         "headline" : "PICO-8",
-        "description" : "<p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+        "description" : "<p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -276,7 +276,7 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integriertem Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
+              <p>Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &ldquo;virtuelle Konsole&rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.
 </p>
 
 <h2 id="grundsätzliches">Grundsätzliches</h2>
@@ -286,9 +286,9 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 
 <h2 id="installation">Installation</h2>
 
-<p>PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringpi) verwendet.<br />
+<p>PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringPi) verwendet.<br />
 Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.1.12c2_raspi.zip&rdquo; herunterladen. Darin ist das Verzeichnis &ldquo;pico-8&rdquo; mit allen Dateien. Es enthält zwei ausführbare Dateien &ldquo;pico8&rdquo; und &ldquo;pico8_dyn&rdquo;. Bei &ldquo;pico8_dyn&rdquo; wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. &ldquo;pico8&rdquo; benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle &ldquo;pico8&rdquo; zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird später noch erläutert.<br />
-Achtung, wenn der Fehler &ldquo;pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory&rdquo; auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgener Trick angewendet werden:</p>
+Achtung, wenn der Fehler &ldquo;pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory&rdquo; auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgender Trick angewendet werden:</p>
 
 <pre><code>sudo apt-get install libsndio7.0
 sudo ln -s /usr/lib/arm-linux-gnueabihf/libsndio.so.7.0 /usr/lib/arm-linux-gnueabihf/libsndio.so.6.1
@@ -402,7 +402,7 @@ D-PAD = S D E F<br />
 Aktionstaste 1 (O): Tab bzw. Shift<br />
 Aktionstaste 2 (X): Q bzw. A</p>
 
-<h3 id="modul-catridge">Modul (Catridge)</h3>
+<h3 id="modul-cartridge">Modul (Cartridge)</h3>
 
 <p>Vielfach wird beim Programmspeicher von Cartridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Cartridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.</p>
 
@@ -476,7 +476,7 @@ END
 
 <h2 id="pi-xo-spielkonsole">Pi-XO Spielkonsole</h2>
 
-<p>Der GC2 hat in einem Projekt, eine kleine Gameboy Advance ännliche Handheld-Konsole entwickelt. Sie ist speziell für PICO-8 geeignet und nennt sich Pi-XO. Sie besteht aus einem Raspberry Pi Zero und einer Platine mit Tasten, einem SPI-Display und Soundausgabe. Mit den ersten 8 GPIOs können Vibrationsmotoren und LEDs aktiviert werden. Weitere Informationen findet man auf der <a href="https://github.com/GrazerComputerClub/Pi-XO">GitHub Projektseite</a>.</p>
+<p>Der GC2 hat in einem Projekt, eine kleine Gameboy Advance ähnliche Handheld-Konsole entwickelt. Sie ist speziell für PICO-8 geeignet und nennt sich Pi-XO. Sie besteht aus einem Raspberry Pi Zero und einer Platine mit Tasten, einem SPI-Display und Soundausgabe. Mit den ersten 8 GPIOs können Vibrationsmotoren und LEDs aktiviert werden. Weitere Informationen findet man auf der <a href="https://github.com/GrazerComputerClub/Pi-XO">GitHub Projektseite</a>.</p>
 
 <p><a href="https://www.youtube.com/watch?v=vgGREFB0JgY"><img src="http://img.youtube.com/vi/vgGREFB0JgY/0.jpg" alt="Pi-XO Gaming" /></a></p>
 
@@ -706,7 +706,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

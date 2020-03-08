@@ -26,7 +26,7 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
         "datePublished": "2018-12-22 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-22 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/robot-arm/",
-        "wordCount" : "588",
+        "wordCount" : "587",
         "image" : https://blog.gc2.atimg/brickPi_explorer.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@ Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mind
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -336,7 +336,7 @@ cp BrickPi/Software/BrickPi_C/Drivers/ RobotArm/ -r
 cd RobotArm/
 </code></pre>
 
-<p>Die C-Bibliothek kommt in Fom von zwei Dateien - &ldquo;BrickPi.h&rdquo; und &ldquo;tick.h&rdquo;</p>
+<p>Die C-Bibliothek kommt in Form von zwei Dateien - &ldquo;BrickPi.h&rdquo; und &ldquo;tick.h&rdquo;</p>
 
 <pre><code>[mw@mwmaster RobotArm]$ ll
 insgesamt 36K
@@ -346,13 +346,13 @@ drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
 -rw-r--r--  1 mw mw 1,1K 22. Dez 16:51 tick.h
 </code></pre>
 
-<p>Diese müssen in euren Programm inkludiert werden.</p>
+<p>Diese müssen in euer Programm inkludiert werden.</p>
 
 <p>Für die C-Bibliothek gibt es <a href="https://github.com/DexterInd/BrickPi/tree/master/Software/BrickPi_C/Project_Examples">ein einfaches Beispiel</a>, um sich mit der Funktionsweise der bereitgestellten API vertraut zu machen.</p>
 
 <p>Euer Programm muss keiner bestimmen Form entsprechen, es sind jedoch einige Funktionsaufrufe in die BrickPi-Bibliothek (siehe BrickPi.h) notwendig, um die Hardware zu initialisieren.</p>
 
-<p>Am besten man kapselt diese in Hilfsfunktionen, damit die Program-Main übersichtlicher bleibt:</p>
+<p>Am besten man kapselt diese in Hilfsfunktionen, damit Program-Main übersichtlicher bleibt:</p>
 
 <pre><code>void SetUARTAtmegaPorts() {
     //http://www.dexterindustries.com/forum/?topic=programming-in-c-2/#post-1078
@@ -396,7 +396,7 @@ void DeviceConfig() {
 }
 </code></pre>
 
-<p>Den kompletten Code für den RobotARM könnt ihr <a href="https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9">hier</a> beziehen.</p>
+<p>Den kompletten Sourcecode für den RobotARM könnt ihr <a href="https://gist.github.com/mwallner/36dddb1828515e71f16f2f6d49020fd9">hier</a> beziehen.</p>
             </article>
           </div>
           
@@ -603,7 +603,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

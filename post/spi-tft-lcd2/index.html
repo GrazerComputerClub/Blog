@@ -47,9 +47,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -282,8 +282,8 @@ if (!doNotTrack) {
 <p>Nach dem Anschließen des SPI TFT LCD und dem Laden des Kernelmoduls &lsquo;fbtft_device&rsquo; wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. Nun kann der Framebuffer direkt angesprochen werden z. B. mit dem Programm &lsquo;fbi‘, das zur Anzeige eines Bildes verwendet wird.</p>
 
 <pre><code>sudo apt-get install fbi
-wget http://shorturl.at/gvAO1 -O sample.jpg
-sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample.jpg
+wget https://git.io/JvgXf -O sample-128x128.jpg
+sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample-128x128.jpg
 </code></pre>
 
 <p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
@@ -338,7 +338,7 @@ WantedBy=multi-user.target
 <p>Als Test könnte man nun ein Video abspielen.</p>
 
 <pre><code>sudo apt-get install omxplayer
-wget http://shorturl.at/ahD23
+wget https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4
 fbcp &amp;
 omxplayer sintel_trailer-480p.mp4
 </code></pre>
@@ -581,7 +581,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

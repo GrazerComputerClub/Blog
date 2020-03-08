@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "IR-Empfänger",
         "headline" : "IR-Empfänger",
-        "description" : "<p>Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
+        "description" : "<p>Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2019-11-10 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-11-10 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/ir/",
-        "wordCount" : "1129",
+        "wordCount" : "1130",
         "image" : https://blog.gc2.atimg/IR.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -270,7 +270,7 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit einem günstigen IR-Empfänger lässt sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
+              <p>Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;
 </p>
 
 <h2 id="beschreibung">Beschreibung</h2>
@@ -279,7 +279,7 @@ if (!doNotTrack) {
 
 <h2 id="anschluss">Anschluss</h2>
 
-<p>Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).</p>
+<p>Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (Mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).</p>
 
 <p><img src="../../img/IR-Sensor_Schaltplan.png" alt="IR-Sensor Schaltplan" /></p>
 
@@ -287,7 +287,7 @@ if (!doNotTrack) {
 
 <h2 id="installation">Installation</h2>
 
-<p>Es muss lediglich ein Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.</p>
+<p>Es muss lediglich ein Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.</p>
 
 <pre><code># TSOP4838 IR-receiver at GPIO27
 dtoverlay=gpio-ir,gpio_pin=27
@@ -506,7 +506,7 @@ sudo service irexec start
 
 <h2 id="beispielvideo">Beispielvideo</h2>
 
-<p><a href="https://www.youtube.com/watch?v=15_rlINwO8A"><img src="http://img.youtube.com/vi/15_rlINwO8A/0.jpg" alt="Sanitizer Handhabung" /></a></p>
+<p><a href="https://www.youtube.com/watch?v=15_rlINwO8A"><img src="http://img.youtube.com/vi/15_rlINwO8A/0.jpg" alt="IR Empfänger" /></a></p>
 
 <h2 id="verlinkungen">Verlinkungen</h2>
 
@@ -717,7 +717,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

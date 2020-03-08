@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -301,8 +301,8 @@ Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi un
 <h2 id="anschluss">Anschluss</h2>
 
 <p>Es wurden zwei mögliche Positionen für die LEDs vorgesehen. Eine Position ist kompatibel mit der PiStop Ampel (Bezug <a href="https://bit.ly/2VVJ1Sd">PIMORONI</a>) die direkt auf die GPIO-Leiste gesteckt wird. Diese Position bei GPIO25, GPIO8 und GPIO7 ist kompatibel mit allen Raspberry P Versionen.<br />
-Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel ist die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechende Ampel-LEDs vorhanden.<br />
-Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde.</p>
+Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel sind die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechenden Ampel-LEDs vorhanden.<br />
+Für die Tasten wurde wieder eine Position für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde.</p>
 
 <p><img src="../../img/USB-Sanitizer_26pin_IO.png" alt="Belegung GPIO 26-Pin" /></p>
 
@@ -331,7 +331,7 @@ Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Variant
 <tr>
 <td>Orange LED</td>
 <td>High</td>
-<td>Synchroniserungsvorgang läuft</td>
+<td>Synchronisierungsvorgang läuft</td>
 <td>GPIO08</td>
 <td>GPIO20</td>
 </tr>
@@ -347,7 +347,7 @@ Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Variant
 <tr>
 <td>Sync Taste</td>
 <td>Low</td>
-<td>Synchroniserungsvorgang starten</td>
+<td>Synchronisierungsvorgang starten</td>
 <td>GPIO17</td>
 <td>-</td>
 </tr>
@@ -355,7 +355,7 @@ Für die Tasten wurde wieder eine Positionen für die alten Raspberry Pi Variant
 <tr>
 <td>Sync Taste</td>
 <td>High</td>
-<td>Synchroniserungsvorgang starten</td>
+<td>Synchronisierungsvorgang starten</td>
 <td>-</td>
 <td>GPIO13</td>
 </tr>
@@ -397,9 +397,7 @@ Beim GC2-Image kann auch zur Laufzeit der Vorgang gestartet werden. Wird das Sys
 Möglicherweise gefährliche Dateien wie z. B. Ausführbare- und Scripting-Dateien, Boot-Dateien, Office Dateien mit Macros, WVF-Videos wurden als potentiell gefährlich markiert.<br />
 Auf dem Quell USB-Stick wurde die Datei autorun.inf umbenannt. Sie ist potentiell sehr gefährlich, wenn sie mit alten Windows Versionen automatisch ein Programm ausführt. Ab Windows XP wurde dieses Verhalten aber bereits aus Sicherheitsgründen deaktiviert <a href="http://technet.microsoft.com/en-us/security/advisory/967940">Update for Windows Autorun</a>.</p>
 
-<p><img src="../../img/USB-Sanitizer_Src.png" alt="Dateien Quelle" /></p>
-
-<p><img src="../../img/USB-Sanitizer_Des.png" alt="Dateien Ziel" /></p>
+<p><img src="../../img/USB-Sanitizer_SrcDes.png" alt="Dateien Quelle und Ziel USB-Stick" /></p>
 
 <h2 id="nachteil">Nachteil</h2>
 
@@ -619,7 +617,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

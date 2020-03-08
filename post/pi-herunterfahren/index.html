@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi über GPIO-Eingang herunterfahren",
         "headline" : "Raspberry Pi über GPIO-Eingang herunterfahren",
-        "description" : "<p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
+        "description" : "<p>Leider fehlt dem Raspberry Pi Einplatinencomputer eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch die Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2018-12-03 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-03 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/pi-herunterfahren/",
-        "wordCount" : "287",
+        "wordCount" : "288",
         "image" : https://blog.gc2.atimg/gpio-shutdown.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -270,12 +270,12 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Leider fehlt den Raspberry Pi Einplatinencomputern eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch das Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
+              <p>Leider fehlt dem Raspberry Pi Einplatinencomputer eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch die Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo;.
 </p>
 
 <h2 id="herunterfahren">Herunterfahren</h2>
 
-<p>Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des System auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Verantwortlich dafür ist die Funktion &lsquo;gpio-shutdown&rsquo;.</p>
+<p>Bekanntlich besitzt der Raspberry Pi keinen Ausschaltknopf, der ein Herunterfahren des Systems auslösen kann. Diese Funktion nachträglich einzubauen ist aber sehr einfach möglich. Man muss lediglich einen Taster an einen GPIO-Eingang hängen und einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Verantwortlich dafür ist die Funktion &lsquo;gpio-shutdown&rsquo;.</p>
 
 <p><code>
 dtoverlay=gpio-shutdown
@@ -315,12 +315,12 @@ dtoverlay=gpio-shutdown,gpio_pin=5,active_low=1,gpio_pull=up
 </tbody>
 </table>
 
-<p>Der Taster führt im übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.<br />
+<p>Der Taster führt im Übrigen bei nochmaliger Aktivierung zu einem erneuten Startvorgang.<br />
 Achtung: Der Overlay darf nur einmal angegeben werden. Wenn man ihn zweimal zuweist, funktioniert nur der zuletzt zugewiesene GPIO-Eingang. Dieses Problem lässt sich allerdings leicht umgehen. Die Zuweisung der Taste KEY_POWER bewirkt nämlich auch einen Shutdown, siehe <a href="../gpio-tasten/">GPIO-Eingang als Tastaturtaste</a>.</p>
 
 <h2 id="status">Status</h2>
 
-<p>Nicht verwechseln darf man den Devicetree Eintrag mit &lsquo;gpio-poweroff&rsquo;. Dieser dient zum Aktivieren eines Ausgangs, wenn sich der Raspberry Pi im Zustand &ldquo;Halt&rdquo; befindet. Hier gibt es den Parameter &lsquo;gpiopin&rsquo; falls der standard Ausgang GPIO26 nicht gewünscht ist.</p>
+<p>Nicht verwechseln darf man den Device Tree Eintrag mit &lsquo;gpio-poweroff&rsquo;. Dieser dient zum Aktivieren eines Ausgangs, wenn sich der Raspberry Pi im Zustand &ldquo;Halt&rdquo; befindet. Hier gibt es den Parameter &lsquo;gpiopin&rsquo; falls der Standardausgang GPIO26 nicht gewünscht ist.</p>
 
 <p><code>
 dtoverlay=gpio-poweroff,gpiopin=20
@@ -548,7 +548,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

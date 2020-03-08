@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "HAT EEPROM anschließen und konfigurieren",
         "headline" : "HAT EEPROM anschließen und konfigurieren",
-        "description" : "<p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+        "description" : "<p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -25,7 +25,7 @@
         "datePublished": "2019-03-03 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-03 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hat-eeprom/",
-        "wordCount" : "1179",
+        "wordCount" : "1187",
         "image" : https://blog.gc2.atimg/EEPROM.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -270,12 +270,12 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
+              <p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.
 </p>
 
 <h2 id="einleitung">Einleitung</h2>
 
-<p>Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins <strong>ID_SD</strong> (GPIO00) und <strong>ID_SC</strong> (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO Einstellungen und Devicetree Konfigurationen automatisch beim Boot geladen werden. Dies soll vorallem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.<br />
+<p>Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins <strong>ID_SD</strong> (GPIO00) und <strong>ID_SC</strong> (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Dies soll vor allem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.<br />
 Für diese offiziellen HATs gelten einige Regeln und Vorgaben um zu gewährleisten das Standards eingehalten werden. Weitere Informationen dazu erhält man bei
 <a href="https://github.com/raspberrypi/hats">ADD-ON BOARDS AND HATs</a>.<br />
 Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EEPROMs.</p>
@@ -285,19 +285,19 @@ Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EE
 <ul>
 <li>Typ 24Cxx</li>
 <li>3,3 V Betriebsspannung</li>
-<li>16-Bit Addressierung</li>
+<li>16-Bit Adressierung</li>
 <li>8-Bit Daten</li>
 <li>100 kHz I2C-Frequenz</li>
 </ul>
 
 <p>Das EEPROM muss vom Typ &ldquo;24Cxx&rdquo; sein, dann hat es eine I2C-Schnittstelle. Es muss eine 16-Addressierung haben und 8-Bit Daten verwenden. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe funktionieren nicht.<br />
-Offiziell empfohlen wird das EEPROM &ldquo;OnSemi CAT24C32&rdquo; welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html">M24C32</a> bzw.  <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html">M24C64</a> empfehlen würde.</p>
+Offiziell empfohlen wird das EEPROM &ldquo;OnSemi CAT24C32&rdquo; welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerdings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html">M24C32</a> bzw.  <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html">M24C64</a> empfehlen würde.</p>
 
 <h2 id="anschluss">Anschluss</h2>
 
 <p>Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.<br />
-Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pullup-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.<br />
-Die Addressleitungen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
+Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pull-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.<br />
+Die Adressleitungen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
 
 <p><img src="../../img/EEPROM_Schaltplan.png" alt="Schaltplan" /></p>
 
@@ -339,7 +339,7 @@ product &quot;GC2-xHAT (Raspjamming)&quot;
 <pre><code>./eepmake eeprom_settings.txt GC2-xHAT.eep
 </code></pre>
 
-<p>Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die KiloBit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen KiloByte zu kommen.</p>
+<p>Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die Kilobit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen Kilobyte zu kommen.</p>
 
 <pre><code>dd if=/dev/zero bs=4k count=1 of=blank.eep
 ls -l *.eep
@@ -413,9 +413,9 @@ Done.
 <pre><code>hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer Computer Club (Austria)
 </code></pre>
 
-<h3 id="devicetree">Devicetree</h3>
+<h3 id="device-tree">Device Tree</h3>
 
-<p>Es ist auch möglich eine Devicetree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Devicetree Konfiguration verwenden oder einen neue erstellen.
+<p>Es ist auch möglich eine Device Tree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Device Tree Konfiguration verwenden oder einen neue erstellen.
 Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20 (mögliche Trigger-Events für den Ausgang kann man mit dem Befehl &ldquo;cat /sys/devices/platform/leds/leds/led0/trigger&rdquo; auflisten). Dazu wird folgender Inhalt in der Datei led.dts erzeugt.</p>
 
 <pre><code>/dts-v1/;
@@ -448,7 +448,7 @@ Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf G
 };
 </code></pre>
 
-<p>Nun wird der Devicetree-Source in eine binäre dtb bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Paranmeter  angehängt.</p>
+<p>Nun wird der Device Tree Source in eine binäre dtb- bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Parameter angehängt.</p>
 
 <pre><code>dtc -@ -I dts -O dtb -o led.dtbo led.dts
 ./eepmake eeprom_settings.txt GC2-xHAT-dt.eep led.dtbo
@@ -476,7 +476,7 @@ Done.
 <pre><code>#dtparam=i2c_vc=on
 </code></pre>
 
-<p>Nach einem Reboot müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) blinken und eine LED an GPIO20 SD-Kartenzugriffe ersichtlich machen.</p>
+<p>Nach einem Neustart müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) blinken und eine LED an GPIO20 SD-Kartenzugriffe ersichtlich machen.</p>
 
 <h2 id="verlinkungen">Verlinkungen</h2>
 
@@ -691,7 +691,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>

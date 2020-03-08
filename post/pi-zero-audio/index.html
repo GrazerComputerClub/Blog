@@ -25,7 +25,7 @@
         "datePublished": "2018-12-19 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-19 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/pi-zero-audio/",
-        "wordCount" : "435",
+        "wordCount" : "437",
         "image" : https://blog.gc2.atimg/Raspberry-Pi-Zero-Audio.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1581890664" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1583694825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1581890664" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1583694825" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -297,12 +297,12 @@ Danach kann der Ausgang bereits an einem Kopfhörer angeschlossen werden.</p>
 
 <p>Wenn eine Mono Lautsprecher verwendet wird, aber Stereo-Audio vorhanden ist, so kann man die Ausgänge vor dem Verstärker über zwei 100 Ohm Widerstände zusammenführen (so wie in der Schaltung zu sehen). Achtung das Zusammenführen ohne Widerstände ergibt einen Kurzschluss!</p>
 
-<p>Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechner mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.</p>
+<p>Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechern mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.</p>
 
 <h3 id="konfiguration">Konfiguration</h3>
 
-<p>Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so umkonfigurieren, dass das Audio-Signal erzeugt wird.
-Dazu muss man lediglich einen Devicetree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.</p>
+<p>Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so um konfigurieren, dass das Audio-Signal erzeugt wird.
+Dazu muss man lediglich einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.</p>
 
 <p><strong>Mono:</strong></p>
 
@@ -553,7 +553,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1581890664"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1583694825"></script>
 
 </body>
 </html>
