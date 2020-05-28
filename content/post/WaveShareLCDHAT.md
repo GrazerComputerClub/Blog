@@ -10,13 +10,13 @@ keywords = ["Retro", "PICO-8", "Waveshare", "Konsole", "LCD"]
 weight = 1
 +++
 
-Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von WaveShare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8. 
+Um nur 14 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8. 
 <!--more-->
 
 ## Grundsätzliches
 
 PICO-8 ist eine erfundene „Fantasy Console“ die auch am Raspberry Pi Zero emuliert werden kann. Die Auflösung beträgt 128x128 Pixel. Es wird mit einem D-PAD, 2 Aktionstasten und einer Menütaste gesteuert. Es gibt eine Oberfächer, "splore" genannt mit der man auf eine Vielzahl von Community Spiele direkt Zugriff hat.  
-Von WaveShare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei [semaf electronics](https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi) für 14 Euro kaufen. Diese Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.  
+Von Waveshare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei [semaf electronics](https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi) für 14 Euro kaufen. Diese Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.  
 Mit etwas Konfigurationsarbeit lässt sich daraus recht einfach eine PICO-8 Spielkonsole bauen. 
  
 ## Was ist zu erwarten?
@@ -114,7 +114,7 @@ Nach dem Download der Raspberry Pi Version, muss das Zip-Archiv auf die Bootpart
 
 ```
 cd /boot
-unzip pico-8_0.1.11g_raspi.zip 
+unzip pico-8_0.1.12c2_raspi.zip 
 ```
 
 Nun muss PICO-8 nach dem Boot automatisch gestartet werden. Dies kann über die "rc.local" Datei erfolgen. Am Ende des Scripts muss die Zeile "exit 0" erhalten bleiben! Der folgenden Block muss also davor eingefügt werden.
@@ -146,7 +146,22 @@ Da das Steuerkreuz ohne Modifikation nicht schmerzfrei verwendet werden kann, ha
 
 ![Steuerkreuz mit M2.5 Mutter](../../img/WaveShareLCDHAT-Joystick.jpg) 
 
-Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thinigverse findet man das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation.
+## Gehäuse
+
+Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thinigverse findet man das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation. Es ist eigentlich für den kleineren 1,3 Zoll LCD HAT (240x240) von Waveshare vorgesehen, aber mit einem Taschenmesser kann der Displayausschnitt leicht vergrößert werden.
+
+![3D-Druckgehäuse](../../img/waveshare_pico8_gaming_device.jpg) 
+
+
+
+## Verlinkungen 
+
+
+[Waveshare 1.44inch LCD HAT product page](https://www.waveshare.com/wiki/1.44inch_LCD_HAT)  
+[Thinigverse 3D-Druck Gehäuse](https://www.thingiverse.com/thing:3328994) 
+  
+
+
 
 <!--
 ## Referenzen
