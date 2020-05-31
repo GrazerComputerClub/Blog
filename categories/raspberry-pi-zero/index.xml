@@ -6,10 +6,21 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 26 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MPEG2 Video Dekodierung</title>
+      <link>https://blog.gc2.at/post/mpeg2/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/mpeg2/</guid>
+      <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
+dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&amp;hellip;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Zero Spannungsversorgung</title>

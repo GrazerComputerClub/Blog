@@ -11,9 +11,10 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "GPIO-Eingang zur Tastaturtaste",
-        "headline" : "GPIO-Eingang zur Tastaturtaste",
-        "description" : "<p>Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+        "name" : "MPEG2 Video Dekodierung",
+        "headline" : "MPEG2 Video Dekodierung",
+        "description" : "<p>Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
+dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&hellip;
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +22,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-10 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-10 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/gpio-tasten/",
-        "wordCount" : "314",
-        "image" : https://blog.gc2.atimg/keys_white_nav.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-05-30 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-05-30 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/mpeg2/",
+        "wordCount" : "652",
+        "image" : https://blog.gc2.atimg/mpeg2.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>GPIO-Eingang zur Tastaturtaste </title>
+ <title>MPEG2 Video Dekodierung </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -243,17 +244,23 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/keys_white_nav.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/mpeg2.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">10 December</span>	<span> / </span>
+          <span class="date">30 May</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          </span>
           
           <span class="category">
             <span> / </span>
@@ -265,207 +272,91 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> GPIO-Eingang zur Tastaturtaste</h1>
+          <h1 class='entry-title'> MPEG2 Video Dekodierung</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
+              <p>Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
+dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&hellip;
 </p>
 
-<h2 id="umsetzung">Umsetzung</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Mithilfe der Device Tree Funktion &lsquo;gpio-key&rsquo; können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm &lsquo;showkey&rsquo; ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.</p>
+<p>MPEG2 wurde 1994 als Videokodierung eingeführt und erlangte große Verbreitung, da sie bei DVD und DVB(S und T) zum Einsatz kommt. Der Raspberry Pi ist beim Dekodieren dieses Videocodecs stark belastet. Daher gab es bereits sehr früh, die Möglichkeit einen MPEG2 Hardwaredekoder bei der Raspberry Pi Foundation zu lizenzieren (MPEG-2 license key)[<a href="http://codecs.raspberrypi.org/mpeg-2-license-key/">http://codecs.raspberrypi.org/mpeg-2-license-key/</a>].<br />
+Ende 2018 sind die Patente in fast allen Ländern der Welt ausgelaufen. Nur noch in Malaysia und den Philippinen sind sie noch aktiv. Damit kann man MPEG2 in Europa de facto patentfrei nutzen. Allerings wurden der Dekoder nicht freigegeben und kann somit immer noch lizenzierte werden. Da die Raspberry Pi weltweit verkauft wird, gibt es keine Freigabe solange es noch irgendwo gültig ist (siehe Raspberry Pi Forum <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=201449">MPEG2 patents expiring</a> ).</p>
 
-<table>
-<thead>
-<tr>
-<th>Taste</th>
-<th align="center">Scancode</th>
-</tr>
-</thead>
+<h2 id="analyse">Analyse</h2>
 
-<tbody>
-<tr>
-<td>Pfeil oben</td>
-<td align="center">103</td>
-</tr>
+<p>Es ist schon ärgerlich für Nutzer, dass der MPEG2 Hardwaredekoder nicht freigegeben wurde. Allerdings ist es fraglich ob er überhaupt noch benötigt wird. Immerhin haben Raspberry Pi 2 bis 3+ ausreichend CPU-Leistung für eine Softwaredekodierung. Bei der Raspberry Pi 4 ist es gar nicht mehr möglich ihn freizuschalten. Hier kommt ja auch eine neue GPU im SoC zu Einsatz.<br />
+Mam muss aber bedenken, dass der Raspberry Pi Zero noch immer verkauft wird. Darin ist der langsame alte ARM11 CPU-Kern aus den Anfangszeiten des Raspberry Pi&rsquo;s verbaut. Nun allerdings mit 1000 MHz und bei Übertaktung sogar 1150 MHz. Kann man nun MPEG2-Videos bzw. DVDs ruckelfrei abspielen? Ein Performance-Test soll Abklärung schaffen.</p>
 
-<tr>
-<td>Pfeil links</td>
-<td align="center">105</td>
-</tr>
+<p>Standardmäßig sind die Hardwaredekoder H264, H263, MPG4, MJPG und PCM aktiv. Zusätzlich lizenziert werden kann WVC1 und MPG2.</p>
 
-<tr>
-<td>Pfeil rechts</td>
-<td align="center">106</td>
-</tr>
+<h2 id="performance-test">Performance-Test</h2>
 
-<tr>
-<td>Pfeil unten</td>
-<td align="center">108</td>
-</tr>
+<h3 id="verbereitung">Verbereitung</h3>
 
-<tr>
-<td>Esc</td>
-<td align="center">1</td>
-</tr>
+<p>Damit man die Videobeschleunigung nutzen kann, muss der Grafikeinheit zumindest 64 MB Speicher zugewiesen werden. Dazu muss die Zeile &ldquo;gpu_mem=64&rdquo; in die Konfigurationsdatei &ldquo;config.txt&rdquo; eingetragen werden.<br />
+Zum Abspielen von Videos mit Hardwarebeschleunigung empfiehlt sich der omxplayer. Ansonsten kann man Videos mit dem mplayer abspielen. Hier kommt dann ein Softwaredekoder zum Einsatz.</p>
 
-<tr>
-<td>Backspace</td>
-<td align="center">14</td>
-</tr>
-
-<tr>
-<td>Enter</td>
-<td align="center">28</td>
-</tr>
-
-<tr>
-<td>Strg links</td>
-<td align="center">29</td>
-</tr>
-
-<tr>
-<td>Space</td>
-<td align="center">57</td>
-</tr>
-
-<tr>
-<td>a</td>
-<td align="center">30</td>
-</tr>
-
-<tr>
-<td>s</td>
-<td align="center">31</td>
-</tr>
-
-<tr>
-<td>d</td>
-<td align="center">32</td>
-</tr>
-
-<tr>
-<td>w</td>
-<td align="center">17</td>
-</tr>
-
-<tr>
-<td>y</td>
-<td align="center">44</td>
-</tr>
-
-<tr>
-<td>x</td>
-<td align="center">45</td>
-</tr>
-
-<tr>
-<td>c</td>
-<td align="center">46</td>
-</tr>
-
-<tr>
-<td>z</td>
-<td align="center">21</td>
-</tr>
-
-<tr>
-<td>p</td>
-<td align="center">28</td>
-</tr>
-</tbody>
-</table>
-
-<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.<br />
-Eine Liste ist auch im Internet bei den <a href="https://github.com/torvalds/linux/blob/v4.12/include/uapi/linux/input-event-codes.h">Kernel-Sourcen</a> verfügbar.
-Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktionen zu finden.</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th align="center">Scancode</th>
-<th align="center">Funktion</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>KEY_POWER</td>
-<td align="center">166</td>
-<td align="center">Shutdown</td>
-</tr>
-
-<tr>
-<td>KEY_RESTART</td>
-<td align="center">408</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td>KEY_RFKILL</td>
-<td align="center">247</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-
-<p>Folgende Device Tree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
-
-<pre><code>dtoverlay=gpio-key,gpio=16,keycode=103,label=&quot;KEY_UP&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=26,keycode=105,label=&quot;KEY_LEFT&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=20,keycode=106,label=&quot;KEY_RIGHT&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
+<pre><code>apt-get install omxplayer mplayer
 </code></pre>
 
-<p>Parameter für gpio-key Overlay:</p>
+<p>Zum Testen wurde ein MPEG2-Video Datei (ohne Ton) und eine DVD verwendet. Zusätzlich wurde noch eine MJPEG-Video aus einer Kamera und zwei H264-Videos dem Test unterzogen.<br />
+Dies wurde mit dem Raspberry Pi Zero (mit aktivem MPEG2 Hardwaredekoder) und der Raspberry Pi 2 ausgeführt.<br />
+Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; verwendet, um so nur die CPU-Last beim Dekodieren zu messen.</p>
+
+<h3 id="ergebnis-cpu-auslastung-bei-video-dekodierung">Ergebnis - CPU Auslastung bei Video Dekodierung</h3>
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Funktion</th>
+<th>Video</th>
+<th align="center">omxplayer (Pi Zero)</th>
+<th align="center">mplayer (Pi Zero)</th>
+<th align="center">mplayer (Pi 2)</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>gpio</td>
-<td>GPIO-Nummer (BCM)</td>
+<td>MPEG2 (720x480)</td>
+<td align="center">6 %</td>
+<td align="center">92 %</td>
+<td align="center">40 %</td>
 </tr>
 
 <tr>
-<td>keycode</td>
-<td>Tastencode</td>
+<td>MJPG (320x240)</td>
+<td align="center">11 %</td>
+<td align="center">27 %</td>
+<td align="center">20 %</td>
 </tr>
 
 <tr>
-<td>label</td>
-<td>Beliebiger Name</td>
+<td>H264 (480x270)</td>
+<td align="center">9 %</td>
+<td align="center">56 %</td>
+<td align="center">22 %</td>
 </tr>
 
 <tr>
-<td>gpio_pull</td>
-<td>Aktivierung Pull-Up/Pull-Down Widerstand; 0 = keiner; 1 = pull-down; 2 = pull-up</td>
-</tr>
-
-<tr>
-<td>active_low</td>
-<td>Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND</td>
+<td>H264 (854x480)</td>
+<td align="center">13 %</td>
+<td align="center">&gt;100 %</td>
+<td align="center">56 %</td>
 </tr>
 </tbody>
 </table>
 
-<p>Auf der Kommandozeile kann die Funktion durch folgenden Befehl getestet werden:</p>
+<p>Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt werden (mplayer). Ist die Hardwarebeschleunigung aktiv geht es sich gut aus, die CPU-Last liegt bei ca. 17% (omxplayer). Die Raspberry Pi 2 kann die DVD ohne Probleme mit Softwaredekodierung abspielen (mplayer). Das ist auch kein Wunder, bei 4 Kernen und ca. 30 Prozent höherer Single-Core Performance. Sogar eine VNC-Verbindung lässt sich daneben auch noch betreiben.<br />
+240p Videos lassen sich auf dem Raspberry Pi Zero durchwegs in Software dekodieren, auch der aufwendige H264 Codec.</p>
 
-<pre><code>sudo dtoverlay gpio-key gpio=19 keycode=28 label=&quot;KEY_ENTER&quot; gpio_pull=2
-</code></pre>
+<h3 id="schlussfolgerung">Schlussfolgerung</h3>
 
-<h2 id="verlinkungen">Verlinkungen</h2>
-
-<p>Weitere Infos bezüglich der Device Tree Funktion ‚gpio-keys‘, erhält man unter <a href="https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt">https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt</a></p>
+<p>Spielt man auf einem Raspberry Pi Zero DVDs abgespielt, so zahlt sich der MPEG2-Dekoder definitiv aus. Spielt man nur Videos ab, so kann es sich ohne ausgehen. Dann darf aber sonst nichts am System parallel laufen. Man muss also schon sagen, dass es sehr schade ist, dass der Dekoder nicht freigegeben wurde. In Europa ist der Kauf einer MPEG2 Lizenz eigentlich überholt. Interessanterweise gibt es inzwischen einen Hack bei dem die Datei &ldquo;start.elf&rdquo; modifiziert wird. Danach sind allerdings alle Hardwaredekoder freigeschaltet.<br />
+<strong>Wer einen neueren Raspberry Pi ab 2 hat, braucht sich um MPEG2-Kodierung keine Gedanken zu machen!</strong></p>
             </article>
           </div>
           
@@ -473,9 +364,10 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
+    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>
