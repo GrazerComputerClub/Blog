@@ -12,17 +12,15 @@ weight = 1
 
 
 Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf 
-dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden...
+dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden...
 <!--more-->
 
 ## Grundsätzliches
 
-MPEG2 wurde 1994 als Videokodierung eingeführt und erlangte große Verbreitung, da sie bei DVD und DVB(S und T) zum Einsatz kommt. Der Raspberry Pi ist beim Dekodieren dieses Videocodecs stark belastet. Daher gab es bereits sehr früh, die Möglichkeit einen MPEG2 Hardwaredekoder bei der Raspberry Pi Foundation zu lizenzieren (MPEG-2 license key)[http://codecs.raspberrypi.org/mpeg-2-license-key/].  
+MPEG2 wurde 1994 als Videokodierung eingeführt und erlangte große Verbreitung, da sie bei DVD und DVB(S und T) zum Einsatz kommt. Der Raspberry Pi ist beim Dekodieren dieses Videocodecs stark belastet. Daher gab es bereits sehr früh, die Möglichkeit einen MPEG2 Hardwaredekoder bei der Raspberry Pi Foundation zu lizenzieren [MPEG-2 license key](http://codecs.raspberrypi.org/mpeg-2-license-key/).  
 Ende 2018 sind die Patente in fast allen Ländern der Welt ausgelaufen. Nur noch in Malaysia und den Philippinen sind sie noch aktiv. Damit kann man MPEG2 in Europa de facto patentfrei nutzen. Allerings wurden der Dekoder nicht freigegeben und kann somit immer noch lizenzierte werden. Da die Raspberry Pi weltweit verkauft wird, gibt es keine Freigabe solange es noch irgendwo gültig ist (siehe Raspberry Pi Forum [MPEG2 patents expiring](https://www.raspberrypi.org/forums/viewtopic.php?t=201449) ).  
 
-## Analyse
-
-Es ist schon ärgerlich für Nutzer, dass der MPEG2 Hardwaredekoder nicht freigegeben wurde. Allerdings ist es fraglich ob er überhaupt noch benötigt wird. Immerhin haben Raspberry Pi 2 bis 3+ ausreichend CPU-Leistung für eine Softwaredekodierung. Bei der Raspberry Pi 4 ist es gar nicht mehr möglich ihn freizuschalten. Hier kommt ja auch eine neue GPU im SoC zu Einsatz.  
+Es ist schon ärgerlich für Nutzer, dass der MPEG2 Hardwaredekoder nicht freigegeben wurde. Allerdings ist es fraglich ob er überhaupt noch benötigt wird. Immerhin haben die Raspberry Pi 2 bis 3+ ausreichend CPU-Leistung für eine Softwaredekodierung. Bei der Raspberry Pi 4 ist es gar nicht mehr möglich ihn freizuschalten. Hier kommt ja auch eine neue GPU im SoC zu Einsatz.  
 Mam muss aber bedenken, dass der Raspberry Pi Zero noch immer verkauft wird. Darin ist der langsame alte ARM11 CPU-Kern aus den Anfangszeiten des Raspberry Pi's verbaut. Nun allerdings mit 1000 MHz und bei Übertaktung sogar 1150 MHz. Kann man nun MPEG2-Videos bzw. DVDs ruckelfrei abspielen? Ein Performance-Test soll Abklärung schaffen.   
 
 Standardmäßig sind die Hardwaredekoder H264, H263, MPG4, MJPG und PCM aktiv. Zusätzlich lizenziert werden kann WVC1 und MPG2. 
@@ -60,7 +58,7 @@ Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt
 
 ### Schlussfolgerung
 
-Spielt man auf einem Raspberry Pi Zero DVDs abgespielt, so zahlt sich der MPEG2-Dekoder definitiv aus. Spielt man nur Videos ab, so kann es sich ohne ausgehen. Dann darf aber sonst nichts am System parallel laufen. Man muss also schon sagen, dass es sehr schade ist, dass der Dekoder nicht freigegeben wurde. In Europa ist der Kauf einer MPEG2 Lizenz eigentlich überholt. Interessanterweise gibt es inzwischen einen Hack bei dem die Datei "start.elf" modifiziert wird. Danach sind allerdings alle Hardwaredekoder freigeschaltet.  
+Spielt man auf einem Raspberry Pi Zero DVDs ab, so zahlt sich der MPEG2-Dekoder definitiv aus. Spielt man nur Videos ab, so kann es sich ohne ausgehen. Dann darf aber sonst nichts am System parallel laufen. Man muss also schon sagen, dass es sehr schade ist, dass der Dekoder nicht freigegeben wurde. In Europa ist der Kauf einer MPEG2 Lizenz eigentlich überholt. Interessanterweise gibt es inzwischen einen Hack bei dem die Datei "start.elf" modifiziert wird. Danach sind allerdings alle Hardwaredekoder freigeschaltet.  
 **Wer einen neueren Raspberry Pi ab 2 hat, braucht sich um MPEG2-Kodierung keine Gedanken zu machen!** 
 
 
