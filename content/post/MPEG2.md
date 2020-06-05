@@ -46,6 +46,7 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter "-vo null" verwendet, um
 
 |Video            | omxplayer (Pi Zero) | mplayer (Pi Zero) | mplayer (Pi 2) |
 |-----------------|:-------------------:|:-----------------:|:--------------:|
+| DVD             | 17 %                | >100 %            | 60 %           |
 | MPEG2 (720x480) |  6 %                | 92 %              | 40 %           |
 | MJPG (320x240)  | 11 %                | 27 %              | 20 %           |
 | H264 (480x270)  |  9 %                | 56 %              | 22 %           |
