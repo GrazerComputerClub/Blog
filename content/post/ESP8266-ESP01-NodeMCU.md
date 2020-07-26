@@ -15,8 +15,9 @@ Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man
 
 ## Beschreibung ##
 
-NodeMCU ist eine eigene Firmware die es möglich macht, den ESP8266 mit Lua programmieren zu können. Dabei werden keine Binärprogramme erzeugt sondern der Source-Code wird direkt auf das System übertragen. Der Lua Code ist dann permanent gespeichert und wird direkt vom Mikrocontroller ausgeführt.  
-Nicht verwechseln sollte man die Firmware mit dem NodeMCU Hardware Board. Es ist eine ESP8266 Platine mit USB Schnittstelle für Kommunikation und Stromversorgung. Hier wird das kleinste ESP-01(S) Board verwendet auf dem die NodeMCU Firmware problemlos installiert und verwendet werden kann. 
+NodeMCU ist eine eigene Firmware die es möglich macht, den ESP8266 mit Lua programmieren zu können. Dabei werden keine Binärprogramme erzeugt, sondern der Source-Code wird direkt auf das System übertragen. Der Lua Code ist dann permanent gespeichert und wird direkt vom Mikrocontroller ausgeführt.  
+Nicht verwechseln sollte man die Firmware mit dem NodeMCU Hardware Board. Es ist eine ESP8266 Platine mit USB Schnittstelle für Kommunikation und Stromversorgung sowie einem Reset-Taster.  
+Hier wird dagegen das kleinste ESP-01(S) Board verwendet, auf dem die NodeMCU Firmware problemlos installiert und verwendet werden kann. 
 
 ![ESP8266 ESP-01](../../img/ESP8266_ESP-01b.png) 
  
@@ -29,19 +30,15 @@ Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.
 ![ESP8266 ESP-01](../../img/ESP8266_ESP-01b_Pi.png) 
 
 Um später ein Firmware Update ausführen zu können, muss der GPIO0 Eingang des ESP auf GND gesetzt werden. 
-#Zuerst muss der Pin allerdings offen gelassen werden.
-
-
 
 ## Firmware Update
 
 
 ### esptool
 
-Zuerst muss man das Python 3 Programm "esptool" installieren. Später benötigen wir auch noch das Programm "nodemcu-uploader" um Programmcode übertragen zu können.  
+Zuerst muss man das Python 3 Programm "esptool" installieren. Später benötigen wir auch noch das Programm "nodemcu-uploader" um Programmcode übertragen zu können.
 
 ```
-cd ~
 sudo apt-get install python3 python3-pip
 sudo pip3 install esptool nodemcu-uploader -t /usr/local/lib/python3.7/dist-packages
 alias esptool.py='python3 /usr/local/lib/python3.7/dist-packages/esptool.py'
@@ -94,7 +91,7 @@ Detected flash size: 1MB
 Hard resetting via RTS pin...
 ```
 
-Da nach dem Befehl ein Reset geschieht muss man möglicherweise nochmal in den Programmieremodus wechseln.   
+Da nach dem Befehl ein Reset geschieht, muss man möglicherweise nochmal in den Programmieremodus wechseln.   
 *Verwendet man den GC2-xHAT, so kann der Programmiermodus nochmal mit dem Befehl "espflashingon" aktiviert werden.*  
 
 Dann kann die Firmware übertragen werden. Die Firmware-Datei wird als letzter Parameter übergeben und muss zuvor entsprechend angepasst werden. 
@@ -107,12 +104,11 @@ sudo esptool.py -p /dev/ttyAMA0 write_flash 0x00000 nodemcu-master-13-modules-20
 
 Nun muss beim GPIO0 die GND Verbindung entfernt werden. Danach muss der ESP-01(S) aus- und angesteckt oder ein Reset ausgelöst werden. Der Reset kann wieder durch kurzzeitige setzen des RST-Anschlusses auf GND erfolgen.  
 *Verwendet man den GC2-xHAT, so kann der Programmiermodus mit dem Befehl "espflashingoff" deaktiviert werden.*  
-Dann ist der Programmiermodus inaktiv und die Lua-Konsole kann getestet werden.
+Dann ist der Programmiermodus inaktiv und die Lua-Konsole sollte gestartet sein.
 
 ```
 sudo screen /dev/ttyAMA0 115200
 ```
-
 
 Nach einem Reset (*GC2-xHAT: espreset*) oder Neustart wird die NodeMCU Softwareversion ausgegeben. Zusätzlich werden auch noch die verfügbaren Module und weitere Informationen ausgegeben. 
 
@@ -130,27 +126,27 @@ NodeMCU 3.0.0.0 built on nodemcu-build.com provided by frightanic.com
 cannot open init.lua:
 ```
 
-
-Die GPIOs werden mit einer anderen I/O-Index-Nummer angesprochen als ihre Bezeichnung. Dabei gilt für GPIO0 Index 3 und GPIO2 Index 4. Eine komplette Liste ist auf der Seite [NodeMCU Pinout](https://iotbytes.wordpress.com/nodemcu-pinout/) verfügbar.  
-Mit folgenden Befehlen kann man den Ausgang GPIO0 testweise setzen. 
+Die GPIOs werden mit einer anderen I/O-Index-Nummer angesprochen als ihre Bezeichnung. Dabei gilt für GPIO0 Index 3 und GPIO2 Index 4. Eine komplette Liste ist auf der Seite [NodeMCU Pinout](https://nodemcu.readthedocs.io/en/master/modules/gpio/) verfügbar.  
+Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S leuchtet die blaue LED wenn der Ausgang auf LOW steht. 
 
 ```
-out=3
+out=4
 gpio.write(out, gpio.LOW)
 gpio.write(out, gpio.HIGH)
 ```
 
-*Verwendet man den GC2-xHAT, so kann man den Zusand des ESP GPIO0 auf dem Raspberry Pi GPIO26 (Eingang) sehen. Mit dem aufruf "watch -n 0.2 gpio readall" kann man den Status in einem eigenen Terminal überwachen*  
+*Verwendet man den GC2-xHAT, so kann man den Zusand des ESP GPIO0 (Index 3) auf dem Raspberry Pi GPIO12 (Eingang) sehen. Mit dem aufruf "watch -n 0.2 gpio readall" kann man den Status in einem eigenen Terminal überwachen*  
 
-Ein ganzen Programm kann auch ausgeführt werden. Dazu erzeugt man die Datei init.lua mit einem Beispielcode für ein Blinklicht auf GPIO0. 
-Achtung, bei zyklischen Ausgaben mit printf, sie verhindern das eine neue Datei übertragen wird. Im Notfall müsste man dann die NodeMCU Firmware nochmal neu einspielen. 
+Ein ganzes Programm kann allerings auch ausgeführt werden. Dazu erzeugt man die Datei init.lua mit einem Beispielcode für eine Toggle-Funktion auf GPIO0. 
+Achtung, bei zyklischen Ausgaben mit printf, sie verhindern, dass eine neue Datei übertragen wird. Im Notfall müsste man dann die NodeMCU Firmware nochmal neu einspielen. Im Beispiel wird deshalb darauf verzichtet.
 
 
 ```
-out = 3
-print("Program: toogle GPIO0")
+out = 4 
+print("toogle GPIO2")
+gpio.mode(out, gpio.OUTPUT)
 local initTimer = tmr.create()
-initTimer:register(2000, tmr.ALARM_AUTO, function()
+initTimer:register(2000, tmr.ALARM_AUTO, function() 
  gpio.write(out, gpio.LOW)
  tmr.delay(1000000)
  gpio.write(out, gpio.HIGH)
@@ -183,10 +179,11 @@ Transferring init.lua as init.lua
 All done!
 ```
 
-Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt.
+Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt. Bei älteren ESP01-01 ohne S muss am GPIO2 eine LED angeschlossen werden, damit man den Zustand des Ausgangs sehen kann. 
 
-Verwendet man den GC2-xHAT kann man den GPIO0 des ESP nicht direkt sehen, er ist lediglich mit GPIO12 vom Raspberry Pi verbunden.
-Mit folgenden Python Programm kann man den Status des GPIO auf die grüne LED übertragen.
+
+*GC2-xHAT*:  
+Verwendet man den GC2-xHAT mit dem ESP01 ohne S, kann man auch den ESP GPIO0 (Index 3) verwenden. Man kann den Zustand des Ausgangs nicht direkt sehen, er ist aber mit GPIO12 vom Raspberry Pi verbunden. Mit folgenden Python Programm kann man den Status des ESP GPIO0 auf die grüne LED übertragen.
  
 ```
 from gpiozero import Button, LED
@@ -214,7 +211,7 @@ pause()
 
 ## Verlinkungen
 
-[NodeMCU GPIO Zuordnung](https://iotbytes.wordpress.com/nodemcu-pinout/)
+[NodeMCU GPIO Zuordnung](https://nodemcu.readthedocs.io/en/master/modules/gpio/)
 
 [NodeMCU Cloud Build](https://nodemcu-build.com/)
 
