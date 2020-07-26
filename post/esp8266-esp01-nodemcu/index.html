@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;",
-        "headline" : "Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;",
-        "description" : "<p>Hier bekommt man die gratis CC-Version meines Buches &ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&rdquo;.
+        "name" : "ESP8266 ESP-01(S) NodeMCU Firmware",
+        "headline" : "ESP8266 ESP-01(S) NodeMCU Firmware",
+        "description" : "<p>Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der NodeMCU Firmware ausstatten. Dann kann der Mikrocontroller mit Lua programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +21,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-06 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-06 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/fruit-pi-e-book/",
-        "wordCount" : "297",
-        "image" : https://blog.gc2.atimg/Fruit_Pi.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-07-25 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-07-25 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/esp8266-esp01-nodemcu/",
+        "wordCount" : "1117",
+        "image" : https://blog.gc2.atimg/ESP8266_ESP-01S.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39; </title>
+ <title>ESP8266 ESP-01(S) NodeMCU Firmware </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -243,17 +243,23 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Fruit_Pi.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/ESP8266_ESP-01S.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">06 December</span>	<span> / </span>
+          <span class="date">25 July</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/uc">uC</a>
+          </span>
           
           <span class="category">
             <span> / </span>
@@ -265,35 +271,196 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;</h1>
+          <h1 class='entry-title'> ESP8266 ESP-01(S) NodeMCU Firmware</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Hier bekommt man die gratis CC-Version meines Buches &ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&rdquo;.
+              <p>Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der NodeMCU Firmware ausstatten. Dann kann der Mikrocontroller mit Lua programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.
 </p>
 
-<h2 id="gratis-e-book">Gratis E-Book</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 
-<p><a href="http://strohmayers.com/Buch/Fruit%20Pi%20(CC).pdf">Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi</a>
-<a href="http://strohmayers.com/Buch/Fruit%20Pi%20(CC).pdf"><img src="../../img/Fruit_Pi_EBook.jpg" alt="Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi" /></a></p>
+<p>NodeMCU ist eine eigene Firmware die es möglich macht, den ESP8266 mit Lua programmieren zu können. Dabei werden keine Binärprogramme erzeugt, sondern der Source-Code wird direkt auf das System übertragen. Der Lua Code ist dann permanent gespeichert und wird direkt vom Mikrocontroller ausgeführt.<br />
+Nicht verwechseln sollte man die Firmware mit dem NodeMCU Hardware Board. Es ist eine ESP8266 Platine mit USB Schnittstelle für Kommunikation und Stromversorgung sowie einem Reset-Taster.<br />
+Hier wird dagegen das kleinste ESP-01(S) Board verwendet, auf dem die NodeMCU Firmware problemlos installiert und verwendet werden kann.</p>
 
-<h2 id="inhaltsangabe">Inhaltsangabe</h2>
+<p><img src="../../img/ESP8266_ESP-01b.png" alt="ESP8266 ESP-01" /></p>
 
-<p>In letzter Zeit erlebt der Markt für Einplatinencomputer einen regelrechten Boom. Es gibt unzählige Konkurrenzprodukte zum etablierten Raspberry Pi der Raspberry Pi Foundation. Die Firma LeMaker mit dem Banana Pi ist einer der Konkurrenten, der bereits früh versucht hat mit eigenen Produkten zu punkten. Neuer am Markt ist der Orange Pi von Shenzhen Xunlong. Es gibt ihn in den unterschiedlichsten Ausstattungen und Preisen.</p>
+<h2 id="anschluss">Anschluss</h2>
 
-<p>Die drei Produkte Raspberry Pi, Banana Pi und Orange Pi werden im Buch intensiv beleuchtet und verglichen. Die Eckdaten, Bezugsquellen, Installation, GPIO‘s und die Performance stehen dabei im Mittelpunkt. Bei der Performance wird nicht nur Wert auf die CPU- bzw. Core-Leistung gelegt, sondern auch auf die Transfergeschwindigkeiten der Schnittstellen und die GPIO-Geschwindigkeiten mit der WiringPi C-Bibliothek.</p>
+<p>Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden.
+Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.</p>
 
-<p>Mittlerweile ist das Buch schon etwas veraltet, da es sich noch auf Debian 8 Jessie bezieht und damals für die Orange Pi keine stabiler Mainline Kernel zur Verfügung stand. Inzwischen gibt es für den Banana Pi und Orange Pi <a href="https://www.armbian.com/download/">Armbian</a> Linux Versionen mit Debian Stretch und aktuellen Mainline Kernel 4.</p>
+<p><img src="../../img/ESP8266_ESP-01b_Pi.png" alt="ESP8266 ESP-01" /></p>
 
-<h2 id="lizenz">Lizenz</h2>
+<p>Um später ein Firmware Update ausführen zu können, muss der GPIO0 Eingang des ESP auf GND gesetzt werden.</p>
 
-<p>Dieses Werk steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/at/">Creative Commons BY-NC-ND 3.0</a>. Sie erlaubt ausdrücklich, das Werk zu vervielfältigen, zu verbreiten und öffentlich zugänglich machen. Es muss der Urheber genannt werden, die Weitergabe darf nicht kommerziell erfolgen.
-Es ist nicht erlaubt diese Werk zu verändern und darauf aufbauen zu erweitern.<br />
-Dieses Werk ist eine reduzierte kostenfreie Version des kommerziell erhältlichen E-Books. Es kann über
-<a href="https://www.amazon.de/dp/B01LY28XVD/">Amazon</a> und <a href="https://play.google.com/store/books/details?id=kVEyDQAAQBAJ">Google</a> bezogen werden.
-Wenn Sie die Arbeit des Autors unterstützen wollen, oder die originale Version (qualitative bessere
-Bilder, in Farbe und Diagramme) besitzen wollen, so erwerben Sie das E-Book, Danke!</p>
+<h2 id="firmware-update">Firmware Update</h2>
+
+<h3 id="esptool">esptool</h3>
+
+<p>Zuerst muss man das Python 3 Programm &ldquo;esptool&rdquo; installieren. Später benötigen wir auch noch das Programm &ldquo;nodemcu-uploader&rdquo; um Programmcode übertragen zu können.</p>
+
+<pre><code>sudo apt-get install python3 python3-pip
+sudo pip3 install esptool nodemcu-uploader -t /usr/local/lib/python3.7/dist-packages
+alias esptool.py='python3 /usr/local/lib/python3.7/dist-packages/esptool.py'
+alias nodemcu-uploader.py='python3 /usr/local/lib/python3.7/dist-packages/nodemcu-uploader.py'
+
+alias sudo='sudo '
+sudo esptool.py version
+</code></pre>
+
+<pre><code>esptool.py v2.8
+2.8
+</code></pre>
+
+<h3 id="nodemcu-firmware">NodeMCU Firmware</h3>
+
+<p>Nun wird die NodeMCU Firmware benötigt. Sie kann auf der Internetseite <a href="https://nodemcu-build.com/">NodeMCU Cloud Build</a> an die Bedürfnisse angepasst und erstellt werden.<br />
+Zuerst muss man seine E-Mail Adresse angeben. Dorthin wird später der Download-Link für die binäre Firmwaredatei geschickt.
+Bei &lsquo;Select branch to build from&rsquo; wählt man die Version (Sourcecode) aus. Mit &lsquo;master&rsquo; ist man hier auf dem neuesten Stand.<br />
+Dann wählt man die Module aus die benötigt werden. Je mehr man auswählt, desto größer wird die Firmware. Ein paar sind bereits vorausgewählt, je nach Anforderung könnte man z. B. Buse (I2C, SPI) , Sensoren (DHT, BME) oder sonsiges hinzufügen. &ldquo;Miscellaneous options&rdquo;  werden nicht benötigt und brauchen nicht aktiviert werden.<br />
+Nachdem man die Schaltfläche &ldquo;Start your build&rdquo; gedrückt hat, wird die Firmware erzeugt und per Mail ein Download-Link verschickt. Das kann ein paar Minuten dauern. Dann stehen zwei Versionen zur Verfügung, integer und float. integer kann nur ganzzahlige Berechnung und float kann mit Flieskommazahlen umgehen. Die integer Version is zu bevorzugen weil sie wesentlich schneller ist, Flieskommazahlen machen nur bei speziellen Anforderungen Sinn.</p>
+
+<h3 id="update-durchführen">Update durchführen</h3>
+
+<p>Nun muss GPIO0 auf GND gesetzt werden um den Programmiermodus zu setzen. Danach muss der ESP-01 aus- und angesteckt oder ein Reset ausgelöst werden. Ein Reset kann erreicht werden, indem man kurzzeitig den RST-Anschluss auf GND setzt.<br />
+<em>Verwendet man den GC2-xHAT, so kann der Programmiermodus mit den Befehlen &ldquo;esppoweron&rdquo; und &ldquo;espflashingon&rdquo; aktiviert werden.</em><br />
+Dann ist der Programmiermodus aktiv und folgende Befehle können ausgeführt werden.</p>
+
+<pre><code>sudo esptool.py -p /dev/ttyAMA0 flash_id 
+</code></pre>
+
+<pre><code>esptool.py v2.8
+Serial port /dev/ttyAMA0
+Connecting....
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: 60:01:94:18:90:e6
+Uploading stub...
+Running stub...
+Stub running...
+Manufacturer: ef
+Device: 4014
+Detected flash size: 1MB
+Hard resetting via RTS pin...
+</code></pre>
+
+<p>Da nach dem Befehl ein Reset geschieht, muss man möglicherweise nochmal in den Programmieremodus wechseln.<br />
+<em>Verwendet man den GC2-xHAT, so kann der Programmiermodus nochmal mit dem Befehl &ldquo;espflashingon&rdquo; aktiviert werden.</em></p>
+
+<p>Dann kann die Firmware übertragen werden. Die Firmware-Datei wird als letzter Parameter übergeben und muss zuvor entsprechend angepasst werden.</p>
+
+<pre><code>sudo esptool.py -p /dev/ttyAMA0 erase_flash
+sudo esptool.py -p /dev/ttyAMA0 write_flash 0x00000 nodemcu-master-13-modules-2020-07-22-10-30-13-integer.bin
+</code></pre>
+
+<h2 id="lua-testprogramm">Lua Testprogramm</h2>
+
+<p>Nun muss beim GPIO0 die GND Verbindung entfernt werden. Danach muss der ESP-01(S) aus- und angesteckt oder ein Reset ausgelöst werden. Der Reset kann wieder durch kurzzeitige setzen des RST-Anschlusses auf GND erfolgen.<br />
+<em>Verwendet man den GC2-xHAT, so kann der Programmiermodus mit dem Befehl &ldquo;espflashingoff&rdquo; deaktiviert werden.</em><br />
+Dann ist der Programmiermodus inaktiv und die Lua-Konsole sollte gestartet sein.</p>
+
+<pre><code>sudo screen /dev/ttyAMA0 115200
+</code></pre>
+
+<p>Nach einem Reset (<em>GC2-xHAT: espreset</em>) oder Neustart wird die NodeMCU Softwareversion ausgegeben. Zusätzlich werden auch noch die verfügbaren Module und weitere Informationen ausgegeben.</p>
+
+<pre><code>NodeMCU 3.0.0.0 built on nodemcu-build.com provided by frightanic.com
+        branch: master
+        commit: 8d091c476edf6ae2977a5f2a74bf5824d07d6183
+        release: 3.0-master_20200610
+        release DTS: 202006092026
+        SSL: false
+        build type: integer
+        LFS: 0x0 bytes total capacity
+        modules: dht,file,gpio,i2c,net,node,pwm,tmr,uart,wifi,ws2801,ws2812,ws2812_effects
+ build 2020-07-22 10:30 powered by Lua 5.1.4 on SDK 3.0.1-dev(fce080e)
+cannot open init.lua:
+</code></pre>
+
+<p>Die GPIOs werden mit einer anderen I/O-Index-Nummer angesprochen als ihre Bezeichnung. Dabei gilt für GPIO0 Index 3 und GPIO2 Index 4. Eine komplette Liste ist auf der Seite <a href="https://nodemcu.readthedocs.io/en/master/modules/gpio/">NodeMCU Pinout</a> verfügbar.<br />
+Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S leuchtet die blaue LED wenn der Ausgang auf LOW steht.</p>
+
+<pre><code>out=4
+gpio.write(out, gpio.LOW)
+gpio.write(out, gpio.HIGH)
+</code></pre>
+
+<p><em>Verwendet man den GC2-xHAT, so kann man den Zusand des ESP GPIO0 (Index 3) auf dem Raspberry Pi GPIO12 (Eingang) sehen. Mit dem aufruf &ldquo;watch -n 0.2 gpio readall&rdquo; kann man den Status in einem eigenen Terminal überwachen</em></p>
+
+<p>Ein ganzes Programm kann allerings auch ausgeführt werden. Dazu erzeugt man die Datei init.lua mit einem Beispielcode für eine Toggle-Funktion auf GPIO2.
+Achtung, bei zyklischen Ausgaben mit printf, sie verhindern, dass eine neue Datei übertragen wird. Im Notfall müsste man dann die NodeMCU Firmware nochmal neu einspielen. Im Beispiel wird deshalb darauf verzichtet.</p>
+
+<pre><code>out = 4 
+print(&quot;toogle GPIO2&quot;)
+gpio.mode(out, gpio.OUTPUT)
+local initTimer = tmr.create()
+initTimer:register(2000, tmr.ALARM_AUTO, function() 
+ gpio.write(out, gpio.LOW)
+ tmr.delay(1000000)
+ gpio.write(out, gpio.HIGH)
+ end
+)
+initTimer:start()
+</code></pre>
+
+<p>Am System läft lua 5.1, deshlab insallieren wir auch lokal die Version. Mit dem Python Programm &ldquo;nodemcu-uploader&rdquo; können Source-Dateien auf das ESP-System übertragen werden. Installieren werden die Programme mit folgenden Aufruf.</p>
+
+<pre><code>sudo apt-get install lua5.1
+sudo pip2 install nodemcu-uploader
+</code></pre>
+
+<p>Zuerst kann der Sytax des Codes überprft werden. Dazu startet man den lua Kompiler mit der lua-Datei. Eventuelle Fehler können nun vor der Übertragung korrigiert werden.</p>
+
+<pre><code>luac init.lua
+</code></pre>
+
+<p>Zum Übertragen der Datei muss dann lediglich der Port und die Datei angegeben werden. Achtung, es darf keine Verbindung auf der seriellen Schnitstelle offen sein. Eventuell kann der Aufruf &ldquo;sudo killall screen&rdquo; hierfür sorgen.</p>
+
+<pre><code>sudo nodemcu-uploader --port /dev/ttyAMA0 upload init.lua
+</code></pre>
+
+<pre><code>opening port /dev/ttyAMA0 with 115200 baud
+Preparing esp for transfer.
+Transferring init.lua as init.lua
+All done!
+</code></pre>
+
+<p>Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt. Bei älteren ESP01-01 ohne S muss am GPIO2 eine LED angeschlossen werden, damit man den Zustand des Ausgangs sehen kann.</p>
+
+<p><em>GC2-xHAT</em>:<br />
+Verwendet man den GC2-xHAT mit dem ESP01 ohne S, kann man auch den ESP GPIO0 (Index 3) verwenden. Man kann den Zustand des Ausgangs nicht direkt sehen, er ist aber mit GPIO12 vom Raspberry Pi verbunden. Mit folgenden Python Programm kann man den Status des ESP GPIO0 auf die grüne LED übertragen.</p>
+
+<pre><code>from gpiozero import Button, LED
+from signal import pause
+
+led = LED(21)
+
+def InputHigh():
+    print(&quot; high&quot;)
+    led.on()
+
+def InputLow():
+    print(&quot; low&quot;)
+    led.off()
+
+print(&quot;GPIO mapping 12 to 21&quot;)
+Input = Button(12,pull_up=False)
+Input.when_pressed = InputHigh
+Input.when_released = InputLow
+
+pause()
+</code></pre>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p><a href="https://nodemcu.readthedocs.io/en/master/modules/gpio/">NodeMCU GPIO Zuordnung</a></p>
+
+<p><a href="https://nodemcu-build.com/">NodeMCU Cloud Build</a></p>
             </article>
           </div>
           
@@ -301,9 +468,10 @@ Bilder, in Farbe und Diagramme) besitzen wollen, so erwerben Sie das E-Book, Dan
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
+    <a href="/categories/uc" title="View all posts in uC">uC</a>
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
   </p>
 </div>

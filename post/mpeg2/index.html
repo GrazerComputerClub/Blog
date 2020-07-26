@@ -14,7 +14,7 @@
         "name" : "MPEG2 Video Dekodierung",
         "headline" : "MPEG2 Video Dekodierung",
         "description" : "<p>Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
-dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&hellip;
+dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&hellip;
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -26,7 +26,7 @@ dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer n
         "datePublished": "2020-05-30 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-05-30 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/mpeg2/",
-        "wordCount" : "652",
+        "wordCount" : "739",
         "image" : https://blog.gc2.atimg/mpeg2.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@ dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer n
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1590930825" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1595792193" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1590930825" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1595792193" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -278,17 +278,15 @@ if (!doNotTrack) {
           <div class="entry-content">
             <article>
               <p>Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
-dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&hellip;
+dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&hellip;
 </p>
 
 <h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>MPEG2 wurde 1994 als Videokodierung eingeführt und erlangte große Verbreitung, da sie bei DVD und DVB(S und T) zum Einsatz kommt. Der Raspberry Pi ist beim Dekodieren dieses Videocodecs stark belastet. Daher gab es bereits sehr früh, die Möglichkeit einen MPEG2 Hardwaredekoder bei der Raspberry Pi Foundation zu lizenzieren (MPEG-2 license key)[<a href="http://codecs.raspberrypi.org/mpeg-2-license-key/">http://codecs.raspberrypi.org/mpeg-2-license-key/</a>].<br />
+<p>MPEG2 wurde 1994 als Videokodierung eingeführt und erlangte große Verbreitung, da sie bei DVD und DVB(S und T) zum Einsatz kommt. Der Raspberry Pi ist beim Dekodieren dieses Videocodecs stark belastet. Daher gab es bereits sehr früh, die Möglichkeit einen MPEG2 Hardwaredekoder bei der Raspberry Pi Foundation zu lizenzieren <a href="http://codecs.raspberrypi.org/mpeg-2-license-key/">MPEG-2 license key</a>.<br />
 Ende 2018 sind die Patente in fast allen Ländern der Welt ausgelaufen. Nur noch in Malaysia und den Philippinen sind sie noch aktiv. Damit kann man MPEG2 in Europa de facto patentfrei nutzen. Allerings wurden der Dekoder nicht freigegeben und kann somit immer noch lizenzierte werden. Da die Raspberry Pi weltweit verkauft wird, gibt es keine Freigabe solange es noch irgendwo gültig ist (siehe Raspberry Pi Forum <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=201449">MPEG2 patents expiring</a> ).</p>
 
-<h2 id="analyse">Analyse</h2>
-
-<p>Es ist schon ärgerlich für Nutzer, dass der MPEG2 Hardwaredekoder nicht freigegeben wurde. Allerdings ist es fraglich ob er überhaupt noch benötigt wird. Immerhin haben Raspberry Pi 2 bis 3+ ausreichend CPU-Leistung für eine Softwaredekodierung. Bei der Raspberry Pi 4 ist es gar nicht mehr möglich ihn freizuschalten. Hier kommt ja auch eine neue GPU im SoC zu Einsatz.<br />
+<p>Es ist schon ärgerlich für Nutzer, dass der MPEG2 Hardwaredekoder nicht freigegeben wurde. Allerdings ist es fraglich ob er überhaupt noch benötigt wird. Immerhin haben die Raspberry Pi 2 bis 3+ ausreichend CPU-Leistung für eine Softwaredekodierung. Bei der Raspberry Pi 4 ist es gar nicht mehr möglich ihn freizuschalten. Hier kommt ja auch eine neue GPU im SoC zu Einsatz.<br />
 Mam muss aber bedenken, dass der Raspberry Pi Zero noch immer verkauft wird. Darin ist der langsame alte ARM11 CPU-Kern aus den Anfangszeiten des Raspberry Pi&rsquo;s verbaut. Nun allerdings mit 1000 MHz und bei Übertaktung sogar 1150 MHz. Kann man nun MPEG2-Videos bzw. DVDs ruckelfrei abspielen? Ein Performance-Test soll Abklärung schaffen.</p>
 
 <p>Standardmäßig sind die Hardwaredekoder H264, H263, MPG4, MJPG und PCM aktiv. Zusätzlich lizenziert werden kann WVC1 und MPG2.</p>
@@ -309,6 +307,15 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 
 <h3 id="ergebnis-cpu-auslastung-bei-video-dekodierung">Ergebnis - CPU Auslastung bei Video Dekodierung</h3>
 
+<p>mplayer ohne ausgabe- ohne übertaktung
+|Video            | omxplayer (Pi Zero) | mplayer (Pi Zero) | mplayer (Pi 2) |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-:|:&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;:|:&mdash;&mdash;&mdash;&mdash;&ndash;:|
+| DVD             | 17 %                | 76 %              |                |
+| MPEG2 (720x480) |  6 %                | 82 %              | 40 %           |
+| MJPG (320x240)  | 11 %                | 27 %              | 20 %           |
+| H264 (480x270)  |  9 %                | 56 %              | 22 %           |
+| H264 (854x480)  |  9 %                | &gt;100 %            | 56 %           |</p>
+
 <table>
 <thead>
 <tr>
@@ -320,6 +327,13 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 </thead>
 
 <tbody>
+<tr>
+<td>DVD</td>
+<td align="center">17 %</td>
+<td align="center">&gt;100 %</td>
+<td align="center">60 %</td>
+</tr>
+
 <tr>
 <td>MPEG2 (720x480)</td>
 <td align="center">6 %</td>
@@ -355,7 +369,7 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 
 <h3 id="schlussfolgerung">Schlussfolgerung</h3>
 
-<p>Spielt man auf einem Raspberry Pi Zero DVDs abgespielt, so zahlt sich der MPEG2-Dekoder definitiv aus. Spielt man nur Videos ab, so kann es sich ohne ausgehen. Dann darf aber sonst nichts am System parallel laufen. Man muss also schon sagen, dass es sehr schade ist, dass der Dekoder nicht freigegeben wurde. In Europa ist der Kauf einer MPEG2 Lizenz eigentlich überholt. Interessanterweise gibt es inzwischen einen Hack bei dem die Datei &ldquo;start.elf&rdquo; modifiziert wird. Danach sind allerdings alle Hardwaredekoder freigeschaltet.<br />
+<p>Spielt man auf einem Raspberry Pi Zero DVDs ab, so zahlt sich der MPEG2-Dekoder definitiv aus. Spielt man nur Videos ab, so kann es sich ohne ausgehen. Dann darf aber sonst nichts am System parallel laufen. Man muss also schon sagen, dass es sehr schade ist, dass der Dekoder nicht freigegeben wurde. In Europa ist der Kauf einer MPEG2 Lizenz eigentlich überholt. Interessanterweise gibt es inzwischen einen Hack bei dem die Datei &ldquo;start.elf&rdquo; modifiziert wird. Danach sind allerdings alle Hardwaredekoder freigeschaltet.<br />
 <strong>Wer einen neueren Raspberry Pi ab 2 hat, braucht sich um MPEG2-Kodierung keine Gedanken zu machen!</strong></p>
             </article>
           </div>
@@ -563,7 +577,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1590930825"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1595792193"></script>
 
 </body>
 </html>

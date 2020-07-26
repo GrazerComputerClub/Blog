@@ -6,10 +6,20 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP8266 ESP-01(S) NodeMCU Firmware</title>
+      <link>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</guid>
+      <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der NodeMCU Firmware ausstatten. Dann kann der Mikrocontroller mit Lua programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>MPEG2 Video Dekodierung</title>
@@ -18,7 +28,7 @@
       
       <guid>https://blog.gc2.at/post/mpeg2/</guid>
       <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
-dem Raspberry Pi nicht nicht freigegeben. Warum das so ist und ob man es immer noch Sinn macht soll geklärt werden&amp;hellip;
+dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&amp;hellip;
 &lt;/p&gt;</description>
     </item>
     
