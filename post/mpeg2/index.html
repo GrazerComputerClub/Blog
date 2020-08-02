@@ -26,7 +26,7 @@ dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn m
         "datePublished": "2020-05-30 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-05-30 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/mpeg2/",
-        "wordCount" : "739",
+        "wordCount" : "670",
         "image" : https://blog.gc2.atimg/mpeg2.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@ dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn m
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1595792193" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1596377023" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1595792193" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1596377023" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -307,15 +307,6 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 
 <h3 id="ergebnis-cpu-auslastung-bei-video-dekodierung">Ergebnis - CPU Auslastung bei Video Dekodierung</h3>
 
-<p>mplayer ohne ausgabe- ohne übertaktung
-|Video            | omxplayer (Pi Zero) | mplayer (Pi Zero) | mplayer (Pi 2) |
-|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-:|:&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;:|:&mdash;&mdash;&mdash;&mdash;&ndash;:|
-| DVD             | 17 %                | 76 %              |                |
-| MPEG2 (720x480) |  6 %                | 82 %              | 40 %           |
-| MJPG (320x240)  | 11 %                | 27 %              | 20 %           |
-| H264 (480x270)  |  9 %                | 56 %              | 22 %           |
-| H264 (854x480)  |  9 %                | &gt;100 %            | 56 %           |</p>
-
 <table>
 <thead>
 <tr>
@@ -330,14 +321,14 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 <tr>
 <td>DVD</td>
 <td align="center">17 %</td>
-<td align="center">&gt;100 %</td>
-<td align="center">60 %</td>
+<td align="center">76 %</td>
+<td align="center"></td>
 </tr>
 
 <tr>
 <td>MPEG2 (720x480)</td>
 <td align="center">6 %</td>
-<td align="center">92 %</td>
+<td align="center">82 %</td>
 <td align="center">40 %</td>
 </tr>
 
@@ -357,14 +348,14 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 
 <tr>
 <td>H264 (854x480)</td>
-<td align="center">13 %</td>
+<td align="center">9 %</td>
 <td align="center">&gt;100 %</td>
 <td align="center">56 %</td>
 </tr>
 </tbody>
 </table>
 
-<p>Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt werden (mplayer). Ist die Hardwarebeschleunigung aktiv geht es sich gut aus, die CPU-Last liegt bei ca. 17% (omxplayer). Die Raspberry Pi 2 kann die DVD ohne Probleme mit Softwaredekodierung abspielen (mplayer). Das ist auch kein Wunder, bei 4 Kernen und ca. 30 Prozent höherer Single-Core Performance. Sogar eine VNC-Verbindung lässt sich daneben auch noch betreiben.<br />
+<p>Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt werden (mplayer)! Im Test liegt die CPU-Last zwar unter 100 %, allerdings betrifft das nur die Videodekodierung. Ist die Hardwarebeschleunigung aktiv geht es sich leicht aus, die CPU-Last liegt bei ca. 17% (omxplayer). Die Raspberry Pi 2 kann die DVD ohne Probleme mit Softwaredekodierung abspielen (mplayer). Das ist auch kein Wunder, bei 4 Kernen und ca. 30 Prozent höherer Single-Core Performance. Sogar eine VNC-Verbindung lässt sich daneben auch noch betreiben.<br />
 240p Videos lassen sich auf dem Raspberry Pi Zero durchwegs in Software dekodieren, auch der aufwendige H264 Codec.</p>
 
 <h3 id="schlussfolgerung">Schlussfolgerung</h3>
@@ -577,7 +568,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1595792193"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1596377023"></script>
 
 </body>
 </html>
