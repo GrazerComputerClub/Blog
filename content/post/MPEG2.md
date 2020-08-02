@@ -46,14 +46,14 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter "-vo null" verwendet, um
 
 |Video            | omxplayer (Pi Zero) | mplayer (Pi Zero) | mplayer (Pi 2) |
 |-----------------|:-------------------:|:-----------------:|:--------------:|
-| DVD             | 17 %                | >100 %            | 60 %           |
-| MPEG2 (720x480) |  6 %                | 92 %              | 40 %           |
+| DVD             | 17 %                | 76 %              |                |
+| MPEG2 (720x480) |  6 %                | 82 %              | 40 %           |
 | MJPG (320x240)  | 11 %                | 27 %              | 20 %           |
 | H264 (480x270)  |  9 %                | 56 %              | 22 %           |
-| H264 (854x480)  | 13 %                | >100 %            | 56 %           |
+| H264 (854x480)  |  9 %                | >100 %            | 56 %           |
 
 
-Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt werden (mplayer). Ist die Hardwarebeschleunigung aktiv geht es sich gut aus, die CPU-Last liegt bei ca. 17% (omxplayer). Die Raspberry Pi 2 kann die DVD ohne Probleme mit Softwaredekodierung abspielen (mplayer). Das ist auch kein Wunder, bei 4 Kernen und ca. 30 Prozent höherer Single-Core Performance. Sogar eine VNC-Verbindung lässt sich daneben auch noch betreiben.  
+Eine DVD kann auch bei 1150 MHz am Raspberry Pi Zero nicht ruckelfrei abgespielt werden (mplayer)! Im Test liegt die CPU-Last zwar unter 100 %, allerdings betrifft das nur die Videodekodierung. Ist die Hardwarebeschleunigung aktiv geht es sich leicht aus, die CPU-Last liegt bei ca. 17% (omxplayer). Die Raspberry Pi 2 kann die DVD ohne Probleme mit Softwaredekodierung abspielen (mplayer). Das ist auch kein Wunder, bei 4 Kernen und ca. 30 Prozent höherer Single-Core Performance. Sogar eine VNC-Verbindung lässt sich daneben auch noch betreiben.  
 240p Videos lassen sich auf dem Raspberry Pi Zero durchwegs in Software dekodieren, auch der aufwendige H264 Codec. 
 
 
