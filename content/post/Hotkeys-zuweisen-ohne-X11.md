@@ -41,3 +41,6 @@ KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
 Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl ``service triggerhappy status``. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit 'amixer' wird die Gruppe bzw. das Recht 'audio' gebraucht. Deshalb muss zuvor der Benutzer 'nobody' zur Gruppe 'audio' hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls ``sudo adduser nobody audio``.
 Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für 'shutdown' bzw. 'halt' gesetzt werden. Dies erfolgt mit dem Befehl ``sudo chmod u+s /sbin/halt``.
 
+Alternativ kann man auch den Dienst mit dem Benutzer pi starten. Dazu muss man die Datei ``/lib/systemd/system/triggerhappy.service`` editieren und bei Parameter user pi statt nobody angeben ``--user pi``. Danach muss man ``sudo systemctl daemon-reload`` und ``sudo service triggerhappy restart`` ausführen.
+'`  
+
