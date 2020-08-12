@@ -5,7 +5,7 @@ image = "img/Minecraft.png"
 date = "2020-08-02"
 title = "Minecraft Pi"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi"]
+categories = ["Raspberry Pi", "Raspberry Pi Zero"]
 keywords = ["Raspberry Pi", "Minecraft", "Pi"]
 weight = 1
 +++
@@ -23,8 +23,9 @@ Mit der richtigen Karte gibt es einen Tag und Nacht Zyklus. Dann trifft man auch
 
 ## Technisches
 
-Die Grafik wird direkt in der GPU erzeugt und so funktioniert das Spiel nicht über einen SSH-Tunnel. Auch Screenshots können nicht so einfach erzeugt werden. Das Programm [raspi2png](https://github.com/AndrewFromMelbourne/raspi2png) bietet sich dazu an. VNC-Programme die direkt auf der GPU arbeiten wie [dispmanx_vnc](https://github.com/patrikolausson/dispmanx_vnc) können auch verwendet werden. Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kommt es zur falschen Platzierung des Fensterrahmens und Grafikfehlern. 
+Die Grafik wird direkt in der GPU erzeugt und so funktioniert das Spiel nicht über einen SSH-Tunnel. Auch Screenshots können nicht so einfach erzeugt werden. Das Programm [raspi2png](https://github.com/AndrewFromMelbourne/raspi2png) bietet sich dazu an. VNC-Programme die direkt auf der GPU arbeiten wie [dispmanx_vnc](https://github.com/patrikolausson/dispmanx_vnc) können auch verwendet werden. Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kommt es zur falschen Platzierung des Fensterrahmens und Grafikfehlern.  
 
+Das Spiel kann auch auf dem Raspberry Pi Zero verwendet werden. Die Leistung des System reicht aus, wenngleich ein wenig Overcocking nicht schaden kann. Dann darf man aber nicht vergessen die ensprechenden Adapter (HDMI, USB-Hub mit Micro-Adapter für Maus und Tastatur) bereit zu halten.
 
 ## Installation
 
