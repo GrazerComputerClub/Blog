@@ -38,16 +38,10 @@ cd /opt/minecraft-pi/
 sudo wget https://www.dropbox.com/s/iutdy9yrtg3cgic/survival.bsdiff
 sudo bspatch minecraft-pi minecraft-pi-survival survival.bsdiff
 sudo chmod +x minecraft-pi-survival
-cd ~/.minecraft/games/com.mojang/minecraftWorlds/world/
+cd ~/.minecraft/games/com.mojang/minecraftWorlds/
 wget https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Temple-of-Notch.zip
 unzip Temple-of-Notch.zip
 ```
-
-<!---
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
--->
 
 **Startscript:** /usr/local/bin/minecraft-pi-survival
 
@@ -74,6 +68,36 @@ minecraft-pi-survival
 ```
 
 Weitere Karten für den Survival Modus findet man auf der originalen englischen Anleitung von [The Braithwaites](https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/).  
+Hier ist eine Liste der Karten-Links angeführt. Wenn man sie in die Datei 'list.txt' einträgt, kann man sie später mit einem Kommando herunterladen.
+
+```
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Columbia-Bioshock-Infinite.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Deep-Ocean.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Dense-Forest.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Hamster-Escape-Part-1.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Lava-Citadel.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Level-Screenshots.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Nether-Nightmare.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Paradise-Cove.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Plaza.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/prisonEscape.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Temple-of-Notch.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Island.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-N.R.A.M-world-save.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Underground.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Volcano.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/MW3-Seatown.zip
+```
+```
+cd ~/.minecraft/games/com.mojang/minecraftWorlds/
+wget -i list.txt
+unp *.zip
+```
 
 ![Map: Temple of Notch](../../img/Minecraft_Temple_of_Notch.png)
 
