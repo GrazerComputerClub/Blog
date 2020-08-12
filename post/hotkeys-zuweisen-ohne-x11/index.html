@@ -25,7 +25,7 @@
         "datePublished": "2018-12-11 00:00:00 &#43;0000 UTC",
         "dateModified" : "2018-12-11 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/",
-        "wordCount" : "393",
+        "wordCount" : "434",
         "image" : https://blog.gc2.atimg/keys_black_vol.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1596377023" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1597244657" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1596377023" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1597244657" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -298,6 +298,9 @@ KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
 
 <p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
 Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
+
+<p>Alternativ kann man auch den Dienst mit dem Benutzer pi starten. Dazu muss man die Datei <code>/lib/systemd/system/triggerhappy.service</code> editieren und bei Parameter user pi statt nobody angeben <code>--user pi</code>. Danach muss man <code>sudo systemctl daemon-reload</code> und <code>sudo service triggerhappy restart</code> ausführen.
+&lsquo;`</p>
             </article>
           </div>
           
@@ -503,7 +506,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1596377023"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1597244657"></script>
 
 </body>
 </html>

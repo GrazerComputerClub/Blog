@@ -26,7 +26,7 @@ spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überl
         "datePublished": "2020-08-02 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-08-02 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/minecraft/",
-        "wordCount" : "438",
+        "wordCount" : "533",
         "image" : https://blog.gc2.atimg/Minecraft.png",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@ spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überl
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1596377023" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1597244657" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1596377023" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1597244657" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -262,6 +262,12 @@ if (!doNotTrack) {
             <a href="/categories/raspberry-pi">Raspberry Pi</a>
           </span>
           
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          </span>
+          
 
 
         </div>
@@ -285,6 +291,8 @@ Mit der richtigen Karte gibt es einen Tag und Nacht Zyklus. Dann trifft man auch
 
 <p>Die Grafik wird direkt in der GPU erzeugt und so funktioniert das Spiel nicht über einen SSH-Tunnel. Auch Screenshots können nicht so einfach erzeugt werden. Das Programm <a href="https://github.com/AndrewFromMelbourne/raspi2png">raspi2png</a> bietet sich dazu an. VNC-Programme die direkt auf der GPU arbeiten wie <a href="https://github.com/patrikolausson/dispmanx_vnc">dispmanx_vnc</a> können auch verwendet werden. Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kommt es zur falschen Platzierung des Fensterrahmens und Grafikfehlern.</p>
 
+<p>Das Spiel kann auch auf dem Raspberry Pi Zero verwendet werden. Die Leistung des System reicht aus, wenngleich ein wenig Overcocking nicht schaden kann. Dann darf man aber nicht vergessen die ensprechenden Adapter (HDMI, USB-Hub mit Micro-Adapter für Maus und Tastatur) bereit zu halten.</p>
+
 <h2 id="installation">Installation</h2>
 
 <p>Leider ist die Anleitung auf der Webseite des Spiel nicht korrekt. Allerdings ist das kein Problem, denn in der aktuellen Raspbian/Raspberry Pi OS Version kann man kann das Spiel direkt installieren. Damit wird auch gleich die Programmierschnittstelle installiert und alles nötige eingerichtet. Der Patch für den Überlebensmodus und passende Karten müssen aber manuell installiert werden.</p>
@@ -296,16 +304,10 @@ cd /opt/minecraft-pi/
 sudo wget https://www.dropbox.com/s/iutdy9yrtg3cgic/survival.bsdiff
 sudo bspatch minecraft-pi minecraft-pi-survival survival.bsdiff
 sudo chmod +x minecraft-pi-survival
-cd ~/.minecraft/games/com.mojang/minecraftWorlds/world/
+cd ~/.minecraft/games/com.mojang/minecraftWorlds/
 wget https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Temple-of-Notch.zip
 unzip Temple-of-Notch.zip
 </code></pre>
-
-<!---
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
-https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
--->
 
 <p><strong>Startscript:</strong> /usr/local/bin/minecraft-pi-survival</p>
 
@@ -329,7 +331,36 @@ fi
 minecraft-pi-survival
 </code></pre>
 
-<p>Weitere Karten für den Survival Modus findet man auf der originalen englischen Anleitung von <a href="https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/">The Braithwaites</a>.</p>
+<p>Weitere Karten für den Survival Modus findet man auf der originalen englischen Anleitung von <a href="https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/">The Braithwaites</a>.<br />
+Hier ist eine Liste der Karten-Links angeführt. Wenn man sie in die Datei &lsquo;list.txt&rsquo; einträgt, kann man sie später mit einem Kommando herunterladen.</p>
+
+<pre><code>https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Columbia-Bioshock-Infinite.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Deep-Ocean.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Dense-Forest.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Hamster-Escape-Part-1.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Lava-Citadel.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Level-Screenshots.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Nether-Nightmare.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Paradise-Cove.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Plaza.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/prisonEscape.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Temple-of-Notch.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Island.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-N.R.A.M-world-save.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Underground.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Volcano.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
+https://thebraithwaites.co.uk/wp-content/uploads/2016/09/MW3-Seatown.zip
+</code></pre>
+
+<pre><code>cd ~/.minecraft/games/com.mojang/minecraftWorlds/
+wget -i list.txt
+unp *.zip
+</code></pre>
 
 <p><img src="../../img/Minecraft_Temple_of_Notch.png" alt="Map: Temple of Notch" /></p>
 
@@ -345,10 +376,11 @@ minecraft-pi-survival
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
   </p>
 </div>
 
@@ -543,7 +575,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1596377023"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1597244657"></script>
 
 </body>
 </html>
