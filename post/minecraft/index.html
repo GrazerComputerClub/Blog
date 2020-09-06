@@ -26,7 +26,7 @@ spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überl
         "datePublished": "2020-08-02 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-08-02 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/minecraft/",
-        "wordCount" : "533",
+        "wordCount" : "923",
         "image" : https://blog.gc2.atimg/Minecraft.png",
         "keywords" : [ "Blog" ]   
     }
@@ -47,9 +47,9 @@ spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überl
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1597244657" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1599424360" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1597244657" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1599424360" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -283,19 +283,19 @@ spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überl
 
 <h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Minecraft ist eine besonders bei Kindern beliebtes Computerspiel, das die Kreativität fördert. Für den Raspberry Pi gibt es eine spezielle gratis Variante des Spiels. Sie ist inzwischen recht alt und wurde nicht mehr aktualisiert, funktioniert aber immer noch. Das besondere ist, dass sie eine Programmierschnittstelle, sprich API, besitzt. Mit ihr kann man spielerisch programmieren lernen, in dem man mit einem Python Programmen mit dem Spiel interagiert. Damit lassen sie z. B. einfache Spiele im Spiel realisieren. Oder man lässt automatisiert Blocke erzeugen.<br />
-Ursprünglich könnte man nur im kreativ Modus spielen und programmieren, es gibt aber auch einen Modifikation, sodass auch der Überlebensmodus (survival mode) funktioniert. Dann können Stürze in die Tiefe können zum Tot oder Verlust von Energie führen.<br />
-Mit der richtigen Karte gibt es einen Tag und Nacht Zyklus. Dann trifft man auch auf Creeper, Skelette, Spinnen und andere Monster. Sie tauchen regelmäßig in der Nacht auf und sind nur darauf aus dir zu Schaden. Somit kann man nun auch die ersten Erfahrungen vom originalen Spiel sammeln.</p>
+<p>Minecraft ist eine besonders bei Kindern beliebtes Computerspiel, das die Kreativität fördert. Für den Raspberry Pi gibt es eine spezielle gratis Variante des Spiels. Sie ist inzwischen recht alt und wurde nicht mehr aktualisiert, funktioniert aber immer noch. Das besondere ist, dass sie eine Programmierschnittstelle, sprich API, besitzt. Mit ihr kann man spielerisch programmieren lernen, in dem man mithilfe eines Python Programms mit dem Spiel interagiert. Damit lassen sie z. B. einfache Spiele im Spiel realisieren. Oder man lässt automatisiert Blocke erzeugen.<br />
+Eigentlich kann man nur im Kreativmodus spielen und programmieren, es gibt aber auch einen Modifikation, sodass auch der Überlebensmodus (survival mode) funktioniert. Dann können Stürze in die Tiefe zum Tot oder Verlust von Energie führen. Mit der richtigen Karte gibt es einen Tag und Nacht Zyklus. Dann trifft man auch auf Creeper, Skelette, Spinnen und andere Monster. Sie tauchen regelmäßig in der Nacht auf und sind nur darauf aus dir zu Schaden. Leider funktioniert aber das &ldquo;craften&rdquo; also das Erzeugen von Gegenständen nicht. Wechsel man vom Überlebensmodus in den Creativen Modus bleiben die Moster im Spiel und man kann sie leicht, ohne verletzt zu werden, auf unterschiedlichste Weise erledigen (z. B. mit TNT).</p>
 
 <h2 id="technisches">Technisches</h2>
 
-<p>Die Grafik wird direkt in der GPU erzeugt und so funktioniert das Spiel nicht über einen SSH-Tunnel. Auch Screenshots können nicht so einfach erzeugt werden. Das Programm <a href="https://github.com/AndrewFromMelbourne/raspi2png">raspi2png</a> bietet sich dazu an. VNC-Programme die direkt auf der GPU arbeiten wie <a href="https://github.com/patrikolausson/dispmanx_vnc">dispmanx_vnc</a> können auch verwendet werden. Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kommt es zur falschen Platzierung des Fensterrahmens und Grafikfehlern.</p>
+<p>Die Grafik wird direkt in der GPU erzeugt und so funktioniert das Spiel nicht über einen SSH-Tunnel. Auch Screenshots können mit dem üblichen Programmen nicht erzeugt werden. Das Programm <a href="https://github.com/AndrewFromMelbourne/raspi2png">raspi2png</a> bietet sich an. Auch VNC-Programme die direkt mit der Raspberry Pi GPU arbeiten, wie <a href="https://github.com/patrikolausson/dispmanx_vnc">dispmanx_vnc</a> können verwendet werden.<br />
+Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kommt es zur falschen Platzierung des Fensterrahmens und Grafikfehlern.</p>
 
-<p>Das Spiel kann auch auf dem Raspberry Pi Zero verwendet werden. Die Leistung des System reicht aus, wenngleich ein wenig Overcocking nicht schaden kann. Dann darf man aber nicht vergessen die ensprechenden Adapter (HDMI, USB-Hub mit Micro-Adapter für Maus und Tastatur) bereit zu halten.</p>
+<p>Das Spiel kann auch auf dem Raspberry Pi Zero verwendet werden. Die Leistung des System reicht aus, wenngleich ein wenig Overclocking nicht schaden kann. Dann darf man aber nicht vergessen die entsprechenden Adapter (HDMI, USB-Hub mit Micro-Adapter für Maus und Tastatur) bereit zu halten.</p>
 
 <h2 id="installation">Installation</h2>
 
-<p>Leider ist die Anleitung auf der Webseite des Spiel nicht korrekt. Allerdings ist das kein Problem, denn in der aktuellen Raspbian/Raspberry Pi OS Version kann man kann das Spiel direkt installieren. Damit wird auch gleich die Programmierschnittstelle installiert und alles nötige eingerichtet. Der Patch für den Überlebensmodus und passende Karten müssen aber manuell installiert werden.</p>
+<p>Leider ist die Installations-Anleitung auf der Minecraft Webseite nicht korrekt. Allerdings ist das kein Problem, denn in der aktuellen Raspbian/Raspberry Pi OS Version kann man kann das Spiel direkt installieren. Damit wird auch gleich die Programmierschnittstelle installiert und alles nötige eingerichtet. Den Patch für den Überlebensmodus und die passende Karten muss man aber manuell installieren.</p>
 
 <pre><code>sudo apt-get install minecraft-pi
 
@@ -331,8 +331,8 @@ fi
 minecraft-pi-survival
 </code></pre>
 
-<p>Weitere Karten für den Survival Modus findet man auf der originalen englischen Anleitung von <a href="https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/">The Braithwaites</a>.<br />
-Hier ist eine Liste der Karten-Links angeführt. Wenn man sie in die Datei &lsquo;list.txt&rsquo; einträgt, kann man sie später mit einem Kommando herunterladen.</p>
+<p>Weitere Karten für den Überlebensmodus findet man bei der originalen englischen Anleitung von <a href="https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/">The Braithwaites</a>.<br />
+Hier ist eine Liste dieser Karten-Links angeführt. Wenn man sie in die Datei &lsquo;list.txt&rsquo; einträgt, kann man sie später mit einem Kommando herunterladen.</p>
 
 <pre><code>https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
@@ -364,7 +364,43 @@ unp *.zip
 
 <p><img src="../../img/Minecraft_Temple_of_Notch.png" alt="Map: Temple of Notch" /></p>
 
-<p>Der Kreative-Modus funktoniert auch noch und kann mit dem Kommando &ldquo;minecraft-pi&rdquo; oder über das Startmenü gestartet werden.</p>
+<p>Einen neuen Menüeintrag kann man auch noch erstellen.</p>
+
+<pre><code>sudo cp /usr/share/applications/minecraft-pi.desktop /usr/share/applications/minecraft-pi-survival.desktop
+</code></pre>
+
+<pre><code>[Desktop Entry]
+Name=Minecraft Pi Survival
+Comment=Fun with Blocks and Monsters
+Exec=minecraft-pi-survival
+Icon=/usr/share/pixmaps/minecraft-pi.png
+Terminal=false
+Type=Application
+Categories=Application;Game;
+StartupNotify=true
+</code></pre>
+
+<p>Der Kreativmodus funktioniert auch noch wie gehabt und kann mit dem Kommando &ldquo;minecraft-pi&rdquo; oder über das Startmenü gestartet werden.</p>
+
+<h2 id="kreativmodus">Kreativmodus</h2>
+
+<p>Die Steuerung des Spiels erfolgt wie bei den üblichen 3D-Shooter spielen. Mit Mausbewegungen kann man die Ansicht verändern. Die Tasten W,S,A,D dienen zur Bewegung der Spielfigur. Mit der Leertaste kann man springen. Bei doppelten Sprung bzw. doppelte Aktivierung der Leertaste kann man sich nach oben bewegen. Je nachdem fliegt man dann oder man schwimmt nach oben. Der Flugmodus kann durch nochmalige doppelte Aktivierung der Leertaste beendet werden. Dann fällt man zu Boden. Mit der Taste E kann man das Inventar öffnen und einen Block auswählen. Mit dem Mausrad oder der Tasten 1-8 kann man eine der unten eingeblendeten Blöcke auswählen. Mit der rechten Maustaste setzt man den aktiven Block an die markierte Stelle. Mit der linken Maustaste können Blöcke wieder zerstören werden. Teilweise können Gegenstände wie Werkbank oder Ofen mit der rechten Maustaste aktiviert werden.  Mit der Taste Esc kommt man in das Menü.</p>
+
+<p>Mit dem Schwert können Blöcke entfernt werden, es können aber auch Objekte berührt werden. Die Minecraft API bietet eine Funktion um diese Aktion abfangen zu können. Damit lassen sie dann interessant Aktion auslösen, vor allem in Verbindung mit dem TNT Block. Mehr dazu in nächsten Kapitel.</p>
+
+<p><img src="../../img/Minecraft_Creative.png" alt="Minecraft Creative Mode" /></p>
+
+<h2 id="überlebensmodus">Überlebensmodus</h2>
+
+<p>Der Überlebensmodus steuert sich grundsätzlich gleich wie beim Kreativmodus. Allerdings kann man nicht fliegen und mit der E Taste öffnet sich nicht die Auswahlliste der Blöcke. Leider öffnet sich auch nicht das Minecraft übliche Crafting Menü. Das gilt auch für die Werkbank.</p>
+
+<p><img src="../../img/Minecraft_Survival_crafting.png" alt="Crafting Menü" /></p>
+
+<p>Im Fenster links oben wird der Lebenszustand mit Herzen angezeigt. Stürze oder Attacken von Monstern verringern diese bis zum Tot. Befindet man sich unter Wasser werden Blasen für den Luftvorrat angezeigt. Geht dieser zur Neige, stirbt man. Eine Nahrungsanzeige wie im originalen Spiel gibt es nicht.</p>
+
+<p><img src="../../img/Minecraft_Survival.png" alt="Minecraft Überlebensmodus Anzeige" /></p>
+
+<p>In dunklen Bereichen und in der Nacht tauchen Monster auf, so wie im echten Spiel. Ohne die Möglichkeit Waffen Rüstung und sonstiges zu erzeugen, sind die Möglichkeiten aber sehr eingeschenkt (ohne Crafting Menü). Trotzdem ist es eine Abwechslung mal Gegner zu haben, die man beim Wechsel auch im Kreativmodus finden kann.</p>
 
 <h2 id="verlinkung">Verlinkung</h2>
 
@@ -575,7 +611,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1597244657"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1599424360"></script>
 
 </body>
 </html>
