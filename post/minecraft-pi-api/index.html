@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "Minecraft Pi API",
+        "headline" : "Minecraft Pi API",
+        "description" : "<p>Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?
+</p>",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-08 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-09-08 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/minecraft-pi-api/",
+        "wordCount" : "900",
+        "image" : https://blog.gc2.atimg/Minecraft-API.jpg",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Minecraft Pi API </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1600113513" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1600113513" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-130665257-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">CCC</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">GC2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">Programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/uc">uC</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Minecraft-API.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">08 September</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Minecraft Pi API</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?
+</p>
+
+<h2 id="grundsätzliches">Grundsätzliches</h2>
+
+<p>Nachdem man Minecraft Pi mit dem simplen Aufruf <code>sudo apt-get install minecraft-pi</code> installiert hat, steht nicht nur das Spiel (Creative Mode) sondern auch die Python 3 API, also die Programmierschnittstelle, zur Verfügung. Im Grunde gibt es nur wenige Befehle, die man nutzen kann. Mehr braucht es aber auch nicht um viele spaßige Dinge umsetzen zu können. Viele programmieren Spiele im Spiel (z. B. Snake) oder erweitern es um Zusatzfunktionen.
+Eine tolle englische Anleitung bietet das MagPi Magazin Gratis Heft <a href="https://magpi.raspberrypi.org/books/essentials-minecraft-v1">Essentials Minecraft</a>.</p>
+
+<h2 id="funktionen-der-api">Funktionen der API</h2>
+
+<p>Die Programmierschnittstelle bietet im wesentlichen folgende Funktionen:</p>
+
+<ul>
+<li>Auslesen der Spielerposition</li>
+<li>Setzen der Spielerposition (Teleportierung)</li>
+<li>Blocktyp auslesen</li>
+<li>Blocktyp setzen (Haupt und Untertyp)</li>
+<li>Ereignis bei Berührung eines Blocks mit dem Schwert</li>
+<li>Kameraposition ändern</li>
+<li>Nachricht im Spiel anzeigen</li>
+</ul>
+
+<h3 id="initialisierung-und-ausführen">Initialisierung und Ausführen</h3>
+
+<p>Initialisiert wird die Schnittstelle mit folgendem Code</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">mcpi</span> <span style="color:#007020;font-weight:bold">import</span> minecraft
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">mcpi</span> <span style="color:#007020;font-weight:bold">import</span> block     <span style="color:#60a0b0;font-style:italic"># need for block names</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>                <span style="color:#60a0b0;font-style:italic"># need for sleep</span>
+
+mc <span style="color:#666">=</span> minecraft<span style="color:#666">.</span>Minecraft<span style="color:#666">.</span>create()</code></pre></td></tr></table>
+</div>
+</div>
+<p>Der Verbindungsaufbau klappt aber nur, wenn das Spiel selbst gestartet ist, der Titelbildschirm reicht nicht. Mit dem <code>mc</code> Objekt können dann alle Befehl ausgeführt werden. Für eine einfach Ausgabe muss man nur noch <code>postToChat</code> hinzufügen.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mc<span style="color:#666">.</span>postToCat(<span style="color:#4070a0">&#34;Minecraft API TNT sample&#34;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>Der Python Sourcecode muss in eine Datei gespeichert werden, z. B. tnt.py und  mit dem Aufruf &ldquo;python3 tnt.py&rdquo; gestartet werden.</p>
+
+<h3 id="spielerposition">Spielerposition</h3>
+
+<p>Möchte man mit Positionen arbeiten ist zu beachten:
+  * X ist horizontal (links und rechts)
+  * Y ist vertikal (also oben und unten)
+  * Z ist in die Tiefe (hinten und vorne)</p>
+
+<p>Folgender Sourcecode teleportiert, den Spieler 4 Blocke hoch.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#666">=</span> mc<span style="color:#666">.</span>player<span style="color:#666">.</span>getPos()
+<span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;player x=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> y=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">, z=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">%</span> (x, y, z))
+currentPlayerPos <span style="color:#666">=</span> mc<span style="color:#666">.</span>player<span style="color:#666">.</span>setPos(x, y<span style="color:#666">+</span><span style="color:#40a070">4</span>, z)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="blöcke">Blöcke</h3>
+
+<p>Blöcke zu verändern ist auch sehr leicht, dazu verwendet man die Funktion <code>getBlock</code> und <code>setBlock</code>.</p>
+
+<p>Folgender Sourcecode erzeugt unter dem Spieler einen TNT-Block, sofern er auf festem Untergrund steht.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Block_beneat <span style="color:#666">=</span> mc<span style="color:#666">.</span>getBlock(x, y<span style="color:#666">-</span><span style="color:#40a070">1</span>, z)
+<span style="color:#007020;font-weight:bold">if</span> Block_beneat <span style="color:#666">!=</span> block<span style="color:#666">.</span>AIR <span style="color:#007020;font-weight:bold">and</span> Block_beneat <span style="color:#666">!=</span> block<span style="color:#666">.</span>WATER:
+  mc<span style="color:#666">.</span>setBlock(x, y, z, block<span style="color:#666">.</span>TNT<span style="color:#666">.</span><span style="color:#007020">id</span>, <span style="color:#40a070">1</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>Für den Block verwenden wir das Objekt <code>block</code> um statt mit einer Nummer mit Namen die Böcke identifizieren zu können. Eine Liste der Blöcke bzw. Blocknamen findet man bei <a href="https://pimylifeup.com/minecraft-pi-edition-api-reference/">Minecraft Pi Edition API Reference</a>. Der letzte Parameter der Funktion definiert die DataId des Blockes. Diese variiert den Blocktyp. Bei TNT definiert 1 eine aktivierbaren Typ, der dann durch das Schwert zum explodieren gebracht werden kann.<br />
+Es gibt auch die Funktion <code>setblocks</code>, damit können mehrere Blocke auf einmal gesetzt werden. Dazu gibt man zwei Positionen an, die den zu füllenden Bereich definieren. Optional kann auch wieder die DataId Nummer angegeben werden.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  mc<span style="color:#666">.</span>setBlock(x, y, z, x, y<span style="color:#666">+</span><span style="color:#40a070">3</span>, z, block<span style="color:#666">.</span>TNT)</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="ereignis-bei-berührung-eines-blocks-schwert">Ereignis bei Berührung eines Blocks (Schwert)</h3>
+
+<p>Eine spezielle Funktion ermöglicht es zu erkennen wenn der Spieler Blöcke mit dem Schwert (rechten Maustaste) berührt.
+Die Funktion <code>pollBlockHits</code> holt sich diese Aktion in eine Variable. Die Feld-Variable kann dann einzeln abgearbeitet werden.
+Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für 15 Sekunden die Aktionen überwacht und eine Meldung ausgegeben.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">duration<span style="color:#666">=</span><span style="color:#40a070">15</span>
+<span style="color:#007020;font-weight:bold">for</span> loop <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">1</span>, <span style="color:#007020">int</span>(duration<span style="color:#666">/</span><span style="color:#40a070">0.1</span>)):
+  blockHits <span style="color:#666">=</span> mc<span style="color:#666">.</span>events<span style="color:#666">.</span>pollBlockHits()
+  <span style="color:#007020;font-weight:bold">for</span> hit <span style="color:#007020;font-weight:bold">in</span> blockHits:
+    Block_Hit <span style="color:#666">=</span> mc<span style="color:#666">.</span>getBlockWithData(hit<span style="color:#666">.</span>pos<span style="color:#666">.</span>x, hit<span style="color:#666">.</span>pos<span style="color:#666">.</span>y, hit<span style="color:#666">.</span>pos<span style="color:#666">.</span>z)
+    <span style="color:#007020;font-weight:bold">if</span> Block_Hit<span style="color:#666">.</span><span style="color:#007020">id</span> <span style="color:#666">==</span> block<span style="color:#666">.</span>TNT<span style="color:#666">.</span><span style="color:#007020">id</span>:
+      <span style="color:#007020;font-weight:bold">if</span> Block_Hit<span style="color:#666">.</span>data <span style="color:#666">==</span> <span style="color:#40a070">0</span>:
+        mc<span style="color:#666">.</span>postToChat(<span style="color:#4070a0">&#34;Inaktives TNT&#34;</span>)
+      <span style="color:#007020;font-weight:bold">if</span> Block_Hit<span style="color:#666">.</span>data <span style="color:#666">==</span> <span style="color:#40a070">1</span>:
+        mc<span style="color:#666">.</span>postToChat(<span style="color:#4070a0">&#34;Aktiviere das TNT mit der linken Maustaste&#34;</span>)
+  <span style="color:#007020;font-weight:bold">if</span> loop <span style="color:#666">%</span> <span style="color:#40a070">10</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>:
+   <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> &#34;</span> <span style="color:#666">%</span> (duration<span style="color:#666">-</span>loop<span style="color:#666">/</span><span style="color:#40a070">10</span>), end<span style="color:#666">=</span><span style="color:#4070a0">&#34;&#34;</span>, flush<span style="color:#666">=</span>True)
+  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">0.1</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="minecraft-pi-sound-effects">Minecraft Pi - Sound Effects</h2>
+
+<p>Eine nützliche Idee hatte Martin O&rsquo;Hanlon, er erweiterte das Programm um zusätzlich Soundeffekte. Das Spiel kommt nämlich im original ganz ohne Soundausgabe daher. Dazu nutzte er einfach die Python 3 API um im richten Moment Sound zu erzeugen. Zum Beispiel Schrittgeräusche beim Laufen oder bei beim Einsatz des Schwerts. Das ganze wurde in seinem Blog im Eintrag <a href="https://www.stuffaboutcode.com/2013/06/raspberry-pi-minecraft-sounds-effects.html">Raspberry Pi - Minecraft - Sounds Effects</a> beschrieben. Hier wurde aber die alte Python 2 Schnittstelle verwendet, sodass es aktuell nicht mehr nutzbar ist.</p>
+
+<p>Der GC2 (Grazer Computer Club) hat sich nun dem Projekt angenommen und es auf Python 3 portiert und erweitert. Es ist auf dem Github Repository <a href="https://github.com/GrazerComputerClub/minecraft-sound">Minecraft Pi - Sound Effects</a> verfügbar. Einerseits ist es nützlich für Spieler und andererseits zeigt es die Möglichkeiten der Python 3 API.</p>
+
+<p>Folgende Änderungen wurden durchgeführt:</p>
+
+<ul>
+<li>Portierung auf Python 3</li>
+<li>Nur Public Domain Sounddateien</li>
+<li>Neue Sounddateien für (platschen, schwimmen, fliegen)</li>
+<li>Hintergrund Musik</li>
+<li>Sonstige Optimierungen</li>
+<li>Umwandlung von TNT auf explosives TNT (Aktivierung durch das Schwert)</li>
+<li>Erweiterung aktiviert sich nach dem Laden einer Karte (oder bei einem Absturz) automatisch</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Zur Installation lädt man sich die Letztversion vom Repository herunter und startet das Python 3 Programm zusammen mit Minecraft.</p>
+
+<pre><code>cd ~
+mkdir minecraft-sound
+cd minecraft-sound
+wget https://github.com/GrazerComputerClub/minecraft-sound/archive/0.3.zip
+unzip 0.3.zip
+cd minecraft-sound-0.3
+</code></pre>
+
+<p>Durch das modifizieren des Start-Scripts &ldquo;/usr/bin/minecraft-pi&rdquo;, wird die Sound Erweiterung automatisch gestartet und beendet.</p>
+
+<pre><code>#!/bin/sh
+
+cd /home/pi/git/minecraft-sound
+python3 minecraft-sound.py &amp;
+PID=$! 
+echo Minecraft Sound process PID is $PID
+
+cd /opt/minecraft-pi || exit
+
+if grep -q okay /proc/device-tree/soc/v3d@7ec00000/status \
+	/proc/device-tree/soc/firmwarekms@7e600000/status 2&gt; /dev/null; then
+	export LD_PRELOAD=libbcm_host.so.1.0
+	export LD_LIBRARY_PATH=lib/mesa
+else
+	export LD_LIBRARY_PATH=lib/brcm
+fi
+
+./minecraft-pi
+echo stopping Minecraft Sound process
+kill -KILL $PID
+</code></pre>
+
+<h2 id="beispielvideo-für-explosives-tnt">Beispielvideo für explosives TNT</h2>
+
+<p><a href="https://www.youtube.com/watch?v=iVHuY5olYWo"><img src="http://img.youtube.com/vi/iVHuY5olYWo/0.jpg" alt="Minecraft Pi Explosive TNT mod" /></a></p>
+
+<h2 id="verlinkung">Verlinkung</h2>
+
+<p><a href="https://pimylifeup.com/minecraft-pi-edition-api-reference/">Minecraft Pi Edition API Reference</a><br />
+MagPi Magazin <a href="https://magpi.raspberrypi.org/books/essentials-minecraft-v1">Essentials Minecraft</a><br />
+Ursprungsversion von Martin O&rsquo;Hanlon, <a href="https://www.stuffaboutcode.com/2013/06/raspberry-pi-minecraft-sounds-effects.html">Raspberry Pi - Minecraft - Sounds Effects</a><br />
+GC2 Version <a href="https://github.com/GrazerComputerClub/minecraft-sound">Minecraft Pi - Sound Effects</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorien</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/raspberry-pi-zero" title="View all posts in Raspberry Pi Zero">Raspberry Pi Zero</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2018, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1600113513"></script>
+
+</body>
+</html>

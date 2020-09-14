@@ -11,35 +11,28 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "GC²@36C3 - Day 4",
-        "headline" : "GC²@36C3 - Day 4",
-        "description" : "<!-- title-img should have a width of 100px -->
-
-<p>Nachdem wir unseren bereits obligatorischen Frühstücksburger eingenommen haben,
-ging es mit dem letzten Tag des 36C3 los.</p>
-
-<p>Distanz: 13018 Schritte / 10.1 km<br>
-Uhrzeit: 18:07</p>
-
-<p></p>",
+        "name" : "Raspberry Pi CPU Kühlung",
+        "headline" : "Raspberry Pi CPU Kühlung",
+        "description" : "<p>Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.
+</p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-12-30 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-12-30 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/36c3_4/",
-        "wordCount" : "256",
-        "image" : https://blog.gc2.atimg/36C3_Day4.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-14 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-09-14 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/cooling/",
+        "wordCount" : "601",
+        "image" : https://blog.gc2.atimg/fan.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>GC²@36C3 - Day 4 </title>
+ <title>Raspberry Pi CPU Kühlung </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -250,14 +243,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/36C3_Day4.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/fan.png">
       </div>
       
         <div class="entry-meta">
-          <span class="date">30 December</span>	<span> / </span>
+          <span class="date">14 September</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://woergi.wordpress.com/" title="Posts von Christoph Woergoetter" rel="author">Christoph Woergoetter</a>
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
@@ -265,66 +258,108 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/ccc">CCC</a>
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/gc2">GC2</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> GC²@36C3 - Day 4</h1>
+          <h1 class='entry-title'> Raspberry Pi CPU Kühlung</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <!-- title-img should have a width of 100px -->
+              <p>Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.
+</p>
 
-<p>Nachdem wir unseren bereits obligatorischen Frühstücksburger eingenommen haben,
-ging es mit dem letzten Tag des 36C3 los.</p>
+<h2 id="beschreibung">Beschreibung</h2>
 
-<p>Distanz: 13018 Schritte / 10.1 km<br>
-Uhrzeit: 18:07</p>
+<p>Wann eine Kühlung des SoC bzw. des Prozessor der Raspberry Pi nötig ist hängt von vielen Faktoren ab. Die Raspberry Pi Type, Umgebungstemperatur und das Gehäuse sind die wichtigsten. Um genau fest zu stellen unter welchen Bedingungen eine Kühlung notwendig ist, wurde mit dem GC2 3D-Druck-Gehäuse mehrere Leistungstest durchgeführt. Dazu wurde die Raspberry Pi 3 benutzt, sie besitzt keine Heatspreader. Zum Aufzeichnen der ARM Frequenz und der Prozessor-Temperatur wurde das Python Programm <a href="https://github.com/MilhouseVH/bcmstat">bcmstat</a> verwendet. Bei GC2 Raspjamming OS ist das Programm bereits vorinstalliert. Die CPU-Last wurde mit dem Programm &ldquo;stress&rdquo; erzeugt.<br />
+Beim Testl wurde folgendes Shell-Script verwendet</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bcmstat.sh &gt; rpi_<span style="color:#bb60d5">$1</span>.txt &amp;
+<span style="color:#bb60d5">PID</span><span style="color:#666">=</span><span style="color:#bb60d5">$!</span>
+sleep <span style="color:#40a070">10</span>
+stress --cpu <span style="color:#40a070">1</span> --timeout 420s
+sleep <span style="color:#40a070">180</span>
+stress --cpu <span style="color:#40a070">2</span> --timeout 420s
+sleep <span style="color:#40a070">180</span>
+stress --cpu <span style="color:#40a070">3</span> --timeout 420s
+sleep <span style="color:#40a070">180</span>
+stress --cpu <span style="color:#40a070">4</span> --timeout 420s
+sleep <span style="color:#40a070">180</span>
+<span style="color:#007020">echo</span> <span style="color:#007020">kill</span> <span style="color:#bb60d5">$PID</span>
+<span style="color:#007020">kill</span> -KILL <span style="color:#bb60d5">$PID</span>
+<span style="color:#007020">echo</span> finished!</code></pre></td></tr></table>
+</div>
+</div>
+<p>Der Test wurde bei einer typischen Umgebungstemperatur von 24 °C durchgeführt. Das verwendetet <a href="https://www.thingiverse.com/thing:559858">Gehäuse</a> kann man sich mit einem 3D Drucker selbst herstellen.</p>
 
-<p></p>
+<h2 id="analyse-temperaturen">Analyse Temperaturen</h2>
 
-<h2 id="tag-4-the-end">Tag 4 - The End</h2>
+<p><img src="../../img/RPI3B_cooling.png" alt="Raspberry Pi 3 Temperaturen" /></p>
 
-<h3 id="understanding-millions-of-gates">Understanding millions of gates</h3>
+<p>Es zeigte sich, dass die Raspberry Pi 3 an ihre Temperaturgrenze stößt spätestens wenn alle 4 Kerne ausgelastet sind. dann wird vom System automatisch die Taktrate der CPU reduziert um eine überhitzung von mehr als 82 °C zu vermeiden.<br />
+Auch wenn man einen Kühlkörper auf den SoC befestigt, wird damit der Temperatur nur geringfügig reduziert. Erst wenn man den Kühlkörper mit einem langsam drehenden Lüfter anbläst, wird die Temperatur massiv reduziert und die volle Taktrate steht zur Verfügung.</p>
 
-<p>In diesem Talk wurde uns aufgezeigt dass man derzeit keine brauchbaren
-Gegenmaßnahmen gegen Hardware-basierte Angriffe auf Chips hat. Die Analyse
-der einzelnen Schichten eines Chips kann nicht verhindert werden. Von
-Materialforschern wird versucht dies zu verhindern indem die einzelnen Layers
-beim Reverse-Engineerings zerstört werden. Gegenmaßnahmen im Chip-Design sind
-leider derzeit auch noch nicht vorhanden.</p>
+<p><img src="../../img/RPI3B_cooling_fan_power.png" alt="Raspberry Pi 3 Lüfterkühlleistung" /></p>
 
-<h3 id="weichenstellung-im-datenschutz">Weichenstellung im Datenschutz</h3>
+<p>Sieht man sich die Kühlleistung des Lüfters genauer an, so erreicht man eine Reduzierung um etwas weniger als 20 °C. Dabei war der Lüfter direkt an die 5 V Versorgung gesteckt worden und lief somit immer. Bei dem 12 V Typ war dann aber nicht gesicher das er bei 5 V immer anläuft. Hier sollte man eher einen 5V Typ einsetzen.</p>
 
-<p>Einer der besten Talks an diesem Tag war die Grundsatzrede von Hr. Kelber
-(Deutscher Bundesdatenschutzbeauftragter) über die Gefahren,
-wie auch die Möglichkeiten, welche eine gut umgesetztes Datenschutzgesetz
-für Europa bietet. Um die Sensibilisierung der nicht-technischen Bevölkerung
-voran zu treiben schlug er auch noch mit Analogien zu arbeiten. Beispiel:
-Man stelle sich vor man geht in die Fußgängerzone und sobald man diese betritt,
-wird man von einer Person verfolgt. Diese notiert alle Geschäfte die man betritt,
-was man kauft, was man nur anschaut, mit wem man spricht. Zusätzlich bietet diese
-Personen einem noch gratis Kaffee an, wenn man ihm zusätzlich sagt wenn man
-in der Fußgängerzone gekannt hat.</p>
+<h2 id="lüftersteuerung">Lüftersteuerung</h2>
 
-<h3 id="das-mauern-muss-weg-security-nightmare">Das Mauern muss weg &amp; Security Nightmare</h3>
+<p>Da man nun weis, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
+Man könnte den Lüfter ja nur aktivieren wenn er wirklich gebraucht wird also wenn die Prozessortemperatur zu hoch ist. Tatsächlich ist so eine Funktion bereits im Kernel verfügbar. Der Devicetree gpio-fan ist genau für diese Funktion gemacht worden.</p>
 
-<p>Wie schon im letztem Jahr zeichnete sich das Ende des CCC durch die
-Jahresrückblicke von FragDenStaat.de und Frank&amp;Ron ab.
-Hier wurde wieder einmal aufgezeigt, dass viele unermüdlich daran arbeiten,
-dass es besser und nicht schlechter wird.</p>
+<pre><code>Name:   gpio-fan
+Info:   Configure a GPIO pin to control a cooling fan.
+Load:   dtoverlay=gpio-fan,&lt;param&gt;=&lt;val&gt;
+Params: gpiopin                 GPIO used to control the fan (default 12)
+        temp                    Temperature at which the fan switches on, in
+                                millicelcius (default 55000)
+</code></pre>
 
-<p><center>
-<img src="../../img/36C3_Day4_detail.jpg" alt="IFG" width="80%"></img>
-</center></p>
+<p>Als Parameter kann man den GPIO und die Einschalttemperatur angeben. Die Hysterese ist leider fix mit 10 °C hinterlegt.
+In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiviert und bei 45 °C deaktiviert.</p>
 
-<h3 id="that-s-the-end">That&rsquo;s the end</h3>
+<h2 id="schaltung">Schaltung</h2>
 
-<p>Danke für den großartingen Kongress und auf ein Wiedersehen im nächsten Jahr&hellip;</p>
+<p>Mit dem GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA. Man muss also eine Transistor- oder FET-Schaltung verwenden.</p>
+
+<p><img src="../../img/gpio-fan_5v_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung" /></p>
+
+<p>Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Beim Basis-Vorwiderstand wird 4700 KOhm verwendet, um den Ausgang möglist wenig zu belasten. Der Transistor wird hier als Schalter eingesetz.</p>
+
+<h2 id="aktivierung-lüftersteuerung">Aktivierung Lüftersteuerung</h2>
+
+<p>In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet.</p>
+
+<pre><code>dtoverlay=gpio-fan,gpiopin=21,temp=55000
+</code></pre>
             </article>
           </div>
           
@@ -332,10 +367,11 @@ dass es besser und nicht schlechter wird.</p>
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
-    <a href="/categories/ccc" title="View all posts in CCC">CCC</a>
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/gc2" title="View all posts in GC2">GC2</a>
   </p>
 </div>
 
@@ -351,15 +387,15 @@ dass es besser und nicht schlechter wird.</p>
 
   <div class="author">
     	
-    <img alt='Christoph Woergoetter' src="https://www.gravatar.com/avatar/4e54135ce3ee5a79c20cbdb02086487d?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Geschrieben von:<a href="https://woergi.wordpress.com/" title="Posts von Christoph Woergoetter" rel="author">Christoph Woergoetter</a> </span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>ZisrIHN1cmp1ZHBwbGh1aHU=</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -370,7 +406,7 @@ dass es besser und nicht schlechter wird.</p>
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/woergi">
+  href="https://twitter.com/m_stroh">
   <i class="fab fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -379,7 +415,7 @@ dass es besser und nicht schlechter wird.</p>
 
 
 <a class="email" target="_blank"
-href="mailto:christoph.woergoetter@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fas fa-envelope"
 title="email icon"></i>
 </a>
@@ -391,7 +427,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/woergi">
+href="https://github.com/mstroh76">
 <i class="fab fa-github"
 title="github icon"></i>
 </a>
