@@ -1,8 +1,8 @@
 +++
 showonlyimage = false
-draft = true
+draft = false
 image = "img/Minecraft-API.jpg"
-date = "2020-09-14"
+date = "2020-09-08"
 title = "Minecraft Pi API"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Raspberry Pi Zero"]
