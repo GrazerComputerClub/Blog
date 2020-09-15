@@ -55,6 +55,7 @@ Der Python Sourcecode muss in eine Datei gespeichert werden, z. B. tnt.py und  m
 ### Spielerposition
 
 Möchte man mit Positionen arbeiten ist zu beachten:
+
   * X ist horizontal (links und rechts)
   * Y ist vertikal (also oben und unten)
   * Z ist in die Tiefe (hinten und vorne) 
@@ -80,7 +81,7 @@ if Block_beneat != block.AIR and Block_beneat != block.WATER:
   mc.setBlock(x, y, z, block.TNT.id, 1)
 ```
 
-Für den Block verwenden wir das Objekt ``block`` um statt mit einer Nummer mit Namen die Böcke identifizieren zu können. Eine Liste der Blöcke bzw. Blocknamen findet man bei [Minecraft Pi Edition API Reference](https://pimylifeup.com/minecraft-pi-edition-api-reference/). Der letzte Parameter der Funktion definiert die DataId des Blockes. Diese variiert den Blocktyp. Bei TNT definiert 1 eine aktivierbaren Typ, der dann durch das Schwert zum explodieren gebracht werden kann.  
+Für den Block verwenden wir das Objekt ``block`` um statt mit einer Nummer mit Namen die Böcke identifizieren zu können. Eine Liste der Blöcke bzw. Blocknamen findet man bei [Minecraft Pi Edition API Reference](https://pimylifeup.com/minecraft-pi-edition-api-reference/). Der letzte Parameter der Funktion definiert die DataId des Blockes. Diese variiert den Blocktyp. Bei TNT definiert 1 eine aktivierbaren Typ, der dann durch das Schwert zum Explodieren gebracht werden kann.  
 Es gibt auch die Funktion ``setblocks``, damit können mehrere Blocke auf einmal gesetzt werden. Dazu gibt man zwei Positionen an, die den zu füllenden Bereich definieren. Optional kann auch wieder die DataId Nummer angegeben werden. 
 
 ```python
@@ -90,7 +91,7 @@ Es gibt auch die Funktion ``setblocks``, damit können mehrere Blocke auf einmal
 
 ### Ereignis bei Berührung eines Blocks (Schwert)
 
-Eine spezielle Funktion ermöglicht es zu erkennen wenn der Spieler Blöcke mit dem Schwert (rechten Maustaste) berührt.
+Eine spezielle Funktion ermöglicht es zu erkennen, wenn der Spieler Blöcke mit dem Schwert (rechten Maustaste) berührt.
 Die Funktion ``pollBlockHits`` holt sich diese Aktion in eine Variable. Die Feld-Variable kann dann einzeln abgearbeitet werden.
 Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für 15 Sekunden die Aktionen überwacht und eine Meldung ausgegeben. 
 
@@ -114,9 +115,9 @@ for loop in range(1, int(duration/0.1)):
 
 ## Minecraft Pi - Sound Effects
 
-Eine nützliche Idee hatte Martin O'Hanlon, er erweiterte das Programm um zusätzlich Soundeffekte. Das Spiel kommt nämlich im original ganz ohne Soundausgabe daher. Dazu nutzte er einfach die Python 3 API um im richten Moment Sound zu erzeugen. Zum Beispiel Schrittgeräusche beim Laufen oder bei beim Einsatz des Schwerts. Das ganze wurde in seinem Blog im Eintrag [Raspberry Pi - Minecraft - Sounds Effects](https://www.stuffaboutcode.com/2013/06/raspberry-pi-minecraft-sounds-effects.html) beschrieben. Hier wurde aber die alte Python 2 Schnittstelle verwendet, sodass es aktuell nicht mehr nutzbar ist.
+Eine nützliche Idee hatte Martin O'Hanlon, er erweiterte das Programm um zusätzlich Soundeffekte. Das Spiel kommt nämlich im Original ganz ohne Soundausgabe daher. Dazu nutzte er einfach die Python 3 API um im richtigen Moment Sound zu erzeugen. Zum Beispiel Schrittgeräusche beim Laufen oder bei beim Einsatz des Schwerts. Das ganze wurde in seinem Blog im Eintrag [Raspberry Pi - Minecraft - Sounds Effects](https://www.stuffaboutcode.com/2013/06/raspberry-pi-minecraft-sounds-effects.html) beschrieben. Hier wurde aber die alte Python 2 Schnittstelle verwendet, sodass es aktuell nicht mehr nutzbar ist.
 
-Der GC2 (Grazer Computer Club) hat sich nun dem Projekt angenommen und es auf Python 3 portiert und erweitert. Es ist auf dem Github Repository [Minecraft Pi - Sound Effects](https://github.com/GrazerComputerClub/minecraft-sound) verfügbar. Einerseits ist es nützlich für Spieler und andererseits zeigt es die Möglichkeiten der Python 3 API.
+Der GC2 (Grazer Computer Club) hat sich nun dem Projekt angenommen und es auf Python 3 portiert und erweitert. Es ist auf dem GitHub Repository [Minecraft Pi - Sound Effects](https://github.com/GrazerComputerClub/minecraft-sound) verfügbar. Einerseits ist es nützlich für Spieler und andererseits zeigt es die Möglichkeiten der Python 3 API.
 
 Folgende Änderungen wurden durchgeführt:
 
