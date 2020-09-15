@@ -25,7 +25,7 @@
         "datePublished": "2020-09-14 00:00:00 &#43;0000 UTC",
         "dateModified" : "2020-09-14 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/cooling/",
-        "wordCount" : "601",
+        "wordCount" : "889",
         "image" : https://blog.gc2.atimg/fan.png",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1600113513" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1600206078" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1600113513" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1600206078" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -323,16 +323,16 @@ sleep <span style="color:#40a070">180</span>
 
 <p><img src="../../img/RPI3B_cooling.png" alt="Raspberry Pi 3 Temperaturen" /></p>
 
-<p>Es zeigte sich, dass die Raspberry Pi 3 an ihre Temperaturgrenze stößt spätestens wenn alle 4 Kerne ausgelastet sind. dann wird vom System automatisch die Taktrate der CPU reduziert um eine überhitzung von mehr als 82 °C zu vermeiden.<br />
+<p>Es zeigte sich, dass die Raspberry Pi 3 an ihre Temperaturgrenze stößt spätestens wenn alle 4 Kerne ausgelastet sind. dann wird vom System automatisch die Taktrate der CPU reduziert um eine Überhitzung von mehr als 82 °C zu vermeiden.<br />
 Auch wenn man einen Kühlkörper auf den SoC befestigt, wird damit der Temperatur nur geringfügig reduziert. Erst wenn man den Kühlkörper mit einem langsam drehenden Lüfter anbläst, wird die Temperatur massiv reduziert und die volle Taktrate steht zur Verfügung.</p>
 
 <p><img src="../../img/RPI3B_cooling_fan_power.png" alt="Raspberry Pi 3 Lüfterkühlleistung" /></p>
 
-<p>Sieht man sich die Kühlleistung des Lüfters genauer an, so erreicht man eine Reduzierung um etwas weniger als 20 °C. Dabei war der Lüfter direkt an die 5 V Versorgung gesteckt worden und lief somit immer. Bei dem 12 V Typ war dann aber nicht gesicher das er bei 5 V immer anläuft. Hier sollte man eher einen 5V Typ einsetzen.</p>
+<p>Sieht man sich die Kühlleistung des Lüfters genauer an, so erreicht man eine Reduzierung um etwas weniger als 20 °C. Dabei war der Lüfter direkt an die 5 V Versorgung gesteckt worden und lief somit immer. Bei dem 12 V Typ war dann aber nicht gesichert, dass er bei 5 V immer anläuft. Hier sollte man eher einen 5 V Typ einsetzen.</p>
 
 <h2 id="lüftersteuerung">Lüftersteuerung</h2>
 
-<p>Da man nun weis, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
+<p>Da man nun weiß, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
 Man könnte den Lüfter ja nur aktivieren wenn er wirklich gebraucht wird also wenn die Prozessortemperatur zu hoch ist. Tatsächlich ist so eine Funktion bereits im Kernel verfügbar. Der Devicetree gpio-fan ist genau für diese Funktion gemacht worden.</p>
 
 <pre><code>Name:   gpio-fan
@@ -348,18 +348,48 @@ In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiv
 
 <h2 id="schaltung">Schaltung</h2>
 
-<p>Mit dem GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA. Man muss also eine Transistor- oder FET-Schaltung verwenden.</p>
+<p>Der GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA und damit weit über der Belastungsgrenze. Man muss also eine Transistor- oder FET-Schaltung als Schalter für die 5 V Versorgung verwenden.</p>
 
 <p><img src="../../img/gpio-fan_5v_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung" /></p>
 
-<p>Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Beim Basis-Vorwiderstand wird 4700 KOhm verwendet, um den Ausgang möglist wenig zu belasten. Der Transistor wird hier als Schalter eingesetz.</p>
+<p>Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Als Basis-Vorwiderstand wird 4,7 KOhm verwendet, um den Ausgang möglichst wenig zu belasten.</p>
+
+<p>Soll der Lüfter besonders leise sein, empfiehlt es sich ihn mit nur ca. 3,3 V zu betreiben. Dazu kann man entweder einen Festspannungsregler (LM 1117 MPX-3.3) oder auch einfach 2 Dioden (1N4001) vorschalten.</p>
+
+<p><img src="../../img/gpio-fan_ldo_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung mit Festspannungsregler" />
+<img src="../../img/gpio-fan_diode_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung mit Dioden" /></p>
 
 <h2 id="aktivierung-lüftersteuerung">Aktivierung Lüftersteuerung</h2>
 
-<p>In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet.</p>
+<p>In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet. Die Aktivierung des Lüfters erfolgt bei 55 °C.</p>
 
-<pre><code>dtoverlay=gpio-fan,gpiopin=21,temp=55000
+<pre><code>dtoverlay=gpio-fan,gpiopin=21
 </code></pre>
+
+<p>55 °C sind relativ wenig, wenn man bedenkt, dass diese Temperatur bereits mit der Belastung von einem Kern erreicht wird. Sinnvoller wäre es wohl den Lüfter erst bei einer höheren Temperatur z.B. bei 70 °C zu aktivieren.</p>
+
+<pre><code>dtoverlay=gpio-fan,gpiopin=21,temp=70000
+</code></pre>
+
+<p>Wie man aber an der Kühlleistung des Lüfters sieht, wird die Prozessortemperatur um fast 20 °C verringert. Wenn die Hysterese aber nur 10 °C beträgt, bedeutet das, der Lüfter wird bei hoher Belastung immer wieder an- und ausgeschaltet. Die Temperatur schwankt dann immer zwischen 60 und 70 °C.<br />
+Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter &ldquo;hysteresis&rdquo; und &ldquo;temperature&rdquo; angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.</p>
+
+<pre><code>cd /boot/overlays
+sudo dtc -O dts -I dtb gpio-fan.dtbo -o gpio-fan.dts
+sudo cp gpio-fan.dts gpio-fanH20.dts
+sudo sed -i 's/temperature = &lt; 0xd6d8 &gt;/temperature = &lt; 0xfde8 &gt;/g' gpio-fanH20.dts
+sudo sed -i 's/hysteresis = &lt; 0x2710 &gt;/hysteresis = &lt; 0x4e20 &gt;/g' gpio-fanH20.dts
+sudo dtc -O dtb -I dts gpio-fanH20.dts -o gpio-fanH20.dtbo
+</code></pre>
+
+<p>Damit wurde ein neuer Devicetree mit dem Namen gpio-fanH20 erzeugt. In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 65 °C aktiviert und bei 20 °C weniger, also 45 °C deaktiviert.</p>
+
+<p>In der config.txt Datei kann der neue Devicetree geladen und parametriert werden.</p>
+
+<pre><code>dtoverlay=gpio-fanH20,gpiopin=21,temp=70000
+</code></pre>
+
+<p><img src="../../img/RPI3B_cooling_fan.png" alt="Raspberry Pi 3 Temperature mit Lüftersteuerung" /></p>
             </article>
           </div>
           
@@ -566,7 +596,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1600113513"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1600206078"></script>
 
 </body>
 </html>
