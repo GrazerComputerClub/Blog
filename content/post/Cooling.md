@@ -1,4 +1,4 @@
-﻿+++
++++
 showonlyimage = false
 draft = false
 image = "img/fan.png"
@@ -6,7 +6,7 @@ date = "2020-09-14"
 title = "Raspberry Pi CPU Kühlung"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "GC2"]
-keywords = ["Lüfter", "Aktive Kühlung", "Kühlkörper", "CPU", "SoC"]
+keywords = ["Lüfter", "Aktive Kühlung", "Kühlkörper", "CPU", "SoC", "gpio-fan"]
 weight = 1
 +++
 
@@ -41,16 +41,16 @@ Der Test wurde bei einer typischen Umgebungstemperatur von 24 °C durchgeführt.
 
 ![Raspberry Pi 3 Temperaturen](../../img/RPI3B_cooling.png)
 
-Es zeigte sich, dass die Raspberry Pi 3 an ihre Temperaturgrenze stößt spätestens wenn alle 4 Kerne ausgelastet sind. dann wird vom System automatisch die Taktrate der CPU reduziert um eine überhitzung von mehr als 82 °C zu vermeiden.  
+Es zeigte sich, dass die Raspberry Pi 3 an ihre Temperaturgrenze stößt spätestens wenn alle 4 Kerne ausgelastet sind. dann wird vom System automatisch die Taktrate der CPU reduziert um eine Überhitzung von mehr als 82 °C zu vermeiden.  
 Auch wenn man einen Kühlkörper auf den SoC befestigt, wird damit der Temperatur nur geringfügig reduziert. Erst wenn man den Kühlkörper mit einem langsam drehenden Lüfter anbläst, wird die Temperatur massiv reduziert und die volle Taktrate steht zur Verfügung.
  
 ![Raspberry Pi 3 Lüfterkühlleistung](../../img/RPI3B_cooling_fan_power.png)
 
-Sieht man sich die Kühlleistung des Lüfters genauer an, so erreicht man eine Reduzierung um etwas weniger als 20 °C. Dabei war der Lüfter direkt an die 5 V Versorgung gesteckt worden und lief somit immer. Bei dem 12 V Typ war dann aber nicht gesicher das er bei 5 V immer anläuft. Hier sollte man eher einen 5V Typ einsetzen.  
+Sieht man sich die Kühlleistung des Lüfters genauer an, so erreicht man eine Reduzierung um etwas weniger als 20 °C. Dabei war der Lüfter direkt an die 5 V Versorgung gesteckt worden und lief somit immer. Bei dem 12 V Typ war dann aber nicht gesichert, dass er bei 5 V immer anläuft. Hier sollte man eher einen 5 V Typ einsetzen.  
 
 ## Lüftersteuerung
 
-Da man nun weis, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
+Da man nun weiß, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
 Man könnte den Lüfter ja nur aktivieren wenn er wirklich gebraucht wird also wenn die Prozessortemperatur zu hoch ist. Tatsächlich ist so eine Funktion bereits im Kernel verfügbar. Der Devicetree gpio-fan ist genau für diese Funktion gemacht worden. 
 
 ```
@@ -67,19 +67,54 @@ In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiv
 
 ## Schaltung ##
 
-Mit dem GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA. Man muss also eine Transistor- oder FET-Schaltung verwenden. 
+Der GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA und damit weit über der Belastungsgrenze. Man muss also eine Transistor- oder FET-Schaltung als Schalter für die 5 V Versorgung verwenden. 
 
 ![Raspberry Pi Schaltung Lüftersteuerung](../../img/gpio-fan_5v_Steckplatine.png)
 
-Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Beim Basis-Vorwiderstand wird 4700 KOhm verwendet, um den Ausgang möglist wenig zu belasten. Der Transistor wird hier als Schalter eingesetz.
+Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Als Basis-Vorwiderstand wird 4,7 KOhm verwendet, um den Ausgang möglichst wenig zu belasten.  
+
+Soll der Lüfter besonders leise sein, empfiehlt es sich ihn mit nur ca. 3,3 V zu betreiben. Dazu kann man entweder einen Festspannungsregler (LM 1117 MPX-3.3) oder auch einfach 2 Dioden (1N4001) vorschalten.
+
+![Raspberry Pi Schaltung Lüftersteuerung mit Festspannungsregler](../../img/gpio-fan_ldo_Steckplatine.png)
+![Raspberry Pi Schaltung Lüftersteuerung mit Dioden](../../img/gpio-fan_diode_Steckplatine.png)
+
 
 ## Aktivierung Lüftersteuerung
 
 
-In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet.
+In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet. Die Aktivierung des Lüfters erfolgt bei 55 °C.
 
 ```
-dtoverlay=gpio-fan,gpiopin=21,temp=55000
+dtoverlay=gpio-fan,gpiopin=21
 ```
+
+55 °C sind relativ wenig, wenn man bedenkt, dass diese Temperatur bereits mit der Belastung von einem Kern erreicht wird. Sinnvoller wäre es wohl den Lüfter erst bei einer höheren Temperatur z.B. bei 70 °C zu aktivieren. 
+
+```
+dtoverlay=gpio-fan,gpiopin=21,temp=70000
+```
+
+Wie man aber an der Kühlleistung des Lüfters sieht, wird die Prozessortemperatur um fast 20 °C verringert. Wenn die Hysterese aber nur 10 °C beträgt, bedeutet das, der Lüfter wird bei hoher Belastung immer wieder an- und ausgeschaltet. Die Temperatur schwankt dann immer zwischen 60 und 70 °C.  
+Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter "hysteresis" und "temperature" angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.
+
+```
+cd /boot/overlays
+sudo dtc -O dts -I dtb gpio-fan.dtbo -o gpio-fan.dts
+sudo cp gpio-fan.dts gpio-fanH20.dts
+sudo sed -i 's/temperature = < 0xd6d8 >/temperature = < 0xfde8 >/g' gpio-fanH20.dts
+sudo sed -i 's/hysteresis = < 0x2710 >/hysteresis = < 0x4e20 >/g' gpio-fanH20.dts
+sudo dtc -O dtb -I dts gpio-fanH20.dts -o gpio-fanH20.dtbo
+```
+
+Damit wurde ein neuer Devicetree mit dem Namen gpio-fanH20 erzeugt. In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 65 °C aktiviert und bei 20 °C weniger, also 45 °C deaktiviert.  
+
+In der config.txt Datei kann der neue Devicetree geladen und parametriert werden.
+
+```
+dtoverlay=gpio-fanH20,gpiopin=21,temp=70000
+```  
+
+
+![Raspberry Pi 3 Temperature mit Lüftersteuerung](../../img/RPI3B_cooling_fan.png)
 
 
