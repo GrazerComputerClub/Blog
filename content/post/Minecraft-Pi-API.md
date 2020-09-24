@@ -5,8 +5,8 @@ image = "img/Minecraft-API.jpg"
 date = "2020-09-08"
 title = "Minecraft Pi API"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi", "Raspberry Pi Zero"]
-keywords = ["Raspberry Pi", "Minecraft", "Pi", "API", "Sound"]
+categories = ["Raspberry Pi", "Raspberry Pi Zero", "Programmierung"]
+keywords = ["Raspberry Pi", "Minecraft", "Pi", "API", "Sound", "Python"]
 weight = 1
 +++
 
