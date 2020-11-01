@@ -128,7 +128,8 @@ be3df82bb795a9224f916113f5bbeeab  System.Reflection.Metadata.dll.so
 bd646f0b1c23b90cf0ea90f15231e439  VBCSCompiler.exe.so
 ```
 
-Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler "as" erzeugt. Hier wird der Optimierungsparameter "-mfpu=vfp3" verwendet. Als Beschreibung findet man "Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension". Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.
+Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler "as" erzeugt. Hier wird der Optimierungsparameter "-mfpu=vfp3" verwendet. Als Beschreibung findet man "Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension". Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.  
+Aktualisierung 1.11.2020: Auch bei Update/Installation auf einem Raspberry Pi 1 wird beim Kompilieren der Parameter "-mfpu=vfp3" angewendet.
 
 ### Lösung (GC2 Raspjamming) ###
 
