@@ -6,10 +6,20 @@
     <description>Recent content in Programmierung on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 16 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Minecraft Pi API</title>
+      <link>https://blog.gc2.at/post/minecraft-pi-api/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/minecraft-pi-api/</guid>
+      <description>&lt;p&gt;Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title> GPIO-Eingang zur Joypad Emulation</title>

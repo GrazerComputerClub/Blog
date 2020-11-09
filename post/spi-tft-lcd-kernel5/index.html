@@ -11,30 +11,28 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Geschwindigkeitsmessung mit Raspberry Pi",
-        "headline" : "Geschwindigkeitsmessung mit Raspberry Pi",
-        "description" : "<p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
-
-<p></p>",
+        "name" : "SPI TFT LCD - Kernel 5",
+        "headline" : "SPI TFT LCD - Kernel 5",
+        "description" : "<p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
+</p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-18 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-18 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/bundesseminarelektro_pi2016/",
-        "wordCount" : "159",
-        "image" : https://blog.gc2.atimg/fortbildungE_demo.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-11-09 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-11-09 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/spi-tft-lcd-kernel5/",
+        "wordCount" : "679",
+        "image" : https://blog.gc2.atimg/SPI-LCD-TFT-fbcp-ili9341.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Geschwindigkeitsmessung mit Raspberry Pi </title>
+ <title>SPI TFT LCD - Kernel 5 </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -245,14 +243,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/fortbildungE_demo.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/SPI-LCD-TFT-fbcp-ili9341.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">18 December</span>	<span> / </span>
+          <span class="date">09 November</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a>
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
@@ -267,53 +265,107 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Geschwindigkeitsmessung mit Raspberry Pi</h1>
+          <h1 class='entry-title'> SPI TFT LCD - Kernel 5</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
+              <p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
+</p>
 
-<p></p>
+<h2 id="allgemeines">Allgemeines</h2>
 
-<p>Beim Bundesseminar für Elektro,­ Elektrotechnik vom 24. bis 26.02.2016 in der Landesberufsschule Voitsberg wurden drei aufeinander Aufbauende Versuche zum Thema Geschwindigkeitsmessung vorgestellt.
-Es wurde mit Lichtschranken und Ultraschallsensor gemessen, sowie eine kombinierte Variante mit Differenz-Auswertung implementiert.
-Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com/">wiringPi</a> Bibliothek umgesetzt.</p>
+<p>SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 240x240, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Früher konnte man sie über ein Kernel Modul  bzw. Overlay einbinden. Seit Kernel 5 ist dass aber nur mehr über entsprechende Overlays möglich. In userem Test funktionierten die Oberlays allerdings auch nicht obwohl sie mit Kernel 4 korrekt gearbeitet haben.</p>
 
-<h2 id="schaltbild-übersicht">Schaltbild / Übersicht</h2>
+<p>Als Alternative bietet sich das Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a> an. Das Programm muss zuerst mit Kompilerparameter an das Display und die Verkabelung angepasst werden. Desweiteren können noch einige weitere Anpassungen vorgenommen werden. Das Programm kann entsprechend des Zielsystems bzw. dem Raspberry Pi optimiert werden. Wir wählen die Anpassung an den Raspberry Pi Zero, damit es mit allen Systemen verwendet werden kann.<br />
+Nach dem Kompilieren bzw. Erstellen des Programms kanne es gestartet werden. Dann zeigt das SPI-Display die Grafikausgabe des Raspberry Pi an. Es kopiert also den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
+Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf dem langsamen Raspberry Pi Zero möglich Video abzuspielen.<br />
+Mit dem Programm &lsquo;fbcp-ili9341&rsquo; kann diese ständige Kopieroperation nun im Hintergrund mit geringer CPU-Last erledigt werden. Dabei wird sogar das Bild auf die Auflösung des SPI-Displays angepasst. Das gilt für die Konsole, für X-Windows und auch für die Videoausgabe. Man kann also auch flüssig Videos auf einem 160x128 Displays ausgeben.</p>
 
-<p><img src="../../img/fortbildungE_gesamtschaltbild_bb.png" alt="ALT" /></p>
+<p>Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:</p>
 
-<h3 id="materialen-aufgabe-1">Materialen - Aufgabe 1</h3>
+<table>
+<thead>
+<tr>
+<th>Kontroller</th>
+<th align="center">Auflösung</th>
+<th align="center">Größe</th>
+<th align="center">ca. Preis China</th>
+</tr>
+</thead>
 
-<ul>
-<li>2x IR­Empfänger OPN6042­36­CUT</li>
-<li>2x IR­Sendediode 1.3 &hellip; 1.7 V ~ 100mA</li>
-<li>2x 68 Ω Widerstand</li>
-<li>2x 160 Ω Widerstand</li>
-<li>2x Standard LED 10­20mA</li>
-</ul>
+<tbody>
+<tr>
+<td>ST7735S</td>
+<td align="center">128x128</td>
+<td align="center">1,44&rdquo;</td>
+<td align="center">3 €</td>
+</tr>
 
-<h3 id="materialen-aufgabe-2">Materialen - Aufgabe 2</h3>
+<tr>
+<td>ST7735R</td>
+<td align="center">160x128</td>
+<td align="center">1,8&rdquo;</td>
+<td align="center">4 €</td>
+</tr>
 
-<ul>
-<li>1x HC­SR04 Ultraschallsensor</li>
-<li>1x 220 Ω Widerstand</li>
-<li>1x 430 Ω Widerstand</li>
-</ul>
+<tr>
+<td>ST7789VW</td>
+<td align="center">240x240</td>
+<td align="center">1,3&rdquo;</td>
+<td align="center">3 €</td>
+</tr>
 
-<h3 id="materialen-aufgabe-3">Materialen - Aufgabe 3</h3>
+<tr>
+<td>ILI9341</td>
+<td align="center">320x240</td>
+<td align="center">2,2-2,8&rdquo;</td>
+<td align="center">8 €</td>
+</tr>
+</tbody>
+</table>
 
-<ul>
-<li>Kabelkanal (ca. 1m)</li>
-<li>Heißkleber</li>
-<li><strong>Matchboxautos</strong></li>
-</ul>
+<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br />
+Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br />
+Der SPI-Taktfrequenz wird aus dem System Takt als der &ldquo;core_freq&rdquo; gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.<br />
+Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz (Divisor 8) und beim ILI9341-Controller bei ca. 66 MHz.
+Der SPI-Bus kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.</p>
 
-<h2 id="unterrichtsmaterialen">Unterrichtsmaterialen</h2>
+<p>Auf der Projektseite sind alle Parameter genau beschreiben. Bei Unklarhieten muss hier nachgelesen werden.</p>
 
-<p><a href="https://github.com/GrazerComputerClub/Talk/blob/master/FortbildungE_Geschwindigkeitsmessung_001.pdf">PDF - vollständige Anleitung zum herunterladen</a></p>
+<h2 id="kontakte">Kontakte</h2>
+
+<p>Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:<br />
+<strong>VCC</strong> &hellip; Versorgung (meist 5 oder 3,3 V)<br />
+<strong>VLED</strong> &hellip; Versorgung Hintergrundbeleuchtung (optional, meist 3,3 V)<br />
+<strong>GND</strong> &hellip; Masse<br />
+<strong>MOSI</strong> &hellip; Datenleitung<br />
+<strong>CLK</strong> &hellip; SPI-Takt<br />
+<strong>CS</strong> &hellip; SPI Slave Aktivierung<br />
+<strong>RESET</strong> &hellip; Reset<br />
+<strong>DC/A0/RS</strong> &hellip; Umschaltung Befehl oder Daten Übertagung</p>
+
+<p>Die Kontakte RESET und DC/A0/RS können über Parameter frei zugewiesen werden. Wobei CS immer auf CS0 gesetzt werden muss. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.</p>
+
+<p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss" /></p>
+
+<h2 id="erstellung-für-1-8-160x128-display-mit-st7735r-kontroller">Erstellung für 1,8&rdquo; 160x128 Display mit ST7735R Kontroller</h2>
+
+<pre><code>sudo apt-get install cmake
+cd ~
+git clone https://github.com/juj/fbcp-ili9341.git
+cd fbcp-ili9341
+mkdir build
+cd build
+make -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
+make -j
+</code></pre>
+
+<p>Mit <code>sudo ./fbcp-ili9341</code> kann das Programm dann gestartet werden.</p>
+
+<h2 id="verlinkungen">Verlinkungen</h2>
+
+<p>GitHub Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a></p>
             </article>
           </div>
           
@@ -340,15 +392,15 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
   <div class="author">
     	
-    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Geschrieben von:<a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a> </span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>Softwareentwickler und PowerShell Evangelist.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -359,7 +411,7 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/schusterfredl">
+  href="https://twitter.com/m_stroh">
   <i class="fab fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -368,7 +420,7 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
 
 <a class="email" target="_blank"
-href="mailto:manfred.wallner@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fas fa-envelope"
 title="email icon"></i>
 </a>
@@ -380,7 +432,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/mwallner">
+href="https://github.com/mstroh76">
 <i class="fab fa-github"
 title="github icon"></i>
 </a>

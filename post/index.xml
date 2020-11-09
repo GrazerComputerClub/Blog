@@ -6,10 +6,30 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SPI TFT LCD - Kernel 5</title>
+      <link>https://blog.gc2.at/post/spi-tft-lcd-kernel5/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/spi-tft-lcd-kernel5/</guid>
+      <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SSH ohne Passwort</title>
+      <link>https://blog.gc2.at/post/ssh/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/ssh/</guid>
+      <description>&lt;p&gt;Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi CPU Kühlung</title>

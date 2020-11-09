@@ -25,7 +25,7 @@
         "datePublished": "2019-12-26 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-12-26 00:00:00 &#43;0000 UTC",
         "url" : "https://blog.gc2.at/post/cs/",
-        "wordCount" : "1054",
+        "wordCount" : "1071",
         "image" : https://blog.gc2.atimg/cs.png",
         "keywords" : [ "Blog" ]   
     }
@@ -46,9 +46,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1600206078" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1604931114" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1600206078" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1604931114" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -393,7 +393,8 @@ be3df82bb795a9224f916113f5bbeeab  System.Reflection.Metadata.dll.so
 bd646f0b1c23b90cf0ea90f15231e439  VBCSCompiler.exe.so
 </code></pre>
 
-<p>Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler &ldquo;as&rdquo; erzeugt. Hier wird der Optimierungsparameter &ldquo;-mfpu=vfp3&rdquo; verwendet. Als Beschreibung findet man &ldquo;Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension&rdquo;. Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.</p>
+<p>Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler &ldquo;as&rdquo; erzeugt. Hier wird der Optimierungsparameter &ldquo;-mfpu=vfp3&rdquo; verwendet. Als Beschreibung findet man &ldquo;Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension&rdquo;. Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.<br />
+Aktualisierung 1.11.2020: Auch bei Update/Installation auf einem Raspberry Pi 1 wird beim Kompilieren der Parameter &ldquo;-mfpu=vfp3&rdquo; angewendet.</p>
 
 <h3 id="lösung-gc2-raspjamming">Lösung (GC2 Raspjamming)</h3>
 
@@ -810,7 +811,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1600206078"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1604931114"></script>
 
 </body>
 </html>

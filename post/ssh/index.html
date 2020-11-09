@@ -11,30 +11,28 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Geschwindigkeitsmessung mit Raspberry Pi",
-        "headline" : "Geschwindigkeitsmessung mit Raspberry Pi",
-        "description" : "<p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
-
-<p></p>",
+        "name" : "SSH ohne Passwort",
+        "headline" : "SSH ohne Passwort",
+        "description" : "<p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
+</p>",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-18 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-18 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/bundesseminarelektro_pi2016/",
-        "wordCount" : "159",
-        "image" : https://blog.gc2.atimg/fortbildungE_demo.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-26 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-09-26 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/ssh/",
+        "wordCount" : "601",
+        "image" : https://blog.gc2.atimg/SSH.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Geschwindigkeitsmessung mit Raspberry Pi </title>
+ <title>SSH ohne Passwort </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -245,14 +243,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/fortbildungE_demo.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/SSH.png">
       </div>
       
         <div class="entry-meta">
-          <span class="date">18 December</span>	<span> / </span>
+          <span class="date">26 September</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a>
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
@@ -267,53 +265,88 @@ if (!doNotTrack) {
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Geschwindigkeitsmessung mit Raspberry Pi</h1>
+          <h1 class='entry-title'> SSH ohne Passwort</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.</p>
+              <p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
+</p>
 
-<p></p>
+<h2 id="beschreibung">Beschreibung</h2>
 
-<p>Beim Bundesseminar für Elektro,­ Elektrotechnik vom 24. bis 26.02.2016 in der Landesberufsschule Voitsberg wurden drei aufeinander Aufbauende Versuche zum Thema Geschwindigkeitsmessung vorgestellt.
-Es wurde mit Lichtschranken und Ultraschallsensor gemessen, sowie eine kombinierte Variante mit Differenz-Auswertung implementiert.
-Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com/">wiringPi</a> Bibliothek umgesetzt.</p>
+<p>Wenn man sich per SSH auf einem Linux System anmeldet muss man üblicherweise eine Passwort eingeben. Bei dem Raspberry Pi wird das Standard-Passwort &ldquo;raspberry&rdquo; verwendet. Wenn man allerdings seinen öffentlichen Schlüssel am System hinterlegt, kann man sich ohne Passwort anmelden. Bei der Verwendung der Extention &ldquo;Remote Development&rdquo; für Visual Studio Code ist es sogar verpflichtend.<br />
+Sollte man ein neues Raspbian bzw. Raspberry Pi OS Betriebssystem aufgespielt haben, darf man nicht vergessen die Datei &ldquo;ssh&rdquo; auf der boot-Partition anzulegen. So wird nämlich der SSH-Dienst aktiviert.</p>
 
-<h2 id="schaltbild-übersicht">Schaltbild / Übersicht</h2>
+<h2 id="einrichtung-anmeldung-ohne-passwort">Einrichtung Anmeldung ohne Passwort</h2>
 
-<p><img src="../../img/fortbildungE_gesamtschaltbild_bb.png" alt="ALT" /></p>
+<p>Auf dem Client-PC, also der der sich auf den Raspberry Pi verbinden will, muss ein Schlüsselpaar für den aktuellen Benutzer (im Beispiel GC2) erstellt werden.
+Es macht Sinn erstmals zu überprüfen ob dies bereits geschehen ist. Der Befehl <code>ls ~/.ssh</code> listet den Inhalt des lokalen ssh Verzeichnisses auf. Wenn der Fehler &ldquo;Zugriff auf &lsquo;/home/GC2/.ssh&rsquo; nicht möglich&rdquo; ausgegeben wird oder die Dateien &ldquo;id_rsa.pub&rdquo; und &ldquo;id_dsa.pub&rdquo; nicht vorhanden sind, dann wurden noch keine Schlüssel erstellt.</p>
 
-<h3 id="materialen-aufgabe-1">Materialen - Aufgabe 1</h3>
+<h3 id="schlüsselpaar-erstellen">Schlüsselpaar erstellen</h3>
 
-<ul>
-<li>2x IR­Empfänger OPN6042­36­CUT</li>
-<li>2x IR­Sendediode 1.3 &hellip; 1.7 V ~ 100mA</li>
-<li>2x 68 Ω Widerstand</li>
-<li>2x 160 Ω Widerstand</li>
-<li>2x Standard LED 10­20mA</li>
-</ul>
+<p>Mit folgenden Befehl wir am lokalen System die  Schlüsselpaar erzeugung gestartet:</p>
 
-<h3 id="materialen-aufgabe-2">Materialen - Aufgabe 2</h3>
+<p><code>ssh-keygen</code></p>
 
-<ul>
-<li>1x HC­SR04 Ultraschallsensor</li>
-<li>1x 220 Ω Widerstand</li>
-<li>1x 430 Ω Widerstand</li>
-</ul>
+<p>Bei den nachfolgenden Fragen muss man zuerst angeben wo die Schlüssel-Datei gespeichert wird.
+Mit der Eingabetaste wird hier die Standardvorgabe &ldquo;/home/GC2/.ssh/id_rsa&rdquo; benutzt. Dann wird nach der Passwortphrase gefragt. Wenn man zwei mal nur die Eingabetaste drückt, wird keine Phrase verwendet. Man drückt also nach dem Befehl einfach 3 mal auf die Eingabetaste.</p>
 
-<h3 id="materialen-aufgabe-3">Materialen - Aufgabe 3</h3>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/GC2/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/GC2/.ssh/id_rsa.
+Your public key has been saved in /home/GC2/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:obyeWjRqZ73w0UuI8RB7vQVZC/r3CcsnwCKIawrYq1g GC2@GC2-Laptop
+The key's randomart image is:
++---[RSA 2048]----+
+|          . .    |
+|         . + .   |
+|      . o o .    |
+|   . o + = .     |
+|  . . X S = +    |
+|.. . o @ + * + . |
+|o E o B = + + +  |
+|o+ o = + + . o   |
+|+.. ..o o .      |
++----[SHA256]-----+ 
+</code></pre>
 
-<ul>
-<li>Kabelkanal (ca. 1m)</li>
-<li>Heißkleber</li>
-<li><strong>Matchboxautos</strong></li>
-</ul>
+<p>Beim Auflisten des Verzeichnisinhalts <code>ls ~/.ssh</code> findet man nun die Dateien &ldquo;id_rsa&rdquo; und &ldquo;id_rsa.pub&rdquo;.</p>
 
-<h2 id="unterrichtsmaterialen">Unterrichtsmaterialen</h2>
+<h3 id="schlüssel-hinterlegen">Schlüssel hinterlegen</h3>
 
-<p><a href="https://github.com/GrazerComputerClub/Talk/blob/master/FortbildungE_Geschwindigkeitsmessung_001.pdf">PDF - vollständige Anleitung zum herunterladen</a></p>
+<p>Die Datei &ldquo;id_rsa&rdquo; enthält den privaten Schlüssel, er bleibt am aktuellen Client System.<br />
+Die Datei &ldquo;id_rsa.pub&rdquo; enthält den öffentlichen Schlüssel. Sie muss auf den SSH-Server bzw. den Raspberry Pi kopiert werden. Dies kann mit folgenden Befehl durchgeführt werden</p>
+
+<p><code>ssh-copy-id pi@raspberrypi.local</code></p>
+
+<p>raspberrypi.local ist der typische Hostname der Raspberry Pi. Eventuell muss man auch einen anderen Namen oder die IP-Adresse angeben.<br />
+Sollte es bzgl. des Hostnamens oder der aufgelösten IP-Adresse Probleme geben (&ldquo;Warning: the ECDSA host key for &lsquo;raspberrypi.local&rsquo; differs from the key for the IP address &lsquo;192.168.137.10&rsquo;&rdquo; oder &ldquo;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!&ldquo;) löscht man sie am besten aus der Liste der bekannten Verbindungen. Zur Ermittlung der IP-Adresse könnte man den Befehl <code>ping -c1 raspberrypi.local</code> ausführen.</p>
+
+<p><code>ssh-keygen -R raspberrypi.local</code><br />
+<code>ssh-keygen -R 192.168.137.10</code><br />
+<code>ssh-copy-id pi@raspberrypi.local</code></p>
+
+<p>Danach muss man zum letzten mal das Passwort angeben.</p>
+
+<pre><code>/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 2 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+pi@raspberrypi.local's password: 
+
+Number of key(s) added: 2
+
+Now try logging into the machine, with:   &quot;ssh 'pi@raspberrypi.local'&quot;
+and check to make sure that only the key(s) you wanted were added.
+</code></pre>
+
+<h2 id="verbinden">Verbinden</h2>
+
+<p>Verbindet man sich nun per SSH zum Raspberry Pi wird kein Passwort mehr abgefragt.</p>
+
+<p><code>ssh pi@raspberrypi.local</code></p>
             </article>
           </div>
           
@@ -340,15 +373,15 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
   <div class="author">
     	
-    <img alt='Manfred Wallner' src="https://www.gravatar.com/avatar/9f40c204e0a9e251e5ba9e1cf8e5cd11?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Geschrieben von:<a href="https://mwallner.net" title="Posts von Manfred Wallner" rel="author">Manfred Wallner</a> </span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>Softwareentwickler und PowerShell Evangelist.</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -359,7 +392,7 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/schusterfredl">
+  href="https://twitter.com/m_stroh">
   <i class="fab fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -368,7 +401,7 @@ Die dabei erstellten Programme wurden in C, mit der <a href="http://wiringpi.com
 
 
 <a class="email" target="_blank"
-href="mailto:manfred.wallner@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fas fa-envelope"
 title="email icon"></i>
 </a>
@@ -380,7 +413,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/mwallner">
+href="https://github.com/mstroh76">
 <i class="fab fa-github"
 title="github icon"></i>
 </a>
