@@ -85,6 +85,7 @@ Versionen PICO-8:
 | 0.1.11g   | 1b6d7b896e536073bab99a92039b222c | pico8   |
 | 0.1.12c   | 7769d451fb4b97e409d38b5d24280902 | pico8   |
 | 0.1.12c2  | 0fbbcb9d88f48d5f67b68a39412c962c | pico8   |
+| 0.2.1b    | 717dd59f6b6eb8dadd17c00211228844 | pico8   |
 
 ## Technische Daten
 
