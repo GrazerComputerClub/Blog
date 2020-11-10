@@ -84,6 +84,16 @@ dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn m
     </item>
     
     <item>
+      <title>PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT</title>
+      <link>https://blog.gc2.at/post/wavesharelcdhat/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
+      <description>&lt;p&gt;Um nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Raspberry Pi Zero Audio</title>
       <link>https://blog.gc2.at/post/pi-zero-audio/</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
