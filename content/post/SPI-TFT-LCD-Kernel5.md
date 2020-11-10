@@ -33,7 +33,7 @@ Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:
 
 Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.  
 Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).  
-Der SPI-Taktfrequenz wird aus dem System Takt als der "core_freq" gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.  
+Die SPI-Taktfrequenz wird aus dem System Takt als der "core_freq" gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.  
 Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz (Divisor 8) und beim ILI9341-Controller bei ca. 66 MHz.
 Der SPI-Bus kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.  
 
@@ -65,7 +65,7 @@ git clone https://github.com/juj/fbcp-ili9341.git
 cd fbcp-ili9341
 mkdir build
 cd build
-make -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
+cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
 make -j
  ```
 
