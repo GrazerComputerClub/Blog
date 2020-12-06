@@ -5,7 +5,7 @@ image = "img/Minecraft.png"
 date = "2020-08-02"
 title = "Minecraft Pi"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi", "Raspberry Pi Zero"]
+categories = ["Raspberry Pi", "Raspberry Pi Zero", "Minecraft"]
 keywords = ["Raspberry Pi", "Minecraft", "Pi"]
 weight = 1
 +++
