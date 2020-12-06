@@ -11,9 +11,9 @@
              "@id": "https://blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi am USB-Anschluss betreiben",
-        "headline" : "Raspberry Pi am USB-Anschluss betreiben",
-        "description" : "<p>Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?
+        "name" : "Minecraft Server",
+        "headline" : "Minecraft Server",
+        "description" : "<p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.
 </p>",
         "inLanguage" : "en",
         "author" : "",
@@ -21,18 +21,18 @@
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2019",
-        "datePublished": "2019-11-24 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-11-24 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/powerconsumtion/",
-        "wordCount" : "370",
-        "image" : https://blog.gc2.atimg/Strommesser.jpg",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-12-05 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2020-12-05 00:00:00 &#43;0000 UTC",
+        "url" : "https://blog.gc2.at/post/minecraft-server/",
+        "wordCount" : "881",
+        "image" : https://blog.gc2.atimg/MinecraftServer.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Raspberry Pi am USB-Anschluss betreiben </title>
+ <title>Minecraft Server </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -247,11 +247,11 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Strommesser.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/MinecraftServer.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">24 November</span>	<span> / </span>
+          <span class="date">05 December</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -268,286 +268,142 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/gc2">GC2</a>
+            <a href="/categories/minecraft">Minecraft</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Raspberry Pi am USB-Anschluss betreiben</h1>
+          <h1 class='entry-title'> Minecraft Server</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?
+              <p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.
 </p>
 
-<h2 id="beschreibung">Beschreibung</h2>
+<h2 id="grundsätzliches">Grundsätzliches</h2>
 
-<p>Bei dem Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache Aufbauten zu haben wollen wir die Raspberry Pi mit einem USB-Kabel direkt
-über den vorhandenen USB-Anschluss versorgen. Anfänglich hatten wir nur Raspberry Pi Zero Modelle, hier war das kein Problem. Die Stromaufnahme liegt bei ihnen unter 500 mA. Nun haben wir aber Raspberry Pi 2 und 3 Modelle bekommen. Nun soll untersucht werden ob diese auch mit dem USB-Anschluss versorgt werden können.</p>
+<p>Minecraft ist ein, besonders bei kleinen Kindern aber auch bei Erwachsenen beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.</p>
 
-<h2 id="testaufbau">Testaufbau</h2>
+<h2 id="basis-installation-und-einrichtung">Basis Installation und Einrichtung</h2>
 
-<p>Die Stromaufnahme des Systems wurde über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm &ldquo;sysbench&rdquo; CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.</p>
+<p>Als Basis für den Server wird ein Raspberry Pi OS Lite 32-Bit verwendet.<br />
+Folgende Schritte müssen initial durchgeführt werden:</p>
 
-<pre><code>sudo apt-get install sysbench
-sysbench --num-threads=1 --test=cpu --cpu-max-prime=20000 run
-sysbench --num-threads=2 --test=cpu --cpu-max-prime=20000 run
-sysbench --num-threads=3 --test=cpu --cpu-max-prime=20000 run
-sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
+<ul>
+<li>Raspberry Pi OS Lite 32-Bit herunterladen und auf eine schnelle MicroSD Karte schreiben</li>
+<li>In der Boot Partition die Datei ssh erzeugen</li>
+<li>Login mit Benutzer &ldquo;pi&rdquo; und Passwort &ldquo;raspberry&rdquo; (per SSH) bzw. &ldquo;raspberrz&rdquo; (lokal)</li>
+<li>Updates installieren: <code>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade</code></li>
+<li>Lokalisierungseinstellungen (Sprache, Zeitzone usw.) mit <code>sudo rasp-config</code> einstellen</li>
+</ul>
+
+<h2 id="microsd-benchmark">MicroSD Benchmark</h2>
+
+<p>Die Geschwindigkeit der MicroSD-Karte ist von entscheidender Bedeutung für den Minecraft Server. Mit einem Benchmark vom Autor, kann die Karte überprüft werden.</p>
+
+<pre><code>sudo curl https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash 
 </code></pre>
 
-<h2 id="ergebnis">Ergebnis</h2>
+<pre><code>     Category                  Test                      Result     
+HDParm                    Disk Read                 28.48 MB/s               
+HDParm                    Cached Disk Read          21.54 MB/s               
+DD                        Disk Write                12.3 MB/s                
+FIO                       4k random read            2380 IOPS (9523 KB/s)    
+FIO                       4k random write           204 IOPS (818 KB/s)      
+IOZone                    4k read                   7050 KB/s                
+IOZone                    4k write                  1357 KB/s                
+IOZone                    4k random read            6883 KB/s                
+IOZone                    4k random write           999 KB/s                 
 
-<p>Verwendet wurde eine Transcend 8 GB Class 10 MicroSD-Karte.  <!-- Die Karte kann einen wesentlichen Einfluss auf die Strohmaufnahme haben! -->
-Ansonsten wurde nichts angesteckt.</p>
-
-<table>
-<thead>
-<tr>
-<th align="left"><em>System</em></th>
-<th><em>Idle [mA]</em></th>
-<th><em>1-Core [mA]</em></th>
-<th><em>2-Core [mA]</em></th>
-<th><em>3-Core [mA]</em></th>
-<th><em>4-Core [mA]</em></th>
-<th>CPU-Temp [°C]</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">Pi Zero V1.3</td>
-<td>90</td>
-<td>160</td>
-<td></td>
-<td></td>
-<td></td>
-<td>49</td>
-</tr>
-
-<tr>
-<td align="left">Pi Zero W</td>
-<td>90</td>
-<td>170</td>
-<td></td>
-<td></td>
-<td></td>
-<td>53</td>
-</tr>
-
-<tr>
-<td align="left">Pi 2 ( 900 MHz)</td>
-<td>230</td>
-<td>280</td>
-<td>320</td>
-<td>360</td>
-<td>400</td>
-<td>53</td>
-</tr>
-
-<tr>
-<td align="left">Pi 2 (1000 MHz)</td>
-<td>230</td>
-<td>320</td>
-<td>360</td>
-<td>400</td>
-<td>450</td>
-<td>59</td>
-</tr>
-
-<tr>
-<td align="left">Pi 3 (1200 MHz)</td>
-<td>260</td>
-<td>370</td>
-<td>470</td>
-<td>570</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<p><img src="../../img/StromaufnamhePi2u3.png" alt="Diagramm" /></p>
-
-<h2 id="schlussfolgerung">Schlussfolgerung</h2>
-
-<p>Die Raspberry Pi 2 ist für den Betrieb am USB-Anschluss gut geeignet. Selbst im Turbo-Modus bleibt man unterhalb der 500 mA Grenze. Zu bedenken ist allerdings, dass zusätzliche Hardware auf den GPIOs auch noch Verbrauch generiert. Eine ausreichende Reserve sollte vorhanden sein. Andererseits ist eine Auslastung auf allen vier Kernen im Normalbetrieb eher unwahrscheinlich. Es ist als zu überlegen ob man mit dem Basistakt oder dem Turbo (1000 MHz) arbeitet.<br />
-Die Raspberry Pi 3 hat bereits bei einer Auslastung von zwei Kernen den maximalen Strom fast erreicht. Sie eignet sich weniger für den Betrieb am USB-Anschluss.</p>
-
-<p>Wer auf Nummer sicher gehen will kann in der Datei &ldquo;/boot/cmdline.txt&rdquo; die Anzahl der Kerne limitieren. Man könnte nur drei Kerne freischalten, um so Reserven zu schaffen und mit dem Turbo Modus die Einzelkernleistung erhöhen. So würde das System nie mehr als 400 mA aufnehmen.</p>
-
-<pre><code>maxcpus=3
+                          Score: 700                                         
 </code></pre>
 
-<!--
-Pi3 xxxx MHz - passiv
-idle    260 mA
-1 Core  370 mA
-2 Core  470 mA
-3 Core  570 mA
-~4 Core  700 mA   ~53°C
+<p>Laut Autor wäre ein &ldquo;Score&rdquo; von 1000 wünschenswert. Unter 700 sollte er nicht sein, dann sollte man auf eine USB SSD ausweichen.
+Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.</p>
 
+<h2 id="minicraft-server-installation">Minicraft Server Installation</h2>
 
-Pi2 900 MHz - passiv
-idle    230 mA
-1 Core  280 mA
-2 Core  320 mA
-3 Core  360 mA
-4 Core  400 mA   ~53°C
+<pre><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
+chmod +x SetupMinecraft.sh
+</code></pre>
 
+<p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der 7 Zeile die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden <code>wget -qO- https://papermc.io/api/v1/paper</code>.</p>
 
-Pi2 1000 MHz - ARM:1000/Core:500/RAM: 500 - passiv
-idle    230 mA
-1 Core  320 mA
-2 Core  360 mA
-3 Core  400 mA
-4 Core  450 mA   ~59°C
-    
+<pre><code>{&quot;project&quot;:&quot;paper&quot;,&quot;versions&quot;:[&quot;1.16.4&quot;,&quot;1.16.3&quot;,&quot;1.16.2&quot;,&quot;1.16.1&quot;,&quot;
+</code></pre>
 
-Pi2 1000 MHz - ARM:1000/Core:250/RAM:450 -passiv - 3Core
-idle    230 mA
-1 Core  290 mA
-2 Core  350 mA
-3 Core  390 mA   ~54°C
-4 Core  440 mA 
-    
+<p>In diesem Fall ist die Version 1.16.4 die neueste verfügbare Version, die wir im Setup-Script eintragen können.</p>
 
+<pre><code># Minecraft server version
+Version=&quot;1.16.4&quot;
+</code></pre>
 
-ARM:1000/Core:250/RAM:450
+<p>Dann kann das Setup gestartet werden.</p>
 
-BYTEmark* Native Mode Benchmark ver. 2 (10/95)
-Index-split by Andrew D. Balsa (11/97)
-Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+<pre><code>./SetupMinecraft.sh
+</code></pre>
 
-TEST                : Iterations/sec.  : Old Index   : New Index
-                    :                  : Pentium 90* : AMD K6/233*
---------------------:------------------:-------------:------------
-NUMERIC SORT        :          489.16  :      12.54  :       4.12
-STRING SORT         :          41.819  :      18.69  :       2.89
-BITFIELD            :      1.2403e+08  :      21.28  :       4.44
-FP EMULATION        :          109.17  :      52.39  :      12.09
-FOURIER             :          6908.2  :       7.86  :       4.41
-ASSIGNMENT          :          7.6104  :      28.96  :       7.51
-IDEA                :            1537  :      23.51  :       6.98
-HUFFMAN             :          723.83  :      20.07  :       6.41
-NEURAL NET          :          7.2727  :      11.68  :       4.91
-LU DECOMPOSITION    :          261.93  :      13.57  :       9.80
-==========================ORIGINAL BYTEMARK RESULTS==========================
-INTEGER INDEX       : 23.156
-FLOATING-POINT INDEX: 10.759
-Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
-==============================LINUX DATA BELOW===============================
-CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
-L2 Cache            : 
-OS                  : Linux 4.19.75-v7+
-C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
-libc                : 
-MEMORY INDEX        : 4.587
-INTEGER INDEX       : 6.870
-FLOATING-POINT INDEX: 5.967
-Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
-* Trademarks are property of their respective holder.
+<pre><code>Java installed successfully
+Getting total system memory...
+Total memory: 3828 - Available Memory: 3587
+Warning: You are running a 32 bit operating system which has a hard limit of 3 GB of memory per process
+You must also leave behind some room for the Java VM process overhead.  It is not recommended to exceed 2700 and if you experience crashes you may need to reduce it further.
+You can remove this limit by using a 64 bit Raspberry Pi Linux distribution (aarch64/arm64) like Ubuntu, Debian, etc.
+Total memory: 3828 - Available Memory: 2700
+Please enter the amount of memory you want to dedicate to the server.  A minimum of 700MB is recommended.
+You must leave enough left over memory for the operating system to run background processes.
+If all memory is exhausted the Minecraft server will either crash or force background processes into the paging file (very slow).
+Enter amount of memory in megabytes to dedicate to the Minecraft server (recommended: 2700): 
+</code></pre>
 
+<p>Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 700 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Dann sollte man also 2700 eingeben und die Enter-Taste drücken.</p>
 
+<pre><code>Enter a name for your server...
+Server Name: 
+</code></pre>
 
-BYTEmark* Native Mode Benchmark ver. 2 (10/95)
-Index-split by Andrew D. Balsa (11/97)
-Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+<p>Nun muss man den Servernamen eingeben. In dem Beispiel wählen wird &ldquo;GC2&rdquo;.</p>
 
-TEST                : Iterations/sec.  : Old Index   : New Index
-                    :                  : Pentium 90* : AMD K6/233*
---------------------:------------------:-------------:------------
-NUMERIC SORT        :          492.81  :      12.64  :       4.15
-STRING SORT         :          42.059  :      18.79  :       2.91
-BITFIELD            :       1.247e+08  :      21.39  :       4.47
-FP EMULATION        :          109.84  :      52.71  :      12.16
-FOURIER             :          6952.2  :       7.91  :       4.44
-ASSIGNMENT          :          7.7016  :      29.31  :       7.60
-IDEA                :          1545.4  :      23.64  :       7.02
-HUFFMAN             :          728.15  :      20.19  :       6.45
-NEURAL NET          :          7.3119  :      11.75  :       4.94
-LU DECOMPOSITION    :          263.64  :      13.66  :       9.86
-==========================ORIGINAL BYTEMARK RESULTS==========================
-INTEGER INDEX       : 23.315
-FLOATING-POINT INDEX: 10.825
-Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
-==============================LINUX DATA BELOW===============================
-CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
-L2 Cache            : 
-OS                  : Linux 4.19.75-v7+
-C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
-libc                : 
-MEMORY INDEX        : 4.623
-INTEGER INDEX       : 6.913
-FLOATING-POINT INDEX: 6.004
+<pre><code>Minecraft can automatically start at boot if you wish.
+Start Minecraft server at startup automatically (y/n)?
+</code></pre>
 
+<p>Nun kann man angeben ob der Minecraft Server nach einem Systemstart automatisch gestartet wird. Dies beantworten wir mit Ja, indem wir zuerst y drücken und dann die Enter-Taste.</p>
 
-BYTEmark* Native Mode Benchmark ver. 2 (10/95)
-Index-split by Andrew D. Balsa (11/97)
-Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+<pre><code>Your time zone is currently set to Europe/Vienna.  Current system time: Sa 5. Dez 17:27:41 CET 2020
+You can adjust/remove the selected reboot time later by typing crontab -e
+Automatically reboot Pi and update server at 4am daily (y/n)?
+</code></pre>
 
-TEST                : Iterations/sec.  : Old Index   : New Index
-                    :                  : Pentium 90* : AMD K6/233*
---------------------:------------------:-------------:------------
-NUMERIC SORT        :          437.08  :      11.21  :       3.68
-STRING SORT         :          37.709  :      16.85  :       2.61
-BITFIELD            :      1.1218e+08  :      19.24  :       4.02
-FP EMULATION        :           98.81  :      47.41  :      10.94
-FOURIER             :          6256.6  :       7.12  :       4.00
-ASSIGNMENT          :          6.8636  :      26.12  :       6.77
-IDEA                :          1388.5  :      21.24  :       6.31
-HUFFMAN             :          655.22  :      18.17  :       5.80
-NEURAL NET          :          6.5715  :      10.56  :       4.44
-LU DECOMPOSITION    :             238  :      12.33  :       8.90
-==========================ORIGINAL BYTEMARK RESULTS==========================
-INTEGER INDEX       : 20.891
-FLOATING-POINT INDEX: 9.747
-Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
-==============================LINUX DATA BELOW===============================
-CPU                 : 4 CPU ARMv7 Processor rev 5 (v7l)
-L2 Cache            : 
-OS                  : Linux 4.19.75-v7+
-C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
-libc                : 
-MEMORY INDEX        : 4.141
-INTEGER INDEX       : 6.196
-FLOATING-POINT INDEX: 5.406
-Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+<p>Nun wird gefragt ob der Server täglich um 4 Uhr früh neu gestartet werden soll. Das macht Sinn, weil dann die Einstellungen gespeichert werden und eventuelle Updates installiert werden. Wir drücken also y gefolgt von der Enter-Taste.</p>
 
+<p>Nun wird der Server automatisch gestartet.</p>
 
-Pi 3:
-                    :                  : Pentium 90* : AMD K6/233*
---------------------:------------------:-------------:------------
-NUMERIC SORT        :          711.67  :      18.25  :       5.99
-STRING SORT         :          70.266  :      31.40  :       4.86
-BITFIELD            :      1.9967e+08  :      34.25  :       7.15
-FP EMULATION        :          154.13  :      73.96  :      17.07
-FOURIER             :           10355  :      11.78  :       6.61
-ASSIGNMENT          :          9.2524  :      35.21  :       9.13
-IDEA                :          2223.4  :      34.01  :      10.10
-HUFFMAN             :          899.15  :      24.93  :       7.96
-NEURAL NET          :          11.475  :      18.43  :       7.75
-LU DECOMPOSITION    :          402.65  :      20.86  :      15.06
-==========================ORIGINAL BYTEMARK RESULTS==========================
-INTEGER INDEX       : 33.078
-FLOATING-POINT INDEX: 16.544
-Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
-==============================LINUX DATA BELOW===============================
-CPU                 : 4 CPU ARMv7 Processor rev 4 (v7l)
-L2 Cache            : 
-OS                  : Linux 4.19.75-v7+
-C compiler          : gcc version 8.3.0 (Raspbian 8.3.0-6+rpi1) 
-libc                : 
-MEMORY INDEX        : 6.822
-INTEGER INDEX       : 9.523
-FLOATING-POINT INDEX: 9.176
-Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
-* Trademarks are property of their respective holder.
+<pre><code>[17:33:50 INFO]: Time elapsed: 3882 ms
+[17:33:51 INFO]: Running delayed init tasks
+[17:33:51 INFO]: Done (39.914s)! For help, type &quot;help&quot;
+[17:33:51 INFO]: Timings Reset
+</code></pre>
 
--->
+<p>In diesem Fall dauerte das Anstarten 40 Sekunden. Die CPU-Last ist zeitweise sehr hoch auf allen Kernen, später pendelt es sich aber auf einem niedrigeren Niveau von ca. 22 % ein. Der Speicherverbrauch ist anfänglich nur auf 17 %. Diese Daten wurden mit top ermittelt.</p>
+
+<h2 id="minicraft-server-einstellungen">Minicraft Server Einstellungen</h2>
+
+<p>Alle wichtigen Einstellungen für den Server sind in der Datei “server.properties” gespeichert. Für den Port auf dem der Minecraft Server verfügbar ist, gilt der Parameter “server-port”. Er ist auf den Standardwert 25565 gesetzt. Informationen rund um die Einstellungen können der deutschen Minecraft Gamepedia Seite <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a> entnommen werden.<br />
+Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen.</p>
+
+<pre><code>difficulty=normal
+</code></pre>
+
+<h2 id="verlinkung">Verlinkung</h2>
+
+<p>Originale englischen Anleitung von <a href="https://jamesachambers.com/raspberry-pi-minecraft-server-script-with-startup-service/">James A. Chambers</a><br />
+Git Hub Reporitory für <a href="https://github.com/TheRemote/RaspberryPiMinecraft">Setup</a><br />
+Unterstützte Paper Minecraft <a href="https://papermc.io/api/v1/paper">Versionen</a><br />
+Minecraft Gamepedia <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a></p>
             </article>
           </div>
           
@@ -559,7 +415,7 @@ Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
   
     
     <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
-    <a href="/categories/gc2" title="View all posts in GC2">GC2</a>
+    <a href="/categories/minecraft" title="View all posts in Minecraft">Minecraft</a>
   </p>
 </div>
 
