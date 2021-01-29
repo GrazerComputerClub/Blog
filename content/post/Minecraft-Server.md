@@ -66,14 +66,14 @@ chmod +x SetupMinecraft.sh
 Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die "SetupMinecraft.sh" Datei und gibt in der 7 Zeile die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden ``wget -qO- https://papermc.io/api/v1/paper``.
 
 ```
-{"project":"paper","versions":["1.16.4","1.16.3","1.16.2","1.16.1","
+{"project":"paper","versions":["1.16.5","1.16.4","1.16.3","1.16.2","1.16.1","
 ```
 
-In diesem Fall ist die Version 1.16.4 die neueste verfügbare Version, die wir im Setup-Script eintragen können.
+In diesem Fall ist die Version 1.16.5 die neueste verfügbare Version, die wir im Setup-Script eintragen können.
 
 ```
 # Minecraft server version
-Version="1.16.4"
+Version="1.16.5"
 ```
 
 Dann kann das Setup gestartet werden.
@@ -95,7 +95,7 @@ If all memory is exhausted the Minecraft server will either crash or force backg
 Enter amount of memory in megabytes to dedicate to the Minecraft server (recommended: 2700): 
 ```
 
-Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 700 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Dann sollte man also 2700 eingeben und die Enter-Taste drücken.
+Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 700 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.
 
 ```
 Enter a name for your server...
@@ -137,6 +137,56 @@ Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal 
 
 ```
 difficulty=normal
+```
+
+### Spieler mit Operatorrechten ausstatten
+
+Damit man einen Spieler zum Operator machen kann, muss man zur Server-Konsole wechseln. Dies erfolgt durch den Aufruf von ``screen -r minecraft``.
+Dort findet man z. B. diesen Eintrag
+
+```
+[17:55:55 INFO]: UUID of player Donald is b47637a4-2f8a-4a47-b43c-c9f32b3c227b
+[17:56:00 INFO]: Donald joined the game
+[17:56:00 INFO]: Donald[/192.168.0.31:63565] logged in with entity id 1 at ([world]-1274.5, 64.0, -199.5)
+```
+
+Nun git man den Befehl ``op`` mit dem Spielernamen als Parameter an, also  ``op Donald`` 
+Nun kann man 'screen' mit der Tastenkombination Strg+A und D verlassen. 
+
+In die Datei ops.json sind die Operatoren gespeichert.
+
+```
+[
+  {
+    "uuid": "b47637a4-2f8a-4a47-b43c-c9f32b3c227b",
+    "name": "Donald",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "ef341a25-c803-4068-8f00-9bfc4b862eb2",
+    "name": "Daisy",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
+```
+
+## Karten wiederherstellen
+
+Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so können diese am Server eingespielt werden.
+
+*Backup Inhalt auflisten:* ``tar -tvf backups/2021.01.03_04.00.39.tar.gz``
+
+
+*Minecraft Welten von Backup wiederherstellen:*
+
+```
+sudo service minecraft stop
+cd ~/minecraft/
+rm -r world world_nether/ world_the_end/
+tar xvf ~/minecraft/backups/2021.01.04_04.00.39.tar.gz ./world/ ./world_nether/ ./world_the_end/
+sudo service minecraft start
 ```
 
 ## Verlinkung
