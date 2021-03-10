@@ -1,8 +1,8 @@
 +++
 showonlyimage = true
-draft = false
+draft = true
 image = "img/Weihnachten.jpg"
-date = "2020-12-24"
+date = "2021-12-24"
 title = "Weihnachten"
 writer = "GC2"
 categories = [""]
