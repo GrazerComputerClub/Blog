@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on GC2 Blog</title>
@@ -6,26 +6,26 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CCC</title>
-      <link>https://blog.gc2.at/categories/ccc/</link>
-      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Raspberry Pi</title>
+      <link>https://blog.gc2.at/categories/raspberry-pi/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/categories/ccc/</guid>
+      <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GC2</title>
-      <link>https://blog.gc2.at/categories/gc2/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <title>uC</title>
+      <link>https://blog.gc2.at/categories/uc/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/categories/gc2/</guid>
+      <guid>https://blog.gc2.at/categories/uc/</guid>
       <description></description>
     </item>
     
@@ -39,20 +39,20 @@
     </item>
     
     <item>
+      <title>GC2</title>
+      <link>https://blog.gc2.at/categories/gc2/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/gc2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programmierung</title>
       <link>https://blog.gc2.at/categories/programmierung/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/programmierung/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi</title>
-      <link>https://blog.gc2.at/categories/raspberry-pi/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
       <description></description>
     </item>
     
@@ -66,11 +66,11 @@
     </item>
     
     <item>
-      <title>UC</title>
-      <link>https://blog.gc2.at/categories/uc/</link>
-      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      <title>CCC</title>
+      <link>https://blog.gc2.at/categories/ccc/</link>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.gc2.at/categories/uc/</guid>
+      <guid>https://blog.gc2.at/categories/ccc/</guid>
       <description></description>
     </item>
     

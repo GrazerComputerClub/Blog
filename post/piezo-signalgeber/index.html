@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "Musik mit Piezo Signalgeber",
         "headline" : "Musik mit Piezo Signalgeber",
-        "description" : "<p>Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.
-</p>",
+        "description" : "\x3cp\x3eMit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-09-01 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-09-01 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/piezo-signalgeber/",
-        "wordCount" : "722",
-        "image" : https://blog.gc2.atimg/Music.png",
+        "datePublished": "2019-09-01 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-09-01 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/piezo-signalgeber\/",
+        "wordCount" : "719",
+        "image" : "https://blog.gc2.atimg/Music.png"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -280,35 +279,23 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.
-</p>
-
-<h2 id="einleitung">Einleitung</h2>
-
+              <p>Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.</p>
+<h2 id="einleitung-">Einleitung</h2>
 <p>Am Raspberry Pi kann ein Piezo Signalgeber, oft wird er auch als Buzzer bezeichnet, angeschlossen werden. Ein Piepen zu erzeugen ist dann ganz leicht. Interessanter ist es aber ein Musikstück darauf spielen zu lassen.</p>
-
-<h2 id="schaltung">Schaltung</h2>
-
+<h2 id="schaltung-">Schaltung</h2>
 <p>Der Piezo Signalgeber sollte nicht direkt an den GPIO geschlossen werden, da die Stromaufnahme für den Ausgang zumeist zu hoch ist (30 mA). Über einen
-Transistor kann, die Ansteuerung nahezu stromlos erfolgen. Dadurch kann das Piezo Element auch mit 5 V versorgt werden.<br />
+Transistor kann, die Ansteuerung nahezu stromlos erfolgen. Dadurch kann das Piezo Element auch mit 5 V versorgt werden.<br>
 Im Schaltungsbeispiel wurde der GPIO18, also bei WiringPi Nummerierung der Pin 1, verwendet. Über den Basis-Vorwiderstand kann man auch die Lautstäke etwas reduzieren - wenn dann der Transistor nicht komplett durchschaltet und dann die Spannung nicht 5 V erreicht. Darum kann ein Vorwiderstand von 4,7 KOhm gewählt werden. Per Software lässt sich das eingeschränkt über das Puls-Pause-Verhältnis anpassen.</p>
-
-<p><img src="../../img/Buzzer_Schaltplan.png" alt="Schaltplan" /></p>
-
-<h2 id="ansteuerung">Ansteuerung</h2>
-
+<p><img src="../../img/Buzzer_Schaltplan.png" alt="Schaltplan"></p>
+<h2 id="ansteuerung-">Ansteuerung</h2>
 <p>Ein einfacher Piep geht in der Konsole mit WiringPi gpio Kommandos:</p>
-
 <pre><code>gpio mode 1 out; gpio write 1 1; sleep 0.1; gpio write 1 0; gpio mode 1 in
-</code></pre>
-
-<p>Damit wird einfach für kurze Zeit der Ausgang gesetzt und ein konstanter kurzer Ton wird ausgegeben.</p>
-
-<p>Wie kann man nun aber Music ausgeben? Dazu muss am Ausgang eine Frequenz erzeugt werden, man muss also den Ausgang mehrmals pro Sekunde ein- und ausschalten. Je nach Frequenz ergibt sich dann ein spezifischer Ton.<br />
+</code></pre><p>Damit wird einfach für kurze Zeit der Ausgang gesetzt und ein konstanter kurzer Ton wird ausgegeben.</p>
+<p>Wie kann man nun aber Music ausgeben? Dazu muss am Ausgang eine Frequenz erzeugt werden, man muss also den Ausgang mehrmals pro Sekunde ein- und ausschalten. Je nach Frequenz ergibt sich dann ein spezifischer Ton.<br>
 In Python geht das über eine Library wie z. B. RPi.GPIO:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
@@ -322,7 +309,7 @@ In Python geht das über eine Library wie z. B. RPi.GPIO:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">RPi.GPIO</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">GPIO</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
 
@@ -335,13 +322,13 @@ p <span style="color:#666">=</span> GPIO<span style="color:#666">.</span>PWM(ton
 p<span style="color:#666">.</span>ChangeFrequency(<span style="color:#40a070">250</span>)
 p<span style="color:#666">.</span>start(<span style="color:#40a070">30</span>)     <span style="color:#60a0b0;font-style:italic"># parameter: duty-cycle  </span>
 time<span style="color:#666">.</span>sleep(<span style="color:#40a070">0.2</span>)
-p<span style="color:#666">.</span>stop()</code></pre></td></tr></table>
+p<span style="color:#666">.</span>stop()
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>In C könnte man sich das auch leicht selbst programmieren:</p>
+</div><p>In C könnte man sich das auch leicht selbst programmieren:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
@@ -391,7 +378,7 @@ p<span style="color:#666">.</span>stop()</code></pre></td></tr></table>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
 </span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
 </span><span style="color:#007020"></span>
@@ -440,30 +427,24 @@ p<span style="color:#666">.</span>stop()</code></pre></td></tr></table>
   pinMode(tonePin, INPUT);
 
   <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
-}</code></pre></td></tr></table>
+}
+</code></pre></td></tr></table>
 </div>
-</div>
-<pre><code>gcc -o tone tone.c -lwiringPi -Wall
+</div><pre><code>gcc -o tone tone.c -lwiringPi -Wall
 ./tone
-</code></pre>
-
-<h2 id="music">Music</h2>
-
+</code></pre><h2 id="music-">Music</h2>
 <p>Man darf sich nicht zu viel erwarten, wenn man über einen Piezo Signalgeber Music ausgeben will, aber einzelne Tonfolgen funktionieren.
 Auf der Seite <a href="https://www.mutopiaproject.org/">MUTOPIA PROJECT</a> kann man sich viele klassische Musikstücke im Midi-Format herunterladen (CC Lizenzen). Bei <a href="https://bitmidi.com/">BitMidi</a> kann man bekannte Melodien im Midi-Format finden und direkt im Browser abspielen. Ansonsten eignet sich der VLC-Player am besten um in die Musikstücke am PC abspielen zu können. Auf der Seite <a href="https://www.extramaster.net/tools/midiToArduino/">Midi To Arduino</a> kann man Midi-Dateien in Tonfolgen konvertieren. Die Midi-Dateien haben zumeist mehrere Spuren (Tracks), sodass man sich bei der Erzeugung für einen entscheiden muss. Die Seite schlägt eine Spur (Track) vor, üblicherweise passt diese Voreinstellung. Bei Klavierstücken ist das oft &ldquo;up&rdquo;. Danach muss man noch das Zielsystem (Device) auswählen. Hier muss &ldquo;Raspberry Pi (Python, GPIO)&rdquo; aktiviert werden. Nach dem Drücken der Schaltfläche &ldquo;Convert to Arduino&rdquo;, wird der Programmcode dargestellt. Nun kann der Source in einer py-Datei gespeichert werden.</p>
-
-<p>Allerdings sind noch ein paar Anpassungen nötig:<br />
-- Bei &ldquo;tonePin = 21&rdquo; muss der korrekte GPIO also z. B. 18 eingegeben werden.<br />
-- Die Zeile &ldquo;p = GPIO.PWM(tonePin, pitch)&rdquo; ist leider falsch und muss durch &ldquo;p.ChangeFrequency(pitch)&rdquo; ersetzt werden.<br />
-- Die Zeile &ldquo;delay(duration)&rdquo; entspricht der Dauer der Note, hier kann man mit einem Faktor noch eine generelle Geschwindigkeitsanpassung des Stücks vornehmen, &ldquo;delay(duration*1.5)&ldquo;.</p>
-
+<p>Allerdings sind noch ein paar Anpassungen nötig:</p>
+<ul>
+<li>Bei &ldquo;tonePin = 21&rdquo; muss der korrekte GPIO also z. B. 18 eingegeben werden.</li>
+<li>Die Zeile &ldquo;p = GPIO.PWM(tonePin, pitch)&rdquo; ist leider falsch und muss durch &ldquo;p.ChangeFrequency(pitch)&rdquo; ersetzt werden.</li>
+<li>Die Zeile &ldquo;delay(duration)&rdquo; entspricht der Dauer der Note, hier kann man mit einem Faktor noch eine generelle Geschwindigkeitsanpassung des Stücks vornehmen, &ldquo;delay(duration*1.5)&quot;.</li>
+</ul>
 <p>Danach kann man sich das Stück anhören, indem man mit python3 die Datei ausführt.</p>
-
-<!--wget https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/fur_Elise_WoO59.mid -->
-
-<h2 id="beispielvideo">Beispielvideo</h2>
-
-<p><a href="https://www.youtube.com/watch?v=5AZpsij4Oi4"><img src="http://img.youtube.com/vi/5AZpsij4Oi4/0.jpg" alt="Raspberry Pi GC2-xHAT Buzzer Musik" /></a></p>
+<!-- raw HTML omitted -->
+<h2 id="beispielvideo-">Beispielvideo</h2>
+<p><a href="https://www.youtube.com/watch?v=5AZpsij4Oi4"><img src="http://img.youtube.com/vi/5AZpsij4Oi4/0.jpg" alt="Raspberry Pi GC2-xHAT Buzzer Musik"></a></p>
             </article>
           </div>
           
@@ -670,7 +651,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

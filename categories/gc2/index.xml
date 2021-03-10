@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GC2 on GC2 Blog</title>
@@ -17,8 +17,7 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/cooling/</guid>
-      <description>&lt;p&gt;Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,8 +26,7 @@
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/2019/</guid>
-      <description>&lt;p&gt;Am Anfang des neuen Jahres möchten wir einen Rückblick auf das vergangene Jahr machen&amp;hellip;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Am Anfang des neuen Jahres möchten wir einen Rückblick auf das vergangene Jahr machen&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +35,7 @@
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/cs/</guid>
-      <description>&lt;p&gt;Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,8 +44,7 @@
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/sdcards/</guid>
-      <description>&lt;p&gt;Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,8 +53,7 @@
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/powerconsumtion/</guid>
-      <description>&lt;p&gt;Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,8 +62,7 @@
       <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
-      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,8 +71,7 @@
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</guid>
-      <description>&lt;p&gt;Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Workshop wird vom Grazer Computer Club, kurz GC2 organisiert.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Workshop wird vom Grazer Computer Club, kurz GC2 organisiert.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -87,8 +80,7 @@
       <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/raspjamming-distribution/</guid>
-      <description>&lt;p&gt;Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) eine angepasste Raspbian Lite Version entwickelt. Diese Distribution wird Raspjamming genannt und hat wesentliche Vorteile gegenüber der Raspbian Basis.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) eine angepasste Raspbian Lite Version entwickelt. Diese Distribution wird Raspjamming genannt und hat wesentliche Vorteile gegenüber der Raspbian Basis.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,8 +89,7 @@
       <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/gc2-xhat/</guid>
-      <description>&lt;p&gt;Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.&lt;/p&gt;</description>
     </item>
     
   </channel>

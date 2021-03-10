@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Kernel 5",
         "headline" : "SPI TFT LCD - Kernel 5",
-        "description" : "<p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
-</p>",
+        "description" : "\x3cp\x3eFür eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-11-09 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2020-11-09 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/spi-tft-lcd-kernel5/",
+        "datePublished": "2020-11-09 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-11-09 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd-kernel5\/",
         "wordCount" : "679",
-        "image" : https://blog.gc2.atimg/SPI-LCD-TFT-fbcp-ili9341.jpg",
+        "image" : "https://blog.gc2.atimg/SPI-LCD-TFT-fbcp-ili9341.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,20 +273,14 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
-</p>
-
+              <p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.</p>
 <h2 id="allgemeines">Allgemeines</h2>
-
 <p>SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 240x240, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Früher konnte man sie über ein Kernel Modul  bzw. Overlay einbinden. Seit Kernel 5 ist dass aber nur mehr über entsprechende Overlays möglich. In userem Test funktionierten die Oberlays allerdings auch nicht obwohl sie mit Kernel 4 korrekt gearbeitet haben.</p>
-
-<p>Als Alternative bietet sich das Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a> an. Das Programm muss zuerst mit Kompilerparameter an das Display und die Verkabelung angepasst werden. Desweiteren können noch einige weitere Anpassungen vorgenommen werden. Das Programm kann entsprechend des Zielsystems bzw. dem Raspberry Pi optimiert werden. Wir wählen die Anpassung an den Raspberry Pi Zero, damit es mit allen Systemen verwendet werden kann.<br />
-Nach dem Kompilieren bzw. Erstellen des Programms kanne es gestartet werden. Dann zeigt das SPI-Display die Grafikausgabe des Raspberry Pi an. Es kopiert also den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
-Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf dem langsamen Raspberry Pi Zero möglich Video abzuspielen.<br />
+<p>Als Alternative bietet sich das Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a> an. Das Programm muss zuerst mit Kompilerparameter an das Display und die Verkabelung angepasst werden. Desweiteren können noch einige weitere Anpassungen vorgenommen werden. Das Programm kann entsprechend des Zielsystems bzw. dem Raspberry Pi optimiert werden. Wir wählen die Anpassung an den Raspberry Pi Zero, damit es mit allen Systemen verwendet werden kann.<br>
+Nach dem Kompilieren bzw. Erstellen des Programms kanne es gestartet werden. Dann zeigt das SPI-Display die Grafikausgabe des Raspberry Pi an. Es kopiert also den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br>
+Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf dem langsamen Raspberry Pi Zero möglich Video abzuspielen.<br>
 Mit dem Programm &lsquo;fbcp-ili9341&rsquo; kann diese ständige Kopieroperation nun im Hintergrund mit geringer CPU-Last erledigt werden. Dabei wird sogar das Bild auf die Auflösung des SPI-Displays angepasst. Das gilt für die Konsole, für X-Windows und auch für die Videoausgabe. Man kann also auch flüssig Videos auf einem 160x128 Displays ausgeben.</p>
-
 <p>Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:</p>
-
 <table>
 <thead>
 <tr>
@@ -297,7 +290,6 @@ Mit dem Programm &lsquo;fbcp-ili9341&rsquo; kann diese ständige Kopieroperation
 <th align="center">ca. Preis China</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ST7735S</td>
@@ -305,21 +297,18 @@ Mit dem Programm &lsquo;fbcp-ili9341&rsquo; kann diese ständige Kopieroperation
 <td align="center">1,44&rdquo;</td>
 <td align="center">3 €</td>
 </tr>
-
 <tr>
 <td>ST7735R</td>
 <td align="center">160x128</td>
 <td align="center">1,8&rdquo;</td>
 <td align="center">4 €</td>
 </tr>
-
 <tr>
 <td>ST7789VW</td>
 <td align="center">240x240</td>
 <td align="center">1,3&rdquo;</td>
 <td align="center">3 €</td>
 </tr>
-
 <tr>
 <td>ILI9341</td>
 <td align="center">320x240</td>
@@ -328,33 +317,25 @@ Mit dem Programm &lsquo;fbcp-ili9341&rsquo; kann diese ständige Kopieroperation
 </tr>
 </tbody>
 </table>
-
-<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br />
-Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br />
-Die SPI-Taktfrequenz wird aus dem System Takt als der &ldquo;core_freq&rdquo; gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.<br />
+<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br>
+Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br>
+Die SPI-Taktfrequenz wird aus dem System Takt als der &ldquo;core_freq&rdquo; gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.<br>
 Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz (Divisor 8) und beim ILI9341-Controller bei ca. 66 MHz.
 Der SPI-Bus kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.</p>
-
 <p>Auf der Projektseite sind alle Parameter genau beschreiben. Bei Unklarhieten muss hier nachgelesen werden.</p>
-
 <h2 id="kontakte">Kontakte</h2>
-
-<p>Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:<br />
-<strong>VCC</strong> &hellip; Versorgung (meist 5 oder 3,3 V)<br />
-<strong>VLED</strong> &hellip; Versorgung Hintergrundbeleuchtung (optional, meist 3,3 V)<br />
-<strong>GND</strong> &hellip; Masse<br />
-<strong>MOSI</strong> &hellip; Datenleitung<br />
-<strong>CLK</strong> &hellip; SPI-Takt<br />
-<strong>CS</strong> &hellip; SPI Slave Aktivierung<br />
-<strong>RESET</strong> &hellip; Reset<br />
+<p>Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:<br>
+<strong>VCC</strong> &hellip; Versorgung (meist 5 oder 3,3 V)<br>
+<strong>VLED</strong> &hellip; Versorgung Hintergrundbeleuchtung (optional, meist 3,3 V)<br>
+<strong>GND</strong> &hellip; Masse<br>
+<strong>MOSI</strong> &hellip; Datenleitung<br>
+<strong>CLK</strong> &hellip; SPI-Takt<br>
+<strong>CS</strong> &hellip; SPI Slave Aktivierung<br>
+<strong>RESET</strong> &hellip; Reset<br>
 <strong>DC/A0/RS</strong> &hellip; Umschaltung Befehl oder Daten Übertagung</p>
-
 <p>Die Kontakte RESET und DC/A0/RS können über Parameter frei zugewiesen werden. Wobei CS immer auf CS0 gesetzt werden muss. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.</p>
-
-<p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss" /></p>
-
-<h2 id="erstellung-für-1-8-160x128-display-mit-st7735r-kontroller">Erstellung für 1,8&rdquo; 160x128 Display mit ST7735R Kontroller</h2>
-
+<p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss"></p>
+<h2 id="erstellung-für-18-160x128-display-mit-st7735r-kontroller">Erstellung für 1,8&rdquo; 160x128 Display mit ST7735R Kontroller</h2>
 <pre><code>sudo apt-get install cmake
 cd ~
 git clone https://github.com/juj/fbcp-ili9341.git
@@ -363,12 +344,8 @@ mkdir build
 cd build
 cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
 make -j
-</code></pre>
-
-<p>Mit <code>sudo ./fbcp-ili9341</code> kann das Programm dann gestartet werden.</p>
-
+</code></pre><p>Mit <code>sudo ./fbcp-ili9341</code> kann das Programm dann gestartet werden.</p>
 <h2 id="verlinkungen">Verlinkungen</h2>
-
 <p>GitHub Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a></p>
             </article>
           </div>
@@ -575,7 +552,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

@@ -8,14 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 2",
         "headline" : "SPI TFT LCD - Teil 2",
-        "description" : "<p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
-
-<p></p>",
+        "description" : "\x3cp\x3eHat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -23,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-15 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-15 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/spi-tft-lcd2/",
+        "datePublished": "2018-12-15 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-15 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd2\/",
         "wordCount" : "561",
-        "image" : https://blog.gc2.atimg/SPI-LCD-TFT2.jpg",
+        "image" : "https://blog.gc2.atimg/SPI-LCD-TFT2.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -47,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -94,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -276,30 +274,18 @@ if (!doNotTrack) {
           <div class="entry-content">
             <article>
               <p>Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.</p>
-
-<p></p>
-
-<h2 id="verwendung-grafikausgabe">Verwendung / Grafikausgabe</h2>
-
+<h2 id="verwendung--grafikausgabe">Verwendung / Grafikausgabe</h2>
 <h2 id="framebuffer">Framebuffer</h2>
-
 <p>Nach dem Anschließen des SPI TFT LCD und dem Laden des Kernelmoduls &lsquo;fbtft_device&rsquo; wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. Nun kann der Framebuffer direkt angesprochen werden z. B. mit dem Programm &lsquo;fbi‘, das zur Anzeige eines Bildes verwendet wird.</p>
-
 <pre><code>sudo apt-get install fbi
 wget https://git.io/JvgXf -O sample-128x128.jpg
 sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample-128x128.jpg
-</code></pre>
-
-<p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
-
+</code></pre><p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
 <h2 id="duplizierung-via-fbcp">Duplizierung via fbcp</h2>
-
-<p>Eine Alternative zum direkten Zugriff ist, den Inhalt der Grafikkarte bzw. &lsquo;/dev/fb0&rsquo; auf das SPI-Display bzw. &lsquo;/dev/fb1&rsquo; zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br />
+<p>Eine Alternative zum direkten Zugriff ist, den Inhalt der Grafikkarte bzw. &lsquo;/dev/fb0&rsquo; auf das SPI-Display bzw. &lsquo;/dev/fb1&rsquo; zu kopieren. Dies hat vor allem den Vorteil, dass Optimierungen und Grafikbeschleunigungen der Grafikkarte (GPU) auch für das SPI-Display funktionieren.<br>
 Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf der langsamen Raspberry Pi Zero möglich Video abzuspielen.
 Mit dem Programm &lsquo;fbcp&rsquo; kann diese ständige Kopieroperation nun im Hintergrund mit geringer CPU-Last erledigt werden. Dabei wird sogar das Bild auf die Auflösung des SPI-Displays angepasst  bzw. herunter gerechnet. Das gilt für die Konsole, für X-Windows und auch für die Videoausgabe. Man kann also auch flüssig Videos auf einem 160x128 Displays ausgeben.</p>
-
 <p><strong>Installation:</strong></p>
-
 <pre><code>sudo -i
 apt-get install cmake 
 cd /usr/src
@@ -311,12 +297,8 @@ cmake ..
 make
 install fbcp /usr/local/bin/fbcp
 exit
-</code></pre>
-
-<p>Nun kann man noch ein systemd-Service für das Programm erstellen.</p>
-
-<p>&rdquo;/etc/systemd/system/fbcp.service&rdquo;:</p>
-
+</code></pre><p>Nun kann man noch ein systemd-Service für das Programm erstellen.</p>
+<p>&ldquo;/etc/systemd/system/fbcp.service&rdquo;:</p>
 <pre><code>[Unit]
 Description=fbcp Service
 
@@ -328,31 +310,18 @@ ExecStart=/usr/local/bin/fbcp
 
 [Install]
 WantedBy=multi-user.target
-</code></pre>
-
-<p>Dann kann der Dienst mit dem Aufruf <code>sudo service fbcp start</code> gestartet und mit <code>sudo service fbcp stop</code> beendet werden. Der aktuelle Status kann mit dem Befehl <code>service fbcp status</code> abgerufen werden.</p>
-
+</code></pre><p>Dann kann der Dienst mit dem Aufruf <code>sudo service fbcp start</code> gestartet und mit <code>sudo service fbcp stop</code> beendet werden. Der aktuelle Status kann mit dem Befehl <code>service fbcp status</code> abgerufen werden.</p>
 <p>Das Programm &lsquo;fbcp&rsquo; kann permanent entweder über einen Eintrag in der Datei &ldquo;/etc/rc.local&rdquo; gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.</p>
-
-<p>&rdquo;/etc/udev/rules.d/80-fbcp.rules&rdquo;:</p>
-
+<p>&ldquo;/etc/udev/rules.d/80-fbcp.rules&rdquo;:</p>
 <pre><code>SUBSYSTEM==&quot;graphics&quot; ACTION==&quot;add&quot; ENV{DEVNAME}==&quot;/dev/fb1&quot;, RUN+=&quot;/bin/systemctl start fbcp&quot;
-</code></pre>
-
-<p>Als Test könnte man nun ein Video abspielen.</p>
-
+</code></pre><p>Als Test könnte man nun ein Video abspielen.</p>
 <pre><code>sudo apt-get install omxplayer
 wget https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4
 fbcp &amp;
 omxplayer sintel_trailer-480p.mp4
-</code></pre>
-
-<h2 id="auflösung">Auflösung</h2>
-
+</code></pre><h2 id="auflösung">Auflösung</h2>
 <p>&lsquo;fbcp&rsquo; passt die Ausgabe bereits an die Auflösung des Zieldisplays an, dennoch kann es sinnvoll sein den Grafikmodus anstatt auf Full HD gleich in der nativen Auflösung des Displays zu setzen. Dazu muss man eine Custom HDMI Einstellung in der Konfigurationsdatei &ldquo;config.txt&rdquo; definieren. Im Beispiel wurde das &ldquo;sainsmart18&rdquo; Display mit 160x128 Pixel verwendet.</p>
-
-<p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-
+<p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
 <pre><code>//HDMI custom:
 hdmi_cvt=160 128 60 4 0 0 0
 hdmi_force_hotplug=1
@@ -361,24 +330,19 @@ hdmi_mode=1
 hdmi_mode=87
 display_rotate=0
 disable_overscan=1
-</code></pre>
-
-<p>Als Parameter für &lsquo;hdmi_cvt = {width} {height} {framerate} {aspect} {margins} {interlace} {rb}&rsquo; stehen folgende Werte zur Verfügung:<br />
-<strong>width</strong> &hellip; Auflösung Breite<br />
-<strong>height</strong> &hellip; Auflösung Höhe<br />
-<strong>framerate</strong> &hellip; Bilder pro Sekunde<br />
-<strong>aspect</strong> &hellip; Seitenverhältnis 1=4:3, 2=14:9, 3=16:9, 4=5:4, 5=16:10, 6=15:9, 7=21:9, 8=64:27<br />
-<strong>margins</strong> &hellip;  0=margins disabled, 1=margins enabled<br />
-<strong>interlace</strong> &hellip; Bildmodus 0=progressive, 1=interlaced<br />
+</code></pre><p>Als Parameter für &lsquo;hdmi_cvt = {width} {height} {framerate} {aspect} {margins} {interlace} {rb}&rsquo; stehen folgende Werte zur Verfügung:<br>
+<strong>width</strong> &hellip; Auflösung Breite<br>
+<strong>height</strong> &hellip; Auflösung Höhe<br>
+<strong>framerate</strong> &hellip; Bilder pro Sekunde<br>
+<strong>aspect</strong> &hellip; Seitenverhältnis 1=4:3, 2=14:9, 3=16:9, 4=5:4, 5=16:10, 6=15:9, 7=21:9, 8=64:27<br>
+<strong>margins</strong> &hellip;  0=margins disabled, 1=margins enabled<br>
+<strong>interlace</strong> &hellip; Bildmodus 0=progressive, 1=interlaced<br>
 <strong>rb</strong> &hellip;  0=normal, 1=reduced blanking</p>
-
-<p>Für &lsquo;display_rotate&rsquo; stehen folgende Werte zur Auswahl:<br />
-<strong>0</strong> &hellip; Normal<br />
-<strong>1</strong> &hellip; 90 Grad<br />
+<p>Für &lsquo;display_rotate&rsquo; stehen folgende Werte zur Auswahl:<br>
+<strong>0</strong> &hellip; Normal<br>
+<strong>1</strong> &hellip; 90 Grad<br>
 <strong>2</strong> &hellip; 180 Grad</p>
-
 <h2 id="verlinkungen">Verlinkungen</h2>
-
 <p>Alle Parameter für die Video Modes der Raspberry Pi werden auf der Seite <a href="https://www.raspberrypi.org/documentation/configuration/config-txt/video.md">DOCUMENTATION &gt; CONFIGURATION &gt; CONFIG-TXT &gt; VIDEO</a> aufgelistet.</p>
             </article>
           </div>
@@ -585,7 +549,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

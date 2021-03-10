@@ -8,14 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "PowerShell Core in Linux",
         "headline" : "PowerShell Core in Linux",
-        "description" : "<p>Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
-Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
-</p>",
+        "description" : "\x3cp\x3eSeit .Net Core offiziell auf der Raspberry Pi 2\x2b Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6\x2b) in Raspbian ausführen.\nWir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -23,11 +21,11 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-14 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-14 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/powershell-core-linux-1/",
+        "datePublished": "2018-12-14 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-14 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/powershell-core-linux-1\/",
         "wordCount" : "250",
-        "image" : https://blog.gc2.atimg/posh_linux.jpg",
+        "image" : "https://blog.gc2.atimg/posh_linux.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -47,9 +45,9 @@ Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht,
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -94,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -276,56 +274,36 @@ if (!doNotTrack) {
           <div class="entry-content">
             <article>
               <p>Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
-Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.
-</p>
-
+Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.</p>
 <h2 id="setup">Setup</h2>
-
 <p>Die Installation auf Windows wird ausführlich auf <a href="https://docs.microsoft.com/de-de/powershell/scripting/setup/installing-powershell-core-on-windows?view=powershell-6">docs.microsoft.com</a> erklärt.</p>
-
 <p>Um PowerShell Core auf Linux bzw. Raspbian zu installieren, kann man folgende Schritte befolgen.</p>
-
 <ol>
-<li><p>git Client und Voraussetzungen installieren/updaten</p>
-
+<li>git Client und Voraussetzungen installieren/updaten</li>
+</ol>
 <pre><code>sudo apt-get upgrade git
 sudo apt-get install libunwind8
-</code></pre></li>
-
-<li><p>PowerShell git repository auschecken</p>
-
+</code></pre><ol start="2">
+<li>PowerShell git repository auschecken</li>
+</ol>
 <pre><code>git clone https://github.com/PowerShell/PowerShell.git
-</code></pre></li>
-
-<li><p>PowerShell über &ldquo;install-powershell.sh&rdquo; bauen und starten</p>
-
+</code></pre><ol start="3">
+<li>PowerShell über &ldquo;install-powershell.sh&rdquo; bauen und starten</li>
+</ol>
 <pre><code>cd PowerShell
 ./tools/install-powershell.sh
 pwsh
-</code></pre></li>
-</ol>
-
-<h2 id="speedtest">Speedtest</h2>
-
+</code></pre><h2 id="speedtest">Speedtest</h2>
 <p>Um einen Speedtest über die Kommandozeile durchzuführen gibt es mehrere Möglichkeiten.</p>
-
 <p>Eine einfache Variante ist das Python-Programm &ldquo;speedtest-cli&rdquo; von <a href="https://github.com/sivel/">Matt Martz</a>.
 Man kann das Tool direkt herunterladen und ausführbar machen, siehe <a href="https://github.com/sivel/speedtest-cli/blob/master/README.rst">Anleitung</a>.</p>
-
 <pre><code>wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py speedtest
 
 chmod +x speedtest
-</code></pre>
-
-<h2 id="powershell-script-executable">PowerShell Script Executable</h2>
-
+</code></pre><h2 id="powershell-script-executable">PowerShell Script Executable</h2>
 <p>Damit PowerShell-Scripts in Linux korrekt ausgeführt werden können muss man einen &ldquo;shebang&rdquo; am Anfang des Scripts einfügen:</p>
-
 <pre><code>#!/usr/local/bin/pwsh
-</code></pre>
-
-<p>Folgendes Script kann verwendet werden um einen &ldquo;dauer-Speedtest&rdquo; durchzuführen. (Inhalt z.B. in Invoke-Speedtest.ps1 kopieren)</p>
-
+</code></pre><p>Folgendes Script kann verwendet werden um einen &ldquo;dauer-Speedtest&rdquo; durchzuführen. (Inhalt z.B. in Invoke-Speedtest.ps1 kopieren)</p>
 <pre><code>#!/usr/local/bin/pwsh
 $outfile = &quot;speedtest.csv&quot;
  
@@ -344,17 +322,11 @@ while (1 -eq 1) {
     &quot;$(Get-Date -Format &quot;yyyy-mm-dd;HH:mm:ss&quot;);$download;$upload;&quot; | Out-File $outfile -Encoding utf8 -Append
     Start-Sleep -Seconds 300
 }
-</code></pre>
-
-<p>Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:</p>
-
+</code></pre><p>Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:</p>
 <pre><code>chmod +x Invoke-Speedtest.ps1
 ./Invoke-Speedtest.ps1
-</code></pre>
-
-<p>Die so erzeugte Datei &ldquo;speedtest.csv&rdquo; kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:</p>
-
-<p><img src="../../img/posh_speedtest.png" alt="Auswertung von PowerShell Script" /></p>
+</code></pre><p>Die so erzeugte Datei &ldquo;speedtest.csv&rdquo; kann mit einem beliebigen Charting/Tabellenkalkulationsprogramm visualisiert werden:</p>
+<p><img src="../../img/posh_speedtest.png" alt="Auswertung von PowerShell Script"></p>
             </article>
           </div>
           
@@ -560,7 +532,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "GPIO-Eingang zur Tastaturtaste",
         "headline" : "GPIO-Eingang zur Tastaturtaste",
-        "description" : "<p>Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
-</p>",
+        "description" : "\x3cp\x3eOft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei \x26ldquo;config.txt\x26rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-10 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-10 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/gpio-tasten/",
+        "datePublished": "2018-12-10 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-10 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/gpio-tasten\/",
         "wordCount" : "314",
-        "image" : https://blog.gc2.atimg/keys_white_nav.jpg",
+        "image" : "https://blog.gc2.atimg/keys_white_nav.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,13 +273,9 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.
-</p>
-
+              <p>Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.</p>
 <h2 id="umsetzung">Umsetzung</h2>
-
 <p>Mithilfe der Device Tree Funktion &lsquo;gpio-key&rsquo; können ganz einfach GPIO-Eingänge zur Simulation eines Tastaturtastendrucks verwendet werden. Man kann so zum Beispiel einem Steuerkreuz die Pfeiltasten Rechts, Links, Oben und Unten zuweisen. Dazu muss man nur angeben welcher GPIO-Eingang welche Taste bzw. Tastencode entspricht. Die Tastencodes können live mit dem Konsolenprogramm &lsquo;showkey&rsquo; ermittelt werden, wenn eine Tastatur angeschlossen ist. Wird 10 Sekunden keine Taste gedrückt, so beendet sich das Programm von selbst.</p>
-
 <table>
 <thead>
 <tr>
@@ -288,104 +283,84 @@ if (!doNotTrack) {
 <th align="center">Scancode</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Pfeil oben</td>
 <td align="center">103</td>
 </tr>
-
 <tr>
 <td>Pfeil links</td>
 <td align="center">105</td>
 </tr>
-
 <tr>
 <td>Pfeil rechts</td>
 <td align="center">106</td>
 </tr>
-
 <tr>
 <td>Pfeil unten</td>
 <td align="center">108</td>
 </tr>
-
 <tr>
 <td>Esc</td>
 <td align="center">1</td>
 </tr>
-
 <tr>
 <td>Backspace</td>
 <td align="center">14</td>
 </tr>
-
 <tr>
 <td>Enter</td>
 <td align="center">28</td>
 </tr>
-
 <tr>
 <td>Strg links</td>
 <td align="center">29</td>
 </tr>
-
 <tr>
 <td>Space</td>
 <td align="center">57</td>
 </tr>
-
 <tr>
 <td>a</td>
 <td align="center">30</td>
 </tr>
-
 <tr>
 <td>s</td>
 <td align="center">31</td>
 </tr>
-
 <tr>
 <td>d</td>
 <td align="center">32</td>
 </tr>
-
 <tr>
 <td>w</td>
 <td align="center">17</td>
 </tr>
-
 <tr>
 <td>y</td>
 <td align="center">44</td>
 </tr>
-
 <tr>
 <td>x</td>
 <td align="center">45</td>
 </tr>
-
 <tr>
 <td>c</td>
 <td align="center">46</td>
 </tr>
-
 <tr>
 <td>z</td>
 <td align="center">21</td>
 </tr>
-
 <tr>
 <td>p</td>
 <td align="center">28</td>
 </tr>
 </tbody>
 </table>
-
-<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.<br />
+<p>Alternativ kann auch das Programm &lsquo;dumpkeys&rsquo; mit dem Aufruf <code>sudo dumpkeys -f &gt; dumpkeys.txt</code> verwendet werden um eine ganze (unübersichtliche) Liste zu erstellen.<br>
 Eine Liste ist auch im Internet bei den <a href="https://github.com/torvalds/linux/blob/v4.12/include/uapi/linux/input-event-codes.h">Kernel-Sourcen</a> verfügbar.
 Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktionen zu finden.</p>
-
 <table>
 <thead>
 <tr>
@@ -394,20 +369,17 @@ Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktio
 <th align="center">Funktion</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>KEY_POWER</td>
 <td align="center">166</td>
 <td align="center">Shutdown</td>
 </tr>
-
 <tr>
 <td>KEY_RESTART</td>
 <td align="center">408</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td>KEY_RFKILL</td>
 <td align="center">247</td>
@@ -415,17 +387,12 @@ Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktio
 </tr>
 </tbody>
 </table>
-
 <p>Folgende Device Tree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
-
 <pre><code>dtoverlay=gpio-key,gpio=16,keycode=103,label=&quot;KEY_UP&quot;,gpio_pull=2
 dtoverlay=gpio-key,gpio=26,keycode=105,label=&quot;KEY_LEFT&quot;,gpio_pull=2
 dtoverlay=gpio-key,gpio=20,keycode=106,label=&quot;KEY_RIGHT&quot;,gpio_pull=2
 dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
-</code></pre>
-
-<p>Parameter für gpio-key Overlay:</p>
-
+</code></pre><p>Parameter für gpio-key Overlay:</p>
 <table>
 <thead>
 <tr>
@@ -433,42 +400,32 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
 <th>Funktion</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>gpio</td>
 <td>GPIO-Nummer (BCM)</td>
 </tr>
-
 <tr>
 <td>keycode</td>
 <td>Tastencode</td>
 </tr>
-
 <tr>
 <td>label</td>
 <td>Beliebiger Name</td>
 </tr>
-
 <tr>
 <td>gpio_pull</td>
 <td>Aktivierung Pull-Up/Pull-Down Widerstand; 0 = keiner; 1 = pull-down; 2 = pull-up</td>
 </tr>
-
 <tr>
 <td>active_low</td>
 <td>Logikpegel für Tastendruck; 0 = Active High, Schalter verbindet nach 3,3 V; 1 = Active Low (Standard-Einstellung), Schalter verbindet nach GND</td>
 </tr>
 </tbody>
 </table>
-
 <p>Auf der Kommandozeile kann die Funktion durch folgenden Befehl getestet werden:</p>
-
 <pre><code>sudo dtoverlay gpio-key gpio=19 keycode=28 label=&quot;KEY_ENTER&quot; gpio_pull=2
-</code></pre>
-
-<h2 id="verlinkungen">Verlinkungen</h2>
-
+</code></pre><h2 id="verlinkungen">Verlinkungen</h2>
 <p>Weitere Infos bezüglich der Device Tree Funktion ‚gpio-keys‘, erhält man unter <a href="https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt">https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt</a></p>
             </article>
           </div>
@@ -675,7 +632,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

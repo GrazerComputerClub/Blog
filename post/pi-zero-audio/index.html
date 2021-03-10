@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero Audio",
         "headline" : "Raspberry Pi Zero Audio",
-        "description" : "<p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
-</p>",
+        "description" : "\x3cp\x3eDer Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-19 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-19 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/pi-zero-audio/",
+        "datePublished": "2018-12-19 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-19 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/pi-zero-audio\/",
         "wordCount" : "437",
-        "image" : https://blog.gc2.atimg/Raspberry-Pi-Zero-Audio.jpg",
+        "image" : "https://blog.gc2.atimg/Raspberry-Pi-Zero-Audio.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,83 +273,44 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.
-</p>
-
+              <p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.</p>
 <h2 id="grundsätzliches">Grundsätzliches</h2>
-
-<p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang bzw. Kopfhöreranschluss (3,5 mm Klinkenbuchse) wie der Raspberry Pi Model A und B. Nun gibt es drei Möglichkeiten zu einem Audioausgang zu kommen.<br />
-Per USB-Soundkarte per I2S oder per PWM-Ausgang. Eine USB-Soundkarte würde den einzigen USB-Steckplatz belegen. I2S benötigt einen I2S-Kontroller Platine sowie einige GPIOs. Der PWM-Ausgang lässt sich hingegen mit nur zwei Widerständen und zwei Kondensatoren am einfachsten realisieren.<br />
-Der Raspberry Pi hat an den GPIOs nur PWM0 und PWM1 zur Verfügung. Will man also Stereo-Audio realisieren, so werden beide PWM-Ausgänge belegt.<br />
+<p>Der Raspberry Pi Zero hat keinen analogen Audio Ausgang bzw. Kopfhöreranschluss (3,5 mm Klinkenbuchse) wie der Raspberry Pi Model A und B. Nun gibt es drei Möglichkeiten zu einem Audioausgang zu kommen.<br>
+Per USB-Soundkarte per I2S oder per PWM-Ausgang. Eine USB-Soundkarte würde den einzigen USB-Steckplatz belegen. I2S benötigt einen I2S-Kontroller Platine sowie einige GPIOs. Der PWM-Ausgang lässt sich hingegen mit nur zwei Widerständen und zwei Kondensatoren am einfachsten realisieren.<br>
+Der Raspberry Pi hat an den GPIOs nur PWM0 und PWM1 zur Verfügung. Will man also Stereo-Audio realisieren, so werden beide PWM-Ausgänge belegt.<br>
 Der so erstellte Audio-Ausgang entspricht der Ausführung auf den ersten Raspberry Pis. Später wurde der Ausgang noch mit einem Verstärker und einer stabilen Spannung verbessert.</p>
-
 <h2 id="schaltung">Schaltung</h2>
-
 <p>An dem PWM-Ausgang wird ein Bandpass in Form einen Hochpass und Tiefpass RC-Filter angeschlossen. Man benötigt hierzu also folgende Schaltung:</p>
-
-<p><img src="../../img/PWM-Audio_Filter.png" alt="PWM-Audio RC-Filter" /></p>
-
+<p><img src="../../img/PWM-Audio_Filter.png" alt="PWM-Audio RC-Filter"></p>
 <p>Der Tiefpass besteht aus einem 270 Ohm Widerstand und einem 33 nF Kondensator. Der Hochpass besteht aus einem 150 Ohm Widerstand und einem 10 µF Kondensator.
 Danach kann der Ausgang bereits an einem Kopfhörer angeschlossen werden.</p>
-
 <p>Möchte man allerdings einen Lautsprecher anschließen so benötigt man noch einen Audio-Verstärker. Hier empfiehlt sich ein PAM8302 für Mono oder PAM8403 für Stereo.</p>
-
-<p><img src="../../img/PWM-Audio_Schaltplan.png" alt="PWM-Audio Schaltplan" /></p>
-
-<p><img src="../../img/PWM-Audio_Steckplatine.png" alt="PWM-Audio Steckplatine" /></p>
-
+<p><img src="../../img/PWM-Audio_Schaltplan.png" alt="PWM-Audio Schaltplan"></p>
+<p><img src="../../img/PWM-Audio_Steckplatine.png" alt="PWM-Audio Steckplatine"></p>
 <p>Wenn eine Mono Lautsprecher verwendet wird, aber Stereo-Audio vorhanden ist, so kann man die Ausgänge vor dem Verstärker über zwei 100 Ohm Widerstände zusammenführen (so wie in der Schaltung zu sehen). Achtung das Zusammenführen ohne Widerstände ergibt einen Kurzschluss!</p>
-
 <p>Hat man Mono-Audio aber zwei Audio Kanäle am Kopfhöreranschluss, so kann man Anschluss L und R einfach direkt an Mono anschließen. Dadurch wird der Widerstand halbiert, also bei 2 Lautsprechern mit 8 Ohm ergibt sich dann ein Widerstand von 4 Ohm für den Verstärker.</p>
-
 <h3 id="konfiguration">Konfiguration</h3>
-
 <p>Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so um konfigurieren, dass das Audio-Signal erzeugt wird.
 Dazu muss man lediglich einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.</p>
-
 <p><strong>Mono:</strong></p>
-
 <pre><code>dtoverlay=pwm,pin=12,func=4
-</code></pre>
-
-<pre><code>dtoverlay=pwm,pin=18,func=2
-</code></pre>
-
-<pre><code>dtoverlay=pwm,pin=13,func=4
-</code></pre>
-
-<pre><code>dtoverlay=pwm,pin=19,func=2
-</code></pre>
-
-<p><strong>Stereo:</strong></p>
-
+</code></pre><pre><code>dtoverlay=pwm,pin=18,func=2
+</code></pre><pre><code>dtoverlay=pwm,pin=13,func=4
+</code></pre><pre><code>dtoverlay=pwm,pin=19,func=2
+</code></pre><p><strong>Stereo:</strong></p>
 <pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=13,func2=4
-</code></pre>
-
-<pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
-</code></pre>
-
-<pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=19,func2=2
-</code></pre>
-
-<pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2 
-</code></pre>
-
-<h3 id="test">Test</h3>
-
+</code></pre><pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
+</code></pre><pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=19,func2=2
+</code></pre><pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2 
+</code></pre><h3 id="test">Test</h3>
 <p>Nach dem Neustart muss nun nur noch ein Test erfolgen.</p>
-
-<p><strong>Stereo Links &amp; Rechts</strong>:<br />
+<p><strong>Stereo Links &amp; Rechts</strong>:<br>
 <code>speaker-test -t sine -f 440 -c 2</code></p>
-
-<p><strong>Stereo Links</strong>:<br />
+<p><strong>Stereo Links</strong>:<br>
 <code>speaker-test -t sine -f 440 -c 1 -s 1</code></p>
-
-<p><strong>Stereo Rechts</strong>:<br />
+<p><strong>Stereo Rechts</strong>:<br>
 <code>speaker-test -t sine -f 440 -c 1 -s 2</code></p>
-
 <h2 id="verlinkungen">Verlinkungen</h2>
-
 <p>Ausführliche Informationen zur Nutzung von PWM findet man bei <a href="http://librpip.frasersdev.net/peripheral-config/pwm0and1/">http://librpip.frasersdev.net/peripheral-config/pwm0and1/</a>.</p>
             </article>
           </div>
@@ -557,7 +517,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 1",
         "headline" : "SPI TFT LCD - Teil 1",
-        "description" : "<p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.<br />
-</p>",
+        "description" : "\x3cp\x3eFür eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-12 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-12 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/spi-tft-lcd/",
+        "datePublished": "2018-12-12 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-12 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd\/",
         "wordCount" : "625",
-        "image" : https://blog.gc2.atimg/SPI-LCD-TFT.jpg",
+        "image" : "https://blog.gc2.atimg/SPI-LCD-TFT.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,16 +273,11 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.<br />
-</p>
-
+              <p>Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.</p>
 <h2 id="allgemeines">Allgemeines</h2>
-
 <p>SPI-Displays sind TFT-LCD-Anzeigen, die über den SPI-Bus an den Raspberry Pi angeschlossen werden können. Sie werden in unterschiedlichsten Auflösungen (128x128, 160x128, 320x240 usw.) und Größen (1,44“ - 2,8“ usw.) angeboten. Es gibt allerdings verschiedenste Kontroller für diese SPI-Displays, die unterschiedlich angesprochen werden. Die Einbindung kann über eine Library und ein Programm erfolgen. Flexibler und einfacher ist allerdings die Einbindung in das Linux-System bzw. in den Kernel. Dazu benötigt man ein Kernel-Modul, das den Kontroller des Displays unterstützt. Eine Vielzahl von diesen Display bzw. Displaykontrollern wird vom Modul &lsquo;fbtft_device&rsquo; unterstützt.
 Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. &lsquo;/dev/fb0&rsquo; ist dabei der Framebuffer des Grafikkarte (also des HDMI- oder Composite-Ausgangs).</p>
-
 <p>Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:</p>
-
 <table>
 <thead>
 <tr>
@@ -293,7 +287,6 @@ Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Disp
 <th align="center">ca. Preis China</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ST7735 (adafruit18)</td>
@@ -301,14 +294,12 @@ Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Disp
 <td align="center">1,44&rdquo;</td>
 <td align="center">3 €</td>
 </tr>
-
 <tr>
 <td>ST7735 (sainsmart18)</td>
 <td align="center">160x128</td>
 <td align="center">1,8&rdquo;</td>
 <td align="center">4 €</td>
 </tr>
-
 <tr>
 <td>ILI9341</td>
 <td align="center">320x240</td>
@@ -317,40 +308,31 @@ Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Disp
 </tr>
 </tbody>
 </table>
-
-<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br />
-Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br />
+<p>Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.<br>
+Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).<br>
 Im Test lag die maximale SPI-Taktfrequenz des ST7735-Controllers bei 64 MHz und beim ILI9341-Controller bei 82 MHz.</p>
-
 <h2 id="kontakte">Kontakte</h2>
-
-<p>Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:<br />
-<strong>VCC</strong> &hellip; Versorgung (meist 5 oder 3,3 V)<br />
-<strong>VLED</strong> &hellip; Versorgung Hintergrundbeleuchtung (optional, meist 3,3 V)<br />
-<strong>GND</strong> &hellip; Masse<br />
-<strong>MOSI</strong> &hellip; Datenleitung<br />
-<strong>CLK</strong> &hellip; SPI-Takt<br />
-<strong>CS</strong> &hellip; SPI Slave Aktivierung<br />
-<strong>RESET</strong> &hellip; Reset<br />
+<p>Zur Ansteuerung des Displays werden folgende Kontakte bzw. GPIOs verwendet:<br>
+<strong>VCC</strong> &hellip; Versorgung (meist 5 oder 3,3 V)<br>
+<strong>VLED</strong> &hellip; Versorgung Hintergrundbeleuchtung (optional, meist 3,3 V)<br>
+<strong>GND</strong> &hellip; Masse<br>
+<strong>MOSI</strong> &hellip; Datenleitung<br>
+<strong>CLK</strong> &hellip; SPI-Takt<br>
+<strong>CS</strong> &hellip; SPI Slave Aktivierung<br>
+<strong>RESET</strong> &hellip; Reset<br>
 <strong>DC/A0/RS</strong> &hellip; Umschaltung Befehl oder Daten Übertagung</p>
-
 <p>Die Kontakte CS, RESET und DC/A0/RS können über Kernel Parameter frei zugewiesen werden. Wobei CS typischerweise auf CS0 gesetzt wird. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.</p>
-
-<p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss" /></p>
-
-<h2 id="einbindung-aktivierung">Einbindung / Aktivierung</h2>
-
-<p>Das Kernel Modul &lsquo;fbtft_device&rsquo; unterstützt viele Parameter:<br />
-<strong>name</strong> &hellip; Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)<br />
-<strong>gpios</strong> &hellip; gibt die GPIO-Nummer (BCM) für den angegebenen Anschluss an (reset, dc, cs)<br />
-<strong>rotate</strong> &hellip; Drehung des Displays<br />
-<strong>speed</strong> &hellip; SPI-Takt<br />
-<strong>fps</strong> &hellip; Bilder pro Sekunde (wird möglicherweise nicht erreicht)<br />
-<strong>debug</strong> &hellip; Debugmodus, (Wert 32 bzw. $((1&lt;&lt;5)) protokolliert erreichte FPS, daher nur für kurze Tests aktivieren!)</p>
-
+<p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss"></p>
+<h2 id="einbindung--aktivierung">Einbindung / Aktivierung</h2>
+<p>Das Kernel Modul &lsquo;fbtft_device&rsquo; unterstützt viele Parameter:<br>
+<strong>name</strong> &hellip; Namen des Displays (dahinter ist der Controller, Auflösung und weitere Parameter hinterlegt)<br>
+<strong>gpios</strong> &hellip; gibt die GPIO-Nummer (BCM) für den angegebenen Anschluss an (reset, dc, cs)<br>
+<strong>rotate</strong> &hellip; Drehung des Displays<br>
+<strong>speed</strong> &hellip; SPI-Takt<br>
+<strong>fps</strong> &hellip; Bilder pro Sekunde (wird möglicherweise nicht erreicht)<br>
+<strong>debug</strong> &hellip; Debugmodus, (Wert 32 bzw. $((1&laquo;5)) protokolliert erreichte FPS, daher nur für kurze Tests aktivieren!)</p>
 <p>Mit folgenden Anruf können alle unterstützen Displays aufgelistet werden
 <code>sudo modprobe fbtft_device name=list; dmesg | tail -30</code></p>
-
 <p>adafruit18
 adafruit18_green
 adafruit22
@@ -398,66 +380,37 @@ tontec35_9486
 upd161704
 waveshare32b
 waveshare22</p>
-
-<h3 id="tft-lcd-sainsmart18-st7735-160x128-1-8">TFT-LCD sainsmart18 (ST7735, 160x128, 1,8“)</h3>
-
-<p>Konsole Beispielaufruf:<br />
+<h3 id="tft-lcd-sainsmart18-st7735-160x128-18">TFT-LCD sainsmart18 (ST7735, 160x128, 1,8“)</h3>
+<p>Konsole Beispielaufruf:<br>
 <code>sudo modprobe fbtft_device name=sainsmart18 gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 speed=48000000 debug=$((1&lt;&lt;5))</code></p>
-
 <p>Einbindung für automatische Aktivierung bei Systemstart:</p>
-
-<p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-
+<p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
 <pre><code>spi-bcm2835
 fbtft dma
 fbtft_device
-</code></pre>
-
-<p>&rdquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-
+</code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
 <pre><code>options fbtft_device name=sainsmart18 gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 speed=48000000
-</code></pre>
-
-<h3 id="tft-lcd-adafruit18-st7735-128x128-1-44">TFT-LCD adafruit18 (ST7735, 128x128, 1,44“)</h3>
-
-<p>Konsole Beispielaufruf:<br />
+</code></pre><h3 id="tft-lcd-adafruit18-st7735-128x128-144">TFT-LCD adafruit18 (ST7735, 128x128, 1,44“)</h3>
+<p>Konsole Beispielaufruf:<br>
 <code>sudo modprobe fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 bgr=1 speed=40000000 debug=$((1&lt;&lt;5))</code></p>
-
-<p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-
+<p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
 <pre><code>spi-bcm2835
 fbtft dma
 fbtft_device
-</code></pre>
-
-<p>&rdquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-
+</code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
 <pre><code>options fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 speed=40000000 bgr=1 fps=30 height=128 width=128 rotate=90
-</code></pre>
-
-<h3 id="tft-lcd-waveshare-st7735-128x128-1-44">TFT-LCD WaveShare (ST7735, 128x128, 1,44“)</h3>
-
-<p>Konsole Beispielaufruf:<br />
+</code></pre><h3 id="tft-lcd-waveshare-st7735-128x128-144">TFT-LCD WaveShare (ST7735, 128x128, 1,44“)</h3>
+<p>Konsole Beispielaufruf:<br>
 <code>sudo modprobe fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000 debug=$((1&lt;&lt;5))</code></p>
-
-<p>&rdquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-
+<p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
 <pre><code>spi-bcm2835
 fbtft dma
 fbtft_device
-</code></pre>
-
-<p>&rdquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-
+</code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
 <pre><code>options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000
-</code></pre>
-
-<h2 id="verwendung">Verwendung</h2>
-
+</code></pre><h2 id="verwendung">Verwendung</h2>
 <p>Die Verwendung wird in einem eigenen Eintrag besprochen &hellip;</p>
-
 <h2 id="verlinkungen">Verlinkungen</h2>
-
 <p>Alle relevanten Informationen werden auf der Projektseite
 <a href="https://github.com/notro/fbtft/wiki/fbtft_device">https://github.com/notro/fbtft/wiki/fbtft_device</a> beschrieben.</p>
             </article>
@@ -665,7 +618,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

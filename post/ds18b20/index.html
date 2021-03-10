@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "Temperatursensor DS18B20",
         "headline" : "Temperatursensor DS18B20",
-        "description" : "<p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.
-</p>",
+        "description" : "\x3cp\x3eMit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-03-26 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-03-26 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/ds18b20/",
+        "datePublished": "2019-03-26 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-03-26 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/ds18b20\/",
         "wordCount" : "350",
-        "image" : https://blog.gc2.atimg/18B20.jpg",
+        "image" : "https://blog.gc2.atimg/18B20.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,61 +273,32 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.
-</p>
-
-<h2 id="beschreibung">Beschreibung</h2>
-
+              <p>Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.</p>
+<h2 id="beschreibung-">Beschreibung</h2>
 <p>Mit dem 1-Wire Sensor DS18B20 von Dallas oder einen eine kompatiblen Sensor, kann ganz einfach die Umgebungstemperatur gemessen werden. Man benötigt lediglich den Sensor einen Pull-up Widerstand und einen Device Tree Eintrag in der Konfigurationsdatei. Dann steht der Temperaturwert über das virtuelle Filesystem zur Verfügung. Eine extra Software oder Library ist nicht nötig.</p>
-
-<h2 id="anschluss">Anschluss</h2>
-
+<h2 id="anschluss-">Anschluss</h2>
 <p>Der 1-Wire Sensor wird mit 3,3 V versorgt und über den GPIO-Pin 4 erfolgt die standardisierte Kommunikation. Lediglich einen zusätzlichen Pull-up Widerstand mit 4,7 KOhm muss man noch hinzuschalten.</p>
-
-<p><img src="../../img/18B20_Schaltplan.png" alt="DS18B20 Schaltplan" /></p>
-
-<p><img src="../../img/18B20_Steckplatine.png" alt="DS18B20 Steckplatine" /></p>
-
-<h2 id="konfiguration">Konfiguration</h2>
-
+<p><img src="../../img/18B20_Schaltplan.png" alt="DS18B20 Schaltplan"></p>
+<p><img src="../../img/18B20_Steckplatine.png" alt="DS18B20 Steckplatine"></p>
+<h2 id="konfiguration-">Konfiguration</h2>
 <p>Es muss lediglich der 1-Wire-Bus über einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; parametriert werden. Dadurch werden automatisch beim Starten die entsprechenden Kernel-Module (w1_gpio, w1_therm und wire) geladen.</p>
-
 <pre><code>dtoverlay=w1-gpio,gpiopin=4,pullup=on
-</code></pre>
-
-<p>Im Betrieb kann das Kernelmodul mit folgendem Aufruf geladen werden:</p>
-
+</code></pre><p>Im Betrieb kann das Kernelmodul mit folgendem Aufruf geladen werden:</p>
 <pre><code>sudo dtoverlay w1-gpio gpiopin=4 pullup=on
-</code></pre>
-
-<h2 id="zugriff">Zugriff</h2>
-
+</code></pre><h2 id="zugriff-">Zugriff</h2>
 <p>Nach einem Neustart ist bereits alles geladen und der Sensor über das virtuelle Dateisystem auslesbar. Die Identifizierung aller Sensoren erfolgt über eine eindeutige ID-Nummer, die in der Datei &ldquo;w1_master_slaves&rdquo; aufgelistet sind.</p>
-
 <pre><code>ls  /sys/bus/w1/devices/
-</code></pre>
-
-<pre><code>28-03089779799c  w1_bus_master1
-</code></pre>
-
-<pre><code>cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slaves
-</code></pre>
-
-<pre><code>28-03089779799c
-</code></pre>
-
-<pre><code>cat  /sys/bus/w1/devices/28-03089779799c/w1_slave
-</code></pre>
-
-<pre><code>8d 01 55 05 7f a5 a5 66 9c : crc=9c YES
+</code></pre><pre><code>28-03089779799c  w1_bus_master1
+</code></pre><pre><code>cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slaves
+</code></pre><pre><code>28-03089779799c
+</code></pre><pre><code>cat  /sys/bus/w1/devices/28-03089779799c/w1_slave
+</code></pre><pre><code>8d 01 55 05 7f a5 a5 66 9c : crc=9c YES
 8d 01 55 05 7f a5 a5 66 9c t=24812
-</code></pre>
-
-<p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
+</code></pre><p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
 Diese Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
@@ -350,7 +320,7 @@ Diese Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/python</span>
 <span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
 
@@ -371,13 +341,11 @@ w1_slaves <span style="color:#666">=</span> <span style="color:#007020">file</sp
   stringvalue <span style="color:#666">=</span> filecontent<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34; &#34;</span>)[<span style="color:#40a070">9</span>]
   temperature <span style="color:#666">=</span> <span style="color:#007020">float</span>(stringvalue[<span style="color:#40a070">2</span>:]) <span style="color:#666">/</span> <span style="color:#40a070">1000</span>
 
-  <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)</code></pre></td></tr></table>
+  <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)
+</code></pre></td></tr></table>
 </div>
-</div>
-<pre><code>python3 /usr/local/bin/w1-temp.py
-</code></pre>
-
-<pre><code>26.2 °C
+</div><pre><code>python3 /usr/local/bin/w1-temp.py
+</code></pre><pre><code>26.2 °C
 </code></pre>
             </article>
           </div>
@@ -584,7 +552,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

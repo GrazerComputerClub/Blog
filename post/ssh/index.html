@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "SSH ohne Passwort",
         "headline" : "SSH ohne Passwort",
-        "description" : "<p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
-</p>",
+        "description" : "\x3cp\x3eImmer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-26 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2020-09-26 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/ssh/",
+        "datePublished": "2020-09-26 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-09-26 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/ssh\/",
         "wordCount" : "601",
-        "image" : https://blog.gc2.atimg/SSH.png",
+        "image" : "https://blog.gc2.atimg/SSH.png"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,28 +273,18 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
-</p>
-
-<h2 id="beschreibung">Beschreibung</h2>
-
-<p>Wenn man sich per SSH auf einem Linux System anmeldet muss man üblicherweise eine Passwort eingeben. Bei dem Raspberry Pi wird das Standard-Passwort &ldquo;raspberry&rdquo; verwendet. Wenn man allerdings seinen öffentlichen Schlüssel am System hinterlegt, kann man sich ohne Passwort anmelden. Bei der Verwendung der Extention &ldquo;Remote Development&rdquo; für Visual Studio Code ist es sogar verpflichtend.<br />
+              <p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.</p>
+<h2 id="beschreibung-">Beschreibung</h2>
+<p>Wenn man sich per SSH auf einem Linux System anmeldet muss man üblicherweise eine Passwort eingeben. Bei dem Raspberry Pi wird das Standard-Passwort &ldquo;raspberry&rdquo; verwendet. Wenn man allerdings seinen öffentlichen Schlüssel am System hinterlegt, kann man sich ohne Passwort anmelden. Bei der Verwendung der Extention &ldquo;Remote Development&rdquo; für Visual Studio Code ist es sogar verpflichtend.<br>
 Sollte man ein neues Raspbian bzw. Raspberry Pi OS Betriebssystem aufgespielt haben, darf man nicht vergessen die Datei &ldquo;ssh&rdquo; auf der boot-Partition anzulegen. So wird nämlich der SSH-Dienst aktiviert.</p>
-
 <h2 id="einrichtung-anmeldung-ohne-passwort">Einrichtung Anmeldung ohne Passwort</h2>
-
 <p>Auf dem Client-PC, also der der sich auf den Raspberry Pi verbinden will, muss ein Schlüsselpaar für den aktuellen Benutzer (im Beispiel GC2) erstellt werden.
 Es macht Sinn erstmals zu überprüfen ob dies bereits geschehen ist. Der Befehl <code>ls ~/.ssh</code> listet den Inhalt des lokalen ssh Verzeichnisses auf. Wenn der Fehler &ldquo;Zugriff auf &lsquo;/home/GC2/.ssh&rsquo; nicht möglich&rdquo; ausgegeben wird oder die Dateien &ldquo;id_rsa.pub&rdquo; und &ldquo;id_dsa.pub&rdquo; nicht vorhanden sind, dann wurden noch keine Schlüssel erstellt.</p>
-
 <h3 id="schlüsselpaar-erstellen">Schlüsselpaar erstellen</h3>
-
 <p>Mit folgenden Befehl wir am lokalen System die  Schlüsselpaar erzeugung gestartet:</p>
-
 <p><code>ssh-keygen</code></p>
-
 <p>Bei den nachfolgenden Fragen muss man zuerst angeben wo die Schlüssel-Datei gespeichert wird.
 Mit der Eingabetaste wird hier die Standardvorgabe &ldquo;/home/GC2/.ssh/id_rsa&rdquo; benutzt. Dann wird nach der Passwortphrase gefragt. Wenn man zwei mal nur die Eingabetaste drückt, wird keine Phrase verwendet. Man drückt also nach dem Befehl einfach 3 mal auf die Eingabetaste.</p>
-
 <pre><code>Generating public/private rsa key pair.
 Enter file in which to save the key (/home/GC2/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
@@ -316,26 +305,17 @@ The key's randomart image is:
 |o+ o = + + . o   |
 |+.. ..o o .      |
 +----[SHA256]-----+ 
-</code></pre>
-
-<p>Beim Auflisten des Verzeichnisinhalts <code>ls ~/.ssh</code> findet man nun die Dateien &ldquo;id_rsa&rdquo; und &ldquo;id_rsa.pub&rdquo;.</p>
-
+</code></pre><p>Beim Auflisten des Verzeichnisinhalts <code>ls ~/.ssh</code> findet man nun die Dateien &ldquo;id_rsa&rdquo; und &ldquo;id_rsa.pub&rdquo;.</p>
 <h3 id="schlüssel-hinterlegen">Schlüssel hinterlegen</h3>
-
-<p>Die Datei &ldquo;id_rsa&rdquo; enthält den privaten Schlüssel, er bleibt am aktuellen Client System.<br />
+<p>Die Datei &ldquo;id_rsa&rdquo; enthält den privaten Schlüssel, er bleibt am aktuellen Client System.<br>
 Die Datei &ldquo;id_rsa.pub&rdquo; enthält den öffentlichen Schlüssel. Sie muss auf den SSH-Server bzw. den Raspberry Pi kopiert werden. Dies kann mit folgenden Befehl durchgeführt werden</p>
-
 <p><code>ssh-copy-id pi@raspberrypi.local</code></p>
-
-<p>raspberrypi.local ist der typische Hostname der Raspberry Pi. Eventuell muss man auch einen anderen Namen oder die IP-Adresse angeben.<br />
-Sollte es bzgl. des Hostnamens oder der aufgelösten IP-Adresse Probleme geben (&ldquo;Warning: the ECDSA host key for &lsquo;raspberrypi.local&rsquo; differs from the key for the IP address &lsquo;192.168.137.10&rsquo;&rdquo; oder &ldquo;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!&ldquo;) löscht man sie am besten aus der Liste der bekannten Verbindungen. Zur Ermittlung der IP-Adresse könnte man den Befehl <code>ping -c1 raspberrypi.local</code> ausführen.</p>
-
-<p><code>ssh-keygen -R raspberrypi.local</code><br />
-<code>ssh-keygen -R 192.168.137.10</code><br />
+<p>raspberrypi.local ist der typische Hostname der Raspberry Pi. Eventuell muss man auch einen anderen Namen oder die IP-Adresse angeben.<br>
+Sollte es bzgl. des Hostnamens oder der aufgelösten IP-Adresse Probleme geben (&ldquo;Warning: the ECDSA host key for &lsquo;raspberrypi.local&rsquo; differs from the key for the IP address &lsquo;192.168.137.10&rsquo;&rdquo; oder &ldquo;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!&quot;) löscht man sie am besten aus der Liste der bekannten Verbindungen. Zur Ermittlung der IP-Adresse könnte man den Befehl <code>ping -c1 raspberrypi.local</code> ausführen.</p>
+<p><code>ssh-keygen -R raspberrypi.local</code><br>
+<code>ssh-keygen -R 192.168.137.10</code><br>
 <code>ssh-copy-id pi@raspberrypi.local</code></p>
-
 <p>Danach muss man zum letzten mal das Passwort angeben.</p>
-
 <pre><code>/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 2 key(s) remain to be installed -- if you are prompted now it is to install the new keys
 pi@raspberrypi.local's password: 
@@ -344,12 +324,8 @@ Number of key(s) added: 2
 
 Now try logging into the machine, with:   &quot;ssh 'pi@raspberrypi.local'&quot;
 and check to make sure that only the key(s) you wanted were added.
-</code></pre>
-
-<h2 id="verbinden">Verbinden</h2>
-
+</code></pre><h2 id="verbinden">Verbinden</h2>
 <p>Verbindet man sich nun per SSH zum Raspberry Pi wird kein Passwort mehr abgefragt.</p>
-
 <p><code>ssh pi@raspberrypi.local</code></p>
             </article>
           </div>
@@ -556,7 +532,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

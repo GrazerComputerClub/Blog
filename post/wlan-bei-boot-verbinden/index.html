@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "Raspberry Pi WLAN bei Boot verbinden",
         "headline" : "Raspberry Pi WLAN bei Boot verbinden",
-        "description" : "<p>Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
-</p>",
+        "description" : "\x3cp\x3eOft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-04 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-12-04 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/wlan-bei-boot-verbinden/",
+        "datePublished": "2018-12-04 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2018-12-04 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/wlan-bei-boot-verbinden\/",
         "wordCount" : "252",
-        "image" : https://blog.gc2.atimg/wlan-bei-boot-verbinden.jpg",
+        "image" : "https://blog.gc2.atimg/wlan-bei-boot-verbinden.jpg"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -274,14 +273,10 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.
-</p>
-
+              <p>Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.</p>
 <h2 id="umsetzung">Umsetzung</h2>
-
 <p>Damit sich der Raspberry Pi direkt nach dem ersten Boot ins lokale WLAN verbinden kann, müssen die Zugangsdaten in der Boot-Partition hinterlegt werden.
 Man muss dort die Datei &ldquo;wpa_supplicant.conf&rdquo; mit folgendem Inhalt anlegen:</p>
-
 <pre><code>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=AT
@@ -295,21 +290,14 @@ network={
     ssid=&quot;WLAN SSID Name - ungesichert&quot;
     key_mgmt=NONE
 }
-</code></pre>
-
-<p>Bei &lsquo;ssid=&rsquo; muss unter Hochkomma der Name bzw. die SSID des WLANs angegeben werden. Bei &lsquo;psk=&rsquo; wird das WLAN-Passwort angegeben. Verfügbare WLAN Netze können mit dem Befehl <code>iwlist wlan0 scan | grep ESSID</code> oder <code>nmcli dev wifi list</code> aufgelistet werden. Bei &lsquo;country=&rsquo; wird das Einsatzland also &lsquo;DE&rsquo; für Deutschland oder &lsquo;AT&rsquo; für Österreich angegeben. Bei einem ungesicherten WLAN ohne Verschlüsselung gibt man bei &lsquo;key_mgmt=&rsquo; den Typ &lsquo;NONE&rsquo; ein.</p>
-
+</code></pre><p>Bei &lsquo;ssid=&rsquo; muss unter Hochkomma der Name bzw. die SSID des WLANs angegeben werden. Bei &lsquo;psk=&rsquo; wird das WLAN-Passwort angegeben. Verfügbare WLAN Netze können mit dem Befehl <code>iwlist wlan0 scan | grep ESSID</code> oder <code>nmcli dev wifi list</code> aufgelistet werden. Bei &lsquo;country=&rsquo; wird das Einsatzland also &lsquo;DE&rsquo; für Deutschland oder &lsquo;AT&rsquo; für Österreich angegeben. Bei einem ungesicherten WLAN ohne Verschlüsselung gibt man bei &lsquo;key_mgmt=&rsquo; den Typ &lsquo;NONE&rsquo; ein.</p>
 <p>Weiters darf man nicht vergessen, eine leere Datei mit dem Namen &ldquo;ssh&rdquo; auf der Boot-Partition anzulegen. Diese sorgt dafür, dass nach dem Boot der SSH-Dienst gestartet wird und man sich dann mit den Benutzernamen &ldquo;pi&rdquo; und dem Passwort &ldquo;raspberry&rdquo; am System anmelden kann.</p>
-
 <p>Wer diese Schritte durchführt, kann ohne Monitor und Tastatur einen Raspberry Pi betriebsbereit machen und &ldquo;Headless&rdquo; betreiben.</p>
-
 <h2 id="tips">Tips</h2>
-
 <p>Auf einem modernen Linux mit installierten Network Manager können folgende Befehle ausgeführt werden:</p>
-
-<p><strong><em>WLANs in Reichweite:</em></strong> nmcli dev wifi list<br />
-<strong><em>Aktive DNS-Server auflisten:</em></strong> nmcli dev show | grep DNS<br />
-<strong><em>Routing Tabelle:</em></strong> route</p>
+<p><em><strong>WLANs in Reichweite:</strong></em> nmcli dev wifi list<br>
+<em><strong>Aktive DNS-Server auflisten:</strong></em> nmcli dev show | grep DNS<br>
+<em><strong>Routing Tabelle:</strong></em> route</p>
             </article>
           </div>
           
@@ -515,7 +503,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>

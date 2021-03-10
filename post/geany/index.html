@@ -8,13 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https://blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
         "name" : "Geany mit GTK2",
         "headline" : "Geany mit GTK2",
-        "description" : "<p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
-</p>",
+        "description" : "\x3cp\x3eAb Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -22,11 +21,11 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-11-30 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2019-11-30 00:00:00 &#43;0000 UTC",
-        "url" : "https://blog.gc2.at/post/geany/",
-        "wordCount" : "712",
-        "image" : https://blog.gc2.atimg/geany.png",
+        "datePublished": "2019-11-30 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2019-11-30 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/geany\/",
+        "wordCount" : "700",
+        "image" : "https://blog.gc2.atimg/geany.png"",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -46,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1607255458" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1607255458" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -93,31 +92,31 @@ if (!doNotTrack) {
       <ul id="menu-secondary-items" class="menu-secondary-items">
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/ccc">CCC</a>
+          <a href="/categories/ccc">ccc</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/gc2">GC2</a>
+          <a href="/categories/gc2">gc2</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/minecraft">Minecraft</a>
+          <a href="/categories/minecraft">minecraft</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/programmierung">Programmierung</a>
+          <a href="/categories/programmierung">programmierung</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">Raspberry Pi Zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/uc">uC</a>
+          <a href="/categories/uc">uc</a>
         </li>
         
 
@@ -280,26 +279,15 @@ if (!doNotTrack) {
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.
-</p>
-
-<h2 id="beschreibung">Beschreibung</h2>
-
+              <p>Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.</p>
+<h2 id="beschreibung-">Beschreibung</h2>
 <p>Beim Wechsel von Raspbian mit Basis Debian 9 Stretch auf Raspbian mit Debian 10 Buster gab es auch einen Wechsel bei der Entwicklungsumgebung Geany. Statt der Version 1.29 mit GTK2, wird nun die Version 1.33 mit GTK3 zur Verfügung gestellt. GTK ist eine Bibliothek für die grafische Benutzeroberflächen (GUI) mit der Fenster, Dialog und sonstige Anzeigeelemente erzeugt werden. Leider ist die Performance von GTK3 auf der Raspberry Pi Zero merklich schlechter als bei GTK2. Falls man die alte Version als zusätzliches Programm bereitstellen möchte, hier eine Anleitung.</p>
-
-<h2 id="installation">Installation</h2>
-
-<!--
-Wird ein externes Terminal Programm benutzt so können die kleinen Terminals sterm und lilyterm installiert werden. Die Umschaltung des Standard X-Terminals erfolgt mit dem Befehl ``sudo update-alternatives --config x-terminal-emulator``.
--->
-
-<h3 id="geany-1-33-gtk3">Geany 1.33 GTK3</h3>
-
+<h2 id="installation-">Installation</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="geany-133-gtk3">Geany 1.33 GTK3</h3>
 <pre><code>sudo apt-get install geany stterm libvte9 libvte-2.91-0
-</code></pre>
-
-<h3 id="geany-1-29-gtk2">Geany 1.29 GTK2</h3>
-
+</code></pre><h3 id="geany-129-gtk2">Geany 1.29 GTK2</h3>
 <pre><code>mkdir geany
 cd geany
 wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany_1.29-1_armhf.deb
@@ -316,31 +304,15 @@ unp data.tar.xz
 sudo cp usr/share/geany/geany.gtkrc /usr/share/geany/
 
 sudo apt-get install libfreetype6 libfontconfig1 libgtk2.0-0 libpangoft2-1.0-0
-</code></pre>
-
-<!--
-Error nur exe:
-GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
-
-
-ldd /usr/bin/geany-gtk2 
-  libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6cd8000)
-
-ldd /usr/bin/geany
-    libgeany.so.0 => /lib/arm-linux-gnueabihf/libgeany.so.0 (0xb6d58000)
--->
-
-<h3 id="geany-1-33-gtk2-erstellen">Geany 1.33 GTK2 erstellen</h3>
-
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="geany-133-gtk2-erstellen">Geany 1.33 GTK2 erstellen</h3>
 <p>Die Geany Version 1.33 mit der GTK2 Bibliothek kann selbst erstellt werden. Dies ist allerdings ein aufwendiger Prozess.
 Würde man das resultierende Debian Paket dann installieren wird die GTK3 Version ersetzt. Wir kopieren aber wieder die erzeugten Dateien zusätzlich
 auf das Raspbian System.</p>
-
 <p>Zuerst besorgt man sich den Source-Code des Debian Paketes. Dann benötigt man noch alle Abhängigkeiten des Paketes und die GTK2 Development Library.
 Nun muss man den Source-Code entpacken. In der Datei &ldquo;debian/rules&rdquo; muss der Parameter &ldquo;&ndash;enable-gtk3&rdquo; entfernt werden. Danach kann das Paket neu erzeugt werden. Nun kopieren wir das neue Programm und die Bibliothekdateien in eine neue Datei bzw. Verzeichnis.</p>
-
 <p>geany-gtk2.patch:</p>
-
 <pre><code>--- geany-1.33/debian/rules.old	2019-11-27 21:55:31.871256842 +0100
 +++ geany-1.33/debian/rules	2019-11-28 22:27:55.832759732 +0100
 @@ -10,7 +10,7 @@
@@ -352,13 +324,8 @@ Nun muss man den Source-Code entpacken. In der Datei &ldquo;debian/rules&rdquo; 
  	sed -i -r 's,^sys_lib_dlsearch_path_spec=&quot;(.*)$$,sys_lib_dlsearch_path_spec=&quot;/usr/lib /lib \1,' $(CURDIR)/libtool
  
  override_dh_auto_install:
-</code></pre>
-
-<!--
-pkg-config --libs gtk+-2.0
--lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
--->
-
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <pre><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
 sudo apt update
 sudo apt install build-essential fakeroot devscripts
@@ -374,29 +341,16 @@ sudo cp usr/bin/geany /usr/bin/geany-gtk2
 sudo mkdir /usr/lib/arm-linux-gnueabihf/geany-gtk2/
 sudo cp -rv usr/lib/arm-linux-gnueabihf/* /usr/lib/arm-linux-gnueabihf/geany-gtk2/
 cd ..
-</code></pre>
-
-<h2 id="start">Start</h2>
-
+</code></pre><h2 id="start-">Start</h2>
 <p>Bei Aufruf der GTK2 Version muss man den Pfad für die Bibliothek setzen, damit nicht die Version mit GTK3 Bibliothek geladen wird.</p>
-
 <p><strong>Aufruf geany mit GTK2:</strong></p>
-
 <pre><code>LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2
-</code></pre>
-
-<p>Bei einem alias Eintrag können die zwei Version direkt gestartet werden.</p>
-
+</code></pre><p>Bei einem alias Eintrag können die zwei Version direkt gestartet werden.</p>
 <p><strong>Alias für Aufruf &ldquo;~/.bash_aliases&rdquo;:</strong></p>
-
 <pre><code>alias geany-gtk2=&quot;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2&quot;
 alias geany-gtk3=&quot;/usr/bin/geany&quot;
-</code></pre>
-
-<p>Mit dem Aufruf geany kann dann je nach Systemleistung die GTK2 oder GTK3 Version gestartet werden.</p>
-
+</code></pre><p>Mit dem Aufruf geany kann dann je nach Systemleistung die GTK2 oder GTK3 Version gestartet werden.</p>
 <p><strong>Alias für Aufruf &ldquo;~/.profile&rdquo;:</strong></p>
-
 <pre><code>function geany() { 
 	if [ `cat /proc/cpuinfo | grep -e &quot;^processor&quot; | wc -l` = 1 ]; then 
     echo &quot;start geany with GTK 2 (slow single core cpu)&quot; 
@@ -405,31 +359,18 @@ alias geany-gtk3=&quot;/usr/bin/geany&quot;
 		geany-gtk3 &quot;$@&quot;
 	fi
 }
-</code></pre>
-
-<p>Für einen optischer Vergleich der beiden Versionen siehe Bild (GTK2 Clearlooks Theme links, GTK3 rechts).</p>
-
-<p><img src="../../img/geany_GTK3vsGTK2.png" alt="Vergleich Geany GTK2 (Clearlooks) vs GTK3" /></p>
-
-<h2 id="einstellungen">Einstellungen</h2>
-
+</code></pre><p>Für einen optischer Vergleich der beiden Versionen siehe Bild (GTK2 Clearlooks Theme links, GTK3 rechts).</p>
+<p><img src="../../img/geany_GTK3vsGTK2.png" alt="Vergleich Geany GTK2 (Clearlooks) vs GTK3"></p>
+<h2 id="einstellungen-">Einstellungen</h2>
 <p>Nach der Installation gab es beim Starten eines Programms immer das Problem, dass das Terminal Programm mit dem entwickelten Programm nicht ausgeführt werden konnte.</p>
-
-<p><img src="../../img/geany_Fehler.png" alt="Fehler beim Ausführen" /></p>
-
+<p><img src="../../img/geany_Fehler.png" alt="Fehler beim Ausführen"></p>
 <p>Das Problem kann gelöst werden indem man den internen Terminal für das Ausführen des Programms benutzt.</p>
-
-<p>Bearbeiten -&gt; Einstellungen bzw. <kbd>Strg</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> , Reiter Terminal<br />
+<p>Bearbeiten -&gt; Einstellungen bzw. <!-- raw HTML omitted -->Strg<!-- raw HTML omitted -->+<!-- raw HTML omitted -->Alt<!-- raw HTML omitted -->+<!-- raw HTML omitted -->P<!-- raw HTML omitted --> , Reiter Terminal<br>
 Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Skript nicht benutzen&rdquo; müssen aktiviert werden.</p>
-
-<p><img src="../../img/geany_Einstellungen.png" alt="Einstellungen" /></p>
-
-<h2 id="performancevergleich-gtk3-zu-gtk2">Performancevergleich GTK3 zu GTK2</h2>
-
+<p><img src="../../img/geany_Einstellungen.png" alt="Einstellungen"></p>
+<h2 id="performancevergleich-gtk3-zu-gtk2-">Performancevergleich GTK3 zu GTK2</h2>
 <p>Folgende Zeit wurde ohne exakte Messung ermittelt und sind deshalb nur als Richtwert zu sehen.</p>
-
 <h3 id="raspberry-pi-zero">Raspberry Pi Zero</h3>
-
 <table>
 <thead>
 <tr>
@@ -438,26 +379,22 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 <th><em>GTK2 (Sek.)</em></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Start</td>
 <td>8</td>
 <td>4</td>
 </tr>
-
 <tr>
 <td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
 <td>2</td>
 <td>1</td>
 </tr>
-
 <tr>
 <td align="left">Fenster öffnen: Einstellungen</td>
 <td>7</td>
 <td>2</td>
 </tr>
-
 <tr>
 <td align="left">Beenden</td>
 <td>2</td>
@@ -465,9 +402,7 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 </tr>
 </tbody>
 </table>
-
 <h3 id="raspberry-pi-2">Raspberry Pi 2</h3>
-
 <table>
 <thead>
 <tr>
@@ -476,26 +411,22 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 <th><em>GTK2 (Sek.)</em></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Start</td>
 <td>4</td>
 <td>2</td>
 </tr>
-
 <tr>
 <td align="left">Fenster öffnen: Kommandos zum Erstellen konfigurieren</td>
 <td>1</td>
 <td>1</td>
 </tr>
-
 <tr>
 <td align="left">Fenster öffnen: Einstellungen</td>
 <td>3</td>
 <td>1</td>
 </tr>
-
 <tr>
 <td align="left">Beenden</td>
 <td>1</td>
@@ -503,83 +434,27 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 </tr>
 </tbody>
 </table>
-
-<!--
-### Raspberry Pi 3
-
-| *Aktion*     | *GTK3 (Sek.)* | *GTK2 (Sek.)* |
-|:-------------|--------|--------|
-| Start        | 3      | 2      |
-| Fenster öffnen: Kommandos zum Erstellen konfigurieren | 1 | 1 |
-| Fenster öffnen: Einstellungen                         | 4 | 1 |
-| Beenden      | 1      | 1      |
--->
-
-<!--
-Fehler reparieren funktioniert nicht!:
-/usr/lib/arm-linux-gnueabihf/gdk-pixbuf-2.0
-sudo ./gdk-pixbuf-query-loaders --update-cache
-sudo update-mime-database /usr/share/mime
-sudo gtk-update-icon-cache -fv /usr/share/icons/hicolor/ /usr/share/icons/Adwaita/
-sudo apt-get install papirus-icon-theme
--->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h1 id="style-für-gtk2-ändern">Style für GTK2 ändern</h1>
-
-<!-- gtk-theme-switch gtk2-engines-cleanice gtk2-engines-magicchicken 
-gtk-theme-switch2
-
-cat gtk-icon-theme-name="breeze" >> /home/pi/.gtkrc-2.0
-
--->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Die Optik der alten GTK2 Version schaut in der Standardkonfiguration recht altbacken aus. Ein anderes Theme wie z.B. &ldquo;Clearlooks&rdquo; gibt dem Programm einen modernen Look.</p>
-
 <pre><code>sudo apt-get install gtk-theme-switch gtk2-engines
 gtk-theme-switch2
-</code></pre>
-
-<p>/home/pi/.gtkrc-2.0:</p>
-
+</code></pre><p>/home/pi/.gtkrc-2.0:</p>
 <pre><code># -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
 include &quot;/usr/share/themes/Clearlooks/gtk-2.0/gtkrc&quot;
 
 include &quot;/home/pi/.gtkrc-2.0.mine&quot;
 
 # -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
-</code></pre>
-
-<!--
-sudo apt-get install lxappearance 
-lxappearance
-
-/home/pi/.gtkrc-2.0:
-```
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
-# Any customization should be done in ~/.gtkrc-2.0.mine instead.
-
-include "/home/pi/.gtkrc-2.0.mine"
-gtk-theme-name="Clearlooks"
-gtk-icon-theme-name="hicolor"
-gtk-font-name="Noto Sans 9"
-gtk-cursor-theme-size=24
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=0
-gtk-menu-images=1
-gtk-enable-event-sounds=0
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle="hintslight"
-gtk-xft-rgba="rgb"
-```
-
--->
-
-<h2 id="youtube-video-review">Youtube Video Review</h2>
-
-<p><a href="https://www.youtube.com/watch?v=NLOSguwMeAI"><img src="http://img.youtube.com/vi/NLOSguwMeAI/0.jpg" alt="Geany GTK2 vs GTK3 @ Raspberry Pi Zero" /></a></p>
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="youtube-video-review-">Youtube Video Review</h2>
+<p><a href="https://www.youtube.com/watch?v=NLOSguwMeAI"><img src="http://img.youtube.com/vi/NLOSguwMeAI/0.jpg" alt="Geany GTK2 vs GTK3 @ Raspberry Pi Zero"></a></p>
             </article>
           </div>
           
@@ -786,7 +661,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1607255458"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
 
 </body>
 </html>
