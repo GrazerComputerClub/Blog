@@ -1,7 +1,7 @@
 ﻿+++
 showonlyimage = false
 draft = false
-image = "img/ESP8266_ESP-01S.jpg"
+image = "img/ESP-01S_DHT11.jpg"
 date = "2021-02-28"
 title = "ESP8266 ESP-01(S) MicroPython Firmware"
 writer = "Martin Strohmayer"
@@ -16,7 +16,7 @@ Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man
 ## Beschreibung ##
 
 MicroPython ist eine eigene Firmware die es möglich macht, den ESP8266 mit Python programmieren zu können. Dabei werden keine Binärprogramme erzeugt, sondern der Source-Code wird direkt auf das System übertragen. Der Python Code ist dann permanent gespeichert und wird direkt vom Mikrocontroller ausgeführt.  
-Hier wird dagegen das kleinste ESP-01(S) Board verwendet, auf dem die MicroPython Firmware problemlos installiert und verwendet werden kann. 
+In userem Fall wird das kleinste ESP-01(S) Board verwendet, auf dem die MicroPython Firmware problemlos installiert und verwendet werden kann. 
 
 ![ESP8266 ESP-01](../../img/ESP8266_ESP-01b.png) 
  
@@ -53,7 +53,7 @@ esptool.py v2.8
 
 ### MicroPython Firmware 
 
-Nun wird die MicroPython Firmware benötigt. Sie kann auf der Internetseite [Firmware for Generic ESP8266 module ](http://micropython.org/download/esp8266/) für das jeweilige ESP8266 Board heruntergeladen werden. Wichtig ist dabei zu wissen wieveil Flash Speicher verfügbar ist. Nicht zu empfehlen sind die alten blauen ESP-01 Boards die nur 512 MB Speicher haben. Für sie gibt es einen um einige Features reduzierte Firmware. In unserem fall setzen wir die neuere schwarze ESP-01S Board ein. Somit können wir die stabile Firmware von "Daily builds, 1M of flash" verwenden.
+Nun wird die MicroPython Firmware benötigt. Sie kann auf der Internetseite [Firmware for Generic ESP8266 module ](http://micropython.org/download/esp8266/) für das jeweilige ESP8266 Board heruntergeladen werden. Wichtig ist dabei zu wissen wieveil Flash Speicher verfügbar ist. Nicht zu empfehlen sind die alten blauen ESP-01 Boards die nur 512 kB Speicher haben. Für sie gibt es eine um einige Features reduzierte Firmware. In unserem Fall setzen wir das neuere schwarze ESP-01S Board ein. Somit können wir die stabile Firmware von "Daily builds, 1M of flash" verwenden.
 
 ```
 wget http://micropython.org/resources/firmware/esp8266-1m-20210202-v1.14.bin
@@ -91,7 +91,7 @@ Hard resetting via RTS pin...
 Da nach dem Befehl ein Reset geschieht, muss man möglicherweise nochmal in den Programmieremodus wechseln bzw. auch nachdem man das Flash gelöscht hat.  
 *Verwendet man den GC2-xHAT, so kann der Programmiermodus nochmal mit dem Befehl "espflashingon" aktiviert werden.*  
 
-Dann kann die Firmware übertragen werden. Die Firmware-Datei wird als letzter Parameter übergeben und muss zuvor entsprechend angepasst werden. 
+Dann kann die Firmware übertragen werden. Die Firmware-Datei wird als letzter Parameter übergeben. 
 ```
 sudo esptool.py -p /dev/ttyAMA0 erase_flash
 sudo esptool.py -p /dev/ttyAMA0 write_flash 0x00000 esp8266-1m-20210202-v1.14.bin
@@ -107,12 +107,12 @@ Dann ist der Programmiermodus inaktiv und die MicroPython-Konsole sollte gestart
 sudo screen /dev/ttyAMA0 115200
 ```
 
-Nach einem Reset (*GC2-xHAT: espreset*) oder Neustart wird die NodeMCU Softwareversion ausgegeben. Zusätzlich werden auch noch die verfügbaren Module und weitere Informationen ausgegeben. 
+Nach einem Reset (*GC2-xHAT: espreset*) oder Neustart wird >>> ausgegeben und somit ist die MicroPython Konsole bereit.
 
-Nun könnte man einrichten WebREPL wenn man das möchte. In dem Fall erzeugt der ESP-01 einen AccessPoint mit dem Namen "Mycro-Python-168582". Die Nummer hinten ist ein Teil der MAC-Adresse. Das Passwort des AccessPoint ist "micropythoN". Über diesen Zugang kann der ESP-01 direkt über ein Web-Interface programmiert und Source-Code Dateien übertragen werden.  
+Nun könnte man wenn man möchte WebREPL aktivieren. In dem Fall erzeugt der ESP-01 einen AccessPoint mit dem Namen "Mycro-Python-168582". Die Nummer hinten ist ein Teil der MAC-Adresse. Das Passwort des AccessPoint ist "micropythoN". Über diesen Zugang kann der ESP-01 direkt über ein Web-Interface programmiert und Source-Code Dateien übertragen werden.  
 
-Damit dies eingerichtet wird muss man in der seriellen Konsole deb Befehl `` import webrepl_setup`` eingeben.  
-Danach wird man gefragt ob der WebREPL Diernst automatisch gestartet werden soll mit E bestätigt man das. Nun muss das Passwort eingeben werden. Am Schluss kann man einen reboot auslösen.
+Damit dies eingerichtet wird, muss man in der seriellen Konsole den Befehl `` import webrepl_setup`` eingeben.  
+Danach wird man gefragt ob der WebREPL Dienst automatisch gestartet werden soll, mit E bestätigt man das. Nun muss ein Passwort definiert werden. Am Schluss kann man einen reboot auslösen.
 
 ```
 >>> 
@@ -160,13 +160,13 @@ unzip master.zip
 ```
 
 Danach kann die Datei webrepl.html mit einem Browser geöffnet werden.  
-Optional kann man die Seite auch im Internet öffen. Sie stetht auf http://micropython.org/webrepl/ zur Verfügung. Dies ist aber nicht zu empfehlen da eine Verbindung zum ESP und zum Internet bestehen muss. Das ist nicht ganz leicht zu bewerkstelligen da auch noch das Routing passen muss. 
+Optional kann man die Seite auch im Internet öffen. Sie steht auf http://micropython.org/webrepl/ zur Verfügung. Dies ist aber nicht zu empfehlen da eine Verbindung zum ESP und zum Internet bestehen muss. Das ist nicht ganz leicht zu bewerkstelligen da auch noch das Routing passen muss. 
 
 
-In disem Fall verwenden wir aber das WebREPL nicht und übertragen unseren Source über die serielle Schnitstelle. Dazu benötigen wir das Python 2 Programm ampy.   
+In disem Fall verwenden wir aber WebREPL aber nicht und übertragen unseren Source über die serielle Schnittstelle. Dazu benötigen wir das Python 2 Programm ampy.   
 
 
-Zuerst testen wir unseren ESP aber einmal, den Python Code kann über die serielle Schnistelle direkt eingegeben werden. Man z. B.  einen Textausgabe machen.
+Zuerst testen wir unseren ESP aber einmal. Den Python Code kann man über die serielle Schnittstelle direkt eingegeben. Man kann z. B. eine Textausgabe machen.
 
 ```
 >>> print('hallo esp!')
@@ -174,7 +174,7 @@ hallo esp!
 ```
 
 Die GPIOs können direkt mit ihrer Nummer angesprochen werden.
-Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S leuchtet die blaue LED wenn der Ausgang auf LOW steht. 
+Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S leuchtet die blaue LED wenn der Ausgang auf LOW bzw. off steht. 
 
 ```
 >>> import machine
@@ -187,8 +187,11 @@ Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S
 *Verwendet man den GC2-xHAT, so kann man den Zusand des ESP GPIO0 (Index 3) auf dem Raspberry Pi GPIO12 (Eingang) sehen. Mit dem aufruf "watch -n 0.2 gpio readall" kann man den Status in einem eigenen Terminal überwachen*  
 
 
-Hat man einen DHT11 Sensor an IO0 angeschlossen so kann man sehr einfach die Feuchte und Temperatur auslesen. Der übliche Pull-up Wirderstand ist beim ESP-01S nicht nötig, deiner er (12 KOhm) bereits am Board vorhanden ist.
+Hat man einen DHT11 oder DHT22 Sensor an IO0 angeschlossen so kann man sehr einfach die Feuchte und Temperatur auslesen. Der übliche Pull-up Widerstand ist beim ESP-01S nicht nötig, ein 12 KOhm Widerstand ist bereits am Board vorhanden ist.
 
+![ESP8266 ESP-01](../../img/ESP8266_DHT.png.jpg) 
+
+Das folgende einfache Python Programm ermittelt die Sensordaten Temperatur und Luftfeuchte und gibt sie auf der Konsole aus. 
 
 ```
 >>> import dht
@@ -201,7 +204,7 @@ Hat man einen DHT11 Sensor an IO0 angeschlossen so kann man sehr einfach die Feu
 
 ## MicroPython Programm speichern
 
-Ein gespeichertes Programm kann allerings auch ausgeführt werden. Dazu muss  das Python2 Programm ampy installiert werden.  
+Ein gespeichertes Programm kann allerdings auch ausgeführt werden. Dazu muss das Python2 Programm ampy installiert werden.  
 
 ```
 pip install adafruit-ampy
@@ -223,8 +226,8 @@ Man kann sich auch die Datei holen und ausgeben oder auf eine Datei umlenken.
 sudo ampy -p /dev/ttyAMA0 get boot.py > boot.py_orig
 ```
 
-Nun erstellen wir unser eigenes Programm. Bzw. auf https://gndtovcc.home.blog/2020/04/16/micropython-esp32-esp8266-with-dht11-dht22-web-server/ findet man ein Projekt, dass die Sensordaten des DHT11 über Web-Interface verfügbar macht.  
- Es verbindet sich ins lokale W-LAN und startet einen Internet Server, der die aktuelle Temperatur und Feuchte des DHT Sensors als Web-Seite zur Verfügung stellt. Somit kann der ESP01 mit dem DHT-sensor überall im Haus aufgestellt und ausgelesen werden.
+Nun erstellen wir unser eigenes Programm. Auf https://gndtovcc.home.blog/2020/04/16/micropython-esp32-esp8266-with-dht11-dht22-web-server/ findet man ein Projekt, dass die Sensordaten eines DHT11-Sensors über ein Web-Interface verfügbar macht.  
+ Es verbindet sich ins lokale W-LAN und startet einen Web-Server, der die aktuelle Temperatur und Feuchte des Sensors als Web-Seite zur Verfügung stellt. Somit kann der ESP01 mit dem DHT-Sensor überall im Haus aufgestellt und fern ausgelesen werden.
 
 
 boot.py:
@@ -343,7 +346,7 @@ while True:
   conn.close()
 ```
 
-Nun müssen nur noch die beiden Dateien übertargen werden
+Nun müssen nur noch die beiden Source-Dateien übertragen werden
 
 ```
 sudo ampy -p /dev/ttyAMA0 put main.py
@@ -354,10 +357,18 @@ Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt.
 Über die Android App "Fing" habe ich die IP-Adresse des ESP01 im Netz herausgefunden.
 Damm muss man sie nur im Browser eingeben und schon hat man die Daten des Sensors am Handy.
 
+![ESP8266 ESP-01](../../img/Browser_DHT11-Server.jpg) 
+
+
+Um das ganze an eine beliebigen Ort betreiben zu können, wurde in diesem Fall ein Micro-USB Breakout Board mit einem 
+3,3 V Spannungsregler verbunden, um so die nötige Spannung für das ESP-Board bereitszustellen.
+
+![ESP8266 ESP-01](../../img/ESP-01S_Powering.jpg) 
+
 
 
 ## Verlinkungen
 
-[Firmware for Generic ESP8266 module ](http://micropython.org/download/esp8266/)  
-[Micropyhon WEBRepl Seite](http://micropython.org/webrepl/)  
+[MicroPyhon Firmware for Generic ESP8266 module ](http://micropython.org/download/esp8266/)  
+[MicroPyhon WEBRepl Seite](http://micropython.org/webrepl/)  
 [ESP8266 with DHT11/DHT22 Web Server](https://gndtovcc.home.blog/2020/04/16/micropython-esp32-esp8266-with-dht11-dht22-web-server/)
