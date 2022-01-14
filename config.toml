@@ -6,13 +6,13 @@ languageCode = "de-de"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = "UA-130665257-1"
+googleAnalytics = ""
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 
 # Stuff for syntax highlighting
 pygmentsCodeFences = true
-pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=true"
+pygmentsOptions = "linenos=table,linenostart=1,style=friendly,nobackground=true"
 
 [privacy]
   [privacy.googleAnalytics]
@@ -39,7 +39,7 @@ pygmentsOptions = "linenos=table,linenostart=150,style=friendly,nobackground=tru
   ]
   copyright = [
     "CC-BY-4.0 https://creativecommons.org/licenses/by/4.0/",
-    "2018, Grazer Computer Club e. V.",
+    "2022, Grazer Computer Club e. V.",
     "Nederburg Hugo Theme by [Appernetic](https://appernetic.io).",
   ]
 
