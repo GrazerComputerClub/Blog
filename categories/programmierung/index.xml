@@ -6,10 +6,19 @@
     <description>Recent content in Programmierung on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WiringPi Library</title>
+      <link>https://blog.gc2.at/post/wiringpi/</link>
+      <pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/wiringpi/</guid>
+      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Minecraft Pi API</title>

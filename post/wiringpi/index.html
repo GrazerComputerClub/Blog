@@ -11,27 +11,27 @@
              "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "GC²@35C3 - Day 2",
-        "headline" : "GC²@35C3 - Day 2",
-        "description" : "\x3cp\x3eDer Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam\nstellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag\nbegann erst am späten Vormittag und ging bis spät in die Nacht.\x3c\/p\x3e",
+        "name" : "WiringPi Library",
+        "headline" : "WiringPi Library",
+        "description" : "\x3cp\x3eWiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.\x3c\/p\x3e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-28 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-28 00:00:00 \x2b0000 UTC",
-        "url" : "https:\/\/blog.gc2.at\/post\/35c3_2\/",
-        "wordCount" : "467",
-        "image" : "https://blog.gc2.atimg/35C3_Day2.jpg"",
+        "copyrightYear" : "2022",
+        "datePublished": "2022-01-12 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2022-01-12 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/wiringpi\/",
+        "wordCount" : "1356",
+        "image" : "https://blog.gc2.atimg/WiringPi.png"",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>GC²@35C3 - Day 2 </title>
+ <title>WiringPi Library </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -246,14 +246,14 @@ if (!doNotTrack) {
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/35C3_Day2.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/WiringPi.png">
       </div>
       
         <div class="entry-meta">
-          <span class="date">28 December</span>	<span> / </span>
+          <span class="date">12 January</span>	<span> / </span>
 
           <span class="author">
-            <a href="https://woergi.wordpress.com/" title="Posts von Christoph Woergoetter" rel="author">Christoph Woergoetter</a>
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
           </span>
 
 
@@ -261,83 +261,135 @@ if (!doNotTrack) {
           <span class="category">
             <span> / </span>
 
-            <a href="/categories/ccc">CCC</a>
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/programmierung">Programmierung</a>
           </span>
           
 
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> GC²@35C3 - Day 2</h1>
+          <h1 class='entry-title'> WiringPi Library</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Der Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam
-stellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag
-begann erst am späten Vormittag und ging bis spät in die Nacht.</p>
-<h2 id="tag-2---der-rückblick-">Tag 2 - Der Rückblick</h2>
-<p>Tag 2 neigte sich um 02:43 dem Ende zu und es wurden 13353 Schritte und 9.62 km.
-Was hat uns an diesen Tag erheitert, aufgeregt oder auch traurig gestimmt&hellip;</p>
-<h3 id="predatory-journals-">Predatory Journals</h3>
-<p>Es gibt leider ein paar nicht ganz seriöse Journals, welche den für die Qualität
-wichtigen Peer-Review Prozess einfach ignorieren. Dadurch kann jeder seine eigene
-Meinung in pseudo-wissenschaftliche Papers gießen und sich so den Stempel eines
-Experten aufdrücken. Mitunter verwenden Klimawandelleugner, die Tabakindustrie,
-und Multi-nationale Konzerne diesen Mechanismus um ihre Meinung mit Studien
-zu untermauern oder ihren Produkten positive Aspekte anzudichten.</p>
-<h3 id="der-ccc-jahresrückblick-">Der CCC Jahresrückblick</h3>
-<p>Der Jahresrückblick zeigte die alten Probleme welche uns im Jahr 2018 begleitet
-haben und uns auch noch im Jahr 2019 begleiten werden:</p>
+              <p>WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.</p>
+<h2 id="beschreibung">Beschreibung</h2>
+<p>WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Drogon entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem neuesten Raspberry Pi OS (Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit <code>apt install wiringpi</code> installieren, aber das geht nun nicht mehr.<br>
+Das ist sehr unverständlich den WiringPi wird nach wie vor weiter gewartet und für die neueren Raspberry Pi Produkte wie z. B. Pi 400 und Zero 2 angepasst. Der frei Verfügbare Sourcecode steht liegt bei Git-Hub unter <a href="https://github.com/WiringPi/WiringPi">https://github.com/WiringPi/WiringPi</a>.
+Leider gebt es keine fertiges apt-Repository oder auch eine DEB-Datei. Aus diesem Grund muss man das Projekt selbst übersetzen bzw. eine DEB-Datei für die Installation erzeugen.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>git clone https://github.com/WiringPi/WiringPi.git
+cd WiringPi
+./build 
+./build debian
+mv debian-template/wiringpi-2.61-1.deb .
+sudo apt install ./wiringpi-2.61-1.deb
+</code></pre><h2 id="verwendung">Verwendung</h2>
+<p>WiringPi enthält nicht nur die C-Bibliothek, auch das Kommandozeilenprogramm <code>gpio</code> wird mit ausgeliefert. Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. Wenn man allerdings den Parameter  <code>-g</code> hinzufügt, werden die BCM-Nummern verwendet. Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. Dies ist inzwischen nicht mehr nötig. Mit dem Befehl <code>gpio readall</code> kann der aktuelle Status der GPIOs ausgegeben werden.</p>
+<p><strong>Pi400:</strong></p>
+<pre><code>gpio -v
+</code></pre><pre><code>gpio version: 2.61
+Copyright (c) 2012-2018 Gordon Henderson
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type: gpio -warranty
+
+Raspberry Pi Details:
+  Type: Pi 400, Revision: 00, Memory: 4096MB, Maker: Sony 
+  * Device tree is enabled.
+  *--&gt; Raspberry Pi 400 Rev 1.0
+  * This Raspberry Pi supports user-level GPIO access.
+</code></pre><pre><code>gpio readall
+</code></pre><pre><code>+-----+-----+---------+------+---+---Pi 400-+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ |     |     |    3.3v |      |   |  1 || 2  |   |      | 5v      |     |     |
+ |   2 |   8 |   SDA.1 |   IN | 1 |  3 || 4  |   |      | 5v      |     |     |
+ |   3 |   9 |   SCL.1 |   IN | 1 |  5 || 6  |   |      | 0v      |     |     |
+ |   4 |   7 | GPIO. 7 |   IN | 1 |  7 || 8  | 1 | IN   | TxD     | 15  | 14  |
+ |     |     |      0v |      |   |  9 || 10 | 1 | IN   | RxD     | 16  | 15  |
+ |  17 |   0 | GPIO. 0 |   IN | 0 | 11 || 12 | 0 | IN   | GPIO. 1 | 1   | 18  |
+ |  27 |   2 | GPIO. 2 |   IN | 0 | 13 || 14 |   |      | 0v      |     |     |
+ |  22 |   3 | GPIO. 3 |   IN | 0 | 15 || 16 | 0 | IN   | GPIO. 4 | 4   | 23  |
+ |     |     |    3.3v |      |   | 17 || 18 | 0 | IN   | GPIO. 5 | 5   | 24  |
+ |  10 |  12 |    MOSI |   IN | 0 | 19 || 20 |   |      | 0v      |     |     |
+ |   9 |  13 |    MISO |   IN | 0 | 21 || 22 | 0 | IN   | GPIO. 6 | 6   | 25  |
+ |  11 |  14 |    SCLK |   IN | 0 | 23 || 24 | 1 | IN   | CE0     | 10  | 8   |
+ |     |     |      0v |      |   | 25 || 26 | 1 | IN   | CE1     | 11  | 7   |
+ |   0 |  30 |   SDA.0 |   IN | 1 | 27 || 28 | 1 | IN   | SCL.0   | 31  | 1   |
+ |   5 |  21 | GPIO.21 |   IN | 1 | 29 || 30 |   |      | 0v      |     |     |
+ |   6 |  22 | GPIO.22 |   IN | 1 | 31 || 32 | 0 | IN   | GPIO.26 | 26  | 12  |
+ |  13 |  23 | GPIO.23 |   IN | 0 | 33 || 34 |   |      | 0v      |     |     |
+ |  19 |  24 | GPIO.24 |   IN | 0 | 35 || 36 | 0 | IN   | GPIO.27 | 27  | 16  |
+ |  26 |  25 | GPIO.25 |   IN | 0 | 37 || 38 | 0 | IN   | GPIO.28 | 28  | 20  |
+ |     |     |      0v |      |   | 39 || 40 | 0 | IN   | GPIO.29 | 29  | 21  |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+---Pi 400-+---+------+---------+-----+-----+
+</code></pre><p><strong>Pi 1 B:</strong></p>
+<pre><code>gpio -v
+</code></pre><pre><code>gpio version: 2.61
+Copyright (c) 2012-2018 Gordon Henderson
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type: gpio -warranty
+
+Raspberry Pi Details:
+  Type: Model B, Revision: 00, Memory: 256MB, Maker: Egoman 
+  * Device tree is enabled.
+  *--&gt; Raspberry Pi Model B Rev 1
+  * This Raspberry Pi supports user-level GPIO access.
+</code></pre><pre><code>gpio readall
+</code></pre><pre><code>+-----+-----+---------+------+---+-Model B1-+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ |     |     |    3.3v |      |   |  1 || 2  |   |      | 5v      |     |     |
+ |   0 |   8 |   SDA.1 |   IN | 1 |  3 || 4  |   |      | 5v      |     |     |
+ |   1 |   9 |   SCL.1 |   IN | 1 |  5 || 6  |   |      | 0v      |     |     |
+ |   4 |   7 | GPIO. 7 |   IN | 1 |  7 || 8  | 1 | ALT0 | TxD     | 15  | 14  |
+ |     |     |      0v |      |   |  9 || 10 | 1 | ALT0 | RxD     | 16  | 15  |
+ |  17 |   0 | GPIO. 0 |   IN | 0 | 11 || 12 | 0 | IN   | GPIO. 1 | 1   | 18  |
+ |  21 |   2 | GPIO. 2 |   IN | 0 | 13 || 14 |   |      | 0v      |     |     |
+ |  22 |   3 | GPIO. 3 |   IN | 0 | 15 || 16 | 0 | IN   | GPIO. 4 | 4   | 23  |
+ |     |     |    3.3v |      |   | 17 || 18 | 0 | IN   | GPIO. 5 | 5   | 24  |
+ |  10 |  12 |    MOSI |   IN | 0 | 19 || 20 |   |      | 0v      |     |     |
+ |   9 |  13 |    MISO |   IN | 0 | 21 || 22 | 0 | IN   | GPIO. 6 | 6   | 25  |
+ |  11 |  14 |    SCLK |   IN | 0 | 23 || 24 | 1 | IN   | CE0     | 10  | 8   |
+ |     |     |      0v |      |   | 25 || 26 | 1 | IN   | CE1     | 11  | 7   |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+-Model B1-+---+------+---------+-----+-----+
+</code></pre><h2 id="performance">Performance</h2>
+<p><strong>Pi 1 B - GC2 Turbo (1000 Hz):</strong></p>
+<pre><code>git clone https://github.com/GrazerComputerClub/Benchmark.git
+cd Benchmark/
+gcc gpio_bench.c -o gpio_bench -Wall -lwiringPi
+./gpio_bench
+</code></pre><pre><code>WiringPi GPIO speed test program 
+toggle 100 million times ...
+  100000000 toggle took 19.556 s, Time per toggle 0.196 us, Freq 5.114 MHz 
+</code></pre><p>Enable SPI with <code>sudo raspi-config</code>:</p>
 <ul>
-<li>DSGVO</li>
-<li>ZITis &amp; HackBack (Digitale Offensivkräfte)</li>
-<li>Netzneutralität</li>
-<li>Massenüberwachung (Südkreuz)</li>
-<li>Polizeigesetz und Hausdurchsungen</li>
+<li>3 Interface Options</li>
+<li>I4 SPI</li>
+<li>[Yes]</li>
 </ul>
-<h3 id="verhalten-bei-hausdurchsungen-">Verhalten bei Hausdurchsungen</h3>
-<p>Die Zwiebelfreunde haben ein Spendenkonto eines anderen Hosters gehostet welche
-von einer anderen Gruppe benutzt wurde. Diese besagte Gruppe hat ein nicht
-ganz juristisch einwandfreies Handbuch zum zivilen Ungehorsam verfasst.
-Aufgrund dessen wurden die Zwiebelfreunde mit einer Hausdurchsuchung in ihren
-Privatwohnungen belohnt. Der Talk darüber stellte einen Erfahrungsbericht eines
-Mitglieds dar und formulierte einige Best-Practices welche man bei einer
-Hausdurchsuchung beachten sollte.</p>
-<p>Vor der Durchsuchung:</p>
-<ul>
-<li>Notfallkontakte eines Anwalts seines Vertrauens bereitlegen</li>
-<li>Daten verschlüsseln</li>
-</ul>
-<p>Währenddessen:</p>
-<ul>
-<li>Keine Passwörter preisgeben</li>
-<li>Protokollieren, dass man grundsätzlich nicht zustimmt</li>
-<li>Anwalt anrufen</li>
-<li>Durchsuchungsprotokoll genau prüfen
-Alle mitgenommen Gegenstände müssen quantifiziert und exakt (S/N) beschrieben
-sein. Alternativ kann es schwierig sein alle Gegenstände wieder zu erhalten.</li>
-</ul>
-<h3 id="iot-hacken-">IoT Hacken</h3>
-<p>IoT ist nicht sicher. &hellip; Ok das sollte man schon mal gehört haben, aber dass
-es per se recht einfach ist Lampen und anderes Equipment von einigen tausend
-IoT-Herstellern gleichzeitig zu hacken, da sie alle auf das gleiche Framework
-aufbauen, ist doch ein wenig erstaunlich. Im Talk wurde es anhand einer IoT-
-Glühbirne gezeigt. Diese konnte mit beliebiger Firmware bespielt werden.</p>
-<p>&hellip; Und was war so in den Lampen verbaut: ein <em>ESP8266</em> ;-)</p>
-<h3 id="die-eu-und-sonneborn-">Die EU und Sonneborn</h3>
-<p>Die letzten beiden Vorträge befassten sich mit dem kaputten System namens EU.
-In der Theorie ist die EU ein gut strukturiertes demokratisches Organ, jedoch
-wurden einige Mechanismen durch die Politiker radikal gekürzt. Ein Beispiel ist
-der Trilog, welches den Gesetzgebungsprozess verkürzt aber auch die Gesetzgebung
-in der EU intransparenter macht.</p>
-<p>Neben den Defiziten welche die EU aufweist wurde uns auch der EU-Alltag durch
-Sonneborn (Abgeordneter der Partei <em>Die Partei</em>) aufgezeigt. Dieser besteht im
-Wesentlichen darin, dass Abgeordnete anhand von vorgefertigten Abstimmpapieren
-<em>Ja</em> oder <em>Nein</em> wählen. Leider unterlief zumindest einmal einem FPÖ Abgeordneten
-ein Off-by-One Fehler und so hatte er konsequent einen Tag lang immer falsch
-abgestimmt.</p>
 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>gcc spi_bench_dac-vectorgaming.c -o spi_bench_dac-vectorgaming -Wall -lwiringPi -lm
+./spi_bench_adc
+</code></pre><pre><code>WiringPi SPI speed (vector gaming) test program
+open device '/dev/spidev0.0' (6 MHz) ...
+Pong test:
+  1000 frames took 17.935 s, dots per frame 150, Time per dot 120 us, fps 56 
+Space Invaders test:
+  300 frames took 23.339 s, dots per frame 650, Time per dot 120 us, fps 13 
+</code></pre>
             </article>
           </div>
           
@@ -345,10 +397,11 @@ abgestimmt.</p>
         
 
   
-    <div class="entry-categories"><p><span>Kategorie</span>
+    <div class="entry-categories"><p><span>Kategorien</span>
   
     
-    <a href="/categories/ccc" title="View all posts in CCC">CCC</a>
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+    <a href="/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
   </p>
 </div>
 
@@ -364,15 +417,15 @@ abgestimmt.</p>
 
   <div class="author">
     	
-    <img alt='Christoph Woergoetter' src="https://www.gravatar.com/avatar/4e54135ce3ee5a79c20cbdb02086487d?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     
     <span>
-      Geschrieben von:<a href="https://woergi.wordpress.com/" title="Posts von Christoph Woergoetter" rel="author">Christoph Woergoetter</a> </span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
     </div>
     <div class="bio">
       
       
-      <p>ZisrIHN1cmp1ZHBwbGh1aHU=</p>
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
         
       
 	
@@ -383,7 +436,7 @@ abgestimmt.</p>
 
   
   <a class="twitter" target="_blank"
-  href="https://twitter.com/woergi">
+  href="https://twitter.com/m_stroh">
   <i class="fab fa-twitter-square"
   title="twitter icon"></i>
 </a>
@@ -392,7 +445,7 @@ abgestimmt.</p>
 
 
 <a class="email" target="_blank"
-href="mailto:christoph.woergoetter@gc2.at">
+href="mailto:martin.strohmayer@gc2.at">
 <i class="fas fa-envelope"
 title="email icon"></i>
 </a>
@@ -404,7 +457,7 @@ title="email icon"></i>
 
 
 <a class="github" target="_blank"
-href="https://github.com/woergi">
+href="https://github.com/mstroh76">
 <i class="fab fa-github"
 title="github icon"></i>
 </a>

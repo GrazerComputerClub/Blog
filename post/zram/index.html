@@ -24,7 +24,7 @@
         "datePublished": "2019-12-07 00:00:00 \x2b0000 UTC",
         "dateModified" : "2019-12-07 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/zram\/",
-        "wordCount" : "496",
+        "wordCount" : "572",
         "image" : "https://blog.gc2.atimg/zram.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1642174860" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1642174860" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -277,33 +277,42 @@ if (!doNotTrack) {
 <h2 id="beschreibung-">Beschreibung</h2>
 <p>Raspbian ist so konfiguriert das eine 100 MB Auslagerungsdatei auf der SD-Karte angelegt und benutzt wird. Swapping auf der SD-Karte ist langsam und führt zu einer Belastung der SD-Karte mit Schreiboperationen, die die Lebensdauer verringern. ZRAM legt im Arbeitsspeicher eine komprimierte Partition an, die dann primär als Swap-Bereich, also zum Auslagern von Speicherbereichen, benutzt wird. So wird die SD-Karte entlasten, Schreiboperationen eingespart und die Lebensdauer der Karte verlängert.</p>
 <h2 id="installation-">Installation</h2>
-<pre><code>apt-get install zram-tools
+<pre><code>sudo apt install zram-tools
 </code></pre><p>In der Datei &ldquo;/etc/default/zramswap&rdquo; erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieren Auslagerungspartition in Prozent (PERCENTAGE) oder absolut (ALLOCATION) in MB angegeben werden.</p>
-<pre><code># Specifies amount of zram devices to create.
-# By default, zramswap-start will use all available cores.
-CORES=1
+<pre><code># Compression algorithm selection
+# speed: lz4 &gt; zstd &gt; lzo
+# compression: zstd &gt; lzo &gt; lz4
+# This is not inclusive of all that is available in latest kernels
+# See /sys/block/zram0/comp_algorithm (when zram module is loaded) to see
+# what is currently set and available for your kernel[1]
+# [1]  https://github.com/torvalds/linux/blob/master/Documentation/blockdev/zram.txt#L86
+ALGO=lz4
 
 # Specifies the amount of RAM that should be used for zram
 # based on a percentage the total amount of available memory
-#PERCENTAGE=11
+# This takes precedence and overrides SIZE below
+#PERCENT=50
 
 # Specifies a static amount of RAM that should be used for
 # the ZRAM devices, this is in MiB
-ALLOCATION=48
+SIZE=48
 
 # Specifies the priority for the swap devices, see swapon(2)
-# for more details.
+# for more details. Higher number = higher priority
+# This should probably be higher than hdd/ssd swaps.
 PRIORITY=100
-</code></pre><p>Mit dem Befehl &ldquo;swapon -s&rdquo; können die aktiven Auslagerungsspeicher aufgelistet werden.
+</code></pre><p>Nachdem Änderungen vorgenommen wurden, muss der Dienst &ldquo;zramswap&rdquo; neu gestartet werden.</p>
+<pre><code>sudo service zramswap restart
+</code></pre><p>Mit dem Befehl <code>swapon -s</code> können die aktiven Auslagerungsspeicher aufgelistet werden.
 Es stehen dann 48 MB ZRAM Speicher und 100 MB Auslagerungsdatei zur Verfügung.</p>
-<pre><code>Filename				Type		Size	Used	Priority
-/dev/zram0                             	partition	49148	0	100
-/var/swap                              	file    	102396	0	-2
-</code></pre><p>Mit dem Befehl &ldquo;zramctl&rdquo; können Informationen zum ZRAM ausgegeben werden.</p>
+<pre><code>Filename         Type            Size    Used    Priority
+/var/swap        file            102396  0       -2
+/dev/zram0       partition       49148   0       100
+</code></pre><p>Mit dem Befehl <code>zramctl</code> können Informationen zum ZRAM ausgegeben werden.</p>
 <pre><code>NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
-/dev/zram0 lzo            48M   4K   76B    4K       1 [SWAP]
+/dev/zram0 lz4        48M   4K   73B    4K       1 [SWAP]
 </code></pre><p>Aktivieren und deaktivieren kann man den ZRAM Swap-Speicher über den Dienst &ldquo;zramswap&rdquo;.</p>
-<pre><code>service zramswap stop
+<pre><code>sudo service zramswap stop
 free -h
 </code></pre><pre><code>              total        used        free      shared  buff/cache   available
 Mem:          446Mi        53Mi       181Mi       6,0Mi       212Mi       335Mi
@@ -544,7 +553,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1642174860"></script>
 
 </body>
 </html>

@@ -6,10 +6,28 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WiringPi Library</title>
+      <link>https://blog.gc2.at/post/wiringpi/</link>
+      <pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/wiringpi/</guid>
+      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minecraft Server</title>
+      <link>https://blog.gc2.at/post/minecraft-server/</link>
+      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
+      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP8266 ESP-01(S) MicroPython Firmware</title>
@@ -18,15 +36,6 @@
       
       <guid>https://blog.gc2.at/post/esp8266-esp01-micropython/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der MicroPyhon Firmware ausstatten. Dann kann der Mikrocontroller mit Python programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Minecraft Server</title>
-      <link>https://blog.gc2.at/post/minecraft-server/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
-      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
     </item>
     
     <item>

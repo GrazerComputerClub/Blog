@@ -24,7 +24,7 @@
         "datePublished": "2018-12-21 00:00:00 \x2b0000 UTC",
         "dateModified" : "2018-12-21 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/pico-8\/",
-        "wordCount" : "767",
+        "wordCount" : "721",
         "image" : "https://blog.gc2.atimg/PICO-8.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1615380466" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1642174860" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1615380466" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1642174860" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -285,11 +285,8 @@ if (!doNotTrack) {
 Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam bzw. im Schulungsbereich kann es gratis benutzt werden. Nach der Schulung können die Teilnehmer vergünstigt eine &ldquo;Take-home license&rdquo; erwerben.</p>
 <h2 id="installation">Installation</h2>
 <p>PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringPi) verwendet.<br>
-Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.1.12c2_raspi.zip&rdquo; herunterladen. Darin ist das Verzeichnis &ldquo;pico-8&rdquo; mit allen Dateien. Es enthält zwei ausführbare Dateien &ldquo;pico8&rdquo; und &ldquo;pico8_dyn&rdquo;. Bei &ldquo;pico8_dyn&rdquo; wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. &ldquo;pico8&rdquo; benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle &ldquo;pico8&rdquo; zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird später noch erläutert.<br>
-Achtung, wenn der Fehler &ldquo;pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory&rdquo; auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgender Trick angewendet werden:</p>
-<pre><code>sudo apt-get install libsndio7.0
-sudo ln -s /usr/lib/arm-linux-gnueabihf/libsndio.so.7.0 /usr/lib/arm-linux-gnueabihf/libsndio.so.6.1
-</code></pre><!-- raw HTML omitted -->
+Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.1.12c2_raspi.zip&rdquo; herunterladen. Darin ist das Verzeichnis &ldquo;pico-8&rdquo; mit allen Dateien. Es enthält zwei ausführbare Dateien &ldquo;pico8&rdquo; und &ldquo;pico8_dyn&rdquo;. Bei &ldquo;pico8_dyn&rdquo; wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. &ldquo;pico8&rdquo; benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle &ldquo;pico8&rdquo; zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird, wird später noch erläutert.</p>
+<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Versionen PICO-8:</p>
 <table>
@@ -321,6 +318,16 @@ sudo ln -s /usr/lib/arm-linux-gnueabihf/libsndio.so.7.0 /usr/lib/arm-linux-gnuea
 <td align="left">717dd59f6b6eb8dadd17c00211228844</td>
 <td align="left">pico8</td>
 </tr>
+<tr>
+<td align="left">0.2.2c</td>
+<td align="left">f9e483752306542319b9d7d5a013e6b2</td>
+<td align="left">pico8</td>
+</tr>
+<tr>
+<td align="left">0.2.4</td>
+<td align="left">76246cac3d7120e5f86b130980833b4c</td>
+<td align="left">pico8</td>
+</tr>
 </tbody>
 </table>
 <h2 id="technische-daten">Technische Daten</h2>
@@ -338,7 +345,7 @@ sudo ln -s /usr/lib/arm-linux-gnueabihf/libsndio.so.7.0 /usr/lib/arm-linux-gnuea
 <p><strong>Steuerung Player 1:</strong><br>
 D-PAD: Steuerkreuz<br>
 Aktionstaste 1 (O): Z bzw. N<br>
-Aktionstaste 2 (X): N bzw. M</p>
+Aktionstaste 2 (X): X bzw. M</p>
 <p><strong>Steuerung Player 2:</strong><br>
 D-PAD = S D E F<br>
 Aktionstaste 1 (O): Tab bzw. Shift<br>
@@ -626,7 +633,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1615380466"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1642174860"></script>
 
 </body>
 </html>
