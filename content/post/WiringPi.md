@@ -5,7 +5,7 @@ image = "img/WiringPi.png"
 date = "2022-01-12"
 title = "WiringPi Library"
 writer = "Martin Strohmayer"
-categories = ["Raspberry Pi"]
+categories = ["Raspberry Pi", "Programmierung"]
 keywords = ["WiringPi", "GPIO"]
 weight = 1
 +++
