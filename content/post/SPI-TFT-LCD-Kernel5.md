@@ -24,18 +24,43 @@ Mit dem Programm 'fbcp-ili9341' kann diese ständige Kopieroperation nun im Hint
 
 Günstige SPI-Displays mit einem unterstützten Kontroller sind z. B.:
 
-| Kontroller | Auflösung | Größe | ca. Preis China |
-| -----------|:---------:|:-----:|:---------------:|
-| ST7735S  |	128x128 | 1,44"    |  3 €  |
-| ST7735R | 160x128 | 1,8"     |  4 €  |
-| ST7789VW | 240x240 | 1,3"     |  3 €  |
-| ILI9341	          |	320x240 | 2,2-2,8" |  8 €  |
+| Kontroller | Auflösung | Größe    | ca. Preis China |
+|------------|:---------:|:--------:|:---------------:|
+| ST7735S    |  128x128  | 1,44"    |  3 €  |
+| ST7735R    |  160x128  | 1,8"     |  4 €  |
+| ST7789VW   |  240x240  | 1,3"     |  3 €  |
+| ILI9341	 |	320x240  | 2,2-2,8" |  8 €  |
 
 Ein Problem stellt die Framerate dar, weil der SPI-Bus des Controllers nur eine limitierte Übertagungsrate unterstützt. Bei den kleinen Displays sind dann durchaus 30 FPS (Bilder pro Sekunde) möglich. Bei 320x240 sind bei der Raspberry Pi Zero allerdings nur 10-20 FPS möglich.  
 Die theoretische minimale nötige Übertragungsrate bzw. SPI-Taktfrequenz kann man sich für 25 FPS und 16 Bit Farben leicht berechnen. Bei einer Auflösung von 160x128 ergibt sich eine Übertragungsrate von min. 8 MBit/s (8 MHz). Bei 320x240 allerdings bereits 41 MBit/s (41 MHz).  
-Die SPI-Taktfrequenz wird aus dem System Takt als der "core_freq" gebildet. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 66 MHz erzeugt.  
-Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz (Divisor 8) und beim ILI9341-Controller bei ca. 66 MHz.
-Der SPI-Bus kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.  
+Die SPI-Taktfrequenz wird aus dem System Takt also der "core_freq" gebildet. Mit dem Befehl ``vcgencmd measure_clock core`` kann die aktuelle Frequenz ermittelt werden. Man muss hier den entsprechenden geradzahligen Divisor als Parameter angeben. Bei typischerweise 400 MHz Takt wird mit dem Divisor 8 also 50 MHz und mit Divisor 6 wird 67 MHz erzeugt. 
+
+| Core Takt | Divisor | SPI-Frequenz |
+|-----------|:-------:|:-----------:|
+| 250 MHz   |  4      |   62,5 MHz  |
+| 250 MHz   |  6      |   41,7 MHz  |
+| 250 MHz   |  8      |   31,3 MHz  |
+| 250 MHz   |  10     |   25,0 MHz  |
+| 400 MHz   |  4      |   100 MHz   |
+| 400 MHz   |  6      |   66,7 MHz  |
+| 400 MHz   |  8      |   50,0 MHz  |
+| 400 MHz   |  10     |   40,0 MHz  |
+| 500 MHz   |  4      |   125 MHz   |
+| 500 MHz   |  6      |   83,3 MHz  |
+| 500 MHz   |  8      |   62,5 MHz  |
+| 500 MHz   |  10     |   50,0 MHz  |
+
+Divisor 8:
+
+| Core Takt | SPI-Frequenz |
+|-----------|:------------:|
+| 250 MHz   |  31,3 MHz    |
+| 400 MHz   |  50,0 MHz    |
+| 500 MHz   |  62,5 MHz    |
+
+
+Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz und beim ILI9341-Controller bei ca. 66 MHz.
+Der SPI-Bus Kanal kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.  
 
 Auf der Projektseite sind alle Parameter genau beschreiben. Bei Unklarhieten muss hier nachgelesen werden.
 
@@ -70,6 +95,27 @@ make -j
  ```
 
 Mit ``sudo ./fbcp-ili9341`` kann das Programm dann gestartet werden.
+
+
+Parameter Pi-XO:
+
+ 1,8" 160x128 Display mit ST7735R Kontroller:
+
+```
+cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DDISPLAY_SWAP_BGR=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
+```
+
+2,2" 320x240 Display mit ili9341 Kontroller:
+
+```
+cmake -DILI9341=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
+```
+
+Waveshare HAT 1,44" 128x128 Display mit ST7735S Kontroller:
+
+```
+cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
+```
 
 ## Verlinkungen
 

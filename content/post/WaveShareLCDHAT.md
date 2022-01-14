@@ -17,7 +17,7 @@ Um nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspbe
 
 PICO-8 ist eine erfundene „Fantasy Console“ die auch am Raspberry Pi Zero emuliert werden kann. Die Auflösung beträgt 128x128 Pixel. Es wird mit einem D-PAD, 2 Aktionstasten und einer Menütaste gesteuert. Es gibt eine Oberfächer, "splore" genannt mit der man auf eine Vielzahl von Community Spiele direkt Zugriff hat.  
 Von Waveshare gibt es eine 1,44 Zoll LCD HAT für den Raspberry Pi Zero. Man kann ihn z. B. bei [semaf electronics](https://electronics.semaf.at/144inch-LCD-display-HAT-for-Raspberry-Pi) für 15 Euro kaufen. Diese Aufsetzplatine hat ein 1,44 Zoll 128x128 SPI-TFT Display, ein Steuerkreuz mit Push-Funktion und 3 Tasten. Diese Teile sind so mit dem GPIOs verbunden, dass alles direkt angesprochen werden kann.  
-Mit etwas Konfigurationsarbeit lässt sich daraus recht einfach eine PICO-8 Spielkonsole bauen. 
+Mit etwas Konfigurationsarbeit lässt sich daraus recht einfach eine PICO-8 Spielkonsole bauen.
  
 ## Was ist zu erwarten?
 
@@ -31,13 +31,14 @@ Ich habe mir teilweise für die Probleme eine Lösung überlegt, allerdings ganz
 
 ## Installation
 
-Aus Hardwaresicht muss der HAT einfach auf den Raspberry Pi Zero aufgesteckt werden und mit den beiliegenden Distanzbolzen angeschraubt werden. Danach kann man die Anpassung der Software ausgehend vom Raspbian bzw. Raspberry Pi OS Lite Image in Angriff nehmen.
+Aus Hardwaresicht muss der HAT einfach auf den Raspberry Pi Zero aufgesteckt werden und mit den beiliegenden Distanzbolzen angeschraubt werden. Danach kann man die Anpassung der Software ausgehend vom Raspberry Pi OS Lite Image in Angriff nehmen.
 
 ### Display (fbcp-ili9341)
 
-Zur Aktivierung des Displays muss man das SPI-Bus TFT-LCD einbinden. Hierfür bietet sich das Projekt [fbcp-ili9341](https://github.com/juj/fbcp-ili9341) an. 
+Zur Aktivierung des Displays muss man das SPI-Bus TFT-LCD einbinden. Hierfür bietet sich das Projekt [fbcp-ili9341](https://github.com/juj/fbcp-ili9341) an.  
 Es kopiert den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Es wird bei der Programm Erstellung bzw. Kompilierung entsprechend parametriert. Für das Waveshare Display gibt es bereits eine Unterstützung ("-DWAVESHARE_ST7735S_HAT=ON"). So sind die Anschlüsse und der Kontroller des Display bereits korrekt konfiguriert (BL=24, RST=27, DC=25) und man muss nur noch ein paar wenige Parameter anpassen.
-Die SPI-Taktfrequenz wird aus dem System Takt als der "core_freq" gebildet. Typischerweise liegt sie beim Raspberry Pi Zero auf 250 MHz. Bei Übertaktung aber oft auf 500 MHz. Mit dem Befehl ``vcgencmd measure_clock core`` kann die aktuelle Frequenz ermittelt werden. Bei 250 MHz werden mit dem Divisor 8 also ca. 31 MHz erzeugt. Bei übertaktung auf 500 MHz sind dann immer noch ca. 63 MHz möglich. Bei den Optimierungsparametern (DSINGLE_CORE_BOARD und DARMV6Z) wird alles für den Raspberry Pi Zero gesetzt. Die Statistikanzeige (DSTATISTICS) wird mit Wert 0 abgeschaltet. Optional kann man hier 1 angeben damit FPS (Bilder pro Sekunde) links oben angezeigen werden. Bei Wert 2 wird auch noch eine Kurve des Werts angezeigt. Beim letzten Parameter (DDISPLAY_ROTATE_180_DEGREES) wird noch eine Drehung um 180 ° abgeschaltet.
+Die SPI-Taktfrequenz wird aus dem System Takt als der "core_freq" gebildet. Typischerweise liegt sie beim Raspberry Pi Zero auf 250 MHz. Bei Übertaktung aber oft auf 500 MHz. Mit dem Befehl ``vcgencmd measure_clock core`` kann die aktuelle Frequenz ermittelt werden. Bei 250 MHz werden mit dem Divisor 8 also ca. 31 MHz erzeugt. Bei Core-Übertaktung auf 500 MHz läuft es dann mit ca. 63 MHz. Was vom Display möglicherweise nicht unterstützt wird, in dem Fall sollte man Divisor 10 einstellen.  
+Bei den Optimierungsparametern (DSINGLE_CORE_BOARD und DARMV6Z) wird alles für den Raspberry Pi Zero gesetzt. Die Statistikanzeige (DSTATISTICS) wird mit Wert 0 abgeschaltet. Optional kann man hier 1 angeben damit FPS (Bilder pro Sekunde) links oben angezeigen werden. Bei Wert 2 wird auch noch eine Kurve des Werts angezeigt. Beim letzten Parameter (DDISPLAY_ROTATE_180_DEGREES) wird noch eine Drehung um 180 ° abgeschaltet.
 
 ```
 sudo apt-get install cmake
@@ -112,7 +113,7 @@ include WS_TFT_HAT_Keys_Pico8.txt
 ### PICO-8
 
 PICO-8 ist eine kommerzielle Software von Lexaloffle, es kann von [hier](https://www.lexaloffle.com/pico-8.php?#getpico8) bezogen werden.
-Nach dem Download der Raspberry Pi Version, muss das Zip-Archiv auf die Bootpartition kopiert und entpackt werden. 
+Nach dem Download der Raspberry Pi Version, muss das Zip-Archiv auf die Bootpartition kopiert und entpackt werden.
 
 ```
 cd /boot
@@ -122,7 +123,7 @@ sudo unzip ~/pico-8_0.2.1b_raspi.zip
 Nun muss PICO-8 nach dem Boot automatisch gestartet werden. Dies kann über die "rc.local" Datei erfolgen. Am Ende des Scripts muss die Zeile "exit 0" erhalten bleiben! Der folgenden Block muss also davor eingefügt werden.
 
 ```
-sudo nano /etc/etc/rc.local
+sudo nano /etc/rc.local
 ```
 
 ```
@@ -145,17 +146,15 @@ Mit diesem Akku konnte das System (Raspberry Pi Zero 1.3 und Waveshare HAT) für
 
 ## Steuerkreuz
 
-Da das Steuerkreuz ohne Modifikation nicht schmerzfrei verwendet werden kann, habe ich eine M2.5 Mutter aufgeschraubt. Damit kann man es besser anfassen aber
- die Spielsteuerung ist nicht optimal. 
+Da das Steuerkreuz ohne Modifikation nicht schmerzfrei verwendet werden kann, habe ich eine M2.5 Mutter aufgeschraubt. Damit kann man es besser anfassen aber die Spielsteuerung ist nicht optimal. 
 
 ![Steuerkreuz mit M2.5 Mutter](../../img/WaveShareLCDHAT-Joystick.jpg) 
 
 ## Gehäuse
 
-Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thinigverse findet man das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation. Es ist eigentlich für den kleineren 1,3 Zoll LCD HAT (240x240) von Waveshare vorgesehen, aber mit einem Taschenmesser kann der Displayausschnitt leicht vergrößert werden.
+Alternativ könnte man sich auch ein 3D-Druck-Gehäuse erstellen. Bei Thingiverse findet man das [1.3 Inches RetroPie Zero](https://www.thingiverse.com/thing:3328994) Gehäuse von moononournation. Es ist eigentlich für den kleineren 1,3 Zoll LCD HAT (240x240) von Waveshare vorgesehen, aber mit einem Taschenmesser kann der Displayausschnitt leicht vergrößert werden.
 
 ![3D-Druckgehäuse](../../img/waveshare_pico8_gaming_device.jpg) 
-
 
 
 ## Verlinkungen 

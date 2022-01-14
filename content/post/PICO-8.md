@@ -22,7 +22,9 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 ## Installation
 
 PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringPi) verwendet.  
-Nach dem Kauf kann man sich die Zip-Datei "pico-8_0.1.12c2_raspi.zip" herunterladen. Darin ist das Verzeichnis "pico-8" mit allen Dateien. Es enthält zwei ausführbare Dateien "pico8" und "pico8_dyn". Bei "pico8_dyn" wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. "pico8" benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle "pico8" zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird später noch erläutert.  
+Nach dem Kauf kann man sich die Zip-Datei "pico-8_0.1.12c2_raspi.zip" herunterladen. Darin ist das Verzeichnis "pico-8" mit allen Dateien. Es enthält zwei ausführbare Dateien "pico8" und "pico8_dyn". Bei "pico8_dyn" wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. "pico8" benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle "pico8" zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird, wird später noch erläutert.
+
+<!--
 Achtung, wenn der Fehler "pico8: error while loading shared libraries: libsndio.so.6.1: cannot open shared object file: No such file or directory" auftritt, dann wurde die veraltete Version 0.1.12c gestartet. Bitte unbedingt die Version 0.1.12c2 benutzen. Falls das nicht geht, kann folgender Trick angewendet werden:
 
 ```
@@ -30,7 +32,7 @@ sudo apt-get install libsndio7.0
 sudo ln -s /usr/lib/arm-linux-gnueabihf/libsndio.so.7.0 /usr/lib/arm-linux-gnueabihf/libsndio.so.6.1
 ```
 
-<!--
+
 Version 0.1.11:
 	/usr/lib/arm-linux-gnueabihf/libarmmem-${PLATFORM}.so => /usr/lib/arm-linux-gnueabihf/libarmmem-v6l.so (0xb6f72000)
 	libm.so.6 => /lib/arm-linux-gnueabihf/libm.so.6 (0xb6ef0000)
@@ -81,11 +83,13 @@ Version 0.1.12c2:
 Versionen PICO-8:
 
 | *Version* | *MD5 Checksumme*                 | *Datei* |
-|:----------|:---------------------------------|:--------| 
+|:----------|:---------------------------------|:--------|
 | 0.1.11g   | 1b6d7b896e536073bab99a92039b222c | pico8   |
 | 0.1.12c   | 7769d451fb4b97e409d38b5d24280902 | pico8   |
 | 0.1.12c2  | 0fbbcb9d88f48d5f67b68a39412c962c | pico8   |
 | 0.2.1b    | 717dd59f6b6eb8dadd17c00211228844 | pico8   |
+| 0.2.2c    | f9e483752306542319b9d7d5a013e6b2 | pico8   |
+| 0.2.4     | 76246cac3d7120e5f86b130980833b4c | pico8   |
 
 ## Technische Daten
 
@@ -108,7 +112,7 @@ Pause: Enter bzw. P
 **Steuerung Player 1:**  
 D-PAD: Steuerkreuz  
 Aktionstaste 1 (O): Z bzw. N  
-Aktionstaste 2 (X): N bzw. M  
+Aktionstaste 2 (X): X bzw. M  
 
 **Steuerung Player 2:**  
 D-PAD = S D E F  
@@ -217,4 +221,3 @@ PICO-8 [Palette](https://lospec.com/palette-list/pico-8)
 [PICO-8 Fanzine #2](https://sectordub.itch.io/pico-8-fanzine-2)  
 [PICO-8 Fanzine #3](https://sectordub.itch.io/pico-8-fanzine-3)  
 [PICO-8 Fanzine #4](https://sectordub.itch.io/pico-8-fanzine-4)
-
