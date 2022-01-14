@@ -26,20 +26,27 @@ sudo apt install zram-tools
 In der Datei "/etc/default/zramswap" erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieren Auslagerungspartition in Prozent (PERCENTAGE) oder absolut (ALLOCATION) in MB angegeben werden. 
 
 ```
-# Specifies amount of zram devices to create.
-# By default, zramswap-start will use all available cores.
-CORES=1
+# Compression algorithm selection
+# speed: lz4 > zstd > lzo
+# compression: zstd > lzo > lz4
+# This is not inclusive of all that is available in latest kernels
+# See /sys/block/zram0/comp_algorithm (when zram module is loaded) to see
+# what is currently set and available for your kernel[1]
+# [1]  https://github.com/torvalds/linux/blob/master/Documentation/blockdev/zram.txt#L86
+ALGO=lz4
 
 # Specifies the amount of RAM that should be used for zram
 # based on a percentage the total amount of available memory
-#PERCENTAGE=11
+# This takes precedence and overrides SIZE below
+#PERCENT=50
 
 # Specifies a static amount of RAM that should be used for
 # the ZRAM devices, this is in MiB
-ALLOCATION=48
+SIZE=48
 
 # Specifies the priority for the swap devices, see swapon(2)
-# for more details.
+# for more details. Higher number = higher priority
+# This should probably be higher than hdd/ssd swaps.
 PRIORITY=100
 ```
 Nachdem Änderungen vorgenommen wurden, muss der Dienst "zramswap" neu gestartet werden. 
@@ -60,7 +67,7 @@ Filename         Type            Size    Used    Priority
 Mit dem Befehl ``zramctl`` können Informationen zum ZRAM ausgegeben werden.
 ```
 NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
-/dev/zram0 lzo-rle        48M   4K   73B    4K       1 [SWAP]
+/dev/zram0 lz4        48M   4K   73B    4K       1 [SWAP]
 ```
 
 Aktivieren und deaktivieren kann man den ZRAM Swap-Speicher über den Dienst "zramswap".
