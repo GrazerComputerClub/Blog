@@ -20,7 +20,7 @@ Raspbian ist so konfiguriert das eine 100 MB Auslagerungsdatei auf der SD-Karte 
 ## Installation ##
 
 ```
-apt-get install zram-tools
+sudo apt install zram-tools
 ```
 
 In der Datei "/etc/default/zramswap" erfolgt die Parametrierung des Dienstes. Hier kann die Größe der komprimieren Auslagerungspartition in Prozent (PERCENTAGE) oder absolut (ALLOCATION) in MB angegeben werden. 
@@ -42,25 +42,30 @@ ALLOCATION=48
 # for more details.
 PRIORITY=100
 ```
+Nachdem Änderungen vorgenommen wurden, muss der Dienst "zramswap" neu gestartet werden. 
 
-Mit dem Befehl "swapon -s" können die aktiven Auslagerungsspeicher aufgelistet werden. 
+```
+sudo service zramswap restart
+```
+
+Mit dem Befehl ``swapon -s`` können die aktiven Auslagerungsspeicher aufgelistet werden. 
 Es stehen dann 48 MB ZRAM Speicher und 100 MB Auslagerungsdatei zur Verfügung. 
 
 ```
-Filename				Type		Size	Used	Priority
-/dev/zram0                             	partition	49148	0	100
-/var/swap                              	file    	102396	0	-2
+Filename         Type            Size    Used    Priority
+/var/swap        file            102396  0       -2
+/dev/zram0       partition       49148   0       100
 ```
 
-Mit dem Befehl "zramctl" können Informationen zum ZRAM ausgegeben werden.
+Mit dem Befehl ``zramctl`` können Informationen zum ZRAM ausgegeben werden.
 ```
 NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
-/dev/zram0 lzo            48M   4K   76B    4K       1 [SWAP]
+/dev/zram0 lzo-rle        48M   4K   73B    4K       1 [SWAP]
 ```
 
 Aktivieren und deaktivieren kann man den ZRAM Swap-Speicher über den Dienst "zramswap".
 ```
-service zramswap stop
+sudo service zramswap stop
 free -h
 ```
 ```
