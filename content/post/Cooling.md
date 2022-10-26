@@ -10,7 +10,7 @@ keywords = ["Lüfter", "Aktive Kühlung", "Kühlkörper", "CPU", "SoC", "gpio-fa
 weight = 1
 +++
 
-Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden. 
+Raspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden. 
 <!--more-->
 
 ## Beschreibung ##
@@ -35,7 +35,7 @@ kill -KILL $PID
 echo finished!
 ```
 
-Der Test wurde bei einer typischen Umgebungstemperatur von 24 °C durchgeführt. Das verwendetet [Gehäuse](https://www.thingiverse.com/thing:559858) kann man sich mit einem 3D Drucker selbst herstellen. 
+Der Test wurde bei einer typischen Umgebungstemperatur von 24 °C durchgeführt. Das verwendetet [Gehäuse](https://www.thingiverse.com/thing:559858) kann man sich mit einem 3D Drucker selbst herstellen.
 
 ## Analyse Temperaturen
 
@@ -95,20 +95,57 @@ dtoverlay=gpio-fan,gpiopin=21,temp=70000
 ```
 
 Wie man aber an der Kühlleistung des Lüfters sieht, wird die Prozessortemperatur um fast 20 °C verringert. Wenn die Hysterese aber nur 10 °C beträgt, bedeutet das, der Lüfter wird bei hoher Belastung immer wieder an- und ausgeschaltet. Die Temperatur schwankt dann immer zwischen 60 und 70 °C.  
-Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter "hysteresis" und "temperature" angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.
+Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter "hysteresis" und "temperature" (Hexadezimal-Werte) angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.
+
+
 
 ```
 cd /boot/overlays
 sudo dtc -O dts -I dtb gpio-fan.dtbo -o gpio-fan.dts
+```
+
+```
+cat gpio-fan.dts | egrep "temper|hyster"
+  temperature = <0xd6d8>;
+  hysteresis = <0x2710>;
+```
+
+Mit dem Konsolen Programm bc können die ermittelten Hexadezimal- und Dezimalwerte umrechnen.
+
+```
+sudo apt-get install bc
+```
+
+```
+echo "ibase=16;D6D8" | bc
+55000
+echo "ibase=16;2710" | bc
+10000
+
+echo "obase=16;65000" | bc
+FDE8
+echo "obase=16;20000" | bc
+4E20
+```
+
+Nun überprüfen wir ob man die Zahlen sicher ersetzen bzw. das sie kann.
+```
+cat gpio-fan.dts | egrep "d6d8|2710"
+  temperature = <0xd6d8>;
+  hysteresis = <0x2710>;
+```
+
+Nun ewiur:
+```
 sudo cp gpio-fan.dts gpio-fanH20.dts
-sudo sed -i 's/temperature = < 0xd6d8 >/temperature = < 0xfde8 >/g' gpio-fanH20.dts
-sudo sed -i 's/hysteresis = < 0x2710 >/hysteresis = < 0x4e20 >/g' gpio-fanH20.dts
+sudo sed -i 's/d6d8/fde8/g' gpio-fanH20.dts
+sudo sed -i 's/2710/4e20/g' gpio-fanH20.dts
 sudo dtc -O dtb -I dts gpio-fanH20.dts -o gpio-fanH20.dtbo
 ```
 
 Damit wurde ein neuer Devicetree mit dem Namen gpio-fanH20 erzeugt. In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 65 °C aktiviert und bei 20 °C weniger, also 45 °C deaktiviert.  
 
-In der config.txt Datei kann der neue Devicetree geladen und parametriert werden.
+In der config.txt Datei kann der neue Devicetree geladen und gegebenenfalls parametriert werden.
 
 ```
 dtoverlay=gpio-fanH20,gpiopin=21,temp=70000
