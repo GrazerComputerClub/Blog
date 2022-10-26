@@ -82,18 +82,18 @@ Bevor man die Installation startet, kann man noch vorgeben welche Version instal
 
 ```
 {"project_id":"paper","project_name":"Paper","version_groups":["1.8",...
-"1.17.1","1.18","1.18.1"]}
+"1.18.2","1.19","1.19.1","1.19.2"]}
 ```
 
 
-In diesem Fall ist die Version 1.18.1 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.
+In diesem Fall ist die Version 1.19.2 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.
 
 ```
 cat SetupMinecraft.sh | grep Version=
 ```
 
 ```
-Version="1.18.1"
+Version="1.19.2"
 ```
 
 Dann kann das Setup gestartet werden.
@@ -137,7 +137,7 @@ If all memory is exhausted the Minecraft server will either crash or force backg
 Enter amount of memory in megabytes to dedicate to the Minecraft server (recommended: 2400):  
 ```
 
-Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 700 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 oder 2400 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.
+Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 600 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 oder 2400 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.
 
 ```
 Enter a name for your server...
@@ -161,7 +161,7 @@ Automatically reboot Pi and update server at 4am daily (y/n)?
 
 Nun wird gefragt ob der Server täglich um 4 Uhr früh neu gestartet werden soll. In dem Fall werden täglich Einstellungen gespeichert, Backups erstellt und eventuelle Updates installiert. Dennoch macht es für mich keinen Sinn einen Server komplett neu zu starten. Darum würde ich hier nur dazu raten, wenn das System dezitiert als Minecraft Server genutzt wird und keine durchgehender Betrieb benötigt wird. Zur Aktivierung dieser Option drückt man also y. Ich wähle hier aber n damit kein nächtlicher Neustart ausgeführt wird. Danach muss man die Enter-Taste drücken.
 Nach der Installation wird der Minecraft Server automatisch gestartet.
-Um die Serverazsgaben bzw. den Termial ansehen zu können muss man das screen starten.  
+Um die Serverazsgaben bzw. den Termial ansehen zu können muss man das screen starten.
 
 ```
 screen -r
@@ -179,6 +179,30 @@ screen -r
 ```
 
 In diesem Fall dauerte das Anstarten einige Sekunden. Die CPU-Last ist zeitweise auf allen Kernen sehr hoch, später pendelt es sich aber nach einigen Minuten auf einem niedrigeren Niveau von ca. 40 % auf einem Core (1500 MHz) ein. Der Speicherverbrauch ist wie eingestellt auf ca. 2,2 GB (47 %). Diese Daten wurden mit top bzw. htop ermittelt.
+
+
+## Start Probleme
+
+Sollte der Server nicht laufen, kann man den Status mit ``sudo service minecraft status`` prüfen. Wenn beim Starten des Programms einen Fehler auftritt, muss man es manuell in der Konsole starten um ihn diagnostizieren zu können.
+In der Datei "start.sh" kann man den Startsyntax finden:  ``cat start.sh | grep java``  
+
+```
+screen -dmS minecraft /home/pi/minecraft/jre/bin/java -DPaper.IgnoreJavaVersion=true -jar -Xms400M -Xmx2400M /home/pi/minecraft/paperclip.jar
+```
+
+Starten man nun den Aufruf, so erhält man möglicherweise eine Fehlermeldung wie z. B.: 
+
+```
+Error occurred during initialization of VM
+Can not represent all cards in the heap with card region/card within region. Heap 2306867200B (4294967295 bits) Remembered set covers 53 bits.: Decrease heap size.
+
+```
+
+In dem Fall muss man den maximalen Speicher reduzieren z. B. auf 2000 MB. Dazu ändert man einfach in der Datei "start.sh" den Parameter "-Xmx2400M" auf "-Xmx2000M".
+
+Nun kann man den Server neu starten ``sudo service minecraft restart``. 
+
+
 
 ## Minecraft Server Einstellungen
 
@@ -204,7 +228,7 @@ Dort findet man z. B. diesen Eintrag
 Nun git man den Befehl ``op`` mit dem Spielernamen als Parameter an, also  ``op Donald`` 
 Nun kann man 'screen' mit der Tastenkombination Strg+A und D verlassen. 
 
-In die Datei ops.json sind die Operatoren gespeichert.
+In der Datei ops.json sind die Operatoren gespeichert.
 
 ```
 [
@@ -223,6 +247,13 @@ In die Datei ops.json sind die Operatoren gespeichert.
 ]
 ```
 
+## Minecraft Server Update
+
+Zuerst beendet man den Server mit ``sudo service minecraft stop``. 
+Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit ``cd ~/minecraft``, Man lädt sich das Setup herunter ``wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh`` und startet es mit ``bash SetupMinecraft.sh``.
+Nun kann man den aktualisierten Server wieder starten, dazu gibt man ``sudo service minecraft start`` ein. 
+
+
 ## Karten wiederherstellen
 
 Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so können diese am Server eingespielt werden.
@@ -239,6 +270,9 @@ rm -r world world_nether/ world_the_end/
 tar xvf ~/minecraft/backups/2021.01.04_04.00.39.tar.gz ./world/ ./world_nether/ ./world_the_end/
 sudo service minecraft start
 ```
+
+
+
 
 ## Verlinkung
 
