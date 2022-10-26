@@ -1,4 +1,4 @@
-﻿+++
++++
 showonlyimage = false
 draft = false
 image = "img/SPI-LCD-TFT-fbcp-ili9341.jpg"
@@ -62,7 +62,7 @@ Divisor 8:
 Im Test lag nämlich die maximale SPI-Taktfrequenz des ST7735R-Controllers bei ca. 50 MHz und beim ILI9341-Controller bei ca. 66 MHz.
 Der SPI-Bus Kanal kann nicht parametriert werden, es wird immer SPIO verwendet. Es wird auch empfohlen den SPI Bus in der Datei config.txt zu deaktivieren, damit es keine Probleme und Wechselwirkungen gibt.  
 
-Auf der Projektseite sind alle Parameter genau beschreiben. Bei Unklarhieten muss hier nachgelesen werden.
+Auf der Projektseite sind alle Parameter genau beschrieben. Bei Unklarheiten muss hier nachgelesen werden.
 
 
 ## Kontakte
