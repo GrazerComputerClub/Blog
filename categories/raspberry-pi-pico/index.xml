@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi Pico on GC2 Blog</title>
+    <link>https://blog.gc2.at/categories/raspberry-pi-pico/</link>
+    <description>Recent content in Raspberry Pi Pico on GC2 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.gc2.at/categories/raspberry-pi-pico/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi Pico mit Bipes</title>
+      <link>https://blog.gc2.at/post/picopi-bipes/</link>
+      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
+      <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

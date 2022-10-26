@@ -6,10 +6,19 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raspberry Pi Zero Shopping Guide</title>
+      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
+      <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Minecraft Pi API</title>
@@ -101,15 +110,6 @@ dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn m
       
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-w-stromaufnahme/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Zero Shopping Guide</title>
-      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
-      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -24,7 +24,7 @@
         "datePublished": "2021-08-09 00:00:00 \x2b0000 UTC",
         "dateModified" : "2021-08-09 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "1403",
+        "wordCount" : "1611",
         "image" : "https://blog.gc2.atimg/MinecraftServer.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1642175331" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1666799692" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1642175331" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1666799692" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -88,6 +88,10 @@
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
           <a href="/categories/raspberry-pi">raspberry-pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -305,10 +309,10 @@ Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Gren
 <pre><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
 </code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden <code>curl https://papermc.io/api/v2/projects/paper</code>.</p>
 <pre><code>{&quot;project_id&quot;:&quot;paper&quot;,&quot;project_name&quot;:&quot;Paper&quot;,&quot;version_groups&quot;:[&quot;1.8&quot;,...
-&quot;1.17.1&quot;,&quot;1.18&quot;,&quot;1.18.1&quot;]}
-</code></pre><p>In diesem Fall ist die Version 1.18.1 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.</p>
+&quot;1.18.2&quot;,&quot;1.19&quot;,&quot;1.19.1&quot;,&quot;1.19.2&quot;]}
+</code></pre><p>In diesem Fall ist die Version 1.19.2 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.</p>
 <pre><code>cat SetupMinecraft.sh | grep Version=
-</code></pre><pre><code>Version=&quot;1.18.1&quot;
+</code></pre><pre><code>Version=&quot;1.19.2&quot;
 </code></pre><p>Dann kann das Setup gestartet werden.</p>
 <pre><code>bash SetupMinecraft.sh
 </code></pre><pre><code>Installing latest Java OpenJDK...
@@ -333,7 +337,7 @@ Please enter the amount of memory you want to dedicate to the server.  A minimum
 You must leave enough left over memory for the operating system to run background processes.
 If all memory is exhausted the Minecraft server will either crash or force background processes into the paging file (very slow).
 Enter amount of memory in megabytes to dedicate to the Minecraft server (recommended: 2400):  
-</code></pre><p>Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 700 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 oder 2400 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.</p>
+</code></pre><p>Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 600 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 oder 2400 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.</p>
 <pre><code>Enter a name for your server...
 Server Name: 
 </code></pre><p>Nun muss man den Servernamen eingeben. In dem Beispiel wählen wird &ldquo;GC2&rdquo;.</p>
@@ -356,6 +360,16 @@ Um die Serverazsgaben bzw. den Termial ansehen zu können muss man das screen st
 [13:13:55 INFO]: Done (53.762s)! For help, type &quot;help&quot;
 [13:13:55 INFO]: Timings Reset
 </code></pre><p>In diesem Fall dauerte das Anstarten einige Sekunden. Die CPU-Last ist zeitweise auf allen Kernen sehr hoch, später pendelt es sich aber nach einigen Minuten auf einem niedrigeren Niveau von ca. 40 % auf einem Core (1500 MHz) ein. Der Speicherverbrauch ist wie eingestellt auf ca. 2,2 GB (47 %). Diese Daten wurden mit top bzw. htop ermittelt.</p>
+<h2 id="start-probleme">Start Probleme</h2>
+<p>Sollte der Server nicht laufen, kann man den Status mit <code>sudo service minecraft status</code> prüfen. Wenn beim Starten des Programms einen Fehler auftritt, muss man es manuell in der Konsole starten um ihn diagnostizieren zu können.
+In der Datei &ldquo;start.sh&rdquo; kann man den Startsyntax finden:  <code>cat start.sh | grep java</code></p>
+<pre><code>screen -dmS minecraft /home/pi/minecraft/jre/bin/java -DPaper.IgnoreJavaVersion=true -jar -Xms400M -Xmx2400M /home/pi/minecraft/paperclip.jar
+</code></pre><p>Starten man nun den Aufruf, so erhält man möglicherweise eine Fehlermeldung wie z. B.:</p>
+<pre><code>Error occurred during initialization of VM
+Can not represent all cards in the heap with card region/card within region. Heap 2306867200B (4294967295 bits) Remembered set covers 53 bits.: Decrease heap size.
+
+</code></pre><p>In dem Fall muss man den maximalen Speicher reduzieren z. B. auf 2000 MB. Dazu ändert man einfach in der Datei &ldquo;start.sh&rdquo; den Parameter &ldquo;-Xmx2400M&rdquo; auf &ldquo;-Xmx2000M&rdquo;.</p>
+<p>Nun kann man den Server neu starten <code>sudo service minecraft restart</code>.</p>
 <h2 id="minecraft-server-einstellungen">Minecraft Server Einstellungen</h2>
 <p>Alle wichtigen Einstellungen für den Server sind in der Datei “server.properties” gespeichert. Für den Port auf dem der Minecraft Server verfügbar ist, gilt der Parameter “server-port”. Er ist auf den Standardwert 25565 (Java-Version) gesetzt. Informationen rund um die Einstellungen können der deutschen Minecraft Gamepedia Seite <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a> entnommen werden.<br>
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. MAn könnte auch die anzahl der Player reduzieren.</p>
@@ -369,7 +383,7 @@ Dort findet man z. B. diesen Eintrag</p>
 [17:56:00 INFO]: Donald[/192.168.0.31:63565] logged in with entity id 1 at ([world]-1274.5, 64.0, -199.5)
 </code></pre><p>Nun git man den Befehl <code>op</code> mit dem Spielernamen als Parameter an, also  <code>op Donald</code>
 Nun kann man &lsquo;screen&rsquo; mit der Tastenkombination Strg+A und D verlassen.</p>
-<p>In die Datei ops.json sind die Operatoren gespeichert.</p>
+<p>In der Datei ops.json sind die Operatoren gespeichert.</p>
 <pre><code>[
   {
     &quot;uuid&quot;: &quot;b47637a4-2f8a-4a47-b43c-c9f32b3c227b&quot;,
@@ -384,7 +398,11 @@ Nun kann man &lsquo;screen&rsquo; mit der Tastenkombination Strg+A und D verlass
     &quot;bypassesPlayerLimit&quot;: false
   }
 ]
-</code></pre><h2 id="karten-wiederherstellen">Karten wiederherstellen</h2>
+</code></pre><h2 id="minecraft-server-update">Minecraft Server Update</h2>
+<p>Zuerst beendet man den Server mit <code>sudo service minecraft stop</code>.
+Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code> und startet es mit <code>bash SetupMinecraft.sh</code>.
+Nun kann man den aktualisierten Server wieder starten, dazu gibt man <code>sudo service minecraft start</code> ein.</p>
+<h2 id="karten-wiederherstellen">Karten wiederherstellen</h2>
 <p>Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so können diese am Server eingespielt werden.</p>
 <p><em>Backup Inhalt auflisten:</em> <code>tar -tvf backups/2021.01.03_04.00.39.tar.gz</code></p>
 <p><em>Minecraft Welten von Backup wiederherstellen:</em></p>
@@ -605,7 +623,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1642175331"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1666799692"></script>
 
 </body>
 </html>

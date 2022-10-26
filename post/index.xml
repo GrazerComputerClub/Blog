@@ -6,15 +6,33 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Wed, 12 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Raspberry Pi Pico mit Bipes</title>
+      <link>https://blog.gc2.at/post/picopi-bipes/</link>
+      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
+      <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero Shopping Guide</title>
+      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
+      <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>WiringPi Library</title>
       <link>https://blog.gc2.at/post/wiringpi/</link>
-      <pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/wiringpi/</guid>
       <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
@@ -62,7 +80,7 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/post/cooling/</guid>
-      <description>&lt;p&gt;Raspberry Pi Zero und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leitungsintensiven Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Raspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -584,15 +602,6 @@ Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sin
       
       <guid>https://blog.gc2.at/post/fruit-pi-e-book/</guid>
       <description>&lt;p&gt;Hier bekommt man die gratis CC-Version meines Buches &amp;ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&amp;rdquo;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Zero Shopping Guide</title>
-      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
-      <description>&lt;p&gt;Aktuell werden drei verschiedene Varianten des Raspberry Zero verkauft. Ein Überblick &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>

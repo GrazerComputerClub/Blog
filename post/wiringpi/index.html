@@ -21,10 +21,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2022",
-        "datePublished": "2022-01-12 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2022-01-12 00:00:00 \x2b0000 UTC",
+        "datePublished": "2022-10-24 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2022-10-24 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/wiringpi\/",
-        "wordCount" : "1356",
+        "wordCount" : "1460",
         "image" : "https://blog.gc2.atimg/WiringPi.png"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1642175331" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1666799692" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1642175331" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1666799692" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -88,6 +88,10 @@
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
           <a href="/categories/raspberry-pi">raspberry-pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -229,7 +233,7 @@
       </div>
       
         <div class="entry-meta">
-          <span class="date">12 January</span>	<span> / </span>
+          <span class="date">24 October</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -260,16 +264,24 @@
             <article>
               <p>WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.</p>
 <h2 id="beschreibung">Beschreibung</h2>
-<p>WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Drogon entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem neuesten Raspberry Pi OS (Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit <code>apt install wiringpi</code> installieren, aber das geht nun nicht mehr.<br>
+<p>WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Henderson entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem neuesten Raspberry Pi OS (Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit <code>apt install wiringpi</code> installieren, aber das geht nun nicht mehr.<br>
 Das ist sehr unverständlich den WiringPi wird nach wie vor weiter gewartet und für die neueren Raspberry Pi Produkte wie z. B. Pi 400 und Zero 2 angepasst. Der frei Verfügbare Sourcecode steht liegt bei Git-Hub unter <a href="https://github.com/WiringPi/WiringPi">https://github.com/WiringPi/WiringPi</a>.
-Leider gebt es keine fertiges apt-Repository oder auch eine DEB-Datei. Aus diesem Grund muss man das Projekt selbst übersetzen bzw. eine DEB-Datei für die Installation erzeugen.</p>
-<h2 id="installation">Installation</h2>
-<pre><code>git clone https://github.com/WiringPi/WiringPi.git
+Leider gebt es keine fertiges apt-Repository oder auch eine DEB-Datei. Aus diesem Grund muss man das Projekt selbst übersetzen bzw. eine DEB-Datei für die Installation erzeugen.
+Mittlerweile gibt es auch einen Release Version auf Git-Hub sodass man sich direkt das Debian Paket runterladen kann, optional kann amn es sich aber selbst erstellen (z. B. für Oldstable Buster).</p>
+<h2 id="kompilierung-zb-oldstable-buster">Kompilierung (z.B. Oldstable Buster)</h2>
+<pre><code>sudo apt install git
+git clone https://github.com/WiringPi/WiringPi.git
 cd WiringPi
-./build 
 ./build debian
 mv debian-template/wiringpi-2.61-1.deb .
 sudo apt install ./wiringpi-2.61-1.deb
+</code></pre><p>Wenn man sich den Umweg sparen will, habe ich die erzeugten Debian Paket für das oldstable Buster als Release abgelegt.
+Zu finden auf meinem Fork des Projektes unter <a href="https://github.com/mstroh76/WiringPi/releases/">https://github.com/mstroh76/WiringPi/releases/</a> .<br>
+Man kann es also auch direkt herunterladen und installieren.</p>
+<h2 id="installation">Installation</h2>
+<p>Für die aktuellen Raspberry Pi OS Version kan man sich das Paket für arm64 oder armhf direkt von Git-Hub <a href="https://github.com/WiringPi/WiringPi/releases">https://github.com/WiringPi/WiringPi/releases</a> herunterladen.</p>
+<pre><code>wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
+sudo apt install ./wiringpi-2.61-1-armhf.deb
 </code></pre><h2 id="verwendung">Verwendung</h2>
 <p>WiringPi enthält nicht nur die C-Bibliothek, auch das Kommandozeilenprogramm <code>gpio</code> wird mit ausgeliefert. Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. Wenn man allerdings den Parameter  <code>-g</code> hinzufügt, werden die BCM-Nummern verwendet. Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. Dies ist inzwischen nicht mehr nötig. Mit dem Befehl <code>gpio readall</code> kann der aktuelle Status der GPIOs ausgegeben werden.</p>
 <p><strong>Pi400:</strong></p>
@@ -575,7 +587,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1642175331"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1666799692"></script>
 
 </body>
 </html>
