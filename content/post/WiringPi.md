@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/WiringPi.png"
-date = "2022-01-12"
+date = "2022-10-24"
 title = "WiringPi Library"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Programmierung"]
@@ -15,20 +15,34 @@ WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider
 
 ## Beschreibung 
 
-WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Drogon entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem neuesten Raspberry Pi OS (Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit ``apt install wiringpi`` installieren, aber das geht nun nicht mehr.  
+WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Henderson entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem neuesten Raspberry Pi OS (Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit ``apt install wiringpi`` installieren, aber das geht nun nicht mehr.  
 Das ist sehr unverständlich den WiringPi wird nach wie vor weiter gewartet und für die neueren Raspberry Pi Produkte wie z. B. Pi 400 und Zero 2 angepasst. Der frei Verfügbare Sourcecode steht liegt bei Git-Hub unter https://github.com/WiringPi/WiringPi.
 Leider gebt es keine fertiges apt-Repository oder auch eine DEB-Datei. Aus diesem Grund muss man das Projekt selbst übersetzen bzw. eine DEB-Datei für die Installation erzeugen.
+Mittlerweile gibt es auch einen Release Version auf Git-Hub sodass man sich direkt das Debian Paket runterladen kann, optional kann amn es sich aber selbst erstellen (z. B. für Oldstable Buster).
 
-
-## Installation
+## Kompilierung (z.B. Oldstable Buster)
 
 ```
+sudo apt install git
 git clone https://github.com/WiringPi/WiringPi.git
 cd WiringPi
-./build 
 ./build debian
 mv debian-template/wiringpi-2.61-1.deb .
 sudo apt install ./wiringpi-2.61-1.deb
+```
+
+Wenn man sich den Umweg sparen will, habe ich die erzeugten Debian Paket für das oldstable Buster als Release abgelegt.
+Zu finden auf meinem Fork des Projektes unter https://github.com/mstroh76/WiringPi/releases/ .  
+Man kann es also auch direkt herunterladen und installieren.
+
+
+## Installation 
+
+Für die aktuellen Raspberry Pi OS Version kan man sich das Paket für arm64 oder armhf direkt von Git-Hub https://github.com/WiringPi/WiringPi/releases herunterladen. 
+
+```
+wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
+sudo apt install ./wiringpi-2.61-1-armhf.deb
 ```
 
 ## Verwendung

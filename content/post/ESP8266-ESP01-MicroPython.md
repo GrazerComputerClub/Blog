@@ -5,7 +5,7 @@ image = "img/ESP-01S_DHT11.jpg"
 date = "2021-02-28"
 title = "ESP8266 ESP-01(S) MicroPython Firmware"
 writer = "Martin Strohmayer"
-categories = ["uC", "Raspberry Pi"]
+categories = ["uC", "Raspberry Pi", "Programmierung"]
 keywords = ["WiFi", "WLAN", "IoT", "ESP8266", "ESP-01", "ESP-01S", "Firmware", "NodeMCU", "lua", "Mikrocontroller"]
 weight = 1
 +++
