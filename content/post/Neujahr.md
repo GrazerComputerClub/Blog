@@ -1,8 +1,8 @@
-+++
+﻿+++
 showonlyimage = true
 draft = true
 image = "img/Neujahr.jpg"
-date = "2022-12-31"
+date = "2023-12-30"
 title = "Neujahr"
 writer = "GC2"
 categories = [""]
