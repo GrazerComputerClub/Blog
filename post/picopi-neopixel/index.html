@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "Raspberry Pi Pico Neopixel",
+        "headline" : "Raspberry Pi Pico Neopixel",
+        "description" : "\x3cp\x3eMit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.\x3c\/p\x3e",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2023",
+        "datePublished": "2023-01-06 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2023-01-06 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/picopi-neopixel\/",
+        "wordCount" : "1222",
+        "image" : "https://blog.gc2.atimg/Raspberry_Pi_Pico_Neopixel.jpg"",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Raspberry Pi Pico Neopixel </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">ccc</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">gc2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/minecraft">minecraft</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/uc">uc</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Raspberry_Pi_Pico_Neopixel.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">06 January</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/uc">uC</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi-pico">Raspberry Pi Pico</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/programmierung">Programmierung</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Raspberry Pi Pico Neopixel</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.</p>
+<h2 id="beschreibung-">Beschreibung</h2>
+<p>Der Raspberry Pi Pico ist ein kleines, schnelles und vielseitiger Boards, das mit dem RP2040 Mikrocontroller-Chip ausgestattet ist. Der Chip selbst, sowie das Board werden vom Raspberry Pi Hersteller verkauft und kostet ca. 4,2 Euro.<br>
+Mehr zu den verschiednen Varianten und zu den Spezifikationen findet man unter <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html">https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html</a></p>
+<p>Das Boards kann über einen Micro-USB-Kabel an einem Windows- oder Linux-PC bzw. Raspberry Pi angeschlossen werden. Wird es mit <a href="https://circuitpython.org/board/raspberry_pi_pico/">CircuitPython Firmware</a> ausgetstattet, kann es mit Python programmiert werden. Die Firmware liefert auch gleich einige Bibliotheken mit. Mam kann auch sehr leicht weitere Bibliotheken hinzufügen. Als Entwicklungsumgebung bietet sich <a href="https://thonny.org/">Thonny</a> an, es unterstützt die Platform direkt, sodass man nach der Konfiguration direkt loslegen kann.</p>
+<h2 id="anschluss-">Anschluss</h2>
+<p>Der Raspberry Pi Pico wird über einen Micro-USB-Kabe an einem PC oder Raspberry Pi angeschlossen. Dann wird automatisch eine Partition bzw. Laufwerk erkannt, je nach System wird es auch automatisch eingehängt und angezeigt.</p>
+<pre><code>dmesg
+</code></pre><pre><code>[ 9451.652332] usb 2-2: new full-speed USB device number 13 using xhci_hcd
+[ 9451.801668] usb 2-2: New USB device found, idVendor=2e8a, idProduct=0003, bcdDevice= 1.00
+[ 9451.801674] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 9451.801685] usb 2-2: Product: RP2 Boot
+[ 9451.801687] usb 2-2: Manufacturer: Raspberry Pi
+[ 9451.801690] usb 2-2: SerialNumber: E0C912D24340
+[ 9451.804801] usb-storage 2-2:1.0: USB Mass Storage device detected
+[ 9451.805229] scsi host3: usb-storage 2-2:1.0
+[ 9452.812870] scsi 3:0:0:0: Direct-Access     RPI      RP2              1    PQ: 0 ANSI: 2
+[ 9452.813471] sd 3:0:0:0: Attached scsi generic sg2 type 0
+[ 9452.814337] sd 3:0:0:0: [sdc] 262144 512-byte logical blocks: (134 MB/128 MiB)
+[ 9452.814627] sd 3:0:0:0: [sdc] Write Protect is off
+[ 9452.814634] sd 3:0:0:0: [sdc] Mode Sense: 03 00 00 00
+[ 9452.814959] sd 3:0:0:0: [sdc] No Caching mode page found
+[ 9452.814970] sd 3:0:0:0: [sdc] Assuming drive cache: write through
+[ 9452.837574]  sdc: sdc1
+[ 9452.857742] sd 3:0:0:0: [sdc] Attached SCSI removable disk
+</code></pre><h2 id="firmware-update">Firmware Update</h2>
+<p>Zuerst muss CircuitPython am Board installiert werden. Dazu lädt man sich die neueste stabile (stable) Version von der Seite <a href="https://circuitpython.org/board/raspberry_pi_pico/">https://circuitpython.org/board/raspberry_pi_pico/</a> herunter. In diesem Fall heißt die Datei &ldquo;adafruit-circuitpython-raspberry_pi_pico-de_DE-7.3.3.uf2&rdquo;.<br>
+Dann drückt man die BOOTSEL Taste am Pico und steckt dabei das USB-Kabel ein. Eine Partition (/dev/sdc1) mit Namen RPI-RP2 wird nun einhängt und angezeigt. Dann kann man in das Verzeichnis einfach die Firmwaredatei kopieren. Der Pico startet dann automatisch neu und ist wieder betriebsbereit.</p>
+<p>Nun meldet er sich aber etwas anders am System an und es gibt ein neues serielles Device (/dev/ttyACM0 am PC).</p>
+<pre><code>dmesg
+</code></pre><pre><code>[  800.478220] usb 2-2: new full-speed USB device number 9 using xhci_hcd
+[  800.628229] usb 2-2: New USB device found, idVendor=239a, idProduct=80f4, bcdDevice= 1.00
+[  800.628235] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  800.628237] usb 2-2: Product: Pico
+[  800.628240] usb 2-2: Manufacturer: Raspberry Pi
+[  800.628243] usb 2-2: SerialNumber: E660443043794A29
+[  800.637883] input: Raspberry Pi Pico Keyboard as /devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2:1.3/0003:239A:80F4.000A/input/input39
+[  800.695004] input: Raspberry Pi Pico Mouse as /devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2:1.3/0003:239A:80F4.000A/input/input40
+[  800.695458] input: Raspberry Pi Pico Consumer Control as /devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2:1.3/0003:239A:80F4.000A/input/input41
+[  800.695760] hid-generic 0003:239A:80F4.000A: input,hidraw9: USB HID v1.11 Keyboard [Raspberry Pi Pico] on usb-0000:00:14.0-2/input3
+[  800.723244] cdc_acm 2-2:1.0: ttyACM0: USB ACM device
+[  800.726777] usbcore: registered new interface driver cdc_acm
+[  800.726778] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[  800.756779] usb-storage 2-2:1.2: USB Mass Storage device detected
+[  800.764110] scsi host3: usb-storage 2-2:1.2
+[  800.765630] usbcore: registered new interface driver usb-storage
+[  800.773407] usbcore: registered new interface driver uas
+[  801.794686] scsi 3:0:0:0: Direct-Access     Raspberr Pico             1.0  PQ: 0 ANSI: 2
+[  801.795050] sd 3:0:0:0: Attached scsi generic sg2 type 0
+[  801.795492] sd 3:0:0:0: [sdc] 2049 512-byte logical blocks: (1.05 MB/1.00 MiB)
+[  801.795890] sd 3:0:0:0: [sdc] Write Protect is off
+[  801.795892] sd 3:0:0:0: [sdc] Mode Sense: 03 00 00 00
+[  801.796223] sd 3:0:0:0: [sdc] No Caching mode page found
+[  801.796226] sd 3:0:0:0: [sdc] Assuming drive cache: write through
+[  801.817384]  sdc: sdc1
+[  801.839665] sd 3:0:0:0: [sdc] Attached SCSI removable disk
+</code></pre><h2 id="installation-thonny-ide">Installation Thonny IDE</h2>
+<p>Je nach Betriebssystem installiert man Thonny unterschiedlich. Unter Windows lädt man sich &ldquo;Installer with 64-Bit Python 3.10&rdquo; herunter startet das Setup. Bei einem debianbasierenden Linux ruf man einfach &ldquo;sudo apt install python3-tk thonny&rdquo; im Terminal auf. Wenn das nicht geht oder nur die alte Version 3 von Thonny installiert wurde, so führt man den Befehl &ldquo;bash &lt;(curl -s <a href="https://thonny.org/installer-for-linux)%22">https://thonny.org/installer-for-linux)&quot;</a> aus, um die aktuelle Version zu installieren.<br>
+Der Raspberry Pi hat Thonny bereits vorinstalliert.<br>
+Danach kann man Thonny einfach starten und wählt zuerst die Sprache Deutsch aus. Initial Settings am PC bleiben auf Standard. Nun muss man im Menü auf Ausführen und dann &ldquo;Den Interpreter konfigurieren&hellip;&rdquo; bzw. &ldquo;Select interpreter&hellip;&rdquo; gehen. Hier kann man bei aktuellen Version direkt &ldquo;MicroPython Raspberry Pi Pico&rdquo; wählen. Weiter unten muss dann der Com-Port des Picos ausgewählt werden. Die Standardeinstellung ist &ldquo;Versuche den Port automatisch zu erkennen&rdquo; bzw. &ldquo;try to detect&rdquo;, man kann aber auch den Port direkt auswählen.</p>
+<p><img src="../../img/Thonny_Config.png" alt="Thonny interpreter"></p>
+<h2 id="programmierung-neopixel">Programmierung Neopixel</h2>
+<p>Folgendes Programm lässt die erste LED auf einem Neopixel (RGB-LED-Module WS2812) grün blinken. Die Datenleitung ist auf den ersten Pin GP0 angeschlossen. Die Versorgung des Moduls erfolgt über VBUS, also die USB Versorgungsspannung. GND vom Modul wird mit GND am Pico verbunden.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">board</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">neopixel_write</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">digitalio</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+
+pin <span style="color:#666">=</span> digitalio<span style="color:#666">.</span>DigitalInOut(board<span style="color:#666">.</span>GP0)
+pin<span style="color:#666">.</span>direction <span style="color:#666">=</span> digitalio<span style="color:#666">.</span>Direction<span style="color:#666">.</span>OUTPUT
+green <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">30</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>])
+red   <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">0</span>, <span style="color:#40a070">30</span>, <span style="color:#40a070">0</span>])
+blue  <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">0</span>,  <span style="color:#40a070">0</span>,<span style="color:#40a070">30</span>])
+off   <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">0</span>,  <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>])
+
+<span style="color:#007020;font-weight:bold">while</span> True:
+  neopixel_write<span style="color:#666">.</span>neopixel_write(pin, green)
+  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">1</span>)
+  neopixel_write<span style="color:#666">.</span>neopixel_write(pin, off)
+  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">1</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>Nach dem Drücken von F5 bzw. der Start-Schaltfläche läuft das Programm und die erste LEDs blinkt.
+blinkt.</p>
+<p>Eine bessere Möglichkeit Neopixel anzusprechen, ist mit der Adafruit NeoPixel Bibliothek.<br>
+Wenn sie noch nicht am Pico vorhanden ist, kann sich manuell draufkopiert werden. Dazu geht man mit dem Browser zum GitHub Projekt <a href="https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel">https://github.com/adafruit/Adafruit_CircuitPython_NeoPixel</a> . Dort wählt man die Datei &ldquo;neopixel.py&rdquo; aus und geht dann auf die Schaltfläche &ldquo;Raw&rdquo;. Nun kann man mit der rechten Maustaste ins Kontextmenü gelangen und &ldquo;Seite speichern unter &hellip;&rdquo; wählen. Optional kann man die Datei auch über den Link herunterladen <code>wget https://raw.githubusercontent.com/adafruit/Adafruit_CircuitPython_NeoPixel/main/neopixel.py</code><br>
+Nun muss man die Datei &ldquo;neopixel.py&rdquo; nur noch auf das Laufwerk des Pi Pico kopieren.
+Danach kann man ein Programm erstellen, dass die Neopixel Bibliothek verwendet, z. B. diese Regebogenfarbenablauf.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">board</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">rainbowio</span> <span style="color:#007020;font-weight:bold">import</span> colorwheel
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">neopixel</span>
+
+<span style="color:#60a0b0;font-style:italic"># number of NeoPixel LEDs connected to your board.</span>
+num_pixels <span style="color:#666">=</span> <span style="color:#40a070">8</span>
+
+pixels <span style="color:#666">=</span> neopixel<span style="color:#666">.</span>NeoPixel(board<span style="color:#666">.</span>GP0, num_pixels, auto_write<span style="color:#666">=</span>False)
+pixels<span style="color:#666">.</span>brightness <span style="color:#666">=</span> <span style="color:#40a070">0.02</span>
+
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">rainbow</span>(speed):
+    <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">255</span>):
+        <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(num_pixels):
+            pixel_index <span style="color:#666">=</span> (i <span style="color:#666">*</span> <span style="color:#40a070">256</span> <span style="color:#666">//</span> num_pixels) <span style="color:#666">+</span> j
+            pixels[i] <span style="color:#666">=</span> colorwheel(pixel_index <span style="color:#666">&amp;</span> <span style="color:#40a070">255</span>)
+        pixels<span style="color:#666">.</span>show()
+        time<span style="color:#666">.</span>sleep(speed)
+
+
+<span style="color:#007020;font-weight:bold">while</span> True:
+    rainbow(<span style="color:#40a070">0</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>Nach dem Drücken von F5 bzw. der Start-Schaltfläche läuft das Programm und die LEDs lechten in verschiedenen Farben.</p>
+<p><img src="../../img/Thonny.png" alt="Thonny"></p>
+<p>Nun kann man das Projekt noch abspeichern, indem man im Menü &ldquo;Datei&rdquo; und &ldquo;Speichern unter &hellip;&rdquo; wählt. Dann wird man gefragt ob man es auf dem Computer oder am Raspberry Pi Pico speichern möchte.</p>
+<p><img src="../../img/Thonny_Save.png" alt="Thonny"></p>
+<p>Man kann es also auch direkt am Mikrokontroller speichern!</p>
+<h2 id="verlinkungen">Verlinkungen</h2>
+<p><a href="hhttps://circuitpython.org/board/raspberry_pi_pico/">CircuitPython Firmware for Raspberry Pi Pico</a><br>
+<a href="https://thonny.org/">Thonny IDE</a><br>
+<a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html">Raspberry Pi Pico Spezifikationen</a><br>
+<a href="https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf">Raspberry Pi Pico Pinout</a></p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorien</span>
+  
+    
+    <a href="/categories/uc" title="View all posts in uC">uC</a>
+    <a href="/categories/raspberry-pi-pico" title="View all posts in Raspberry Pi Pico">Raspberry Pi Pico</a>
+    <a href="/categories/programmierung" title="View all posts in Programmierung">Programmierung</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2022, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+
+</body>
+</html>

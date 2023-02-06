@@ -6,7 +6,7 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Wed, 26 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Programmierung</title>
       <link>https://blog.gc2.at/categories/programmierung/</link>
-      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/programmierung/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>Raspberry Pi</title>
       <link>https://blog.gc2.at/categories/raspberry-pi/</link>
-      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Raspberry Pi Pico</title>
       <link>https://blog.gc2.at/categories/raspberry-pi-pico/</link>
-      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/raspberry-pi-pico/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>uC</title>
       <link>https://blog.gc2.at/categories/uc/</link>
-      <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/uc/</guid>
       <description></description>
