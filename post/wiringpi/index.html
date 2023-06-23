@@ -24,7 +24,7 @@
         "datePublished": "2022-10-24 00:00:00 \x2b0000 UTC",
         "dateModified" : "2022-10-24 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/wiringpi\/",
-        "wordCount" : "1460",
+        "wordCount" : "1467",
         "image" : "https://blog.gc2.atimg/WiringPi.png"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -356,14 +356,18 @@ Raspberry Pi Details:
  | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
  +-----+-----+---------+------+---+-Model B1-+---+------+---------+-----+-----+
 </code></pre><h2 id="performance">Performance</h2>
-<p><strong>Pi 1 B - GC2 Turbo (1000 Hz):</strong></p>
-<pre><code>git clone https://github.com/GrazerComputerClub/Benchmark.git
-cd Benchmark/
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>Pi 1 B - <a href="https://github.com/GrazerComputerClub/rpi-boot/blob/master/Overclock_Pi1_Turbo.txt">GC2 Turbo</a> (1000 MHz):</strong></p>
+<pre><code>sudo apt update
+sudo apt install git
+git clone https://github.com/GrazerComputerClub/Benchmark.git
+cd Benchmark/src
 gcc gpio_bench.c -o gpio_bench -Wall -lwiringPi
 ./gpio_bench
 </code></pre><pre><code>WiringPi GPIO speed test program 
 toggle 100 million times ...
-  100000000 toggle took 19.556 s, Time per toggle 0.196 us, Freq 5.114 MHz 
+  100000000 toggle took 16.044 s, Time per toggle 0.160 us, Freq 6.233 MHz 
 </code></pre><p>Enable SPI with <code>sudo raspi-config</code>:</p>
 <ul>
 <li>3 Interface Options</li>
@@ -373,13 +377,13 @@ toggle 100 million times ...
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <pre><code>gcc spi_bench_dac-vectorgaming.c -o spi_bench_dac-vectorgaming -Wall -lwiringPi -lm
-./spi_bench_adc
+./spi_bench_dac-vectorgaming
 </code></pre><pre><code>WiringPi SPI speed (vector gaming) test program
 open device '/dev/spidev0.0' (6 MHz) ...
 Pong test:
-  1000 frames took 17.935 s, dots per frame 150, Time per dot 120 us, fps 56 
+  1000 frames took 17.551 s, dots per frame 150, Time per dot 117 us, fps 57 
 Space Invaders test:
-  300 frames took 23.339 s, dots per frame 650, Time per dot 120 us, fps 13 
+  300 frames took 22.767 s, dots per frame 650, Time per dot 117 us, fps 13 
 </code></pre>
             </article>
           </div>
@@ -587,7 +591,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
 
 </body>
 </html>

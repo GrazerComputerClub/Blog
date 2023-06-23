@@ -24,7 +24,7 @@
         "datePublished": "2018-12-21 00:00:00 \x2b0000 UTC",
         "dateModified" : "2018-12-21 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/pico-8\/",
-        "wordCount" : "721",
+        "wordCount" : "1063",
         "image" : "https://blog.gc2.atimg/PICO-8.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -267,11 +267,29 @@
 <p>PICO-8 ist eine erfundene „Fantasy Console“ die am PC (Windows, Linux, MacOS) und auf dem Raspberry Pi emuliert werden kann. Es handelt sich um ein kommerzielles Produkt, das von Lexaloffle Games entwickelt wird. Die Programmierung erfolgt in Lua. Mithilfe der integrierten Entwicklungsumgebung können Source, Musik, Sound, Sprites und Maps erstellen werden.<br>
 Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam bzw. im Schulungsbereich kann es gratis benutzt werden. Nach der Schulung können die Teilnehmer vergünstigt eine &ldquo;Take-home license&rdquo; erwerben.</p>
 <h2 id="installation">Installation</h2>
-<p>PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Buster mit installierter WiringPi Library (apt-get install wiringPi) verwendet.<br>
-Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.1.12c2_raspi.zip&rdquo; herunterladen. Darin ist das Verzeichnis &ldquo;pico-8&rdquo; mit allen Dateien. Es enthält zwei ausführbare Dateien &ldquo;pico8&rdquo; und &ldquo;pico8_dyn&rdquo;. Bei &ldquo;pico8_dyn&rdquo; wird die SDL2 Library in Version 2.0 dynamisch gelinkt. Das bedeutet also sie muss am System bereits installiert sein. &ldquo;pico8&rdquo; benötigt die SDL-Library nicht, weil sie statisch gelinkt wurde. Ich empfehle &ldquo;pico8&rdquo; zu Ausführung zu verwenden. Allerdings gibt es auch hier einige Abhängigkeiten zu Bibliotheken. Eine davon ist die WiringPi Library für den GPIO Zugriff. Wieso diese benötigt wird, wird später noch erläutert.</p>
+<p>PICO-8 läuft auch auf einem Raspberry Pi Zero (1000 MHz), wobei hier schon die Grenze erreicht ist. Es hängt auch etwas von den Spielen ab, aber die von mir getesteten liefen knapp unter 100% CPU-Last. Als Basis wurde eine Raspbian Bullseye mit installierter WiringPi Library verwendet.<br>
+Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.2.5g_raspi.zip&rdquo; herunterladen und mit <code>unzip *.zip</code> entpacken. Das Verzeichnis &ldquo;pico-8&rdquo; enthält ab Version 2 vier ausführbare Dateien &ldquo;pico8&rdquo;, &ldquo;pico8_dyn&rdquo;, &ldquo;pico8_gpio&rdquo; und &ldquo;pico8_64&rdquo;.<br>
+Bei &ldquo;pico8&rdquo; wurde die SDL2 Library in Version 2 statisch gelinkt. Bei &ldquo;pico8_dyn&rdquo;, wird die SDL2 Library in Version 2 dynamisch gelinkt. Das bedeutet also, sie muss am System vorhanden sein.<br>
+Damit sie verfügbar ist muss man nur das entsprechende Paket installieren.</p>
+<pre><code>sudo apt-get install libsdl2-dev
+</code></pre><p>Im Test konnte Pico 8 in der Konsole nicht mit dem Legacy Treiber (non-GL) betrieben werden (obwohl es in der README-Datei empfohlen wird). Man sollte deshalb den OpenGL Driver verwenden.</p>
+<pre><code>sudo raspi-config
+</code></pre><pre><code>6 Advanced Options     Configure advanced settings
+  A2 GL Driver         Enable/disable experimental desktop GL driver
+    G1 Legacy          Original non-GL desktop driver 
+ -&gt;	G2 GL (Full KMS)   OpenGL desktop driver with full KMS
+</code></pre><p>In der Konfigurationsdatei könnte man den Treiber dann noch von &ldquo;vc4-kms-v3d&rdquo; auf &ldquo;vc4-fkms-v3d&rdquo; ändern. Es ist nicht zwingend erforderlich, andere Programmen laufen aber nur mit dem fkms Treiber.</p>
+<pre><code>sudo nano /boto/config
+</code></pre><pre><code># Enable DRM VC4 V3D driver
+dtoverlay=vc4-fkms-v3d
+</code></pre><p>Leider gibt es die Version mit GPIO Support nur in der statischen Version und diese lässt sich im aktuellen Raspberry Pi OS nicht starten. Gleiches gilt im übrigen auch für die &ldquo;./pico8&rdquo; Version. Es wird immer folgender Fehler angezeigt:</p>
+<pre><code>SDL Error: Could not initialize EGL
+** FATAL ERROR: Unable to create window
+Segmentation fault&quot;
+</code></pre><p>Früher bei Version 0.1, als noch die SDL Library in Version 1 verwendet wurde, hat es noch funktioniert. PICO-8 0.1 funktioniert aber auch auf der neuen Raspberry Pi OS Bullseye Version, allerdings sind viele Spiele für die aktuelle Version programmiert und lassen sich deshlab nicht starten.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>Versionen PICO-8:</p>
+<p><strong>Lauffähige Versionen PICO-8 (GPIO Support):</strong></p>
 <table>
 <thead>
 <tr>
@@ -282,34 +300,41 @@ Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.1.12c2_raspi.zip&rdquo
 </thead>
 <tbody>
 <tr>
-<td align="left">0.1.11g</td>
-<td align="left">1b6d7b896e536073bab99a92039b222c</td>
-<td align="left">pico8</td>
-</tr>
-<tr>
-<td align="left">0.1.12c</td>
-<td align="left">7769d451fb4b97e409d38b5d24280902</td>
-<td align="left">pico8</td>
-</tr>
-<tr>
 <td align="left">0.1.12c2</td>
 <td align="left">0fbbcb9d88f48d5f67b68a39412c962c</td>
 <td align="left">pico8</td>
 </tr>
+</tbody>
+</table>
+<p><strong>Lauffähige Versionen PICO-8 (ohne GPIO Support):</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left">0.2.1b</td>
-<td align="left">717dd59f6b6eb8dadd17c00211228844</td>
-<td align="left">pico8</td>
+<th align="left"><em>Version</em></th>
+<th align="left"><em>MD5 Checksumme</em></th>
+<th align="left"><em>Datei</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0.2.0i</td>
+<td align="left">8c9ea65b849391debe0211af3fda48b3</td>
+<td align="left">pico8_dyn</td>
 </tr>
 <tr>
 <td align="left">0.2.2c</td>
-<td align="left">f9e483752306542319b9d7d5a013e6b2</td>
-<td align="left">pico8</td>
+<td align="left">ab5c2bf26f9a5dfecbb069b65f3b1be1</td>
+<td align="left">pico8_dyn</td>
 </tr>
 <tr>
 <td align="left">0.2.4</td>
-<td align="left">76246cac3d7120e5f86b130980833b4c</td>
-<td align="left">pico8</td>
+<td align="left">bc99f6c0a6a262ca9630852f19b05553</td>
+<td align="left">pico8_dyn</td>
+</tr>
+<tr>
+<td align="left">0.2.5</td>
+<td align="left">9d69d09cc7fc6e8bc15ff6fc9224c5e9</td>
+<td align="left">pico8_dyn</td>
 </tr>
 </tbody>
 </table>
@@ -335,6 +360,12 @@ Aktionstaste 1 (O): Tab bzw. Shift<br>
 Aktionstaste 2 (X): Q bzw. A</p>
 <h3 id="modul-cartridge">Modul (Cartridge)</h3>
 <p>Vielfach wird beim Programmspeicher von Cartridge, also von einem Spielmodul gesprochen wie man es von GB, NES usw. kennt. Bei der Cartridge handelt es sich allerdings um eine PNG-Bilddatei. Das erstellte Programm kann also in einer Grafikdatei gespeichert werden. Diese Datei enthält dann ein Vorschaubild als auch das Spiel selbst als Zusatzdaten.</p>
+<h2 id="splore">Splore</h2>
+<p>Startet man das Programm mit der Parameter &ldquo;-splore&rdquo; wird PICO-8 mit einem Menü gestartet in dem man verschiedene Spiele herunterladen und ausprobieren kann.<br>
+Mit den seitenliche Pfeiltasten kann man auf FEATURED gehen und dann mit der Entertaste auf UPDATE. Dann wird die neueste unterstützte Spieleliste heruntergeladen. Nun kann man mit den Pfeiltasten eines auswählen und mit Enter RUN CART wählen. Die Steuerung erfolgt mit den Pfeiltasten sowie x- und y-Taste. Mit der Esc-Taste kommt man wieder in ein Menü bei dem man EXIT TO SPLORE wählen kann.<br>
+Im Menü kann man auch einzelne Spiele mit FAVOURITE in die Liste der favorisierten Spiele übernehmen, damit man sie leicht wiederfindet.</p>
+<p>./pico8_dyn -splore</p>
+<p><img src="../../img/PICO-8-Splore.png" alt="PICO-8 Splore"></p>
 <h2 id="programmierung">Programmierung</h2>
 <p><img src="../../img/PICO-8-Gameplay.png" alt="PICO-8 Gameplay"></p>
 <h3 id="sourcecode-ausschnitt-als-beispiel">Sourcecode Ausschnitt als Beispiel</h3>
@@ -375,8 +406,11 @@ FUNCTION _DRAW()
   CIRCFILL(BALLX,BALLY,BALLSIZE,6)
 END
 </code></pre><h3 id="raspberry-pi">Raspberry Pi</h3>
-<p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="http://wiringpi.com/pins/">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Es können also Eingänge gelesen oder Ausgänge auf High oder Low gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br>
-Mit dem Befehl &lsquo;peek&rsquo; dient zum Einlesen des Zustands des GPIOs.</p>
+<p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="https://github.com/WiringPi/WiringPi">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Dazu wird aber &ldquo;pico8&rdquo; in Version 0.1 und auch noch die WiringPi Library benötigt. Die Installation ist sehr einfach, man sich das Paket aber selbst herunterladen.</p>
+<pre><code>wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
+sudo apt install ./wiringpi-2.61-1-armhf.deb
+</code></pre><p>Mit dieser Version können also acht GPIOs als Eingänge gelesen oder als Ausgänge auf High oder Low gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen, so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br>
+Der Befehl &lsquo;peek&rsquo; wird zum Einlesen des Zustands des GPIOs verwendet.</p>
 <p><strong>Blinklicht auf zwei GPIOs:</strong></p>
 <pre><code>TIMER=0
 
@@ -616,7 +650,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
 
 </body>
 </html>

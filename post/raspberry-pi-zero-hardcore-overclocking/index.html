@@ -24,7 +24,7 @@
         "datePublished": "2020-01-17 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-01-17 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-zero-hardcore-overclocking\/",
-        "wordCount" : "1385",
+        "wordCount" : "1415",
         "image" : "https://blog.gc2.atimg/Pi0_CPU.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -296,12 +296,13 @@ Revision	: 1900093
 Serial		: 0000000001f700fd
 Model		: Raspberry Pi Zero Rev 1.3
 </code></pre><p>Die Revisionsnummer hat sich also von &ldquo;900093&rdquo; auf &ldquo;1900093&rdquo; geändert. Das Programm &ldquo;gpio&rdquo; meldet diesen Zustand nun auch mit dem Zusatz &ldquo;[Out of Warranty]&quot;.
-Beim Raspberry Pi Zero W 1.1 wurde das Garantieverlustbit auch gesetzt obwohl nur 2 für &ldquo;over_voltage&rdquo; gesetzt war. Es scheint als ob hier andere Regeln gelten. Die Revisionsnummer hat sich also von &ldquo;9000c1&rdquo; auf &ldquo;19000c1 geändert. Ich rate deshalb davon ab &ldquo;force_turbo&rdquo; überhaupt zu setzen. Für die Spannungserhöhung wird diese Optional jedenfalls nicht mehr benötigt und ist damit obsolet.</p>
+Beim Raspberry Pi Zero W 1.1 wurde das Garantieverlustbit auch gesetzt obwohl nur 2 für &ldquo;over_voltage&rdquo; gesetzt war. Es scheint als ob hier andere Regeln gelten. Die Revisionsnummer hat sich also von &ldquo;9000c1&rdquo; auf &ldquo;19000c1 geändert. Ich rate deshalb davon ab &ldquo;force_turbo&rdquo; überhaupt zu setzen. Für die Spannungserhöhung wird diese optional jedenfalls nicht mehr benötigt und ist damit obsolet.</p>
 <h2 id="übertakten">Übertakten</h2>
 <p>Es wurden Performancewerte und Stabilität bei verschiedenen Übertaktungsstufen getestet. Langsam wurde versucht sich an die maximale stabile Taktrate anzunähern. Als Benchmark wurde <a href="https://www.math.utah.edu/~mayer/linux/bmark.html">nbench</a> verwendet, der bei zu hohen Taktfrequenzen mit Programmabsturz reagiert. Der Benchmark wurde also zur Leistungsmessung und Stabilitätsbewertung verwendet.
-Es wurden 3 Taktfrequenzen überprüft. Einmal ohne Übertaktung dann eine erhöhte Taktfrequenz ohne Spannungserhöhung und einmal mit maximalen Takt bei 1,4 V CPU-Spannung.<br>
-Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputer). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird. Ich gehe aber davon aus das, 1150 MHz als oberes Limit möglich ist.<br>
-Für die Benchmark Messung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.</p>
+Es wurden 3 Taktfrequenzen überprüft. Einmal ohne Übertaktung dann eine erhöhte Taktfrequenz ohne Spannungserhöhung und einmal mit maximalen Takt bei 1,4 V CPU-Spannung.</p>
+<p>Bei Raspberry Pi Zero V1.3 konnte bis ca. 1176 MHz getaktet werden (verifiziert mit 2 Einplatinencomputer). Mit der Raspberry Pi Zero W V1.1 wurden bei einen stabilen Betrieb maximal 1150 MHz erreicht. Allerdings nur mit Kernel 5, bei Kernel 6 kam es zu Abstürzen. Durch Streuung bei der Produktion der Prozessoren sind diese nicht immer gleich gut zum Übertakten geeignet. Es kann daher nicht sicher gesagt werden welcher Wert nun ein allgemein gültiger Maximalwert ist. Jede CPU hat ihre eigenen Limits. Man kann aber sagen, dass der typisch im Internet genannte Wert von 1100 MHz eher ein niedriger Wert darstellt, der wohl von der Masse der aktuellen Prozessoren unterstützt wird.<br>
+Für die Benchmark Messung wurde die WLAN Funktion des Raspberry Pi W V1.1 ausgeschaltet, da sonst um ca. 5 % niedrigere Werte ermittelt wurden.
+An Dieser Stelle möchte ich darauf hinweisen das Übertakten immer auf eigene Gefahr gemacht wird. Stabilität, Leistung und Lebensdauer der Hardware könnte reduziert werden.</p>
 <h3 id="stromaufnahme-leerlauf">Stromaufnahme Leerlauf</h3>
 <p>Die Messergebnisse offenbaren einen Stromverbrauch im Idle-Betrieb von nur 90 mA, bei dem Raspberry Zero V1.3. Dies gilt auch im übertaktetem Zustand weil im Leerlauf immer nur 1,35 V CPU-Spannung anliegen.<br>
 Anders sieht es aus wenn &ldquo;force_turbo=1&rdquo; in der Konfigurationsdatei gesetzt ist. Dann taktet die CPU immer mit dem maximalen bzw. konfigurierten Prozessortakt. Dann steigt der Stromverbrauch im Leerlauf auf ca. 110 mA.</p>
@@ -345,7 +346,7 @@ FLOATING-POINT INDEX: 3,418<br>
 nbench Durchschnitt:  4,142<br>
 Verbesserung: 3,3 %<br>
 Stromaufnahme: 180-190 mA</p>
-<h3 id="hohe-übertaktung-1150-mhz">Hohe Übertaktung (1150 MHz)</h3>
+<h3 id="hohe-übertaktung-1150-mhz-mit-kernel-5">Hohe Übertaktung (1150 MHz) mit Kernel 5</h3>
 <p>Bei einer hohen Übertaktung von ca. 15 % muss die Spannung der CPU auf 1,4 V erhöht werden. Folgende Werte wurden in die
 Konfigurationsdatei &ldquo;config.txt&rdquo; eingetragen:</p>
 <pre><code>[pi0]
@@ -370,7 +371,7 @@ nbench Durchschnitt:  4,662<br>
 Verbesserung: 16,3 %<br>
 Stromaufnahme: 180-210 mA</p>
 <h3 id="zusammenfassung">Zusammenfassung</h3>
-<p>Durch eine hohe Übertaktung von 150 MHz kann man rund 16% Mehrleistung aus dem Raspberry Pi Zero herausholen. Damit verringert sich der Abstand zu Raspberry Pi 2 (Basistakt) von ca. 30 % auf 14 %.<br>
+<p>Durch eine hohe Übertaktung von 100 bis 150 MHz kann man rund 11 bzw. 16% Mehrleistung aus dem Raspberry Pi Zero herausholen. Damit verringert sich der Abstand zu Raspberry Pi 2 (Basistakt) von ca. 30 % auf 14 %.<br>
 Natürlich steigt der Stromverbrauch dann auch an, aber im Grunde nur geringfügig. Der Verbrauch im Leerlauf bleibt aber gleich. Zumindest die Erhöhung um 30 MHz bringt etwas Mehrleitung ohne die CPU-Spannung erhöhen zu müssen.</p>
 <p><img src="../../img/nBenchIndex_PiZeroOverclocking.png" alt="Diagramm nbench Index Pi zero overclocking"></p>
             </article>
@@ -578,7 +579,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
 
 </body>
 </html>

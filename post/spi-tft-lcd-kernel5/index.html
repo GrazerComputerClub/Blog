@@ -24,7 +24,7 @@
         "datePublished": "2020-11-09 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-11-09 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd-kernel5\/",
-        "wordCount" : "822",
+        "wordCount" : "976",
         "image" : "https://blog.gc2.atimg/SPI-LCD-TFT-fbcp-ili9341.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -413,21 +413,43 @@ Der SPI-Bus Kanal kann nicht parametriert werden, es wird immer SPIO verwendet. 
 <p>Die Kontakte RESET und DC/A0/RS können über Parameter frei zugewiesen werden. Wobei CS immer auf CS0 gesetzt werden muss. RESET wird auf GPIO25 und DC/A0/RS auf GPIO24. MOSI und CLK werden auf die entsprechenden SPI-Bus Anschlüsse verbunden.</p>
 <p><img src="../../img/SPI-LCD-TFT_Steckplatine.png" alt="SPI-LCD-TFT Anschluss"></p>
 <h2 id="erstellung-für-18-160x128-display-mit-st7735r-kontroller">Erstellung für 1,8&rdquo; 160x128 Display mit ST7735R Kontroller</h2>
-<pre><code>sudo apt-get install cmake
+<pre><code>sudo apt install cmake
 cd ~
 git clone https://github.com/juj/fbcp-ili9341.git
 cd fbcp-ili9341
 mkdir build
 cd build
 cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
-make -j
 </code></pre><p>Mit <code>sudo ./fbcp-ili9341</code> kann das Programm dann gestartet werden.</p>
-<p>Parameter Pi-XO:</p>
-<p>1,8&rdquo; 160x128 Display mit ST7735R Kontroller:</p>
+<p>Sollte der Fehler <strong>vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt</strong> angezeigt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden.
+Wenn kein Display angeschlossen ist könnte man die Bildschirmauflösung auf 640x480 setzen.</p>
+<pre><code>hdmi_force_hotplug=1
+#hdmi_cvt: &lt;width&gt; &lt;height&gt; &lt;framerate&gt; &lt;aspect&gt; &lt;margins&gt; &lt;interlace&gt; &lt;rb&gt;
+# width        width in pixels
+# height       height in pixels
+# framerate    framerate in Hz
+# aspect       aspect ratio 1=4:3, 2=14:9, 3=16:9, 4=5:4, 5=16:10, 6=15:9
+# margins      0=margins disabled, 1=margins enabled
+# interlace    0=progressive, 1=interlaced
+# rb           0=normal, 1=reduced blanking
+hdmi_cvt=640 480 60 1 0 0 0
+hdmi_group=2
+hdmi_mode=87
+#display_rotate: 0 .. Normal, 1 .. 90 deg, 2 .. 180 deg
+#display_rotate=1
+disable_overscan=1
+</code></pre><p>Wichtig ist auch den V3D Treiber zu deaktivieren oder auf &ldquo;vc4-fkms-v3d&rdquo; umzustellen.</p>
+<pre><code># Enable DRM VC4 V3D driver
+#dtoverlay=vc4-kms-v3d
+#max_framebuffers=2
+</code></pre><p>Es werden auch mindestens 32 MB GPU Speicher benötigt damit das Programm funktioniert.</p>
+<pre><code>gpu_mem=32
+</code></pre><p>Parameter Pi-XO:</p>
+<p>1,8&rdquo; 160x128 Display mit ST7735R Kontroller (nur bei max. 400 MHz Core Takt):</p>
 <pre><code>cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DDISPLAY_SWAP_BGR=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 </code></pre><p>2,2&rdquo; 320x240 Display mit ili9341 Kontroller:</p>
 <pre><code>cmake -DILI9341=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
-</code></pre><p>Waveshare HAT 1,44&rdquo; 128x128 Display mit ST7735S Kontroller:</p>
+</code></pre><p>Waveshare HAT 1,44&rdquo; 128x128 Display mit ST7735S Kontroller (nur bei max. 400 MHz Core Takt):</p>
 <pre><code>cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 </code></pre><h2 id="verlinkungen">Verlinkungen</h2>
 <p>GitHub Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a></p>
@@ -636,7 +658,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
 
 </body>
 </html>

@@ -24,7 +24,7 @@
         "datePublished": "2018-12-09 00:00:00 \x2b0000 UTC",
         "dateModified" : "2018-12-09 00:00:00 \x2b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-zero-w-stromaufnahme\/",
-        "wordCount" : "324",
+        "wordCount" : "351",
         "image" : "https://blog.gc2.atimg/consumtion.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1675703245" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1675703245" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -265,23 +265,54 @@ Die Leistung beträgt also ca. 0,6 Watt im Idle-Betrieb und 1 Watt im ausgelaste
 Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z. B. Display oder Elektronik ein höherer Verbrauch generiert wird.</p>
 <p><img src="../../img/Raspberry-Pi-zero-W-Stromaufnahme.png" alt="Diagramm"></p>
 <h2 id="optimierungen">Optimierungen</h2>
-<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>/opt/vc/bin/tvservice -o</code>, bringt eine Reduktion von 10 mA.<br>
-Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br>
+<p>Das Abschalten des HDMI-Ausgangs mit dem Aufruf <code>vcgencmd display_power 2 0</code>, bringt eine Reduktion von 10 mA.<br>
+Beim Auruf muss man die ID des Displays angeben:</p>
+<table>
+<thead>
+<tr>
+<th>Display</th>
+<th align="center">ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main LCD</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>Secondary LCD</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>HDMI 0</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>Composite</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>HDMI 1</td>
+<td align="center">7</td>
+</tr>
+</tbody>
+</table>
+<p>Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br>
 WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
 <p><code>rfkill list</code></p>
-<pre><code>0: phy0: Wireless LAN
+<pre><code>0: hci0: Bluetooth
 	Soft blocked: no
 	Hard blocked: no
-1: hci0: Bluetooth
+1: phy0: Wireless LAN
 	Soft blocked: no
 	Hard blocked: no
-</code></pre><p><code>rfkill block 0</code><br>
+</code></pre><p><code>rfkill block 1</code><br>
 <code>rfkill list</code></p>
-<pre><code>0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: no
-1: hci0: Bluetooth
+<pre><code>0: hci0: Bluetooth
 	Soft blocked: no
+	Hard blocked: no
+1: phy0: Wireless LAN
+	Soft blocked: yes
 	Hard blocked: no
 </code></pre><p><code>rfkill unblock 0</code></p>
 <p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; deaktiviert werden.</p>
@@ -493,7 +524,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1675703245"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
 
 </body>
 </html>
