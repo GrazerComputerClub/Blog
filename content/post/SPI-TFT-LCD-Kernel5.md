@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["SPI", "TFT", "LCD", "320x240", "160x128", "128x128", "240x240", "ST7735", "ST7789", "ILI9341"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
@@ -91,10 +91,12 @@ git clone https://github.com/juj/fbcp-ili9341.git
 cd fbcp-ili9341
 mkdir build
 cd build
-cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..+
+cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
+```
+
 Mit ``sudo ./fbcp-ili9341`` kann das Programm dann gestartet werden.
 
-Sollte der Fehler **vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt** angezoegt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden. 
+Sollte der Fehler **vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt** angezeigt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden. 
 Wenn kein Display angeschlossen ist könnte man die Bildschirmauflösung auf 640x480 setzen.
 
 ```
@@ -115,7 +117,7 @@ hdmi_mode=87
 disable_overscan=1
 ```
 
-Wichtig ist auch den V3D Treiber zu deaktivieren
+Wichtig ist auch den V3D Treiber zu deaktivieren oder auf "vc4-fkms-v3d" umzustellen.
 
 ```
 # Enable DRM VC4 V3D driver
@@ -154,4 +156,3 @@ cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=O
 ## Verlinkungen
 
 GitHub Projekt [fbcp-ili9341](https://github.com/juj/fbcp-ili9341)
-

@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Programmierung"]
 keywords = ["WiringPi", "GPIO"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.

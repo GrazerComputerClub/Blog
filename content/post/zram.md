@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["ZRAM", "SWAP", "Auslagerungsdatei", "SD-Karte"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger. 

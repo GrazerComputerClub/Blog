@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["VNC", "Remote control", "PICO-8", "dispmanx"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 

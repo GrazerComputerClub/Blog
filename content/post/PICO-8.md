@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Programmierung", "Raspberry Pi"]
 keywords = ["Retro", "lua", "GameDev"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 

@@ -8,7 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi Zero"] 
 keywords = ["Stromaufnahme", "Consumption", "mA", "overclocking", "MHz", "GHz", "BCM2835", "CPU"]
 weight = 1
-Version=Bullseye K5 & K6
+Version = "Bullseye K5 & K6"
 +++
 
 
