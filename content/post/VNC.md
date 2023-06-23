@@ -8,6 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["VNC", "Remote control", "PICO-8", "dispmanx"]
 weight = 1
+Version=Bullseye K5 & K6
 +++
 
 
@@ -22,17 +23,38 @@ VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig
 
 ## Installation
 
+In der Konfigurationsdatei muss der Treiber von vc4-kms-v3d auf vc4-fkms-v3d geändert werden.
+
 ```
-sudo -i
-apt-get install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
+# Enable DRM VC4 V3D driver
+dtoverlay=vc4-fkms-v3d
+```
+
+Dann kann das Projekt heruntergeladen werden.
+
+```
+sudo apt install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc
-make
-cp dispmanx_vncserver /usr/local/bin/
 ```
 
-"/etc/systemd/system/dmxvnc.service":
+Im "Makefile" muss der Verweise auf OpenMax Library "-lopenmaxil" bei LIBS= entfernt werden.
+Danach lässt sich das Projekt kompilieren.
+
+```
+make
+sudo cp dispmanx_vncserver /usr/local/bin/
+```
+
+Nun kann man noch einen automatischen Dienst erzeugen
+
+```
+sudo nano /etc/systemd/system/dmxvnc.service
+```
+
+In die Datei kopiert man folgende Anweisungen.  
+
 ```
 [Unit]
 Description=Dispmanx VNC
@@ -40,7 +62,7 @@ Description=Dispmanx VNC
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/local/bin/dispmanx_vncserver 
+ExecStart=/usr/local/bin/dispmanx_vncserver
 StandardOutput=null
 StandardError=syslog
 
@@ -48,11 +70,14 @@ StandardError=syslog
 WantedBy=multi-user.target
 ```
 
+Danach kann der Dienst aktiviert werden.
+
 ```
-exit
+sudo systemctl daemon-reload
+sudo systemctl enable dmxvnc
 ```
 
-Danach kann der Dienst mit ``systemctl enable dmxvnc`` aktiviert werden. Dann könnte man den Dienst mit ``service dmxvnc start`` starten oder einen Neustart durchführen.  
+Dann könnte man den Dienst mit ``sudo service dmxvnc start`` starten oder einen Neustart durchführen.  
 Sollte man später das Programm direkt verwenden, also ohne Kompilierung, werden folgenden Runtime Bibliotheken benötigt:
 
 ```
@@ -80,6 +105,4 @@ Dann kann die grafische Oberfläche des Raspberry Pi direkt angezeigt und bedien
 
 [PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT](../wavesharelcdhat)  
 -->
-
-
 

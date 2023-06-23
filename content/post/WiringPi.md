@@ -8,6 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Programmierung"]
 keywords = ["WiringPi", "GPIO"]
 weight = 1
+Version=Bullseye K5 & K6
 +++
 
 WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.
@@ -144,11 +145,21 @@ gpio readall
 
 ## Performance
 
-**Pi 1 B - GC2 Turbo (1000 Hz):**
+<!--
+**Pi 1 B (700 MHz):**
+
+WiringPi GPIO speed test program 
+toggle 100 million times ...
+  100000000 toggle took 22.914 s, Time per toggle 0.229 us, Freq 4.364 MHz
+-->
+
+**Pi 1 B - [GC2 Turbo](https://github.com/GrazerComputerClub/rpi-boot/blob/master/Overclock_Pi1_Turbo.txt) (1000 MHz):**
 
 ```
+sudo apt update
+sudo apt install git
 git clone https://github.com/GrazerComputerClub/Benchmark.git
-cd Benchmark/
+cd Benchmark/src
 gcc gpio_bench.c -o gpio_bench -Wall -lwiringPi
 ./gpio_bench
 ```
@@ -156,7 +167,7 @@ gcc gpio_bench.c -o gpio_bench -Wall -lwiringPi
 ```
 WiringPi GPIO speed test program 
 toggle 100 million times ...
-  100000000 toggle took 19.556 s, Time per toggle 0.196 us, Freq 5.114 MHz 
+  100000000 toggle took 16.044 s, Time per toggle 0.160 us, Freq 6.233 MHz 
 ```
 
 
@@ -174,14 +185,14 @@ gcc spi_bench_adc.c -o spi_bench_adc -Wall -lwiringPi
 
 ```
 gcc spi_bench_dac-vectorgaming.c -o spi_bench_dac-vectorgaming -Wall -lwiringPi -lm
-./spi_bench_adc
+./spi_bench_dac-vectorgaming
 ```
 
 ```
 WiringPi SPI speed (vector gaming) test program
 open device '/dev/spidev0.0' (6 MHz) ...
 Pong test:
-  1000 frames took 17.935 s, dots per frame 150, Time per dot 120 us, fps 56 
+  1000 frames took 17.551 s, dots per frame 150, Time per dot 117 us, fps 57 
 Space Invaders test:
-  300 frames took 23.339 s, dots per frame 650, Time per dot 120 us, fps 13 
+  300 frames took 22.767 s, dots per frame 650, Time per dot 117 us, fps 13 
 ```

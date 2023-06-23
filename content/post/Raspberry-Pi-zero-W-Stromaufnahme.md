@@ -8,6 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi Zero"] 
 keywords = ["Stromaufnahme", "Consumption", "mA"]
 weight = 1
+Version=Bullseye K5 & K6
 +++
 
 
@@ -29,27 +30,38 @@ Zu beachten ist allerdings, dass durch zusätzlich angeschlossene Hardware wie z
 
 ## Optimierungen
 
-Das Abschalten des HDMI-Ausgangs mit dem Aufruf ``/opt/vc/bin/tvservice -o``, bringt eine Reduktion von 10 mA.  
+Das Abschalten des HDMI-Ausgangs mit dem Aufruf ``vcgencmd display_power 2 0``, bringt eine Reduktion von 10 mA.  
+Beim Auruf muss man die ID des Displays angeben:
+
+| Display       | ID |
+|---------------|:--:|
+| Main LCD      |  0 |
+| Secondary LCD |  1 |
+| HDMI 0        |  2 |
+| Composite     |  3 |
+| HDMI 1        |  7 |
+
+
 Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.  
 WLAN kann zu Beispiel über den 'rfkill' Befehl deaktiviert werden. Parameter 'list' dient dabei zum Auflisten der Geräte, 'block' zum Abschalten und 'unblock' zum Einschalten.
 
 ``rfkill list``
 ``` 
-0: phy0: Wireless LAN
+0: hci0: Bluetooth
 	Soft blocked: no
 	Hard blocked: no
-1: hci0: Bluetooth
+1: phy0: Wireless LAN
 	Soft blocked: no
 	Hard blocked: no
 ```
-``rfkill block 0``\
+``rfkill block 1``\
 ``rfkill list``
 ``` 
-0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: no
-1: hci0: Bluetooth
+0: hci0: Bluetooth
 	Soft blocked: no
+	Hard blocked: no
+1: phy0: Wireless LAN
+	Soft blocked: yes
 	Hard blocked: no
 ```
 ``rfkill unblock 0``
@@ -62,4 +74,3 @@ dtoverlay=pi3-disable-bt
 ```
 
 Das so deaktivierte WLAN reduziert die Stromaufnahme um 20 mA. 
-

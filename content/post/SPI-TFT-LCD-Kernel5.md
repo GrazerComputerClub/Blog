@@ -8,6 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["SPI", "TFT", "LCD", "320x240", "160x128", "128x128", "240x240", "ST7735", "ST7789", "ILI9341"]
 weight = 1
+Version=Bullseye K5 & K6
 +++
 
 Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.
@@ -84,26 +85,59 @@ Die Kontakte RESET und DC/A0/RS können über Parameter frei zugewiesen werden. 
 ## Erstellung für 1,8" 160x128 Display mit ST7735R Kontroller
 
 ```
-sudo apt-get install cmake
+sudo apt install cmake
 cd ~
 git clone https://github.com/juj/fbcp-ili9341.git
 cd fbcp-ili9341
 mkdir build
 cd build
-cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
-make -j
- ```
-
+cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..+
 Mit ``sudo ./fbcp-ili9341`` kann das Programm dann gestartet werden.
+
+Sollte der Fehler **vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt** angezoegt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden. 
+Wenn kein Display angeschlossen ist könnte man die Bildschirmauflösung auf 640x480 setzen.
+
+```
+hdmi_force_hotplug=1
+#hdmi_cvt: <width> <height> <framerate> <aspect> <margins> <interlace> <rb>
+# width        width in pixels
+# height       height in pixels
+# framerate    framerate in Hz
+# aspect       aspect ratio 1=4:3, 2=14:9, 3=16:9, 4=5:4, 5=16:10, 6=15:9
+# margins      0=margins disabled, 1=margins enabled
+# interlace    0=progressive, 1=interlaced
+# rb           0=normal, 1=reduced blanking
+hdmi_cvt=640 480 60 1 0 0 0
+hdmi_group=2
+hdmi_mode=87
+#display_rotate: 0 .. Normal, 1 .. 90 deg, 2 .. 180 deg
+#display_rotate=1
+disable_overscan=1
+```
+
+Wichtig ist auch den V3D Treiber zu deaktivieren
+
+```
+# Enable DRM VC4 V3D driver
+#dtoverlay=vc4-kms-v3d
+#max_framebuffers=2
+```
+
+Es werden auch mindestens 32 MB GPU Speicher benötigt damit das Programm funktioniert.
+
+```
+gpu_mem=32
+```
 
 
 Parameter Pi-XO:
 
- 1,8" 160x128 Display mit ST7735R Kontroller:
+ 1,8" 160x128 Display mit ST7735R Kontroller (nur bei max. 400 MHz Core Takt):
 
 ```
 cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DDISPLAY_SWAP_BGR=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 ```
+
 
 2,2" 320x240 Display mit ili9341 Kontroller:
 
@@ -111,7 +145,7 @@ cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CL
 cmake -DILI9341=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 ```
 
-Waveshare HAT 1,44" 128x128 Display mit ST7735S Kontroller:
+Waveshare HAT 1,44" 128x128 Display mit ST7735S Kontroller (nur bei max. 400 MHz Core Takt):
 
 ```
 cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..

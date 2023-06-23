@@ -8,6 +8,7 @@ writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
 keywords = ["remote", "SSH", "Password"]
 weight = 1
+Version=Bullseye K5 & K6
 +++
 
 Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.
@@ -91,3 +92,8 @@ and check to make sure that only the key(s) you wanted were added.
 Verbindet man sich nun per SSH zum Raspberry Pi wird kein Passwort mehr abgefragt.
 
 ``ssh pi@raspberrypi.local``
+
+Naürlich kann man auch per SSH Daten transferieren. Dazu verwendet man das program scp (secure copy).
+Dabei wird Benutzername und IP-Adresse oder Hostname vor den Pfad gestellt.  
+
+``scp pico-8_0.2.5g_raspi.zip pi@10.0.2.141:/home/pi``
