@@ -11,9 +11,9 @@
              "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Lego Roboter \x2b Raspberry Pi",
-        "headline" : "Lego Roboter \x2b Raspberry Pi",
-        "description" : "\x3cp\x3e\x26ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit \x3ca href=\x22https:\/\/www.dexterindustries.com\/brickpi\/\x22\x3eBrickPi\x3c\/a\x3e.\x26rdquo;\nDas von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.\x3c\/p\x3e",
+        "name" : "Lego Roboter \u002b Raspberry Pi",
+        "headline" : "Lego Roboter \u002b Raspberry Pi",
+        "description" : "\u003cp\u003e\u0026ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit \u003ca href=\u0022https:\/\/www.dexterindustries.com\/brickpi\/\u0022\u003eBrickPi\u003c\/a\u003e.\u0026rdquo;\nDas von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-22 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-22 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-22 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-22 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/robot-arm\/",
         "wordCount" : "580",
         "image" : "https://blog.gc2.atimg/brickPi_explorer.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -291,7 +291,7 @@ Ein Berührungssensor (Taster) verhindert, dass der Greifarm zu weit nach hinten
 <p>Wenn man ein Set mit SD-Karte von Dexter Industries gekauft hat ist dieser Schritt nicht notwendig, da die vorbereitete Distribution bereits alle notwendigen Module beinhaltet.</p>
 <p>Um eine Standard Raspbian Distribution für BrickPi vorzubereiten genügt es folgende Befehle auszuführen:</p>
 <p>(Checkout des <a href="https://github.com/DexterInd/BrickPi">BrickPi-Projektes auf GitHub</a> + Installations-Script ausführen)</p>
-<pre><code>git clone https://github.com/DexterInd/BrickPi.git
+<pre tabindex="0"><code>git clone https://github.com/DexterInd/BrickPi.git
 cd BrickPi/Setup_Files
 sudo chmod +x install.sh
 sudo ./install.sh
@@ -299,11 +299,11 @@ sudo ./install.sh
 <p>Es gibt <a href="https://github.com/DexterInd/BrickPi/tree/master/Software">vorbereitete Softwarebibliotheken</a> für C, Python und Scratch.</p>
 <p>Für die Software des &ldquo;RobotARM&rdquo; habe ich mich dazu entschieden, diesen in zu schreiben.</p>
 <p>Als erstes müsst ihr die benötigten &ldquo;Treiber&rdquo; für euer Projekt auswählen:</p>
-<pre><code>git clone https://github.com/DexterInd/BrickPi.git
+<pre tabindex="0"><code>git clone https://github.com/DexterInd/BrickPi.git
 cp BrickPi/Software/BrickPi_C/Drivers/ RobotArm/ -r
 cd RobotArm/
 </code></pre><p>Die C-Bibliothek kommt in Form von zwei Dateien - &ldquo;BrickPi.h&rdquo; und &ldquo;tick.h&rdquo;</p>
-<pre><code>[mw@mwmaster RobotArm]$ ll
+<pre tabindex="0"><code>[mw@mwmaster RobotArm]$ ll
 insgesamt 36K
 drwxr-xr-x  2 mw mw 4,0K 22. Dez 16:51 ./
 drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
@@ -313,7 +313,7 @@ drwxr-xr-x 27 mw mw 4,0K 22. Dez 16:51 ../
 <p>Für die C-Bibliothek gibt es <a href="https://github.com/DexterInd/BrickPi/tree/master/Software/BrickPi_C/Project_Examples">ein einfaches Beispiel</a>, um sich mit der Funktionsweise der bereitgestellten API vertraut zu machen.</p>
 <p>Euer Programm muss keiner bestimmen Form entsprechen, es sind jedoch einige Funktionsaufrufe in die BrickPi-Bibliothek (siehe BrickPi.h) notwendig, um die Hardware zu initialisieren.</p>
 <p>Am besten man kapselt diese in Hilfsfunktionen, damit Program-Main übersichtlicher bleibt:</p>
-<pre><code>void SetUARTAtmegaPorts() {
+<pre tabindex="0"><code>void SetUARTAtmegaPorts() {
     //http://www.dexterindustries.com/forum/?topic=programming-in-c-2/#post-1078
     BrickPi.Address[0] = 1; // UART AtMega 328P Address (needed by BrickPi)
     BrickPi.Address[1] = 2; // UART AtMega 328P Address (needed by BrickPi)
@@ -333,7 +333,7 @@ void DeviceConfig() {
     BrickPi.SensorType[SENSOR_LIGHT]        = TYPE_SENSOR_LIGHT_ON;
 }
 </code></pre><p>Damit bleibt die Hauptfunktion relativ gut lesbar:</p>
-<pre><code>int main(int argc, char *argv[]) {
+<pre tabindex="0"><code>int main(int argc, char *argv[]) {
     printf(&quot; - RobotARM -\n&quot;);
     ClearTick();
     int setupResult = BrickPiSetup();
@@ -557,7 +557,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

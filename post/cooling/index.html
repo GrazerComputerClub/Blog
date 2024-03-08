@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi CPU Kühlung",
         "headline" : "Raspberry Pi CPU Kühlung",
-        "description" : "\x3cp\x3eRaspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eRaspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-14 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-09-14 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-09-14 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-09-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/cooling\/",
         "wordCount" : "950",
         "image" : "https://blog.gc2.atimg/fan.png"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -263,12 +263,12 @@
           <div class="entry-content">
             <article>
               <p>Raspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Wann eine Kühlung des SoC bzw. des Prozessor der Raspberry Pi nötig ist hängt von vielen Faktoren ab. Die Raspberry Pi Type, Umgebungstemperatur und das Gehäuse sind die wichtigsten. Um genau fest zu stellen unter welchen Bedingungen eine Kühlung notwendig ist, wurde mit dem GC2 3D-Druck-Gehäuse mehrere Leistungstest durchgeführt. Dazu wurde die Raspberry Pi 3 benutzt, sie besitzt keine Heatspreader. Zum Aufzeichnen der ARM Frequenz und der Prozessor-Temperatur wurde das Python Programm <a href="https://github.com/MilhouseVH/bcmstat">bcmstat</a> verwendet. Bei GC2 Raspjamming OS ist das Programm bereits vorinstalliert. Die CPU-Last wurde mit dem Programm &ldquo;stress&rdquo; erzeugt.<br>
 Beim Testl wurde folgendes Shell-Script verwendet</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -284,7 +284,7 @@ Beim Testl wurde folgendes Shell-Script verwendet</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bcmstat.sh &gt; rpi_<span style="color:#bb60d5">$1</span>.txt &amp;
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bcmstat.sh &gt; rpi_<span style="color:#bb60d5">$1</span>.txt &amp;
 <span style="color:#bb60d5">PID</span><span style="color:#666">=</span><span style="color:#bb60d5">$!</span>
 sleep <span style="color:#40a070">10</span>
 stress --cpu <span style="color:#40a070">1</span> --timeout 420s
@@ -310,7 +310,7 @@ Auch wenn man einen Kühlkörper auf den SoC befestigt, wird damit der Temperatu
 <h2 id="lüftersteuerung">Lüftersteuerung</h2>
 <p>Da man nun weiß, dass eine aktive Kühlung notwendig und sinnvoll ist, stellt sich nun die Frage, benötigt man den Lüfter immer bzw. muss der Lüfter ständig laufen?
 Man könnte den Lüfter ja nur aktivieren wenn er wirklich gebraucht wird also wenn die Prozessortemperatur zu hoch ist. Tatsächlich ist so eine Funktion bereits im Kernel verfügbar. Der Devicetree gpio-fan ist genau für diese Funktion gemacht worden.</p>
-<pre><code>Name:   gpio-fan
+<pre tabindex="0"><code>Name:   gpio-fan
 Info:   Configure a GPIO pin to control a cooling fan.
 Load:   dtoverlay=gpio-fan,&lt;param&gt;=&lt;val&gt;
 Params: gpiopin                 GPIO used to control the fan (default 12)
@@ -318,7 +318,7 @@ Params: gpiopin                 GPIO used to control the fan (default 12)
                                 millicelcius (default 55000)
 </code></pre><p>Als Parameter kann man den GPIO und die Einschalttemperatur angeben. Die Hysterese ist leider fix mit 10 °C hinterlegt.
 In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiviert und bei 45 °C deaktiviert.</p>
-<h2 id="schaltung-">Schaltung</h2>
+<h2 id="schaltung">Schaltung</h2>
 <p>Der GPIO darf natürlich nicht direkt an den Lüfter geschlossen werden. Die Stromaufnahme eines Lüfters liegt bei ca. 80-150 mA und damit weit über der Belastungsgrenze. Man muss also eine Transistor- oder FET-Schaltung als Schalter für die 5 V Versorgung verwenden.</p>
 <p><img src="../../img/gpio-fan_5v_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung"></p>
 <p>Bei der Transistorschaltung wird der leistungsfähige BC337 Typ verwendet. Er ist ein NPN-Transistor mit 800 mA Maximalstrom und mehr als 600 mW möglicher Verlustleistung. Als Basis-Vorwiderstand wird 4,7 KOhm verwendet, um den Ausgang möglichst wenig zu belasten.</p>
@@ -327,19 +327,19 @@ In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiv
 <img src="../../img/gpio-fan_diode_Steckplatine.png" alt="Raspberry Pi Schaltung Lüftersteuerung mit Dioden"></p>
 <h2 id="aktivierung-lüftersteuerung">Aktivierung Lüftersteuerung</h2>
 <p>In die Datei config.txt muss lediglich der Devicetree geladen und parametriert werden. In diesem Fall wird GPIO 21 verwendet. Die Aktivierung des Lüfters erfolgt bei 55 °C.</p>
-<pre><code>dtoverlay=gpio-fan,gpiopin=21
+<pre tabindex="0"><code>dtoverlay=gpio-fan,gpiopin=21
 </code></pre><p>55 °C sind relativ wenig, wenn man bedenkt, dass diese Temperatur bereits mit der Belastung von einem Kern erreicht wird. Sinnvoller wäre es wohl den Lüfter erst bei einer höheren Temperatur z.B. bei 70 °C zu aktivieren.</p>
-<pre><code>dtoverlay=gpio-fan,gpiopin=21,temp=70000
+<pre tabindex="0"><code>dtoverlay=gpio-fan,gpiopin=21,temp=70000
 </code></pre><p>Wie man aber an der Kühlleistung des Lüfters sieht, wird die Prozessortemperatur um fast 20 °C verringert. Wenn die Hysterese aber nur 10 °C beträgt, bedeutet das, der Lüfter wird bei hoher Belastung immer wieder an- und ausgeschaltet. Die Temperatur schwankt dann immer zwischen 60 und 70 °C.<br>
 Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter &ldquo;hysteresis&rdquo; und &ldquo;temperature&rdquo; (Hexadezimal-Werte) angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.</p>
-<pre><code>cd /boot/overlays
+<pre tabindex="0"><code>cd /boot/overlays
 sudo dtc -O dts -I dtb gpio-fan.dtbo -o gpio-fan.dts
-</code></pre><pre><code>cat gpio-fan.dts | egrep &quot;temper|hyster&quot;
+</code></pre><pre tabindex="0"><code>cat gpio-fan.dts | egrep &quot;temper|hyster&quot;
   temperature = &lt;0xd6d8&gt;;
   hysteresis = &lt;0x2710&gt;;
 </code></pre><p>Mit dem Konsolen Programm bc können die ermittelten Hexadezimal- und Dezimalwerte umrechnen.</p>
-<pre><code>sudo apt-get install bc
-</code></pre><pre><code>echo &quot;ibase=16;D6D8&quot; | bc
+<pre tabindex="0"><code>sudo apt-get install bc
+</code></pre><pre tabindex="0"><code>echo &quot;ibase=16;D6D8&quot; | bc
 55000
 echo &quot;ibase=16;2710&quot; | bc
 10000
@@ -349,17 +349,17 @@ FDE8
 echo &quot;obase=16;20000&quot; | bc
 4E20
 </code></pre><p>Nun überprüfen wir ob man die Zahlen sicher ersetzen bzw. das sie kann.</p>
-<pre><code>cat gpio-fan.dts | egrep &quot;d6d8|2710&quot;
+<pre tabindex="0"><code>cat gpio-fan.dts | egrep &quot;d6d8|2710&quot;
   temperature = &lt;0xd6d8&gt;;
   hysteresis = &lt;0x2710&gt;;
 </code></pre><p>Nun ewiur:</p>
-<pre><code>sudo cp gpio-fan.dts gpio-fanH20.dts
+<pre tabindex="0"><code>sudo cp gpio-fan.dts gpio-fanH20.dts
 sudo sed -i 's/d6d8/fde8/g' gpio-fanH20.dts
 sudo sed -i 's/2710/4e20/g' gpio-fanH20.dts
 sudo dtc -O dtb -I dts gpio-fanH20.dts -o gpio-fanH20.dtbo
 </code></pre><p>Damit wurde ein neuer Devicetree mit dem Namen gpio-fanH20 erzeugt. In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 65 °C aktiviert und bei 20 °C weniger, also 45 °C deaktiviert.</p>
 <p>In der config.txt Datei kann der neue Devicetree geladen und gegebenenfalls parametriert werden.</p>
-<pre><code>dtoverlay=gpio-fanH20,gpiopin=21,temp=70000
+<pre tabindex="0"><code>dtoverlay=gpio-fanH20,gpiopin=21,temp=70000
 </code></pre><p><img src="../../img/RPI3B_cooling_fan.png" alt="Raspberry Pi 3 Temperature mit Lüftersteuerung"></p>
             </article>
           </div>
@@ -567,7 +567,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

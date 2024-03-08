@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : " GPIO-Eingang zur Maus Emulation",
         "headline" : " GPIO-Eingang zur Maus Emulation",
-        "description" : "\x3cp\x3eDie Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDie Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-02-14 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-02-14 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-02-14 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-02-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/gpio-mouse\/",
         "wordCount" : "759",
         "image" : "https://blog.gc2.atimg/GPIO-Input-Mouse.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -269,7 +269,7 @@
 <p>uinput ist ein Kernelmodul, mit dem Eingabegeräte aus dem Userspace emuliert werden können. Durch Schreiben auf das Gerät /dev/uinput kann ein Programm ein virtuelles Eingabegerät mit bestimmten Funktionen erstellen. Dieses Eingabegerät kann eine Tastatur, Maus oder Joypad bzw. Joystick sein.<br>
 libsuinput ist eine einfache C-Bibliothek die den Zugriff auf uinput etwas erleichtert. Es ist kein Hexenwerk direkt ohne Bibliothek zu arbeiten, in dem Fall benutzen wir aber die Bibliothek umso den Programmieraufwand zu reduzieren.<br>
 Zuerst muss die Library aus den Sourcecode erstellt und dann am System installiert werden.</p>
-<pre><code>git clone https://github.com/tuomasjjrasanen/libsuinput.git
+<pre tabindex="0"><code>git clone https://github.com/tuomasjjrasanen/libsuinput.git
 cd libsuinput
 sudo apt-get install libtool
 ./autogen.sh
@@ -301,7 +301,7 @@ sudo ldconfig
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -395,7 +395,7 @@ sudo ldconfig
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
 </span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;err.h&gt;</span><span style="color:#007020">
 </span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;string.h&gt;</span><span style="color:#007020">
 </span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;unistd.h&gt;</span><span style="color:#007020">
@@ -489,14 +489,14 @@ sudo ldconfig
 }
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>gcc -Wall -o gpiomouse gpiomouse.c -lsuinput -lwiringPi
+</div><pre tabindex="0"><code>gcc -Wall -o gpiomouse gpiomouse.c -lsuinput -lwiringPi
 sudo ./gpiomouse &amp;
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Wenn der Fehler &ldquo;suinput_open: No such device&rdquo; ausgegeben wird, so ist das uinput Device nicht verfügbar. Dann kann mit &ldquo;sudo modprobe uinput&rdquo; das Kernel-Modul geladen werden.</p>
 <h2 id="testen-mit-scummvm-emulation">Testen mit ScummVM Emulation</h2>
 <p>Testen kann man die Funktion mit dem Point-and-Click-Adventure Emulationsprogramm ScummVM.</p>
-<pre><code>sudo apt-get install scummvm lure-of-the-temptress
+<pre tabindex="0"><code>sudo apt-get install scummvm lure-of-the-temptress
 scummvm
 </code></pre><p>Danach kann man &ldquo;Spiel hinzufügen&rdquo; drücken und den Pfad &ldquo;/usr/share/scummvm/lure-of-the-temptress/de&rdquo; angeben, um das Spiel &ldquo;Lure of the Temptress (DOS/German)&rdquo; im Menü zu erhalten. Mit einem Doppelklick auf den Namen kann man das Speil dann starten, sofern die GPIO-Maus funktioniert.</p>
 <h2 id="youtube-video">YouTube Video</h2>
@@ -709,7 +709,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

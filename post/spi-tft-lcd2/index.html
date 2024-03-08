@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 2",
         "headline" : "SPI TFT LCD - Teil 2",
-        "description" : "\x3cp\x3eHat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eHat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-15 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-15 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-15 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-15 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd2\/",
         "wordCount" : "561",
         "image" : "https://blog.gc2.atimg/SPI-LCD-TFT2.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -260,7 +260,7 @@
 <h2 id="verwendung--grafikausgabe">Verwendung / Grafikausgabe</h2>
 <h2 id="framebuffer">Framebuffer</h2>
 <p>Nach dem Anschließen des SPI TFT LCD und dem Laden des Kernelmoduls &lsquo;fbtft_device&rsquo; wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Display erzeugt. Nun kann der Framebuffer direkt angesprochen werden z. B. mit dem Programm &lsquo;fbi‘, das zur Anzeige eines Bildes verwendet wird.</p>
-<pre><code>sudo apt-get install fbi
+<pre tabindex="0"><code>sudo apt-get install fbi
 wget https://git.io/JvgXf -O sample-128x128.jpg
 sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample-128x128.jpg
 </code></pre><p>Früher konnte man mit der SDL Library 1 Spiele auf einen beliebigen Framebuffer setzen. Bei der aktuellen SDL Library Version 2 ist das nicht mehr möglich.</p>
@@ -269,7 +269,7 @@ sudo fbi -d /dev/fb1 -T 1 -noverbose -a sample-128x128.jpg
 Die Dekodierung von Videos passiert bei der Raspberry Pi in der GPU, so ist es auch auf der langsamen Raspberry Pi Zero möglich Video abzuspielen.
 Mit dem Programm &lsquo;fbcp&rsquo; kann diese ständige Kopieroperation nun im Hintergrund mit geringer CPU-Last erledigt werden. Dabei wird sogar das Bild auf die Auflösung des SPI-Displays angepasst  bzw. herunter gerechnet. Das gilt für die Konsole, für X-Windows und auch für die Videoausgabe. Man kann also auch flüssig Videos auf einem 160x128 Displays ausgeben.</p>
 <p><strong>Installation:</strong></p>
-<pre><code>sudo -i
+<pre tabindex="0"><code>sudo -i
 apt-get install cmake 
 cd /usr/src
 git clone https://github.com/tasanakorn/rpi-fbcp
@@ -282,7 +282,7 @@ install fbcp /usr/local/bin/fbcp
 exit
 </code></pre><p>Nun kann man noch ein systemd-Service für das Programm erstellen.</p>
 <p>&ldquo;/etc/systemd/system/fbcp.service&rdquo;:</p>
-<pre><code>[Unit]
+<pre tabindex="0"><code>[Unit]
 Description=fbcp Service
 
 [Service]
@@ -296,16 +296,16 @@ WantedBy=multi-user.target
 </code></pre><p>Dann kann der Dienst mit dem Aufruf <code>sudo service fbcp start</code> gestartet und mit <code>sudo service fbcp stop</code> beendet werden. Der aktuelle Status kann mit dem Befehl <code>service fbcp status</code> abgerufen werden.</p>
 <p>Das Programm &lsquo;fbcp&rsquo; kann permanent entweder über einen Eintrag in der Datei &ldquo;/etc/rc.local&rdquo; gestartet werden oder weit eleganter über einen udev-Eintrag. Dabei erfolgt der Start des Programms über den Trigger, also dem Anlegen des ‚/dev/fb1‘ Geräts.</p>
 <p>&ldquo;/etc/udev/rules.d/80-fbcp.rules&rdquo;:</p>
-<pre><code>SUBSYSTEM==&quot;graphics&quot; ACTION==&quot;add&quot; ENV{DEVNAME}==&quot;/dev/fb1&quot;, RUN+=&quot;/bin/systemctl start fbcp&quot;
+<pre tabindex="0"><code>SUBSYSTEM==&quot;graphics&quot; ACTION==&quot;add&quot; ENV{DEVNAME}==&quot;/dev/fb1&quot;, RUN+=&quot;/bin/systemctl start fbcp&quot;
 </code></pre><p>Als Test könnte man nun ein Video abspielen.</p>
-<pre><code>sudo apt-get install omxplayer
+<pre tabindex="0"><code>sudo apt-get install omxplayer
 wget https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4
 fbcp &amp;
 omxplayer sintel_trailer-480p.mp4
 </code></pre><h2 id="auflösung">Auflösung</h2>
 <p>&lsquo;fbcp&rsquo; passt die Ausgabe bereits an die Auflösung des Zieldisplays an, dennoch kann es sinnvoll sein den Grafikmodus anstatt auf Full HD gleich in der nativen Auflösung des Displays zu setzen. Dazu muss man eine Custom HDMI Einstellung in der Konfigurationsdatei &ldquo;config.txt&rdquo; definieren. Im Beispiel wurde das &ldquo;sainsmart18&rdquo; Display mit 160x128 Pixel verwendet.</p>
 <p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-<pre><code>//HDMI custom:
+<pre tabindex="0"><code>//HDMI custom:
 hdmi_cvt=160 128 60 4 0 0 0
 hdmi_force_hotplug=1
 hdmi_group=2
@@ -532,7 +532,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

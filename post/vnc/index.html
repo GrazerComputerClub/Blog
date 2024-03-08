@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "VNC - Virtual Network Computing",
         "headline" : "VNC - Virtual Network Computing",
-        "description" : "\x3cp\x3eWer sich gerne per Remote Control auf die grafische Oberfläche des Raspberry Pi verbinden möchte, kann dazu einen speziell angepassten VNC-Server benutzen.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eWer sich gerne per Remote Control auf die grafische Oberfläche des Raspberry Pi verbinden möchte, kann dazu einen speziell angepassten VNC-Server benutzen.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,10 +21,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-01-02 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-01-02 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-01-02 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-01-02 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/vnc\/",
-        "wordCount" : "360",
+        "wordCount" : "359",
         "image" : "https://blog.gc2.atimg/VNC-Server-PICO-8.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -262,21 +262,21 @@
 VNC verwendet das Remote Framebuffer Protocol und ist damit plattformunabhängig benutzbar. Für den Raspberry Pi ist eine eigens angepasste Version verfügbar, die per Dispmanx API direkt GPU Funktionen nutzt.</p>
 <h2 id="installation">Installation</h2>
 <p>In der Konfigurationsdatei muss der Treiber von vc4-kms-v3d auf vc4-fkms-v3d geändert werden.</p>
-<pre><code># Enable DRM VC4 V3D driver
+<pre tabindex="0"><code># Enable DRM VC4 V3D driver
 dtoverlay=vc4-fkms-v3d
 </code></pre><p>Dann kann das Projekt heruntergeladen werden.</p>
-<pre><code>sudo apt install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
+<pre tabindex="0"><code>sudo apt install libvncserver-dev libconfig++-dev libgles2-mesa-dev libegl1-mesa-dev 
 cd /usr/src/
 git clone https://github.com/patrikolausson/dispmanx_vnc.git
 cd dispmanx_vnc
 </code></pre><p>Im &ldquo;Makefile&rdquo; muss der Verweise auf OpenMax Library &ldquo;-lopenmaxil&rdquo; bei LIBS= entfernt werden.
 Danach lässt sich das Projekt kompilieren.</p>
-<pre><code>make
+<pre tabindex="0"><code>make
 sudo cp dispmanx_vncserver /usr/local/bin/
 </code></pre><p>Nun kann man noch einen automatischen Dienst erzeugen</p>
-<pre><code>sudo nano /etc/systemd/system/dmxvnc.service
+<pre tabindex="0"><code>sudo nano /etc/systemd/system/dmxvnc.service
 </code></pre><p>In die Datei kopiert man folgende Anweisungen.</p>
-<pre><code>[Unit]
+<pre tabindex="0"><code>[Unit]
 Description=Dispmanx VNC
 
 [Service]
@@ -284,16 +284,15 @@ Type=simple
 User=root
 ExecStart=/usr/local/bin/dispmanx_vncserver
 StandardOutput=null
-StandardError=syslog
 
 [Install]
 WantedBy=multi-user.target
 </code></pre><p>Danach kann der Dienst aktiviert werden.</p>
-<pre><code>sudo systemctl daemon-reload
+<pre tabindex="0"><code>sudo systemctl daemon-reload
 sudo systemctl enable dmxvnc
 </code></pre><p>Dann könnte man den Dienst mit <code>sudo service dmxvnc start</code> starten oder einen Neustart durchführen.<br>
 Sollte man später das Programm direkt verwenden, also ohne Kompilierung, werden folgenden Runtime Bibliotheken benötigt:</p>
-<pre><code>sudo apt-get install libvncserver1 libconfig++9v5 libgles2-mesa libegl1
+<pre tabindex="0"><code>sudo apt-get install libvncserver1 libconfig++9v5 libgles2-mesa libegl1
 </code></pre><h2 id="vnc-viewer-client">VNC Viewer (Client)</h2>
 <p>Es gibt eine Vielzahl an VNC Viewern, z. B. xvnc4viewer der mit dem Aufruf <code>apt-get install xvnc4viewer</code> installiert wird. Ein VNC Viewer auf Java Basis ist direkt portabel und kann auf allen Plattformen verwendet werden. Ich kann hier TigerVNC empfehlen, denn dieser Client kann auch den Bildschirm vergrößern. Er wird für alle Plattformen und auch für Java auf <a href="https://github.com/TigerVNC/tigervnc/releases">GitHub</a> zur Verfügung gestellt.</p>
 <p>Die Verbindung zur Raspberry Pi erfolgt über den Namen &lsquo;raspberrypi.local&rsquo; und dem Port 5900.</p>
@@ -509,7 +508,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

@@ -6,10 +6,69 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WiringPi Library</title>
+      <link>https://blog.gc2.at/post/wiringpi/</link>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/wiringpi/</guid>
+      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
+    </item>
     
-	<atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi OS Bookworm</title>
+      <link>https://blog.gc2.at/post/bookworm/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/bookworm/</guid>
+      <description>&lt;p&gt;2023 wurde Raspberry Pi OS auf die aktuelle Debian Basis 12 aktualisiert und trägt somit den Namen Bookworm. Dadurch hat sich einiges geändert, hier eine kleine Auflistung.&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>Raspberry Pi GPIO Librarys</title>
+      <link>https://blog.gc2.at/post/gpiolibrarys/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gpiolibrarys/</guid>
+      <description>&lt;p&gt;Zwischen 2019 und 2024 gab es einige Änderungen beim Raspberry Pi Computer, allerdings haben viele GPIO Libarys inzwischen den Support eingestellt. Ein kurzer Überblick über den aktuellen Stand der GPIO Bibliotheken&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero Shopping Guide</title>
+      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
+      <pubDate>Sun, 29 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
+      <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minecraft Server</title>
+      <link>https://blog.gc2.at/post/minecraft-server/</link>
+      <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
+      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dell Laptop upgrade</title>
+      <link>https://blog.gc2.at/post/gc2-laptops/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
+      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>
+      <link>https://blog.gc2.at/post/zram/</link>
+      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/zram/</guid>
+      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
@@ -27,33 +86,6 @@
       
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Zero Shopping Guide</title>
-      <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
-      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
-      <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WiringPi Library</title>
-      <link>https://blog.gc2.at/post/wiringpi/</link>
-      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/wiringpi/</guid>
-      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Minecraft Server</title>
-      <link>https://blog.gc2.at/post/minecraft-server/</link>
-      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
-      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -247,15 +279,6 @@ Uhrzeit: 3:24&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>
-      <link>https://blog.gc2.at/post/zram/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/zram/</guid>
-      <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Geany mit GTK2</title>
       <link>https://blog.gc2.at/post/geany/</link>
       <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
@@ -307,15 +330,6 @@ Uhrzeit: 3:24&lt;/p&gt;</description>
       
       <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
       <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Dell Laptop upgrade</title>
-      <link>https://blog.gc2.at/post/gc2-laptops/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
-      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
     </item>
     
     <item>

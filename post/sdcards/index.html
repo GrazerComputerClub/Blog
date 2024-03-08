@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SD-Karte für Raspberry Pi",
         "headline" : "SD-Karte für Raspberry Pi",
-        "description" : "\x3cp\x3eImmer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eImmer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-12-25 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-12-25 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-12-25 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-12-25 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/sdcards\/",
         "wordCount" : "1272",
         "image" : "https://blog.gc2.atimg/sdcards.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -263,115 +263,115 @@
           <div class="entry-content">
             <article>
               <p>Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Die SD-Karte hat einen wesentlichen Anteil an der Performance der Raspberry Pi, immerhin läuft das gesamt Betriebssystem auf der Karte. Langsame SD-Karten führen zu einer merklichen Verzögerung. Doch schnellere Karten sind auch um einiges teurer. Wenn man viele Systeme ausrüsten muss und hierfür ein begrenztes Budget zur Verfügung hat, ist guter Rat teuer. Dieser Benchmark soll eine Orientierungshilfe bieten.<br>
 So nebenbei konnten auch billige China Karten auf ihre Performance überprüft werden.<br>
 Es wurde die Performance auf einem Raspberry Pi 2 ermittelt, der in Zukunft beim GC2 Raspjamming eingesetzt werden soll. Hier stehen vorrangig Intenso und Transcend Karten zur Verfügung. Bei den älteren Raspberry Pi Zero Leihmaterialien sind Binful und Mixza Karten verfügbar.</p>
-<h2 id="installation-und-vorbereitung-">Installation und Vorbereitung</h2>
+<h2 id="installation-und-vorbereitung">Installation und Vorbereitung</h2>
 <p>Leider ist das Benchmark-Programm iozone nicht in Raspbian vorhanden. Deshalb muss die aktuelle Version heruntergeladen und kompiliert werden. Bei der GC2 Image Raspjamming wird das Programm in Zukunft bereits vorinstalliert sein. Bei anderen Distributionen wie z. B. Mint kann es mit &ldquo;sudo apt-get install iozone3&rdquo; installiert werden.</p>
-<pre><code>wget http://www.iozone.org/src/current/iozone3_488.tar
+<pre tabindex="0"><code>wget http://www.iozone.org/src/current/iozone3_488.tar
 cat iozone3_488.tar | tar -x
 cd iozone3_488/src/current
 make linux-arm
 cp iozone /usr/local/bin
 </code></pre><p>Das Dateisystem benutzt eine Blockgroße, es kann mit &ldquo;blockdev&rdquo; ausgelesen werden. Sie beträgt bei der SD-Karte mit ext4-Formatierung 4K, darum wurde auch dieser Wert für den Test mit zufälligem Zugriff (random read/write) gewählt. Damit sollten die Ergebnisse nahe an der Realität liegen.</p>
-<pre><code>sudo blockdev --getbsz /dev/mmcblk0p2 
-</code></pre><pre><code>4096
+<pre tabindex="0"><code>sudo blockdev --getbsz /dev/mmcblk0p2 
+</code></pre><pre tabindex="0"><code>4096
 </code></pre><p>Vor dem Test wurden einige Dienste der Raspjamming Distribution beendet, um die Messdaten nicht zu verfälschen.</p>
-<pre><code>sudo service dmxvnc stop
+<pre tabindex="0"><code>sudo service dmxvnc stop
 sudo service blockly-gpio stop
 sudo service mcp3202 stop
 sudo service lighttpd stop
 </code></pre><p>Bei den Intenso Karten kam es zu einem Problem, diese haben nicht korrekt gebootet was in weiter Folge zu einem Absturz geführt hat. Durch das Umschalten auf den alten Treiber für den Kartenslot, konnte das Problem behoben werden und der Test normal durchgeführt werden. In der Konfigurationsdatei „config.txt“ muss dazu folgender Eintrag eingefügt werden.</p>
-<pre><code>dtoverlay=mmc
-</code></pre><h2 id="ergebnisse---raspberry-pi-2-">Ergebnisse - Raspberry Pi 2</h2>
+<pre tabindex="0"><code>dtoverlay=mmc
+</code></pre><h2 id="ergebnisse---raspberry-pi-2">Ergebnisse - Raspberry Pi 2</h2>
 <p>Es wurden zwei Test mit zwei Blockgrößen für den Vergleichstest gewählt. Einmal zufälliges lesen und schreiben mit 4K und lesen und schreiben mit 512 KB. Beim zweiten Test sollte man recht nahe an die maximalen Transferrate kommen.</p>
-<pre><code>iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
+<pre tabindex="0"><code>iozone -s 32M -e -I -r 4k -r 512k -i 0 -i 1 -i 2
 </code></pre><p>-e  Include flush (fsync,fflush) in the timing calculations<br>
 -I  Use VxFS VX_DIRECT, O_DIRECT,or O_DIRECTIO for all file operations</p>
 <!-- raw HTML omitted -->
 <p>-s #  file size in Kb<br>
 -i #  Test to run (0=write/rewrite, 1=read/re-read, 2=random-read/write</p>
-<h3 id="sandisk-ultra-8gb-class-10-">SanDisk Ultra 8GB Class 10</h3>
-<pre><code>                                                             random    random  
+<h3 id="sandisk-ultra-8gb-class-10">SanDisk Ultra 8GB Class 10</h3>
+<pre tabindex="0"><code>                                                             random    random  
               kB  reclen    write  rewrite    read    reread    read     write 
            32768       4     1724     1897     6788     6791     6748      920 
            32768     512    13032    13156    22507    22508    22503     2927 
-</code></pre><h3 id="transcend-8gb-class-10-">Transcend 8GB Class 10</h3>
-<pre><code>                                                             random    random  
+</code></pre><h3 id="transcend-8gb-class-10">Transcend 8GB Class 10</h3>
+<pre tabindex="0"><code>                                                             random    random  
               kB  reclen    write  rewrite    read    reread    read     write   
            32768       4     1112     1197     6229     6230     4910      772   
            32768     512     7337     8654    22598    22602    22572     5709   
-</code></pre><h3 id="kingston-8gb-class-10-">Kingston 8GB Class 10</h3>
-<pre><code>                                                             random    random    
+</code></pre><h3 id="kingston-8gb-class-10">Kingston 8GB Class 10</h3>
+<pre tabindex="0"><code>                                                             random    random    
               kB  reclen    write  rewrite    read    reread    read     write   
            32768       4     1153     1167     6015     6008     4692      171   
            32768     512     7816     7178    15467    15470    15392     1252   
-</code></pre><h3 id="intenso-8gb-class-10-mmc-treiber-">Intenso 8GB Class 10 (mmc Treiber)</h3>
-<pre><code>                                                             random    random   
+</code></pre><h3 id="intenso-8gb-class-10-mmc-treiber">Intenso 8GB Class 10 (mmc Treiber)</h3>
+<pre tabindex="0"><code>                                                             random    random   
               kB  reclen    write  rewrite    read    reread    read     write   
            32768       4     1013     1058     4265     4271     3016      615  
            32768     512     7241     7495    22375    22381    22145     7051  
-</code></pre><h3 id="mixza-tohaoll-16-gb-class-10-shark-edition-">Mixza Tohaoll 16 GB Class 10 (Shark Edition)</h3>
-<pre><code>                                                            random    random    
+</code></pre><h3 id="mixza-tohaoll-16-gb-class-10-shark-edition">Mixza Tohaoll 16 GB Class 10 (Shark Edition)</h3>
+<pre tabindex="0"><code>                                                            random    random    
               kB  reclen    write  rewrite    read    reread    read     write  
            32768       4     1050     1048     3185     3193     3183      953  
            32768     512    10676    10699    11385    11388    11385    10682  
-</code></pre><h3 id="mixza-tohaoll-16-gb-class-10-bund-">Mixza Tohaoll 16 GB Class 10 (Bund)</h3>
-<pre><code>                                                            random    random    
+</code></pre><h3 id="mixza-tohaoll-16-gb-class-10-bund">Mixza Tohaoll 16 GB Class 10 (Bund)</h3>
+<pre tabindex="0"><code>                                                            random    random    
               kB  reclen    write  rewrite    read    reread    read     write  
            32768       4     1005     1178     4026     4038     3370      803  
            32768     512     8437     8755    11452    11454    11424     9904  
-</code></pre><h3 id="binful-16-gb-class-10-">Binful 16 GB Class 10</h3>
-<pre><code>                                                             random    random   
+</code></pre><h3 id="binful-16-gb-class-10">Binful 16 GB Class 10</h3>
+<pre tabindex="0"><code>                                                             random    random   
               kB  reclen    write  rewrite    read    reread    read     write    
            32768       4     1258     1276     3559     3561     3462     1128  
            32768     512    10381    10657    11382    11384    11382    10616  
-</code></pre><h2 id="zusammenfassungvergleich-und-auswertung-">Zusammenfassung/Vergleich und Auswertung</h2>
+</code></pre><h2 id="zusammenfassungvergleich-und-auswertung">Zusammenfassung/Vergleich und Auswertung</h2>
 <p><strong>4K - read/write random:</strong></p>
 <table>
 <thead>
 <tr>
-<th align="left"><em>Marke</em></th>
-<th align="right"><em>read</em></th>
-<th align="right"><em>write</em></th>
+<th style="text-align:left"><em>Marke</em></th>
+<th style="text-align:right"><em>read</em></th>
+<th style="text-align:right"><em>write</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">SanDisk</td>
-<td align="right">6748</td>
-<td align="right">920</td>
+<td style="text-align:left">SanDisk</td>
+<td style="text-align:right">6748</td>
+<td style="text-align:right">920</td>
 </tr>
 <tr>
-<td align="left">Transcend</td>
-<td align="right">4910</td>
-<td align="right">772</td>
+<td style="text-align:left">Transcend</td>
+<td style="text-align:right">4910</td>
+<td style="text-align:right">772</td>
 </tr>
 <tr>
-<td align="left">Kingston</td>
-<td align="right">4692</td>
-<td align="right">171</td>
+<td style="text-align:left">Kingston</td>
+<td style="text-align:right">4692</td>
+<td style="text-align:right">171</td>
 </tr>
 <tr>
-<td align="left">Intenso</td>
-<td align="right">3016</td>
-<td align="right">615</td>
+<td style="text-align:left">Intenso</td>
+<td style="text-align:right">3016</td>
+<td style="text-align:right">615</td>
 </tr>
 <tr>
-<td align="left">Mixza Shark</td>
-<td align="right">3183</td>
-<td align="right">953</td>
+<td style="text-align:left">Mixza Shark</td>
+<td style="text-align:right">3183</td>
+<td style="text-align:right">953</td>
 </tr>
 <tr>
-<td align="left">Mixza Bund</td>
-<td align="right">3370</td>
-<td align="right">803</td>
+<td style="text-align:left">Mixza Bund</td>
+<td style="text-align:right">3370</td>
+<td style="text-align:right">803</td>
 </tr>
 <tr>
-<td align="left">Binful</td>
-<td align="right">3462</td>
-<td align="right">1128</td>
+<td style="text-align:left">Binful</td>
+<td style="text-align:right">3462</td>
+<td style="text-align:right">1128</td>
 </tr>
 </tbody>
 </table>
@@ -380,46 +380,46 @@ sudo service lighttpd stop
 <table>
 <thead>
 <tr>
-<th align="left"><em>Marke</em></th>
-<th align="right"><em>read</em></th>
-<th align="right"><em>write</em></th>
+<th style="text-align:left"><em>Marke</em></th>
+<th style="text-align:right"><em>read</em></th>
+<th style="text-align:right"><em>write</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">SanDisk</td>
-<td align="right">22507</td>
-<td align="right">13032</td>
+<td style="text-align:left">SanDisk</td>
+<td style="text-align:right">22507</td>
+<td style="text-align:right">13032</td>
 </tr>
 <tr>
-<td align="left">Transcend</td>
-<td align="right">22598</td>
-<td align="right">7337</td>
+<td style="text-align:left">Transcend</td>
+<td style="text-align:right">22598</td>
+<td style="text-align:right">7337</td>
 </tr>
 <tr>
-<td align="left">Kingston</td>
-<td align="right">15467</td>
-<td align="right">7816</td>
+<td style="text-align:left">Kingston</td>
+<td style="text-align:right">15467</td>
+<td style="text-align:right">7816</td>
 </tr>
 <tr>
-<td align="left">Intenso</td>
-<td align="right">22375</td>
-<td align="right">7241</td>
+<td style="text-align:left">Intenso</td>
+<td style="text-align:right">22375</td>
+<td style="text-align:right">7241</td>
 </tr>
 <tr>
-<td align="left">Mixza Shark</td>
-<td align="right">11385</td>
-<td align="right">10676</td>
+<td style="text-align:left">Mixza Shark</td>
+<td style="text-align:right">11385</td>
+<td style="text-align:right">10676</td>
 </tr>
 <tr>
-<td align="left">Mixza Bund</td>
-<td align="right">11452</td>
-<td align="right">8437</td>
+<td style="text-align:left">Mixza Bund</td>
+<td style="text-align:right">11452</td>
+<td style="text-align:right">8437</td>
 </tr>
 <tr>
-<td align="left">Binful</td>
-<td align="right">11382</td>
-<td align="right">10556</td>
+<td style="text-align:left">Binful</td>
+<td style="text-align:right">11382</td>
+<td style="text-align:right">10556</td>
 </tr>
 </tbody>
 </table>
@@ -428,7 +428,7 @@ sudo service lighttpd stop
 Weniger beeindruckend sind die China Karten bei der Lesegeschwindigkeit mit 512 KByte. Hier sind sie mit rund 11 MB/s meist halb so schnell als die namhaften Hersteller. Die Kingston Karte bildet mit nur 15 statt 22 MB/s das Schlusslicht bei den EU Karten.
 Insgesamt schneidet die SanDisk Ultra Karte am besten ab. Sie ist aber auch die teuerste. Die Transcend Karte ist möglicherweise eine günstigere Alternative.
 China Karten sind nicht schlecht, können also auch überzeugen bis auf die 512 KB Leseschwäche. Allerdings sind China Karte ein eigenes Thema, dem sich das nächste Kapitel widmet.</p>
-<h2 id="china-sd-karten-">China SD Karten</h2>
+<h2 id="china-sd-karten">China SD Karten</h2>
 <p>Durch einige Käufe von SD-Karten von Aliexpress aus China, habe ich Erfahrungswerte erlangt, die ich hier teilen möchte.<br>
 Bei den China Produkten gibt es Marken die nur kurzzeitig verfügbar sind und dann im nächsten Jahr verschwunden sind. Das sind z.B. Rondaful, Kingstick und Binful. Diese Marken sind deshalb wenig vertrauensvoll, auch wenn Binful im Test durchaus ordentlich funktioniert hat. Kaufen kann man diese Marke nun nicht mehr.<br>
 Bei der Marke Kingstick gab es viele SD-Karten die zwar einwandfrei am Laptop gelesen und geschrieben werden konnten, sie haben aber im Raspberry Pi nicht gebootet. Dabei gab es innerhalb derselben Bestellung funktionierende und welche die einfach nicht starten wollten. In einem Orange Pi Einplatinencomputer konnte sie aber erfolgreich eingesetzt werden. Einige Zeit später ist eine dieser Karten im Raspberry Pi Slot durchgebrannt. Zum Glück ohne Folgeschäden für den Raspberry Pi. Bei einem Verbrauchstest kam es zu überhörter Stromaufnahme (180 mA statt 90 mA), die Schlussendlich auf die Kingstick Karte zurückzuführen war. Mit der Transcend Karte war der Leerlauf-Verbrauch dann normal.<br>
@@ -653,7 +653,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

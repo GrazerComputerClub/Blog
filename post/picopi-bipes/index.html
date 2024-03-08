@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Pico mit Bipes",
         "headline" : "Raspberry Pi Pico mit Bipes",
-        "description" : "\x3cp\x3eRaspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eRaspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2022",
-        "datePublished": "2022-10-26 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2022-10-26 00:00:00 \x2b0000 UTC",
+        "datePublished": "2022-10-26 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2022-10-26 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/picopi-bipes\/",
         "wordCount" : "779",
         "image" : "https://blog.gc2.atimg/Raspberry_Pi_Pico.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -269,14 +269,14 @@
           <div class="entry-content">
             <article>
               <p>Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Die Raspberry Pi Pico ist eine kleines, schnelles und vielseitiger Boards, das mit dem RP2040 Mikrocontroller-Chip ausgestattet ist. Der Chip selbst, sowie das Board werden vom Raspberry Pi Hersteller verkauft und kostet ca. 4,2 Euro.<br>
 Mehr zu den verschiednen Varianten und zu den Spezifikationen findet man unter <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html">https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html</a></p>
 <p>Das Boards kann über einen Micro-USB-Kabel an einem Windows- oder Linux-PC bzw. Raspberry Pi angeschlossen werden. Wird es mit MicroPython Firmware ausgetstattet kann er sehr leicht programmiert werden. Besonders einfach ist die Programmiereung mit Bipes, da hier keine Code geschreiben werden muss, sondern einfach grafische Blöcken verbunden und konfiguiert werden. Vorallem für Kinder ist diese Art der Programmierung ein super Einstieg in die Materie, ohne gleich Source-Code lernen zu müssen. Das Beste ist man braucht lediglich einen aktuellen Browser und kann dann schon loslegen.</p>
-<h2 id="anschluss-">Anschluss</h2>
+<h2 id="anschluss">Anschluss</h2>
 <p>Der Raspberry Pi Pico wird über einen Micro-USB-Kabe an einem PC oder Raspberry Pi angeschlossen. Dann wird automatisch eine Partition bzw. Laufwerk erkannt, je anch System wird es auch automatisch eingehängt und angezeigt.</p>
-<pre><code>dmesg
-</code></pre><pre><code>[ 9451.652332] usb 2-2: new full-speed USB device number 13 using xhci_hcd
+<pre tabindex="0"><code>dmesg
+</code></pre><pre tabindex="0"><code>[ 9451.652332] usb 2-2: new full-speed USB device number 13 using xhci_hcd
 [ 9451.801668] usb 2-2: New USB device found, idVendor=2e8a, idProduct=0003, bcdDevice= 1.00
 [ 9451.801674] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 [ 9451.801685] usb 2-2: Product: RP2 Boot
@@ -299,8 +299,8 @@ Dazu lädt man sich die neueste stabile Version von der Seite <a href="https://m
 Dann drückt man die BOOTSEL Taste am Pico und steckt dabei das USB-Kabel am PC ein. Eine Partition (/dev/sdc1) mit Namen RPI-RP2 wird nun einhängt und angezeigt.
 Nun kann man in das Verzeichnis einfach die Firmwaredatei kopieren. Der Pico startet dann automatisch neu und ist wieder betriebsbereit.</p>
 <p>Nun meldet er sich aber etwas anders am System an und es gibt ein neues serielles Device /dev/ttyACM0.</p>
-<pre><code>dmesg
-</code></pre><pre><code>[ 9581.775385] usb 2-2: new full-speed USB device number 14 using xhci_hcd
+<pre tabindex="0"><code>dmesg
+</code></pre><pre tabindex="0"><code>[ 9581.775385] usb 2-2: new full-speed USB device number 14 using xhci_hcd
 [ 9581.924989] usb 2-2: New USB device found, idVendor=2e8a, idProduct=0005, bcdDevice= 1.00
 [ 9581.924992] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 [ 9581.924994] usb 2-2: Product: Board in FS mode
@@ -538,7 +538,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

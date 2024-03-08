@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Minecraft Pi",
         "headline" : "Minecraft Pi",
-        "description" : "\x3cp\x3eAuch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine\nspezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eAuch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine\nspezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-08-02 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-08-02 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-08-02 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-08-02 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft\/",
         "wordCount" : "923",
         "image" : "https://blog.gc2.atimg/Minecraft.png"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -279,7 +279,7 @@ Nicht so gut verträgt sich das Programm mit HDMI Overscan Anpassungen. Dann kom
 <p>Das Spiel kann auch auf dem Raspberry Pi Zero verwendet werden. Die Leistung des System reicht aus, wenngleich ein wenig Overclocking nicht schaden kann. Dann darf man aber nicht vergessen die entsprechenden Adapter (HDMI, USB-Hub mit Micro-Adapter für Maus und Tastatur) bereit zu halten.</p>
 <h2 id="installation">Installation</h2>
 <p>Leider ist die Installations-Anleitung auf der Minecraft Webseite nicht korrekt. Allerdings ist das kein Problem, denn in der aktuellen Raspbian/Raspberry Pi OS Version kann man kann das Spiel direkt installieren. Damit wird auch gleich die Programmierschnittstelle installiert und alles nötige eingerichtet. Den Patch für den Überlebensmodus und die passende Karten muss man aber manuell installieren.</p>
-<pre><code>sudo apt-get install minecraft-pi
+<pre tabindex="0"><code>sudo apt-get install minecraft-pi
 
 sudo apt-get install bspatch
 cd /opt/minecraft-pi/ 
@@ -290,7 +290,7 @@ cd ~/.minecraft/games/com.mojang/minecraftWorlds/
 wget https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Temple-of-Notch.zip
 unzip Temple-of-Notch.zip
 </code></pre><p><strong>Startscript:</strong> /usr/local/bin/minecraft-pi-survival</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 cd /opt/minecraft-pi || exit
 test -e minecraft-pi-survival || exit
@@ -304,11 +304,11 @@ else
 fi
 
 ./minecraft-pi-survival
-</code></pre><pre><code>sudo chmod +x /usr/local/bin/minecraft-pi-survival
+</code></pre><pre tabindex="0"><code>sudo chmod +x /usr/local/bin/minecraft-pi-survival
 minecraft-pi-survival
 </code></pre><p>Weitere Karten für den Überlebensmodus findet man bei der originalen englischen Anleitung von <a href="https://thebraithwaites.co.uk/minecraft-pi-edition-maps-texture-packs-survival-and-more/">The Braithwaites</a>.<br>
 Hier ist eine Liste dieser Karten-Links angeführt. Wenn man sie in die Datei &lsquo;list.txt&rsquo; einträgt, kann man sie später mit einem Kommando herunterladen.</p>
-<pre><code>https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
+<pre tabindex="0"><code>https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Tnt-Trouble.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Grid-2.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Columbia-Bioshock-Infinite.zip
@@ -329,13 +329,13 @@ https://thebraithwaites.co.uk/wp-content/uploads/2016/09/The-Underground.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Volcano.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/Canyons.zip
 https://thebraithwaites.co.uk/wp-content/uploads/2016/09/MW3-Seatown.zip
-</code></pre><pre><code>cd ~/.minecraft/games/com.mojang/minecraftWorlds/
+</code></pre><pre tabindex="0"><code>cd ~/.minecraft/games/com.mojang/minecraftWorlds/
 wget -i list.txt
 unp *.zip
 </code></pre><p><img src="../../img/Minecraft_Temple_of_Notch.png" alt="Map: Temple of Notch"></p>
 <p>Einen neuen Menüeintrag kann man auch noch erstellen.</p>
-<pre><code>sudo cp /usr/share/applications/minecraft-pi.desktop /usr/share/applications/minecraft-pi-survival.desktop
-</code></pre><pre><code>[Desktop Entry]
+<pre tabindex="0"><code>sudo cp /usr/share/applications/minecraft-pi.desktop /usr/share/applications/minecraft-pi-survival.desktop
+</code></pre><pre tabindex="0"><code>[Desktop Entry]
 Name=Minecraft Pi Survival
 Comment=Fun with Blocks and Monsters
 Exec=minecraft-pi-survival
@@ -564,7 +564,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

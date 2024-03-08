@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero Übertakten",
         "headline" : "Raspberry Pi Zero Übertakten",
-        "description" : "\x3cp\x3eDer Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDer Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-01-17 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-01-17 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-01-17 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-01-17 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-zero-hardcore-overclocking\/",
         "wordCount" : "1415",
         "image" : "https://blog.gc2.atimg/Pi0_CPU.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -261,12 +261,12 @@
 <p>Zur Übertaktung der CPU sind zunächst zwei Parameter in der Konfigurationsdatei wichtig &ldquo;arm_freq&rdquo; und &ldquo;over_voltage&rdquo;. Der erste Parameter setzt direkt die Taktfrequenz der CPU. Der zweite Parameter verändert die CPU-Spannung um 0.025 V pro Wert. Zusätzlich gibt es noch den Wert &ldquo;force_turbo&rdquo;. Wird dieser auf 1 gesetzt so wird die CPU-Frequenz nicht geregelt sondern bleibt fix auf den eingestellten Maximalwert. Weiters kann noch die &ldquo;arm_core&rdquo; Frequenz erhöht werden, die noch geringen Einfluss auf die Performance hat. Die Frequenz des Arbeitsspeichers kann mit &ldquo;sdram_freq&rdquo; gesetzt werden.<br>
 Der Raspberry Pi Zero hat den gleichen BCM2835 Prozessor wie der Raspberry Pi 1. Dieser wurde von den ersten Raspberry Pi Varianten bis zum Raspberry Pi B+ mit 700 MHz getaktet. Die CPU-Spannung beträgt in dem Fall 1,2 V. Bei der Raspberry Pi Zero wird der gleiche Prozessor nun mit 1000 MHz getaktet. Dazu musste die CPU-Spannung auf 1,35 V erhöht werden. Hier ist also bereits eine erhöhte CPU-Spannung gesetzt, sodass man diesen nicht mehr viel erhöhen sollte. Diese kann allerdings sowieso nicht über 1,4 V gebracht werden. Auch wenn man &ldquo;force_turbo&rdquo; setzt und &ldquo;over_voltage&rdquo; auf 4, so bleibt dennoch die CPU-Spannung auf 1,4 V stehen. Hier ist also das maximale Limit erreicht. Interessant ist aber, obwohl die Erhöhung von &ldquo;over_voltage&rdquo; über 2 keine Veränderung mehr bringt, bleibt die Regel für das Garantieverlustbit aufrecht.</p>
 <p>Originale Beschreibung des &ldquo;over_voltage&rdquo; Parameters:<br>
-*over_voltage 	CPU/GPU core voltage adjustment. [-16,8] equates to [0.8V,1.4V] with 0.025V steps. In other words, specifying -16 will give 0.8V as the GPU/core voltage, and specifying 8 will give 1.4V. For defaults see table below. Values above 6 are only allowed when force_turbo is specified: this sets the warranty bit if over_voltage_* is also set.*</p>
+<em>over_voltage 	CPU/GPU core voltage adjustment. [-16,8] equates to [0.8V,1.4V] with 0.025V steps. In other words, specifying -16 will give 0.8V as the GPU/core voltage, and specifying 8 will give 1.4V. For defaults see table below. Values above 6 are only allowed when force_turbo is specified: this sets the warranty bit if over_voltage_</em> is also set.*</p>
 <h3 id="garantieverlustbit-warranty-bit">Garantieverlustbit (warranty bit)</h3>
 <p>Achtung wenn man &ldquo;force_turbo&rdquo; auf 1 setzt und einen &ldquo;over_voltage&rdquo; Wert von mehr als 6 eingibt, wird ein Garantieverlustbit gesetzt.
 Dieses Bit ist Teil der Revisionsnummer und wird vorne also an achter Stelle gesetzt. Ausgeben kann man es mit &ldquo;cat /proc/cpuinfo&rdquo;.
 Dies konnte mit einem Raspberry Pi Zero v1.3 verifiziert werden.</p>
-<pre><code>processor	: 0
+<pre tabindex="0"><code>processor	: 0
 model name	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 1046.93
 Features	: half thumb fastmult vfp edsp java tls 
@@ -281,7 +281,7 @@ Revision	: 900093
 Serial		: 0000000001f700fd
 Model		: Raspberry Pi Zero Rev 1.3
 </code></pre><p>Nach setzen von &ldquo;force_turbo&rdquo; und over_voltage von 8 sieht die Ausgabe so aus:</p>
-<pre><code>processor	: 0
+<pre tabindex="0"><code>processor	: 0
 model name	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 1024.81
 Features	: half thumb fastmult vfp edsp java tls 
@@ -295,7 +295,7 @@ Hardware	: BCM2835
 Revision	: 1900093
 Serial		: 0000000001f700fd
 Model		: Raspberry Pi Zero Rev 1.3
-</code></pre><p>Die Revisionsnummer hat sich also von &ldquo;900093&rdquo; auf &ldquo;1900093&rdquo; geändert. Das Programm &ldquo;gpio&rdquo; meldet diesen Zustand nun auch mit dem Zusatz &ldquo;[Out of Warranty]&quot;.
+</code></pre><p>Die Revisionsnummer hat sich also von &ldquo;900093&rdquo; auf &ldquo;1900093&rdquo; geändert. Das Programm &ldquo;gpio&rdquo; meldet diesen Zustand nun auch mit dem Zusatz &ldquo;[Out of Warranty]&rdquo;.
 Beim Raspberry Pi Zero W 1.1 wurde das Garantieverlustbit auch gesetzt obwohl nur 2 für &ldquo;over_voltage&rdquo; gesetzt war. Es scheint als ob hier andere Regeln gelten. Die Revisionsnummer hat sich also von &ldquo;9000c1&rdquo; auf &ldquo;19000c1 geändert. Ich rate deshalb davon ab &ldquo;force_turbo&rdquo; überhaupt zu setzen. Für die Spannungserhöhung wird diese optional jedenfalls nicht mehr benötigt und ist damit obsolet.</p>
 <h2 id="übertakten">Übertakten</h2>
 <p>Es wurden Performancewerte und Stabilität bei verschiedenen Übertaktungsstufen getestet. Langsam wurde versucht sich an die maximale stabile Taktrate anzunähern. Als Benchmark wurde <a href="https://www.math.utah.edu/~mayer/linux/bmark.html">nbench</a> verwendet, der bei zu hohen Taktfrequenzen mit Programmabsturz reagiert. Der Benchmark wurde also zur Leistungsmessung und Stabilitätsbewertung verwendet.
@@ -309,7 +309,7 @@ Anders sieht es aus wenn &ldquo;force_turbo=1&rdquo; in der Konfigurationsdatei 
 <h3 id="kühlung">Kühlung</h3>
 <p>Immer wieder sieht man, dass Kühlkörper auf die Raspberry Pi Zero geklebt werden. Der verwendetet Prozessor wir aber im Vergleich zu den leistungsfähigeren Raspberry Pi Version, kaum heiß. Die Stromaufnahme ist selbst im übertakteten Zustand sehr gering. Ich sehe keinen Grund warum man einen Kühlkörper zur Verbesserung der Kühlung verwenden sollte. Auch mit hohen Taktfrequenzen ist man weit von den kritischen 85 °C entfernt. Im Test konnte bei 21 °C Raumtemperatur, nie mehr als 46 °C CPU-Temperatur erreicht werden.</p>
 <h3 id="standard-takt">Standard Takt</h3>
-<pre><code>  Config: v0.5.3, args &quot;&quot;, priority lowest (+19)
+<pre tabindex="0"><code>  Config: v0.5.3, args &quot;&quot;, priority lowest (+19)
    Board: 1 x ARMv6 core available, ondemand governor (Pi0 rev 1.3, BCM2835 SoC with 512MB RAM by Sony UK)
   Memory: 512MB (split 464MB ARM, 48MB GPU) plus 148MB Swap
 HW Block: |   ARM   |  Core  |  H264  |    SDRAM    |
@@ -326,13 +326,13 @@ Stromaufnahme: 170-180 mA</p>
 <h3 id="moderate-übertaktung">Moderate Übertaktung</h3>
 <p>Bei einer moderaten Übertaktung von ca. 3 % muss die Spannung der CPU nicht verändert werden. Folgende Werte wurden in die
 Konfigurationsdatei &ldquo;config.txt&rdquo; eingetragen:</p>
-<pre><code>[pi0]
+<pre tabindex="0"><code>[pi0]
 # Overclock Pi Zero (W)
 arm_freq=1030
 core_freq=500
 sdram_freq=500
 [all]
-</code></pre><pre><code>   Board: 1 x ARMv6 core available, ondemand governor (Pi0 rev 1.3, BCM2835 SoC with 512MB RAM by Sony UK)
+</code></pre><pre tabindex="0"><code>   Board: 1 x ARMv6 core available, ondemand governor (Pi0 rev 1.3, BCM2835 SoC with 512MB RAM by Sony UK)
   Memory: 512MB (split 464MB ARM, 48MB GPU) plus 148MB Swap
 HW Block: |   ARM   |  Core  |  H264  |    SDRAM    |
 Min Freq: | 1030MHz | 500MHz |   0MHz |    500MHz   |
@@ -349,14 +349,14 @@ Stromaufnahme: 180-190 mA</p>
 <h3 id="hohe-übertaktung-1150-mhz-mit-kernel-5">Hohe Übertaktung (1150 MHz) mit Kernel 5</h3>
 <p>Bei einer hohen Übertaktung von ca. 15 % muss die Spannung der CPU auf 1,4 V erhöht werden. Folgende Werte wurden in die
 Konfigurationsdatei &ldquo;config.txt&rdquo; eingetragen:</p>
-<pre><code>[pi0]
+<pre tabindex="0"><code>[pi0]
 # Overclock Pi Zero (W)
 arm_freq=1150
 over_voltage=2
 core_freq=500
 sdram_freq=500
 [all]
-</code></pre><pre><code>  Board: 1 x ARMv6 core available, ondemand governor (Pi0 rev 1.3, BCM2835 SoC with 512MB RAM by Sony UK)
+</code></pre><pre tabindex="0"><code>  Board: 1 x ARMv6 core available, ondemand governor (Pi0 rev 1.3, BCM2835 SoC with 512MB RAM by Sony UK)
   Memory: 512MB (split 464MB ARM, 48MB GPU) plus 148MB Swap
 HW Block: |   ARM   |  Core  |  H264  |    SDRAM    |
 Min Freq: | 1170MHz | 500MHz |   0MHz |    500MHz   |
@@ -579,7 +579,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

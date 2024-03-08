@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Pico Neopixel",
         "headline" : "Raspberry Pi Pico Neopixel",
-        "description" : "\x3cp\x3eMit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eMit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2023",
-        "datePublished": "2023-01-06 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2023-01-06 00:00:00 \x2b0000 UTC",
+        "datePublished": "2023-01-06 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2023-01-06 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/picopi-neopixel\/",
         "wordCount" : "1222",
         "image" : "https://blog.gc2.atimg/Raspberry_Pi_Pico_Neopixel.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -269,14 +269,14 @@
           <div class="entry-content">
             <article>
               <p>Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Der Raspberry Pi Pico ist ein kleines, schnelles und vielseitiger Boards, das mit dem RP2040 Mikrocontroller-Chip ausgestattet ist. Der Chip selbst, sowie das Board werden vom Raspberry Pi Hersteller verkauft und kostet ca. 4,2 Euro.<br>
 Mehr zu den verschiednen Varianten und zu den Spezifikationen findet man unter <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html">https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html</a></p>
 <p>Das Boards kann über einen Micro-USB-Kabel an einem Windows- oder Linux-PC bzw. Raspberry Pi angeschlossen werden. Wird es mit <a href="https://circuitpython.org/board/raspberry_pi_pico/">CircuitPython Firmware</a> ausgetstattet, kann es mit Python programmiert werden. Die Firmware liefert auch gleich einige Bibliotheken mit. Mam kann auch sehr leicht weitere Bibliotheken hinzufügen. Als Entwicklungsumgebung bietet sich <a href="https://thonny.org/">Thonny</a> an, es unterstützt die Platform direkt, sodass man nach der Konfiguration direkt loslegen kann.</p>
-<h2 id="anschluss-">Anschluss</h2>
+<h2 id="anschluss">Anschluss</h2>
 <p>Der Raspberry Pi Pico wird über einen Micro-USB-Kabe an einem PC oder Raspberry Pi angeschlossen. Dann wird automatisch eine Partition bzw. Laufwerk erkannt, je nach System wird es auch automatisch eingehängt und angezeigt.</p>
-<pre><code>dmesg
-</code></pre><pre><code>[ 9451.652332] usb 2-2: new full-speed USB device number 13 using xhci_hcd
+<pre tabindex="0"><code>dmesg
+</code></pre><pre tabindex="0"><code>[ 9451.652332] usb 2-2: new full-speed USB device number 13 using xhci_hcd
 [ 9451.801668] usb 2-2: New USB device found, idVendor=2e8a, idProduct=0003, bcdDevice= 1.00
 [ 9451.801674] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 [ 9451.801685] usb 2-2: Product: RP2 Boot
@@ -297,8 +297,8 @@ Mehr zu den verschiednen Varianten und zu den Spezifikationen findet man unter <
 <p>Zuerst muss CircuitPython am Board installiert werden. Dazu lädt man sich die neueste stabile (stable) Version von der Seite <a href="https://circuitpython.org/board/raspberry_pi_pico/">https://circuitpython.org/board/raspberry_pi_pico/</a> herunter. In diesem Fall heißt die Datei &ldquo;adafruit-circuitpython-raspberry_pi_pico-de_DE-7.3.3.uf2&rdquo;.<br>
 Dann drückt man die BOOTSEL Taste am Pico und steckt dabei das USB-Kabel ein. Eine Partition (/dev/sdc1) mit Namen RPI-RP2 wird nun einhängt und angezeigt. Dann kann man in das Verzeichnis einfach die Firmwaredatei kopieren. Der Pico startet dann automatisch neu und ist wieder betriebsbereit.</p>
 <p>Nun meldet er sich aber etwas anders am System an und es gibt ein neues serielles Device (/dev/ttyACM0 am PC).</p>
-<pre><code>dmesg
-</code></pre><pre><code>[  800.478220] usb 2-2: new full-speed USB device number 9 using xhci_hcd
+<pre tabindex="0"><code>dmesg
+</code></pre><pre tabindex="0"><code>[  800.478220] usb 2-2: new full-speed USB device number 9 using xhci_hcd
 [  800.628229] usb 2-2: New USB device found, idVendor=239a, idProduct=80f4, bcdDevice= 1.00
 [  800.628235] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 [  800.628237] usb 2-2: Product: Pico
@@ -333,7 +333,7 @@ Danach kann man Thonny einfach starten und wählt zuerst die Sprache Deutsch aus
 <p>Folgendes Programm lässt die erste LED auf einem Neopixel (RGB-LED-Module WS2812) grün blinken. Die Datenleitung ist auf den ersten Pin GP0 angeschlossen. Die Versorgung des Moduls erfolgt über VBUS, also die USB Versorgungsspannung. GND vom Modul wird mit GND am Pico verbunden.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -352,7 +352,7 @@ Danach kann man Thonny einfach starten und wählt zuerst die Sprache Deutsch aus
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">board</span>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">board</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">neopixel_write</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">digitalio</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
@@ -364,7 +364,7 @@ red   <span style="color:#666">=</span> <span style="color:#007020">bytearray</s
 blue  <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">0</span>,  <span style="color:#40a070">0</span>,<span style="color:#40a070">30</span>])
 off   <span style="color:#666">=</span> <span style="color:#007020">bytearray</span>([<span style="color:#40a070">0</span>,  <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>])
 
-<span style="color:#007020;font-weight:bold">while</span> True:
+<span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
   neopixel_write<span style="color:#666">.</span>neopixel_write(pin, green)
   time<span style="color:#666">.</span>sleep(<span style="color:#40a070">1</span>)
   neopixel_write<span style="color:#666">.</span>neopixel_write(pin, off)
@@ -379,7 +379,7 @@ Nun muss man die Datei &ldquo;neopixel.py&rdquo; nur noch auf das Laufwerk des P
 Danach kann man ein Programm erstellen, dass die Neopixel Bibliothek verwendet, z. B. diese Regebogenfarbenablauf.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -404,7 +404,7 @@ Danach kann man ein Programm erstellen, dass die Neopixel Bibliothek verwendet, 
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">board</span>
 <span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">rainbowio</span> <span style="color:#007020;font-weight:bold">import</span> colorwheel
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">neopixel</span>
@@ -412,7 +412,7 @@ Danach kann man ein Programm erstellen, dass die Neopixel Bibliothek verwendet, 
 <span style="color:#60a0b0;font-style:italic"># number of NeoPixel LEDs connected to your board.</span>
 num_pixels <span style="color:#666">=</span> <span style="color:#40a070">8</span>
 
-pixels <span style="color:#666">=</span> neopixel<span style="color:#666">.</span>NeoPixel(board<span style="color:#666">.</span>GP0, num_pixels, auto_write<span style="color:#666">=</span>False)
+pixels <span style="color:#666">=</span> neopixel<span style="color:#666">.</span>NeoPixel(board<span style="color:#666">.</span>GP0, num_pixels, auto_write<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">False</span>)
 pixels<span style="color:#666">.</span>brightness <span style="color:#666">=</span> <span style="color:#40a070">0.02</span>
 
 
@@ -425,7 +425,7 @@ pixels<span style="color:#666">.</span>brightness <span style="color:#666">=</sp
         time<span style="color:#666">.</span>sleep(speed)
 
 
-<span style="color:#007020;font-weight:bold">while</span> True:
+<span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
     rainbow(<span style="color:#40a070">0</span>)
 </code></pre></td></tr></table>
 </div>
@@ -646,7 +646,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

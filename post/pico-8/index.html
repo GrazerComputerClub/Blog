@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "PICO-8",
         "headline" : "PICO-8",
-        "description" : "\x3cp\x3eWer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese \x26ldquo;virtuelle Konsole\x26rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eWer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese \u0026ldquo;virtuelle Konsole\u0026rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-21 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-21 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-21 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-21 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/pico-8\/",
         "wordCount" : "1063",
         "image" : "https://blog.gc2.atimg/PICO-8.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -271,19 +271,19 @@ Der reguläre Preis beträgt 14,99 US Dollar (ca. 14 Euro). Bei einem Game-Jam b
 Nach dem Kauf kann man sich die Zip-Datei &ldquo;pico-8_0.2.5g_raspi.zip&rdquo; herunterladen und mit <code>unzip *.zip</code> entpacken. Das Verzeichnis &ldquo;pico-8&rdquo; enthält ab Version 2 vier ausführbare Dateien &ldquo;pico8&rdquo;, &ldquo;pico8_dyn&rdquo;, &ldquo;pico8_gpio&rdquo; und &ldquo;pico8_64&rdquo;.<br>
 Bei &ldquo;pico8&rdquo; wurde die SDL2 Library in Version 2 statisch gelinkt. Bei &ldquo;pico8_dyn&rdquo;, wird die SDL2 Library in Version 2 dynamisch gelinkt. Das bedeutet also, sie muss am System vorhanden sein.<br>
 Damit sie verfügbar ist muss man nur das entsprechende Paket installieren.</p>
-<pre><code>sudo apt-get install libsdl2-dev
+<pre tabindex="0"><code>sudo apt-get install libsdl2-dev
 </code></pre><p>Im Test konnte Pico 8 in der Konsole nicht mit dem Legacy Treiber (non-GL) betrieben werden (obwohl es in der README-Datei empfohlen wird). Man sollte deshalb den OpenGL Driver verwenden.</p>
-<pre><code>sudo raspi-config
-</code></pre><pre><code>6 Advanced Options     Configure advanced settings
+<pre tabindex="0"><code>sudo raspi-config
+</code></pre><pre tabindex="0"><code>6 Advanced Options     Configure advanced settings
   A2 GL Driver         Enable/disable experimental desktop GL driver
     G1 Legacy          Original non-GL desktop driver 
  -&gt;	G2 GL (Full KMS)   OpenGL desktop driver with full KMS
 </code></pre><p>In der Konfigurationsdatei könnte man den Treiber dann noch von &ldquo;vc4-kms-v3d&rdquo; auf &ldquo;vc4-fkms-v3d&rdquo; ändern. Es ist nicht zwingend erforderlich, andere Programmen laufen aber nur mit dem fkms Treiber.</p>
-<pre><code>sudo nano /boto/config
-</code></pre><pre><code># Enable DRM VC4 V3D driver
+<pre tabindex="0"><code>sudo nano /boto/config
+</code></pre><pre tabindex="0"><code># Enable DRM VC4 V3D driver
 dtoverlay=vc4-fkms-v3d
 </code></pre><p>Leider gibt es die Version mit GPIO Support nur in der statischen Version und diese lässt sich im aktuellen Raspberry Pi OS nicht starten. Gleiches gilt im übrigen auch für die &ldquo;./pico8&rdquo; Version. Es wird immer folgender Fehler angezeigt:</p>
-<pre><code>SDL Error: Could not initialize EGL
+<pre tabindex="0"><code>SDL Error: Could not initialize EGL
 ** FATAL ERROR: Unable to create window
 Segmentation fault&quot;
 </code></pre><p>Früher bei Version 0.1, als noch die SDL Library in Version 1 verwendet wurde, hat es noch funktioniert. PICO-8 0.1 funktioniert aber auch auf der neuen Raspberry Pi OS Bullseye Version, allerdings sind viele Spiele für die aktuelle Version programmiert und lassen sich deshlab nicht starten.</p>
@@ -293,16 +293,16 @@ Segmentation fault&quot;
 <table>
 <thead>
 <tr>
-<th align="left"><em>Version</em></th>
-<th align="left"><em>MD5 Checksumme</em></th>
-<th align="left"><em>Datei</em></th>
+<th style="text-align:left"><em>Version</em></th>
+<th style="text-align:left"><em>MD5 Checksumme</em></th>
+<th style="text-align:left"><em>Datei</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">0.1.12c2</td>
-<td align="left">0fbbcb9d88f48d5f67b68a39412c962c</td>
-<td align="left">pico8</td>
+<td style="text-align:left">0.1.12c2</td>
+<td style="text-align:left">0fbbcb9d88f48d5f67b68a39412c962c</td>
+<td style="text-align:left">pico8</td>
 </tr>
 </tbody>
 </table>
@@ -310,31 +310,31 @@ Segmentation fault&quot;
 <table>
 <thead>
 <tr>
-<th align="left"><em>Version</em></th>
-<th align="left"><em>MD5 Checksumme</em></th>
-<th align="left"><em>Datei</em></th>
+<th style="text-align:left"><em>Version</em></th>
+<th style="text-align:left"><em>MD5 Checksumme</em></th>
+<th style="text-align:left"><em>Datei</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">0.2.0i</td>
-<td align="left">8c9ea65b849391debe0211af3fda48b3</td>
-<td align="left">pico8_dyn</td>
+<td style="text-align:left">0.2.0i</td>
+<td style="text-align:left">8c9ea65b849391debe0211af3fda48b3</td>
+<td style="text-align:left">pico8_dyn</td>
 </tr>
 <tr>
-<td align="left">0.2.2c</td>
-<td align="left">ab5c2bf26f9a5dfecbb069b65f3b1be1</td>
-<td align="left">pico8_dyn</td>
+<td style="text-align:left">0.2.2c</td>
+<td style="text-align:left">ab5c2bf26f9a5dfecbb069b65f3b1be1</td>
+<td style="text-align:left">pico8_dyn</td>
 </tr>
 <tr>
-<td align="left">0.2.4</td>
-<td align="left">bc99f6c0a6a262ca9630852f19b05553</td>
-<td align="left">pico8_dyn</td>
+<td style="text-align:left">0.2.4</td>
+<td style="text-align:left">bc99f6c0a6a262ca9630852f19b05553</td>
+<td style="text-align:left">pico8_dyn</td>
 </tr>
 <tr>
-<td align="left">0.2.5</td>
-<td align="left">9d69d09cc7fc6e8bc15ff6fc9224c5e9</td>
-<td align="left">pico8_dyn</td>
+<td style="text-align:left">0.2.5</td>
+<td style="text-align:left">9d69d09cc7fc6e8bc15ff6fc9224c5e9</td>
+<td style="text-align:left">pico8_dyn</td>
 </tr>
 </tbody>
 </table>
@@ -369,7 +369,7 @@ Im Menü kann man auch einzelne Spiele mit FAVOURITE in die Liste der favorisier
 <h2 id="programmierung">Programmierung</h2>
 <p><img src="../../img/PICO-8-Gameplay.png" alt="PICO-8 Gameplay"></p>
 <h3 id="sourcecode-ausschnitt-als-beispiel">Sourcecode Ausschnitt als Beispiel</h3>
-<pre><code>FUNCTION MOVEPADDLE()
+<pre tabindex="0"><code>FUNCTION MOVEPADDLE()
   IF BTN(0) THEN
     IF PADX&gt;=STEP THEN
       PADX-=STEP
@@ -407,12 +407,12 @@ FUNCTION _DRAW()
 END
 </code></pre><h3 id="raspberry-pi">Raspberry Pi</h3>
 <p>Für den Raspberry Pi enthält PICO-8 eine Besonderheit. Auf die ersten 8 GPIOs (<a href="https://github.com/WiringPi/WiringPi">WiringPi Nummerierung</a>) kann direkt zugegriffen werden. Dazu wird aber &ldquo;pico8&rdquo; in Version 0.1 und auch noch die WiringPi Library benötigt. Die Installation ist sehr einfach, man sich das Paket aber selbst herunterladen.</p>
-<pre><code>wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
+<pre tabindex="0"><code>wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
 sudo apt install ./wiringpi-2.61-1-armhf.deb
 </code></pre><p>Mit dieser Version können also acht GPIOs als Eingänge gelesen oder als Ausgänge auf High oder Low gesetzt werden. Die GPIOs sind dabei auf die Adressen 0x5f80 bis 0x5f87 verfügbar. Will man den ersten GPIO auf High (3,3 V) setzen, so muss man mit dem Befehl &lsquo;poke&rsquo; den Wert 255 auf Adresse 0x5f80 zuweisen. Der Wert 0 setzt den Ausgang auf Low (GND).<br>
 Der Befehl &lsquo;peek&rsquo; wird zum Einlesen des Zustands des GPIOs verwendet.</p>
 <p><strong>Blinklicht auf zwei GPIOs:</strong></p>
-<pre><code>TIMER=0
+<pre tabindex="0"><code>TIMER=0
 
 FUNCTION _UPDATE()
   TIMER = TIMER+1
@@ -650,7 +650,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

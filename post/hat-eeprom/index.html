@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "HAT EEPROM anschließen und konfigurieren",
         "headline" : "HAT EEPROM anschließen und konfigurieren",
-        "description" : "\x3cp\x3eÜber die zwei Anschlüsse \x3cem\x3eID_SD\x3c\/em\x3e und \x3cem\x3eID_SC\x3c\/em\x3e auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eÜber die zwei Anschlüsse \u003cem\u003eID_SD\u003c\/em\u003e und \u003cem\u003eID_SC\u003c\/em\u003e auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-03-03 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-03-03 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-03-03 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-03-03 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/hat-eeprom\/",
         "wordCount" : "1187",
         "image" : "https://blog.gc2.atimg/EEPROM.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -257,12 +257,12 @@
           <div class="entry-content">
             <article>
               <p>Über die zwei Anschlüsse <em>ID_SD</em> und <em>ID_SC</em> auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.</p>
-<h2 id="einleitung-">Einleitung</h2>
+<h2 id="einleitung">Einleitung</h2>
 <p>Auf der 40-Pin GPIO-Leiste des Raspberry Pi befinden sich die Pins <strong>ID_SD</strong> (GPIO00) und <strong>ID_SC</strong> (GPIO01). Oft werden sie auch als DNC (do not connnect) bezeichnet, da sie nicht zum Anschluss von x-beliebiger Elektronik benutzt werden sollen. Sie gehören zum I2C0-Bus, der aber nur für einen Zweck vorgesehen ist. Man kann dort ein spezielles EEPROM anschließen, über das GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Dies soll vor allem zur Erkennung und Parametrierung von HATs (Hardware Attached on Top) also Aufsteckboards dienen.<br>
 Für diese offiziellen HATs gelten einige Regeln und Vorgaben um zu gewährleisten das Standards eingehalten werden. Weitere Informationen dazu erhält man bei
 <a href="https://github.com/raspberrypi/hats">ADD-ON BOARDS AND HATs</a>.<br>
 Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EEPROMs.</p>
-<h2 id="eeprom-anforderungen-">EEPROM Anforderungen</h2>
+<h2 id="eeprom-anforderungen">EEPROM Anforderungen</h2>
 <ul>
 <li>Typ 24Cxx</li>
 <li>3,3 V Betriebsspannung</li>
@@ -272,23 +272,23 @@ Diese Anleitung behandelt den Anschluss und die Speicherung der Daten des HAT EE
 </ul>
 <p>Das EEPROM muss vom Typ &ldquo;24Cxx&rdquo; sein, dann hat es eine I2C-Schnittstelle. Es muss eine 16-Addressierung haben und 8-Bit Daten verwenden. Kleinere EEPROMs (1 kBit oder 4 x 1 kBit, paged) haben oft nur eine 8-Bit Adressierung, siehe funktionieren nicht.<br>
 Offiziell empfohlen wird das EEPROM &ldquo;OnSemi CAT24C32&rdquo; welches 32 kBit bzw. 4 kByte groß ist. Dies ist allerdings nicht so leicht erhältlich, weshalb ich das EEPROM STMicroelectronics <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c32-rmn6tp-soic-8-eeprom-32-kbit-4-k-x-8-1186007.html">M24C32</a> bzw.  <a href="https://www.conrad.at/de/speicher-ic-stmicroelectronics-m24c64-wmn6-so-8-eeprom-64-kbit-8-k-x-8-155494.html">M24C64</a> empfehlen würde.</p>
-<h2 id="anschluss-">Anschluss</h2>
+<h2 id="anschluss">Anschluss</h2>
 <p>Beim Anschluss ist darauf zu achten, dass die Pull-up Widerstände am I2C0-Bus fehlen. Hier wird empfohlen je 3,9 KOhm bei ID_SD (SDA) und ID_SC (SCL) gegen 3,3 V vorzusehen.<br>
 Ein Eingang dient als Schreibschutz (WP - Write protect), wird dieser auf 3,3 V gelegt so kann das EEPROM nicht mehr beschrieben werden. Bleibt der Eingang offen, so ist der Schreibschutz nicht aktiv. Empfohlen wird diesen über einen Pull-up Widerstand zu sperren und bei Bedarf über einen Jumper auf GND zu ziehen, um ihn programmieren zu können. Ich würde eher den umgekehrten Weg gehen und den Eingang offen lassen und bei Bedarf auf 3,3 V setzen.<br>
 Die Adressleitungen A0-A2 bzw. E0-E2 müssen auf GND gelegt werden. Das kann man sich allerdings auch sparen, denn wenn man die Eingänge offen lässt, sind diese bereits auf GND gesetzt.</p>
 <p><img src="../../img/EEPROM_Schaltplan.png" alt="Schaltplan"></p>
-<h2 id="erstellung-">Erstellung</h2>
+<h2 id="erstellung">Erstellung</h2>
 <p>Zuerst muss der I2C0, der für den HAT EEPROM IC benutzt wird, aktiviert werden. Dazu trägt man folgende Zeile in die Datei &ldquo;config.txt&rdquo; auf der Boot-Partition ein.</p>
-<pre><code>dtparam=i2c_vc=on
+<pre tabindex="0"><code>dtparam=i2c_vc=on
 </code></pre><p>Danach muss man neu starten.
 Nun benötigt man die EEPROM Programme von Git-Hub. Folgende Befehle stellen diese Programme zur Verfügung.</p>
-<pre><code>cd ~
+<pre tabindex="0"><code>cd ~
 git clone https://github.com/raspberrypi/hats.git
 cd hats/eepromutils
 make
-</code></pre><h3 id="konfiguration-">Konfiguration</h3>
+</code></pre><h3 id="konfiguration">Konfiguration</h3>
 <p>In der Datei &ldquo;eeprom_settings.txt&rdquo; kann man nun seine eigenen Einstellungen und HAT Kennungen parametrieren.</p>
-<pre><code># 16 bit product id
+<pre tabindex="0"><code># 16 bit product id
 product_id 0x6C20
 
 # 16 bit product version
@@ -300,18 +300,18 @@ vendor &quot;Grazer Computer Club (Austria)&quot;
 # ASCII product string (max 255 characters)
 product &quot;GC2-xHAT (Raspjamming)&quot;
 </code></pre><p>Nun kann eine binäre Form der Konfigurationsdatei mit einem beliebigen Namen und der Endung &ldquo;eep&rdquo; erzeugt werden.</p>
-<pre><code>./eepmake eeprom_settings.txt GC2-xHAT.eep
+<pre tabindex="0"><code>./eepmake eeprom_settings.txt GC2-xHAT.eep
 </code></pre><p>Nun sollte man noch eine leere Datei mit der Größe des verwendeten EEPROM erzeugen. Damit kann man das EEPROM zuerst löschen. Bei einem 32 kBit EEPROM muss man eine 4 KByte Datei erzeugen. Man rechnet also die Kilobit Angabe am EEPROM durch 8, um auf die Größe in PC üblichen Kilobyte zu kommen.</p>
-<pre><code>dd if=/dev/zero bs=4k count=1 of=blank.eep
+<pre tabindex="0"><code>dd if=/dev/zero bs=4k count=1 of=blank.eep
 ls -l *.eep
-</code></pre><pre><code>-rwr--r-- 1 pi pi 4096 Mär  2 16:11 blank.eep
+</code></pre><pre tabindex="0"><code>-rwr--r-- 1 pi pi 4096 Mär  2 16:11 blank.eep
 -rw-r--r-- 1 pi pi  136 Mär  2 16:04 GC2-xHAT.eep
-</code></pre><pre><code>hexdump blank.eep
-</code></pre><pre><code>0000000 0000 0000 0000 0000 0000 0000 0000 0000
+</code></pre><pre tabindex="0"><code>hexdump blank.eep
+</code></pre><pre tabindex="0"><code>0000000 0000 0000 0000 0000 0000 0000 0000 0000
 *
 0001000
-</code></pre><pre><code>hexdump GC2-xHAT.eep
-</code></pre><pre><code>0000000 2d52 6950 0001 0002 0088 0000 0001 0000
+</code></pre><pre tabindex="0"><code>hexdump GC2-xHAT.eep
+</code></pre><pre tabindex="0"><code>0000000 2d52 6950 0001 0002 0088 0000 0001 0000
 0000010 004c 0000 1046 2881 bd24 9ea3 4ce4 2e7b
 0000020 d99a c999 6c20 0100 161e 7247 7a61 7265
 0000030 4320 6d6f 7570 6574 2072 6c43 6275 2820
@@ -322,8 +322,8 @@ ls -l *.eep
 0000080 0000 0000 0000 6eed                    
 0000088
 </code></pre><p>Nun kann das EEPROM beschrieben werden, dazu wird zuerst der gesamte Speicher gelöscht (auf 0 gesetzt) und dann die Daten übertragen.</p>
-<pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=blank.eep
-</code></pre><pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+<pre tabindex="0"><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=blank.eep
+</code></pre><pre tabindex="0"><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
 This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
 Do you wish to continue? (yes/no): yes
 Writing...
@@ -333,8 +333,8 @@ Writing...
 4096 Bytes (4,1 kB, 4,0 KiB) kopiert, 17,079 s, 0,2 kB/s
 Closing EEPROM Device.
 Done.
-</code></pre><pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT.eep
-</code></pre><pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+</code></pre><pre tabindex="0"><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT.eep
+</code></pre><pre tabindex="0"><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
 This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
 Do you wish to continue? (yes/no): yes
 Writing...
@@ -345,12 +345,12 @@ Closing EEPROM Device.
 Done.
 </code></pre><p>Nun kann man den Raspberry Pi neu starten. Danach können die Kennungen ausgelesen werden.</p>
 <!-- raw HTML omitted -->
-<pre><code>cat  /proc/device-tree/hat/*
-</code></pre><pre><code>hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer Computer Club (Austria)
-</code></pre><h3 id="device-tree-">Device Tree</h3>
+<pre tabindex="0"><code>cat  /proc/device-tree/hat/*
+</code></pre><pre tabindex="0"><code>hatGC2-xHAT (Raspjamming)0x6c200x0100c999d99a-2e7b-4ce4-9ea3-bd2428811046Grazer Computer Club (Austria)
+</code></pre><h3 id="device-tree">Device Tree</h3>
 <p>Es ist auch möglich eine Device Tree Konfiguration im EEPROM abzulegen. Man kann eine bestehende Device Tree Konfiguration verwenden oder einen neue erstellen.
 Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf GPIO20 (mögliche Trigger-Events für den Ausgang kann man mit dem Befehl &ldquo;cat /sys/devices/platform/leds/leds/led0/trigger&rdquo; auflisten). Dazu wird folgender Inhalt in der Datei led.dts erzeugt.</p>
-<pre><code>/dts-v1/;
+<pre tabindex="0"><code>/dts-v1/;
 /plugin/;
 
 / {
@@ -379,11 +379,11 @@ Im Beispiel wird ein Blinklicht auf GPIO16 aktiviert und SD-Kartenzugriffe auf G
     };
 };
 </code></pre><p>Nun wird der Device Tree Source in eine binäre dtb- bzw. dtbo-Datei übersetzt. Diese Datei wird bei der EEPROM-Datei Erzeugung als zusätzlicher Parameter angehängt.</p>
-<pre><code>dtc -@ -I dts -O dtb -o led.dtbo led.dts
+<pre tabindex="0"><code>dtc -@ -I dts -O dtb -o led.dtbo led.dts
 ./eepmake eeprom_settings.txt GC2-xHAT-dt.eep led.dtbo
 </code></pre><p>Die erhaltene Datei wird dann wieder auf das EEPROM geschrieben.</p>
-<pre><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT-dt.eep
-</code></pre><pre><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
+<pre tabindex="0"><code>sudo ./eepflash.sh -d=0 -t=24c32 -w -f=GC2-xHAT-dt.eep
+</code></pre><pre tabindex="0"><code>This will attempt to talk to an eeprom at i2c address 0xNOT_SET on bus 0. Make sure there is an eeprom at this address.
 This script comes with ABSOLUTELY no warranty. Continue only if you know what you are doing.
 Do you wish to continue? (yes/no): yes
 Writing...
@@ -394,12 +394,12 @@ Writing...
 Closing EEPROM Device.
 Done.
 </code></pre><p>Wenn keine weiteren Änderungen am EEPROM durchgeführt werden, kann die Aktivierung des I2C0-Buses wieder aus der Datei &ldquo;config.txt&rdquo; entfernt werden.</p>
-<pre><code>#dtparam=i2c_vc=on
+<pre tabindex="0"><code>#dtparam=i2c_vc=on
 </code></pre><p>Nach einem Neustart müsste eine an GPIO16 angeschlossene LED (mit Vorwiderstand) blinken und eine LED an GPIO20 SD-Kartenzugriffe ersichtlich machen.</p>
 <h2 id="verlinkungen">Verlinkungen</h2>
 <p>Spezifikationen für Aufsteckboards und <a href="https://github.com/raspberrypi/hats">HATs</a><br>
 Raspberry Pi Forum <a href="https://lb.raspberrypi.org/forums/viewtopic.php?t=108134">HOWTO: Raspi HAT EEPROM and device-tree</a></p>
-<h2 id="beispielvideo-">Beispielvideo</h2>
+<h2 id="beispielvideo">Beispielvideo</h2>
 <p><a href="https://www.youtube.com/watch?v=1dkpccwG0sw"><img src="http://img.youtube.com/vi/1dkpccwG0sw/0.jpg" alt="Raspberry Pi GC2-xHAT EEPROM/LED test"></a></p>
             </article>
           </div>
@@ -606,7 +606,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

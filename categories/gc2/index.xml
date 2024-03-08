@@ -6,10 +6,15 @@
     <description>Recent content in GC2 on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.gc2.at/categories/gc2/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/gc2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dell Laptop upgrade</title>
+      <link>https://blog.gc2.at/post/gc2-laptops/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
+      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi CPU Kühlung</title>
@@ -54,15 +59,6 @@
       
       <guid>https://blog.gc2.at/post/powerconsumtion/</guid>
       <description>&lt;p&gt;Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Dell Laptop upgrade</title>
-      <link>https://blog.gc2.at/post/gc2-laptops/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
-      <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
     </item>
     
     <item>

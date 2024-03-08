@@ -6,15 +6,11 @@
     <description>Recent content in Categories on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programmierung</title>
       <link>https://blog.gc2.at/categories/programmierung/</link>
-      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/programmierung/</guid>
       <description></description>
@@ -23,9 +19,36 @@
     <item>
       <title>Raspberry Pi</title>
       <link>https://blog.gc2.at/categories/raspberry-pi/</link>
-      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero</title>
+      <link>https://blog.gc2.at/categories/raspberry-pi-zero/</link>
+      <pubDate>Sun, 29 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/raspberry-pi-zero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft</title>
+      <link>https://blog.gc2.at/categories/minecraft/</link>
+      <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GC2</title>
+      <link>https://blog.gc2.at/categories/gc2/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/categories/gc2/</guid>
       <description></description>
     </item>
     
@@ -44,33 +67,6 @@
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.gc2.at/categories/uc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Zero</title>
-      <link>https://blog.gc2.at/categories/raspberry-pi-zero/</link>
-      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/raspberry-pi-zero/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Minecraft</title>
-      <link>https://blog.gc2.at/categories/minecraft/</link>
-      <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/minecraft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GC2</title>
-      <link>https://blog.gc2.at/categories/gc2/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/categories/gc2/</guid>
       <description></description>
     </item>
     

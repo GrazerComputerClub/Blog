@@ -13,18 +13,18 @@
         "articleSection" : "post",
         "name" : "Minecraft Server",
         "headline" : "Minecraft Server",
-        "description" : "\x3cp\x3eMinecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eMinecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2021",
-        "datePublished": "2021-08-09 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2021-08-09 00:00:00 \x2b0000 UTC",
+        "copyrightYear" : "2023",
+        "datePublished": "2023-07-08 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2023-07-08 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "1611",
+        "wordCount" : "1840",
         "image" : "https://blog.gc2.atimg/MinecraftServer.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -233,7 +233,7 @@
       </div>
       
         <div class="entry-meta">
-          <span class="date">09 August</span>	<span> / </span>
+          <span class="date">08 July</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -264,7 +264,8 @@
             <article>
               <p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.</p>
 <h2 id="grundsätzliches">Grundsätzliches</h2>
-<p>Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.</p>
+<p>Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.<br>
+Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren.</p>
 <h2 id="basis-installation-und-einrichtung">Basis Installation und Einrichtung</h2>
 <p>Als Basis für den Server wird ein Raspberry Pi OS Lite 32-Bit verwendet.<br>
 Folgende Schritte müssen initial durchgeführt werden:</p>
@@ -286,8 +287,8 @@ Folgende Schritte müssen initial durchgeführt werden:</p>
 <p>Nach dem ersten Start braucht man dann nur noch die letzte Updates zu installieren.</p>
 <h2 id="microsd-benchmark">MicroSD Benchmark</h2>
 <p>Die Geschwindigkeit der MicroSD-Karte ist von entscheidender Bedeutung für den Minecraft Server. Mit einem Benchmark vom Autor, kann die Karte überprüft werden.</p>
-<pre><code>sudo curl https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash 
-</code></pre><pre><code>     Category                  Test                      Result     
+<pre tabindex="0"><code>sudo curl https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash 
+</code></pre><pre tabindex="0"><code>     Category                  Test                      Result     
 HDParm                    Disk Read                 26.34 MB/s               
 HDParm                    Cached Disk Read          10.20 MB/s               
 DD                        Disk Write                16.3 MB/s                
@@ -304,29 +305,30 @@ Compare with previous benchmark results at:
 https://pibenchmarks.com/
                                      
 </code></pre><p>Laut Autor wäre ein &ldquo;Score&rdquo; von 1000 wünschenswert. Unter 700 sollte er nicht sein, dann sollte man auf eine USB SSD ausweichen.
-Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.</p>
+Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.<br>
+Eine SSD erreicht im übrigen einen Wert von über 5000 bis 7.000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder nVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf <a href="https://pibenchmarks.com/">https://pibenchmarks.com/</a></p>
 <h2 id="minicraft-server-installation">Minicraft Server Installation</h2>
-<pre><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
-</code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden <code>curl https://papermc.io/api/v2/projects/paper</code>.</p>
-<pre><code>{&quot;project_id&quot;:&quot;paper&quot;,&quot;project_name&quot;:&quot;Paper&quot;,&quot;version_groups&quot;:[&quot;1.8&quot;,...
-&quot;1.18.2&quot;,&quot;1.19&quot;,&quot;1.19.1&quot;,&quot;1.19.2&quot;]}
-</code></pre><p>In diesem Fall ist die Version 1.19.2 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.</p>
-<pre><code>cat SetupMinecraft.sh | grep Version=
-</code></pre><pre><code>Version=&quot;1.19.2&quot;
+<pre tabindex="0"><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
+</code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden <code>curl https://papermc.io/api/v2/projects/paper</code> bzw. man kann sie auch einfach in einem Browser öffnen <a href="https://papermc.io/api/v2/projects/paper">https://papermc.io/api/v2/projects/paper</a> (JSON-Format).</p>
+<pre tabindex="0"><code>{&quot;project_id&quot;:&quot;paper&quot;,&quot;project_name&quot;:&quot;Paper&quot;,&quot;version_groups&quot;:[&quot;1.8&quot;,...
+&quot;1.18.2&quot;,&quot;1.19&quot;,&quot;1.19.1&quot;,&quot;1.19.2&quot;,&quot;1.19.3&quot;,&quot;1.19.4&quot;,&quot;1.20&quot;,&quot;1.20.1&quot;]}
+</code></pre><p>In diesem Fall ist die neueste verfügbare Version die 1.20.1, wir können sie ins Setup-Script eintragen falls das nicht schon dort steht. Es könnte aber auch gewünscht sein, dass eine altere Version installiert wird. Möglicherweise soll der Server kompatibel zu einer Mod sein oder man will die letzen stabile Optifine Version benutzen können.</p>
+<pre tabindex="0"><code>cat SetupMinecraft.sh | grep Version=
+</code></pre><pre tabindex="0"><code>Version=&quot;1.19.4&quot;
 </code></pre><p>Dann kann das Setup gestartet werden.</p>
-<pre><code>bash SetupMinecraft.sh
-</code></pre><pre><code>Installing latest Java OpenJDK...
+<pre tabindex="0"><code>bash SetupMinecraft.sh
+</code></pre><pre tabindex="0"><code>Installing latest Java OpenJDK...
 Correct OpenJDK (16) was not found in apt repositories and needs to be installed via snapd.  Checking for snapd...
 The snap application is not currently installed.
 Install snapd and reboot the Pi now? (run SetupMinecraft.sh again after reboot completes) (y/n)?
 </code></pre><p>Nun muss man y gefolgt von der Eingabetaste drücken, damit später Java 16 (OpenJDK) installiert werden kann. Java 16 ist seit der Version 1.17 von Minecraft zwingend erforderlich.
 Nach einem automatischen Neustart muss das Setup neu gestartet werden.</p>
-<pre><code>bash SetupMinecraft.sh
-</code></pre><pre><code>Enter root directory path to install Minecraft server.  Almost nobody should change this unless you're installing to a different disk altogether. (default ~): 
+<pre tabindex="0"><code>bash SetupMinecraft.sh
+</code></pre><pre tabindex="0"><code>Enter root directory path to install Minecraft server.  Almost nobody should change this unless you're installing to a different disk altogether. (default ~): 
 Directory Path: 
 Directory Path : /home/pi -- accept (y/n)?
 </code></pre><p>Den Standardpfad (Home Directory) kann man mit der Eingabetaste bestätigen. Bei der Nachfrage, bei dem der Pfad ausgegeben wird, kann man y gefolgt von der Eingabetaste drücken.</p>
-<pre><code>Creating minecraft server directory...
+<pre tabindex="0"><code>Creating minecraft server directory...
 Getting total system memory...
 Total memory: 3839 - Available Memory: 3642
 Warning: You are running a 32 bit operating system which has a hard limit of 3 GB of memory per process
@@ -338,20 +340,20 @@ You must leave enough left over memory for the operating system to run backgroun
 If all memory is exhausted the Minecraft server will either crash or force background processes into the paging file (very slow).
 Enter amount of memory in megabytes to dedicate to the Minecraft server (recommended: 2400):  
 </code></pre><p>Nun wird gefragt wieviel Speicher dem Minecraft Prozess zugeordnet werden soll. Minimal sind 600 MB. Bei einem 32-Bit Prozess sind maximal 2700 MB möglich. Man sollte 2200 oder 2400 eingeben (2700 führte im Test zu Abstürzen) und die Enter-Taste drücken.</p>
-<pre><code>Enter a name for your server...
+<pre tabindex="0"><code>Enter a name for your server...
 Server Name: 
 </code></pre><p>Nun muss man den Servernamen eingeben. In dem Beispiel wählen wird &ldquo;GC2&rdquo;.</p>
-<pre><code>Minecraft can automatically start at boot if you wish.
+<pre tabindex="0"><code>Minecraft can automatically start at boot if you wish.
 Start Minecraft server at startup automatically (y/n)?
 </code></pre><p>Nun kann man angeben ob der Minecraft Server nach einem Systemstart automatisch gestartet wird. Dies beantworten wir mit Ja, indem wir zuerst y drücken und dann die Enter-Taste.</p>
-<pre><code>Your time zone is currently set to Europe/Vienna.  Current system time: SSun 26 Dec 13:11:02 CET 2021
+<pre tabindex="0"><code>Your time zone is currently set to Europe/Vienna.  Current system time: SSun 26 Dec 13:11:02 CET 2021
 You can adjust/remove the selected reboot time later by typing crontab -e
 Automatically reboot Pi and update server at 4am daily (y/n)?
 </code></pre><p>Nun wird gefragt ob der Server täglich um 4 Uhr früh neu gestartet werden soll. In dem Fall werden täglich Einstellungen gespeichert, Backups erstellt und eventuelle Updates installiert. Dennoch macht es für mich keinen Sinn einen Server komplett neu zu starten. Darum würde ich hier nur dazu raten, wenn das System dezitiert als Minecraft Server genutzt wird und keine durchgehender Betrieb benötigt wird. Zur Aktivierung dieser Option drückt man also y. Ich wähle hier aber n damit kein nächtlicher Neustart ausgeführt wird. Danach muss man die Enter-Taste drücken.
 Nach der Installation wird der Minecraft Server automatisch gestartet.
 Um die Serverazsgaben bzw. den Termial ansehen zu können muss man das screen starten.</p>
-<pre><code>screen -r
-</code></pre><pre><code>[13:13:52 INFO]: Time elapsed: 3001 ms
+<pre tabindex="0"><code>screen -r
+</code></pre><pre tabindex="0"><code>[13:13:52 INFO]: Time elapsed: 3001 ms
 [13:13:52 INFO]: Preparing start region for dimension minecraft:the_nether
 [13:13:54 INFO]: Time elapsed: 1945 ms
 [13:13:54 INFO]: Preparing start region for dimension minecraft:the_end
@@ -363,9 +365,9 @@ Um die Serverazsgaben bzw. den Termial ansehen zu können muss man das screen st
 <h2 id="start-probleme">Start Probleme</h2>
 <p>Sollte der Server nicht laufen, kann man den Status mit <code>sudo service minecraft status</code> prüfen. Wenn beim Starten des Programms einen Fehler auftritt, muss man es manuell in der Konsole starten um ihn diagnostizieren zu können.
 In der Datei &ldquo;start.sh&rdquo; kann man den Startsyntax finden:  <code>cat start.sh | grep java</code></p>
-<pre><code>screen -dmS minecraft /home/pi/minecraft/jre/bin/java -DPaper.IgnoreJavaVersion=true -jar -Xms400M -Xmx2400M /home/pi/minecraft/paperclip.jar
+<pre tabindex="0"><code>screen -dmS minecraft /home/pi/minecraft/jre/bin/java -DPaper.IgnoreJavaVersion=true -jar -Xms400M -Xmx2400M /home/pi/minecraft/paperclip.jar
 </code></pre><p>Starten man nun den Aufruf, so erhält man möglicherweise eine Fehlermeldung wie z. B.:</p>
-<pre><code>Error occurred during initialization of VM
+<pre tabindex="0"><code>Error occurred during initialization of VM
 Can not represent all cards in the heap with card region/card within region. Heap 2306867200B (4294967295 bits) Remembered set covers 53 bits.: Decrease heap size.
 
 </code></pre><p>In dem Fall muss man den maximalen Speicher reduzieren z. B. auf 2000 MB. Dazu ändert man einfach in der Datei &ldquo;start.sh&rdquo; den Parameter &ldquo;-Xmx2400M&rdquo; auf &ldquo;-Xmx2000M&rdquo;.</p>
@@ -373,18 +375,18 @@ Can not represent all cards in the heap with card region/card within region. Hea
 <h2 id="minecraft-server-einstellungen">Minecraft Server Einstellungen</h2>
 <p>Alle wichtigen Einstellungen für den Server sind in der Datei “server.properties” gespeichert. Für den Port auf dem der Minecraft Server verfügbar ist, gilt der Parameter “server-port”. Er ist auf den Standardwert 25565 (Java-Version) gesetzt. Informationen rund um die Einstellungen können der deutschen Minecraft Gamepedia Seite <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a> entnommen werden.<br>
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. MAn könnte auch die anzahl der Player reduzieren.</p>
-<pre><code>difficulty=normal
+<pre tabindex="0"><code>difficulty=normal
 max-players=8
 </code></pre><h3 id="spieler-mit-operatorrechten-ausstatten">Spieler mit Operatorrechten ausstatten</h3>
 <p>Damit man einen Spieler zum Operator machen kann, muss man zur Server-Konsole wechseln. Dies erfolgt durch den Aufruf von <code>screen -r minecraft</code>.
 Dort findet man z. B. diesen Eintrag</p>
-<pre><code>[17:55:55 INFO]: UUID of player Donald is b47637a4-2f8a-4a47-b43c-c9f32b3c227b
+<pre tabindex="0"><code>[17:55:55 INFO]: UUID of player Donald is b47637a4-2f8a-4a47-b43c-c9f32b3c227b
 [17:56:00 INFO]: Donald joined the game
 [17:56:00 INFO]: Donald[/192.168.0.31:63565] logged in with entity id 1 at ([world]-1274.5, 64.0, -199.5)
 </code></pre><p>Nun git man den Befehl <code>op</code> mit dem Spielernamen als Parameter an, also  <code>op Donald</code>
 Nun kann man &lsquo;screen&rsquo; mit der Tastenkombination Strg+A und D verlassen.</p>
 <p>In der Datei ops.json sind die Operatoren gespeichert.</p>
-<pre><code>[
+<pre tabindex="0"><code>[
   {
     &quot;uuid&quot;: &quot;b47637a4-2f8a-4a47-b43c-c9f32b3c227b&quot;,
     &quot;name&quot;: &quot;Donald&quot;,
@@ -406,12 +408,21 @@ Nun kann man den aktualisierten Server wieder starten, dazu gibt man <code>sudo 
 <p>Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so können diese am Server eingespielt werden.</p>
 <p><em>Backup Inhalt auflisten:</em> <code>tar -tvf backups/2021.01.03_04.00.39.tar.gz</code></p>
 <p><em>Minecraft Welten von Backup wiederherstellen:</em></p>
-<pre><code>sudo service minecraft stop
+<pre tabindex="0"><code>sudo service minecraft stop
 cd ~/minecraft/
 rm -r world world_nether/ world_the_end/
-tar xvf ~/minecraft/backups/2021.01.04_04.00.39.tar.gz ./world/ ./world_nether/ ./world_the_end/
+ls backups/
+tar xvf backups/2022.11.05.10.11.28.tar.gz ./world/ ./world_nether/ ./world_the_end/
 sudo service minecraft start
-</code></pre><h2 id="verlinkung">Verlinkung</h2>
+</code></pre><h2 id="server-routing">Server Routing</h2>
+<p>Sollte der Server nach außen hin errreichbar sein, muss man einen Port Weiterleitung am Router einrichten.</p>
+<p><strong>Da dies aber auch ein Sicherheitsrisiko birgt, richtet sich das nur an versierte Benutzer</strong></p>
+<p>Im Router muss ein beliebiger TCP Port wie z. B. 21345 auf den Server Port 25565 weitergeleitet werden.</p>
+<p><img src="../../img/MinecraftPortForward.png" alt="MinecraftPortForward"></p>
+<p>In Minecraft muss man dann die richtige Version starten und auf die Schaltfläche &ldquo;Mehrspieler&rdquo; drücken. Danach kann man auf die Schaltfläche &ldquo;Server hinzufügen&rdquo; drücken.
+Dann gibt man den Server Namen und die IP-Adresse ein. Mit Doppelpunkt kann man den Port angeben wenn er nicht 25565 ist. Sollte die IP-Adresse per Dyndns erreichbar sein, so kann man auch diesen Namen eingeben und den Server so immer erreichen.</p>
+<p><img src="../../img/MinecraftPortServerSetting.png" alt="ATmega328 Steckplatine"></p>
+<h2 id="verlinkung">Verlinkung</h2>
 <p>Originale englischen Anleitung von <a href="https://jamesachambers.com/raspberry-pi-minecraft-server-script-with-startup-service/">James A. Chambers</a><br>
 Git Hub Repository für <a href="https://github.com/TheRemote/RaspberryPiMinecraft">Setup</a><br>
 Unterstützte Paper Minecraft <a href="https://papermc.io/api/v1/paper">Versionen</a><br>
@@ -623,7 +634,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

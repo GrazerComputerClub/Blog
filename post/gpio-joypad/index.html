@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : " GPIO-Eingang zur Joypad Emulation",
         "headline" : " GPIO-Eingang zur Joypad Emulation",
-        "description" : "\x3cp\x3eDie Anforderung, dass man mit GPIO-Eingängen eine virtuelle Joypad am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen Python-Code reichen.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDie Anforderung, dass man mit GPIO-Eingängen eine virtuelle Joypad am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen Python-Code reichen.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-02-16 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-02-16 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-02-16 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-02-16 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/gpio-joypad\/",
         "wordCount" : "1037",
         "image" : "https://blog.gc2.atimg/GPIO-Input-Joypad.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -268,7 +268,7 @@
 <h2 id="uinput-interface">uinput Interface</h2>
 <p>uinput ist ein Kernelmodul, mit dem Eingabegeräte aus dem Userspace emuliert werden können. Durch Schreiben auf das Gerät /dev/uinput kann ein Programm ein virtuelles Eingabegerät mit bestimmten Funktionen erstellen. Dieses Eingabegerät kann eine Tastatur, Maus oder Joypad bzw. Joystick sein.<br>
 Der Zugriff erfolgt bei Python über das uinput Interface (import uinput). So ist die Erstellung eines virtuellen Joypad sehr einfach.</p>
-<pre><code>sudo apt-get install python3-uinput
+<pre tabindex="0"><code>sudo apt-get install python3-uinput
 </code></pre><h2 id="gpio-schaltplan">GPIO Schaltplan</h2>
 <p>Es werden mindestens 8 GPIO-Eingänge benötigt:</p>
 <ul>
@@ -293,7 +293,7 @@ Der Zugriff erfolgt bei Python über das uinput Interface (import uinput). So is
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
@@ -395,7 +395,7 @@ Der Zugriff erfolgt bei Python über das uinput Interface (import uinput). So is
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4070a0">&#34;&#34;&#34; rpi-gpio-jstk.py by Chris Swan 9 Aug 2012
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4070a0">&#34;&#34;&#34; rpi-gpio-jstk.py by Chris Swan 9 Aug 2012
 </span><span style="color:#4070a0">based on python-uinput/examples/joystick.py by tuomasjjrasanen
 </span><span style="color:#4070a0">https://github.com/tuomasjjrasanen/python-uinput/blob/master/examples/joystick.py
 </span><span style="color:#4070a0">&#34;&#34;&#34;</span>
@@ -431,78 +431,78 @@ events <span style="color:#666">=</span> (uinput<span style="color:#666">.</span
 device <span style="color:#666">=</span> uinput<span style="color:#666">.</span>Device(events)
 
 <span style="color:#60a0b0;font-style:italic"># Bools to keep track of movement</span>
-fire1 <span style="color:#666">=</span> False
-fire2 <span style="color:#666">=</span> False
-start <span style="color:#666">=</span> False
-select <span style="color:#666">=</span> False
-up <span style="color:#666">=</span> False
-down <span style="color:#666">=</span> False
-left <span style="color:#666">=</span> False
-right <span style="color:#666">=</span> False
+fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
 
 <span style="color:#60a0b0;font-style:italic"># Center joystick</span>
 <span style="color:#60a0b0;font-style:italic"># syn=False to emit an &#34;atomic&#34; (50, 50) event.</span>
-device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>, syn<span style="color:#666">=</span>False)
+device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>, syn<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">False</span>)
 device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)
 
-<span style="color:#007020;font-weight:bold">while</span> True:
+<span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> start) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_START)):  <span style="color:#60a0b0;font-style:italic"># start button pressed</span>
-    start <span style="color:#666">=</span> True
+    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">1</span>)
   <span style="color:#007020;font-weight:bold">if</span> start <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_START):              <span style="color:#60a0b0;font-style:italic"># start button released</span>
-    start <span style="color:#666">=</span> False
+    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">0</span>) 
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> select) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT)):  <span style="color:#60a0b0;font-style:italic"># select button pressed</span>
-    select <span style="color:#666">=</span> True
+    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">1</span>)
   <span style="color:#007020;font-weight:bold">if</span> select <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT):              <span style="color:#60a0b0;font-style:italic"># select button released</span>
-    select <span style="color:#666">=</span> False
+    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">0</span>) 
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire1) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1)):  <span style="color:#60a0b0;font-style:italic"># Fire1 button pressed</span>
-    fire1 <span style="color:#666">=</span> True
+    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">1</span>)
   <span style="color:#007020;font-weight:bold">if</span> fire1 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1):              <span style="color:#60a0b0;font-style:italic"># Fire1 button released</span>
-    fire1 <span style="color:#666">=</span> False
+    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">0</span>) 
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire2) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2)):  <span style="color:#60a0b0;font-style:italic"># Fire2 button pressed</span>
-    fire2 <span style="color:#666">=</span> True
+    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">1</span>)
   <span style="color:#007020;font-weight:bold">if</span> fire2 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2):              <span style="color:#60a0b0;font-style:italic"># Fire2 button released</span>
-    fire2 <span style="color:#666">=</span> False
+    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">0</span>)
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> up) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_UP)):   <span style="color:#60a0b0;font-style:italic"># Up button pressed</span>
-    up <span style="color:#666">=</span> True
+    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero Y</span>
   <span style="color:#007020;font-weight:bold">if</span> up <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_UP):               <span style="color:#60a0b0;font-style:italic"># Up button released</span>
-    up <span style="color:#666">=</span> False
+    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> down) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN)): <span style="color:#60a0b0;font-style:italic"># Down button pressed</span>
-    down <span style="color:#666">=</span> True
+    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max Y</span>
   <span style="color:#007020;font-weight:bold">if</span> down <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN):             <span style="color:#60a0b0;font-style:italic"># Down button released</span>
-    down <span style="color:#666">=</span> False
+    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> left) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT)): <span style="color:#60a0b0;font-style:italic"># Left button pressed</span>
-    left <span style="color:#666">=</span> True
+    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero X</span>
   <span style="color:#007020;font-weight:bold">if</span> left <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT):             <span style="color:#60a0b0;font-style:italic"># Left button released</span>
-    left <span style="color:#666">=</span> False
+    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
   <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> right) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT)):<span style="color:#60a0b0;font-style:italic"># Right button pressed</span>
-    right <span style="color:#666">=</span> True
+    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max X</span>
   <span style="color:#007020;font-weight:bold">if</span> right <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT):            <span style="color:#60a0b0;font-style:italic"># Right button released</span>
-    right <span style="color:#666">=</span> False
+    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
     device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
-  time<span style="color:#666">.</span>sleep(<span style="color:#666">.</span><span style="color:#40a070">02</span>)  <span style="color:#60a0b0;font-style:italic"># Poll every 20ms (otherwise CPU load gets too high)</span>
+  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">.02</span>)  <span style="color:#60a0b0;font-style:italic"># Poll every 20ms (otherwise CPU load gets too high)</span>
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>sudo python3 joypad.py &amp;
+</div><pre tabindex="0"><code>sudo python3 joypad.py &amp;
 </code></pre><p>Wenn der Fehler &ldquo;OSError: [Errno 19] Failed to open the uinput device: No such device&rdquo; ausgegeben wird, so ist das uinput Device nicht verfügbar. Dann kann mit &ldquo;sudo modprobe uinput&rdquo; das Kernel-Modul geladen werden.</p>
 <p>Testen kann man die Funktion mit dem Joystick Testprogramm &ldquo;jstest&rdquo;.</p>
-<pre><code>sudo apt-get install joystick
+<pre tabindex="0"><code>sudo apt-get install joystick
 jstest /dev/input/js0
-</code></pre><pre><code>Driver version is 2.1.0.
+</code></pre><pre tabindex="0"><code>Driver version is 2.1.0.
 Joystick (python-uinput) has 2 axes (X, Y)
 and 4 buttons (BtnA, BtnB, BtnSelect, BtnStart).
 Testing ... (interrupt to exit)
@@ -510,7 +510,7 @@ Axes:  0:     0  1:     0 Buttons:  0:off  1:off  2:off  3:off
 </code></pre><h2 id="testen-mit-gameboy-emulation">Testen mit Gameboy Emulation</h2>
 <p>Nun kann man das Joypad im Einsatz mit einer Gameboy Color Emulation testen.
 Zuerst muss der Emulator Gambatte aber noch kompiliert und installiert werden, da er nicht im Raspbian vorhanden ist. Bei Raspjamming Image ist er bereits vorinstalliert.</p>
-<pre><code>git clone https://github.com/sinamas/gambatte
+<pre tabindex="0"><code>git clone https://github.com/sinamas/gambatte
 cd gambatte
 sudo apt-get install scons libsdl1.2-dev zlib1g-dev
 sed -i &quot;2 i\global_cflags = global_cflags + \' -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\'&quot; libgambatte/SConstruct
@@ -520,7 +520,7 @@ sudo mv gambatte_sdl/gambatte_sdl /usr/local/bin/gambatte
 </code></pre><p>Benötigte Laufzeit Bibliotheken:<br>
 sudo apt-get install libsdl1.2debian zlib1g</p>
 <p>Nun wird noch ein Freeware Gameboy Color Spiel wie z.B. Skoardy benötigt.</p>
-<pre><code>wget http://www.skoardy.com/skoardygb.zip
+<pre tabindex="0"><code>wget http://www.skoardy.com/skoardygb.zip
 unzip skoardygb.zip Skoardy.gb
 rm skoardygb.zip
 </code></pre><p>Die Joypad Tasten müssen beim Gambatte Emulator als Parameter übergeben werden. Dabei gilt:</p>
@@ -532,7 +532,7 @@ START SELECT A B UP DOWN LEFT RIGHT</p>
 <p>Die Auflösung von 160×144 Pixel kann mit Parameter s auf 320x288 verdoppelt werden, wenn mindestens 640x480 zur Verfügung stehen.</p>
 <p>-s, &ndash;scale N			Scale video output by an integer factor of N</p>
 <p>Nun kann Gambatte mit allen Parametern gestartet werden.</p>
-<pre><code>gambatte -s 2 -y -i js0b3 js0b2 js0b0 js0b1 js0a1- js0a1+ js0a0- js0a0+ Skoardy.gb &amp;
+<pre tabindex="0"><code>gambatte -s 2 -y -i js0b3 js0b2 js0b0 js0b1 js0a1- js0a1+ js0a0- js0a0+ Skoardy.gb &amp;
 </code></pre><h2 id="youtube-video">Youtube Video</h2>
 <p><a href="https://www.youtube.com/watch?v=6zO5fgMRnh0"><img src="http://img.youtube.com/vi/6zO5fgMRnh0/0.jpg" alt="GPIO Maus Video"></a></p>
             </article>
@@ -741,7 +741,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

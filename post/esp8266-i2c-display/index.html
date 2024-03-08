@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Wetteranzeige mittels ESP8266 und I²C Display",
         "headline" : "Wetteranzeige mittels ESP8266 und I²C Display",
-        "description" : "\x3cp\x3eEin einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein\nESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem\nAufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C\nmit Daten von OpenWeather befüllt.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eEin einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein\nESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem\nAufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C\nmit Daten von OpenWeather befüllt.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-13 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-13 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-13 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-13 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/esp8266-i2c-display\/",
         "wordCount" : "468",
         "image" : "https://blog.gc2.atimg/esp8266_i2c_display_weather.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -266,19 +266,19 @@
 ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
 Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
 mit Daten von OpenWeather befüllt.</p>
-<h2 id="umsetzung-">Umsetzung</h2>
+<h2 id="umsetzung">Umsetzung</h2>
 <p>Für die Umsetzung muss man</p>
 <ul>
 <li>das I²C Display über den ESP8266 ansteuern</li>
 <li>den ESP8266 mit dem eigenen WiFi verbinden</li>
 <li>Daten von OpenWeather abrufen.</li>
 </ul>
-<h3 id="wifi-mit-esp8266-">WiFi mit ESP8266</h3>
+<h3 id="wifi-mit-esp8266">WiFi mit ESP8266</h3>
 <p>Jeder der schon einmal einen ESP8266 verwendet hat, wird sicherlich auch schon
 einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -286,7 +286,7 @@ einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.<
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// ...
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// ...
 </span><span style="color:#60a0b0;font-style:italic"></span>WiFi.mode(WIFI_STA);
 WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
 WiFi.setAutoReconnect(<span style="color:#007020">true</span>);
@@ -294,24 +294,24 @@ WiFi.begin(m_ssid.c_str(), m_password.c_str());
 <span style="color:#60a0b0;font-style:italic">// ...
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="display-">Display</h3>
+</div><h3 id="display">Display</h3>
 <p>Um das Display über den ESP8266 anzusteuern, kann man bereits auf ein paar
 vorhandene Bibliotheken aufbauen. Verwendet man für das Projekt die PlatformIO-IDE,
 so muss man nur folgende Bibliotheken als Abhängigkeiten setzen:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ESP_SSD1306
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ESP_SSD1306
 Adafruit GFX Library
 </code></pre></td></tr></table>
 </div>
 </div><p>Um das Display anschließend zu initialisieren sind folgende Zeilen notwendig:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -322,7 +322,7 @@ Adafruit GFX Library
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
 </span><span style="color:#60a0b0;font-style:italic">// verwendet werden
 </span><span style="color:#60a0b0;font-style:italic"></span>ESP_SSD1306 <span style="color:#06287e">display</span>(RST_PIN);
 <span style="color:#60a0b0;font-style:italic">// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
@@ -340,7 +340,7 @@ dazugehörigen Grafikfunktionen die Daten neu gezeichnet werden.
 Für die Anzeige der Wetterdaten wurde folgender Code verwendet:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -349,7 +349,7 @@ Für die Anzeige der Wetterdaten wurde folgender Code verwendet:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">display.setTextSize(<span style="color:#40a070">2</span>);
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">display.setTextSize(<span style="color:#40a070">2</span>);
 display.setCursor(<span style="color:#40a070">0</span>, <span style="color:#40a070">16</span>);
 display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
 display.print(m_lastTemp);
@@ -359,7 +359,7 @@ display.print(m_lastHum); display.println(<span style="color:#4070a0">&#34;%&#34
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="../../img/esp8266_i2c_display_weather_detail.jpg" alt="Display"></p>
-<h3 id="openweather-">OpenWeather</h3>
+<h3 id="openweather">OpenWeather</h3>
 <p>Um Daten von OpenWeather abzurufen, muss man sich zuvor registrieren. Anschließend
 kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
 Anwendung verwenden kann.</p>
@@ -367,7 +367,7 @@ Anwendung verwenden kann.</p>
 durch den ESP8266 leicht abgerufen werden:</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -390,7 +390,7 @@ durch den ESP8266 leicht abgerufen werden:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">WiFiClient client;
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">WiFiClient client;
 client.connect(<span style="color:#4070a0">&#34;api.openweathermap.org&#34;</span>, <span style="color:#40a070">80</span>);
 
 String uri <span style="color:#666">=</span> <span style="color:#4070a0">&#34;/data/2.5/weather?id=&#34;</span>;
@@ -418,7 +418,7 @@ unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
 darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -432,7 +432,7 @@ darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007020;font-weight:bold">auto</span> dataExtractor <span style="color:#666">=</span> [<span style="color:#666">&amp;</span>](String searchPattern) {
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007020;font-weight:bold">auto</span> dataExtractor <span style="color:#666">=</span> [<span style="color:#666">&amp;</span>](String searchPattern) {
   <span style="color:#902000">int</span> idx <span style="color:#666">=</span> line.indexOf(searchPattern);
   <span style="color:#902000">int</span> delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;,&#34;</span>, idx);
   <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>)
@@ -653,7 +653,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

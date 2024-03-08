@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "IR-Empfänger",
         "headline" : "IR-Empfänger",
-        "description" : "\x3cp\x3eMit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier\x26hellip;\x3c\/p\x3e",
+        "description" : "\u003cp\u003eMit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier\u0026hellip;\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-11-10 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-11-10 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-11-10 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-11-10 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/ir\/",
         "wordCount" : "1130",
         "image" : "https://blog.gc2.atimg/IR.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -257,42 +257,42 @@
           <div class="entry-content">
             <article>
               <p>Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&hellip;</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Über einen GPIO Pin lässt sich eine IR-Empfängerbauteil z.B. den Typ TSOP4838 ganz leicht an den Raspberry Pi anschließen. Zusätzliche Bauteile werden nicht benötigt. So lassen sich über eine IR-Fernbedienung Kommandos am System ausführen. Leider hat sich mit dem letzten 4er Kernel bei Raspbian Stretch und Buster einiges geändert, sodass viele Anleitungen im Internet nicht mehr funktionieren. Das neue Kernel-Modul benutzt nun ein anderes Protokoll wodurch der <a href="http://www.lirc.org/">LIRC - Linux Infrared Remote Control</a> Dienst nun nicht mehr korrekt funktioniert. Es bedarf eines Patch (Softwareänderung) des LIRC Programms um den korrekten Betrieb zu gewährleisten.</p>
-<h2 id="anschluss-">Anschluss</h2>
+<h2 id="anschluss">Anschluss</h2>
 <p>Der IR-Sensor TSOP4838 funktioniert mit 2,5 bis 5,5 V und kann somit direkt mit 3,3 V versorgt werden. Pin 3 (links) ist dabei die Versorgung VCC. An Pin 2 (Mitte) wird GND angeschlossen. Der Signal-Ausgang ist dann auf Pin 1 (rechts), der direkt an einen frei wählbaren GPIO angeschlossen wird (z. B. GPIO18).</p>
 <p><img src="../../img/IR-Sensor_Schaltplan.png" alt="IR-Sensor Schaltplan"></p>
 <p><img src="../../img/IR-Sensor_Steckplatine.png" alt="IR-Sensor Steckplatine"></p>
-<h2 id="installation-">Installation</h2>
+<h2 id="installation">Installation</h2>
 <p>Es muss lediglich ein Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; eingefügt werden, damit das entsprechende Kernelmodul geladen wird. Als Parameter wird der verwendetet GPIO angegeben.</p>
-<pre><code># TSOP4838 IR-receiver at GPIO27
+<pre tabindex="0"><code># TSOP4838 IR-receiver at GPIO27
 dtoverlay=gpio-ir,gpio_pin=27
 </code></pre><p>Nach einem Neustart kann LIRC installiert werden.</p>
-<pre><code>sudo apt-get install lirc
+<pre tabindex="0"><code>sudo apt-get install lirc
 </code></pre><p>Der Dienst startet allerdings nicht, da die Parametrierung fehlt.</p>
-<h2 id="parametrierung-">Parametrierung</h2>
+<h2 id="parametrierung">Parametrierung</h2>
 <p>Zuerst sollte man überprüfen ob das Kernel Modul korrekt geladen wurde und damit das lirc-Device vorhanden ist.</p>
-<pre><code>ls /dev/lirc* 
+<pre tabindex="0"><code>ls /dev/lirc* 
 </code></pre><p>Als Ausgabe sollte man &ldquo;/dev/lirc0&rdquo; finden.<br>
 Beispielkonfigurationen für LIRC wurden bereits abgelegt, müssen aber noch umbenannt bzw. umkopiert und modifiziert werden.</p>
-<pre><code>sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
+<pre tabindex="0"><code>sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
 sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
 sudo mv /etc/lirc/lircd.conf.d/devinput.lircd.conf /etc/lirc/lircd.conf.d/devinput.lircd.dist
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>In der Datei &ldquo;/etc/lirc/lirc_options.conf&rdquo; müssen folgenden Zeile angepasst werden (Werte sind anders gesetzt).</p>
-<pre><code>    driver = default
+<pre tabindex="0"><code>    driver = default
     device = /dev/lirc0
-</code></pre><pre><code>sudo service lircd restart
+</code></pre><pre tabindex="0"><code>sudo service lircd restart
 </code></pre><p>Nun könnte man den IR-Empfänger bereits mit &ldquo;mode2&rdquo; und einer beliebigen Fernbedienung testen.</p>
-<pre><code>mode2
+<pre tabindex="0"><code>mode2
 </code></pre><p>Bei einem Tastendruck werden Pulsdauer bzw. Pulspausen ausgegeben.<br>
 Allerdings ist eine Programmierung oder Verwendung noch nicht möglich!</p>
-<h2 id="lirc-dienst-anpassen-">LIRC-Dienst anpassen</h2>
+<h2 id="lirc-dienst-anpassen">LIRC-Dienst anpassen</h2>
 <p>Leider versteht der LIRC Dienst das Kernel Modul nicht korrekt und muss deshalb modifiziert werden.
 Wie das Funktioniert wird im Raspberry Pi Forum im Beitrag <a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1438740&amp;sid=1a1aa370b94e5b2f20158d64d1b0b254#p1438740">Using LIRC with kernel 4.19.X and gpio-ir</a> beschrieben.</p>
 <p>Folgend ist eine Anleitung für die Erzeugung der aktualisierten Pakete für das aktuelle Debian 10 (Buster) aufgeführt:</p>
-<pre><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
+<pre tabindex="0"><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
 sudo apt update
 sudo apt install devscripts
 
@@ -306,20 +306,20 @@ cd lirc-0.10.1
 debuild -uc -us -b
 cd ..
 </code></pre><p>Alternativ können sie auch von unserem GitHub Repository heruntergeladen werden.</p>
-<pre><code>wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc-client0_0.10.1-5.2_armhf.deb
+<pre tabindex="0"><code>wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc-client0_0.10.1-5.2_armhf.deb
 wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc0_0.10.1-5.2_armhf.deb
 wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/lirc_0.10.1-5.2_armhf.deb
 
 </code></pre><p>Nachdem die Pakete bereitgestellt wurden, müssen sie noch installieren werden.</p>
-<pre><code>sudo apt remove lirc liblirc0 liblirc-client0
+<pre tabindex="0"><code>sudo apt remove lirc liblirc0 liblirc-client0
 sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblirc-client0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb 
 </code></pre><p>Wenn nachgefragt wird wie mit den geänderten Konfigurationsdaten umgegangen werden soll, soll wählt man N für &ldquo;Die momentan installierte Version beibehalten&rdquo;.<br>
 Nun kann man noch zukünftige automatische Updates für die Pakete abschalten.</p>
-<pre><code>sudo apt-mark hold liblirc0 liblirc-client0 lirc
+<pre tabindex="0"><code>sudo apt-mark hold liblirc0 liblirc-client0 lirc
 </code></pre><p>Bei unserer Raspjamming Distribution ab Version 10.11.2019 sind die modifizierten LIRC Pakete bereits vorinstalliert!</p>
-<h2 id="fernbedienung-anlernen-und-parametrieren--">Fernbedienung anlernen und parametrieren </h2>
+<h2 id="fernbedienung-anlernen-und-parametrieren">Fernbedienung anlernen und parametrieren </h2>
 <p>In diesem Fall wird eine Fernbedienung für einen Holzbahnzug (Brio oder ähnliche Modelle) angelernt. Es gibt bei der Steuerung nur 4 Tasten. Vorwärts, Rückwerts, Licht und Hupe.</p>
-<pre><code>sudo service lircd stop
+<pre tabindex="0"><code>sudo service lircd stop
 sudo irrecord -H default --disable-namespace
 </code></pre><p>&ldquo;&ndash;disable-namespace&rdquo; benötigt man, wenn man eigene Namen für Tasten vorgeben möchte.</p>
 <ul>
@@ -344,7 +344,7 @@ sudo irrecord -H default --disable-namespace
 </ul>
 <p>Danach wird eine Konfigurationsdatei mit dem Namen &ldquo;ZugB.lircd.conf ins&rdquo; aktuelle Verszeichnis geschrieben.<br>
 Die Datei sieht ungefähr so aus:</p>
-<pre><code>begin remote
+<pre tabindex="0"><code>begin remote
 
   name  ZugB
   bits           16
@@ -368,13 +368,13 @@ Die Datei sieht ungefähr so aus:</p>
 
 end remote
 </code></pre><p>Nun muss sie in das LIRC Konfigurationsverzeichnis kopiert werden.</p>
-<pre><code>sudo cp ZugB.lircd.conf  /etc/lirc/lircd.conf.d/
+<pre tabindex="0"><code>sudo cp ZugB.lircd.conf  /etc/lirc/lircd.conf.d/
 service lircd restart
-</code></pre><h2 id="tasten-einem-befehl-zuordnen--">Tasten einem Befehl zuordnen </h2>
+</code></pre><h2 id="tasten-einem-befehl-zuordnen">Tasten einem Befehl zuordnen </h2>
 <p>Nach dem Anlernen der Fernbedienung kann die irexec.lircrc Konfigurationsdatei erstellt werden, um Befehle mit dem Programm &ldquo;irexec&rdquo; ausführen zu können.
 Eine Beispieldatei wurde bei der Installation mit dem Namen &ldquo;/etc/lirc/irexec.lircrc.dist&rdquo; angelegt.<br>
 Durch das Anlegen folgender Befehle in der &ldquo;/etc/lirc/irexec.lircrc&rdquo; Konfigurationsdatei, wird anfänglich aber nur die Taste auf der Konsole ausgegeben.</p>
-<pre><code>begin
+<pre tabindex="0"><code>begin
     prog   = irexec
     button = UP_B
     config = echo &quot;UP-B&quot;
@@ -398,9 +398,9 @@ begin
     config = echo &quot;LIGHT-B&quot;
 end
 </code></pre><p>Für einen Testlauf muss das Programm mit der Konfigurationsdatei gestartet werden.</p>
-<pre><code>irexec  /etc/lirc/irexec.lircrc
+<pre tabindex="0"><code>irexec  /etc/lirc/irexec.lircrc
 </code></pre><p>Wenn das geht, kann eine Konfiguration als Hintergrunddienst erfolgen. Man könnte z. B. eine LED am GPIO schalten. Hierzu verwenden wir eine Low Power LED, die über den internen Pull-Up Widerstand von ca. 50 KOhm angesteuert wird. Hierzu bleibt der GPIO16 auf Eingang, wir schalten aber bei Eingang einmal den internen Pull Widerstand auf 3,3 V und GND. Die Low Power LEDs können auch bei dem geringen Strom von ca. 25 µA noch merklich leuchten.</p>
-<pre><code>begin
+<pre tabindex="0"><code>begin
     prog   = irexec
     button = UP_B
     config = gpio -g mode 16 up
@@ -412,10 +412,10 @@ begin
     config = gpio -g mode 16 down
 end
 </code></pre><p>Wenn man den Dienst aktivieren und starten möchte, so muss man folgende Befehle eingeben (Service Datei: /lib/systemd/system/irexec.service):</p>
-<pre><code>sudo systemctl unmask irexec.service
+<pre tabindex="0"><code>sudo systemctl unmask irexec.service
 sudo systemctl enable irexec.service
 sudo service irexec start
-</code></pre><h2 id="beispielvideo-">Beispielvideo</h2>
+</code></pre><h2 id="beispielvideo">Beispielvideo</h2>
 <p><a href="https://www.youtube.com/watch?v=15_rlINwO8A"><img src="http://img.youtube.com/vi/15_rlINwO8A/0.jpg" alt="IR Empfänger"></a></p>
 <h2 id="verlinkungen">Verlinkungen</h2>
 <p>Datenblatt <a href="https://produktinfo.conrad.com/datenblaetter/150000-174999/171115-da-01-en-IR_EMPFAENGER_MODUL_TSOP_4838__VIS.pdf">TSOP48..</a><br>
@@ -625,7 +625,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

@@ -11,9 +11,9 @@
              "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi Konfiguration mit \x27config.txt\x27",
-        "headline" : "Raspberry Pi Konfiguration mit \x27config.txt\x27",
-        "description" : "\x3cp\x3eJeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei \x26ldquo;config.txt\x26rdquo; auf der Boot-Partition des Raspberry Pis.\nAllerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.\x3c\/p\x3e",
+        "name" : "Raspberry Pi Konfiguration mit \u0027config.txt\u0027",
+        "headline" : "Raspberry Pi Konfiguration mit \u0027config.txt\u0027",
+        "description" : "\u003cp\u003eJeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei \u0026ldquo;config.txt\u0026rdquo; auf der Boot-Partition des Raspberry Pis.\nAllerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-07 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-07 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-07 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-07 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-konfiguration\/",
         "wordCount" : "511",
         "image" : "https://blog.gc2.atimg/config-txt.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -268,7 +268,7 @@ Bei der Raspberry Pi Foundation gibt es zum Beispiel umfassende Informationen be
 <h3 id="include">Include</h3>
 <p>Über die Anweisung <strong>include</strong> können zusätzliche Textdateien für die Konfiguration eingebunden werden. Damit kann man zum Beispiel über eine einzelne Zeile
 eine Vielzahl an Parametrierungen hinzufügen und auch wieder leicht entfernen.</p>
-<pre><code>#include OverclockPiZero.txt
+<pre tabindex="0"><code>#include OverclockPiZero.txt
 include SPIDisplaySettings.txt
 </code></pre><h3 id="filter">Filter</h3>
 <p>Bedingte Einstellungen können über <strong>Filter</strong> realisiert werden, und gelten somit nur unter bestimmten Umständen. Der Filter wird in eckigen Klammern angegeben <em>[ ]</em>. <em>[all]</em> deaktiviert den Filter. Als Filter kann verwendet werden:</p>
@@ -288,7 +288,7 @@ include SPIDisplaySettings.txt
 <strong>[pi0w]</strong> &hellip; Pi Zero W<br>
 <strong>[all]</strong> &hellip; Filter wird aufgehoben</p>
 <p>Beispiel:</p>
-<pre><code>[pi0]
+<pre tabindex="0"><code>[pi0]
 # Overclock Pi Zero (W)
 arm_freq=1030
 core_freq=500
@@ -296,15 +296,15 @@ sdram_freq=500
 [all]
 </code></pre><p>Beim der <strong>Seriennummer</strong>, muss man die Raspberry Pi Seriennummer mit &ldquo;0x&rdquo; ohne vorlaufenden Nullen in eckigen Klammern angeben. Die Seriennummer wird mit dem Befehl
 <code>cat /proc/cpuinfo | grep Serial</code> ermittelt.</p>
-<pre><code>Serial		: 0000000012345678
+<pre tabindex="0"><code>Serial		: 0000000012345678
 </code></pre><p>Beispiel:</p>
-<pre><code>[0x12345678]
+<pre tabindex="0"><code>[0x12345678]
 # UART defect
 enable_uart=0
 [all]
 </code></pre><p>Beim Filter über <strong>GPIO Zustand</strong>, muss man in eckigen Klammern die GPIO-Nummer (BCM) und den Zustand (1=3,3V; 0=GND) angegeben. Zum Beispiel könnte man so einen Schalter zum Umschalten des Video-Modes integrieren.</p>
 <p>Beispiel:</p>
-<pre><code>[gpio4=1]
+<pre tabindex="0"><code>[gpio4=1]
 # GPIO 4 switch to 720p60 HDMI Mode
 hdmi_mode=4
 disable_overscan=1
@@ -312,7 +312,7 @@ disable_overscan=1
 </code></pre><h2 id="konfigurationen-auslesen">Konfigurationen auslesen</h2>
 <p>Wenn Raspbian Linux gestartet ist, können die Einstellungen der &ldquo;config.txt&rdquo; Konfigurationsdatei mit dem Befehl <code>vcgencmd get_config int</code> aufgelistet werden.</p>
 <p><strong>Raspberry Pi Zero:</strong></p>
-<pre><code>aphy_params_current=547
+<pre tabindex="0"><code>aphy_params_current=547
 arm_freq=1000
 audio_pwm_mode=514
 config_hdmi_boost=5
@@ -341,7 +341,7 @@ pause_burst_frames=1
 program_serial_random=1
 sdram_freq=450
 </code></pre><p><strong>Raspberry Pi 3 A+:</strong></p>
-<pre><code>aphy_params_current=819
+<pre tabindex="0"><code>aphy_params_current=819
 arm_freq=1400
 audio_pwm_mode=514
 config_hdmi_boost=5
@@ -576,7 +576,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

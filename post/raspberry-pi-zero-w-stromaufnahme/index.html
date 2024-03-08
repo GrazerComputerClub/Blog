@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero W Stromaufnahme",
         "headline" : "Raspberry Pi Zero W Stromaufnahme",
-        "description" : "\x3cp\x3eDer Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDer Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-09 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-09 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-09 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-09 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-zero-w-stromaufnahme\/",
         "wordCount" : "351",
         "image" : "https://blog.gc2.atimg/consumtion.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -271,36 +271,36 @@ Beim Auruf muss man die ID des Displays angeben:</p>
 <thead>
 <tr>
 <th>Display</th>
-<th align="center">ID</th>
+<th style="text-align:center">ID</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Main LCD</td>
-<td align="center">0</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td>Secondary LCD</td>
-<td align="center">1</td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
 <td>HDMI 0</td>
-<td align="center">2</td>
+<td style="text-align:center">2</td>
 </tr>
 <tr>
 <td>Composite</td>
-<td align="center">3</td>
+<td style="text-align:center">3</td>
 </tr>
 <tr>
 <td>HDMI 1</td>
-<td align="center">7</td>
+<td style="text-align:center">7</td>
 </tr>
 </tbody>
 </table>
 <p>Das Abschalten der LED brachte keine messbare Reduktion. Rein rechnerisch liegt die Verringerung bei 3 mA.<br>
 WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. Parameter &lsquo;list&rsquo; dient dabei zum Auflisten der Geräte, &lsquo;block&rsquo; zum Abschalten und &lsquo;unblock&rsquo; zum Einschalten.</p>
 <p><code>rfkill list</code></p>
-<pre><code>0: hci0: Bluetooth
+<pre tabindex="0"><code>0: hci0: Bluetooth
 	Soft blocked: no
 	Hard blocked: no
 1: phy0: Wireless LAN
@@ -308,7 +308,7 @@ WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. 
 	Hard blocked: no
 </code></pre><p><code>rfkill block 1</code><br>
 <code>rfkill list</code></p>
-<pre><code>0: hci0: Bluetooth
+<pre tabindex="0"><code>0: hci0: Bluetooth
 	Soft blocked: no
 	Hard blocked: no
 1: phy0: Wireless LAN
@@ -316,7 +316,7 @@ WLAN kann zu Beispiel über den &lsquo;rfkill&rsquo; Befehl deaktiviert werden. 
 	Hard blocked: no
 </code></pre><p><code>rfkill unblock 0</code></p>
 <p>Permanent kann WLAN und Bluetooth mit einem Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; deaktiviert werden.</p>
-<pre><code>dtoverlay=pi3-disable-wifi
+<pre tabindex="0"><code>dtoverlay=pi3-disable-wifi
 dtoverlay=pi3-disable-bt
 </code></pre><p>Das so deaktivierte WLAN reduziert die Stromaufnahme um 20 mA.</p>
             </article>
@@ -524,7 +524,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SPI TFT LCD - Teil 1",
         "headline" : "SPI TFT LCD - Teil 1",
-        "description" : "\x3cp\x3eFür eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eFür eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-12 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-12 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-12 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-12 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/spi-tft-lcd\/",
         "wordCount" : "625",
         "image" : "https://blog.gc2.atimg/SPI-LCD-TFT.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -265,29 +265,29 @@ Nach dem Laden wird ein zweiter Framebuffer &lsquo;/dev/fb1&rsquo; für das Disp
 <thead>
 <tr>
 <th>Kontroller</th>
-<th align="center">Auflösung</th>
-<th align="center">Größe</th>
-<th align="center">ca. Preis China</th>
+<th style="text-align:center">Auflösung</th>
+<th style="text-align:center">Größe</th>
+<th style="text-align:center">ca. Preis China</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ST7735 (adafruit18)</td>
-<td align="center">128x128</td>
-<td align="center">1,44&rdquo;</td>
-<td align="center">3 €</td>
+<td style="text-align:center">128x128</td>
+<td style="text-align:center">1,44&quot;</td>
+<td style="text-align:center">3 €</td>
 </tr>
 <tr>
 <td>ST7735 (sainsmart18)</td>
-<td align="center">160x128</td>
-<td align="center">1,8&rdquo;</td>
-<td align="center">4 €</td>
+<td style="text-align:center">160x128</td>
+<td style="text-align:center">1,8&quot;</td>
+<td style="text-align:center">4 €</td>
 </tr>
 <tr>
 <td>ILI9341</td>
-<td align="center">320x240</td>
-<td align="center">2,2-2,8&rdquo;</td>
-<td align="center">8 €</td>
+<td style="text-align:center">320x240</td>
+<td style="text-align:center">2,2-2,8&quot;</td>
+<td style="text-align:center">8 €</td>
 </tr>
 </tbody>
 </table>
@@ -368,29 +368,29 @@ waveshare22</p>
 <code>sudo modprobe fbtft_device name=sainsmart18 gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 speed=48000000 debug=$((1&lt;&lt;5))</code></p>
 <p>Einbindung für automatische Aktivierung bei Systemstart:</p>
 <p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-<pre><code>spi-bcm2835
+<pre tabindex="0"><code>spi-bcm2835
 fbtft dma
 fbtft_device
 </code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-<pre><code>options fbtft_device name=sainsmart18 gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 speed=48000000
+<pre tabindex="0"><code>options fbtft_device name=sainsmart18 gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 speed=48000000
 </code></pre><h3 id="tft-lcd-adafruit18-st7735-128x128-144">TFT-LCD adafruit18 (ST7735, 128x128, 1,44“)</h3>
 <p>Konsole Beispielaufruf:<br>
 <code>sudo modprobe fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 rotate=90 fps=30 bgr=1 speed=40000000 debug=$((1&lt;&lt;5))</code></p>
 <p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-<pre><code>spi-bcm2835
+<pre tabindex="0"><code>spi-bcm2835
 fbtft dma
 fbtft_device
 </code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-<pre><code>options fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 speed=40000000 bgr=1 fps=30 height=128 width=128 rotate=90
+<pre tabindex="0"><code>options fbtft_device name=adafruit18_green gpios=reset:25,dc:24,cs:8 speed=40000000 bgr=1 fps=30 height=128 width=128 rotate=90
 </code></pre><h3 id="tft-lcd-waveshare-st7735-128x128-144">TFT-LCD WaveShare (ST7735, 128x128, 1,44“)</h3>
 <p>Konsole Beispielaufruf:<br>
 <code>sudo modprobe fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000 debug=$((1&lt;&lt;5))</code></p>
 <p>&ldquo;/etc/modules-load.d/fbtft.conf&rdquo;:</p>
-<pre><code>spi-bcm2835
+<pre tabindex="0"><code>spi-bcm2835
 fbtft dma
 fbtft_device
 </code></pre><p>&ldquo;/etc/modprobe.d/fbtft.conf&rdquo;:</p>
-<pre><code>options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000
+<pre tabindex="0"><code>options fbtft_device name=adafruit18_green gpios=reset:27,dc:25,cs:8,led:24 height=128 width=128 rotate=180 fps=30 bgr=1 speed=40000000
 </code></pre><h2 id="verwendung">Verwendung</h2>
 <p>Die Verwendung wird in einem eigenen Eintrag besprochen &hellip;</p>
 <h2 id="verlinkungen">Verlinkungen</h2>
@@ -601,7 +601,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

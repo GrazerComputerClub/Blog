@@ -6,10 +6,15 @@
     <description>Recent content in Programmierung on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WiringPi Library</title>
+      <link>https://blog.gc2.at/post/wiringpi/</link>
+      <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gc2.at/post/wiringpi/</guid>
+      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
@@ -27,15 +32,6 @@
       
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>WiringPi Library</title>
-      <link>https://blog.gc2.at/post/wiringpi/</link>
-      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.gc2.at/post/wiringpi/</guid>
-      <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
     </item>
     
     <item>

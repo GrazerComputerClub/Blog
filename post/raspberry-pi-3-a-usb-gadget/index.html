@@ -11,9 +11,9 @@
              "@id": "https:\/\/blog.gc2.at"
         },
         "articleSection" : "post",
-        "name" : "Raspberry Pi 3 A\x2b USB Gadget",
-        "headline" : "Raspberry Pi 3 A\x2b USB Gadget",
-        "description" : "\x3cp\x3eBeim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A\x2b lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.\x3c\/p\x3e",
+        "name" : "Raspberry Pi 3 A\u002b USB Gadget",
+        "headline" : "Raspberry Pi 3 A\u002b USB Gadget",
+        "description" : "\u003cp\u003eBeim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A\u002b lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-23 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-23 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-23 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-23 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/raspberry-pi-3-a-usb-gadget\/",
         "wordCount" : "550",
         "image" : "https://blog.gc2.atimg/Raspberry-Pi-3-A+-USB-Gadget.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -261,32 +261,32 @@
 <p>Der Raspberry Pi Zero hat einen einzigen USB-Anschluss der direkt mit dem Prozessor verbunden ist. Dadurch kann der USB-Anschluss nicht nur als Host für USB-Geräte (Tastatur, Maus, USB-Stick) verwendet werden, sondern auch als Client. Beim Raspberry Pi 3 A+ ist das ähnlich, nur gibt es nur einen Standard USB Anschluss als Typ A-Buchse. Zum Anschluss eines USB OTG Kabels mit Micro-USB Anschluss benötigt man einen Adapter oder eine andere Modifikation.<br>
 Verwendet man einen Adapter so umgeht man die Polyfuse Sicherung am Versorgungsanschluss. Ich habe mich deshalb dazu entschlossen einen eigenen Micro-USB Anschluss aufzulöten.<br>
 Da bei dem USB Anschluss der OTG ID Pin fehlt, ist der Anschluss eigentlich fix auf USB-Host konfiguriert. Dies kann allerdings umgangen werden indem man beim Laden des Overlays in der Konfigurationsdatei &ldquo;config.txt&rdquo; einen zusätzlichen Parameter mitgibt.</p>
-<pre><code>dtoverlay=dwc2,dr_mode=peripheral
+<pre tabindex="0"><code>dtoverlay=dwc2,dr_mode=peripheral
 </code></pre><h2 id="zusätzlicher-microusb-anschluss">Zusätzlicher MicroUSB Anschluss</h2>
 <p>Beim Erstellen eines zusätzlichen Anschluss, habe ich eine MicroUSB Breakoutboard verwendet. Auf der Rückseite der Raspberry Pi 3 A+ Platine gibt es verschiedene Lötpunkte. An den Lötpunkten kann man recht leicht ein Kabel bzw. Draht anlöten. Die Lötpunkte sind mit Nummern bezeichnet. Leider gibt es keinen Schaltplan vom Raspberry Pi 3 A+, aber die USB Kontakte sind gleich bezeichnet wie beim Raspberry Pi Zero.</p>
 <table>
 <thead>
 <tr>
 <th>Lötpunkt</th>
-<th align="center">Kontakt</th>
+<th style="text-align:center">Kontakt</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PP2</td>
-<td align="center">VCC 5V</td>
+<td style="text-align:center">VCC 5V</td>
 </tr>
 <tr>
 <td>PP23</td>
-<td align="center">USB D-</td>
+<td style="text-align:center">USB D-</td>
 </tr>
 <tr>
 <td>PP22</td>
-<td align="center">USB D+</td>
+<td style="text-align:center">USB D+</td>
 </tr>
 <tr>
 <td>PP5</td>
-<td align="center">GND</td>
+<td style="text-align:center">GND</td>
 </tr>
 </tbody>
 </table>
@@ -507,7 +507,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

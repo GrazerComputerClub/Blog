@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "Raspberry Pi GPIO Librarys",
+        "headline" : "Raspberry Pi GPIO Librarys",
+        "description" : "\u003cp\u003eZwischen 2019 und 2024 gab es einige Änderungen beim Raspberry Pi Computer, allerdings haben viele GPIO Libarys inzwischen den Support eingestellt. Ein kurzer Überblick über den aktuellen Stand der GPIO Bibliotheken\u0026hellip;\u003c\/p\u003e",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2024",
+        "datePublished": "2024-01-13 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-01-13 00:00:00 \u002b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/gpiolibrarys\/",
+        "wordCount" : "397",
+        "image" : "https://blog.gc2.atimg/GPIOLibrary.png"",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Raspberry Pi GPIO Librarys </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">ccc</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">gc2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/minecraft">minecraft</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/uc">uc</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/GPIOLibrary.png">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">13 January</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Raspberry Pi GPIO Librarys</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>Zwischen 2019 und 2024 gab es einige Änderungen beim Raspberry Pi Computer, allerdings haben viele GPIO Libarys inzwischen den Support eingestellt. Ein kurzer Überblick über den aktuellen Stand der GPIO Bibliotheken&hellip;</p>
+<h2 id="c">C</h2>
+<h3 id="libgpiod">libgpiod</h3>
+<p>Entwicklung: <a href="https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git">https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git</a></p>
+<p>libgpiod ist die Offizielle GPIO Librarys für alle Linux Systeme.<br>
+Es ist auf Raspberry Pi OS Bookmworm mit Version 1.6.3 vorinstalliert (Pakete: gpiod, libgpiod-dev, libgpiod2).<br>
+Die Version 2 ist in Entwicklung und wird voraussichtlich eine neue API haben.
+Die Library hat wenig Abstraktion und damit müssen modellspezifische Anpassungen außerhalb behandelt werden (z.B. Erkennung Pi0-4 / Pi5). Außerdem ist die Perfomrnace trotz Hochsprache C sehr bescheiden.</p>
+<h3 id="wiring-pi">Wiring Pi</h3>
+<p><img src="../../img/BestC.png" alt="Award"></p>
+<p>Entwicklung: <a href="https://github.com/WiringPi/WiringPi">https://github.com/WiringPi/WiringPi</a></p>
+<p>WiringPi in Version 3 unterstützt alle Raspberry Pi Modelle und Raspberry Pi OS Bookworm. Leider ist die Library selbst nicht in Bookworm und Bullseye enthalten und muss somit manuell installiert werden. Sie ist sehr performant da direkt auf die Register für die GPIOs zugegriffen wird. Sie ist eine klare Empfehlung.</p>
+<h3 id="bcm2835">bcm2835</h3>
+<p>Webseite: <a href="http://www.airspayce.com/mikem/bcm2835/">http://www.airspayce.com/mikem/bcm2835/</a></p>
+<p>bcm2835 wurde bis Raspbbery Pi 4 (2019) entwickelt und steht als Version 1.73 zur Verfügung. Es fehlt der explizite Support für Raspberry Pi Bullseye und Bookworm es dürfte aber funktionieren.
+Es ist auf Raspberry Pi OS Bookmworm mit der veralteten Version 1.71 verfügbar und kann mit <code>sudo apt install libbcm2835-dev</code> installiert werden.</p>
+<h3 id="pigpio">pigpio</h3>
+<p>Webseite: <a href="https://abyz.me.uk/rpi/pigpio/">https://abyz.me.uk/rpi/pigpio/</a><br>
+Entwicklung: <a href="https://github.com/joan2937/pigpio">https://github.com/joan2937/pigpio</a></p>
+<p>pigpio wurde bis Raspbbery Pi 4 (2019) entwickelt. Am 2 März 2021 wurde die letzte Version v79 veröffentlicht.
+Es ist auf Raspberry Pi OS Bookmworm verfügbar und vorinstalliert (Pakete: pigpio, pigpio-tools, libpigpio-dev, libpigpio1).</p>
+<h2 id="python">Python</h2>
+<h3 id="libgpiod-1">libgpiod</h3>
+<p>libgpiod, die Offizielle GPIO Librarys für alle Linux Systeme ist auch für Python 3 verfügbar. Auf Bookworm gibt es dafür das Pakete <code>python3-libgpiod</code>.
+Die aktuelle Online-Dokumention findet man unter dieser Adresse <a href="https://gpiozero.readthedocs.io/en/latest/">https://gpiozero.readthedocs.io/en/latest/</a> .</p>
+<h3 id="gpiozero">gpiozero</h3>
+<p><img src="../../img/BestPython.png" alt="Award"></p>
+<p>Webseite: <a href="https://gpiozero.readthedocs.io">https://gpiozero.readthedocs.io</a></p>
+<p>gpiozero wurde Ende 2023 als Version 2.0 überarbeitet und unterstützt den Raspberry Pi 5. Es ist auf Raspberry Pi OS Bookmworm bereits vorinstalliert.
+Die Vorgängerversion 1.6 ist die letzte Version die noch Python 2.0 unterstützt. Aufgrund der unterstützung aller Modelle und Wartung duch die Raspberry Pi Foundation ist
+sie eine klare Empfehlung.</p>
+<h3 id="rpigpio">Rpi.GPIO</h3>
+<p>Webseite: <a href="https://pypi.org/project/RPi.GPIO">https://pypi.org/project/RPi.GPIO</a><br>
+Entwicklung: <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/">https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/</a></p>
+<p>Rpi.GPIO wurde bis Raspberry Pi Zero 2 W und Raspbbery Pi 4 entwickelt. Am 6.2.2022 wurde die letzte Version 0.7.1 veröffentlicht.
+Auf Bookworm stehen das Pakete <code>python3-rpi.gpio</code> zur Verfügung.</p>
+<h3 id="pigpio-1">pigpio</h3>
+<p>Für die Python Version der Library pigpio gilt das gleiche wie für die C Version.
+Auf Bookworm stehen die Pakete <code>python-pigpio</code> und <code>python-pigpio</code> zur Verfügung.</p>
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorie</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2022, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+
+</body>
+</html>

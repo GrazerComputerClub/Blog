@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "MPEG2 Video Dekodierung",
         "headline" : "MPEG2 Video Dekodierung",
-        "description" : "\x3cp\x3eSeit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf\ndem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden\x26hellip;\x3c\/p\x3e",
+        "description" : "\u003cp\u003eSeit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf\ndem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden\u0026hellip;\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-05-30 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-05-30 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-05-30 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-05-30 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/mpeg2\/",
         "wordCount" : "670",
         "image" : "https://blog.gc2.atimg/mpeg2.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -274,7 +274,7 @@ Mam muss aber bedenken, dass der Raspberry Pi Zero noch immer verkauft wird. Dar
 <h3 id="verbereitung">Verbereitung</h3>
 <p>Damit man die Videobeschleunigung nutzen kann, muss der Grafikeinheit zumindest 64 MB Speicher zugewiesen werden. Dazu muss die Zeile &ldquo;gpu_mem=64&rdquo; in die Konfigurationsdatei &ldquo;config.txt&rdquo; eingetragen werden.<br>
 Zum Abspielen von Videos mit Hardwarebeschleunigung empfiehlt sich der omxplayer. Ansonsten kann man Videos mit dem mplayer abspielen. Hier kommt dann ein Softwaredekoder zum Einsatz.</p>
-<pre><code>apt-get install omxplayer mplayer
+<pre tabindex="0"><code>apt-get install omxplayer mplayer
 </code></pre><p>Zum Testen wurde ein MPEG2-Video Datei (ohne Ton) und eine DVD verwendet. Zusätzlich wurde noch eine MJPEG-Video aus einer Kamera und zwei H264-Videos dem Test unterzogen.<br>
 Dies wurde mit dem Raspberry Pi Zero (mit aktivem MPEG2 Hardwaredekoder) und der Raspberry Pi 2 ausgeführt.<br>
 Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; verwendet, um so nur die CPU-Last beim Dekodieren zu messen.</p>
@@ -283,41 +283,41 @@ Bei der Softwaredekodierung wurde mplayer mit Parameter &ldquo;-vo null&rdquo; v
 <thead>
 <tr>
 <th>Video</th>
-<th align="center">omxplayer (Pi Zero)</th>
-<th align="center">mplayer (Pi Zero)</th>
-<th align="center">mplayer (Pi 2)</th>
+<th style="text-align:center">omxplayer (Pi Zero)</th>
+<th style="text-align:center">mplayer (Pi Zero)</th>
+<th style="text-align:center">mplayer (Pi 2)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>DVD</td>
-<td align="center">17 %</td>
-<td align="center">76 %</td>
-<td align="center"></td>
+<td style="text-align:center">17 %</td>
+<td style="text-align:center">76 %</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
 <td>MPEG2 (720x480)</td>
-<td align="center">6 %</td>
-<td align="center">82 %</td>
-<td align="center">40 %</td>
+<td style="text-align:center">6 %</td>
+<td style="text-align:center">82 %</td>
+<td style="text-align:center">40 %</td>
 </tr>
 <tr>
 <td>MJPG (320x240)</td>
-<td align="center">11 %</td>
-<td align="center">27 %</td>
-<td align="center">20 %</td>
+<td style="text-align:center">11 %</td>
+<td style="text-align:center">27 %</td>
+<td style="text-align:center">20 %</td>
 </tr>
 <tr>
 <td>H264 (480x270)</td>
-<td align="center">9 %</td>
-<td align="center">56 %</td>
-<td align="center">22 %</td>
+<td style="text-align:center">9 %</td>
+<td style="text-align:center">56 %</td>
+<td style="text-align:center">22 %</td>
 </tr>
 <tr>
 <td>H264 (854x480)</td>
-<td align="center">9 %</td>
-<td align="center">&gt;100 %</td>
-<td align="center">56 %</td>
+<td style="text-align:center">9 %</td>
+<td style="text-align:center">&gt;100 %</td>
+<td style="text-align:center">56 %</td>
 </tr>
 </tbody>
 </table>
@@ -532,7 +532,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

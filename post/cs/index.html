@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "C# Installation",
         "headline" : "C# Installation",
-        "description" : "\x3cp\x3eUm zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eUm zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-12-26 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-12-26 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-12-26 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-12-26 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/cs\/",
         "wordCount" : "714",
         "image" : "https://blog.gc2.atimg/cs.png"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -269,10 +269,10 @@
           <div class="entry-content">
             <article>
               <p>Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Wer C# auf dem Raspberry Pi Zero programmieren bzw. verwenden möchte ist auf das <a href="https://www.mono-project.com/">Mono Projekt</a> angewiesen. Es unterstützt sowohl den alten ARM11-Prozessor mit ARMv6 Architektur als auch die neuen ARMv7 kompatiblen Prozessoren. Ein einfacher Aufruf von &ldquo;sudo apt-get install mono-complete&rdquo; reicht eigentlich zur Installation aus. Dann erhält man aber eine etwas ältere Version.</p>
-<pre><code>mono -V
-</code></pre><pre><code>Mono JIT compiler version 5.18.0.240 (Debian 5.18.0.240+dfsg-3 Sat Apr 20 05:16:08 UTC 2019)
+<pre tabindex="0"><code>mono -V
+</code></pre><pre tabindex="0"><code>Mono JIT compiler version 5.18.0.240 (Debian 5.18.0.240+dfsg-3 Sat Apr 20 05:16:08 UTC 2019)
 Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
 	TLS:           
 	SIGSEGV:       normal
@@ -285,14 +285,14 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
 	Suspend:       preemptive
 	GC:            sgen (concurrent by default)
 </code></pre><p>Möchte man die neuste Version installieren muss man manuell einige Schritte durchführen.</p>
-<h2 id="installation-">Installation</h2>
-<pre><code>sudo apt-get install apt-transport-https dirmngr gnupg ca-certificates
+<h2 id="installation">Installation</h2>
+<pre tabindex="0"><code>sudo apt-get install apt-transport-https dirmngr gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo &quot;deb https://download.mono-project.com/repo/debian stable-raspbianbuster main&quot; | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt-get update
 sudo apt-get install mono-complete
-</code></pre><pre><code>mono -V
-</code></pre><pre><code>Mono JIT compiler version 6.4.0.198 (tarball Tue Sep 24 01:45:47 UTC 2019)
+</code></pre><pre tabindex="0"><code>mono -V
+</code></pre><pre tabindex="0"><code>Mono JIT compiler version 6.4.0.198 (tarball Tue Sep 24 01:45:47 UTC 2019)
 Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
 	TLS:           __thread
 	SIGSEGV:       normal
@@ -304,18 +304,18 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
 	LLVM:          yes(610)
 	Suspend:       preemptive
 	GC:            sgen (concurrent by default)
-</code></pre><h2 id="raspberry-pi-zero-">Raspberry Pi Zero</h2>
-<h3 id="problembeschreibung-">Problembeschreibung</h3>
+</code></pre><h2 id="raspberry-pi-zero">Raspberry Pi Zero</h2>
+<h3 id="problembeschreibung">Problembeschreibung</h3>
 <p>Untypisch bei der Installation des mono-complete Paketes ist, dass Bibliotheken am Zielsystem kompiliert werden.
 Auf den ersten Blick kann man das ja als verständlich erachten, bei näherer Betrachtung ergeben sich aber Probleme.<br>
 Ja nach System auf dem installiert wird, werden binär unterschiedliche Bibliotheken erzeugt. Wird nun mono auf einer neueren Raspberry Pi (ab Version 2) erzeugt, so kann diese SD-Karte nicht mehr in einer Raspberry Pi Zero eingesetzt werden. Offensichtlich sind die erzeugen Bibliotheken nicht kompatibel mit der alten ARMv6 Architektur. Sobald das Programm &ldquo;mono&rdquo; bzw. &ldquo;/usr/bin/mono-sgen&rdquo; ausgeführt wird, kommt es zum Absturz.<br>
 Durch den Aufruf von &ldquo;dpkg-reconfigure&rdquo; können die Bibliotheken am Zielsystem neu erzeugt werden. Dazu muss man aber jedes der problematischen Pakete kennen.
 Mir ist es bisher nicht gelungen auf diese Art mono korrekt neu zu erzeugen! Die folgende unvollständige Liste der Pakte habe ich bisher ermittelt:</p>
-<pre><code>sudo dpkg-reconfigure libmono-corlib4.5-cil 
+<pre tabindex="0"><code>sudo dpkg-reconfigure libmono-corlib4.5-cil 
 Mono precompiling /usr/lib/mono/4.5/mscorlib.dll for arm (LLVM disabled due to missing SSE4.1)...
-</code></pre><pre><code>sudo dpkg-reconfigure mono-mcs
+</code></pre><pre tabindex="0"><code>sudo dpkg-reconfigure mono-mcs
 Mono precompiling /usr/lib/mono/4.5/mcs.exe for arm (LLVM disabled due to missing SSE4.1)...
-</code></pre><pre><code>sudo dpkg-reconfigure mono-roslyn
+</code></pre><pre tabindex="0"><code>sudo dpkg-reconfigure mono-roslyn
 Mono precompiling /usr/lib/mono/4.5/csc.exe for arm (LLVM disabled due to missing SSE4.1)...
 Mono precompiling /usr/lib/mono/4.5/vbc.exe for arm (LLVM disabled due to missing SSE4.1)...
 Mono precompiling /usr/lib/mono/4.5/VBCSCompiler.exe for arm (LLVM disabled due to missing SSE4.1)...
@@ -326,7 +326,7 @@ Mono precompiling /usr/lib/mono/4.5/System.Collections.Immutable.dll for arm (LL
 Mono precompiling /usr/lib/mono/4.5/System.Reflection.Metadata.dll for arm (LLVM disabled due to missing SSE4.1)...
 </code></pre><p>Die besagten problematischen Bibliotheken befinden sich alle im Verzeichnis &ldquo;/usr/lib/mono/aot-cache/arm&rdquo;. Mit dem Tool &ldquo;md5sum&rdquo; kann man einen Hash der binären Dateien errechnen und erkennt dann, dass auf unterschiedlichen Systemen andere Bibliotheken erzeugt wurden.</p>
 <p><strong>Raspberry Pi 3+:</strong></p>
-<pre><code>5a171770d300363e3ec2eb60a854c481  csc.exe.so
+<pre tabindex="0"><code>5a171770d300363e3ec2eb60a854c481  csc.exe.so
 df8506376fdf137d863e3bba99716b07  mcs.exe.so
 4015357bc969c8a9be7193d59555debc  Microsoft.CodeAnalysis.CSharp.dll.so
 4c55c6475790d96c7a245df5afa22358  Microsoft.CodeAnalysis.dll.so
@@ -337,7 +337,7 @@ c3c739f4753d6fa2770be8704f6f61a6  Microsoft.CodeAnalysis.VisualBasic.dll.so
 32fcdc11684481eb72f638b3dce0cf8e  vbc.exe.so
 ce4d8efa2c3ddac3b42b8e8ffa6407f6  VBCSCompiler.exe.so
 </code></pre><p><strong>Raspberry Pi Zero:</strong></p>
-<pre><code>85ad88c49857e8ca89ba4ae00e8c1fd3  csc.exe.so
+<pre tabindex="0"><code>85ad88c49857e8ca89ba4ae00e8c1fd3  csc.exe.so
 3bef36c9fe11d7e99367cf9b23c32853  mcs.exe.so
 322fdde542e899c12479c71f3d7b1dec  Microsoft.CodeAnalysis.CSharp.dll.so
 28666816903d4a5d16312cf21320833e  Microsoft.CodeAnalysis.dll.so
@@ -349,7 +349,7 @@ be3df82bb795a9224f916113f5bbeeab  System.Reflection.Metadata.dll.so
 bd646f0b1c23b90cf0ea90f15231e439  VBCSCompiler.exe.so
 </code></pre><p>Der genaue Grund warum die Bibliotheken am Raspberry Pi Zero nicht funktionieren ist mir nicht bekannt. Die Dateien werden möglicherweise mit dem Assembler &ldquo;as&rdquo; erzeugt. Hier wird der Optimierungsparameter &ldquo;-mfpu=vfp3&rdquo; verwendet. Als Beschreibung findet man &ldquo;Enable the ARMv7 VFPv3 floating-point extension. Disable the Advanced SIMD extension&rdquo;. Dieser Optimierung sollte eigentlich auf dem ARM11 nicht funktionieren, ob dies aber zum Absturz führt, ist nicht bekannt.<br>
 Aktualisierung 1.11.2020: Auch bei Update/Installation auf einem Raspberry Pi 1 wird beim Kompilieren der Parameter &ldquo;-mfpu=vfp3&rdquo; angewendet.</p>
-<h3 id="lösung-gc2-raspjamming-">Lösung (GC2 Raspjamming)</h3>
+<h3 id="lösung-gc2-raspjamming">Lösung (GC2 Raspjamming)</h3>
 <p>Das Problem trifft vor allem bei unserem Raspjamming Image auf, wenn das Image auf einem ARMv7 System erzeugt wird. Auf einem x86_64-System bei dem eine Emulation (qemu) Verwendung findet, tritt das Problem nicht auf.<br>
 Als Lösung wird von uns nach der Installation von mono, die Library-Dateien überschrieben. Sie wurden einmalig von einem Raspberry Pi Zero System gesichert.
 Diese sind dann auch für neue Raspberry Pi Einplatinencomputer geeignet.</p>
@@ -564,7 +564,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

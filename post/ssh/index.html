@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SSH ohne Passwort",
         "headline" : "SSH ohne Passwort",
-        "description" : "\x3cp\x3eImmer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eImmer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-26 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-09-26 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-09-26 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-09-26 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/ssh\/",
         "wordCount" : "631",
         "image" : "https://blog.gc2.atimg/SSH.png"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -257,7 +257,7 @@
           <div class="entry-content">
             <article>
               <p>Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Wenn man sich per SSH auf einem Linux System anmeldet muss man üblicherweise eine Passwort eingeben. Bei dem Raspberry Pi wird das Standard-Passwort &ldquo;raspberry&rdquo; verwendet. Wenn man allerdings seinen öffentlichen Schlüssel am System hinterlegt, kann man sich ohne Passwort anmelden. Bei der Verwendung der Extention &ldquo;Remote Development&rdquo; für Visual Studio Code ist es sogar verpflichtend.<br>
 Sollte man ein neues Raspbian bzw. Raspberry Pi OS Betriebssystem aufgespielt haben, darf man nicht vergessen die Datei &ldquo;ssh&rdquo; auf der boot-Partition anzulegen. So wird nämlich der SSH-Dienst aktiviert.</p>
 <h2 id="einrichtung-anmeldung-ohne-passwort">Einrichtung Anmeldung ohne Passwort</h2>
@@ -268,7 +268,7 @@ Es macht Sinn erstmals zu überprüfen ob dies bereits geschehen ist. Der Befehl
 <p><code>ssh-keygen</code></p>
 <p>Bei den nachfolgenden Fragen muss man zuerst angeben wo die Schlüssel-Datei gespeichert wird.
 Mit der Eingabetaste wird hier die Standardvorgabe &ldquo;/home/GC2/.ssh/id_rsa&rdquo; benutzt. Dann wird nach der Passwortphrase gefragt. Wenn man zwei mal nur die Eingabetaste drückt, wird keine Phrase verwendet. Man drückt also nach dem Befehl einfach 3 mal auf die Eingabetaste.</p>
-<pre><code>Generating public/private rsa key pair.
+<pre tabindex="0"><code>Generating public/private rsa key pair.
 Enter file in which to save the key (/home/GC2/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
@@ -299,7 +299,7 @@ Sollte es bzgl. des Hostnamens oder der aufgelösten IP-Adresse Probleme geben (
 <code>ssh-keygen -R 192.168.137.10</code><br>
 <code>ssh-copy-id pi@raspberrypi.local</code></p>
 <p>Danach muss man zum letzten mal das Passwort angeben.</p>
-<pre><code>/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+<pre tabindex="0"><code>/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 2 key(s) remain to be installed -- if you are prompted now it is to install the new keys
 pi@raspberrypi.local's password: 
 
@@ -518,7 +518,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

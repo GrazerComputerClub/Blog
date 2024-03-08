@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/blog.gc2.at"
+        },
+        "articleSection" : "post",
+        "name" : "Raspberry Pi OS Bookworm",
+        "headline" : "Raspberry Pi OS Bookworm",
+        "description" : "\u003cp\u003e2023 wurde Raspberry Pi OS auf die aktuelle Debian Basis 12 aktualisiert und trägt somit den Namen Bookworm. Dadurch hat sich einiges geändert, hier eine kleine Auflistung.\u003c\/p\u003e",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2024",
+        "datePublished": "2024-02-01 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-02-01 00:00:00 \u002b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/bookworm\/",
+        "wordCount" : "783",
+        "image" : "https://blog.gc2.atimg/Bookworm.png"",
+        "keywords" : [ "Blog" ]   
+    }
+    </script>
+
+
+ <title>Raspberry Pi OS Bookworm </title>
+
+
+<meta name="description" content="Blog des Grazer Computer Club - GC2" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/ccc">ccc</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/gc2">gc2</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/minecraft">minecraft</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/programmierung">programmierung</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi">raspberry-pi</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+        </li>
+        
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="/categories/uc">uc</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+
+    
+
+    
+    <li>
+      <a href="https://twitter.com/_gc2_" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <a href="mailto:blog@gc2.at" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+
+    
+
+
+    
+    <li>
+      <a href="https://github.com/GrazerComputerClub/" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+
+    
+    <li>
+      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> GC2 Blog </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/index.html">Blog (Deutsch)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://grazercomputerclub.github.io/BlogEN/index.html">Blog (English)</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://blog.gc2.at/impressum/">Impressum</a>
+          
+        </li>
+        
+        <li class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="http://gc2.at">Hauptseite</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  
+  
+    
+  
+  
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/Bookworm.png">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">01 February</span>	<span> / </span>
+
+          <span class="author">
+            <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/raspberry-pi">Raspberry Pi</a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> Raspberry Pi OS Bookworm</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>2023 wurde Raspberry Pi OS auf die aktuelle Debian Basis 12 aktualisiert und trägt somit den Namen Bookworm. Dadurch hat sich einiges geändert, hier eine kleine Auflistung.</p>
+<h2 id="beschreibung">Beschreibung</h2>
+<p>Raspberry Pi OS Bookworm basiert auf Debian 12 und verwendet einen 6.1 Kernel.
+Es gab vorallem 3 große Änderungen, bei der grafischen Oberfläche, Audio und Netzwerk.</p>
+<p>Genaue Information kann man im englischen original Nachlesen.</p>
+<ul>
+<li><a href="https://www.raspberrypi.com/news/bookworm-the-new-version-of-raspberry-pi-os/">https://www.raspberrypi.com/news/bookworm-the-new-version-of-raspberry-pi-os/</a></li>
+<li><a href="https://wiki.debian.org/NewInBookworm">https://wiki.debian.org/NewInBookworm</a></li>
+</ul>
+<h2 id="grafik">Grafik</h2>
+<p>Bei der Grafischen Oberfläche wird nicht länger auf X11 gesetzt sondern auf das neue Wayland. Das gilt vorallem für den Raspberry Pi 4 / 400 und 5.
+X11 ist inzwischen schon 35 Jahre alt und nicht mehr auf der Höhe der Zeit.  Allerdings wird es dür die alten Raspberry Pis immer noch empfohlen.
+Wayland bringt mehr Sicherheit, denn die Kommunikation erfolgt isoliert für die Programme. Als Komposer wird  Wayfire verwendet (früher Mutter Window Manager). Bei X11 wird Openbox als Window Manager verwendet. Programme können im übrigen bei Wayland nicht mehr so wie bei X11 über das Netzwerk remote gestartet werden, es muss eine VNC-Programm benutzt werden.</p>
+<p>Weitere Keine Änderungen sind:</p>
+<ul>
+<li>Die Toolbar ist nun wf-panel-pi statt lxpanel.</li>
+<li>Leider funktioniert VNC bei 32-Bit nicht mehr</li>
+<li>Der Firefox Browser hat einige Optimierungen bekommen</li>
+<li>grim ist das Standard Screenshot Programm</li>
+</ul>
+<h2 id="audio">Audio</h2>
+<p>PipeWire wird nun statt PulseAudio verwendet.
+Teilweise gibt es noch Probleme mit alten Applikationen wie z. B.  Sonic Pi.
+Bei der Lite Version ohne GUI ist aber immer noch Alsa im Einsatz.</p>
+<h2 id="netzwerk">Netzwerk</h2>
+<p>Beim Netzwerk wird nun Network Manager (<a href="https://networkmanager.dev/">https://networkmanager.dev/</a>) für die Verwaltung aller Netzwerk-Geräte und Einstellungen verwendet.<br>
+Früher wurde dhcpd verwendet.<br>
+Das hat auch Auswirkungen auf die Einrichtung von WLAN. Am besten man man nun dies über das Konfigurationsprogramm rasp-config.
+Zur Analyse kann man das Konsolenprogram &ldquo;nmcli&rdquo; verwenden.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  nmcli dev wifi list
+</code></pre></td></tr></table>
+</div>
+</div><pre tabindex="0"><code>  IN-USE  BSSID              SSID          MODE   CHAN  RATE        SIGNAL  BARS  SECURITY 
+  *       00:01:E3:0D:83:8F  WLAN1         Infra   11   130 Mbit/s     91        WPA2     
+          A0:21:B7:AC:AA:34  WLAN2         Infra   1    195 Mbit/s     62        WPA2     
+          F6:F2:6D:9C:A5:AC  WLAN3         Infra   1    195 Mbit/s     60        WPA2     
+</code></pre><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  nmcli con show
+</code></pre></td></tr></table>
+</div>
+</div><pre tabindex="0"><code>NAME                UUID                                  TYPE      DEVICE 
+Wired connection 1  a9035b46-e5f0-39ce-a168-1ff1c9c27829  ethernet  eth0   
+lo                  3a249178-4599-4ae1-ae15-d9505322a972  loopback  lo     
+WLAN1               f29f22f9-41ce-208d-af82-a9f2e754394a  wifi      wlan0  
+</code></pre><h2 id="sonstiges">Sonstiges</h2>
+<p>Die zentrale Systemprotokoll-Datei /var/log/syslog gibt es nun nicht mehr! Stattdessen wird nun journalctl verwendet um Zugriff auf das Systemprotokoll zu bekommen.
+Gibt man <code>journalctl</code> ein, so wir das gesamte Protokoll ausgegeben. Das ist aber viel zu viel für eine sinnvolle Diagnose. <code>journalctl -b</code> zeigt alles seit dem letzten Bootvorgang. Es gibt noch viele andere Parameter die man über die Hilfe <code>man journalctl</code> nachlesen kann.</p>
+<h3 id="proccpuinfo">/proc/cpuinfo</h3>
+<p>Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei &ldquo;/proc/cpuinfo&rdquo; nichts zwischen Kernel 5 und Kernel 6. Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird. Anders soieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile &ldquo;Hardware&rdquo; komplett verschwunden. Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70! Zur analysie kann man den Befehl <code>WIRINGPI_DEBUG=1 gpio readall</code> ausführen.</p>
+<p>Im Fehlerfall sieht das dann so aus.</p>
+<pre tabindex="0"><code>Oops: Unable to determine board revision from /proc/cpuinfo
+ -&gt; No &quot;Hardware&quot; line
+ -&gt;  You'd best google the error to find out why.
+</code></pre><p>Unter Model steht in &ldquo;/proc/cpuinfo&rdquo; aber immer das konkrete Raspberry Pi Modell. Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller, RAM Größe usw. enthält (siehe <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)</a>.</p>
+<p><strong>Raspberry Pi 1:</strong></p>
+<pre tabindex="0"><code>Hardware	: BCM2835
+Revision	: 0002
+Serial		: 00000000dc5813d0
+Model		: Raspberry Pi Model B Rev 1
+</code></pre><p><strong>Raspberry Pi 3:</strong></p>
+<pre tabindex="0"><code>Hardware	: BCM2835
+Revision	: 9020e0
+Serial		: 000000004202fabc
+Model		: Raspberry Pi 3 Model A Plus Rev 1.0
+</code></pre><p><strong>Raspberry Pi 4:</strong></p>
+<pre tabindex="0"><code>
+Revision	: c03111
+Serial		: 100000002eb65c54
+Model		: Raspberry Pi 4 Model B Rev 1.1
+</code></pre><p>Man kann die Revision- und Serial-Nummer aber auch über den Device-Tree binär auslesen:</p>
+<pre tabindex="0"><code>hexdump -C /proc/device-tree/system/linux,revision
+
+00000000  00 c0 31 11
+</code></pre><pre tabindex="0"><code>hexdump -C  /proc/device-tree/system/linux,serial 
+00000000  10 00 00 00 2e b6 5c 65
+</code></pre><p><strong>Raspberry Pi 5:</strong></p>
+<pre tabindex="0"><code>Revision	: c04170
+Serial		: f1d12b5630430cca
+Model		: Raspberry Pi 5 Model B Rev 1.0
+</code></pre><pre tabindex="0"><code>hexdump -C /proc/device-tree/system/linux,revision
+00000000  00 c0 41 70  
+</code></pre><pre tabindex="0"><code>hexdump -C  /proc/device-tree/system/linux,serial 
+00000000  f1 d1 2b 56 30 43 0c cf
+</code></pre><h3 id="gpio-sysfs">GPIO Sysfs</h3>
+<p>Bei Support für die GPIO Sysfs hat sich bis zu Raspberry Pi 5 noch nichts geändert. Hier steht ja im Raum, dass die überholte ABI &ldquo;GPIO Sysfs Interface for Userspace&rdquo; <a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt">https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</a> bald aus dem Kernel gelöscht wird. Im aktuell verwendeten Kernel 6.1 ist das aber noch nicht der Fall und somit ändert sich für die Funktion und GPIO-Librays vorerst nichts. Allerdings muss zum GPIO (BCM)Nummer noch 399 hin zugezählt werden. Also GPIO04 ist über 403 ansprechbar (siehe <a href="https://forums.raspberrypi.com/viewtopic.php?t=359302)">https://forums.raspberrypi.com/viewtopic.php?t=359302)</a>.</p>
+<p><strong>Raspberry Pi 0-4:</strong></p>
+<p>Anzahl der verfügbaren GPIOs</p>
+<pre tabindex="0"><code>cat /sys/class/gpio/gpiochip0/ngpio
+</code></pre><pre tabindex="0"><code>58
+</code></pre><p>Ansprechen einen GPIO</p>
+<pre tabindex="0"><code>echo 4 &gt; /sys/class/gpio/export
+echo out &gt; /sys/class/gpio/gpio4/direction
+echo 1 &gt; /sys/class/gpio/gpio4/value
+echo 0 &gt; /sys/class/gpio/gpio4/value
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  
+    <div class="entry-categories"><p><span>Kategorie</span>
+  
+    
+    <a href="/categories/raspberry-pi" title="View all posts in Raspberry Pi">Raspberry Pi</a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+
+</p></div>	</div>
+
+	
+<div class="author-meta">
+
+  <div class="author">
+    	
+    <img alt='Martin Strohmayer' src="https://www.gravatar.com/avatar/dc376a825706457b68caa281714897d5?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    
+    <span>
+      Geschrieben von:<a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a> </span>
+    </div>
+    <div class="bio">
+      
+      
+      <p>Softwareentwickler und Raspberry Pi Enthusiast.</p>
+        
+      
+	
+      
+
+    
+
+
+  
+  <a class="twitter" target="_blank"
+  href="https://twitter.com/m_stroh">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+
+
+<a class="email" target="_blank"
+href="mailto:martin.strohmayer@gc2.at">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/mstroh76">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="GrazerComputerClub/Blog"
+        issue-term="title"
+        
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    
+<footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
+    
+    <a href=""> GC2 Blog </a>
+    
+	</h1>
+
+			
+			<p class="site-description">Infos rund um Computer, Programmierung, Elektronik und sonstige Informatik</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://twitter.com/_gc2_"  class="twitter" target="_blank">
+            <i class="fab fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+        <a href="mailto:blog@gc2.at"  class="email">
+            <i class="fas fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+
+        
+
+
+        
+        <li>
+        <a href="https://github.com/GrazerComputerClub/"  class="github" target="_blank">
+            <i class="fab fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+
+        
+        <li>
+        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+		
+		<p>2022, Grazer Computer Club e. V.</p>
+		
+		<p>Nederburg Hugo Theme by <a href="https://appernetic.io">Appernetic</a>.</p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://blog.gc2.at/js/jquery.min.js"></script>
+<script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+
+</body>
+</html>

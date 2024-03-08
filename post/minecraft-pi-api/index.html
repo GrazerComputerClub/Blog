@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Minecraft Pi API",
         "headline" : "Minecraft Pi API",
-        "description" : "\x3cp\x3eWenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?\x3c\/p\x3e",
+        "description" : "\u003cp\u003eWenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2020",
-        "datePublished": "2020-09-08 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2020-09-08 00:00:00 \x2b0000 UTC",
+        "datePublished": "2020-09-08 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2020-09-08 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-pi-api\/",
         "wordCount" : "897",
         "image" : "https://blog.gc2.atimg/Minecraft-API.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -293,14 +293,14 @@ Eine tolle englische Anleitung bietet das MagPi Magazin Gratis Heft <a href="htt
 <p>Initialisiert wird die Schnittstelle mit folgendem Code</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">mcpi</span> <span style="color:#007020;font-weight:bold">import</span> minecraft
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">mcpi</span> <span style="color:#007020;font-weight:bold">import</span> minecraft
 <span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">mcpi</span> <span style="color:#007020;font-weight:bold">import</span> block     <span style="color:#60a0b0;font-style:italic"># need for block names</span>
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>                <span style="color:#60a0b0;font-style:italic"># need for sleep</span>
 
@@ -310,10 +310,10 @@ mc <span style="color:#666">=</span> minecraft<span style="color:#666">.</span>M
 </div><p>Der Verbindungsaufbau klappt aber nur, wenn das Spiel selbst gestartet ist, der Titelbildschirm reicht nicht. Mit dem <code>mc</code> Objekt können dann alle Befehl ausgeführt werden. Für eine einfach Ausgabe muss man nur noch <code>postToChat</code> hinzufügen.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mc<span style="color:#666">.</span>postToCat(<span style="color:#4070a0">&#34;Minecraft API TNT sample&#34;</span>)
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mc<span style="color:#666">.</span>postToCat(<span style="color:#4070a0">&#34;Minecraft API TNT sample&#34;</span>)
 </code></pre></td></tr></table>
 </div>
 </div><p>Der Python Sourcecode muss in eine Datei gespeichert werden, z. B. tnt.py und  mit dem Aufruf &ldquo;python3 tnt.py&rdquo; gestartet werden.</p>
@@ -327,13 +327,13 @@ mc <span style="color:#666">=</span> minecraft<span style="color:#666">.</span>M
 <p>Folgender Sourcecode teleportiert, den Spieler 4 Blocke hoch.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#666">=</span> mc<span style="color:#666">.</span>player<span style="color:#666">.</span>getPos()
-<span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;player x=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> y=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">, z=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">%</span> (x, y, z))
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#666">=</span> mc<span style="color:#666">.</span>player<span style="color:#666">.</span>getPos()
+<span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;player x=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> y=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">, z=</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">%</span> (x, y, z))
 currentPlayerPos <span style="color:#666">=</span> mc<span style="color:#666">.</span>player<span style="color:#666">.</span>setPos(x, y<span style="color:#666">+</span><span style="color:#40a070">4</span>, z)
 </code></pre></td></tr></table>
 </div>
@@ -342,12 +342,12 @@ currentPlayerPos <span style="color:#666">=</span> mc<span style="color:#666">.<
 <p>Folgender Sourcecode erzeugt unter dem Spieler einen TNT-Block, sofern er auf festem Untergrund steht.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Block_beneat <span style="color:#666">=</span> mc<span style="color:#666">.</span>getBlock(x, y<span style="color:#666">-</span><span style="color:#40a070">1</span>, z)
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Block_beneat <span style="color:#666">=</span> mc<span style="color:#666">.</span>getBlock(x, y<span style="color:#666">-</span><span style="color:#40a070">1</span>, z)
 <span style="color:#007020;font-weight:bold">if</span> Block_beneat <span style="color:#666">!=</span> block<span style="color:#666">.</span>AIR <span style="color:#007020;font-weight:bold">and</span> Block_beneat <span style="color:#666">!=</span> block<span style="color:#666">.</span>WATER:
   mc<span style="color:#666">.</span>setBlock(x, y, z, block<span style="color:#666">.</span>TNT<span style="color:#666">.</span>id, <span style="color:#40a070">1</span>)
 </code></pre></td></tr></table>
@@ -356,10 +356,10 @@ currentPlayerPos <span style="color:#666">=</span> mc<span style="color:#666">.<
 Es gibt auch die Funktion <code>setblocks</code>, damit können mehrere Blocke auf einmal gesetzt werden. Dazu gibt man zwei Positionen an, die den zu füllenden Bereich definieren. Optional kann auch wieder die DataId Nummer angegeben werden.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  mc<span style="color:#666">.</span>setBlock(x, y, z, x, y<span style="color:#666">+</span><span style="color:#40a070">3</span>, z, block<span style="color:#666">.</span>TNT)
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  mc<span style="color:#666">.</span>setBlock(x, y, z, x, y<span style="color:#666">+</span><span style="color:#40a070">3</span>, z, block<span style="color:#666">.</span>TNT)
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="ereignis-bei-berührung-eines-blocks-schwert">Ereignis bei Berührung eines Blocks (Schwert)</h3>
@@ -368,7 +368,7 @@ Die Funktion <code>pollBlockHits</code> holt sich diese Aktion in eine Variable.
 Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für 15 Sekunden die Aktionen überwacht und eine Meldung ausgegeben.</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -383,7 +383,7 @@ Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">duration<span style="color:#666">=</span><span style="color:#40a070">15</span>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">duration<span style="color:#666">=</span><span style="color:#40a070">15</span>
 <span style="color:#007020;font-weight:bold">for</span> loop <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">1</span>, <span style="color:#007020">int</span>(duration<span style="color:#666">/</span><span style="color:#40a070">0.1</span>)):
   blockHits <span style="color:#666">=</span> mc<span style="color:#666">.</span>events<span style="color:#666">.</span>pollBlockHits()
   <span style="color:#007020;font-weight:bold">for</span> hit <span style="color:#007020;font-weight:bold">in</span> blockHits:
@@ -394,7 +394,7 @@ Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für
       <span style="color:#007020;font-weight:bold">if</span> Block_Hit<span style="color:#666">.</span>data <span style="color:#666">==</span> <span style="color:#40a070">1</span>:
         mc<span style="color:#666">.</span>postToChat(<span style="color:#4070a0">&#34;Aktiviere das TNT mit der linken Maustaste&#34;</span>)
   <span style="color:#007020;font-weight:bold">if</span> loop <span style="color:#666">%</span> <span style="color:#40a070">10</span> <span style="color:#666">==</span> <span style="color:#40a070">0</span>:
-   <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> &#34;</span> <span style="color:#666">%</span> (duration<span style="color:#666">-</span>loop<span style="color:#666">/</span><span style="color:#40a070">10</span>), end<span style="color:#666">=</span><span style="color:#4070a0">&#34;&#34;</span>, flush<span style="color:#666">=</span>True)
+   <span style="color:#007020">print</span>(<span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0"> &#34;</span> <span style="color:#666">%</span> (duration<span style="color:#666">-</span>loop<span style="color:#666">/</span><span style="color:#40a070">10</span>), end<span style="color:#666">=</span><span style="color:#4070a0">&#34;&#34;</span>, flush<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
   time<span style="color:#666">.</span>sleep(<span style="color:#40a070">0.1</span>)
 </code></pre></td></tr></table>
 </div>
@@ -413,14 +413,14 @@ Allerdings muss man die Funktion zyklisch aufrufen. In diesem Beispiel wird für
 </ul>
 <h2 id="installation">Installation</h2>
 <p>Zur Installation lädt man sich die Letztversion vom Repository herunter und startet das Python 3 Programm zusammen mit Minecraft.</p>
-<pre><code>cd ~
+<pre tabindex="0"><code>cd ~
 mkdir minecraft-sound
 cd minecraft-sound
 wget https://github.com/GrazerComputerClub/minecraft-sound/archive/0.3.zip
 unzip 0.3.zip
 cd minecraft-sound-0.3
 </code></pre><p>Durch das modifizieren des Start-Scripts &ldquo;/usr/bin/minecraft-pi&rdquo;, wird die Sound Erweiterung automatisch gestartet und beendet.</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 cd /home/pi/git/minecraft-sound
 python3 minecraft-sound.py &amp;
@@ -655,7 +655,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

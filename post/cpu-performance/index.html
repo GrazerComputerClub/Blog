@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "SoC der Einplatinencomputer",
         "headline" : "SoC der Einplatinencomputer",
-        "description" : "\x3cp\x3eEine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können \x26hellip;\x3c\/p\x3e",
+        "description" : "\u003cp\u003eEine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können \u0026hellip;\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-09-15 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-09-15 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-09-15 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-09-15 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/cpu-performance\/",
         "wordCount" : "2356",
         "image" : "https://blog.gc2.atimg/CPU.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -257,7 +257,7 @@
           <div class="entry-content">
             <article>
               <p>Eine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können &hellip;</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <h3 id="raspberry-pi-boards">Raspberry Pi Boards</h3>
 <p>Der Raspberry B+ und Zero setzen noch auf den SoC (System-on-a-Chip) BCM2835 von Broadcom. Dieser enthält einen alten ARM11 Prozessorkern. Dadurch sind die Messergebnisse vom Raspberry Pi B+ mit Turbo Einstellung identisch zum Raspberry Pi Zero. Der Raspberry Pi 2 verwendet den SoC BCM2836 von Broadcom. Darin enthalten sind vier ARM Cortex-A7 Prozessorkerne. Der Standardtakt beträgt 900 MHz, es kann aber ein Turbo Modus mit 1 GHz aktiviert werden. Der Raspberry Pi 3 verwendet den SoC BCM2837 von Broadcom mit einer Taktrate von maximal 1200 MHz. Der Raspberry Pi 3+ verwendet eine verbesserte Version desselben SoC mit der Bezeichnung BCM2837B0. Er wird mit einem Heatspreader ausgeliefert und die Taktrate beträgt nun maximal 1400 MHz. Im SoC enthalten sind vier ARM Cortex-A53 Prozessorkerne. Der Raspberry Pi 4 verwendet den SoC BCM2711B0 von Broadcom mit vier ARM Cortex A72 Prozessorkernen die eine Taktrate von 1,5 GHz aufweisen. Die CPU-Leistung ist dadurch enorm gestiegen und liegt beinahe doppelt so hoch als beim Raspberry Pi 3. Die Leistungsaufnahme des SoC ist unter Belastung auch gestiegen, weshalb der Einsatz eines CPU Lüfters empfohlen wird. Ein Kühlkörper wird dann nicht mehr benötigt den der SoC ist mit einem Heatspreader ausgestattet (siehe <a href="https://blog.pimoroni.com/raspberry-pi-4-thermals-and-fan-shim/">Raspberry Pi 4 thermals and fan SHIM</a>).</p>
 <h3 id="allwinner-cpu-boards">Allwinner CPU Boards</h3>
@@ -268,12 +268,12 @@ Neuere Orange Pi Einplatinencomputer wie z. B. Orange Pi PC 2 setzt den Allwinne
 <p>Für die Ermittlung der CPU-Singlecore-Leistung wurde das alte Testprogramm <a href="https://www.math.utah.edu/~mayer/linux/bmark.html">nbench</a> verwendet. Auf der <a href="https://www.math.utah.edu/~mayer/linux/results2.html">Homepage</a> des Projekts sind viele Messergebnisse von anderen Systemen als Referenz verfügbar.<br>
 Zum Vergleich wurde ein Intel Atom N280 und auch ein Intel Pentium M Prozessor mit 1,6 GHz ins Diagramm übernommen. Um beim Raspberry Pi 4 einen Vergleich zu haben, wurde auch noch ein 2 GHz Intel Core 2 Duo hinzugefügt.</p>
 <p><img src="../../img/CPU_Performance.png" alt="Diagramm CPU-Performance SoC"></p>
-<h2 id="systemausgaben-">Systemausgaben</h2>
+<h2 id="systemausgaben">Systemausgaben</h2>
 <p>Hier wird des Device-tree Modell (/proc/device-tree/model) als Überschrift angegeben. Dann werden die Systemausgaben für CPU (/proc/cpuinfo) und das Kommando &ldquo;lscpu&rdquo; bei verschiedenen Einplatinencomputer aufgelistet.</p>
-<h3 id="raspberry-pi-foundation---raspberry-pi-">Raspberry Pi Foundation - Raspberry Pi</h3>
+<h3 id="raspberry-pi-foundation---raspberry-pi">Raspberry Pi Foundation - Raspberry Pi</h3>
 <p>Bei den Raspberry Pi Einplatinencomputern liefert Hardware bei &ldquo;/proc/cpuinfo&rdquo; immer  &ldquo;BCM2835&rdquo; obwohl diese CPU nur bei Raspberry Pi 1 und Zero verwendet wird!</p>
 <h4 id="raspberry-pi-model-b-rev-1">Raspberry Pi Model B Rev 1</h4>
-<pre><code>processor       : 0
+<pre tabindex="0"><code>processor       : 0
 model name      : ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS        : 697.95
 Features        : half thumb fastmult vfp edsp java tls 
@@ -286,7 +286,7 @@ CPU revision    : 7
 Hardware        : BCM2835
 Revision        : 0002
 Serial          : 0000000046b94602
-</code></pre><pre><code>Architecture:        armv6l
+</code></pre><pre tabindex="0"><code>Architecture:        armv6l
 Byte Order:          Little Endian
 CPU(s):              1
 On-line CPU(s) list: 0
@@ -302,7 +302,7 @@ CPU min MHz:         700,0000
 BogoMIPS:            697.95
 Flags:               half thumb fastmult vfp edsp java tls
 </code></pre><h4 id="raspberry-pi-model-b-rev-2">Raspberry Pi Model B Rev 2</h4>
-<pre><code>processor       : 0
+<pre tabindex="0"><code>processor       : 0
 model name      : ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS        : 697.95
 Features        : half thumb fastmult vfp edsp java tls 
@@ -315,7 +315,7 @@ CPU revision    : 7
 Hardware        : BCM2835
 Revision        : 000d
 Serial          : 00000000ef82c829
-</code></pre><pre><code>Architecture:        armv6l
+</code></pre><pre tabindex="0"><code>Architecture:        armv6l
 Byte Order:          Little Endian
 CPU(s):              1
 On-line CPU(s) list: 0
@@ -331,7 +331,7 @@ CPU min MHz:         700,0000
 BogoMIPS:            697.95
 Flags:               half thumb fastmult vfp edsp java tls
 </code></pre><h4 id="raspberry-pi-zero-rev-13">Raspberry Pi Zero Rev 1.3</h4>
-<pre><code>processor       : 0
+<pre tabindex="0"><code>processor       : 0
 model name      : ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS        : 997.08
 Features        : half thumb fastmult vfp edsp java tls 
@@ -344,7 +344,7 @@ CPU revision    : 7
 Hardware        : BCM2835
 Revision        : 900093
 Serial          : 0000000076def51e
-</code></pre><pre><code>Architecture:        armv6l
+</code></pre><pre tabindex="0"><code>Architecture:        armv6l
 Byte Order:          Little Endian
 CPU(s):              1
 On-line CPU(s) list: 0
@@ -360,7 +360,7 @@ CPU min MHz:         700,0000
 BogoMIPS:            697.95
 Flags:               half thumb fastmult vfp edsp java tls
 </code></pre><h4 id="raspberry-pi-zero-w-rev-11">Raspberry Pi Zero W Rev 1.1</h4>
-<pre><code>processor	: 0
+<pre tabindex="0"><code>processor	: 0
 model name	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 997.08
 Features	: half thumb fastmult vfp edsp java tls 
@@ -373,7 +373,7 @@ CPU revision	: 7
 Hardware	: BCM2835
 Revision	: 9000c1
 Serial		: 000000007841a2bd
-</code></pre><pre><code>Architecture:        armv6l
+</code></pre><pre tabindex="0"><code>Architecture:        armv6l
 Byte Order:          Little Endian
 CPU(s):              1
 On-line CPU(s) list: 0
@@ -389,7 +389,7 @@ CPU min MHz:         700,0000
 BogoMIPS:            697.95
 Flags:               half thumb fastmult vfp edsp java tls
 </code></pre><h4 id="raspberry-pi-2-model-b-rev-11">Raspberry Pi 2 Model B Rev 1.1</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 5 (v7l)
 BogoMIPS        : 38.40
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -402,7 +402,7 @@ CPU revision    : 5
 Hardware        : BCM2835
 Revision        : a01041
 Serial          : 0000000088506974
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -418,7 +418,7 @@ CPU min MHz:         600,0000
 BogoMIPS:            38.40
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
 </code></pre><h4 id="raspberry-pi-3-model-b-rev-12">Raspberry Pi 3 Model B Rev 1.2</h4>
-<pre><code>Architecture:        armv7l
+<pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -433,7 +433,7 @@ CPU max MHz:         1200,0000
 CPU min MHz:         600,0000
 BogoMIPS:            38.40
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
-</code></pre><pre><code>processor       : 0-3
+</code></pre><pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 4 (v7l)
 BogoMIPS        : 76.80
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
@@ -447,7 +447,7 @@ Hardware        : BCM2835
 Revision        : a02082
 Serial          : 000000008d457b3d
 </code></pre><h4 id="raspberry-pi-3-model-a-plus-rev-10">Raspberry Pi 3 Model A Plus Rev 1.0</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 4 (v7l)
 BogoMIPS        : 38.40
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
@@ -460,7 +460,7 @@ CPU revision    : 4
 Hardware        : BCM2835
 Revision        : 9020e0
 Serial          : 000000003902dfdb
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -476,7 +476,7 @@ CPU min MHz:         600,0000
 BogoMIPS:            38.40
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 </code></pre><h4 id="raspberry-pi-3-model-b-plus-rev-13">Raspberry Pi 3 Model B Plus Rev 1.3</h4>
-<pre><code>processor       : 3
+<pre tabindex="0"><code>processor       : 3
 model name      : ARMv7 Processor rev 4 (v7l)
 BogoMIPS        : 38.40
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
@@ -489,7 +489,7 @@ CPU revision    : 4
 Hardware        : BCM2835
 Revision        : a020d3
 Serial          : 0000000071cf1d79
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -505,7 +505,7 @@ CPU min MHz:         600,0000
 BogoMIPS:            38.40
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 </code></pre><h4 id="raspberry-pi-4-model-b-rev-11">Raspberry Pi 4 Model B Rev 1.1</h4>
-<pre><code>processor	: 0-3
+<pre tabindex="0"><code>processor	: 0-3
 model name	: ARMv7 Processor rev 3 (v7l)
 BogoMIPS	: 108.00
 Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
@@ -518,7 +518,7 @@ CPU revision	: 3
 Hardware	: BCM2835
 Revision	: c03111
 Serial		: 100000002db21ca2
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -533,9 +533,9 @@ CPU max MHz:         1500,0000
 CPU min MHz:         600,0000
 BogoMIPS:            108.00
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
-</code></pre><h3 id="lemaker---banana-pi-">LeMaker - Banana Pi</h3>
+</code></pre><h3 id="lemaker---banana-pi">LeMaker - Banana Pi</h3>
 <h4 id="lemaker-banana-pi">LeMaker Banana Pi</h4>
-<pre><code>processor	: 0-1
+<pre tabindex="0"><code>processor	: 0-1
 model name	: ARMv7 Processor rev 4 (v7l)
 BogoMIPS	: 27.78
 Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -548,7 +548,7 @@ CPU revision	: 4
 Hardware	: Allwinner sun7i (A20) Family
 Revision	: 0000
 Serial		: 16516793044069ae
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              2
 On-line CPU(s) list: 0,1
@@ -563,9 +563,9 @@ CPU max MHz:         960.0000
 CPU min MHz:         144.0000
 BogoMIPS:            50.52
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
-</code></pre><h3 id="xunlong---orange-pi-">Xunlong - Orange Pi</h3>
+</code></pre><h3 id="xunlong---orange-pi">Xunlong - Orange Pi</h3>
 <h4 id="xunlong-orange-pi-zero">Xunlong Orange Pi Zero</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 5 (v7l)
 BogoMIPS        : 48.00
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -578,7 +578,7 @@ CPU revision    : 5
 Hardware        : Allwinner sun8i Family
 Revision        : 0000
 Serial          : 02e00038a3fdef67
-</code></pre><pre><code>CPU(s):              4
+</code></pre><pre tabindex="0"><code>CPU(s):              4
 On-line CPU(s) list: 0-3
 Thread(s) per core:  1
 Core(s) per socket:  4
@@ -592,7 +592,7 @@ CPU min MHz:         120.0000
 BogoMIPS:            48.00
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
 </code></pre><h4 id="xunlong-orange-pi-lite">Xunlong Orange Pi Lite</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 5 (v7l)
 BogoMIPS        : 22.85
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -605,7 +605,7 @@ CPU revision    : 5
 Hardware        : Allwinner sun8i Family
 Revision        : 0000
 Serial          : 02d00072d20c43d8
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -621,7 +621,7 @@ CPU min MHz:         120.0000
 BogoMIPS:            22.85
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
 </code></pre><h4 id="xunlong-orange-pi-pc">Xunlong Orange Pi PC</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 model name      : ARMv7 Processor rev 5 (v7l)
 BogoMIPS        : 61.71
 Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -633,7 +633,7 @@ CPU revision    : 5
 Hardware        : Allwinner sun8i Family
 Revision        : 0000
 Serial          : 02e00071006abb9c
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -649,7 +649,7 @@ CPU min MHz:         120.0000
 BogoMIPS:            22.85
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
 </code></pre><h4 id="xunlong-orange-pi-pc-2">Xunlong Orange Pi PC 2</h4>
-<pre><code>processor       : 0-3
+<pre tabindex="0"><code>processor       : 0-3
 Processor       : AArch64 Processor rev 4 (aarch64)
 Hardware        : sun50iw1p1
 BogoMIPS        : 48.00
@@ -659,7 +659,7 @@ CPU architecture: 8
 CPU variant     : 0x0
 CPU part        : 0xd03
 CPU revision    : 4
-</code></pre><pre><code>Architecture:        aarch64
+</code></pre><pre tabindex="0"><code>Architecture:        aarch64
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3-
@@ -676,9 +676,9 @@ CPU min MHz:         120.0000
 BogoMIPS:            48.00
 NUMA node0 CPU(s):   0-3
 Flags:               fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid
-</code></pre><h3 id="friendlyarm---nanopi-">FriendlyARM - NanoPi</h3>
+</code></pre><h3 id="friendlyarm---nanopi">FriendlyARM - NanoPi</h3>
 <h4 id="friendlyarm-nanopi-neo">FriendlyARM NanoPi NEO</h4>
-<pre><code>processor	: 3
+<pre tabindex="0"><code>processor	: 3
 model name	: ARMv7 Processor rev 5 (v7l)
 BogoMIPS	: 136.80
 Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm 
@@ -691,7 +691,7 @@ CPU revision	: 5
 Hardware	: Allwinner sun8i Family
 Revision	: 0000
 Serial		: 02d00091be2e67ed
-</code></pre><pre><code>Architecture:        armv7l
+</code></pre><pre tabindex="0"><code>Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              4
 On-line CPU(s) list: 0-3
@@ -706,8 +706,8 @@ CPU max MHz:         1368,0000
 CPU min MHz:         120,0000
 BogoMIPS:            48.00
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
-</code></pre><h3 id="cpu-parameter-auslesen--">CPU Parameter auslesen </h3>
-<pre><code>CORES=`cat /proc/cpuinfo | grep -e &quot;^processor&quot; | wc -l`
+</code></pre><h3 id="cpu-parameter-auslesen">CPU Parameter auslesen </h3>
+<pre tabindex="0"><code>CORES=`cat /proc/cpuinfo | grep -e &quot;^processor&quot; | wc -l`
 ARMvX=`cat /proc/cpuinfo | sed -n 's/.*ARMv\(.*\)-.*/\1/p'`
 MODEL=`lscpu | grep &quot;Model name&quot; | cut -d &quot;:&quot; -f 2 | xargs`
 </code></pre>
@@ -916,7 +916,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

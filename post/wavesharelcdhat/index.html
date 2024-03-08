@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT",
         "headline" : "PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT",
-        "description" : "\x3cp\x3eUm nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eUm nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-26 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-26 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-26 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-26 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/wavesharelcdhat\/",
         "wordCount" : "1019",
         "image" : "https://blog.gc2.atimg/WaveShareLCDHAT2.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -272,10 +272,10 @@ Die Plattform kann nur eingeschränkt mobil als Handheld genutzt werden.</p>
 <p>Aus Hardwaresicht muss der HAT einfach auf den Raspberry Pi Zero aufgesteckt werden und mit den beiliegenden Distanzbolzen angeschraubt werden. Danach kann man die Anpassung der Software ausgehend vom Raspberry Pi OS Lite Image in Angriff nehmen.</p>
 <h3 id="display-fbcp-ili9341">Display (fbcp-ili9341)</h3>
 <p>Zur Aktivierung des Displays muss man das SPI-Bus TFT-LCD einbinden. Hierfür bietet sich das Projekt <a href="https://github.com/juj/fbcp-ili9341">fbcp-ili9341</a> an.<br>
-Es kopiert den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Es wird bei der Programm Erstellung bzw. Kompilierung entsprechend parametriert. Für das Waveshare Display gibt es bereits eine Unterstützung (&quot;-DWAVESHARE_ST7735S_HAT=ON&rdquo;). So sind die Anschlüsse und der Kontroller des Display bereits korrekt konfiguriert (BL=24, RST=27, DC=25) und man muss nur noch ein paar wenige Parameter anpassen.
+Es kopiert den Inhalt der Grafikkarte auf das Display und skaliert es entsprechend um. Es wird bei der Programm Erstellung bzw. Kompilierung entsprechend parametriert. Für das Waveshare Display gibt es bereits eine Unterstützung (&quot;-DWAVESHARE_ST7735S_HAT=ON&quot;). So sind die Anschlüsse und der Kontroller des Display bereits korrekt konfiguriert (BL=24, RST=27, DC=25) und man muss nur noch ein paar wenige Parameter anpassen.
 Die SPI-Taktfrequenz wird aus dem System Takt als der &ldquo;core_freq&rdquo; gebildet. Typischerweise liegt sie beim Raspberry Pi Zero auf 250 MHz. Bei Übertaktung aber oft auf 500 MHz. Mit dem Befehl <code>vcgencmd measure_clock core</code> kann die aktuelle Frequenz ermittelt werden. Bei 250 MHz werden mit dem Divisor 8 also ca. 31 MHz erzeugt. Bei Core-Übertaktung auf 500 MHz läuft es dann mit ca. 63 MHz. Was vom Display möglicherweise nicht unterstützt wird, in dem Fall sollte man Divisor 10 einstellen.<br>
 Bei den Optimierungsparametern (DSINGLE_CORE_BOARD und DARMV6Z) wird alles für den Raspberry Pi Zero gesetzt. Die Statistikanzeige (DSTATISTICS) wird mit Wert 0 abgeschaltet. Optional kann man hier 1 angeben damit FPS (Bilder pro Sekunde) links oben angezeigen werden. Bei Wert 2 wird auch noch eine Kurve des Werts angezeigt. Beim letzten Parameter (DDISPLAY_ROTATE_180_DEGREES) wird noch eine Drehung um 180 ° abgeschaltet.</p>
-<pre><code>sudo apt-get install cmake
+<pre tabindex="0"><code>sudo apt-get install cmake
 cd ~
 git clone https://github.com/juj/fbcp-ili9341.git
 cd fbcp-ili9341
@@ -285,16 +285,16 @@ cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=O
 make -j
 sudo cp ./fbcp-ili9341 /usr/local/bin
 </code></pre><p>Die HDMI Ausgabe kann noch entsprechend angepasst werden. In dem Fall würde ich den Videomodus 256x256 empfehlen, dieser wird automatisch auf 128x128 heruntergerechnet und damit geglättet. Man könnte aber auch 128x128 direkt definieren. Die Anweisungen für dise speziellen HDMI-Grafikmodi wurden bereits vordefiniert und können von Git-Hub heruntergeladen werden.</p>
-<pre><code>cd /boot/
+<pre tabindex="0"><code>cd /boot/
 sudo wget https://raw.githubusercontent.com/GrazerComputerClub/rpi-boot/master/Video-128x128.txt
 sudo wget https://raw.githubusercontent.com/GrazerComputerClub/rpi-boot/master/Video-256x256.txt
 </code></pre><p>Später genig es einfach diese in der config.txt Datei zu referenzieren.</p>
 <p>&ldquo;/boot/config.txt&rdquo;:</p>
-<pre><code># Waveshare 1.44inch LCD HAT
+<pre tabindex="0"><code># Waveshare 1.44inch LCD HAT
 include Video-256x256.txt
 </code></pre><p>Nun muss der Dienst für &ldquo;fbcp-ili9341&rdquo; eingerichtet und gestartet werden.</p>
-<pre><code>sudo nano /etc/systemd/system/fbcp-ili9341.service
-</code></pre><pre><code>[Unit]
+<pre tabindex="0"><code>sudo nano /etc/systemd/system/fbcp-ili9341.service
+</code></pre><pre tabindex="0"><code>[Unit]
 Description=fbcp-ili9341 Service
 
 [Service]
@@ -305,24 +305,24 @@ ExecStart=/usr/local/bin/fbcp-ili9341
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><pre><code>sudo systemctl enable fbcp-ili9341
+</code></pre><pre tabindex="0"><code>sudo systemctl enable fbcp-ili9341
 sudo service fbcp-ili9341 start
 service fbcp-ili9341 staus
 </code></pre><h3 id="tasten">Tasten</h3>
 <p>Nun müssen noch die Tasten entsprechend der PICO-8 Tastaturbelegung konfiguriert werden. Dazu wird der Overlay &lsquo;gpio-key&rsquo; verwendet, um GPIO Eingänge Tastatureingaben zuweisen zu können. Auch zu diesem Thema gibt es bereits ein Kapitel. Damit das einfacher wird, habe ich auch hierfür bereits eigene Sub-Konfigurationsdateien erstellt. Nach dem Download muss die Datei mit &lsquo;include&rsquo; in der Konfigurationsdatei &ldquo;config.txt&rdquo; referenziert werden.</p>
-<pre><code>cd /boot/
+<pre tabindex="0"><code>cd /boot/
 wget https://raw.githubusercontent.com/GrazerComputerClub/rpi-boot/master/WS_TFT_HAT_Keys_Pico8.txt
 </code></pre><p>&ldquo;/boot/config.txt&rdquo;:</p>
-<pre><code># Waveshare 1.44inch LCD HAT - keys
+<pre tabindex="0"><code># Waveshare 1.44inch LCD HAT - keys
 include WS_TFT_HAT_Keys_Pico8.txt
 </code></pre><h3 id="pico-8">PICO-8</h3>
 <p>PICO-8 ist eine kommerzielle Software von Lexaloffle, es kann von <a href="https://www.lexaloffle.com/pico-8.php?#getpico8">hier</a> bezogen werden.
 Nach dem Download der Raspberry Pi Version, muss das Zip-Archiv auf die Bootpartition kopiert und entpackt werden.</p>
-<pre><code>cd /boot
+<pre tabindex="0"><code>cd /boot
 sudo unzip ~/pico-8_0.2.1b_raspi.zip 
 </code></pre><p>Nun muss PICO-8 nach dem Boot automatisch gestartet werden. Dies kann über die &ldquo;rc.local&rdquo; Datei erfolgen. Am Ende des Scripts muss die Zeile &ldquo;exit 0&rdquo; erhalten bleiben! Der folgenden Block muss also davor eingefügt werden.</p>
-<pre><code>sudo nano /etc/rc.local
-</code></pre><pre><code>if [ -f &quot;/boot/pico-8/pico8&quot; ] ; then
+<pre tabindex="0"><code>sudo nano /etc/rc.local
+</code></pre><pre tabindex="0"><code>if [ -f &quot;/boot/pico-8/pico8&quot; ] ; then
   cd /boot/pico-8/
   # Start PICO-8 with user pi and splore screen
   sudo -H -u pi /boot/pico-8/pico8 -splore &amp;
@@ -549,7 +549,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

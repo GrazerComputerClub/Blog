@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "ESP8266 ESP-01(S)",
         "headline" : "ESP8266 ESP-01(S)",
-        "description" : "\x3cp\x3eDas kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDas kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-20 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-20 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-20 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-20 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/esp8266-esp01\/",
         "wordCount" : "650",
         "image" : "https://blog.gc2.atimg/ESP8266_ESP-01.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -263,7 +263,7 @@
           <div class="entry-content">
             <article>
               <p>Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Der ESP8266 ist ein kostengünstiger 32-Bit-Mikrocontroller der chinesischen Firma Espressif und ermöglicht durch sein integriertes WLAN viele einfache IoT Anwendungen.<br>
 Der Mikrocontroller hat mehrere GPIOs die unter anderem SPI, I2C, UART, ADC, RTC und mehr unterstützen. Die Betriebsspannung beträgt 3,3 V, weshalb er sich auch gut mit dem Raspberry Pi kombinieren lässt.<br>
 Es gibt in auf unterschiedlichen Experimentierboards zu kaufen. Die kleinste und günstigste Platine ist der ESP-01. Auf den 8 Kontakten sind ein UART (RX, TX, GND) und 2 GPIO Pins vorhanden.<br>
@@ -281,24 +281,24 @@ Es gibt in auf unterschiedlichen Experimentierboards zu kaufen. Die kleinste und
 </ul>
 <p>Insgesamt bietet die ESP-01S Platine einige Vorteile, weshalb man sie bevorzugt erwerben sollte. Vor allem sind die Anschlüsse EN, RST und GPI0 bereits für den korrekten Betrieb vorkonfiguriert, sodass man nur die Versorgung (3,3 V und GND) und eventuell den UART anschließen muss.<br>
 Von der alten blauen ESP01 Platine ist wegen des geringen Speichers (512 KB) generell abzuraten.</p>
-<h2 id="anschluss-">Anschluss</h2>
+<h2 id="anschluss">Anschluss</h2>
 <p>Die ESP-01 Platine kann über den UART Anschluss mit dem Raspberry Pi verbunden werden.
 Die Versorgung erfolgt über den 3.3 V und GND Anschluss.</p>
 <p><img src="../../img/ESP8266_ESP-01b_Pi.png" alt="ESP8266 ESP-01"></p>
 <p>Um ein Firmware Update ausführen zu können, muss der GPIO0 Eingang auf GND gesetzt werden. Die kann man z. B. mit einem zusätzlichen Kabel erledigen.</p>
-<h2 id="kommunikation-">Kommunikation</h2>
+<h2 id="kommunikation">Kommunikation</h2>
 <p>Um mit dem Raspberry Pi über den UART kommunizieren zu können, muss zunächst der serielle Terminal Dienst beendet werden.</p>
-<pre><code>sudo systemctl stop serial-getty@ttyAMA0.service
+<pre tabindex="0"><code>sudo systemctl stop serial-getty@ttyAMA0.service
 sudo systemctl status serial-getty@ttyAMA0.service
 </code></pre><p>Danach kann ein serielles Kommunikationsprogramm wie z. B. Minicom installiert und gestartet werden.</p>
-<pre><code>sudo apt-get install minicom
+<pre tabindex="0"><code>sudo apt-get install minicom
 sudo minicom -b 115200 -o -D /dev/ttyAMA0
 </code></pre><p>Alternativ kann auch screen zur Kommunikation benutzt werden.</p>
-<pre><code>sudo screen /dev/ttyAMA0 115200
+<pre tabindex="0"><code>sudo screen /dev/ttyAMA0 115200
 </code></pre><p>Bei beiden Programmen müssen alle Eingaben mit den Tasten Enter (CR-Zeichen) und Strg+J (LF-Zeichen) abgeschlossen werden.</p>
 <p>Als erstes kann man die Verbindung mit dem Befehl &ldquo;AT&rdquo; überprüfen (danach Enter und Strg+J nicht vergessen). Als Antwort muss &ldquo;OK&rdquo; zurückgeschickt werden.<br>
 Sendet man den Reset Befehl &ldquo;AT+RST&rdquo; so wird ein Reset durchgeführt und Informationen über den Mikrocontroller ausgegeben.</p>
-<pre><code> ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+<pre tabindex="0"><code> ets Jan  8 2013,rst cause:2, boot mode:(3,6)
 
 load 0x40100000, len 1396, room 16
 tail 4
@@ -323,7 +323,7 @@ ready
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Der Befehl &ldquo;AT+GMR&rdquo; liest die Firmware Version aus.</p>
-<pre><code>AT version:0.40.0.0(Aug  8 2015 14:45:58)
+<pre tabindex="0"><code>AT version:0.40.0.0(Aug  8 2015 14:45:58)
 SDK version:1.3.0
 Ai-Thinker Technology Co.,Ltd.
 Build:1.3.0.2 Sep 11 2015 11:48:04
@@ -331,7 +331,7 @@ OK
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Der Befehl &ldquo;AT+CWLAP&rdquo; listet die gefundenen WLAN-Netze mit Zusatzinformationen auf.</p>
-<pre><code>+CWLAP:(3,&quot;NETGEAR23&quot;,-86,&quot;a0:63:91:ca:98:ca&quot;,6,-14)
+<pre tabindex="0"><code>+CWLAP:(3,&quot;NETGEAR23&quot;,-86,&quot;a0:63:91:ca:98:ca&quot;,6,-14)
 +CWLAP:(4,&quot;A1-XZY&quot;,-78,&quot;a4:b1:e9:43:f4:d3&quot;,11,-41)
 +CWLAP:(4,&quot;Home&quot;,-92,&quot;f4:06:8d:3b:e1:3c&quot;,11,-41)
 +CWLAP:(3,&quot;AndroidAP&quot;,-89,&quot;10:a5:d0:73:de:eb&quot;,11,23)
@@ -550,7 +550,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

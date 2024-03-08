@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi Zero Audio",
         "headline" : "Raspberry Pi Zero Audio",
-        "description" : "\x3cp\x3eDer Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.\x3c\/p\x3e",
+        "description" : "\u003cp\u003eDer Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-12-19 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2018-12-19 00:00:00 \x2b0000 UTC",
+        "datePublished": "2018-12-19 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2018-12-19 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/pi-zero-audio\/",
         "wordCount" : "437",
         "image" : "https://blog.gc2.atimg/Raspberry-Pi-Zero-Audio.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -276,15 +276,15 @@ Danach kann der Ausgang bereits an einem Kopfhörer angeschlossen werden.</p>
 <p>Mit der Schaltung allein ist es noch nicht getan. Man muss den PWM-Ausgang bzw. die PWM-Ausgänge so um konfigurieren, dass das Audio-Signal erzeugt wird.
 Dazu muss man lediglich einen Device Tree Eintrag in der Konfigurationsdatei &ldquo;config.txt&rdquo; einfügen. Hier ist zu wissen, dass die PWM-Ausgänge auf einen von zwei möglichen GPIOs liegen können. PWM0 auf GPIO18 oder GPIO12 und PWM1 auf GPIO13 oder GPIO19. Dadurch ergeben sich mehrere Konfigurationsmöglichkeiten.</p>
 <p><strong>Mono:</strong></p>
-<pre><code>dtoverlay=pwm,pin=12,func=4
-</code></pre><pre><code>dtoverlay=pwm,pin=18,func=2
-</code></pre><pre><code>dtoverlay=pwm,pin=13,func=4
-</code></pre><pre><code>dtoverlay=pwm,pin=19,func=2
+<pre tabindex="0"><code>dtoverlay=pwm,pin=12,func=4
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm,pin=18,func=2
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm,pin=13,func=4
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm,pin=19,func=2
 </code></pre><p><strong>Stereo:</strong></p>
-<pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=13,func2=4
-</code></pre><pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
-</code></pre><pre><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=19,func2=2
-</code></pre><pre><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2 
+<pre tabindex="0"><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=13,func2=4
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm-2chan,pin=12,func=4,pin2=19,func2=2
+</code></pre><pre tabindex="0"><code>dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2 
 </code></pre><h3 id="test">Test</h3>
 <p>Nach dem Neustart muss nun nur noch ein Test erfolgen.</p>
 <p><strong>Stereo Links &amp; Rechts</strong>:<br>
@@ -500,7 +500,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>

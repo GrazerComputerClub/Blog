@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Raspberry Pi am USB-Anschluss betreiben",
         "headline" : "Raspberry Pi am USB-Anschluss betreiben",
-        "description" : "\x3cp\x3eWill man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?\x3c\/p\x3e",
+        "description" : "\u003cp\u003eWill man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2019",
-        "datePublished": "2019-11-24 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2019-11-24 00:00:00 \x2b0000 UTC",
+        "datePublished": "2019-11-24 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2019-11-24 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/powerconsumtion\/",
         "wordCount" : "370",
         "image" : "https://blog.gc2.atimg/Strommesser.jpg"",
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1687536145" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1687536145" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -263,23 +263,23 @@
           <div class="entry-content">
             <article>
               <p>Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?</p>
-<h2 id="beschreibung-">Beschreibung</h2>
+<h2 id="beschreibung">Beschreibung</h2>
 <p>Bei dem Raspberry Pi Jam verwenden wir alte Dell Laptops. Um möglichst einfache Aufbauten zu haben wollen wir die Raspberry Pi mit einem USB-Kabel direkt
 über den vorhandenen USB-Anschluss versorgen. Anfänglich hatten wir nur Raspberry Pi Zero Modelle, hier war das kein Problem. Die Stromaufnahme liegt bei ihnen unter 500 mA. Nun haben wir aber Raspberry Pi 2 und 3 Modelle bekommen. Nun soll untersucht werden ob diese auch mit dem USB-Anschluss versorgt werden können.</p>
-<h2 id="testaufbau-">Testaufbau</h2>
+<h2 id="testaufbau">Testaufbau</h2>
 <p>Die Stromaufnahme des Systems wurde über einen USB-Tester gemessen. Zuerst wurde die Stromaufnahme im Leerlauf (Idle) Zustand gemessen. Dann wurde mit dem Programm &ldquo;sysbench&rdquo; CPU-Last auf einem, zwei, drei und vier Kernen erzeugt und gemessen.</p>
-<pre><code>sudo apt-get install sysbench
+<pre tabindex="0"><code>sudo apt-get install sysbench
 sysbench --num-threads=1 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=2 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=3 --test=cpu --cpu-max-prime=20000 run
 sysbench --num-threads=4 --test=cpu --cpu-max-prime=20000 run
-</code></pre><h2 id="ergebnis-">Ergebnis</h2>
+</code></pre><h2 id="ergebnis">Ergebnis</h2>
 <p>Verwendet wurde eine Transcend 8 GB Class 10 MicroSD-Karte.  <!-- raw HTML omitted -->
 Ansonsten wurde nichts angesteckt.</p>
 <table>
 <thead>
 <tr>
-<th align="left"><em>System</em></th>
+<th style="text-align:left"><em>System</em></th>
 <th><em>Idle [mA]</em></th>
 <th><em>1-Core [mA]</em></th>
 <th><em>2-Core [mA]</em></th>
@@ -290,7 +290,7 @@ Ansonsten wurde nichts angesteckt.</p>
 </thead>
 <tbody>
 <tr>
-<td align="left">Pi Zero V1.3</td>
+<td style="text-align:left">Pi Zero V1.3</td>
 <td>90</td>
 <td>160</td>
 <td></td>
@@ -299,7 +299,7 @@ Ansonsten wurde nichts angesteckt.</p>
 <td>49</td>
 </tr>
 <tr>
-<td align="left">Pi Zero W</td>
+<td style="text-align:left">Pi Zero W</td>
 <td>90</td>
 <td>170</td>
 <td></td>
@@ -308,7 +308,7 @@ Ansonsten wurde nichts angesteckt.</p>
 <td>53</td>
 </tr>
 <tr>
-<td align="left">Pi 2 ( 900 MHz)</td>
+<td style="text-align:left">Pi 2 ( 900 MHz)</td>
 <td>230</td>
 <td>280</td>
 <td>320</td>
@@ -317,7 +317,7 @@ Ansonsten wurde nichts angesteckt.</p>
 <td>53</td>
 </tr>
 <tr>
-<td align="left">Pi 2 (1000 MHz)</td>
+<td style="text-align:left">Pi 2 (1000 MHz)</td>
 <td>230</td>
 <td>320</td>
 <td>360</td>
@@ -326,7 +326,7 @@ Ansonsten wurde nichts angesteckt.</p>
 <td>59</td>
 </tr>
 <tr>
-<td align="left">Pi 3 (1200 MHz)</td>
+<td style="text-align:left">Pi 3 (1200 MHz)</td>
 <td>260</td>
 <td>370</td>
 <td>470</td>
@@ -337,11 +337,11 @@ Ansonsten wurde nichts angesteckt.</p>
 </tbody>
 </table>
 <p><img src="../../img/StromaufnamhePi2u3.png" alt="Diagramm"></p>
-<h2 id="schlussfolgerung-">Schlussfolgerung</h2>
+<h2 id="schlussfolgerung">Schlussfolgerung</h2>
 <p>Die Raspberry Pi 2 ist für den Betrieb am USB-Anschluss gut geeignet. Selbst im Turbo-Modus bleibt man unterhalb der 500 mA Grenze. Zu bedenken ist allerdings, dass zusätzliche Hardware auf den GPIOs auch noch Verbrauch generiert. Eine ausreichende Reserve sollte vorhanden sein. Andererseits ist eine Auslastung auf allen vier Kernen im Normalbetrieb eher unwahrscheinlich. Es ist als zu überlegen ob man mit dem Basistakt oder dem Turbo (1000 MHz) arbeitet.<br>
 Die Raspberry Pi 3 hat bereits bei einer Auslastung von zwei Kernen den maximalen Strom fast erreicht. Sie eignet sich weniger für den Betrieb am USB-Anschluss.</p>
 <p>Wer auf Nummer sicher gehen will kann in der Datei &ldquo;/boot/cmdline.txt&rdquo; die Anzahl der Kerne limitieren. Man könnte nur drei Kerne freischalten, um so Reserven zu schaffen und mit dem Turbo Modus die Einzelkernleistung erhöhen. So würde das System nie mehr als 400 mA aufnehmen.</p>
-<pre><code>maxcpus=3
+<pre tabindex="0"><code>maxcpus=3
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
             </article>
@@ -550,7 +550,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1687536145"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
 
 </body>
 </html>
