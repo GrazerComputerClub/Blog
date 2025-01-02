@@ -1,8 +1,8 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/MinecraftServer.jpg"
-date = "2021-08-09"
+date = "2023-07-08"
 title = "Minecraft Server"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi", "Minecraft"]
@@ -16,7 +16,8 @@ Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minec
 
 ## Grundsätzliches
 
-Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.
+Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.  
+Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. 
 
 
 ## Basis Installation und Einrichtung
@@ -71,29 +72,30 @@ https://pibenchmarks.com/
 ```
 
 Laut Autor wäre ein "Score" von 1000 wünschenswert. Unter 700 sollte er nicht sein, dann sollte man auf eine USB SSD ausweichen.
-Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.
+Die verwendete SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.  
+Eine SSD erreicht im übrigen einen Wert von über 5000 bis 7.000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder nVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf [https://pibenchmarks.com/](https://pibenchmarks.com/)
+
 
 ## Minicraft Server Installation
 
 ```
 wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
 ```
-Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die "SetupMinecraft.sh" Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden ``curl https://papermc.io/api/v2/projects/paper``.
+Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die "SetupMinecraft.sh" Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit folgenden Befehl können die aktuell verfügbaren Versionen aufgelistet werden ``curl https://papermc.io/api/v2/projects/paper`` bzw. man kann sie auch einfach in einem Browser öffnen [https://papermc.io/api/v2/projects/paper](https://papermc.io/api/v2/projects/paper) (JSON-Format).
 
 ```
 {"project_id":"paper","project_name":"Paper","version_groups":["1.8",...
-"1.18.2","1.19","1.19.1","1.19.2"]}
+"1.18.2","1.19","1.19.1","1.19.2","1.19.3","1.19.4","1.20","1.20.1"]}
 ```
 
-
-In diesem Fall ist die Version 1.19.2 die neueste verfügbare Version, die wir im Setup-Script eintragen können bzw. schon eingetragen ist.
+In diesem Fall ist die neueste verfügbare Version die 1.20.1, wir können sie ins Setup-Script eintragen falls das nicht schon dort steht. Es könnte aber auch gewünscht sein, dass eine altere Version installiert wird. Möglicherweise soll der Server kompatibel zu einer Mod sein oder man will die letzen stabile Optifine Version benutzen können.  
 
 ```
 cat SetupMinecraft.sh | grep Version=
 ```
 
 ```
-Version="1.19.2"
+Version="1.19.4"
 ```
 
 Dann kann das Setup gestartet werden.
@@ -267,10 +269,25 @@ Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so k�
 sudo service minecraft stop
 cd ~/minecraft/
 rm -r world world_nether/ world_the_end/
-tar xvf ~/minecraft/backups/2021.01.04_04.00.39.tar.gz ./world/ ./world_nether/ ./world_the_end/
+ls backups/
+tar xvf backups/2022.11.05.10.11.28.tar.gz ./world/ ./world_nether/ ./world_the_end/
 sudo service minecraft start
 ```
 
+## Server Routing
+
+Sollte der Server nach außen hin errreichbar sein, muss man einen Port Weiterleitung am Router einrichten. 
+
+**Da dies aber auch ein Sicherheitsrisiko birgt, richtet sich das nur an versierte Benutzer**    
+
+Im Router muss ein beliebiger TCP Port wie z. B. 21345 auf den Server Port 25565 weitergeleitet werden.
+
+![MinecraftPortForward](../../img/MinecraftPortForward.png)
+
+In Minecraft muss man dann die richtige Version starten und auf die Schaltfläche "Mehrspieler" drücken. Danach kann man auf die Schaltfläche "Server hinzufügen" drücken. 
+Dann gibt man den Server Namen und die IP-Adresse ein. Mit Doppelpunkt kann man den Port angeben wenn er nicht 25565 ist. Sollte die IP-Adresse per Dyndns erreichbar sein, so kann man auch diesen Namen eingeben und den Server so immer erreichen.  
+
+![ATmega328 Steckplatine](../../img/MinecraftPortServerSetting.png)
 
 
 

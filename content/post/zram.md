@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = "img/zram.jpg"
-date = "2019-12-07"
+date = "2023-02-07"
 title = "Die Lebensdauer der SD-Karte verlängern mit ZRAM"
 writer = "Martin Strohmayer"
 categories = ["Raspberry Pi"]
@@ -139,3 +139,19 @@ Filename                                Type            Size    Used    Priority
 ### Auswertung
 
 Bei Erzeugungsprozess werden ca. 20 MB von dem Swap-Speicher benutzt. Mit aktiven ZRAM wird die Auslagerungsdatei auf der SD-Karte kaum verwendet. Auch die Ausführungsdauer hat sich mit ZRAM verringert. Die Verwendung hat also einen doppelt positiven Effekt.
+
+
+## 100 MB Swap-Datei entfernen ##
+
+
+Um die  Swap-Datei auf der SD-Karte zu deaktivieren, muss man in der Konfigurationsdatei "/etc/dphys-swapfile" den Wert CONF_SWAPSIZE auf 0 einsetzen.
+
+```
+CONF_SWAPSIZE=0
+```
+
+```bash
+sudo service dphys-swapfile restart
+```
+
+Eventuell kann man danach noch die Swap-Datei löschen mit ``sudo rm /var/swap``.

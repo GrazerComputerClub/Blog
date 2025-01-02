@@ -34,7 +34,8 @@ sudo apt-get install geany stterm libvte9 libvte-2.91-0
 ```
 mkdir geany
 cd geany
-wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany_1.29-1_armhf.deb
+wget https://raspbian.bio.lmu.de/raspbian/pool/main/g/geany/geany_1.29-1_armhf.deb
+sudo apt-get install unp
 unp geany_1.29-1_armhf.deb
 unp data.tar.xz
 sudo cp usr/bin/geany /usr/bin/geany-gtk2
@@ -42,7 +43,7 @@ sudo mkdir /usr/lib/arm-linux-gnueabihf/geany-gtk2/
 sudo cp -rv usr/lib/arm-linux-gnueabihf/* /usr/lib/arm-linux-gnueabihf/geany-gtk2/
 mkdir common
 cd common 
-wget http://mirror.inode.at/raspbian/raspbian/pool/main/g/geany/geany-common_1.29-1_all.deb
+wget https://raspbian.bio.lmu.de/raspbian/pool/main/g/geany/geany-common_1.29-1_all.deb
 unp geany-common_1.29-1_all.deb
 unp data.tar.xz
 sudo cp usr/share/geany/geany.gtkrc /usr/share/geany/

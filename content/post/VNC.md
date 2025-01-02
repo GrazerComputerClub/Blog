@@ -64,7 +64,6 @@ Type=simple
 User=root
 ExecStart=/usr/local/bin/dispmanx_vncserver
 StandardOutput=null
-StandardError=syslog
 
 [Install]
 WantedBy=multi-user.target

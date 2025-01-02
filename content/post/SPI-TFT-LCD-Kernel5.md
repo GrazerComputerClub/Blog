@@ -51,6 +51,8 @@ Die SPI-Taktfrequenz wird aus dem System Takt also der "core_freq" gebildet. Mit
 | 500 MHz   |  8      |   62,5 MHz  |
 | 500 MHz   |  10     |   50,0 MHz  |
 
+Der Raspberry Pi Zero hat in der Standardeinstellung einen Takt von 250 bis 400 MHz. Die Frequenz ist also Variable.
+
 Divisor 8:
 
 | Core Takt | SPI-Frequenz |
@@ -82,7 +84,9 @@ Die Kontakte RESET und DC/A0/RS können über Parameter frei zugewiesen werden. 
 
 ![SPI-LCD-TFT Anschluss](../../img/SPI-LCD-TFT_Steckplatine.png)
 
-## Erstellung für 1,8" 160x128 Display mit ST7735R Kontroller
+## Erstellung 
+
+Beispiel mit 1,8" 160x128 Display mit ST7735R Kontroller
 
 ```
 sudo apt install cmake
@@ -92,11 +96,12 @@ cd fbcp-ili9341
 mkdir build
 cd build
 cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=ON ..
+make -j
 ```
 
 Mit ``sudo ./fbcp-ili9341`` kann das Programm dann gestartet werden.
 
-Sollte der Fehler **vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt** angezeigt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden. 
+Sollte der Fehler ``vc_dispmanx_display_open failed! Make sure to have hdmi_force_hotplug=1 setting in /boot/config.txt`` angezeigt werden müssen noch Anpassungen in der Konfigurationsdatei /boot/config.txt gesetzt werden. 
 Wenn kein Display angeschlossen ist könnte man die Bildschirmauflösung auf 640x480 setzen.
 
 ```
@@ -132,9 +137,9 @@ gpu_mem=32
 ```
 
 
-Parameter Pi-XO:
+**Parameter Pi-XO:**
 
- 1,8" 160x128 Display mit ST7735R Kontroller (nur bei max. 400 MHz Core Takt):
+1,8" 160x128 Display mit ST7735R Kontroller (nur bei max. 400 MHz Core Takt):
 
 ```
 cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DDISPLAY_SWAP_BGR=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
@@ -147,11 +152,55 @@ cmake -DST7735R=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CL
 cmake -DILI9341=ON -DGPIO_TFT_DATA_CONTROL=5 -DGPIO_TFT_RESET_PIN=6 -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 ```
 
-Waveshare HAT 1,44" 128x128 Display mit ST7735S Kontroller (nur bei max. 400 MHz Core Takt):
+**Waveshare HAT 1,44" 128x128 Display mit ST7735S Kontroller**
+
+Bei maximal 400 MHz Core Takt verwenden.
 
 ```
 cmake -DWAVESHARE_ST7735S_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=8 -DSINGLE_CORE_BOARD=ON -DARMV6Z=ON -DSTATISTICS=0 -DDISPLAY_ROTATE_180_DEGREES=OFF ..
 ```
+
+
+## Dienst
+
+
+```
+sudo cp ../fbcp-ili9341 /usr/local/bin/fbcp
+```
+
+Nun kann man noch einen automatischen Dienst erzeugen
+
+```
+sudo nano /etc/systemd/system/fbcp.service
+```
+
+In die Datei kopiert man folgende Anweisungen.  
+
+```
+[Unit]
+Description=SPI Display
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/fbcp
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Danach kann der Dienst aktiviert werden.
+
+
+```
+sudo systemctl enable fbcp
+sudo service fbcp start
+```
+<!-- sudo systemctl daemon-reload -->
+
+Die CPU-Last auf einem Raspberry Pi Zero beträgt ca. 6 %.
+
 
 ## Verlinkungen
 
