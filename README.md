@@ -48,6 +48,8 @@ Die Webseite ist nun unter `http://localhost:1313` erreichbar.
 ~/Blog/themes$ cd ../..
 ~/$ mkdir HugoBlog
 ~/$ cd HugoBlog
+~/HugoBlog$ cp ../Blog/update.sh ../Blog/git.sh .
+
 ~/HugoBlog$ ./update.sh
 ~/HugoBlog$ ./git.sh
 ```
