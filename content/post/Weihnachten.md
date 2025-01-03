@@ -2,7 +2,7 @@
 showonlyimage = true
 draft = true
 image = "img/Weihnachten.jpg"
-date = "2024-12-22"
+date = "2025-12-21"
 title = "Weihnachten"
 writer = "GC2"
 categories = [""]
