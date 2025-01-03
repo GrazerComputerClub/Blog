@@ -38,3 +38,22 @@ Alternativ kann die Webseite im interne Webserver von Hugo gestartet werden.
 ```
 
 Die Webseite ist nun unter `http://localhost:1313` erreichbar.
+
+
+
+## Automation ##
+
+
+```bash
+~/Blog/themes$ cd ../..
+~/$ mkdir HugoBlog
+~/$ cd HugoBlog
+~/HugoBlog$ ./update.sh
+~/HugoBlog$ ./git.sh
+```
+
+ 1. Mit ``./update.sh`` holt man sich die Änderungen von "Blog" und startet hugo Simulation mit Chromium
+ 1. Prüfen der Seite im Browser
+ 1. Wenn das Ergenis fehlerfrei ist, alles auf git **pushen** im **Blog Verzeichnis** (ansonsten ändern und zurück zu 1.)
+ 1. Mit ``./git.sh`` wird die Webseite auf git-pages und damit im Internet aktualisiert (Achtung entspricht dem Stand von github nicht lokal!)
+    
