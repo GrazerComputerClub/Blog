@@ -6,117 +6,91 @@
     <description>Recent content in Raspberry Pi Zero on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 29 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.gc2.at/categories/raspberry-pi-zero/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi Zero Shopping Guide</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
       <pubDate>Sun, 29 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
       <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Pi API</title>
       <link>https://blog.gc2.at/post/minecraft-pi-api/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft-pi-api/</guid>
       <description>&lt;p&gt;Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Pi</title>
       <link>https://blog.gc2.at/post/minecraft/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft/</guid>
-      <description>&lt;p&gt;Auch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine
-spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Auch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine&#xA;spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MPEG2 Video Dekodierung</title>
       <link>https://blog.gc2.at/post/mpeg2/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/mpeg2/</guid>
-      <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
-dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf&#xA;dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Spannungsversorgung</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</link>
       <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Übertakten</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>C# Installation</title>
       <link>https://blog.gc2.at/post/cs/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/cs/</guid>
       <description>&lt;p&gt;Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Geany mit GTK2</title>
       <link>https://blog.gc2.at/post/geany/</link>
       <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/geany/</guid>
       <description>&lt;p&gt;Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT</title>
       <link>https://blog.gc2.at/post/wavesharelcdhat/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
       <description>&lt;p&gt;Um nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Audio</title>
       <link>https://blog.gc2.at/post/pi-zero-audio/</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pi-zero-audio/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero W Stromaufnahme</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-w-stromaufnahme/</link>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-w-stromaufnahme/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi USB Gadget</title>
       <link>https://blog.gc2.at/post/raspberry-pi-usb-gadget/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-usb-gadget/</guid>
-      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
-Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein&#xA;Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

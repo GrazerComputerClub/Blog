@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "ESP8266 ESP-01(S) NodeMCU Firmware",
@@ -25,7 +25,7 @@
         "dateModified" : "2020-07-25 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/esp8266-esp01-nodemcu\/",
         "wordCount" : "1117",
-        "image" : "https://blog.gc2.atimg/ESP8266_ESP-01S.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/ESP8266_ESP-01S.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -269,7 +260,7 @@ Nicht verwechseln sollte man die Firmware mit dem NodeMCU Hardware Board. Es ist
 Hier wird dagegen das kleinste ESP-01(S) Board verwendet, auf dem die NodeMCU Firmware problemlos installiert und verwendet werden kann.</p>
 <p><img src="../../img/ESP8266_ESP-01b.png" alt="ESP8266 ESP-01"></p>
 <h2 id="anschluss">Anschluss</h2>
-<p>Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden. 
+<p>Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden.
 Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.</p>
 <p><img src="../../img/ESP8266_ESP-01b_Pi.png" alt="ESP8266 ESP-01"></p>
 <p>Um später ein Firmware Update ausführen zu können, muss der GPIO0 Eingang des ESP auf GND gesetzt werden.</p>
@@ -278,16 +269,16 @@ Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.</p>
 <p>Zuerst muss man das Python 3 Programm &ldquo;esptool&rdquo; installieren. Später benötigen wir auch noch das Programm &ldquo;nodemcu-uploader&rdquo; um Programmcode übertragen zu können.</p>
 <pre tabindex="0"><code>sudo apt-get install python3 python3-pip
 sudo pip3 install esptool nodemcu-uploader -t /usr/local/lib/python3.7/dist-packages
-alias esptool.py='python3 /usr/local/lib/python3.7/dist-packages/esptool.py'
-alias nodemcu-uploader.py='python3 /usr/local/lib/python3.7/dist-packages/nodemcu-uploader.py'
+alias esptool.py=&#39;python3 /usr/local/lib/python3.7/dist-packages/esptool.py&#39;
+alias nodemcu-uploader.py=&#39;python3 /usr/local/lib/python3.7/dist-packages/nodemcu-uploader.py&#39;
 
-alias sudo='sudo '
+alias sudo=&#39;sudo &#39;
 sudo esptool.py version
 </code></pre><pre tabindex="0"><code>esptool.py v2.8
 2.8
 </code></pre><h3 id="nodemcu-firmware">NodeMCU Firmware</h3>
 <p>Nun wird die NodeMCU Firmware benötigt. Sie kann auf der Internetseite <a href="https://nodemcu-build.com/">NodeMCU Cloud Build</a> an die Bedürfnisse angepasst und erstellt werden.<br>
-Zuerst muss man seine E-Mail Adresse angeben. Dorthin wird später der Download-Link für die binäre Firmwaredatei geschickt. 
+Zuerst muss man seine E-Mail Adresse angeben. Dorthin wird später der Download-Link für die binäre Firmwaredatei geschickt.
 Bei &lsquo;Select branch to build from&rsquo; wählt man die Version (Sourcecode) aus. Mit &lsquo;master&rsquo; ist man hier auf dem neuesten Stand.<br>
 Dann wählt man die Module aus die benötigt werden. Je mehr man auswählt, desto größer wird die Firmware. Ein paar sind bereits vorausgewählt, je nach Anforderung könnte man z. B. Buse (I2C, SPI) , Sensoren (DHT, BME) oder sonsiges hinzufügen. &ldquo;Miscellaneous options&rdquo;  werden nicht benötigt und brauchen nicht aktiviert werden.<br>
 Nachdem man die Schaltfläche &ldquo;Start your build&rdquo; gedrückt hat, wird die Firmware erzeugt und per Mail ein Download-Link verschickt. Das kann ein paar Minuten dauern. Dann stehen zwei Versionen zur Verfügung, integer und float. integer kann nur ganzzahlige Berechnung und float kann mit Flieskommazahlen umgehen. Die integer Version is zu bevorzugen weil sie wesentlich schneller ist, Flieskommazahlen machen nur bei speziellen Anforderungen Sinn.</p>
@@ -339,10 +330,10 @@ Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S
 gpio.write(out, gpio.LOW)
 gpio.write(out, gpio.HIGH)
 </code></pre><p><em>Verwendet man den GC2-xHAT, so kann man den Zusand des ESP GPIO0 (Index 3) auf dem Raspberry Pi GPIO12 (Eingang) sehen. Mit dem aufruf &ldquo;watch -n 0.2 gpio readall&rdquo; kann man den Status in einem eigenen Terminal überwachen</em></p>
-<p>Ein ganzes Programm kann allerings auch ausgeführt werden. Dazu erzeugt man die Datei init.lua mit einem Beispielcode für eine Toggle-Funktion auf GPIO2. 
+<p>Ein ganzes Programm kann allerings auch ausgeführt werden. Dazu erzeugt man die Datei init.lua mit einem Beispielcode für eine Toggle-Funktion auf GPIO2.
 Achtung, bei zyklischen Ausgaben mit printf, sie verhindern, dass eine neue Datei übertragen wird. Im Notfall müsste man dann die NodeMCU Firmware nochmal neu einspielen. Im Beispiel wird deshalb darauf verzichtet.</p>
 <pre tabindex="0"><code>out = 4 
-print(&quot;toogle GPIO2&quot;)
+print(&#34;toogle GPIO2&#34;)
 gpio.mode(out, gpio.OUTPUT)
 local initTimer = tmr.create()
 initTimer:register(2000, tmr.ALARM_AUTO, function() 
@@ -372,14 +363,14 @@ from signal import pause
 led = LED(21)
 
 def InputHigh():
-    print(&quot; high&quot;)
+    print(&#34; high&#34;)
     led.on()
 
 def InputLow():
-    print(&quot; low&quot;)
+    print(&#34; low&#34;)
     led.off()
 
-print(&quot;GPIO mapping 12 to 21&quot;)
+print(&#34;GPIO mapping 12 to 21&#34;)
 Input = Button(12,pull_up=False)
 Input.when_pressed = InputHigh
 Input.when_released = InputLow
@@ -571,15 +562,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -594,7 +576,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

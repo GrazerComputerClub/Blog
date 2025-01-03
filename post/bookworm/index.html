@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Raspberry Pi OS Bookworm",
@@ -25,7 +25,7 @@
         "dateModified" : "2024-02-01 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/bookworm\/",
         "wordCount" : "783",
-        "image" : "https://blog.gc2.atimg/Bookworm.png"",
+        "image" : "https:\/\/blog.gc2.at\/img\/Bookworm.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -285,25 +276,25 @@ Bei der Lite Version ohne GUI ist aber immer noch Alsa im Einsatz.</p>
 Früher wurde dhcpd verwendet.<br>
 Das hat auch Auswirkungen auf die Einrichtung von WLAN. Am besten man man nun dies über das Konfigurationsprogramm rasp-config.
 Zur Analyse kann man das Konsolenprogram &ldquo;nmcli&rdquo; verwenden.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  nmcli dev wifi list
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  nmcli dev wifi list
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>  IN-USE  BSSID              SSID          MODE   CHAN  RATE        SIGNAL  BARS  SECURITY 
   *       00:01:E3:0D:83:8F  WLAN1         Infra   11   130 Mbit/s     91        WPA2     
           A0:21:B7:AC:AA:34  WLAN2         Infra   1    195 Mbit/s     62        WPA2     
           F6:F2:6D:9C:A5:AC  WLAN3         Infra   1    195 Mbit/s     60        WPA2     
-</code></pre><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</code></pre><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  nmcli con show
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  nmcli con show
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>NAME                UUID                                  TYPE      DEVICE 
 Wired connection 1  a9035b46-e5f0-39ce-a168-1ff1c9c27829  ethernet  eth0   
@@ -316,8 +307,8 @@ Gibt man <code>journalctl</code> ein, so wir das gesamte Protokoll ausgegeben. D
 <p>Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei &ldquo;/proc/cpuinfo&rdquo; nichts zwischen Kernel 5 und Kernel 6. Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird. Anders soieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile &ldquo;Hardware&rdquo; komplett verschwunden. Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70! Zur analysie kann man den Befehl <code>WIRINGPI_DEBUG=1 gpio readall</code> ausführen.</p>
 <p>Im Fehlerfall sieht das dann so aus.</p>
 <pre tabindex="0"><code>Oops: Unable to determine board revision from /proc/cpuinfo
- -&gt; No &quot;Hardware&quot; line
- -&gt;  You'd best google the error to find out why.
+ -&gt; No &#34;Hardware&#34; line
+ -&gt;  You&#39;d best google the error to find out why.
 </code></pre><p>Unter Model steht in &ldquo;/proc/cpuinfo&rdquo; aber immer das konkrete Raspberry Pi Modell. Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller, RAM Größe usw. enthält (siehe <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)</a>.</p>
 <p><strong>Raspberry Pi 1:</strong></p>
 <pre tabindex="0"><code>Hardware	: BCM2835
@@ -543,15 +534,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -566,7 +548,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

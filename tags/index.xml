@@ -5,6 +5,7 @@
     <link>https://blog.gc2.at/tags/</link>
     <description>Recent content in Tags on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language><atom:link href="https://blog.gc2.at/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>de-de</language>
+    <atom:link href="https://blog.gc2.at/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

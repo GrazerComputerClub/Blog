@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Wetteranzeige mittels ESP8266 und I²C Display",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-13 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/esp8266-i2c-display\/",
         "wordCount" : "468",
-        "image" : "https://blog.gc2.atimg/esp8266_i2c_display_weather.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/esp8266_i2c_display_weather.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -276,87 +267,87 @@ mit Daten von OpenWeather befüllt.</p>
 <h3 id="wifi-mit-esp8266">WiFi mit ESP8266</h3>
 <p>Jeder der schon einmal einen ESP8266 verwendet hat, wird sicherlich auch schon
 einmal das primäre Merkmal des ESP8266-Chips verwendet haben - das Wlan-Modul.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// ...
-</span><span style="color:#60a0b0;font-style:italic"></span>WiFi.mode(WIFI_STA);
-WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
-WiFi.setAutoReconnect(<span style="color:#007020">true</span>);
-WiFi.begin(m_ssid.c_str(), m_password.c_str());
-<span style="color:#60a0b0;font-style:italic">// ...
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>WiFi.mode(WIFI_STA);
+</span></span><span style="display:flex;"><span>WiFi.config(m_ip, m_gateway, m_subnet, m_dns);
+</span></span><span style="display:flex;"><span>WiFi.setAutoReconnect(<span style="color:#007020">true</span>);
+</span></span><span style="display:flex;"><span>WiFi.begin(m_ssid.c_str(), m_password.c_str());
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// ...
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="display">Display</h3>
 <p>Um das Display über den ESP8266 anzusteuern, kann man bereits auf ein paar
 vorhandene Bibliotheken aufbauen. Verwendet man für das Projekt die PlatformIO-IDE,
 so muss man nur folgende Bibliotheken als Abhängigkeiten setzen:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ESP_SSD1306
-Adafruit GFX Library
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>ESP_SSD1306
+</span></span><span style="display:flex;"><span>Adafruit GFX Library
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Um das Display anschließend zu initialisieren sind folgende Zeilen notwendig:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#60a0b0;font-style:italic">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
-</span><span style="color:#60a0b0;font-style:italic">// verwendet werden
-</span><span style="color:#60a0b0;font-style:italic"></span>ESP_SSD1306 <span style="color:#06287e">display</span>(RST_PIN);
-<span style="color:#60a0b0;font-style:italic">// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
-</span><span style="color:#60a0b0;font-style:italic">// 0x3C ... I²C Adresse
-</span><span style="color:#60a0b0;font-style:italic"></span>display.begin(SSD1306_SWITCHCAPVCC, <span style="color:#40a070">0x3C</span>);
-
-<span style="color:#60a0b0;font-style:italic">// Initialen Buffer anzeigen
-</span><span style="color:#60a0b0;font-style:italic"></span>display.display();
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// RST_PIN ... Reset-Pin muss geändert werden wenn die Default-I²C Pins
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// verwendet werden
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>ESP_SSD1306 <span style="color:#06287e">display</span>(RST_PIN);
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// SSD1306_SWITCHCAPVCC ... Displayspannung intern generieren
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 0x3C ... I²C Adresse
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>display.begin(SSD1306_SWITCHCAPVCC, <span style="color:#40a070">0x3C</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Initialen Buffer anzeigen
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>display.display();
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Damit Wetterdaten angezeigt werden können, muss das Display zyklisch gelöscht
 und die Daten wieder neu aufgebaut werden. Hierfür kann über <code>clearDisplay()</code>
 zuerst das Display gelöscht und anschließend entsprechend über die
 dazugehörigen Grafikfunktionen die Daten neu gezeichnet werden.
 Für die Anzeige der Wetterdaten wurde folgender Code verwendet:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">display.setTextSize(<span style="color:#40a070">2</span>);
-display.setCursor(<span style="color:#40a070">0</span>, <span style="color:#40a070">16</span>);
-display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
-display.print(m_lastTemp);
-display.print((<span style="color:#902000">char</span>)<span style="color:#40a070">248</span>); display.println(<span style="color:#4070a0">&#34;C&#34;</span>);
-display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
-display.print(m_lastHum); display.println(<span style="color:#4070a0">&#34;%&#34;</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>display.setTextSize(<span style="color:#40a070">2</span>);
+</span></span><span style="display:flex;"><span>display.setCursor(<span style="color:#40a070">0</span>, <span style="color:#40a070">16</span>);
+</span></span><span style="display:flex;"><span>display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
+</span></span><span style="display:flex;"><span>display.print(m_lastTemp);
+</span></span><span style="display:flex;"><span>display.print((<span style="color:#902000">char</span>)<span style="color:#40a070">248</span>); display.println(<span style="color:#4070a0">&#34;C&#34;</span>);
+</span></span><span style="display:flex;"><span>display.print(<span style="color:#4070a0">&#34;  &#34;</span>);
+</span></span><span style="display:flex;"><span>display.print(m_lastHum); display.println(<span style="color:#4070a0">&#34;%&#34;</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="../../img/esp8266_i2c_display_weather_detail.jpg" alt="Display"></p>
 <h3 id="openweather">OpenWeather</h3>
@@ -365,86 +356,86 @@ kann man in seinem Profil einen API-Key generieren, welchen man in der eigenen
 Anwendung verwenden kann.</p>
 <p>OpenWeather besitzt für das Abrufen der Daten ein Rest-Interface. Dieses kann
 durch den ESP8266 leicht abgerufen werden:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">WiFiClient client;
-client.connect(<span style="color:#4070a0">&#34;api.openweathermap.org&#34;</span>, <span style="color:#40a070">80</span>);
-
-String uri <span style="color:#666">=</span> <span style="color:#4070a0">&#34;/data/2.5/weather?id=&#34;</span>;
-uri <span style="color:#666">+=</span> ID;
-uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;appid=&#34;</span>;
-uri <span style="color:#666">+=</span> APP_ID;
-uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;units=metric&#34;</span>;
-client.print(String(<span style="color:#4070a0">&#34;GET &#34;</span>) 
-  <span style="color:#666">+</span> uri <span style="color:#666">+</span> <span style="color:#4070a0">&#34; HTTP/1.1</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
-  <span style="color:#4070a0">&#34;Host: &#34;</span> <span style="color:#666">+</span> HOST <span style="color:#666">+</span> <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
-  <span style="color:#4070a0">&#34;Connection: close</span><span style="color:#4070a0;font-weight:bold">\r\n\r\n</span><span style="color:#4070a0">&#34;</span>);
-
-<span style="color:#007020;font-weight:bold">while</span> (client.available() <span style="color:#666">==</span> <span style="color:#40a070">0</span>) {
-  <span style="color:#60a0b0;font-style:italic">// Auf Daten warten
-</span><span style="color:#60a0b0;font-style:italic"></span>}
-
-String line;
-<span style="color:#007020;font-weight:bold">while</span>(client.available()) {
-  line <span style="color:#666">+=</span> client.readStringUntil(<span style="color:#4070a0">&#39;\r&#39;</span>);
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>WiFiClient client;
+</span></span><span style="display:flex;"><span>client.connect(<span style="color:#4070a0">&#34;api.openweathermap.org&#34;</span>, <span style="color:#40a070">80</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>String uri <span style="color:#666">=</span> <span style="color:#4070a0">&#34;/data/2.5/weather?id=&#34;</span>;
+</span></span><span style="display:flex;"><span>uri <span style="color:#666">+=</span> ID;
+</span></span><span style="display:flex;"><span>uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;appid=&#34;</span>;
+</span></span><span style="display:flex;"><span>uri <span style="color:#666">+=</span> APP_ID;
+</span></span><span style="display:flex;"><span>uri <span style="color:#666">+=</span> <span style="color:#4070a0">&#34;&amp;units=metric&#34;</span>;
+</span></span><span style="display:flex;"><span>client.print(String(<span style="color:#4070a0">&#34;GET &#34;</span>) 
+</span></span><span style="display:flex;"><span>  <span style="color:#666">+</span> uri <span style="color:#666">+</span> <span style="color:#4070a0">&#34; HTTP/1.1</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Host: &#34;</span> <span style="color:#666">+</span> HOST <span style="color:#666">+</span> <span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\r\n</span><span style="color:#4070a0">&#34;</span> <span style="color:#666">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;Connection: close</span><span style="color:#4070a0;font-weight:bold">\r\n\r\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (client.available() <span style="color:#666">==</span> <span style="color:#40a070">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">// Auf Daten warten
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>String line;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span>(client.available()) {
+</span></span><span style="display:flex;"><span>  line <span style="color:#666">+=</span> client.readStringUntil(<span style="color:#4070a0">&#39;\r&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Anschließend muss der empfangene Rest-String geparsed werden. Hierfür existieren
 unendlich viele Rest-Bibliotheken. Jedoch besteht die einfachste Variante
 darin, die notwendigen Daten einfach aus dem Rest-String herauszuschneiden.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#007020;font-weight:bold">auto</span> dataExtractor <span style="color:#666">=</span> [<span style="color:#666">&amp;</span>](String searchPattern) {
-  <span style="color:#902000">int</span> idx <span style="color:#666">=</span> line.indexOf(searchPattern);
-  <span style="color:#902000">int</span> delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;,&#34;</span>, idx);
-  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>)
-    delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;}&#34;</span>, idx);
-  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>) {
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0.0f</span>;
-  }
-  <span style="color:#007020;font-weight:bold">return</span> line.substring(idx <span style="color:#666">+</span> searchPattern.length(), delTokenIdx).toFloat();
-};
-m_temp <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">temp</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
-m_humidity <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">humidity</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">auto</span> dataExtractor <span style="color:#666">=</span> [<span style="color:#666">&amp;</span>](String searchPattern) {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> idx <span style="color:#666">=</span> line.indexOf(searchPattern);
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;,&#34;</span>, idx);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>    delTokenIdx <span style="color:#666">=</span> line.indexOf(<span style="color:#4070a0">&#34;}&#34;</span>, idx);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (delTokenIdx <span style="color:#666">&lt;</span> <span style="color:#40a070">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0.0f</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> line.substring(idx <span style="color:#666">+</span> searchPattern.length(), delTokenIdx).toFloat();
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>m_temp <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">temp</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
+</span></span><span style="display:flex;"><span>m_humidity <span style="color:#666">=</span> dataExtractor(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">humidity</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#4070a0">:&#34;</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
             </article>
@@ -630,15 +621,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -653,7 +635,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Hotkeys zuweisen ohne X11",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-11 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/hotkeys-zuweisen-ohne-x11\/",
         "wordCount" : "434",
-        "image" : "https://blog.gc2.atimg/keys_black_vol.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/keys_black_vol.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -273,7 +264,7 @@ KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
 </code></pre><p><strong>/etc/triggerhappy/triggers.d/system.conf</strong></p>
 <pre tabindex="0"><code># shutdown
 KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
-</code></pre><p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &lsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
+</code></pre><p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &rsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
 Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
 <p>Alternativ kann man auch den Dienst mit dem Benutzer pi starten. Dazu muss man die Datei <code>/lib/systemd/system/triggerhappy.service</code> editieren und bei Parameter user pi statt nobody angeben <code>--user pi</code>. Danach muss man <code>sudo systemctl daemon-reload</code> und <code>sudo service triggerhappy restart</code> ausführen.
 &lsquo;`</p>
@@ -459,15 +450,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -482,7 +464,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

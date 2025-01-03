@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : " GPIO-Eingang zur Maus Emulation",
@@ -24,8 +24,8 @@
         "datePublished": "2020-02-14 00:00:00 \u002b0000 UTC",
         "dateModified" : "2020-02-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/gpio-mouse\/",
-        "wordCount" : "759",
-        "image" : "https://blog.gc2.atimg/GPIO-Input-Mouse.jpg"",
+        "wordCount" : "767",
+        "image" : "https:\/\/blog.gc2.at\/img\/GPIO-Input-Mouse.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -275,7 +266,7 @@ sudo apt-get install libtool
 ./autogen.sh
 ./configure &amp;&amp; make 
 sudo make install
-sudo sh -c &quot;echo /usr/local/lib &gt; /etc/ld.so.conf.d/user.conf&quot;
+sudo sh -c &#34;echo /usr/local/lib &gt; /etc/ld.so.conf.d/user.conf&#34;
 sudo ldconfig
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -299,195 +290,195 @@ sudo ldconfig
 <li>Bei entsprechenden GPIO-Eingang die Maus in X- oder Y-Richtung verschieben</li>
 <li>Bei entsprechenden GPIO-Eingang die Maustaste drücken</li>
 </ul>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;err.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;string.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;unistd.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;time.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;suinput.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;signal.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdlib.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020"></span>
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT_CLICK<span style="color:#666">=</span><span style="color:#40a070">15</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT_CLICK<span style="color:#666">=</span><span style="color:#40a070">14</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_UP<span style="color:#666">=</span><span style="color:#40a070">16</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_DOWN<span style="color:#666">=</span><span style="color:#40a070">21</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT<span style="color:#666">=</span><span style="color:#40a070">26</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT<span style="color:#666">=</span><span style="color:#40a070">20</span>;
-
-<span style="color:#007020;font-weight:bold">static</span> sig_atomic_t end <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> LED <span style="color:#666">=</span> <span style="color:#40a070">16</span>;
-
-<span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">sighandler</span>(<span style="color:#902000">int</span> signo) {
-  end <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
-}
-
-<span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>) {
-  <span style="color:#007020;font-weight:bold">struct</span> sigaction sa;
-  <span style="color:#902000">int</span> GPIO_btns[] <span style="color:#666">=</span> {GPIO_BTN_LEFT_CLICK, GPIO_BTN_RIGHT_CLICK, GPIO_BTN_UP, GPIO_BTN_DOWN, GPIO_BTN_LEFT, GPIO_BTN_RIGHT};
-
-  setbuf(stdout, <span style="color:#007020">NULL</span>); <span style="color:#60a0b0;font-style:italic">// deactivate stdout buffering 
-</span><span style="color:#60a0b0;font-style:italic"></span>  printf(<span style="color:#4070a0">&#34;Raspberry Pi GPIO button mouse</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
-  <span style="color:#007020;font-weight:bold">if</span> (wiringPiSetupGpio() <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) { <span style="color:#60a0b0;font-style:italic">// Init with BCM GPIO numering
-</span><span style="color:#60a0b0;font-style:italic"></span>    perror(<span style="color:#4070a0">&#34;wiringPiSetup failed&#34;</span>);
-    exit(<span style="color:#40a070">1</span>);
-  }
-  <span style="color:#60a0b0;font-style:italic">//Buttons with internal pull-up, connected to GND by activation
-</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> count<span style="color:#666">=</span><span style="color:#40a070">0</span>, end<span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns)<span style="color:#666">/</span><span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns[<span style="color:#40a070">0</span>]); count<span style="color:#666">&lt;</span>end; count<span style="color:#666">++</span>) {
-    pinMode(GPIO_btns[count], INPUT);
-    pullUpDnControl(GPIO_btns[count], PUD_UP); 
-  }
-
-  memset(<span style="color:#666">&amp;</span>sa, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> sigaction)); <span style="color:#60a0b0;font-style:italic">//Handling stop events, like ctrl+c 
-</span><span style="color:#60a0b0;font-style:italic"></span>  sa.sa_handler <span style="color:#666">=</span> sighandler;
-  sigaction(SIGINT, <span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
-  sigaction(SIGQUIT,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
-  sigaction(SIGTERM,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>); 
-        
-  <span style="color:#902000">int</span> uinput_fd;
-  <span style="color:#902000">int</span> btns[] <span style="color:#666">=</span> {BTN_LEFT, BTN_RIGHT, BTN_MIDDLE};
-  <span style="color:#902000">int</span> rel_axes[] <span style="color:#666">=</span> {REL_X, REL_Y, REL_WHEEL};
-  <span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev user_dev;
-
-  memset(<span style="color:#666">&amp;</span>user_dev, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev));
-  strcpy(user_dev.name, <span style="color:#4070a0">&#34;GPIO Mouse&#34;</span>);
-  uinput_fd <span style="color:#666">=</span> suinput_open();
-  <span style="color:#007020;font-weight:bold">if</span> (uinput_fd <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) {
-    err(<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;suinput_open&#34;</span>);
-  }
-  <span style="color:#60a0b0;font-style:italic">/* Error handling is omitted to keep code as readible as possible. */</span>
-  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
-    suinput_enable_event(uinput_fd, EV_KEY, btns[i]);
-  }
-  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
-    suinput_enable_event(uinput_fd, EV_REL, rel_axes[i]);
-  }
-  suinput_create(uinput_fd, <span style="color:#666">&amp;</span>user_dev);
-
-  <span style="color:#007020;font-weight:bold">struct</span> timespec sleeptime <span style="color:#666">=</span> {<span style="color:#40a070">0</span>, <span style="color:#40a070">60000000</span>};
-  <span style="color:#007020;font-weight:bold">while</span> (<span style="color:#666">!</span>end) {
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_UP)) {
-      suinput_emit(uinput_fd, EV_REL, REL_Y, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
-    }
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_DOWN)) {
-      suinput_emit(uinput_fd, EV_REL, REL_Y, <span style="color:#40a070">5</span>);
-    }
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_LEFT)) {
-      suinput_emit(uinput_fd, EV_REL, REL_X, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
-    }
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_RIGHT)) {
-      suinput_emit(uinput_fd, EV_REL, REL_X, <span style="color:#40a070">5</span>);
-    }
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_LEFT_CLICK)) {
-      suinput_emit_click(uinput_fd, BTN_LEFT);
-    }
-    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span>digitalRead(GPIO_BTN_RIGHT_CLICK)) {
-      suinput_emit_click(uinput_fd, BTN_RIGHT);
-    }
-    suinput_syn(uinput_fd);
-    nanosleep(<span style="color:#666">&amp;</span>sleeptime, <span style="color:#007020">NULL</span>);
-  }
-  suinput_destroy(uinput_fd);
-  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;err.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;string.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;unistd.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;time.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;suinput.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;signal.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdlib.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT_CLICK<span style="color:#666">=</span><span style="color:#40a070">15</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT_CLICK<span style="color:#666">=</span><span style="color:#40a070">14</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_UP<span style="color:#666">=</span><span style="color:#40a070">16</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_DOWN<span style="color:#666">=</span><span style="color:#40a070">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_LEFT<span style="color:#666">=</span><span style="color:#40a070">26</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> GPIO_BTN_RIGHT<span style="color:#666">=</span><span style="color:#40a070">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">sig_atomic_t</span> end <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> LED <span style="color:#666">=</span> <span style="color:#40a070">16</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">sighandler</span>(<span style="color:#902000">int</span> signo) {
+</span></span><span style="display:flex;"><span>  end <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">struct</span> sigaction sa;
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> GPIO_btns[] <span style="color:#666">=</span> {GPIO_BTN_LEFT_CLICK, GPIO_BTN_RIGHT_CLICK, GPIO_BTN_UP, GPIO_BTN_DOWN, GPIO_BTN_LEFT, GPIO_BTN_RIGHT};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">setbuf</span>(stdout, <span style="color:#007020">NULL</span>); <span style="color:#60a0b0;font-style:italic">// deactivate stdout buffering 
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#06287e">printf</span>(<span style="color:#4070a0">&#34;Raspberry Pi GPIO button mouse</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#06287e">wiringPiSetupGpio</span>() <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) { <span style="color:#60a0b0;font-style:italic">// Init with BCM GPIO numering
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#06287e">perror</span>(<span style="color:#4070a0">&#34;wiringPiSetup failed&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">exit</span>(<span style="color:#40a070">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Buttons with internal pull-up, connected to GND by activation
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> count<span style="color:#666">=</span><span style="color:#40a070">0</span>, end<span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns)<span style="color:#666">/</span><span style="color:#007020;font-weight:bold">sizeof</span>(GPIO_btns[<span style="color:#40a070">0</span>]); count<span style="color:#666">&lt;</span>end; count<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">pinMode</span>(GPIO_btns[count], INPUT);
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">pullUpDnControl</span>(GPIO_btns[count], PUD_UP); 
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">memset</span>(<span style="color:#666">&amp;</span>sa, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> sigaction)); <span style="color:#60a0b0;font-style:italic">//Handling stop events, like ctrl+c 
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  sa.sa_handler <span style="color:#666">=</span> sighandler;
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">sigaction</span>(SIGINT, <span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">sigaction</span>(SIGQUIT,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">sigaction</span>(SIGTERM,<span style="color:#666">&amp;</span>sa, <span style="color:#007020">NULL</span>); 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> uinput_fd;
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> btns[] <span style="color:#666">=</span> {BTN_LEFT, BTN_RIGHT, BTN_MIDDLE};
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">int</span> rel_axes[] <span style="color:#666">=</span> {REL_X, REL_Y, REL_WHEEL};
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev user_dev;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">memset</span>(<span style="color:#666">&amp;</span>user_dev, <span style="color:#40a070">0</span>, <span style="color:#007020;font-weight:bold">sizeof</span>(<span style="color:#007020;font-weight:bold">struct</span> uinput_user_dev));
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">strcpy</span>(user_dev.name, <span style="color:#4070a0">&#34;GPIO Mouse&#34;</span>);
+</span></span><span style="display:flex;"><span>  uinput_fd <span style="color:#666">=</span> <span style="color:#06287e">suinput_open</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (uinput_fd <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">err</span>(<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;suinput_open&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">/* Error handling is omitted to keep code as readible as possible. */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">suinput_enable_event</span>(uinput_fd, EV_KEY, btns[i]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; <span style="color:#666">++</span>i) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">suinput_enable_event</span>(uinput_fd, EV_REL, rel_axes[i]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">suinput_create</span>(uinput_fd, <span style="color:#666">&amp;</span>user_dev);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">struct</span> timespec sleeptime <span style="color:#666">=</span> {<span style="color:#40a070">0</span>, <span style="color:#40a070">60000000</span>};
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">while</span> (<span style="color:#666">!</span>end) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_UP)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit</span>(uinput_fd, EV_REL, REL_Y, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_DOWN)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit</span>(uinput_fd, EV_REL, REL_Y, <span style="color:#40a070">5</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_LEFT)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit</span>(uinput_fd, EV_REL, REL_X, <span style="color:#666">-</span><span style="color:#40a070">5</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_RIGHT)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit</span>(uinput_fd, EV_REL, REL_X, <span style="color:#40a070">5</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_LEFT_CLICK)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit_click</span>(uinput_fd, BTN_LEFT);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (LOW<span style="color:#666">==</span><span style="color:#06287e">digitalRead</span>(GPIO_BTN_RIGHT_CLICK)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#06287e">suinput_emit_click</span>(uinput_fd, BTN_RIGHT);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">suinput_syn</span>(uinput_fd);
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">nanosleep</span>(<span style="color:#666">&amp;</span>sleeptime, <span style="color:#007020">NULL</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">suinput_destroy</span>(uinput_fd);
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>gcc -Wall -o gpiomouse gpiomouse.c -lsuinput -lwiringPi
 sudo ./gpiomouse &amp;
@@ -686,15 +677,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -709,7 +691,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

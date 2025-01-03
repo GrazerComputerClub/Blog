@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Raspberry Pi CPU Kühlung",
@@ -25,7 +25,7 @@
         "dateModified" : "2020-09-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/cooling\/",
         "wordCount" : "950",
-        "image" : "https://blog.gc2.atimg/fan.png"",
+        "image" : "https:\/\/blog.gc2.at\/img\/fan.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -266,39 +257,39 @@
 <h2 id="beschreibung">Beschreibung</h2>
 <p>Wann eine Kühlung des SoC bzw. des Prozessor der Raspberry Pi nötig ist hängt von vielen Faktoren ab. Die Raspberry Pi Type, Umgebungstemperatur und das Gehäuse sind die wichtigsten. Um genau fest zu stellen unter welchen Bedingungen eine Kühlung notwendig ist, wurde mit dem GC2 3D-Druck-Gehäuse mehrere Leistungstest durchgeführt. Dazu wurde die Raspberry Pi 3 benutzt, sie besitzt keine Heatspreader. Zum Aufzeichnen der ARM Frequenz und der Prozessor-Temperatur wurde das Python Programm <a href="https://github.com/MilhouseVH/bcmstat">bcmstat</a> verwendet. Bei GC2 Raspjamming OS ist das Programm bereits vorinstalliert. Die CPU-Last wurde mit dem Programm &ldquo;stress&rdquo; erzeugt.<br>
 Beim Testl wurde folgendes Shell-Script verwendet</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bcmstat.sh &gt; rpi_<span style="color:#bb60d5">$1</span>.txt &amp;
-<span style="color:#bb60d5">PID</span><span style="color:#666">=</span><span style="color:#bb60d5">$!</span>
-sleep <span style="color:#40a070">10</span>
-stress --cpu <span style="color:#40a070">1</span> --timeout 420s
-sleep <span style="color:#40a070">180</span>
-stress --cpu <span style="color:#40a070">2</span> --timeout 420s
-sleep <span style="color:#40a070">180</span>
-stress --cpu <span style="color:#40a070">3</span> --timeout 420s
-sleep <span style="color:#40a070">180</span>
-stress --cpu <span style="color:#40a070">4</span> --timeout 420s
-sleep <span style="color:#40a070">180</span>
-<span style="color:#007020">echo</span> <span style="color:#007020">kill</span> <span style="color:#bb60d5">$PID</span>
-<span style="color:#007020">kill</span> -KILL <span style="color:#bb60d5">$PID</span>
-<span style="color:#007020">echo</span> finished!
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bcmstat.sh &gt; rpi_<span style="color:#bb60d5">$1</span>.txt &amp;
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">PID</span><span style="color:#666">=</span><span style="color:#bb60d5">$!</span>
+</span></span><span style="display:flex;"><span>sleep <span style="color:#40a070">10</span>
+</span></span><span style="display:flex;"><span>stress --cpu <span style="color:#40a070">1</span> --timeout 420s
+</span></span><span style="display:flex;"><span>sleep <span style="color:#40a070">180</span>
+</span></span><span style="display:flex;"><span>stress --cpu <span style="color:#40a070">2</span> --timeout 420s
+</span></span><span style="display:flex;"><span>sleep <span style="color:#40a070">180</span>
+</span></span><span style="display:flex;"><span>stress --cpu <span style="color:#40a070">3</span> --timeout 420s
+</span></span><span style="display:flex;"><span>sleep <span style="color:#40a070">180</span>
+</span></span><span style="display:flex;"><span>stress --cpu <span style="color:#40a070">4</span> --timeout 420s
+</span></span><span style="display:flex;"><span>sleep <span style="color:#40a070">180</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#007020">kill</span> <span style="color:#bb60d5">$PID</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">kill</span> -KILL <span style="color:#bb60d5">$PID</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> finished!
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Der Test wurde bei einer typischen Umgebungstemperatur von 24 °C durchgeführt. Das verwendetet <a href="https://www.thingiverse.com/thing:559858">Gehäuse</a> kann man sich mit einem 3D Drucker selbst herstellen.</p>
 <h2 id="analyse-temperaturen">Analyse Temperaturen</h2>
@@ -334,28 +325,28 @@ In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 55 °C aktiv
 Eine Erhöhung der Hysterese auf 20 °C würde den Lüfter im Bedarfsfall weniger oft aktivieren und dafür länger laufen lassen. Um die Hysterese zu verändern muss aber die Overlay Datei angepasst werden. Dazu muss sie in eine lesbare dts-Textdatei umgewandelt werden. Dann können die entsprechenden Parameter &ldquo;hysteresis&rdquo; und &ldquo;temperature&rdquo; (Hexadezimal-Werte) angepasst werden. Dann wird wieder eine neue binäre dtbo-Datei erzeugt.</p>
 <pre tabindex="0"><code>cd /boot/overlays
 sudo dtc -O dts -I dtb gpio-fan.dtbo -o gpio-fan.dts
-</code></pre><pre tabindex="0"><code>cat gpio-fan.dts | egrep &quot;temper|hyster&quot;
+</code></pre><pre tabindex="0"><code>cat gpio-fan.dts | egrep &#34;temper|hyster&#34;
   temperature = &lt;0xd6d8&gt;;
   hysteresis = &lt;0x2710&gt;;
 </code></pre><p>Mit dem Konsolen Programm bc können die ermittelten Hexadezimal- und Dezimalwerte umrechnen.</p>
 <pre tabindex="0"><code>sudo apt-get install bc
-</code></pre><pre tabindex="0"><code>echo &quot;ibase=16;D6D8&quot; | bc
+</code></pre><pre tabindex="0"><code>echo &#34;ibase=16;D6D8&#34; | bc
 55000
-echo &quot;ibase=16;2710&quot; | bc
+echo &#34;ibase=16;2710&#34; | bc
 10000
 
-echo &quot;obase=16;65000&quot; | bc
+echo &#34;obase=16;65000&#34; | bc
 FDE8
-echo &quot;obase=16;20000&quot; | bc
+echo &#34;obase=16;20000&#34; | bc
 4E20
 </code></pre><p>Nun überprüfen wir ob man die Zahlen sicher ersetzen bzw. das sie kann.</p>
-<pre tabindex="0"><code>cat gpio-fan.dts | egrep &quot;d6d8|2710&quot;
+<pre tabindex="0"><code>cat gpio-fan.dts | egrep &#34;d6d8|2710&#34;
   temperature = &lt;0xd6d8&gt;;
   hysteresis = &lt;0x2710&gt;;
 </code></pre><p>Nun ewiur:</p>
 <pre tabindex="0"><code>sudo cp gpio-fan.dts gpio-fanH20.dts
-sudo sed -i 's/d6d8/fde8/g' gpio-fanH20.dts
-sudo sed -i 's/2710/4e20/g' gpio-fanH20.dts
+sudo sed -i &#39;s/d6d8/fde8/g&#39; gpio-fanH20.dts
+sudo sed -i &#39;s/2710/4e20/g&#39; gpio-fanH20.dts
 sudo dtc -O dtb -I dts gpio-fanH20.dts -o gpio-fanH20.dtbo
 </code></pre><p>Damit wurde ein neuer Devicetree mit dem Namen gpio-fanH20 erzeugt. In der Standard-Konfiguration wird der Lüfter also mit GPIO 12, ab 65 °C aktiviert und bei 20 °C weniger, also 45 °C deaktiviert.</p>
 <p>In der config.txt Datei kann der neue Devicetree geladen und gegebenenfalls parametriert werden.</p>
@@ -544,15 +535,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -567,7 +549,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

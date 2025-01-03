@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Temperatursensor DS18B20",
@@ -24,8 +24,8 @@
         "datePublished": "2019-03-26 00:00:00 \u002b0000 UTC",
         "dateModified" : "2019-03-26 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/ds18b20\/",
-        "wordCount" : "350",
-        "image" : "https://blog.gc2.atimg/18B20.jpg"",
+        "wordCount" : "351",
+        "image" : "https:\/\/blog.gc2.at\/img\/18B20.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -279,53 +270,53 @@
 8d 01 55 05 7f a5 a5 66 9c t=24812
 </code></pre><p>Der ausgelesene Wert t muss noch durch 1000 dividiert werden um auf °C zu kommen.
 Diese Aufgabe kann man auch mit einem kleinen Python Programm &lsquo;/usr/local/bin/w1-temp.py&rsquo; umsetzen.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#!/usr/bin/python</span>
-<span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
-
-<span style="color:#60a0b0;font-style:italic"># read slave list from master 1</span>
-file <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/devices/w1_bus_master1/w1_master_slaves&#39;</span>)
-w1_slaves <span style="color:#666">=</span> file<span style="color:#666">.</span>readlines()
-file<span style="color:#666">.</span>close()
-
-<span style="color:#60a0b0;font-style:italic"># for each slave</span>
-<span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> w1_slaves:
-  <span style="color:#60a0b0;font-style:italic"># get slave id</span>
-  w1_slave <span style="color:#666">=</span> line<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">0</span>]
-  <span style="color:#60a0b0;font-style:italic"># read temp from slave id</span>
-  file <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/bus/w1/devices/&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(w1_slave) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;/w1_slave&#39;</span>)
-  filecontent <span style="color:#666">=</span> file<span style="color:#666">.</span>read()
-  file<span style="color:#666">.</span>close()
-  <span style="color:#60a0b0;font-style:italic"># calc and show temp</span>
-  stringvalue <span style="color:#666">=</span> filecontent<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34; &#34;</span>)[<span style="color:#40a070">9</span>]
-  temperature <span style="color:#666">=</span> <span style="color:#007020">float</span>(stringvalue[<span style="color:#40a070">2</span>:]) <span style="color:#666">/</span> <span style="color:#40a070">1000</span>
-
-  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#!/usr/bin/python</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># -*- coding: utf-8 -*-</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># read slave list from master 1</span>
+</span></span><span style="display:flex;"><span>file <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/devices/w1_bus_master1/w1_master_slaves&#39;</span>)
+</span></span><span style="display:flex;"><span>w1_slaves <span style="color:#666">=</span> file<span style="color:#666">.</span>readlines()
+</span></span><span style="display:flex;"><span>file<span style="color:#666">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for each slave</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> line <span style="color:#007020;font-weight:bold">in</span> w1_slaves:
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># get slave id</span>
+</span></span><span style="display:flex;"><span>  w1_slave <span style="color:#666">=</span> line<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># read temp from slave id</span>
+</span></span><span style="display:flex;"><span>  file <span style="color:#666">=</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;/sys/bus/w1/devices/&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(w1_slave) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;/w1_slave&#39;</span>)
+</span></span><span style="display:flex;"><span>  filecontent <span style="color:#666">=</span> file<span style="color:#666">.</span>read()
+</span></span><span style="display:flex;"><span>  file<span style="color:#666">.</span>close()
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic"># calc and show temp</span>
+</span></span><span style="display:flex;"><span>  stringvalue <span style="color:#666">=</span> filecontent<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>)[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>split(<span style="color:#4070a0">&#34; &#34;</span>)[<span style="color:#40a070">9</span>]
+</span></span><span style="display:flex;"><span>  temperature <span style="color:#666">=</span> <span style="color:#007020">float</span>(stringvalue[<span style="color:#40a070">2</span>:]) <span style="color:#666">/</span> <span style="color:#40a070">1000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;</span><span style="color:#70a0d0">%4.1f</span><span style="color:#4070a0"> °C&#39;</span> <span style="color:#666">%</span> temperature)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>python3 /usr/local/bin/w1-temp.py
 </code></pre><pre tabindex="0"><code>26.2 °C
@@ -512,15 +503,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -535,7 +517,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

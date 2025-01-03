@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Device Tree",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-16 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/device-tree\/",
         "wordCount" : "505",
-        "image" : "https://blog.gc2.atimg/Device-Tree.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/Device-Tree.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -266,12 +257,12 @@ Diese wird beim Bootvorgang gelesen und angewendet. Eine Vielzahl an Device Tree
 <p>Wer mit dem Raspberry Pi arbeitet hat vermutlich schon öfter mit Device Tree Einträgen in der Konfigurationsdatei &ldquo;config.txt&rdquo; zu tun gehabt.
 Diese werden einfach als eigene Zeile mit <code>dtoverlay={Overlay-Name},{Parameter1},{Parameter2}</code> eingetragen und damit aktiviert.<br>
 Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Kapitel &ldquo;GPIO-Eingang als Tastaturtaste&rdquo; bereits beschrieben wurde.</p>
-<pre tabindex="0"><code>dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
+<pre tabindex="0"><code>dtoverlay=gpio-key,gpio=21,keycode=108,label=&#34;KEY_DOWN&#34;,gpio_pull=2
 </code></pre><h2 id="erstellung">Erstellung</h2>
 <p>Device Tree Konfigurationen selbst zu erstellen ist natürlich möglich. Dazu muss man eine &ldquo;dts&rdquo; Datei erzeugen. Als Beispiel wurde ein SPI-Display mit ST7735R Chip und einer Auflösung von 160x128 erstellt, so wie im Kapitel &ldquo;SPI TFT LCD - Teil 1&rdquo;.</p>
 <p>&ldquo;st7735r.dts&rdquo;:</p>
 <pre tabindex="0"><code>/*
- * Device Tree overlay for SPI TFT LCD with ST7735R chip 160x128 (1,8&quot;) 
+ * Device Tree overlay for SPI TFT LCD with ST7735R chip 160x128 (1,8&#34;) 
  *
  */
 
@@ -279,15 +270,15 @@ Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Kapitel &ldquo
 /plugin/;
 
 / {
-	compatible = &quot;brcm,bcm2835&quot;, &quot;brcm,bcm2708&quot;, &quot;brcm,bcm2709&quot;;
+	compatible = &#34;brcm,bcm2835&#34;, &#34;brcm,bcm2708&#34;, &#34;brcm,bcm2709&#34;;
 
 	fragment@0 {
 		target = &lt;&amp;spi0&gt;;
 		__overlay__ {
-			status = &quot;okay&quot;;
+			status = &#34;okay&#34;;
 
 			spidev@0{
-				status = &quot;disabled&quot;;
+				status = &#34;disabled&#34;;
 			};
 
 		};
@@ -301,11 +292,11 @@ Folgendes Beispiel konfiguriert den GPIO21 als Enter-Taste wie in Kapitel &ldquo
 			#size-cells = &lt;0&gt;;
 
 			sainsmart18@0{
-				compatible = &quot;sitronix,st7735r&quot;;
+				compatible = &#34;sitronix,st7735r&#34;;
 				reg = &lt;0&gt;;
-				pinctrl-names = &quot;default&quot;;
+				pinctrl-names = &#34;default&#34;;
 
-				name = &quot;sainsmart18&quot;;
+				name = &#34;sainsmart18&#34;;
 				spi-max-frequency = &lt;48000000&gt;;
 				rotate = &lt;90&gt;;
 				buswidth = &lt;8&gt;;
@@ -512,15 +503,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -535,7 +517,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Geany mit GTK2",
@@ -24,8 +24,8 @@
         "datePublished": "2019-11-30 00:00:00 \u002b0000 UTC",
         "dateModified" : "2019-11-30 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/geany\/",
-        "wordCount" : "704",
-        "image" : "https://blog.gc2.atimg/geany.png"",
+        "wordCount" : "705",
+        "image" : "https:\/\/blog.gc2.at\/img\/geany.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -305,12 +296,12 @@ Nun muss man den Source-Code entpacken. In der Datei &ldquo;debian/rules&rdquo; 
  override_dh_auto_configure:
 -	dh_auto_configure -- --enable-vte --enable-the-force --enable-gtk3
 +	dh_auto_configure -- --enable-vte --enable-the-force 
- 	sed -i -r 's,^sys_lib_dlsearch_path_spec=&quot;(.*)$$,sys_lib_dlsearch_path_spec=&quot;/usr/lib /lib \1,' $(CURDIR)/libtool
+ 	sed -i -r &#39;s,^sys_lib_dlsearch_path_spec=&#34;(.*)$$,sys_lib_dlsearch_path_spec=&#34;/usr/lib /lib \1,&#39; $(CURDIR)/libtool
  
  override_dh_auto_install:
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<pre tabindex="0"><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
+<pre tabindex="0"><code>sudo su -c &#34;grep &#39;^deb &#39; /etc/apt/sources.list | sed &#39;s/^deb/deb-src/g&#39; &gt; /etc/apt/sources.list.d/deb-src.list&#34;
 sudo apt update
 sudo apt install build-essential fakeroot devscripts
 sudo apt-get build-dep geany
@@ -331,16 +322,16 @@ cd ..
 <pre tabindex="0"><code>LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2
 </code></pre><p>Bei einem alias Eintrag können die zwei Version direkt gestartet werden.</p>
 <p><strong>Alias für Aufruf &ldquo;~/.bash_aliases&rdquo;:</strong></p>
-<pre tabindex="0"><code>alias geany-gtk2=&quot;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2&quot;
-alias geany-gtk3=&quot;/usr/bin/geany&quot;
+<pre tabindex="0"><code>alias geany-gtk2=&#34;LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/geany-gtk2/ geany-gtk2&#34;
+alias geany-gtk3=&#34;/usr/bin/geany&#34;
 </code></pre><p>Mit dem Aufruf geany kann dann je nach Systemleistung die GTK2 oder GTK3 Version gestartet werden.</p>
 <p><strong>Alias für Aufruf &ldquo;~/.profile&rdquo;:</strong></p>
 <pre tabindex="0"><code>function geany() { 
-	if [ `cat /proc/cpuinfo | grep -e &quot;^processor&quot; | wc -l` = 1 ]; then 
-    echo &quot;start geany with GTK 2 (slow single core cpu)&quot; 
-		geany-gtk2 &quot;$@&quot;
+	if [ `cat /proc/cpuinfo | grep -e &#34;^processor&#34; | wc -l` = 1 ]; then 
+    echo &#34;start geany with GTK 2 (slow single core cpu)&#34; 
+		geany-gtk2 &#34;$@&#34;
 	else 
-		geany-gtk3 &quot;$@&quot;
+		geany-gtk3 &#34;$@&#34;
 	fi
 }
 </code></pre><p>Für einen optischer Vergleich der beiden Versionen siehe Bild (GTK2 Clearlooks Theme links, GTK3 rechts).</p>
@@ -430,9 +421,9 @@ Die Optionen &ldquo;Führe Programme in der VTE aus&rdquo; und &ldquo;Das Run-Sk
 gtk-theme-switch2
 </code></pre><p>/home/pi/.gtkrc-2.0:</p>
 <pre tabindex="0"><code># -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
-include &quot;/usr/share/themes/Clearlooks/gtk-2.0/gtkrc&quot;
+include &#34;/usr/share/themes/Clearlooks/gtk-2.0/gtkrc&#34;
 
-include &quot;/home/pi/.gtkrc-2.0.mine&quot;
+include &#34;/home/pi/.gtkrc-2.0.mine&#34;
 
 # -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
 </code></pre><!-- raw HTML omitted -->
@@ -622,15 +613,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -645,7 +627,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

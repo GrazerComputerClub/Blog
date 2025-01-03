@@ -1,86 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>uC on GC2 Blog</title>
+    <title>UC on GC2 Blog</title>
     <link>https://blog.gc2.at/categories/uc/</link>
-    <description>Recent content in uC on GC2 Blog</description>
+    <description>Recent content in UC on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/uc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.gc2.at/categories/uc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
       <link>https://blog.gc2.at/post/picopi-neopixel/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-neopixel/</guid>
       <description>&lt;p&gt;Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico mit Bipes</title>
       <link>https://blog.gc2.at/post/picopi-bipes/</link>
       <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) MicroPython Firmware</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-micropython/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-micropython/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der MicroPyhon Firmware ausstatten. Dann kann der Mikrocontroller mit Python programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) NodeMCU Firmware</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</link>
       <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der NodeMCU Firmware ausstatten. Dann kann der Mikrocontroller mit Lua programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) Firmware aktualisieren</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-firmware/</link>
       <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-firmware/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit einer neuen Firmware flashen. Man benötigt nur einige Kabelverbindungen und eine 3,3 V serielle Schnittstelle. Eine Aufgabe die man perfekt mit dem Raspberry Pi erledigen kann.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ATmega328P Programmierung</title>
       <link>https://blog.gc2.at/post/atmega-328p/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
       <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S)</title>
       <link>https://blog.gc2.at/post/esp8266-esp01/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
       <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
       <link>https://blog.gc2.at/post/esp8266-i2c-display/</link>
       <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-i2c-display/</guid>
-      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
-ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
-Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein&#xA;ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem&#xA;Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C&#xA;mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,663 +6,497 @@
     <description>Recent content in Posts on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.gc2.at/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GC2@38C3</title>
+      <link>https://blog.gc2.at/post/38c3/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.gc2.at/post/38c3/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Nach längerer Pause ist der GC2 endlich wieder am C3, genauer gesagt am 38C3 in Hamburg.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>WiringPi Library</title>
       <link>https://blog.gc2.at/post/wiringpi/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/wiringpi/</guid>
       <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi OS Bookworm</title>
       <link>https://blog.gc2.at/post/bookworm/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/bookworm/</guid>
       <description>&lt;p&gt;2023 wurde Raspberry Pi OS auf die aktuelle Debian Basis 12 aktualisiert und trägt somit den Namen Bookworm. Dadurch hat sich einiges geändert, hier eine kleine Auflistung.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi GPIO Librarys</title>
       <link>https://blog.gc2.at/post/gpiolibrarys/</link>
       <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpiolibrarys/</guid>
       <description>&lt;p&gt;Zwischen 2019 und 2024 gab es einige Änderungen beim Raspberry Pi Computer, allerdings haben viele GPIO Libarys inzwischen den Support eingestellt. Ein kurzer Überblick über den aktuellen Stand der GPIO Bibliotheken&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Shopping Guide</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</link>
       <pubDate>Sun, 29 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
       <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Server</title>
       <link>https://blog.gc2.at/post/minecraft-server/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft-server/</guid>
       <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Dell Laptop upgrade</title>
       <link>https://blog.gc2.at/post/gc2-laptops/</link>
       <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gc2-laptops/</guid>
       <description>&lt;p&gt;Für die Raspberry Pi Jams haben wir uns uralte Dell Laptops besorgt. Teilweise könnten diese Laptops mit besseren Prozessoren ausgerüstet werden. Ein Vergleich der Prozessorleistung hilft die Leistungsfähigkeit einzuordnen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Die Lebensdauer der SD-Karte verlängern mit ZRAM</title>
       <link>https://blog.gc2.at/post/zram/</link>
       <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/zram/</guid>
       <description>&lt;p&gt;Immer wieder kommt es zu Problemen mit der SD-Karte beim Raspberry Pi. Mit ZRAM wird im Arbeitsspeicher ein komprimierter Swap-Speicher angelegt. Dadurch kann die SD-Karte entlasten werden und hält dann hoffentlich länger.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
       <link>https://blog.gc2.at/post/picopi-neopixel/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-neopixel/</guid>
       <description>&lt;p&gt;Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico mit Bipes</title>
       <link>https://blog.gc2.at/post/picopi-bipes/</link>
       <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) MicroPython Firmware</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-micropython/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-micropython/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der MicroPyhon Firmware ausstatten. Dann kann der Mikrocontroller mit Python programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SPI TFT LCD - Kernel 5</title>
       <link>https://blog.gc2.at/post/spi-tft-lcd-kernel5/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/spi-tft-lcd-kernel5/</guid>
       <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist seit Kernel 5 nicht mehr über das Kernelmodul fbtft möglich. Man kann aber das Programm fbcp-ili9341 nutzen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SSH ohne Passwort</title>
       <link>https://blog.gc2.at/post/ssh/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/ssh/</guid>
       <description>&lt;p&gt;Immer das Raspberry Pi Passwort bei der SSH-Anmeldung angeben kann nervig sein. Es geht aber auch ohne Passworteingabe, für manche Programme ist das sogar notwendig.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi CPU Kühlung</title>
       <link>https://blog.gc2.at/post/cooling/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/cooling/</guid>
       <description>&lt;p&gt;Raspberry Pi Zero, Pi 1 und Pi 2 kommen noch gut ohne Kühlkörper und Lüfter aus. Aber wie sieht es bei den anderen Modellen aus? Vorweg ab der Raspberry Pi 3 ist eine aktive Kühlung bei leistungsintensive Anwendungen pflicht. Die bedarfsabhängige Lüftersteuerung kann sehr einfach aktiviert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Pi API</title>
       <link>https://blog.gc2.at/post/minecraft-pi-api/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft-pi-api/</guid>
       <description>&lt;p&gt;Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Pi</title>
       <link>https://blog.gc2.at/post/minecraft/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft/</guid>
-      <description>&lt;p&gt;Auch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine
-spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Auch nach vielen Jahren ist das Interesse an dem Raspberry Pi und auch an dem Spiel Minecraft ungebrochen. Für den Raspberry Pi wurde einmalig eine&#xA;spezielle gratis Variante herausgebracht. Wie man sie installiert und den Überlebensmodus (survival mode) aktiviert erfährt man hier.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) NodeMCU Firmware</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</link>
       <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-nodemcu/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der NodeMCU Firmware ausstatten. Dann kann der Mikrocontroller mit Lua programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MPEG2 Video Dekodierung</title>
       <link>https://blog.gc2.at/post/mpeg2/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/mpeg2/</guid>
-      <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf
-dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Seit Ende 2018 ist das Patent für den MPEG2 Hardwaredekoder fast überall auf der Welt ausgelaufen. Dennoch wurde die Funktion für den MPEG2 Video-Dekoder auf&#xA;dem Raspberry Pi nicht freigegeben. Warum das so ist und ob es immer noch Sinn macht, soll geklärt werden&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title> GPIO-Eingang zur Joypad Emulation</title>
       <link>https://blog.gc2.at/post/gpio-joypad/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-joypad/</guid>
       <description>&lt;p&gt;Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Joypad am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen Python-Code reichen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title> GPIO-Eingang zur Maus Emulation</title>
       <link>https://blog.gc2.at/post/gpio-mouse/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-mouse/</guid>
       <description>&lt;p&gt;Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Spannungsversorgung</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</link>
       <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-versorgung/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero läuft eigentlich mit einer 5 V Versorgung über den Micro-USB Anschluss. Was aber wenn die Versorgung über Akkus oder andere Quellen erfolgt. Der Raspberry Pi Zero lässt sich nämlich, unter bestimmten Umständen, schon mit etwas mehr als 3,3 V betreiben.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Übertakten</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-hardcore-overclocking/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero läuft mit einem Takt von 1000 MHz. Geht da noch mehr durch übertakten? Die Antwort ist Ja, sogar viel mehr und das ohne, dass das Garantieverlustbit gesetzt wird.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rückblick 2019</title>
       <link>https://blog.gc2.at/post/2019/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/2019/</guid>
       <description>&lt;p&gt;Am Anfang des neuen Jahres möchten wir einen Rückblick auf das vergangene Jahr machen&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@36C3 - Day 4</title>
       <link>https://blog.gc2.at/post/36c3_4/</link>
       <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/36c3_4/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Nachdem wir unseren bereits obligatorischen Frühstücksburger eingenommen haben,
-ging es mit dem letzten Tag des 36C3 los.&lt;/p&gt;
-&lt;p&gt;Distanz: 13018 Schritte / 10.1 km&lt;!-- raw HTML omitted --&gt;
-Uhrzeit: 18:07&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Nachdem wir unseren bereits obligatorischen Frühstücksburger eingenommen haben,&#xA;ging es mit dem letzten Tag des 36C3 los.&lt;/p&gt;&#xA;&lt;p&gt;Distanz: 13018 Schritte / 10.1 km&lt;!-- raw HTML omitted --&gt;&#xA;Uhrzeit: 18:07&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@36C3 - Day 3</title>
       <link>https://blog.gc2.at/post/36c3_3/</link>
       <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/36c3_3/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Nach einer Kuscheleinheit im NH Leipzig – welche Christo(f)(ph) dringend
-notwendig hatten - starteten wir gegen 11:30 Uhr los.&lt;/p&gt;
-&lt;p&gt;Distanz: 14067 Schritte / 10.8 km&lt;!-- raw HTML omitted --&gt;
-Uhrzeit: 0:47&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Nach einer Kuscheleinheit im NH Leipzig – welche Christo(f)(ph) dringend&#xA;notwendig hatten - starteten wir gegen 11:30 Uhr los.&lt;/p&gt;&#xA;&lt;p&gt;Distanz: 14067 Schritte / 10.8 km&lt;!-- raw HTML omitted --&gt;&#xA;Uhrzeit: 0:47&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@36C3 - Day 2</title>
       <link>https://blog.gc2.at/post/36c3_2/</link>
       <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/36c3_2/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Tag 2 und nach einem erhohlsamen Schlaf im Doppelbett begeben wir uns wieder
-in das 36C3 getümmel&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Distanz: 16889 Schritte / 12.9 km&lt;!-- raw HTML omitted --&gt;
-Uhrzeit: 1:13&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Tag 2 und nach einem erhohlsamen Schlaf im Doppelbett begeben wir uns wieder&#xA;in das 36C3 getümmel&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Distanz: 16889 Schritte / 12.9 km&lt;!-- raw HTML omitted --&gt;&#xA;Uhrzeit: 1:13&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@36C3</title>
       <link>https://blog.gc2.at/post/36c3/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/36c3/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Es ist wieder soweit. Der GC² ist wieder am C3! 36C3 wir kommen. Und wie wir es
-bereits letztes Jahr gemacht haben, werden wir wieder über unsere Erfahrungen
-berichten.&lt;/p&gt;
-&lt;p&gt;Distanz: 15723 Schritte / 12.2 km&lt;!-- raw HTML omitted --&gt;
-Uhrzeit: 3:24&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Es ist wieder soweit. Der GC² ist wieder am C3! 36C3 wir kommen. Und wie wir es&#xA;bereits letztes Jahr gemacht haben, werden wir wieder über unsere Erfahrungen&#xA;berichten.&lt;/p&gt;&#xA;&lt;p&gt;Distanz: 15723 Schritte / 12.2 km&lt;!-- raw HTML omitted --&gt;&#xA;Uhrzeit: 3:24&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>C# Installation</title>
       <link>https://blog.gc2.at/post/cs/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/cs/</guid>
       <description>&lt;p&gt;Um zur aktuellsten C# Mono Version zu kommen muss diese manuell installiert werden. Diese Anleitung zeigt wie und hilft einen Stolperstein für die Raspberry Pi Zero zu vermeiden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SD-Karte für Raspberry Pi</title>
       <link>https://blog.gc2.at/post/sdcards/</link>
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/sdcards/</guid>
       <description>&lt;p&gt;Immer wieder steht man vor der Frage: Welche SD-Karte soll im Raspberry Pi zum Einsatz kommen? Zahlen sich die teuren Karten aus, sind Karten aus China eine Option? Ein Benchmark von verschiedenen SD-Karten kann einen Anhaltspunkt geben.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Geany mit GTK2</title>
       <link>https://blog.gc2.at/post/geany/</link>
       <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/geany/</guid>
       <description>&lt;p&gt;Ab Debian 10 Buster wird Geany mit GTK3 bereitgestellt. Deshalb kann es sinnvoll sein, die alte Version mit GTK2 auf der langsamen Raspberry Pi Zero zu installieren.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi am USB-Anschluss betreiben</title>
       <link>https://blog.gc2.at/post/powerconsumtion/</link>
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/powerconsumtion/</guid>
       <description>&lt;p&gt;Will man eine Raspberry Pi am USB-Anschluss eines Laptops betreiben, so ist man mit ca. 500 mA beschränkt. Welche Modelle kommen damit zurecht?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CIRCLean USB Sanitizer</title>
       <link>https://blog.gc2.at/post/sanitizer/</link>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/sanitizer/</guid>
       <description>&lt;p&gt;USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IR-Empfänger</title>
       <link>https://blog.gc2.at/post/ir/</link>
       <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/ir/</guid>
       <description>&lt;p&gt;Mit einem günstigen IR-Empfänger lassen sich über einen GPIO-Pin, Kommandos mit einer IR-Fernbedienung am Raspberry Pi auslösen. Nachdem der Kernel in Raspbian aktualisiert wurde, hat sich die Einbindung aber verkompliziert. Wie es richtig geht erfahrt man hier&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SoC der Einplatinencomputer</title>
       <link>https://blog.gc2.at/post/cpu-performance/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/cpu-performance/</guid>
       <description>&lt;p&gt;Eine interessante Kenngröße der vielen verschiedenen Einplatinencomputer-Varianten ist die Singlecore-Leistung der CPU im SoC. Ein Diagramm soll helfen die Prozessoren bzw. Produkte einordnen zu können &amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Musik mit Piezo Signalgeber</title>
       <link>https://blog.gc2.at/post/piezo-signalgeber/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
       <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspjamming - Raspberry Pi Jam</title>
       <link>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspjamming-raspberry-pi-jam/</guid>
       <description>&lt;p&gt;Als Raspjamming wird der Raspberry Pi Jam bzw. Workshop bei den Grazer Linuxtagen bezeichnet. Der Workshop wird vom Grazer Computer Club, kurz GC2 organisiert.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspjamming Distribution</title>
       <link>https://blog.gc2.at/post/raspjamming-distribution/</link>
       <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspjamming-distribution/</guid>
       <description>&lt;p&gt;Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) eine angepasste Raspbian Lite Version entwickelt. Diese Distribution wird Raspjamming genannt und hat wesentliche Vorteile gegenüber der Raspbian Basis.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC2-xHAT Aufsteckboard</title>
       <link>https://blog.gc2.at/post/gc2-xhat/</link>
       <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gc2-xhat/</guid>
       <description>&lt;p&gt;Ein HAT (Hardware Attached on Top) ist ein Aufsteckboard für den Raspberry Pi. Speziell für Raspjamming, also den Raspberry Pi Jam bei den Grazer Linuxtagen wurde vom Grazer Computer Cub (GC2) ein HAT entwickelt. Dieser HAT mit dem Namen GC2-xHAT vereint viele Anfängerprojekte auf einer Platine.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) Firmware aktualisieren</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-firmware/</link>
       <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-firmware/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit einer neuen Firmware flashen. Man benötigt nur einige Kabelverbindungen und eine 3,3 V serielle Schnittstelle. Eine Aufgabe die man perfekt mit dem Raspberry Pi erledigen kann.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Temperatursensor DS18B20</title>
       <link>https://blog.gc2.at/post/ds18b20/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/ds18b20/</guid>
       <description>&lt;p&gt;Mit dem günstigen Sensor DS18B20 und einem Widerstand kann ganz einfach über einen GPIO Pin die Umgebungstemperatur ausgelesen werden. Dazu wird noch nicht mal eine Library oder ein Programm benötigt. Alles Nötige ist im Linux-Kernel integriert.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HAT EEPROM anschließen und konfigurieren</title>
       <link>https://blog.gc2.at/post/hat-eeprom/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/hat-eeprom/</guid>
       <description>&lt;p&gt;Über die zwei Anschlüsse &lt;em&gt;ID_SD&lt;/em&gt; und &lt;em&gt;ID_SC&lt;/em&gt; auf der GPIO-Leiste des Raspberry Pi kann ein spezielles EEPROM angeschlossen werden. Damit können GPIO Einstellungen und Device Tree Konfigurationen automatisch beim Boot geladen werden. Diese Funktion wird zur Erkennung und Parametrierung von HATs (Aufsteckboards) verwendet.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ATmega328P Programmierung</title>
       <link>https://blog.gc2.at/post/atmega-328p/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
       <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>VNC - Virtual Network Computing</title>
       <link>https://blog.gc2.at/post/vnc/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/vnc/</guid>
       <description>&lt;p&gt;Wer sich gerne per Remote Control auf die grafische Oberfläche des Raspberry Pi verbinden möchte, kann dazu einen speziell angepassten VNC-Server benutzen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@35C3 - The End</title>
       <link>https://blog.gc2.at/post/35c3_4/</link>
       <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/35c3_4/</guid>
-      <description>&lt;p&gt;Vier Tage voller bunter Dinger und verrückter Menschen geht zu Ende. Der 35C3
-ist vorbei. Dementsprechend ist dies unser letzer Erfahrungsbericht aus Leipzig.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Vier Tage voller bunter Dinger und verrückter Menschen geht zu Ende. Der 35C3&#xA;ist vorbei. Dementsprechend ist dies unser letzer Erfahrungsbericht aus Leipzig.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@35C3 - Day 3</title>
       <link>https://blog.gc2.at/post/35c3_3/</link>
       <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/35c3_3/</guid>
-      <description>&lt;p&gt;Auch wenn wir nach ein paar Tschunks erst gegen halb vier ins Bett gefallen sind,
-sind wir am Tag 3 bereits um elf wieder am Start.&lt;/p&gt;
-&lt;p&gt;Jedoch - wie wir vom CERT erfahren haben - muss aber eh immer nur eine Person
-nüchtern sein - what could possibly go wrong?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Auch wenn wir nach ein paar Tschunks erst gegen halb vier ins Bett gefallen sind,&#xA;sind wir am Tag 3 bereits um elf wieder am Start.&lt;/p&gt;&#xA;&lt;p&gt;Jedoch - wie wir vom CERT erfahren haben - muss aber eh immer nur eine Person&#xA;nüchtern sein - what could possibly go wrong?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@35C3 - Day 2</title>
       <link>https://blog.gc2.at/post/35c3_2/</link>
       <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/35c3_2/</guid>
-      <description>&lt;p&gt;Der Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam
-stellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag
-begann erst am späten Vormittag und ging bis spät in die Nacht.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Tag begann um 11:30 mit dem ersten Vortrag über Predatory-Journals. So langsam&#xA;stellte sich auch der eigene Rhythmus auf den Konferenz-Rhythmus um. Der ganze Tag&#xA;begann erst am späten Vormittag und ging bis spät in die Nacht.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GC²@35C3</title>
       <link>https://blog.gc2.at/post/35c3/</link>
       <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/35c3/</guid>
-      <description>&lt;p&gt;Heuer feiert der Grazer Computer Club prämiere auf dem Chaos Communication
-Congress. Zuvor waren wir bereits auf der Privacy Week in Wien.
-Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Heuer feiert der Grazer Computer Club prämiere auf dem Chaos Communication&#xA;Congress. Zuvor waren wir bereits auf der Privacy Week in Wien.&#xA;Dies ist unser ganz persönlicher Erfahrungsbericht von Tag 1.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PICO-8 Handheld-Spielkonsole mit Waveshare LCD HAT</title>
       <link>https://blog.gc2.at/post/wavesharelcdhat/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/wavesharelcdhat/</guid>
       <description>&lt;p&gt;Um nur 15 Euro kann man sich ein 1,44 Zoll LCD HAT von Waveshare für den Raspberry Pi Zero kaufen. Wie der Zufall es will, kann man damit sehr einfach eine PICO-8 Handheld-Spielkonsole selbst bauen. Das 128x128 große Display, das Steuerkreuz und die drei Tasten sind genau die passenden Teile für PICO-8.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi 3 A&#43; USB Gadget</title>
       <link>https://blog.gc2.at/post/raspberry-pi-3-a-usb-gadget/</link>
       <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-3-a-usb-gadget/</guid>
       <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Dieser Möglichkeit ist beim Raspberry Pi Zero bereits bekannt und verbreitet. Mit dem neuen Raspberry Pi 3 A+ lässt sich der OTG-Betrieb aber auch ermöglichen. Ein paar spezielle Anpassungen sind aber nötig.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Lego Roboter &#43; Raspberry Pi</title>
       <link>https://blog.gc2.at/post/robot-arm/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/robot-arm/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;&#xA;Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PICO-8</title>
       <link>https://blog.gc2.at/post/pico-8/</link>
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pico-8/</guid>
       <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S)</title>
       <link>https://blog.gc2.at/post/esp8266-esp01/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01/</guid>
       <description>&lt;p&gt;Das kleinste Experimentierboard mit dem ESP8266 Mikrocontroller nennt sich ESP-01 bzw. ESP-01S. Es hat nur die nötigsten Anschlüsse und wird mit einer einfachen Firmware ausgeliefert. Perfekt für erste Experimente mit dem Raspberry Pi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero Audio</title>
       <link>https://blog.gc2.at/post/pi-zero-audio/</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pi-zero-audio/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero hat keinen analogen Audio Ausgang. Allerdings kann dieser mit nur zwei Widerständen und zwei Kondensatoren selbst erstellt werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Geschwindigkeitsmessung mit Raspberry Pi</title>
       <link>https://blog.gc2.at/post/bundesseminarelektro_pi2016/</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/bundesseminarelektro_pi2016/</guid>
-      <description>&lt;p&gt;Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.
-So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Der Grazer Computer Club war auch schon vor 2018 tätig, auch wenn noch nicht offiziell unter diesem Namen.&#xA;So waren wir beim Software Freedom Day, zahlreichen Grazer Linuxtagen und diversen anderen Veranstaltungen zugegen. Bei einem Bundesseminar für Elektrotechnik im Jahr 2016 haben wir ein Demo-Setup zur Geschwindigkeitsmessung inklusive Programmierung vorgestellt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>BerryBoot</title>
       <link>https://blog.gc2.at/post/berryboot/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/berryboot/</guid>
       <description>&lt;p&gt;Wenn man erst beginnt sich mit dem Thema Raspberry Pi auseinanderzusetzten, kann es schon mal vorkommen, dass man schlichtweg überfordert von er enormen Auswahl an unterstützten Betriebssystemen ist. Hier hilft das Projekt BerryBoot!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Device Tree</title>
       <link>https://blog.gc2.at/post/device-tree/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/device-tree/</guid>
       <description>&lt;p&gt;Der vorrangige Zweck von Device Tree in Linux besteht darin, eine Möglichkeit zur Beschreibung nicht erkennbarer Hardware bereitzustellen. Zur Veranschaulichung wird für ein SPI-Display ein Device Tree Blob erzeugt und geladen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SPI TFT LCD - Teil 2</title>
       <link>https://blog.gc2.at/post/spi-tft-lcd2/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/spi-tft-lcd2/</guid>
       <description>&lt;p&gt;Hat man ein SPI TFT LCD angeschlossen und über ein Kernel Modul in das Linux System integriert, so muss man nur noch darauf zugreifen können. Das kann man entweder direkt über den Framebuffer machen oder man startet einen Dienst der die normale HDMI- oder Composite-Grafikausgabe auf das Display dupliziert.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PowerShell Core in Linux</title>
       <link>https://blog.gc2.at/post/powershell-core-linux-1/</link>
       <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/powershell-core-linux-1/</guid>
-      <description>&lt;p&gt;Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.
-Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Seit .Net Core offiziell auf der Raspberry Pi 2+ Plattform unterstützt wird, kann man PowerShell Scripte, über PowerShell Core (Version 6+) in Raspbian ausführen.&#xA;Wir erklären die Installation und ein Anwendungsbeispiel, in dem es darum geht, die Internet-Verbindungsgeschwindigkeit über einen längeren Zeitraum zu überwachen und protokollieren.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
       <link>https://blog.gc2.at/post/esp8266-i2c-display/</link>
       <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-i2c-display/</guid>
-      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
-ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
-Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein&#xA;ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem&#xA;Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C&#xA;mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SPI TFT LCD - Teil 1</title>
       <link>https://blog.gc2.at/post/spi-tft-lcd/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/spi-tft-lcd/</guid>
       <description>&lt;p&gt;Für eine Anzeige abseits von HDMI und Composite bieten sich günstige SPI TFT LCDs an. Diese gibt es in unterschiedlichen Auflösungen und Größen. Die Einbindung ist über ein Kernelmodul problemlos möglich.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hotkeys zuweisen ohne X11</title>
       <link>https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/hotkeys-zuweisen-ohne-x11/</guid>
       <description>&lt;p&gt;Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafische Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GPIO-Eingang zur Tastaturtaste</title>
       <link>https://blog.gc2.at/post/gpio-tasten/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-tasten/</guid>
       <description>&lt;p&gt;Oft sollen über eine Taste am GPIO-Eingang ein Programm gesteuert werden. Früher musste man das kompliziert mit einem eigenen Programm oder zusätzlicher Hardware realisieren. Doch nun geht das ganz einfach, über Device Tree. Mit nur einem Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; wird ein GPIO-Eingang einer Tastatur-Taste zugewiesen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Zero W Stromaufnahme</title>
       <link>https://blog.gc2.at/post/raspberry-pi-zero-w-stromaufnahme/</link>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-w-stromaufnahme/</guid>
       <description>&lt;p&gt;Der Raspberry Pi Zero W ist ideal für den Einsatz, wenn wenig Energie zur Verfügung steht. Sei dies nun aufgrund eines Batteriebetriebs oder auch der Betrieb an einem USB-Anschluss (OTG-Betrieb). Der USB-Anschluss liefert nämlich laut Spezifikation maximal 500 mA. Reicht das für den Betrieb des Raspberry Pi Zero W?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Werbefrei im Heimnetz mit Pi-hole</title>
       <link>https://blog.gc2.at/post/pi-hole-adblocker/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pi-hole-adblocker/</guid>
-      <description>&lt;p&gt;Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.
-Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Wer kennt es nicht, nervige Werbung beim Surfen im Internet. Auf PCs und Laptops helfen hier Adblocker, diese werden jedoch immer öfters von Website erkannt.&#xA;Hier hilft das Projekt &amp;ldquo;Pi-hole&amp;rdquo;, welches als lokaler DNS-Server eingerichtet wird und Anfragen an Werbebetreiber-Domains blockiert - so ist man nicht nur am PC, sondern z.B. auch am Smartphone Werbefrei unterwegs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Konfiguration mit &#39;config.txt&#39;</title>
       <link>https://blog.gc2.at/post/raspberry-pi-konfiguration/</link>
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-konfiguration/</guid>
-      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.
-Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Jeder Raspberry Pi Nutzer kennt wohl die Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo; auf der Boot-Partition des Raspberry Pis.&#xA;Allerdings gibt es einige Befehle und Möglichkeiten die nicht jedem bekannt sind.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Gratis E-Book &#39;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&#39;</title>
       <link>https://blog.gc2.at/post/fruit-pi-e-book/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/fruit-pi-e-book/</guid>
       <description>&lt;p&gt;Hier bekommt man die gratis CC-Version meines Buches &amp;ldquo;Fruit Pi - Raspberry Pi versus Banana Pi versus Orange Pi&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi WLAN bei Boot verbinden</title>
       <link>https://blog.gc2.at/post/wlan-bei-boot-verbinden/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/wlan-bei-boot-verbinden/</guid>
       <description>&lt;p&gt;Oft ist es von Vorteil, wenn sich der Raspberry Pi gleich nach dem ersten Boot ins lokale WLAN verbindet und den SSH-Dienst startet. Dies zu konfigurieren ist ganz einfach,  ein Zugriff auf die Linux-Partition ist dazu nicht nötig.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi über GPIO-Eingang herunterfahren</title>
       <link>https://blog.gc2.at/post/pi-herunterfahren/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pi-herunterfahren/</guid>
       <description>&lt;p&gt;Leider fehlt dem Raspberry Pi Einplatinencomputer eine Taste zum ordnungsgemäßen Herunterfahren des Systems. Doch die Nachrüstung dieser Funktion geht ganz einfach. Man benötigt nur einen Schalter, Kabel und einen Eintrag in der Konfigurationsdatei &amp;ldquo;config.txt&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi USB Gadget</title>
       <link>https://blog.gc2.at/post/raspberry-pi-usb-gadget/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/raspberry-pi-usb-gadget/</guid>
-      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein
-Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Beim USB-Gadget oder OTG-Betrieb kann ein Einplatinencomputer direkt über den Micro-USB-Anschluss mit einem PC oder Laptop als Client verbunden werden. Der Raspberry Pi Zero verhält sich dann wie ein USB-Gerät und kann z. B. ein&#xA;Massenspeicher-, Serielles- oder Netzwerkgerät simulieren. Der Netzwerk bzw. Ethernet-Betrieb ist dabei besonders interessant.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi GPIO Beschriftung</title>
       <link>https://blog.gc2.at/post/gpio-beschriftung/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-beschriftung/</guid>
       <description>&lt;p&gt;Ein Problem, das beim Aufbauen von Schaltungen immer wieder vorkommt, ist die unbeschriftete GPIO-Leiste des Raspberry Pi. Das Zählen der GPIO-Kontakte ist ein typischer Vorgang, wenn man mit den Ein- und Ausgängen arbeitet. Abhilfe können Beschriftungen bzw. Vorlagen schaffen, die man über die GPIO-Stiftleiste steckt.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

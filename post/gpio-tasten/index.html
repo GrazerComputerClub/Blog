@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "GPIO-Eingang zur Tastaturtaste",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-10 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/gpio-tasten\/",
         "wordCount" : "314",
-        "image" : "https://blog.gc2.atimg/keys_white_nav.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/keys_white_nav.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -371,10 +362,10 @@ Hier sind auch einige Spezialtasten bzw. Tasten mit bereits verknüpften Funktio
 </tbody>
 </table>
 <p>Folgende Device Tree Einträge weisen beispielsweise den angegeben GPIOs die Pfeiltastenfunktionen zu:</p>
-<pre tabindex="0"><code>dtoverlay=gpio-key,gpio=16,keycode=103,label=&quot;KEY_UP&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=26,keycode=105,label=&quot;KEY_LEFT&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=20,keycode=106,label=&quot;KEY_RIGHT&quot;,gpio_pull=2
-dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
+<pre tabindex="0"><code>dtoverlay=gpio-key,gpio=16,keycode=103,label=&#34;KEY_UP&#34;,gpio_pull=2
+dtoverlay=gpio-key,gpio=26,keycode=105,label=&#34;KEY_LEFT&#34;,gpio_pull=2
+dtoverlay=gpio-key,gpio=20,keycode=106,label=&#34;KEY_RIGHT&#34;,gpio_pull=2
+dtoverlay=gpio-key,gpio=21,keycode=108,label=&#34;KEY_DOWN&#34;,gpio_pull=2
 </code></pre><p>Parameter für gpio-key Overlay:</p>
 <table>
 <thead>
@@ -407,7 +398,7 @@ dtoverlay=gpio-key,gpio=21,keycode=108,label=&quot;KEY_DOWN&quot;,gpio_pull=2
 </tbody>
 </table>
 <p>Auf der Kommandozeile kann die Funktion durch folgenden Befehl getestet werden:</p>
-<pre tabindex="0"><code>sudo dtoverlay gpio-key gpio=19 keycode=28 label=&quot;KEY_ENTER&quot; gpio_pull=2
+<pre tabindex="0"><code>sudo dtoverlay gpio-key gpio=19 keycode=28 label=&#34;KEY_ENTER&#34; gpio_pull=2
 </code></pre><h2 id="verlinkungen">Verlinkungen</h2>
 <p>Weitere Infos bezüglich der Device Tree Funktion ‚gpio-keys‘, erhält man unter <a href="https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt">https://www.kernel.org/doc/Documentation/devicetree/bindings/input/gpio-keys.txt</a></p>
             </article>
@@ -592,15 +583,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -615,7 +597,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

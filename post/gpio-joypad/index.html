@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : " GPIO-Eingang zur Joypad Emulation",
@@ -25,7 +25,7 @@
         "dateModified" : "2020-02-16 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/gpio-joypad\/",
         "wordCount" : "1037",
-        "image" : "https://blog.gc2.atimg/GPIO-Input-Joypad.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/GPIO-Input-Joypad.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -291,211 +282,211 @@ Der Zugriff erfolgt bei Python über das uinput Interface (import uinput). So is
 <li>Bei entsprechenden GPIO-Eingang die Achse in X- oder Y-Richtung verschieben</li>
 <li>Bei entsprechenden GPIO-Eingang die Buttons drücken und rücksetzen</li>
 </ul>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4070a0">&#34;&#34;&#34; rpi-gpio-jstk.py by Chris Swan 9 Aug 2012
-</span><span style="color:#4070a0">based on python-uinput/examples/joystick.py by tuomasjjrasanen
-</span><span style="color:#4070a0">https://github.com/tuomasjjrasanen/python-uinput/blob/master/examples/joystick.py
-</span><span style="color:#4070a0">&#34;&#34;&#34;</span>
-
-
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">uinput</span>
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">RPi.GPIO</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">GPIO</span>
-
-BTN_FIRE1<span style="color:#666">=</span><span style="color:#40a070">15</span>
-BTN_FIRE2<span style="color:#666">=</span><span style="color:#40a070">14</span>
-BTN_UP<span style="color:#666">=</span><span style="color:#40a070">16</span>
-BTN_DOWN<span style="color:#666">=</span><span style="color:#40a070">21</span>
-BTN_LEFT<span style="color:#666">=</span><span style="color:#40a070">26</span>
-BTN_RIGHT<span style="color:#666">=</span><span style="color:#40a070">20</span>
-BTN_SELECT<span style="color:#666">=</span><span style="color:#40a070">3</span>
-BTN_START<span style="color:#666">=</span><span style="color:#40a070">19</span>
-GPIO<span style="color:#666">.</span>setmode(GPIO<span style="color:#666">.</span>BCM)
-<span style="color:#60a0b0;font-style:italic"># Up, Down, left, right, fire</span>
-<span style="color:#60a0b0;font-style:italic">#GPIO.setwarnings(False)</span>
-GPIO<span style="color:#666">.</span>setup(BTN_UP, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_DOWN, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_LEFT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_RIGHT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_FIRE1, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_FIRE2, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_SELECT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-GPIO<span style="color:#666">.</span>setup(BTN_START, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
-
-events <span style="color:#666">=</span> (uinput<span style="color:#666">.</span>BTN_SOUTH, uinput<span style="color:#666">.</span>BTN_EAST, uinput<span style="color:#666">.</span>BTN_START, uinput<span style="color:#666">.</span>BTN_SELECT, uinput<span style="color:#666">.</span>ABS_X <span style="color:#666">+</span> (<span style="color:#40a070">0</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>), uinput<span style="color:#666">.</span>ABS_Y <span style="color:#666">+</span> (<span style="color:#40a070">0</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>))
-
-
-device <span style="color:#666">=</span> uinput<span style="color:#666">.</span>Device(events)
-
-<span style="color:#60a0b0;font-style:italic"># Bools to keep track of movement</span>
-fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-
-<span style="color:#60a0b0;font-style:italic"># Center joystick</span>
-<span style="color:#60a0b0;font-style:italic"># syn=False to emit an &#34;atomic&#34; (50, 50) event.</span>
-device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>, syn<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">False</span>)
-device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)
-
-<span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> start) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_START)):  <span style="color:#60a0b0;font-style:italic"># start button pressed</span>
-    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">1</span>)
-  <span style="color:#007020;font-weight:bold">if</span> start <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_START):              <span style="color:#60a0b0;font-style:italic"># start button released</span>
-    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">0</span>) 
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> select) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT)):  <span style="color:#60a0b0;font-style:italic"># select button pressed</span>
-    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">1</span>)
-  <span style="color:#007020;font-weight:bold">if</span> select <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT):              <span style="color:#60a0b0;font-style:italic"># select button released</span>
-    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">0</span>) 
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire1) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1)):  <span style="color:#60a0b0;font-style:italic"># Fire1 button pressed</span>
-    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">1</span>)
-  <span style="color:#007020;font-weight:bold">if</span> fire1 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1):              <span style="color:#60a0b0;font-style:italic"># Fire1 button released</span>
-    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">0</span>) 
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire2) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2)):  <span style="color:#60a0b0;font-style:italic"># Fire2 button pressed</span>
-    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">1</span>)
-  <span style="color:#007020;font-weight:bold">if</span> fire2 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2):              <span style="color:#60a0b0;font-style:italic"># Fire2 button released</span>
-    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">0</span>)
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> up) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_UP)):   <span style="color:#60a0b0;font-style:italic"># Up button pressed</span>
-    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero Y</span>
-  <span style="color:#007020;font-weight:bold">if</span> up <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_UP):               <span style="color:#60a0b0;font-style:italic"># Up button released</span>
-    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> down) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN)): <span style="color:#60a0b0;font-style:italic"># Down button pressed</span>
-    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max Y</span>
-  <span style="color:#007020;font-weight:bold">if</span> down <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN):             <span style="color:#60a0b0;font-style:italic"># Down button released</span>
-    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> left) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT)): <span style="color:#60a0b0;font-style:italic"># Left button pressed</span>
-    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero X</span>
-  <span style="color:#007020;font-weight:bold">if</span> left <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT):             <span style="color:#60a0b0;font-style:italic"># Left button released</span>
-    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> right) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT)):<span style="color:#60a0b0;font-style:italic"># Right button pressed</span>
-    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max X</span>
-  <span style="color:#007020;font-weight:bold">if</span> right <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT):            <span style="color:#60a0b0;font-style:italic"># Right button released</span>
-    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
-    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
-  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">.02</span>)  <span style="color:#60a0b0;font-style:italic"># Poll every 20ms (otherwise CPU load gets too high)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#4070a0">&#34;&#34;&#34; rpi-gpio-jstk.py by Chris Swan 9 Aug 2012
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">based on python-uinput/examples/joystick.py by tuomasjjrasanen
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">https://github.com/tuomasjjrasanen/python-uinput/blob/master/examples/joystick.py
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">uinput</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">RPi.GPIO</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">GPIO</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BTN_FIRE1<span style="color:#666">=</span><span style="color:#40a070">15</span>
+</span></span><span style="display:flex;"><span>BTN_FIRE2<span style="color:#666">=</span><span style="color:#40a070">14</span>
+</span></span><span style="display:flex;"><span>BTN_UP<span style="color:#666">=</span><span style="color:#40a070">16</span>
+</span></span><span style="display:flex;"><span>BTN_DOWN<span style="color:#666">=</span><span style="color:#40a070">21</span>
+</span></span><span style="display:flex;"><span>BTN_LEFT<span style="color:#666">=</span><span style="color:#40a070">26</span>
+</span></span><span style="display:flex;"><span>BTN_RIGHT<span style="color:#666">=</span><span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>BTN_SELECT<span style="color:#666">=</span><span style="color:#40a070">3</span>
+</span></span><span style="display:flex;"><span>BTN_START<span style="color:#666">=</span><span style="color:#40a070">19</span>
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setmode(GPIO<span style="color:#666">.</span>BCM)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Up, Down, left, right, fire</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#GPIO.setwarnings(False)</span>
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_UP, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_DOWN, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_LEFT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_RIGHT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_FIRE1, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_FIRE2, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_SELECT, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(BTN_START, GPIO<span style="color:#666">.</span>IN, pull_up_down<span style="color:#666">=</span>GPIO<span style="color:#666">.</span>PUD_UP)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>events <span style="color:#666">=</span> (uinput<span style="color:#666">.</span>BTN_SOUTH, uinput<span style="color:#666">.</span>BTN_EAST, uinput<span style="color:#666">.</span>BTN_START, uinput<span style="color:#666">.</span>BTN_SELECT, uinput<span style="color:#666">.</span>ABS_X <span style="color:#666">+</span> (<span style="color:#40a070">0</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>), uinput<span style="color:#666">.</span>ABS_Y <span style="color:#666">+</span> (<span style="color:#40a070">0</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>device <span style="color:#666">=</span> uinput<span style="color:#666">.</span>Device(events)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Bools to keep track of movement</span>
+</span></span><span style="display:flex;"><span>fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Center joystick</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># syn=False to emit an &#34;atomic&#34; (50, 50) event.</span>
+</span></span><span style="display:flex;"><span>device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>, syn<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">False</span>)
+</span></span><span style="display:flex;"><span>device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> start) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_START)):  <span style="color:#60a0b0;font-style:italic"># start button pressed</span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> start <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_START):              <span style="color:#60a0b0;font-style:italic"># start button released</span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_START, <span style="color:#40a070">0</span>) 
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> select) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT)):  <span style="color:#60a0b0;font-style:italic"># select button pressed</span>
+</span></span><span style="display:flex;"><span>    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> select <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_SELECT):              <span style="color:#60a0b0;font-style:italic"># select button released</span>
+</span></span><span style="display:flex;"><span>    select <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SELECT, <span style="color:#40a070">0</span>) 
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire1) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1)):  <span style="color:#60a0b0;font-style:italic"># Fire1 button pressed</span>
+</span></span><span style="display:flex;"><span>    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> fire1 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE1):              <span style="color:#60a0b0;font-style:italic"># Fire1 button released</span>
+</span></span><span style="display:flex;"><span>    fire1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_SOUTH, <span style="color:#40a070">0</span>) 
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> fire2) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2)):  <span style="color:#60a0b0;font-style:italic"># Fire2 button pressed</span>
+</span></span><span style="display:flex;"><span>    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> fire2 <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_FIRE2):              <span style="color:#60a0b0;font-style:italic"># Fire2 button released</span>
+</span></span><span style="display:flex;"><span>    fire2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>BTN_EAST, <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> up) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_UP)):   <span style="color:#60a0b0;font-style:italic"># Up button pressed</span>
+</span></span><span style="display:flex;"><span>    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero Y</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> up <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_UP):               <span style="color:#60a0b0;font-style:italic"># Up button released</span>
+</span></span><span style="display:flex;"><span>    up <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> down) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN)): <span style="color:#60a0b0;font-style:italic"># Down button pressed</span>
+</span></span><span style="display:flex;"><span>    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max Y</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> down <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_DOWN):             <span style="color:#60a0b0;font-style:italic"># Down button released</span>
+</span></span><span style="display:flex;"><span>    down <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_Y, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center Y</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> left) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT)): <span style="color:#60a0b0;font-style:italic"># Left button pressed</span>
+</span></span><span style="display:flex;"><span>    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">0</span>)          <span style="color:#60a0b0;font-style:italic"># Zero X</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> left <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_LEFT):             <span style="color:#60a0b0;font-style:italic"># Left button released</span>
+</span></span><span style="display:flex;"><span>    left <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020;font-weight:bold">not</span> right) <span style="color:#007020;font-weight:bold">and</span> (<span style="color:#007020;font-weight:bold">not</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT)):<span style="color:#60a0b0;font-style:italic"># Right button pressed</span>
+</span></span><span style="display:flex;"><span>    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">100</span>)        <span style="color:#60a0b0;font-style:italic"># Max X</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> right <span style="color:#007020;font-weight:bold">and</span> GPIO<span style="color:#666">.</span>input(BTN_RIGHT):            <span style="color:#60a0b0;font-style:italic"># Right button released</span>
+</span></span><span style="display:flex;"><span>    right <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>    device<span style="color:#666">.</span>emit(uinput<span style="color:#666">.</span>ABS_X, <span style="color:#40a070">50</span>)        <span style="color:#60a0b0;font-style:italic"># Center X</span>
+</span></span><span style="display:flex;"><span>  time<span style="color:#666">.</span>sleep(<span style="color:#40a070">.02</span>)  <span style="color:#60a0b0;font-style:italic"># Poll every 20ms (otherwise CPU load gets too high)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>sudo python3 joypad.py &amp;
 </code></pre><p>Wenn der Fehler &ldquo;OSError: [Errno 19] Failed to open the uinput device: No such device&rdquo; ausgegeben wird, so ist das uinput Device nicht verfügbar. Dann kann mit &ldquo;sudo modprobe uinput&rdquo; das Kernel-Modul geladen werden.</p>
@@ -513,8 +504,8 @@ Zuerst muss der Emulator Gambatte aber noch kompiliert und installiert werden, d
 <pre tabindex="0"><code>git clone https://github.com/sinamas/gambatte
 cd gambatte
 sudo apt-get install scons libsdl1.2-dev zlib1g-dev
-sed -i &quot;2 i\global_cflags = global_cflags + \' -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\'&quot; libgambatte/SConstruct
-sed -i &quot;4 i\cflags = cflags + \' -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\'&quot; gambatte_sdl/SConstruct
+sed -i &#34;2 i\global_cflags = global_cflags + \&#39; -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\&#39;&#34; libgambatte/SConstruct
+sed -i &#34;4 i\cflags = cflags + \&#39; -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp\&#39;&#34; gambatte_sdl/SConstruct
 ./build_sdl.sh
 sudo mv gambatte_sdl/gambatte_sdl /usr/local/bin/gambatte
 </code></pre><p>Benötigte Laufzeit Bibliotheken:<br>
@@ -718,15 +709,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -741,7 +723,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

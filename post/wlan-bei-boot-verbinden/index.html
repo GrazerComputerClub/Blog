@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Raspberry Pi WLAN bei Boot verbinden",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-04 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/wlan-bei-boot-verbinden\/",
         "wordCount" : "252",
-        "image" : "https://blog.gc2.atimg/wlan-bei-boot-verbinden.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/wlan-bei-boot-verbinden.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -264,13 +255,13 @@ Man muss dort die Datei &ldquo;wpa_supplicant.conf&rdquo; mit folgendem Inhalt a
 update_config=1
 country=AT
 network={
-       ssid=&quot;WLAN SSID Name&quot;
-       psk=&quot;Passwort&quot;
+       ssid=&#34;WLAN SSID Name&#34;
+       psk=&#34;Passwort&#34;
        key_mgmt=WPA-PSK
 } 
 
 network={
-    ssid=&quot;WLAN SSID Name - ungesichert&quot;
+    ssid=&#34;WLAN SSID Name - ungesichert&#34;
     key_mgmt=NONE
 }
 </code></pre><p>Bei &lsquo;ssid=&rsquo; muss unter Hochkomma der Name bzw. die SSID des WLANs angegeben werden. Bei &lsquo;psk=&rsquo; wird das WLAN-Passwort angegeben. Verfügbare WLAN Netze können mit dem Befehl <code>iwlist wlan0 scan | grep ESSID</code> oder <code>nmcli dev wifi list</code> aufgelistet werden. Bei &lsquo;country=&rsquo; wird das Einsatzland also &lsquo;DE&rsquo; für Deutschland oder &lsquo;AT&rsquo; für Österreich angegeben. Bei einem ungesicherten WLAN ohne Verschlüsselung gibt man bei &lsquo;key_mgmt=&rsquo; den Typ &lsquo;NONE&rsquo; ein.</p>
@@ -463,15 +454,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -486,7 +468,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

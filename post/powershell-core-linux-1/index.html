@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "PowerShell Core in Linux",
@@ -25,7 +25,7 @@
         "dateModified" : "2018-12-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/powershell-core-linux-1\/",
         "wordCount" : "250",
-        "image" : "https://blog.gc2.atimg/posh_linux.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/posh_linux.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -288,21 +279,21 @@ chmod +x speedtest
 <pre tabindex="0"><code>#!/usr/local/bin/pwsh
 </code></pre><p>Folgendes Script kann verwendet werden um einen &ldquo;dauer-Speedtest&rdquo; durchzuführen. (Inhalt z.B. in Invoke-Speedtest.ps1 kopieren)</p>
 <pre tabindex="0"><code>#!/usr/local/bin/pwsh
-$outfile = &quot;speedtest.csv&quot;
+$outfile = &#34;speedtest.csv&#34;
  
-[regex]$regexDl=&quot;Download\:\s(?'speed'\d+\.\d+)\s&quot;
-[regex]$regexUl=&quot;Upload\:\s(?'speed'\d+\.\d+)\s&quot;
+[regex]$regexDl=&#34;Download\:\s(?&#39;speed&#39;\d+\.\d+)\s&#34;
+[regex]$regexUl=&#34;Upload\:\s(?&#39;speed&#39;\d+\.\d+)\s&#34;
  
-&quot;Date;Time;Download;Upload;&quot; | Out-File $outfile -Encoding utf8
+&#34;Date;Time;Download;Upload;&#34; | Out-File $outfile -Encoding utf8
  
 while (1 -eq 1) {
-    Write-Host -ForegroundColor Green &quot;doing speedtest...&quot;
+    Write-Host -ForegroundColor Green &#34;doing speedtest...&#34;
     $meas = $(speedtest)
     $meas
-    $download = $regexDl.Match($meas).Groups[1].Value.Replace(&quot;.&quot;,&quot;,&quot;)
-    $upload = $regexUl.Match($meas).Groups[1].Value.Replace(&quot;.&quot;,&quot;,&quot;)
+    $download = $regexDl.Match($meas).Groups[1].Value.Replace(&#34;.&#34;,&#34;,&#34;)
+    $upload = $regexUl.Match($meas).Groups[1].Value.Replace(&#34;.&#34;,&#34;,&#34;)
  
-    &quot;$(Get-Date -Format &quot;yyyy-mm-dd;HH:mm:ss&quot;);$download;$upload;&quot; | Out-File $outfile -Encoding utf8 -Append
+    &#34;$(Get-Date -Format &#34;yyyy-mm-dd;HH:mm:ss&#34;);$download;$upload;&#34; | Out-File $outfile -Encoding utf8 -Append
     Start-Sleep -Seconds 300
 }
 </code></pre><p>Wenn man das Script direkt ausführen möchte, muss es noch ausführbar gemacht werden:</p>
@@ -492,15 +483,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -515,7 +497,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

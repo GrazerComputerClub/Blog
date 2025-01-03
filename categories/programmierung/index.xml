@@ -6,118 +6,91 @@
     <description>Recent content in Programmierung on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.gc2.at/categories/programmierung/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WiringPi Library</title>
       <link>https://blog.gc2.at/post/wiringpi/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/wiringpi/</guid>
       <description>&lt;p&gt;WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider wurde es aus dem Raspberry Pi OS entfernt. zum Glück wird sie aber noch gewartet und kann manuell installiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
       <link>https://blog.gc2.at/post/picopi-neopixel/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-neopixel/</guid>
       <description>&lt;p&gt;Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico mit Bipes</title>
       <link>https://blog.gc2.at/post/picopi-bipes/</link>
       <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ESP8266 ESP-01(S) MicroPython Firmware</title>
       <link>https://blog.gc2.at/post/esp8266-esp01-micropython/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-esp01-micropython/</guid>
       <description>&lt;p&gt;Das kleine Experimentierboard ESP-01(S) mit dem ESP8266 Mikrocontroller kann man recht einfach mit der MicroPyhon Firmware ausstatten. Dann kann der Mikrocontroller mit Python programmiert werden. Mit dem  Raspberry Pi kann die neue Firmware übertragen und programmiert werden.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Minecraft Pi API</title>
       <link>https://blog.gc2.at/post/minecraft-pi-api/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/minecraft-pi-api/</guid>
       <description>&lt;p&gt;Wenn man Minecraft Pi installiert hat, ist auch die API also auch die Programmierschnittstelle verfügbar. Dann kann man mit wenigen Zeilen Python Sourcecode Modifikation und Erweiterungen programmieren. Wie wäre zum Anfang mit dem hinzufügen von explosivem TNT?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title> GPIO-Eingang zur Joypad Emulation</title>
       <link>https://blog.gc2.at/post/gpio-joypad/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-joypad/</guid>
       <description>&lt;p&gt;Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Joypad am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen Python-Code reichen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title> GPIO-Eingang zur Maus Emulation</title>
       <link>https://blog.gc2.at/post/gpio-mouse/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/gpio-mouse/</guid>
       <description>&lt;p&gt;Die Anforderung, dass man mit GPIO-Eingängen eine virtuelle Maus am System erstellt, ist mit dem Raspberry Pi sehr einfach umzusetzen. Ein paar GPIOs und ein paar Zeilen C-Code reichen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Musik mit Piezo Signalgeber</title>
       <link>https://blog.gc2.at/post/piezo-signalgeber/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/piezo-signalgeber/</guid>
       <description>&lt;p&gt;Mit einem Piezo Signalgeber am GPIO kann man so einiges anstellen, er kann nicht nur ein Piepton erzeugen, sondern auch Musik abspielen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ATmega328P Programmierung</title>
       <link>https://blog.gc2.at/post/atmega-328p/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/atmega-328p/</guid>
       <description>&lt;p&gt;Wer mit einem ATmega328P in die Welt der Mikrokontroller-Programmierung einsteigen will hat eine Hürde. Wie kann ein Programm in den IC übertragen werden. Dieses Problem lässt sich aber ganz einfach mit einem Raspberry Pi lösen.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Lego Roboter &#43; Raspberry Pi</title>
       <link>https://blog.gc2.at/post/robot-arm/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/robot-arm/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;
-Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&amp;ldquo;Lego Roboter mit der Raspberry Pi zum Leben erwecken - mit &lt;a href=&#34;https://www.dexterindustries.com/brickpi/&#34;&gt;BrickPi&lt;/a&gt;.&amp;rdquo;&#xA;Das von Dexter Industries angebotene Erweiterungspaket erlaubt es eure Lego Mindstorms NXT oder EV3 Motoren und Sensoren über eine Raspberry zu steuern.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PICO-8</title>
       <link>https://blog.gc2.at/post/pico-8/</link>
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/pico-8/</guid>
       <description>&lt;p&gt;Wer sich gerne einmal mit Retro-Spieleprogrammierung (GameDev) beschäftigen will, dem aber C64, GB und NES Tools zu kompliziert sind, sollte sich unbedingt einmal PICO-8 ansehen. Diese &amp;ldquo;virtuelle Konsole&amp;rdquo; mit einer integrierten Entwicklungsumgebung, bietet alles was man zur Spieleprogrammierung benötigt. Dabei läuft sie nicht nur auf dem PC, sondern auch auf dem Raspberry Pi.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wetteranzeige mittels ESP8266 und I²C Display</title>
       <link>https://blog.gc2.at/post/esp8266-i2c-display/</link>
       <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/esp8266-i2c-display/</guid>
-      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein
-ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem
-Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C
-mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ein einfaches Info-Display kann recht schnell erreicht werden. Es reicht ein&#xA;ESP8266 und ein Display welches über I²C angesprochen werden kann. In diesem&#xA;Aufbau wurde mittels eines ESP8266 Boards ein Display mit SSD1306 Chip über I²C&#xA;mit Daten von OpenWeather befüllt.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

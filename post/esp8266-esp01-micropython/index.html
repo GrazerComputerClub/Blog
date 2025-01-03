@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "ESP8266 ESP-01(S) MicroPython Firmware",
@@ -24,8 +24,8 @@
         "datePublished": "2021-02-28 00:00:00 \u002b0000 UTC",
         "dateModified" : "2021-02-28 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/esp8266-esp01-micropython\/",
-        "wordCount" : "1595",
-        "image" : "https://blog.gc2.atimg/ESP-01S_DHT11.jpg"",
+        "wordCount" : "1594",
+        "image" : "https:\/\/blog.gc2.at\/img\/ESP-01S_DHT11.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -274,7 +265,7 @@
 In userem Fall wird das kleinste ESP-01(S) Board verwendet, auf dem die MicroPython Firmware problemlos installiert und verwendet werden kann.</p>
 <p><img src="../../img/ESP8266_ESP-01b.png" alt="ESP8266 ESP-01"></p>
 <h2 id="anschluss">Anschluss</h2>
-<p>Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden. 
+<p>Die ESP-01(S) Platine kann über den UART-Anschluss mit dem Raspberry Pi verbunden werden.
 Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.</p>
 <p><img src="../../img/ESP8266_ESP-01b_Pi.png" alt="ESP8266 ESP-01"></p>
 <p>Um später ein Firmware Update ausführen zu können, muss der GPIO0 Eingang des ESP auf GND gesetzt werden.</p>
@@ -283,10 +274,10 @@ Die Versorgung erfolgt über den 3,3 V und den GND Anschluss.</p>
 <p>Zuerst muss man das Python 3 Programm &ldquo;esptool&rdquo; installieren.</p>
 <pre tabindex="0"><code>sudo apt-get install python3 python3-pip
 sudo pip3 install esptool nodemcu-uploader -t /usr/local/lib/python3.7/dist-packages
-alias esptool.py='python3 /usr/local/lib/python3.7/dist-packages/esptool.py'
-alias nodemcu-uploader.py='python3 /usr/local/lib/python3.7/dist-packages/nodemcu-uploader.py'
+alias esptool.py=&#39;python3 /usr/local/lib/python3.7/dist-packages/esptool.py&#39;
+alias nodemcu-uploader.py=&#39;python3 /usr/local/lib/python3.7/dist-packages/nodemcu-uploader.py&#39;
 
-alias sudo='sudo '
+alias sudo=&#39;sudo &#39;
 sudo esptool.py version
 </code></pre><pre tabindex="0"><code>esptool.py v2.8
 2.8
@@ -341,7 +332,6 @@ New password (4-9 chars): 1234
 Confirm password: 1234
 Changes will be activated after reboot
 Would you like to reboot now? (y/n) y
-
 </code></pre><pre tabindex="0"><code>ets Jan  8 2013,rst cause:2, boot mode:(3,6)
 
 load 0x40100000, len 30712, room 16 
@@ -358,7 +348,7 @@ WebREPL daemon started on ws://192.168.4.1:8266
 Started webrepl in normal mode
 
 MicroPython v1.14 on 2021-02-02; ESP module (1M) with ESP8266
-Type &quot;help()&quot; for more information.
+Type &#34;help()&#34; for more information.
 </code></pre><p>Nun kann man sich das Web-interface, herunterladen</p>
 <pre tabindex="0"><code>wget https://github.com/micropython/webrepl/archive/master.zip
 unzip master.zip
@@ -366,7 +356,7 @@ unzip master.zip
 Optional kann man die Seite auch im Internet öffen. Sie steht auf <a href="http://micropython.org/webrepl/">http://micropython.org/webrepl/</a> zur Verfügung. Dies ist aber nicht zu empfehlen da eine Verbindung zum ESP und zum Internet bestehen muss. Das ist nicht ganz leicht zu bewerkstelligen da auch noch das Routing passen muss.</p>
 <p>In disem Fall verwenden wir aber WebREPL aber nicht und übertragen unseren Source über die serielle Schnittstelle. Dazu benötigen wir das Python 2 Programm ampy.</p>
 <p>Zuerst testen wir unseren ESP aber einmal. Den Python Code kann man über die serielle Schnittstelle direkt eingegeben. Man kann z. B. eine Textausgabe machen.</p>
-<pre tabindex="0"><code>&gt;&gt;&gt; print('hallo esp!')
+<pre tabindex="0"><code>&gt;&gt;&gt; print(&#39;hallo esp!&#39;)
 hallo esp!
 </code></pre><p>Die GPIOs können direkt mit ihrer Nummer angesprochen werden.
 Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S leuchtet die blaue LED wenn der Ausgang auf LOW bzw. off steht.</p>
@@ -397,243 +387,241 @@ Mit folgenden Befehlen kann man den Ausgang GPIO2 testweise setzen. Beim ESP-01S
 </code></pre><p>Nun erstellen wir unser eigenes Programm. Auf <a href="https://gndtovcc.home.blog/2020/04/16/micropython-esp32-esp8266-with-dht11-dht22-web-server/">https://gndtovcc.home.blog/2020/04/16/micropython-esp32-esp8266-with-dht11-dht22-web-server/</a> findet man ein Projekt, dass die Sensordaten eines DHT11-Sensors über ein Web-Interface verfügbar macht.<br>
 Es verbindet sich ins lokale W-LAN und startet einen Web-Server, der die aktuelle Temperatur und Feuchte des Sensors als Web-Seite zur Verfügung stellt. Somit kann der ESP01 mit dem DHT-Sensor überall im Haus aufgestellt und fern ausgelesen werden.</p>
 <p>boot.py:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">try</span>:
-  <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">usocket</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">socket</span>
-<span style="color:#007020;font-weight:bold">except</span>:
-  <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">socket</span>
- 
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">network</span>
-<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">machine</span> <span style="color:#007020;font-weight:bold">import</span> Pin
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">dht</span>
- 
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">esp</span>
-esp<span style="color:#666">.</span>osdebug(<span style="color:#007020;font-weight:bold">None</span>)
- 
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">gc</span>
-gc<span style="color:#666">.</span>collect()
- 
-ssid <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AP-Name&#39;</span>
-password <span style="color:#666">=</span> <span style="color:#4070a0">&#39;Hackme&#39;</span>
- 
-station <span style="color:#666">=</span> network<span style="color:#666">.</span>WLAN(network<span style="color:#666">.</span>STA_IF)
- 
-
-<span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Connecting to SmartDevices&#39;</span>)
-station<span style="color:#666">.</span>active(<span style="color:#007020;font-weight:bold">True</span>)
-station<span style="color:#666">.</span>connect(ssid, password)
- 
-<span style="color:#007020;font-weight:bold">while</span> station<span style="color:#666">.</span>isconnected() <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">False</span>:
-  <span style="color:#007020;font-weight:bold">pass</span>
- 
-<span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Connection successful&#39;</span>)
-<span style="color:#007020">print</span>(station<span style="color:#666">.</span>ifconfig())
- 
-<span style="color:#60a0b0;font-style:italic">#sensor = dht.DHT22(Pin(0))</span>
-sensor <span style="color:#666">=</span> dht<span style="color:#666">.</span>DHT11(Pin(<span style="color:#40a070">0</span>))
-
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">usocket</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">except</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">socket</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">network</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">machine</span> <span style="color:#007020;font-weight:bold">import</span> Pin
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">dht</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">esp</span>
+</span></span><span style="display:flex;"><span>esp<span style="color:#666">.</span>osdebug(<span style="color:#007020;font-weight:bold">None</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">gc</span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#666">.</span>collect()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>ssid <span style="color:#666">=</span> <span style="color:#4070a0">&#39;AP-Name&#39;</span>
+</span></span><span style="display:flex;"><span>password <span style="color:#666">=</span> <span style="color:#4070a0">&#39;Hackme&#39;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>station <span style="color:#666">=</span> network<span style="color:#666">.</span>WLAN(network<span style="color:#666">.</span>STA_IF)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Connecting to SmartDevices&#39;</span>)
+</span></span><span style="display:flex;"><span>station<span style="color:#666">.</span>active(<span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>station<span style="color:#666">.</span>connect(ssid, password)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> station<span style="color:#666">.</span>isconnected() <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">False</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">pass</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Connection successful&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(station<span style="color:#666">.</span>ifconfig())
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#sensor = dht.DHT22(Pin(0))</span>
+</span></span><span style="display:flex;"><span>sensor <span style="color:#666">=</span> dht<span style="color:#666">.</span>DHT11(Pin(<span style="color:#40a070">0</span>))
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>main.py:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">read_sensor</span>():
-  <span style="color:#007020;font-weight:bold">global</span> temp, hum
-  temp <span style="color:#666">=</span> hum <span style="color:#666">=</span> <span style="color:#40a070">0</span>
-  <span style="color:#007020;font-weight:bold">try</span>:
-    sensor<span style="color:#666">.</span>measure()
-    temp <span style="color:#666">=</span> sensor<span style="color:#666">.</span>temperature()
-    hum <span style="color:#666">=</span> sensor<span style="color:#666">.</span>humidity()
-    <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">isinstance</span>(temp, <span style="color:#007020">float</span>) <span style="color:#007020;font-weight:bold">and</span> <span style="color:#007020">isinstance</span>(hum, <span style="color:#007020">float</span>)) <span style="color:#007020;font-weight:bold">or</span> (<span style="color:#007020">isinstance</span>(temp, <span style="color:#007020">int</span>) <span style="color:#007020;font-weight:bold">and</span> <span style="color:#007020">isinstance</span>(hum, <span style="color:#007020">int</span>)):
-      msg <span style="color:#666">=</span> (<span style="color:#4070a0">b</span><span style="color:#4070a0">&#39;</span><span style="color:#70a0d0;font-style:italic">{0:3.1f}</span><span style="color:#4070a0">,</span><span style="color:#70a0d0;font-style:italic">{1:3.1f}</span><span style="color:#4070a0">&#39;</span><span style="color:#666">.</span>format(temp, hum))
-      hum <span style="color:#666">=</span> <span style="color:#007020">round</span>(hum, <span style="color:#40a070">2</span>)
-      <span style="color:#007020;font-weight:bold">return</span>(msg)
-    <span style="color:#007020;font-weight:bold">else</span>:
-      <span style="color:#007020;font-weight:bold">return</span>(<span style="color:#4070a0">&#39;Invalid sensor readings.&#39;</span>)
-  <span style="color:#007020;font-weight:bold">except</span> <span style="color:#007020">OSError</span> <span style="color:#007020;font-weight:bold">as</span> e:
-    <span style="color:#007020;font-weight:bold">return</span>(<span style="color:#4070a0">&#39;Failed to read sensor.&#39;</span>)
- 
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">web_page</span>():
-  html <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;&#34;&lt;!DOCTYPE HTML&gt;&lt;html&gt;
-</span><span style="color:#4070a0">&lt;head&gt;
-</span><span style="color:#4070a0">  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
-</span><span style="color:#4070a0">  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://use.fontawesome.com/releases/v5.7.2/css/all.css&#34; integrity=&#34;sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr&#34; crossorigin=&#34;anonymous&#34;&gt;
-</span><span style="color:#4070a0">  &lt;style&gt;
-</span><span style="color:#4070a0">    html {
-</span><span style="color:#4070a0">     font-family: Arial;
-</span><span style="color:#4070a0">     display: inline-block;
-</span><span style="color:#4070a0">     margin: 0px auto;
-</span><span style="color:#4070a0">     text-align: center;
-</span><span style="color:#4070a0">    }
-</span><span style="color:#4070a0">    h2 { font-size: 3.0rem; }
-</span><span style="color:#4070a0">    p { font-size: 3.0rem; }
-</span><span style="color:#4070a0">    .units { font-size: 1.2rem; }
-</span><span style="color:#4070a0">    .dht-labels{
-</span><span style="color:#4070a0">      font-size: 1.5rem;
-</span><span style="color:#4070a0">      vertical-align:middle;
-</span><span style="color:#4070a0">      padding-bottom: 15px;
-</span><span style="color:#4070a0">    }
-</span><span style="color:#4070a0">  &lt;/style&gt;
-</span><span style="color:#4070a0">&lt;/head&gt;
-</span><span style="color:#4070a0">&lt;body&gt;
-</span><span style="color:#4070a0">  &lt;h2&gt;ESP8266 DHT11 Server&lt;/h2&gt;
-</span><span style="color:#4070a0">  &lt;p&gt;
-</span><span style="color:#4070a0">    &lt;i class=&#34;fas fa-thermometer-half&#34; style=&#34;color:#059e8a;&#34;&gt;&lt;/i&gt; 
-</span><span style="color:#4070a0">    &lt;span class=&#34;dht-labels&#34;&gt;Temperature&lt;/span&gt; 
-</span><span style="color:#4070a0">    &lt;span&gt;&#34;&#34;&#34;</span><span style="color:#666">+</span><span style="color:#007020">str</span>(temp)<span style="color:#666">+</span><span style="color:#4070a0">&#34;&#34;&#34;&lt;/span&gt;
-</span><span style="color:#4070a0">    &lt;sup class=&#34;units&#34;&gt;°C&lt;/sup&gt;
-</span><span style="color:#4070a0">  &lt;/p&gt;
-</span><span style="color:#4070a0">  &lt;p&gt;
-</span><span style="color:#4070a0">    &lt;i class=&#34;fas fa-tint&#34; style=&#34;color:#00add6;&#34;&gt;&lt;/i&gt; 
-</span><span style="color:#4070a0">    &lt;span class=&#34;dht-labels&#34;&gt;Humidity&lt;/span&gt;
-</span><span style="color:#4070a0">    &lt;span&gt;&#34;&#34;&#34;</span><span style="color:#666">+</span><span style="color:#007020">str</span>(hum)<span style="color:#666">+</span><span style="color:#4070a0">&#34;&#34;&#34;&lt;/span&gt;
-</span><span style="color:#4070a0">    &lt;sup class=&#34;units&#34;&gt;%&lt;/sup&gt;
-</span><span style="color:#4070a0">  &lt;/p&gt;
-</span><span style="color:#4070a0">&lt;/body&gt;
-</span><span style="color:#4070a0">&lt;/html&gt;&#34;&#34;&#34;</span>
-  <span style="color:#007020;font-weight:bold">return</span> html
- 
-<span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;bind to port  80&#39;</span>)
-s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
-s<span style="color:#666">.</span>bind((<span style="color:#4070a0">&#39;&#39;</span>, <span style="color:#40a070">80</span>))
-s<span style="color:#666">.</span>listen(<span style="color:#40a070">5</span>)
- 
-<span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
-  conn, addr <span style="color:#666">=</span> s<span style="color:#666">.</span>accept()
-  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Got a connection from </span><span style="color:#70a0d0;font-style:italic">%s</span><span style="color:#4070a0">&#39;</span> <span style="color:#666">%</span> <span style="color:#007020">str</span>(addr))
-  request <span style="color:#666">=</span> conn<span style="color:#666">.</span>recv(<span style="color:#40a070">1024</span>)
-  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Content = </span><span style="color:#70a0d0;font-style:italic">%s</span><span style="color:#4070a0">&#39;</span> <span style="color:#666">%</span> <span style="color:#007020">str</span>(request))
-  sensor_readings <span style="color:#666">=</span> read_sensor()
-  <span style="color:#007020">print</span>(sensor_readings)
-  response <span style="color:#666">=</span> web_page()
-  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;HTTP/1.1 200 OK</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)
-  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;Content-Type: text/html</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)
-  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;Connection: close</span><span style="color:#4070a0;font-weight:bold">\n\n</span><span style="color:#4070a0">&#39;</span>)
-  conn<span style="color:#666">.</span>sendall(response)
-  conn<span style="color:#666">.</span>close()
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">read_sensor</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">global</span> temp, hum
+</span></span><span style="display:flex;"><span>  temp <span style="color:#666">=</span> hum <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#666">.</span>measure()
+</span></span><span style="display:flex;"><span>    temp <span style="color:#666">=</span> sensor<span style="color:#666">.</span>temperature()
+</span></span><span style="display:flex;"><span>    hum <span style="color:#666">=</span> sensor<span style="color:#666">.</span>humidity()
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#007020">isinstance</span>(temp, <span style="color:#007020">float</span>) <span style="color:#007020;font-weight:bold">and</span> <span style="color:#007020">isinstance</span>(hum, <span style="color:#007020">float</span>)) <span style="color:#007020;font-weight:bold">or</span> (<span style="color:#007020">isinstance</span>(temp, <span style="color:#007020">int</span>) <span style="color:#007020;font-weight:bold">and</span> <span style="color:#007020">isinstance</span>(hum, <span style="color:#007020">int</span>)):
+</span></span><span style="display:flex;"><span>      msg <span style="color:#666">=</span> (<span style="color:#4070a0">b</span><span style="color:#4070a0">&#39;</span><span style="color:#70a0d0">{0:3.1f}</span><span style="color:#4070a0">,</span><span style="color:#70a0d0">{1:3.1f}</span><span style="color:#4070a0">&#39;</span><span style="color:#666">.</span>format(temp, hum))
+</span></span><span style="display:flex;"><span>      hum <span style="color:#666">=</span> <span style="color:#007020">round</span>(hum, <span style="color:#40a070">2</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">return</span>(msg)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">return</span>(<span style="color:#4070a0">&#39;Invalid sensor readings.&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">except</span> <span style="color:#007020">OSError</span> <span style="color:#007020;font-weight:bold">as</span> e:
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span>(<span style="color:#4070a0">&#39;Failed to read sensor.&#39;</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">web_page</span>():
+</span></span><span style="display:flex;"><span>  html <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&#34;&#34;&lt;!DOCTYPE HTML&gt;&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://use.fontawesome.com/releases/v5.7.2/css/all.css&#34; integrity=&#34;sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr&#34; crossorigin=&#34;anonymous&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    html {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">     font-family: Arial;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">     display: inline-block;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">     margin: 0px auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">     text-align: center;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    h2 { font-size: 3.0rem; }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    p { font-size: 3.0rem; }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    .units { font-size: 1.2rem; }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    .dht-labels{
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">      font-size: 1.5rem;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">      vertical-align:middle;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">      padding-bottom: 15px;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;h2&gt;ESP8266 DHT11 Server&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;i class=&#34;fas fa-thermometer-half&#34; style=&#34;color:#059e8a;&#34;&gt;&lt;/i&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;span class=&#34;dht-labels&#34;&gt;Temperature&lt;/span&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;span&gt;&#34;&#34;&#34;</span><span style="color:#666">+</span><span style="color:#007020">str</span>(temp)<span style="color:#666">+</span><span style="color:#4070a0">&#34;&#34;&#34;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;sup class=&#34;units&#34;&gt;°C&lt;/sup&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;i class=&#34;fas fa-tint&#34; style=&#34;color:#00add6;&#34;&gt;&lt;/i&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;span class=&#34;dht-labels&#34;&gt;Humidity&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;span&gt;&#34;&#34;&#34;</span><span style="color:#666">+</span><span style="color:#007020">str</span>(hum)<span style="color:#666">+</span><span style="color:#4070a0">&#34;&#34;&#34;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &lt;sup class=&#34;units&#34;&gt;%&lt;/sup&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">  &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;/html&gt;&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> html
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;bind to port  80&#39;</span>)
+</span></span><span style="display:flex;"><span>s <span style="color:#666">=</span> socket<span style="color:#666">.</span>socket(socket<span style="color:#666">.</span>AF_INET, socket<span style="color:#666">.</span>SOCK_STREAM)
+</span></span><span style="display:flex;"><span>s<span style="color:#666">.</span>bind((<span style="color:#4070a0">&#39;&#39;</span>, <span style="color:#40a070">80</span>))
+</span></span><span style="display:flex;"><span>s<span style="color:#666">.</span>listen(<span style="color:#40a070">5</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
+</span></span><span style="display:flex;"><span>  conn, addr <span style="color:#666">=</span> s<span style="color:#666">.</span>accept()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Got a connection from </span><span style="color:#70a0d0">%s</span><span style="color:#4070a0">&#39;</span> <span style="color:#666">%</span> <span style="color:#007020">str</span>(addr))
+</span></span><span style="display:flex;"><span>  request <span style="color:#666">=</span> conn<span style="color:#666">.</span>recv(<span style="color:#40a070">1024</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">print</span>(<span style="color:#4070a0">&#39;Content = </span><span style="color:#70a0d0">%s</span><span style="color:#4070a0">&#39;</span> <span style="color:#666">%</span> <span style="color:#007020">str</span>(request))
+</span></span><span style="display:flex;"><span>  sensor_readings <span style="color:#666">=</span> read_sensor()
+</span></span><span style="display:flex;"><span>  <span style="color:#007020">print</span>(sensor_readings)
+</span></span><span style="display:flex;"><span>  response <span style="color:#666">=</span> web_page()
+</span></span><span style="display:flex;"><span>  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;HTTP/1.1 200 OK</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)
+</span></span><span style="display:flex;"><span>  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;Content-Type: text/html</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>)
+</span></span><span style="display:flex;"><span>  conn<span style="color:#666">.</span>send(<span style="color:#4070a0">&#39;Connection: close</span><span style="color:#4070a0;font-weight:bold">\n\n</span><span style="color:#4070a0">&#39;</span>)
+</span></span><span style="display:flex;"><span>  conn<span style="color:#666">.</span>sendall(response)
+</span></span><span style="display:flex;"><span>  conn<span style="color:#666">.</span>close()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Nun müssen nur noch die beiden Source-Dateien übertragen werden</p>
 <pre tabindex="0"><code>sudo ampy -p /dev/ttyAMA0 put main.py
 sudo ampy -p /dev/ttyAMA0 put boot.py
-</code></pre><p>Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt. 
+</code></pre><p>Nach einem Reset oder Neustart wird dann das Programm automatisch ausgeführt.
 Über die Android App &ldquo;Fing&rdquo; habe ich die IP-Adresse des ESP01 im Netz herausgefunden.
 Damm muss man sie nur im Browser eingeben und schon hat man die Daten des Sensors am Handy.</p>
 <p><img src="../../img/Browser_DHT11-Server.jpg" alt="ESP8266 ESP-01"></p>
-<p>Um das ganze an eine beliebigen Ort betreiben zu können, wurde in diesem Fall ein Micro-USB Breakout Board mit einem 
+<p>Um das ganze an eine beliebigen Ort betreiben zu können, wurde in diesem Fall ein Micro-USB Breakout Board mit einem
 3,3 V Spannungsregler verbunden, um so die nötige Spannung für das ESP-Board bereitszustellen.</p>
 <p><img src="../../img/ESP-01S_Powering.jpg" alt="ESP8266 ESP-01"></p>
 <h2 id="verlinkungen">Verlinkungen</h2>
@@ -824,15 +812,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -847,7 +826,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

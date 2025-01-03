@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "Musik mit Piezo Signalgeber",
@@ -24,8 +24,8 @@
         "datePublished": "2019-09-01 00:00:00 \u002b0000 UTC",
         "dateModified" : "2019-09-01 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/piezo-signalgeber\/",
-        "wordCount" : "719",
-        "image" : "https://blog.gc2.atimg/Music.png"",
+        "wordCount" : "720",
+        "image" : "https:\/\/blog.gc2.at\/img\/Music.png",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -276,142 +267,142 @@ Im Schaltungsbeispiel wurde der GPIO18, also bei WiringPi Nummerierung der Pin 1
 </code></pre><p>Damit wird einfach für kurze Zeit der Ausgang gesetzt und ein konstanter kurzer Ton wird ausgegeben.</p>
 <p>Wie kann man nun aber Music ausgeben? Dazu muss am Ausgang eine Frequenz erzeugt werden, man muss also den Ausgang mehrmals pro Sekunde ein- und ausschalten. Je nach Frequenz ergibt sich dann ein spezifischer Ton.<br>
 In Python geht das über eine Library wie z. B. RPi.GPIO:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">RPi.GPIO</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">GPIO</span>
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
-
-tonePin <span style="color:#666">=</span> <span style="color:#40a070">18</span>
-
-GPIO<span style="color:#666">.</span>setmode(GPIO<span style="color:#666">.</span>BCM)
-GPIO<span style="color:#666">.</span>setup(tonePin, GPIO<span style="color:#666">.</span>IN)
-GPIO<span style="color:#666">.</span>setup(tonePin, GPIO<span style="color:#666">.</span>OUT)
-p <span style="color:#666">=</span> GPIO<span style="color:#666">.</span>PWM(tonePin, <span style="color:#40a070">100</span>)
-p<span style="color:#666">.</span>ChangeFrequency(<span style="color:#40a070">250</span>)
-p<span style="color:#666">.</span>start(<span style="color:#40a070">30</span>)     <span style="color:#60a0b0;font-style:italic"># parameter: duty-cycle  </span>
-time<span style="color:#666">.</span>sleep(<span style="color:#40a070">0.2</span>)
-p<span style="color:#666">.</span>stop()
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">RPi.GPIO</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">GPIO</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">time</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tonePin <span style="color:#666">=</span> <span style="color:#40a070">18</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setmode(GPIO<span style="color:#666">.</span>BCM)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(tonePin, GPIO<span style="color:#666">.</span>IN)
+</span></span><span style="display:flex;"><span>GPIO<span style="color:#666">.</span>setup(tonePin, GPIO<span style="color:#666">.</span>OUT)
+</span></span><span style="display:flex;"><span>p <span style="color:#666">=</span> GPIO<span style="color:#666">.</span>PWM(tonePin, <span style="color:#40a070">100</span>)
+</span></span><span style="display:flex;"><span>p<span style="color:#666">.</span>ChangeFrequency(<span style="color:#40a070">250</span>)
+</span></span><span style="display:flex;"><span>p<span style="color:#666">.</span>start(<span style="color:#40a070">30</span>)     <span style="color:#60a0b0;font-style:italic"># parameter: duty-cycle  </span>
+</span></span><span style="display:flex;"><span>time<span style="color:#666">.</span>sleep(<span style="color:#40a070">0.2</span>)
+</span></span><span style="display:flex;"><span>p<span style="color:#666">.</span>stop()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In C könnte man sich das auch leicht selbst programmieren:</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
-</span><span style="color:#007020"></span>
-<span style="color:#902000">void</span> <span style="color:#06287e">tone</span>(<span style="color:#902000">int</span> pin, <span style="color:#902000">unsigned</span> <span style="color:#902000">int</span> freq, <span style="color:#902000">float</span> duration) {
-  <span style="color:#902000">float</span> SpeedFactor <span style="color:#666">=</span> <span style="color:#40a070">1.6</span>; <span style="color:#60a0b0;font-style:italic">//factor to slow music speed
-</span><span style="color:#60a0b0;font-style:italic"></span>  duration <span style="color:#666">*=</span> SpeedFactor;
-
-  <span style="color:#007020;font-weight:bold">if</span> (duration<span style="color:#666">&lt;</span><span style="color:#40a070">10</span>) { <span style="color:#60a0b0;font-style:italic">//minimum duration 10ms 
-</span><span style="color:#60a0b0;font-style:italic"></span>    duration <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
-  }
-  <span style="color:#007020;font-weight:bold">if</span> (freq<span style="color:#666">&lt;=</span><span style="color:#40a070">20</span> <span style="color:#666">||</span> freq<span style="color:#666">&gt;=</span><span style="color:#40a070">8000</span>) { <span style="color:#60a0b0;font-style:italic">//for invalid frequency only duration 
-</span><span style="color:#60a0b0;font-style:italic"></span>    delayMicroseconds(duration<span style="color:#666">*</span><span style="color:#40a070">1000</span>);
-    <span style="color:#007020;font-weight:bold">return</span>;
-  }
-  <span style="color:#902000">long</span> PeriodeDelay <span style="color:#666">=</span> (<span style="color:#902000">long</span>)(<span style="color:#40a070">1000000.0</span><span style="color:#666">/</span>freq); <span style="color:#60a0b0;font-style:italic">//period time of freq.
-</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#902000">long</span> PeriodeCounts <span style="color:#666">=</span> (<span style="color:#902000">long</span>)((duration<span style="color:#666">*</span><span style="color:#40a070">1000</span>)<span style="color:#666">/</span>PeriodeDelay); <span style="color:#60a0b0;font-style:italic">//periods need for duration
-</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> Periode<span style="color:#666">=</span><span style="color:#40a070">0</span>;Periode<span style="color:#666">&lt;</span>PeriodeCounts; Periode<span style="color:#666">++</span>) {
-    digitalWrite(pin, HIGH); <span style="color:#60a0b0;font-style:italic">//on period part
-</span><span style="color:#60a0b0;font-style:italic"></span>    delayMicroseconds(PeriodeDelay<span style="color:#666">*</span><span style="color:#40a070">0.2</span>);
-    digitalWrite(pin, LOW); <span style="color:#60a0b0;font-style:italic">//off period part
-</span><span style="color:#60a0b0;font-style:italic"></span>    delayMicroseconds(PeriodeDelay<span style="color:#666">*</span><span style="color:#40a070">0.8</span>);
-  }
-
-  <span style="color:#60a0b0;font-style:italic">//Add a little delay to separate the single tones
-</span><span style="color:#60a0b0;font-style:italic"></span>  delay(<span style="color:#40a070">20</span>);
-}
-
-<span style="color:#902000">void</span> <span style="color:#06287e">play</span>(<span style="color:#902000">int</span> tonePin) {
-  tone(tonePin, <span style="color:#40a070">697</span>, <span style="color:#40a070">195</span>);
-  tone(tonePin,<span style="color:#40a070">1209</span>, <span style="color:#40a070">195</span>);
-  tone(tonePin, <span style="color:#40a070">770</span>, <span style="color:#40a070">195</span>);
-  tone(tonePin, <span style="color:#40a070">852</span>, <span style="color:#40a070">195</span>);
-  tone(tonePin, <span style="color:#40a070">941</span>, <span style="color:#40a070">195</span>);
-}
-
-
-<span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>) {
-  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">-</span><span style="color:#40a070">1</span> <span style="color:#666">==</span> wiringPiSetup()) {
-    printf(<span style="color:#4070a0">&#34;Init wiringPi failed!&#34;</span>);
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span>;
-  }
-  <span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> tonePin <span style="color:#666">=</span> <span style="color:#40a070">1</span>; <span style="color:#60a0b0;font-style:italic">//GPIO18
-</span><span style="color:#60a0b0;font-style:italic"></span>  pinMode(tonePin, OUTPUT);
-  play(tonePin);
-  digitalWrite(tonePin, LOW);
-  pinMode(tonePin, INPUT);
-
-  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;wiringPi.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020">#include</span> <span style="color:#007020">&lt;stdio.h&gt;</span><span style="color:#007020">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">tone</span>(<span style="color:#902000">int</span> pin, <span style="color:#902000">unsigned</span> <span style="color:#902000">int</span> freq, <span style="color:#902000">float</span> duration) {
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">float</span> SpeedFactor <span style="color:#666">=</span> <span style="color:#40a070">1.6</span>; <span style="color:#60a0b0;font-style:italic">//factor to slow music speed
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  duration <span style="color:#666">*=</span> SpeedFactor;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (duration<span style="color:#666">&lt;</span><span style="color:#40a070">10</span>) { <span style="color:#60a0b0;font-style:italic">//minimum duration 10ms 
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    duration <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (freq<span style="color:#666">&lt;=</span><span style="color:#40a070">20</span> <span style="color:#666">||</span> freq<span style="color:#666">&gt;=</span><span style="color:#40a070">8000</span>) { <span style="color:#60a0b0;font-style:italic">//for invalid frequency only duration 
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#06287e">delayMicroseconds</span>(duration<span style="color:#666">*</span><span style="color:#40a070">1000</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#902000">long</span> PeriodeDelay <span style="color:#666">=</span> (<span style="color:#902000">long</span>)(<span style="color:#40a070">1000000.0</span><span style="color:#666">/</span>freq); <span style="color:#60a0b0;font-style:italic">//period time of freq.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#902000">long</span> PeriodeCounts <span style="color:#666">=</span> (<span style="color:#902000">long</span>)((duration<span style="color:#666">*</span><span style="color:#40a070">1000</span>)<span style="color:#666">/</span>PeriodeDelay); <span style="color:#60a0b0;font-style:italic">//periods need for duration
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">for</span> (<span style="color:#902000">int</span> Periode<span style="color:#666">=</span><span style="color:#40a070">0</span>;Periode<span style="color:#666">&lt;</span>PeriodeCounts; Periode<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">digitalWrite</span>(pin, HIGH); <span style="color:#60a0b0;font-style:italic">//on period part
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#06287e">delayMicroseconds</span>(PeriodeDelay<span style="color:#666">*</span><span style="color:#40a070">0.2</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">digitalWrite</span>(pin, LOW); <span style="color:#60a0b0;font-style:italic">//off period part
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#06287e">delayMicroseconds</span>(PeriodeDelay<span style="color:#666">*</span><span style="color:#40a070">0.8</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Add a little delay to separate the single tones
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#06287e">delay</span>(<span style="color:#40a070">20</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">void</span> <span style="color:#06287e">play</span>(<span style="color:#902000">int</span> tonePin) {
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">tone</span>(tonePin, <span style="color:#40a070">697</span>, <span style="color:#40a070">195</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">tone</span>(tonePin,<span style="color:#40a070">1209</span>, <span style="color:#40a070">195</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">tone</span>(tonePin, <span style="color:#40a070">770</span>, <span style="color:#40a070">195</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">tone</span>(tonePin, <span style="color:#40a070">852</span>, <span style="color:#40a070">195</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">tone</span>(tonePin, <span style="color:#40a070">941</span>, <span style="color:#40a070">195</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(<span style="color:#902000">void</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">-</span><span style="color:#40a070">1</span> <span style="color:#666">==</span> <span style="color:#06287e">wiringPiSetup</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">printf</span>(<span style="color:#4070a0">&#34;Init wiringPi failed!&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> tonePin <span style="color:#666">=</span> <span style="color:#40a070">1</span>; <span style="color:#60a0b0;font-style:italic">//GPIO18
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#06287e">pinMode</span>(tonePin, OUTPUT);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">play</span>(tonePin);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">digitalWrite</span>(tonePin, LOW);
+</span></span><span style="display:flex;"><span>  <span style="color:#06287e">pinMode</span>(tonePin, INPUT);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><pre tabindex="0"><code>gcc -o tone tone.c -lwiringPi -Wall
 ./tone
@@ -611,15 +602,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -634,7 +616,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>

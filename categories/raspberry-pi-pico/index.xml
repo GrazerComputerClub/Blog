@@ -6,24 +6,21 @@
     <description>Recent content in Raspberry Pi Pico on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.gc2.at/categories/raspberry-pi-pico/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.gc2.at/categories/raspberry-pi-pico/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi Pico Neopixel</title>
       <link>https://blog.gc2.at/post/picopi-neopixel/</link>
       <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-neopixel/</guid>
       <description>&lt;p&gt;Mit dem Raspberry Pi Pico kann man RGB LED-Streifen mit der Python Library Neopixel ganz einfach programmieren. Die Entwicklungsumgebung Thonny bietet dabei alles was man braucht und in wenigen Minuten ist eine schöne Animation mit Regenbogenfarben erstellt.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Pico mit Bipes</title>
       <link>https://blog.gc2.at/post/picopi-bipes/</link>
       <pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://blog.gc2.at/post/picopi-bipes/</guid>
       <description>&lt;p&gt;Raspberry Pi Pico ist ein kleines Experimentierboard mit dem RP2040 Mikrocontroller von Raspbery Pi Hersteller. Die Handhabung und auch die grafische Programmierung mit Bipes ist supereinfach und damit für Kinder perfekt als Einstieg zum Programmieren lernen.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

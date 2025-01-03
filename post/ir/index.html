@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/blog.gc2.at"
+             "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
         "name" : "IR-Empfänger",
@@ -25,7 +25,7 @@
         "dateModified" : "2019-11-10 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/ir\/",
         "wordCount" : "1130",
-        "image" : "https://blog.gc2.atimg/IR.jpg"",
+        "image" : "https:\/\/blog.gc2.at\/img\/IR.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
@@ -45,12 +45,11 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1709918411" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1709918411" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
-
 
 </head>
 
@@ -87,15 +86,15 @@
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi">raspberry-pi</a>
+          <a href="/categories/raspberry-pi">raspberry pi</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-pico">raspberry-pi-pico</a>
+          <a href="/categories/raspberry-pi-pico">raspberry pi pico</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
-          <a href="/categories/raspberry-pi-zero">raspberry-pi-zero</a>
+          <a href="/categories/raspberry-pi-zero">raspberry pi zero</a>
         </li>
         
         <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
@@ -154,14 +153,6 @@
 
     
 
-    
-    <li>
-      <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-        <i class="fas fa-rss" title="rss"></i>
-        <span class="screen-reader-text">rss</span>
-      </a>
-    </li>
-    
 
 
   </ul></div>
@@ -292,7 +283,7 @@ Allerdings ist eine Programmierung oder Verwendung noch nicht möglich!</p>
 <p>Leider versteht der LIRC Dienst das Kernel Modul nicht korrekt und muss deshalb modifiziert werden.
 Wie das Funktioniert wird im Raspberry Pi Forum im Beitrag <a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1438740&amp;sid=1a1aa370b94e5b2f20158d64d1b0b254#p1438740">Using LIRC with kernel 4.19.X and gpio-ir</a> beschrieben.</p>
 <p>Folgend ist eine Anleitung für die Erzeugung der aktualisierten Pakete für das aktuelle Debian 10 (Buster) aufgeführt:</p>
-<pre tabindex="0"><code>sudo su -c &quot;grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' &gt; /etc/apt/sources.list.d/deb-src.list&quot;
+<pre tabindex="0"><code>sudo su -c &#34;grep &#39;^deb &#39; /etc/apt/sources.list | sed &#39;s/^deb/deb-src/g&#39; &gt; /etc/apt/sources.list.d/deb-src.list&#34;
 sudo apt update
 sudo apt install devscripts
 
@@ -309,7 +300,6 @@ cd ..
 <pre tabindex="0"><code>wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc-client0_0.10.1-5.2_armhf.deb
 wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/liblirc0_0.10.1-5.2_armhf.deb
 wget https://github.com/GrazerComputerClub/Raspbian-Image-Generator/raw/master/stageA/02-install-packages/files/lirc_0.10.1-5.2_armhf.deb
-
 </code></pre><p>Nachdem die Pakete bereitgestellt wurden, müssen sie noch installieren werden.</p>
 <pre tabindex="0"><code>sudo apt remove lirc liblirc0 liblirc-client0
 sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblirc-client0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb 
@@ -377,25 +367,25 @@ Durch das Anlegen folgender Befehle in der &ldquo;/etc/lirc/irexec.lircrc&rdquo;
 <pre tabindex="0"><code>begin
     prog   = irexec
     button = UP_B
-    config = echo &quot;UP-B&quot;
+    config = echo &#34;UP-B&#34;
 end
 
 begin
     prog   = irexec
     button = DOWN_B
-    config = echo &quot;DOWN-B&quot;
+    config = echo &#34;DOWN-B&#34;
 end
 
 begin
     prog   = irexec
     button = SOUND_B
-    config = echo &quot;SOUND-B&quot;
+    config = echo &#34;SOUND-B&#34;
 end
 
 begin
     prog   = irexec
     button = LIGHT_B
-    config = echo &quot;LIGHT-B&quot;
+    config = echo &#34;LIGHT-B&#34;
 end
 </code></pre><p>Für einen Testlauf muss das Programm mit der Konfigurationsdatei gestartet werden.</p>
 <pre tabindex="0"><code>irexec  /etc/lirc/irexec.lircrc
@@ -602,15 +592,6 @@ title="github icon"></i>
 
         
 
-        
-        <li>
-        <a href="https://blog.gc2.at/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
-            <i class="fas fa-rss" title="rss"></i>
-            <span class="screen-reader-text">rss</span>
-        </a>
-        </li>
-        
-
 				</ul>	<div class="design-credit">
 		
 		<p>CC-BY-4.0 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
@@ -625,7 +606,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1709918411"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
 
 </body>
 </html>
