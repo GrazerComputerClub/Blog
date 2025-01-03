@@ -3,7 +3,7 @@
 comment=`date +%g%m%d`
 rm -rf public
 rm -rf /dev/shm/public
-git clone -b gh-pages git@github.com:GrazerComputerClub/hugo-nederburg-theme.git /dev/shm/public
+git clone -b gh-pages git@github.com:GrazerComputerClub/Blog.git /dev/shm/public
 ln -s /dev/shm/public public
 
 #/bin/bash update.sh
