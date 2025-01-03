@@ -89,7 +89,7 @@ pygmentsOptions = "linenos=table,linenostart=1,style=friendly,nobackground=true"
   email         = "blog@gc2.at"
   twitter       = "https://twitter.com/_gc2_"
   github        = "https://github.com/GrazerComputerClub/"
-  rss           = true
+  rss           = false
 
 # Add a writer, then use it in the markdown front matter like this: writer = "Martin Strohmayer"
   [params.writers]
