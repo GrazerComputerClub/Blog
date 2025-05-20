@@ -16,11 +16,21 @@ WiringPi ist einer C-Library für den Zugriff auf GPIOs des Raspberry Pi. Leider
 
 ## Beschreibung 
 
-WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Henderson entwickelt. Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem Raspberry Pi OS (ab Bullseye) entfernt. Früher konnte man zumindest eine ältere Version mit ``apt install wiringpi`` installieren, aber das geht nun nicht mehr.  
-Das ist sehr unverständlich den WiringPi wurde nach wie vor weiter gewartet und für die neueren Raspberry Pi Produkte wie z. B. Pi 400 und Zero 2 angepasst. Der frei verfügbare Sourcecode steht bei Git-Hub unter https://github.com/WiringPi/WiringPi zur Verfügung.  
-Ende Oktober 2023 sah es so aus als ob das Projekt erneut aufgegeben wird, denn es wurde auf Archivestatus gestellt. Dies lag daran, dass Raspberry Pi OS Bookworm und der Raspberry Pi 5 released wurden. Es schien so als würde niemand die Zeit aufbringen um die nötigen Anpassungen zu machen https://github.com/WiringPi/WiringPi/issues/80.  
+WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Raspberry Pi Computers. Sie wird unter der GNU LGPLv3 Lizenz angeboten. Ursprünglich wurde sie von Gordon Henderson entwickelt. 
+Er hat sich allerdings inzwischen vom Projekt zurückgezogen. Dadurch würde es leider auch aus dem Raspberry Pi OS (ab Bullseye) entfernt. 
+Früher konnte man zumindest eine ältere Version mit ``apt install wiringpi`` installieren, aber das geht nun nicht mehr.  
+Das ist sehr unverständlich den WiringPi wurde nach wie vor weiter gewartet und für die neueren Raspberry Pi Produkte wie z. B. Pi 400 und Zero 2 angepasst. 
+Der frei verfügbare Sourcecode steht bei Git-Hub unter https://github.com/WiringPi/WiringPi zur Verfügung.  
+Ende Oktober 2023 sah es so aus als ob das Projekt erneut aufgegeben wird, denn es wurde auf Archivestatus gestellt. 
+Dies lag daran, dass Raspberry Pi OS Bookworm und der Raspberry Pi 5 released wurden. 
+Es schien so als würde niemand die Zeit aufbringen um die nötigen Anpassungen zu machen https://github.com/WiringPi/WiringPi/issues/80.  
 
-Dieser Zustand war für uns nicht annehmbar und so Übernahmen wir das Git-Hub Projekt 2024 und veröffentlichten die Version 3.0 am 29.2.2024. Nun konnte die Library wieder für alle Raspberry Pi Versionen in Bookworm verwendet werden und auch die wichtigsten Funktionen wurden für den Raspberry Pi 5 implementiert. Dies war besonders aufwendig, da die GPIOs nun nicht mehr vom Boradcom SOC direkt sondern von RP1-Chip betrieben wurden. Der RP1 IC ist eine Eigenentwicklung der Raspberry Pi Foundation und ist per PCIe-Bus 2.0 am SOC angebunden. Unsere Implementierung war also Neuland und die erste Library die per Direkt Memory Access die GPIOs ansprechen kann. Gegenüber der sonst empfohlenen gpiod-Librays erreicht die WiringPi Library eine enorm gesteigerte Performance!  
+Dieser Zustand war für uns nicht annehmbar und so Übernahmen wir das Git-Hub Projekt 2024 und veröffentlichten die Version 3.0 am 29.2.2024. 
+Nun konnte die Library wieder für alle Raspberry Pi Versionen in Bookworm verwendet werden und auch die wichtigsten Funktionen wurden für den Raspberry Pi 5 implementiert. 
+Dies war besonders aufwendig, da die GPIOs nun nicht mehr vom Boradcom SOC direkt sondern von RP1-Chip betrieben wurden. 
+Der RP1 IC ist eine Eigenentwicklung der Raspberry Pi Foundation und ist per PCIe-Bus 2.0 am SOC angebunden. 
+Unsere Implementierung war also Neuland und die erste Library die per Direkt Memory Access die GPIOs ansprechen kann. 
+Gegenüber der sonst empfohlenen gpiod-Librays erreicht die WiringPi Library eine enorm gesteigerte Performance!  
 
 Die aktuelle Version wird als Release Version auf Git-Hub zur Verfügung gestellt. Optional kann man es sich aber auch selbst erstellen (z. B. für Buster oder Bullseye).
 
@@ -47,7 +57,12 @@ sudo apt install ./wiringpi_3.0_armhf.deb
 ## Verwendung
 
 
-WiringPi enthält nicht nur die C-Bibliothek, auch das Kommandozeilenprogramm ``gpio`` wird mit ausgeliefert. Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. Wenn man allerdings den Parameter  ``-g`` hinzufügt, werden die BCM-Nummern verwendet. Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. Dies ist inzwischen nicht mehr nötig. Mit dem Befehl ``gpio readall`` kann der aktuelle Status der GPIOs ausgegeben werden.
+WiringPi enthält nicht nur die C-Bibliothek, auch das Kommandozeilenprogramm ``gpio`` wird mit ausgeliefert. 
+Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. 
+Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. 
+Wenn man allerdings den Parameter ``-g`` hinzufügt, werden die BCM-Nummern verwendet. 
+Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. 
+Dies ist inzwischen nicht mehr nötig. Mit dem Befehl ``gpio readall`` kann der aktuelle Status der GPIOs ausgegeben werden.
 
 **Pi 5:**
 ```

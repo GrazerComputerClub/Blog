@@ -15,7 +15,7 @@ weight = 1
 
 ## Beschreibung 
 
-Raspberry Pi OS Bookworm basiert auf Debian 12 und verwendet einen 6.1 Kernel.
+Raspberry Pi OS Bookworm basiert auf Debian 12 und verwendet einen 6er Kernel (6.1, 6.6 und zuletzt 6.12).  
 Es gab vorallem 3 große Änderungen, bei der grafischen Oberfläche, Audio und Netzwerk. 
 
 Genaue Information kann man im englischen original Nachlesen.  
@@ -25,11 +25,9 @@ Genaue Information kann man im englischen original Nachlesen.
 
 ## Grafik
 
-
 Bei der Grafischen Oberfläche wird nicht länger auf X11 gesetzt sondern auf das neue Wayland. Das gilt vorallem für den Raspberry Pi 4 / 400 und 5.
 X11 ist inzwischen schon 35 Jahre alt und nicht mehr auf der Höhe der Zeit.  Allerdings wird es dür die alten Raspberry Pis immer noch empfohlen.
 Wayland bringt mehr Sicherheit, denn die Kommunikation erfolgt isoliert für die Programme. Als Komposer wird  Wayfire verwendet (früher Mutter Window Manager). Bei X11 wird Openbox als Window Manager verwendet. Programme können im übrigen bei Wayland nicht mehr so wie bei X11 über das Netzwerk remote gestartet werden, es muss eine VNC-Programm benutzt werden.
-
 
 Weitere Keine Änderungen sind:
  - Die Toolbar ist nun wf-panel-pi statt lxpanel. 
@@ -43,6 +41,7 @@ Weitere Keine Änderungen sind:
 PipeWire wird nun statt PulseAudio verwendet.
 Teilweise gibt es noch Probleme mit alten Applikationen wie z. B.  Sonic Pi. 
 Bei der Lite Version ohne GUI ist aber immer noch Alsa im Einsatz.
+
 
 ## Netzwerk
 
@@ -75,8 +74,6 @@ WLAN1               f29f22f9-41ce-208d-af82-a9f2e754394a  wifi      wlan0
 ```
 
 
-
-
 ## Sonstiges
 
 Die zentrale Systemprotokoll-Datei /var/log/syslog gibt es nun nicht mehr! Stattdessen wird nun journalctl verwendet um Zugriff auf das Systemprotokoll zu bekommen.
@@ -84,7 +81,11 @@ Gibt man ``journalctl`` ein, so wir das gesamte Protokoll ausgegeben. Das ist ab
 
 ### /proc/cpuinfo
 
-Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei "/proc/cpuinfo" nichts zwischen Kernel 5 und Kernel 6. Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird. Anders soieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile "Hardware" komplett verschwunden. Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70! Zur analysie kann man den Befehl ``WIRINGPI_DEBUG=1 gpio readall`` ausführen.  
+Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei "/proc/cpuinfo" nichts zwischen Kernel 5 und Kernel 6. 
+Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird. 
+Anders sieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile "Hardware" komplett verschwunden. 
+Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70! 
+Zur Analysie kann man den Befehl ``WIRINGPI_DEBUG=1 gpio readall`` ausführen.  
 
 Im Fehlerfall sieht das dann so aus.
 ```
@@ -93,10 +94,11 @@ Oops: Unable to determine board revision from /proc/cpuinfo
  ->  You'd best google the error to find out why.
 ```
 
-Unter Model steht in "/proc/cpuinfo" aber immer das konkrete Raspberry Pi Modell. Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller, RAM Größe usw. enthält (siehe https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes). 
+Unter Model steht in "/proc/cpuinfo" aber immer das konkrete Raspberry Pi Modell. 
+Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller, 
+RAM Größe usw. enthält (siehe https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes). 
 
 **Raspberry Pi 1:**
-
 ```
 Hardware	: BCM2835
 Revision	: 0002
@@ -105,7 +107,6 @@ Model		: Raspberry Pi Model B Rev 1
 ```
 
 **Raspberry Pi 3:**
-
 ```
 Hardware	: BCM2835
 Revision	: 9020e0
@@ -114,9 +115,7 @@ Model		: Raspberry Pi 3 Model A Plus Rev 1.0
 ```
 
 **Raspberry Pi 4:**
-
 ```
-
 Revision	: c03111
 Serial		: 100000002eb65c54
 Model		: Raspberry Pi 4 Model B Rev 1.1
@@ -151,47 +150,14 @@ hexdump -C  /proc/device-tree/system/linux,serial
 00000000  f1 d1 2b 56 30 43 0c cf
 ```
 
-### GPIO Sysfs
+## GPIO Sysfs / GPIO Device
 
-Bei Support für die GPIO Sysfs hat sich bis zu Raspberry Pi 5 noch nichts geändert. Hier steht ja im Raum, dass die überholte ABI "GPIO Sysfs Interface for Userspace" https://www.kernel.org/doc/Documentation/gpio/sysfs.txt bald aus dem Kernel gelöscht wird. Im aktuell verwendeten Kernel 6.1 ist das aber noch nicht der Fall und somit ändert sich für die Funktion und GPIO-Librays vorerst nichts. Allerdings muss zum GPIO (BCM)Nummer noch 399 hin zugezählt werden. Also GPIO04 ist über 403 ansprechbar (siehe https://forums.raspberrypi.com/viewtopic.php?t=359302).
+Anfangs hat GPIO sysfs auf allen Raspberry Pis (inkl. 5, allerdings mit einem Offset von 399) noch funktioniert (Kernel 6.1). 
+Aber ab Kernel 6.6 wurde wurde das veraltete [GPIO Sysfs Interface for Userspace](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt) aus dem Kernel entfernt.  
+Alle Tools, Librarys, Scripts und Programme die auf GPIO sysfs angewiesen sind, müssen nun aktualisert werden, damit sie wieder funktionieren!
 
+Das neue [GPIO Character Device Userspace API](https://docs.kernel.org/userspace-api/gpio/chardev.html) kann über das Device /dev/gpiochip0 angesprochen werden.  
+Beim Raspberry Pi 5 war am Anfang /dev/gpiochip4 das korrekte Device. Ab Kernel 6.6.47 ist aber auch /dev/gpiochip0 beim Pi 5 korrekt. Damit keine Probleme mit den alten Programmen, Scripte und Anleitungen entsteht, wurde eine symbolicher Link von /dev/gpiochip4 auf /dev/gpiochip0 erzeugt (auch auf anderen Pis). 
 
-
-**Raspberry Pi 0-4:**
-
-Anzahl der verfügbaren GPIOs
-```
-cat /sys/class/gpio/gpiochip0/ngpio
-```
-```
-58
-```
-
-Ansprechen einen GPIO
-
-```
-echo 4 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio4/direction
-echo 1 > /sys/class/gpio/gpio4/value
-echo 0 > /sys/class/gpio/gpio4/value
-```
-
-
-
-<!--
-
-
-    Testen:
-
- - screenshot tool
-
-
-stop console
-
-sudo service serial-getty@ttyAMA0 stop
-sudo screen /dev/ttyAMA0 115200
-
-
--->
-
-
+**WICHTIG:** Es sollte immer die aktuellste Version der WiringPi Library verwendet werden, da die vielen Änderungen seit Bookworm sonst zu Problem führt!  
+Siehe: https://github.com/WiringPi/WiringPi/releases 

@@ -117,27 +117,24 @@ Die AMD- und Intel-Systeme unterstützen DDR2 SODIMM RAM bis 667 MHz. Es wurde b
 Dazu wurden mehrere 2 GB Module mit 800 MHz bestellt, die pro Modul ca. 3-4 Euro kosten. Eine geringere Frequenz bringt keine Kostenersparnis.
 Alle System sind mit 2 Speicherslots ausgeführt, sodass 2,5 oder 3 GB erreicht wurden. Teilweise werden Teile des Speichers für die Grafikkarte benutzt, diese Zuordnung wurde auf 128 MB begrenzt.  
 
+Durch das Aussortieren von Laptops 2024, konnten teilweise die Laptops mit 2x2 GB Module bestückt werden. Dabei ergab sich aber der Effekt, dass die Laptops diesen gar nicht voll nutzen konnten.  
+Beim Laptop D520 (Intel) konnte von 4 GB nur 3216 MB genutzt werden. Bei einer 3 GB Bestückung sind es 2964 MB. Also nur geringfüge 250 MB weniger.  
+Beim Laptop L131 (AMD) war das Verhalten besser, von 4 GB konnten immerhin 3785 MB genutzt werden. Gleich um ca. 512 MB mehr als beim Intel System.  
+Deshalb wurden die Laptops D520 mit 3 GB bestückt und die L131 mit 4 GB.
+
 
 ### Display Reparatur
 
-Bei einem D531 Latitude Laptop funktionierte die Hintergrundbeleuchtung des Displays nicht. Es war zu erkennen, dass die Anzeige funktionierte, aber eben extrem dunkel. Auf Verdacht wurde dann die Versorgungsplatine (Dell LCD Inverter Board LJ97-01015A) getauscht. Das entsprechende Modul konnte um ca. 7 Euro nachbestellt werden. Es wurde dann zwar nicht exakt die gleiche Platine geliefert (siehe Bild unten), dennoch hat nach dem Umbau das Display wieder funktioniert. 
+Bei einem D531 Latitude Laptop funktionierte die Hintergrundbeleuchtung des Displays nicht. Es war zu erkennen, dass die Anzeige funktionierte, aber eben extrem dunkel. Auf Verdacht wurde dann die Versorgungsplatine (Dell LCD Inverter Board LJ97-01015A) getauscht. Das entsprechende Modul konnte um ca. 7 Euro bei Aliexpress nachbestellt werden. Es wurde dann zwar nicht exakt die gleiche Platine geliefert (siehe Bild unten), dennoch hat nach dem Umbau das Display wieder funktioniert. 
 
 ![LCD Wechslrichter](../../img/LJ97-01015A.jpg)
 
 
-## Update 2023/2024
+## Update 2023/2024/2025
 
-Später wurden die Laptops nun auf Mint 22 (MATE) und Lubuntu 22.04 (LXQt) in der 64-Bit Version aktualisiert. Bei den Intel Systemen kam es beim Mint 21 Installer immer wieder zu einem Einfrieren des Systems. Aus diesem Grund wurde auf dem A01 (Dell D520) Lubuntu 22.04 (LXQt) installiert. Alle alten i386/i686 Laptops wurden ausgemustert, sodass nur noch 131L unf D520 übrig geblieben sind. Auf einen Vergleich der Performance wie 2020 
+Später wurden die Laptops nun auf Mint 22 (MATE) und Lubuntu 22.04 (LXQt) in der 64-Bit Version aktualisiert. Bei den Intel Systemen kam es beim Mint 21 Installer immer wieder zu einem Einfrieren des Systems. Mint 22 hat aber wieder problemlos funktioniert. Alle alten i386/i686 Laptops wurden ausgemustert, sodass nur noch 131L und D520 übrig geblieben sind. Auf einen Vergleich der Performance wie 2020 wurde diesmal verzichtet.
 
 [![Linux Mint 20 XFCE vs. Lubuntu 20.04](http://img.youtube.com/vi/dB9bTTbQ7Ig/0.jpg)](https://www.youtube.com/watch?v=dB9bTTbQ7Ig)
 
-wurde diesmal verzichtet.  
-Der RAM wurde bei Dell 520 auf das maximum von 4 GB erweitert.  
+
 **Offen** ist immer noch eine Umrüstung auf SSD.
-
-
-<!--
-A01 - D520 (4GB, 250GB HDD) - Lubuntu 22.04 (LXQt)
-A02 - D520 (4GB, 120GB HDD) - Mint 22
--->
-
