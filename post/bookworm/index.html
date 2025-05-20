@@ -24,7 +24,7 @@
         "datePublished": "2024-02-01 00:00:00 \u002b0000 UTC",
         "dateModified" : "2024-02-01 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/bookworm\/",
-        "wordCount" : "783",
+        "wordCount" : "825",
         "image" : "https:\/\/blog.gc2.at\/img\/Bookworm.png",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1735906062" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1747759016" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1735906062" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1747759016" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -249,7 +249,7 @@
             <article>
               <p>2023 wurde Raspberry Pi OS auf die aktuelle Debian Basis 12 aktualisiert und trägt somit den Namen Bookworm. Dadurch hat sich einiges geändert, hier eine kleine Auflistung.</p>
 <h2 id="beschreibung">Beschreibung</h2>
-<p>Raspberry Pi OS Bookworm basiert auf Debian 12 und verwendet einen 6.1 Kernel.
+<p>Raspberry Pi OS Bookworm basiert auf Debian 12 und verwendet einen 6er Kernel (6.1, 6.6 und zuletzt 6.12).<br>
 Es gab vorallem 3 große Änderungen, bei der grafischen Oberfläche, Audio und Netzwerk.</p>
 <p>Genaue Information kann man im englischen original Nachlesen.</p>
 <ul>
@@ -304,12 +304,18 @@ WLAN1               f29f22f9-41ce-208d-af82-a9f2e754394a  wifi      wlan0
 <p>Die zentrale Systemprotokoll-Datei /var/log/syslog gibt es nun nicht mehr! Stattdessen wird nun journalctl verwendet um Zugriff auf das Systemprotokoll zu bekommen.
 Gibt man <code>journalctl</code> ein, so wir das gesamte Protokoll ausgegeben. Das ist aber viel zu viel für eine sinnvolle Diagnose. <code>journalctl -b</code> zeigt alles seit dem letzten Bootvorgang. Es gibt noch viele andere Parameter die man über die Hilfe <code>man journalctl</code> nachlesen kann.</p>
 <h3 id="proccpuinfo">/proc/cpuinfo</h3>
-<p>Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei &ldquo;/proc/cpuinfo&rdquo; nichts zwischen Kernel 5 und Kernel 6. Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird. Anders soieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile &ldquo;Hardware&rdquo; komplett verschwunden. Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70! Zur analysie kann man den Befehl <code>WIRINGPI_DEBUG=1 gpio readall</code> ausführen.</p>
+<p>Beim alten Raspberry Pis (Zero, P1, P3) ändert sich bei &ldquo;/proc/cpuinfo&rdquo; nichts zwischen Kernel 5 und Kernel 6.
+Manche sind vielleicht verwirrt weil bei Hardware immer die CPU BCM2835 ausgewiesen wird.
+Anders sieht es aber beim Raspberry Pi 4 aus. Dort ist die Zeile &ldquo;Hardware&rdquo; komplett verschwunden.
+Das kann zu Probleme führen wenn Programme dies erwarten, wie z.B. die WiringPi Library bis Version 2.70!
+Zur Analysie kann man den Befehl <code>WIRINGPI_DEBUG=1 gpio readall</code> ausführen.</p>
 <p>Im Fehlerfall sieht das dann so aus.</p>
 <pre tabindex="0"><code>Oops: Unable to determine board revision from /proc/cpuinfo
  -&gt; No &#34;Hardware&#34; line
  -&gt;  You&#39;d best google the error to find out why.
-</code></pre><p>Unter Model steht in &ldquo;/proc/cpuinfo&rdquo; aber immer das konkrete Raspberry Pi Modell. Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller, RAM Größe usw. enthält (siehe <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)</a>.</p>
+</code></pre><p>Unter Model steht in &ldquo;/proc/cpuinfo&rdquo; aber immer das konkrete Raspberry Pi Modell.
+Bei Revision steht eine bitcodierte Hex-Zahl die alle Informationen wie Modell, Revision, Hersteller,
+RAM Größe usw. enthält (siehe <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes)</a>.</p>
 <p><strong>Raspberry Pi 1:</strong></p>
 <pre tabindex="0"><code>Hardware	: BCM2835
 Revision	: 0002
@@ -321,8 +327,7 @@ Revision	: 9020e0
 Serial		: 000000004202fabc
 Model		: Raspberry Pi 3 Model A Plus Rev 1.0
 </code></pre><p><strong>Raspberry Pi 4:</strong></p>
-<pre tabindex="0"><code>
-Revision	: c03111
+<pre tabindex="0"><code>Revision	: c03111
 Serial		: 100000002eb65c54
 Model		: Raspberry Pi 4 Model B Rev 1.1
 </code></pre><p>Man kann die Revision- und Serial-Nummer aber auch über den Device-Tree binär auslesen:</p>
@@ -339,19 +344,14 @@ Model		: Raspberry Pi 5 Model B Rev 1.0
 00000000  00 c0 41 70  
 </code></pre><pre tabindex="0"><code>hexdump -C  /proc/device-tree/system/linux,serial 
 00000000  f1 d1 2b 56 30 43 0c cf
-</code></pre><h3 id="gpio-sysfs">GPIO Sysfs</h3>
-<p>Bei Support für die GPIO Sysfs hat sich bis zu Raspberry Pi 5 noch nichts geändert. Hier steht ja im Raum, dass die überholte ABI &ldquo;GPIO Sysfs Interface for Userspace&rdquo; <a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt">https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</a> bald aus dem Kernel gelöscht wird. Im aktuell verwendeten Kernel 6.1 ist das aber noch nicht der Fall und somit ändert sich für die Funktion und GPIO-Librays vorerst nichts. Allerdings muss zum GPIO (BCM)Nummer noch 399 hin zugezählt werden. Also GPIO04 ist über 403 ansprechbar (siehe <a href="https://forums.raspberrypi.com/viewtopic.php?t=359302)">https://forums.raspberrypi.com/viewtopic.php?t=359302)</a>.</p>
-<p><strong>Raspberry Pi 0-4:</strong></p>
-<p>Anzahl der verfügbaren GPIOs</p>
-<pre tabindex="0"><code>cat /sys/class/gpio/gpiochip0/ngpio
-</code></pre><pre tabindex="0"><code>58
-</code></pre><p>Ansprechen einen GPIO</p>
-<pre tabindex="0"><code>echo 4 &gt; /sys/class/gpio/export
-echo out &gt; /sys/class/gpio/gpio4/direction
-echo 1 &gt; /sys/class/gpio/gpio4/value
-echo 0 &gt; /sys/class/gpio/gpio4/value
-</code></pre><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</code></pre><h2 id="gpio-sysfs--gpio-device">GPIO Sysfs / GPIO Device</h2>
+<p>Anfangs hat GPIO sysfs auf allen Raspberry Pis (inkl. 5, allerdings mit einem Offset von 399) noch funktioniert (Kernel 6.1).
+Aber ab Kernel 6.6 wurde wurde das veraltete <a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt">GPIO Sysfs Interface for Userspace</a> aus dem Kernel entfernt.<br>
+Alle Tools, Librarys, Scripts und Programme die auf GPIO sysfs angewiesen sind, müssen nun aktualisert werden, damit sie wieder funktionieren!</p>
+<p>Das neue <a href="https://docs.kernel.org/userspace-api/gpio/chardev.html">GPIO Character Device Userspace API</a> kann über das Device /dev/gpiochip0 angesprochen werden.<br>
+Beim Raspberry Pi 5 war am Anfang /dev/gpiochip4 das korrekte Device. Ab Kernel 6.6.47 ist aber auch /dev/gpiochip0 beim Pi 5 korrekt. Damit keine Probleme mit den alten Programmen, Scripte und Anleitungen entsteht, wurde eine symbolicher Link von /dev/gpiochip4 auf /dev/gpiochip0 erzeugt (auch auf anderen Pis).</p>
+<p><strong>WICHTIG:</strong> Es sollte immer die aktuellste Version der WiringPi Library verwendet werden, da die vielen Änderungen seit Bookworm sonst zu Problem führt!<br>
+Siehe: <a href="https://github.com/WiringPi/WiringPi/releases">https://github.com/WiringPi/WiringPi/releases</a></p>
             </article>
           </div>
           
@@ -548,7 +548,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1735906062"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1747759016"></script>
 
 </body>
 </html>
