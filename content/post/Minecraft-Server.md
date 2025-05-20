@@ -1,4 +1,4 @@
-﻿+++
++++
 showonlyimage = false
 draft = false
 image = "img/MinecraftServer.jpg"
@@ -195,7 +195,7 @@ Nun wird gefragt ob der Server täglich um 4 Uhr früh neu gestartet werden soll
 Nach der Installation wird der Minecraft Server automatisch gestartet.
 Um die Serverausgaben bzw. den Termial ansehen zu können muss man  ``screen``  starten.
 
-```
+```immer erreichbar
 screen -r
 ```
 
@@ -241,7 +241,7 @@ Nun kann man einen beliebigen Server Namen vergeben. Darunter muss man die IP-Ad
 
 ```
 Server Name: Mein Minecraft Server  
-Server Adresse: 192.168.1.1:25565  
+Server Adresse: 192.168.1.111:25565  
 ```
 
 Nun ist der Server in der Liste und man kann durch Drücken des blauen Pfeils die Verbindung aufbauen. 
@@ -323,7 +323,7 @@ Sollte der Server nach außen hin errreichbar sein, muss man einen Port Weiterle
 
 **Da dies aber auch ein Sicherheitsrisiko birgt, richtet sich das nur an versierte Benutzer!**    
 
-Im Router muss ein beliebiger TCP Port wie z. B. 21345 auf den Server Port 25565 weitergeleitet werden.
+Im Router muss ein beliebiger TCP Port wie z. B. 23456 auf den Server Port 25565 weitergeleitet werden.
 
 ![Minecraft Port Forward](../../img/MinecraftPortForward.png)
 
