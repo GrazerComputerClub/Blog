@@ -1,4 +1,4 @@
-+++
+﻿+++
 showonlyimage = false
 draft = false
 image = "img/MinecraftServer.jpg"
@@ -17,7 +17,7 @@ Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minec
 ## Grundsätzliches
 
 Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.  
-Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. 
+Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. Man könnte z. B. einen ThinClient HP T630 oder Lenovo M600 mit einem 4-Kern Prozessor verwenden. 
 
 
 ## Basis Installation und Einrichtung
@@ -89,7 +89,7 @@ Eine SanDisk High Endurance 64 GB Class 10 Karte errreicht schon gute 1545.
 Eine SSD erreicht im übrigen einen Wert von über 5000 bis 7.000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder NVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf [https://pibenchmarks.com/](https://pibenchmarks.com/)
 
 
-## Minicraft Server Installation
+## Minecraft Server Installation
 
 ```
 wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
@@ -256,7 +256,7 @@ difficulty=normal
 max-players=8
 ```
 
-### Spieler mit Operatorrechten ausstatten
+### Spieler mit Operator-Rechten ausstatten
 
 Damit man einen Spieler zum Operator machen kann, muss man zur Server-Konsole wechseln. Dies erfolgt durch den Aufruf von ``screen -r minecraft``.
 Dort findet man z. B. diesen Eintrag
@@ -288,6 +288,35 @@ In der Datei ops.json sind die Operatoren gespeichert.
   }
 ]
 ```
+
+### Server Plugins/Mods
+
+Um Server Plugins/Mods zu installieren muss man lediglich die entsprechenden Version herunterladen und in das "plugins" Verzeichnis kopieren. Bei https://modrinth.com/plugins muss man beim Download die Platform und Minceraft-Version auswählen. Die benötigte Platform ist Paper. Mit dem Link kann man auch direkt am Server den Download starten.
+
+```
+cd ~/minecraft/plugins
+wget https://cdn.modrinth.com/data/9eGKb6K1/versions/KuMfGuTv/voicechat-bukkit-2.5.26.jar
+sudo service minecraft restart
+```
+
+Wenn der Mod Konfigurationsdaten oder ähnliches hat, liegen diese in einem Unterverzeichnis im "plugins" Verzeichnis z. B. "~/minecraft/plugins/voicechat".
+
+
+Einige interessant Server Plugins/Mods für den Server sind:
+
+- Simple Voice Chat: https://modrinth.com/plugin/simple-voice-chat
+- Multiverse-Core: https://modrinth.com/plugin/multiverse-core
+- LuckPerms: https://modrinth.com/plugin/luckperms
+- PlayerKits 2: https://modrinth.com/plugin/playerkits-2
+- AdvancedServerList: https://modrinth.com/plugin/advancedserverlist
+- Maintenance: https://modrinth.com/plugin/maintenance
+- TAB: https://modrinth.com/plugin/tab-was-taken
+- RTP Plugin: https://modrinth.com/plugin/rtp-plugin
+- LifeSteal: https://modrinth.com/plugin/lifesteal-system
+- Veinminer: https://modrinth.com/datapack/veinminer
+- Veinminer Enchantment: https://modrinth.com/datapack/veinminer-enchantment
+- HuskHomes: https://modrinth.com/plugin/huskhomes
+
 
 ## Minecraft Server Update
 
@@ -340,4 +369,5 @@ Originale englischen Anleitung von [James A. Chambers](https://jamesachambers.co
 Git Hub Repository für [Setup](https://github.com/TheRemote/RaspberryPiMinecraft)  
 Unterstützte Paper Minecraft [Versionen](https://papermc.io/api/v1/paper)  
 Minecraft Gamepedia [Server.properties](https://minecraft-de.gamepedia.com/Server.properties)  
-GeyserMC Projekt Webseite: https://geysermc.org/
+GeyserMC Projekt Webseite: https://geysermc.org/  
+Mod Downloads: https://modrinth.com/plugins
