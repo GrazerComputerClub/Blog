@@ -24,7 +24,7 @@
         "datePublished": "2023-07-08 00:00:00 \u002b0000 UTC",
         "dateModified" : "2023-07-08 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "2081",
+        "wordCount" : "2211",
         "image" : "https:\/\/blog.gc2.at\/img\/MinecraftServer.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1747759016" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1748523179" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1747759016" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1748523179" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -256,7 +256,7 @@
               <p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.</p>
 <h2 id="grundsätzliches">Grundsätzliches</h2>
 <p>Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.<br>
-Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren.</p>
+Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. Man könnte z. B. einen ThinClient HP T630 oder Lenovo M600 mit einem 4-Kern Prozessor verwenden.</p>
 <h2 id="basis-installation-und-einrichtung">Basis Installation und Einrichtung</h2>
 <p>Als Basis für den Server wird ein Raspberry Pi OS Lite 32-Bit oder 64-Bit verwendet.<br>
 Folgende Schritte müssen initial durchgeführt werden:</p>
@@ -308,7 +308,7 @@ IOZone                    4k random write           3619 KB/s
 Eine SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.<br>
 Eine SanDisk High Endurance 64 GB Class 10 Karte errreicht schon gute 1545.<br>
 Eine SSD erreicht im übrigen einen Wert von über 5000 bis 7.000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder NVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf <a href="https://pibenchmarks.com/">https://pibenchmarks.com/</a></p>
-<h2 id="minicraft-server-installation">Minicraft Server Installation</h2>
+<h2 id="minecraft-server-installation">Minecraft Server Installation</h2>
 <pre tabindex="0"><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
 </code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen <a href="https://papermc.io/downloads/paper">https://papermc.io/downloads/paper</a> nud nachsehen.</p>
 <p>In aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen falls es nicht schon dort steht. Es könnte aber auch gewünscht sein, dass eine ältere Version installiert wird. Möglicherweise soll der Server kompatibel zu einer Mod sein oder man will die letzen stabile Optifine Version benutzen können.<br>
@@ -392,7 +392,7 @@ Server Adresse: 192.168.1.111:25565
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. Weiters könnte man auch die Anzahl der gleichzeitigen Player reduzieren.</p>
 <pre tabindex="0"><code>difficulty=normal
 max-players=8
-</code></pre><h3 id="spieler-mit-operatorrechten-ausstatten">Spieler mit Operatorrechten ausstatten</h3>
+</code></pre><h3 id="spieler-mit-operator-rechten-ausstatten">Spieler mit Operator-Rechten ausstatten</h3>
 <p>Damit man einen Spieler zum Operator machen kann, muss man zur Server-Konsole wechseln. Dies erfolgt durch den Aufruf von <code>screen -r minecraft</code>.
 Dort findet man z. B. diesen Eintrag</p>
 <pre tabindex="0"><code>[17:55:55 INFO]: UUID of player Donald is b47637a4-2f8a-4a47-b43c-c9f32b3c227b
@@ -415,7 +415,28 @@ Nun kann man &lsquo;screen&rsquo; mit der Tastenkombination Strg+A und D verlass
     &#34;bypassesPlayerLimit&#34;: false
   }
 ]
-</code></pre><h2 id="minecraft-server-update">Minecraft Server Update</h2>
+</code></pre><h3 id="server-pluginsmods">Server Plugins/Mods</h3>
+<p>Um Server Plugins/Mods zu installieren muss man lediglich die entsprechenden Version herunterladen und in das &ldquo;plugins&rdquo; Verzeichnis kopieren. Bei <a href="https://modrinth.com/plugins">https://modrinth.com/plugins</a> muss man beim Download die Platform und Minceraft-Version auswählen. Die benötigte Platform ist Paper. Mit dem Link kann man auch direkt am Server den Download starten.</p>
+<pre tabindex="0"><code>cd ~/minecraft/plugins
+wget https://cdn.modrinth.com/data/9eGKb6K1/versions/KuMfGuTv/voicechat-bukkit-2.5.26.jar
+sudo service minecraft restart
+</code></pre><p>Wenn der Mod Konfigurationsdaten oder ähnliches hat, liegen diese in einem Unterverzeichnis im &ldquo;plugins&rdquo; Verzeichnis z. B. &ldquo;~/minecraft/plugins/voicechat&rdquo;.</p>
+<p>Einige interessant Server Plugins/Mods für den Server sind:</p>
+<ul>
+<li>Simple Voice Chat: <a href="https://modrinth.com/plugin/simple-voice-chat">https://modrinth.com/plugin/simple-voice-chat</a></li>
+<li>Multiverse-Core: <a href="https://modrinth.com/plugin/multiverse-core">https://modrinth.com/plugin/multiverse-core</a></li>
+<li>LuckPerms: <a href="https://modrinth.com/plugin/luckperms">https://modrinth.com/plugin/luckperms</a></li>
+<li>PlayerKits 2: <a href="https://modrinth.com/plugin/playerkits-2">https://modrinth.com/plugin/playerkits-2</a></li>
+<li>AdvancedServerList: <a href="https://modrinth.com/plugin/advancedserverlist">https://modrinth.com/plugin/advancedserverlist</a></li>
+<li>Maintenance: <a href="https://modrinth.com/plugin/maintenance">https://modrinth.com/plugin/maintenance</a></li>
+<li>TAB: <a href="https://modrinth.com/plugin/tab-was-taken">https://modrinth.com/plugin/tab-was-taken</a></li>
+<li>RTP Plugin: <a href="https://modrinth.com/plugin/rtp-plugin">https://modrinth.com/plugin/rtp-plugin</a></li>
+<li>LifeSteal: <a href="https://modrinth.com/plugin/lifesteal-system">https://modrinth.com/plugin/lifesteal-system</a></li>
+<li>Veinminer: <a href="https://modrinth.com/datapack/veinminer">https://modrinth.com/datapack/veinminer</a></li>
+<li>Veinminer Enchantment: <a href="https://modrinth.com/datapack/veinminer-enchantment">https://modrinth.com/datapack/veinminer-enchantment</a></li>
+<li>HuskHomes: <a href="https://modrinth.com/plugin/huskhomes">https://modrinth.com/plugin/huskhomes</a></li>
+</ul>
+<h2 id="minecraft-server-update">Minecraft Server Update</h2>
 <p>Zuerst beendet man den Server mit <code>sudo service minecraft stop</code>.
 Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code> und startet es mit <code>bash SetupMinecraft.sh</code>.
 Nun kann man den aktualisierten Server wieder starten, dazu gibt man <code>sudo service minecraft start</code> ein.</p>
@@ -443,7 +464,8 @@ Dann gibt man den Server Namen und die IP-Adresse ein. Mit Doppelpunkt kann man 
 Git Hub Repository für <a href="https://github.com/TheRemote/RaspberryPiMinecraft">Setup</a><br>
 Unterstützte Paper Minecraft <a href="https://papermc.io/api/v1/paper">Versionen</a><br>
 Minecraft Gamepedia <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a><br>
-GeyserMC Projekt Webseite: <a href="https://geysermc.org/">https://geysermc.org/</a></p>
+GeyserMC Projekt Webseite: <a href="https://geysermc.org/">https://geysermc.org/</a><br>
+Mod Downloads: <a href="https://modrinth.com/plugins">https://modrinth.com/plugins</a></p>
             </article>
           </div>
           
@@ -641,7 +663,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1747759016"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1748523179"></script>
 
 </body>
 </html>
