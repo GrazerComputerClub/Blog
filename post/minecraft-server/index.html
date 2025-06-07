@@ -13,18 +13,18 @@
         "articleSection" : "post",
         "name" : "Minecraft Server",
         "headline" : "Minecraft Server",
-        "description" : "\u003cp\u003eMinecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.\u003c\/p\u003e",
+        "description" : "\u003cp\u003eMinecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 oder 5 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2023",
-        "datePublished": "2023-07-08 00:00:00 \u002b0000 UTC",
-        "dateModified" : "2023-07-08 00:00:00 \u002b0000 UTC",
+        "copyrightYear" : "2025",
+        "datePublished": "2025-06-07 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2025-06-07 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "2211",
+        "wordCount" : "2900",
         "image" : "https:\/\/blog.gc2.at\/img\/MinecraftServer.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1748523179" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1749285579" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1748523179" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1749285579" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -224,7 +224,7 @@
       </div>
       
         <div class="entry-meta">
-          <span class="date">08 July</span>	<span> / </span>
+          <span class="date">07 June</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -253,15 +253,17 @@
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.</p>
+              <p>Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 oder 5 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.</p>
 <h2 id="grundsätzliches">Grundsätzliches</h2>
-<p>Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann insbesonders von einem Raspberry Pi 4 der mit ausreichend RAM (2 oder noch besser 4 GB) ausgestattet ist, erledigt werden. Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.<br>
-Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. Man könnte z. B. einen ThinClient HP T630 oder Lenovo M600 mit einem 4-Kern Prozessor verwenden.</p>
-<h2 id="basis-installation-und-einrichtung">Basis Installation und Einrichtung</h2>
+<p>Minecraft ist besonders bei kleinen Kindern aber auch bei Erwachsenen ein beliebtes Computerspiel. Wenn mehrere Leute öfter gemeinsam Spielen wollen, so  macht es Sinn einen Minecraft Server zu betreiben. Diese Aufgabe kann von einem Raspberry Pi 4 oder 5  der mit ausreichend RAM ausgestattet ist, erledigt werden. Möglich wäre ab 2 GB aber optimal ist 4 GB oder mehr.<br>
+Von TheRemote gibt es ein Bash-Script das die Installation sehr vereinfacht.<br>
+Im Übrigend kann die Anleitung auch auf anderen Systemen mit AMD64-Architektur angewendet werden. Diese müssen nur auf einem Debian System (z. B. Debian 12 Bookworm) basieren. Man könnte z. B. einen ThinClient HP T630 oder Lenovo M600 mit einem 4-Kern Prozessor verwenden.<br>
+Mit der eigenen Server Hardware kann man auch noch viele Server Mods bzw. Plugins für noch mehr Spielspaß aktivieren!</p>
+<h2 id="basis-installation-und-einrichtung-raspberry-pi">Basis Installation und Einrichtung Raspberry Pi</h2>
 <p>Als Basis für den Server wird ein Raspberry Pi OS Lite 32-Bit oder 64-Bit verwendet.<br>
 Folgende Schritte müssen initial durchgeführt werden:</p>
 <ul>
-<li>Raspberry Pi OS Lite herunterladen und auf eine schnelle MicroSD Karte schreiben</li>
+<li>Raspberry Pi OS Lite herunterladen und auf eine schnelle MicroSD Karte mit min. 8GB schreiben</li>
 <li>In der Boot Partition die Datei ssh erzeugen (bzw. ssh beim MicroSD Karte schreiben aktivieren)</li>
 <li>Login mit Benutzer &ldquo;pi&rdquo; und Passwort &ldquo;raspberry&rdquo; (per SSH) bzw. &ldquo;raspberrz&rdquo; (lokal)</li>
 <li>Updates installieren: <code>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade</code></li>
@@ -275,9 +277,22 @@ Folgende Schritte müssen initial durchgeführt werden:</p>
 <li>Evtl. WiFi Parameter einstellen (LAN ist aber zu bevorzugen)</li>
 </ul>
 <p>Nach dem ersten Start braucht man dann nur noch die letzten Updates zu installieren.</p>
-<h2 id="microsd-benchmark">MicroSD Benchmark</h2>
+<h2 id="basis-installation-und-einrichtung-amd64-system">Basis Installation und Einrichtung AMD64 System</h2>
+<p>Zuerst muss Debian 12 über einen Boot-Stick installiert werden. Dazu lädt man sich zuerst das Programm Ventoy herunter und erzeugt den Boot-Stick. Dann kopiert man sich das Debian Network Install ISO von <a href="https://www.debian.org/CD/netinst/">https://www.debian.org/CD/netinst/</a> auf den USB- Stick.<br>
+Wenn das Debian System bootet und der SSH-Server installiert ist, kann man sich mit einem SSH-Client (Windows: Putty) verbinden.</p>
+<p>Nun sollte man noch das sudo-System aktivieren und einen &ldquo;minecraft&rdquo; User anlegen.
+Dann verhält sich das System so wie bei einem Raspberry Pi.</p>
+<pre tabindex="0"><code>su --login
+apt install sudo
+
+adduser minecraft
+adduser minecraft sudo
+</code></pre><p>Auch den Default User, der bei der Installtion angelegt wurde, kann man zu Administrator bzw. sudo hinzufügen.</p>
+<pre tabindex="0"><code>adduser defaultuser sudo
+</code></pre><p>Nun meldet man sich als Benutzer &ldquo;minecraft&rdquo; an, damit man die Minecraft-Server installation starten kann. Das kann entweder um einen neuen SSH-Client passieren oder über den befehl  <code>su minecraft</code>.</p>
+<h2 id="microsdssd-benchmark">MicroSD/SSD Benchmark</h2>
 <p>Die Geschwindigkeit der MicroSD-Karte ist von entscheidender Bedeutung für den Minecraft Server. Mit einem Benchmark vom Autor, kann die Karte überprüft werden.</p>
-<pre tabindex="0"><code>sudo curl https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash 
+<pre tabindex="0"><code>sudo wget https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh | sudo bash 
 </code></pre><p><strong>SanDisk Ultra:</strong></p>
 <pre tabindex="0"><code>     Category                  Test                      Result     
 HDParm                    Disk Read                 26.34 MB/s               
@@ -304,15 +319,31 @@ IOZone                    4k random read            7863 KB/s
 IOZone                    4k random write           3619 KB/s                
 
                           Score: 1545                                        
+</code></pre><p><strong>HP T630 Thin Client internal MMC</strong>:</p>
+<pre tabindex="0"><code>     Category                  Test                      Result     
+HDParm                    Disk Read                 145.25 MB/sec            
+HDParm                    Cached Disk Read          109.22 MB/sec            
+DD                        Disk Write                24.0 MB/s                
+FIO                       4k random read            13931 IOPS (55727 KB/s)  
+FIO                       4k random write           4777 IOPS (19108 KB/s)   
+IOZone                    4k read                   56593 KB/s               
+IOZone                    4k write                  15330 KB/s               
+IOZone                    4k random read            34702 KB/s               
+IOZone                    4k random write           16821 KB/s               
+
+                          Score: 5070     
 </code></pre><p>Laut Autor wäre ein &ldquo;Score&rdquo; von 1000 wünschenswert. Unter 700 sollte er nicht sein, dann sollte man auf eine USB SSD ausweichen.<br>
 Eine SanDisk Ultra microSDHC 8 GB Class 10 Karte liegt am unteren Grenzwert, reicht also gerade so.<br>
 Eine SanDisk High Endurance 64 GB Class 10 Karte errreicht schon gute 1545.<br>
-Eine SSD erreicht im übrigen einen Wert von über 5000 bis 7.000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder NVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf <a href="https://pibenchmarks.com/">https://pibenchmarks.com/</a></p>
+Eine SSD erreicht im übrigen einen Wert von über 5000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder NVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf <a href="https://pibenchmarks.com/">https://pibenchmarks.com/</a>.</p>
 <h2 id="minecraft-server-installation">Minecraft Server Installation</h2>
 <pre tabindex="0"><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
-</code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen <a href="https://papermc.io/downloads/paper">https://papermc.io/downloads/paper</a> nud nachsehen.</p>
-<p>In aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen falls es nicht schon dort steht. Es könnte aber auch gewünscht sein, dass eine ältere Version installiert wird. Möglicherweise soll der Server kompatibel zu einer Mod sein oder man will die letzen stabile Optifine Version benutzen können.<br>
-Die aktuell neueste Version ist 1.21.5, sie steht aber nur als Experimentelle Paper Version zur Verfügung.</p>
+</code></pre><p>Bevor man die Installation startet, kann man
+IOZone                    4k read                   56593 KB/s            <br>
+IOZone                    4k write                  15330 KB/s   noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen <a href="https://papermc.io/downloads/paper">https://papermc.io/downloads/paper</a> nud nachsehen.</p>
+<p>In aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen falls es nicht scIOZone                    4k read                   56593 KB/s            <br>
+IOZone                    4k write                  15330 KB/s<br>
+Die aktuell neueste Version ist 1.21.5, sie steht aber nur als Experimentelle Paper Version zur Verfügung. daher</p>
 <pre tabindex="0"><code>cat SetupMinecraft.sh | grep Version=
 </code></pre><pre tabindex="0"><code>Version=&#34;1.21.4&#34;
 </code></pre><p>Dann kann das Setup gestartet werden.</p>
@@ -392,7 +423,13 @@ Server Adresse: 192.168.1.111:25565
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. Weiters könnte man auch die Anzahl der gleichzeitigen Player reduzieren.</p>
 <pre tabindex="0"><code>difficulty=normal
 max-players=8
-</code></pre><h3 id="spieler-mit-operator-rechten-ausstatten">Spieler mit Operator-Rechten ausstatten</h3>
+</code></pre><h3 id="icon-und-message-of-the-day-motd">Icon und Message of the Day (MOTD)</h3>
+<p>Damit der Server eine schönen Icon bekommt muss man lediglich eine 64x64 Pixel PNG-Datei in das Serververzeichnis kopieren. Die Datei muss den Namen &ldquo;server-icon.png&rdquo; haben.</p>
+<p>Eine schönen Text mit verschiedenen Farben neben dem Bild kann man auch konfiguieren. Dazu entwirft man ihn zuerst auf der Webseite <a href="https://minecraft.tools/en/motd.php">https://minecraft.tools/en/motd.php</a> .<br>
+Dann muss man nur auf die Schaltfläche &ldquo;CREATE THE MOTD&rdquo; drücken.
+Den erzeugten Text kann man einfach kopieren und in die &ldquo;server.properties&rdquo; Datei bei der Einstellung &ldquo;motd=&rdquo; einfügen.</p>
+<p>Nach einem Neustart des Server <code>sudo service minecraft restart</code> werden die Einstellungen aktiv.</p>
+<h3 id="spieler-mit-operator-rechten-ausstatten">Spieler mit Operator-Rechten ausstatten</h3>
 <p>Damit man einen Spieler zum Operator machen kann, muss man zur Server-Konsole wechseln. Dies erfolgt durch den Aufruf von <code>screen -r minecraft</code>.
 Dort findet man z. B. diesen Eintrag</p>
 <pre tabindex="0"><code>[17:55:55 INFO]: UUID of player Donald is b47637a4-2f8a-4a47-b43c-c9f32b3c227b
@@ -416,7 +453,7 @@ Nun kann man &lsquo;screen&rsquo; mit der Tastenkombination Strg+A und D verlass
   }
 ]
 </code></pre><h3 id="server-pluginsmods">Server Plugins/Mods</h3>
-<p>Um Server Plugins/Mods zu installieren muss man lediglich die entsprechenden Version herunterladen und in das &ldquo;plugins&rdquo; Verzeichnis kopieren. Bei <a href="https://modrinth.com/plugins">https://modrinth.com/plugins</a> muss man beim Download die Platform und Minceraft-Version auswählen. Die benötigte Platform ist Paper. Mit dem Link kann man auch direkt am Server den Download starten.</p>
+<p>Um Server Plugins/Mods zu installieren muss man lediglich die entsprechenden Version herunterladen und in das &ldquo;plugins&rdquo; Verzeichnis kopieren. Bei <a href="https://modrinth.com/plugins">https://modrinth.com/plugins</a> muss man beim Download die Platform und Minceraft-Version auswählen. Die benötigte Platform ist in unserem Fall &ldquo;Paper&rdquo;. Mit dem Downlload-Link kann man auch direkt am Server den Download starten.</p>
 <pre tabindex="0"><code>cd ~/minecraft/plugins
 wget https://cdn.modrinth.com/data/9eGKb6K1/versions/KuMfGuTv/voicechat-bukkit-2.5.26.jar
 sudo service minecraft restart
@@ -427,7 +464,9 @@ sudo service minecraft restart
 <li>Multiverse-Core: <a href="https://modrinth.com/plugin/multiverse-core">https://modrinth.com/plugin/multiverse-core</a></li>
 <li>LuckPerms: <a href="https://modrinth.com/plugin/luckperms">https://modrinth.com/plugin/luckperms</a></li>
 <li>PlayerKits 2: <a href="https://modrinth.com/plugin/playerkits-2">https://modrinth.com/plugin/playerkits-2</a></li>
-<li>AdvancedServerList: <a href="https://modrinth.com/plugin/advancedserverlist">https://modrinth.com/plugin/advancedserverlist</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
 <li>Maintenance: <a href="https://modrinth.com/plugin/maintenance">https://modrinth.com/plugin/maintenance</a></li>
 <li>TAB: <a href="https://modrinth.com/plugin/tab-was-taken">https://modrinth.com/plugin/tab-was-taken</a></li>
 <li>RTP Plugin: <a href="https://modrinth.com/plugin/rtp-plugin">https://modrinth.com/plugin/rtp-plugin</a></li>
@@ -451,7 +490,54 @@ rm -r world world_nether/ world_the_end/
 ls backups/
 tar xvf backups/2022.11.05.10.11.28.tar.gz ./world/ ./world_nether/ ./world_the_end/
 sudo service minecraft start
-</code></pre><h2 id="server-routing">Server Routing</h2>
+</code></pre><h2 id="backup-mit-restic-statt-gzip">Backup mit restic statt gzip</h2>
+<p>Bei jedem Start des Servers wird ein komplettes Backup erstellt. Das benötigt unnötig viel Speicherplatz. Mit dem Programm &ldquo;restic&rdquo; können inkrementale Backups erzeugt werden, die also nur jeweils die Änderungen sichert.</p>
+<pre tabindex="0"><code>sudo apt install restic
+cd ~/minecraft
+restic init -r backups/restic
+</code></pre><p>Nun muss ein Passwort für das Backup vergeben werden. Wir nehmen hier &ldquo;minecraft&rdquo; da es nicht so wichtig für uns ist. Wir schreiben das nun auch in eine Passwort-Datei die später referenziert wird.</p>
+<pre tabindex="0"><code>echo minecraft &gt; restic_pw
+</code></pre><p>Nun kann man die Erzeugung des Backups in einem Trockenlauf testen.</p>
+<pre tabindex="0"><code>restic -r backups/restic backup --exclude=libraries --exclude=backups --exclude=cache --exclude=logs --exclude=jre --exclude=paperclip.jar --dry-run -vv --password-file restic_pw ./
+</code></pre><p>Dann müssen wir den Aufruf für das Backup bei Script &ldquo;start.sh&rdquo; erweitern, sodass restic verwendet wird.</p>
+<pre tabindex="0"><code># Back up server
+if [ -d &#34;world&#34; ]; then 
+    if [ -n &#34;$(which restic)&#34; ]; then
+        echo &#34;Backing up server to minecraft/backups/restic folder with restic&#34;
+        restic -r backups/restic backup --exclude=libraries --exclude=backups --exclude=cache --exclude=logs --exclude=jre --exclude=paperclip.jar --password-file restic_pw ./
+    elif [ -n &#34;$(which pigz)&#34; ]; then
+        echo &#34;Backing up server (all cores) to cd minecraft/backups folder&#34;
+        tar -I pigz --exclude=&#39;./backups&#39; --exclude=&#39;./cache&#39; --exclude=&#39;./logs&#39; --exclude=&#39;./jre&#39; --exclude=&#39;./paperclip.jar&#39; -pvcf backups/$(date +%Y.%m.%d.%H.%M.%S).tar.gz ./*
+    else
+        echo &#34;Backing up server (single core, pigz not found) to cd minecraft/backups folder&#34;
+        tar --exclude=&#39;./backups&#39; --exclude=&#39;./cache&#39; --exclude=&#39;./logs&#39; --exclude=&#39;./jre&#39; --exclude=&#39;./paperclip.jar&#39; -pzvcf backups/$(date +%Y.%m.%d.%H.%M.%S).tar.gz ./*
+    fi
+fi
+</code></pre><!-- raw HTML omitted -->
+<p><strong>Spater kann man die erzeugten Backup auflisten:</strong></p>
+<pre tabindex="0"><code>restic -r backups/restic/ snapshots --password-file restic_pw
+</code></pre><pre tabindex="0"><code>repository a3a24439 opened (repository version 2) successfully, password is correct
+ID        Time                 Host        Tags        Paths
+--------------------------------------------------------------------------------
+3a4e6d9b  2025-05-30 19:17:39  minecraft               /home/minecraft/minecraft
+5a95a71a  2025-05-31 11:43:34  minecraft               /home/minecraft/minecraft
+4d4d8ee8  2025-06-01 11:14:36  minecraft               /home/minecraft/minecraft
+a1800b6b  2025-06-04 17:49:12  minecraft               /home/minecraft/minecraft
+0e72cff1  2025-06-07 09:48:39  minecraft               /home/minecraft/minecraft
+--------------------------------------------------------------------------------
+5 snapshots
+</code></pre><p><strong>Minecraft Welten von Backup wiederherstellen:</strong></p>
+<pre tabindex="0"><code>sudo service minecraft stop
+cd ~/minecraft/
+rm -r world world_nether/ world_the_end/
+restic -r backups/restic/ restore a1800b6b --target /tmp/restore-minecraft-2025-06-04 --password-file restic_pw
+cd /tmp/restore-minecraft-2025-06-04
+cp -rv world/ world_nether/ world_the_end/ ~/minecraft/
+sudo service minecraft start
+</code></pre><p><strong>Resümee:</strong></p>
+<p>In diesem Fall benötigt das backup/restic Verzeichnis 231 MB und das wiederhergestellte Backup 146 MB. Die Erzeugung dauert ca. 2 Sekunden. Ein einzelnes tar.gz in der alten Methode braucht 205 MB pro Backup. Die Erzeugung dauert ca. 12 Sekunden mit pigz.<br>
+Mit Restic lassen sich also effiziente und kompakte Backups erstellen!</p>
+<h2 id="server-routing">Server Routing</h2>
 <p>Sollte der Server nach außen hin errreichbar sein, muss man einen Port Weiterleitung am Router einrichten.</p>
 <p><strong>Da dies aber auch ein Sicherheitsrisiko birgt, richtet sich das nur an versierte Benutzer!</strong></p>
 <p>Im Router muss ein beliebiger TCP Port wie z. B. 23456 auf den Server Port 25565 weitergeleitet werden.</p>
@@ -459,6 +545,8 @@ sudo service minecraft start
 <p>In Minecraft muss man dann die richtige Version starten und auf die Schaltfläche &ldquo;Mehrspieler&rdquo; drücken. Danach kann man auf die Schaltfläche &ldquo;Server hinzufügen&rdquo; drücken.
 Dann gibt man den Server Namen und die IP-Adresse ein. Mit Doppelpunkt kann man den Port angeben wenn er nicht 25565 ist. Sollte die IP-Adresse per Dyndns erreichbar sein, so kann man auch diesen Namen eingeben und damit kann man sich jedereit mit dem Server verbinden.</p>
 <p><img src="../../img/MinecraftPortServerSetting.png" alt="Minecraft Port Server Settings"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="verlinkung">Verlinkung</h2>
 <p>Originale englischen Anleitung von <a href="https://jamesachambers.com/raspberry-pi-minecraft-server-script-with-startup-service/">James A. Chambers</a><br>
 Git Hub Repository für <a href="https://github.com/TheRemote/RaspberryPiMinecraft">Setup</a><br>
@@ -663,7 +751,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1748523179"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1749285579"></script>
 
 </body>
 </html>

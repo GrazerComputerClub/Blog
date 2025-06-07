@@ -6,8 +6,15 @@
     <description>Recent content on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.gc2.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minecraft Server</title>
+      <link>https://blog.gc2.at/post/minecraft-server/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
+      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 oder 5 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GC2@38C3</title>
       <link>https://blog.gc2.at/post/38c3/</link>
@@ -42,13 +49,6 @@
       <pubDate>Sun, 29 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://blog.gc2.at/post/raspberry-pi-zero-shopping/</guid>
       <description>&lt;p&gt;Zuerst würden 3 Variante des Raspberry Zero verkauft. Im Herbst 2021 wurde der langerwartete Zero 2 veröffentlicht. Somit gibt es nun 4 Varianten des Raspberry Pi Zero  &amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Minecraft Server</title>
-      <link>https://blog.gc2.at/post/minecraft-server/</link>
-      <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.gc2.at/post/minecraft-server/</guid>
-      <description>&lt;p&gt;Minecraft kann zwar nicht auf einem Raspberry Pi gespielt werden, aber ein Minecraft Server kann mit einem Raspberry Pi 4 betrieben werden. Dank eines verfügbaren Bash-Script ist die Einrichtung keine Hexenwerk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dell Laptop upgrade</title>
