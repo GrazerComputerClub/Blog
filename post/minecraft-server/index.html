@@ -24,7 +24,7 @@
         "datePublished": "2025-06-07 00:00:00 \u002b0000 UTC",
         "dateModified" : "2025-06-07 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "2900",
+        "wordCount" : "2952",
         "image" : "https:\/\/blog.gc2.at\/img\/MinecraftServer.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1749285579" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1756049505" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1749285579" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1756049505" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -418,11 +418,16 @@ Dazu geht man auf die Schaltfläche <code>Multiplayer</code> und dann auf <code>
 <pre tabindex="0"><code>Server Name: Mein Minecraft Server  
 Server Adresse: 192.168.1.111:25565  
 </code></pre><p>Nun ist der Server in der Liste und man kann durch Drücken des blauen Pfeils die Verbindung aufbauen.</p>
-<h2 id="minecraft-server-einstellungen">Minecraft Server Einstellungen</h2>
+<h2 id="minecraft-server-einstellungen-und-optimierungen">Minecraft Server Einstellungen und Optimierungen</h2>
 <p>Alle wichtigen Einstellungen für den Server sind in der Datei “server.properties” gespeichert. Für den Port auf dem der Minecraft Server verfügbar ist, gilt der Parameter “server-port”. Er ist auf den Standardwert 25565 (Java-Version) gesetzt. Informationen rund um die Einstellungen können der deutschen Minecraft Gamepedia Seite <a href="https://minecraft-de.gamepedia.com/Server.properties">Server.properties</a> entnommen werden.<br>
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. Weiters könnte man auch die Anzahl der gleichzeitigen Player reduzieren.</p>
 <pre tabindex="0"><code>difficulty=normal
 max-players=8
+
+network-compression-threshold=512
+simulation-distance=4
+sync-chunk-writes=false
+view-distance=7
 </code></pre><h3 id="icon-und-message-of-the-day-motd">Icon und Message of the Day (MOTD)</h3>
 <p>Damit der Server eine schönen Icon bekommt muss man lediglich eine 64x64 Pixel PNG-Datei in das Serververzeichnis kopieren. Die Datei muss den Namen &ldquo;server-icon.png&rdquo; haben.</p>
 <p>Eine schönen Text mit verschiedenen Farben neben dem Bild kann man auch konfiguieren. Dazu entwirft man ihn zuerst auf der Webseite <a href="https://minecraft.tools/en/motd.php">https://minecraft.tools/en/motd.php</a> .<br>
@@ -477,8 +482,14 @@ sudo service minecraft restart
 </ul>
 <h2 id="minecraft-server-update">Minecraft Server Update</h2>
 <p>Zuerst beendet man den Server mit <code>sudo service minecraft stop</code>.
-Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code> und startet es mit <code>bash SetupMinecraft.sh</code>.
+Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code>.</p>
+<!-- raw HTML omitted -->
+<p>Fall ein Update nicht funktioniert kann man es auch manuell herunterladen:</p>
+<p><code>curl -o paperclip.jar https://fill-data.papermc.io/v1/objects/37b7ca967d81ba06ccb7986efc7f41b9faaaca1e06b351b8b3da102d35f9574e/paper-1.21.8-6.jar</code></p>
+<p>In der start.sh Datei muss aber auch die entsprechende Version eingetragen sein.</p>
+<p>Aber Achtung durch das Update kann es sein, dass die Plug-Ins aktualisiert werden müssen.
 Nun kann man den aktualisierten Server wieder starten, dazu gibt man <code>sudo service minecraft start</code> ein.</p>
+<!-- raw HTML omitted -->
 <h2 id="karten-wiederherstellen">Karten wiederherstellen</h2>
 <p>Sollte man breits Karten aus einem Backup oder einer anderen Quelle haben, so können diese am Server eingespielt werden.</p>
 <p><strong>Backup Inhalt auflisten:</strong></p>
@@ -514,7 +525,7 @@ if [ -d &#34;world&#34; ]; then
     fi
 fi
 </code></pre><!-- raw HTML omitted -->
-<p><strong>Spater kann man die erzeugten Backup auflisten:</strong></p>
+<p><strong>Erzeugten Backup auflisten:</strong></p>
 <pre tabindex="0"><code>restic -r backups/restic/ snapshots --password-file restic_pw
 </code></pre><pre tabindex="0"><code>repository a3a24439 opened (repository version 2) successfully, password is correct
 ID        Time                 Host        Tags        Paths
@@ -526,6 +537,8 @@ a1800b6b  2025-06-04 17:49:12  minecraft               /home/minecraft/minecraft
 0e72cff1  2025-06-07 09:48:39  minecraft               /home/minecraft/minecraft
 --------------------------------------------------------------------------------
 5 snapshots
+</code></pre><p><strong>Geänderte Dateien von einem Backups auflisten:</strong></p>
+<pre tabindex="0"><code>restic -r backups/restic/ diff  a1800b6b 0e72cff1 --verbose --password-file restic_pw
 </code></pre><p><strong>Minecraft Welten von Backup wiederherstellen:</strong></p>
 <pre tabindex="0"><code>sudo service minecraft stop
 cd ~/minecraft/
@@ -751,7 +764,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1749285579"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1756049505"></script>
 
 </body>
 </html>

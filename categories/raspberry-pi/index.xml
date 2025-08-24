@@ -6,8 +6,15 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SD-Karte lesen und schreiben</title>
+      <link>https://blog.gc2.at/post/imager/</link>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.gc2.at/post/imager/</guid>
+      <description>&lt;p&gt;Raspberry Pi Betriebsysteme auf eine SD-Karte zu bringen hierfür gibt es inzwischen einige Programme, aber das Erzeugen von Images von einer SD-Karte können viele nicht &amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Minecraft Server</title>
       <link>https://blog.gc2.at/post/minecraft-server/</link>
