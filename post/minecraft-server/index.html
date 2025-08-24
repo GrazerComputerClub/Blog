@@ -24,7 +24,7 @@
         "datePublished": "2025-06-07 00:00:00 \u002b0000 UTC",
         "dateModified" : "2025-06-07 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/minecraft-server\/",
-        "wordCount" : "2952",
+        "wordCount" : "2921",
         "image" : "https:\/\/blog.gc2.at\/img\/MinecraftServer.jpg",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1756049505" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1756050391" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1756049505" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1756050391" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -338,25 +338,19 @@ Eine SanDisk High Endurance 64 GB Class 10 Karte errreicht schon gute 1545.<br>
 Eine SSD erreicht im übrigen einen Wert von über 5000! Sie erreicht im IOZone 4K read und write also circa 20-25 MB/s. Andere SATA oder NVMe Systeme schaffen es bis um die 100 MB/s. Vergleichswerte findet man auf <a href="https://pibenchmarks.com/">https://pibenchmarks.com/</a>.</p>
 <h2 id="minecraft-server-installation">Minecraft Server Installation</h2>
 <pre tabindex="0"><code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
-</code></pre><p>Bevor man die Installation startet, kann man
-IOZone                    4k read                   56593 KB/s            <br>
-IOZone                    4k write                  15330 KB/s   noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen <a href="https://papermc.io/downloads/paper">https://papermc.io/downloads/paper</a> nud nachsehen.</p>
-<p>In aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen falls es nicht scIOZone                    4k read                   56593 KB/s            <br>
-IOZone                    4k write                  15330 KB/s<br>
-Die aktuell neueste Version ist 1.21.5, sie steht aber nur als Experimentelle Paper Version zur Verfügung. daher</p>
+</code></pre><p>Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die &ldquo;SetupMinecraft.sh&rdquo; Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen <a href="https://papermc.io/downloads/paper">https://papermc.io/downloads/paper</a> und nachsehen.
+Im aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen..</p>
 <pre tabindex="0"><code>cat SetupMinecraft.sh | grep Version=
 </code></pre><pre tabindex="0"><code>Version=&#34;1.21.4&#34;
 </code></pre><p>Dann kann das Setup gestartet werden.</p>
 <pre tabindex="0"><code>bash SetupMinecraft.sh
-</code></pre><hr>
-<p>Nun muss man y gefolgt von der Eingabetaste drücken, damit später Java 16 (OpenJDK) installiert werden kann. Java 16 ist seit der Version 1.17 von Minecraft zwingend erforderlich.
+</code></pre><p>Nun muss man y gefolgt von der Eingabetaste drücken, damit später Java 16 (OpenJDK) installiert werden kann. Java 16 ist seit der Version 1.17 von Minecraft zwingend erforderlich.
 Nach einem automatischen Neustart muss das Setup neu gestartet werden.</p>
 <pre tabindex="0"><code>bash SetupMinecraft.sh
 </code></pre><pre tabindex="0"><code>Enter root directory path to install Minecraft server.  Almost nobody should change this unless you&#39;re installing to a different disk altogether. (default ~): 
 Directory Path: 
 Directory Path : /home/pi -- accept (y/n)?
 </code></pre><p>Den Standardpfad (Home Directory) kann man mit der Eingabetaste bestätigen. Bei der Nachfrage, bei dem der Pfad ausgegeben wird, kann man y gefolgt von der Eingabetaste drücken.</p>
-<hr>
 <pre tabindex="0"><code>Creating minecraft server directory...
 Installing OpenJDK...
 OpenJDK installation completed.
@@ -396,11 +390,11 @@ Nach der Installation wird der Minecraft Server automatisch gestartet.
 Um die Serverausgaben bzw. den Termial ansehen zu können muss man  <code>screen</code>  starten.</p>
 <pre tabindex="0"><code class="language-immer" data-lang="immer">screen -r
 </code></pre><pre tabindex="0"><code>[18:34:07 INFO]: Done (42.606s)! For help, type &#34;help&#34;
-[18:34:07 INFO]: *************************************************************************************
+[18:34:07 INFO]: ***********************************************************************
 [18:34:07 INFO]: This is the first time you&#39;re starting this server.
 [18:34:07 INFO]: It&#39;s recommended you read our &#39;Getting Started&#39; documentation for guidance.
 [18:34:07 INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
-[18:34:07 INFO]: *************************************************************************************
+[18:34:07 INFO]: ***********************************************************************
 </code></pre><p>In diesem Fall dauerte das Anstarten einige Sekunden. Die CPU-Last ist zeitweise auf allen Kernen sehr hoch, später pendelt es sich aber nach einigen Minuten auf einem niedrigeren Niveau von ca. 40 % auf einem Core (1500 MHz) ein. Der Speicherverbrauch ist wie eingestellt auf ca. 2,2 GB (47 %). Diese Daten wurden mit top bzw. htop ermittelt.</p>
 <h2 id="start-probleme">Start Probleme</h2>
 <p>Sollte der Server nicht laufen, kann man den Status mit <code>sudo service minecraft status</code> prüfen. Wenn beim Starten des Programms einen Fehler auftritt, muss man es manuell in der Konsole starten um ihn diagnostizieren zu können.
@@ -423,7 +417,6 @@ Server Adresse: 192.168.1.111:25565
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. Weiters könnte man auch die Anzahl der gleichzeitigen Player reduzieren.</p>
 <pre tabindex="0"><code>difficulty=normal
 max-players=8
-
 network-compression-threshold=512
 simulation-distance=4
 sync-chunk-writes=false
@@ -482,12 +475,13 @@ sudo service minecraft restart
 </ul>
 <h2 id="minecraft-server-update">Minecraft Server Update</h2>
 <p>Zuerst beendet man den Server mit <code>sudo service minecraft stop</code>.
-Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code>.</p>
+Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechselt in den Minecraft Folder mit <code>cd ~/minecraft</code>, Man lädt sich das Setup herunter <code>wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh</code>.</p>
 <!-- raw HTML omitted -->
+<p>Nun kann man das Setup mit <code>bash SetupMinecraft.sh</code> starten.</p>
 <p>Fall ein Update nicht funktioniert kann man es auch manuell herunterladen:</p>
 <p><code>curl -o paperclip.jar https://fill-data.papermc.io/v1/objects/37b7ca967d81ba06ccb7986efc7f41b9faaaca1e06b351b8b3da102d35f9574e/paper-1.21.8-6.jar</code></p>
-<p>In der start.sh Datei muss aber auch die entsprechende Version eingetragen sein.</p>
-<p>Aber Achtung durch das Update kann es sein, dass die Plug-Ins aktualisiert werden müssen.
+<p>In der start.sh Datei muss aber auch die entsprechende Version eingetragen sein.<br>
+Aber Achtung durch das Update kann es sein, dass die Plug-Ins aktualisiert werden müssen.<br>
 Nun kann man den aktualisierten Server wieder starten, dazu gibt man <code>sudo service minecraft start</code> ein.</p>
 <!-- raw HTML omitted -->
 <h2 id="karten-wiederherstellen">Karten wiederherstellen</h2>
@@ -764,7 +758,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1756049505"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1756050391"></script>
 
 </body>
 </html>
