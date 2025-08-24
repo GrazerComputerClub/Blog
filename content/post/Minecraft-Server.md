@@ -137,13 +137,8 @@ Eine SSD erreicht im übrigen einen Wert von über 5000! Sie erreicht im IOZone 
 ```
 wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh
 ```
-Bevor man die Installation startet, kann man
-IOZone                    4k read                   56593 KB/s               
-IOZone                    4k write                  15330 KB/s   noch vorgeben welche Version installiert werden soll. Dazu editiert man die "SetupMinecraft.sh" Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen [https://papermc.io/downloads/paper](https://papermc.io/downloads/paper) nud nachsehen.
-
-In aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen falls es nicht scIOZone                    4k read                   56593 KB/s               
-IOZone                    4k write                  15330 KB/s  
-Die aktuell neueste Version ist 1.21.5, sie steht aber nur als Experimentelle Paper Version zur Verfügung. daher 
+Bevor man die Installation startet, kann man noch vorgeben welche Version installiert werden soll. Dazu editiert man die "SetupMinecraft.sh" Datei und gibt in der Zeile 7 die Versionsnummer an. Aber Achtung die Version muss von Paper Minecraft unterstützt werden. Mit einem Browser kann man die Projektseite öffnen [https://papermc.io/downloads/paper](https://papermc.io/downloads/paper) und nachsehen.
+Im aktuellen Fall ist die neueste stabile Version 1.21.4. Wir können sie ins Setup-Script eintragen.. 
 
 ```
 cat SetupMinecraft.sh | grep Version=
@@ -160,8 +155,6 @@ bash SetupMinecraft.sh
 ```
 
 
--------------------------------------------------------------------
-
 Nun muss man y gefolgt von der Eingabetaste drücken, damit später Java 16 (OpenJDK) installiert werden kann. Java 16 ist seit der Version 1.17 von Minecraft zwingend erforderlich.
 Nach einem automatischen Neustart muss das Setup neu gestartet werden.
  
@@ -176,8 +169,6 @@ Directory Path : /home/pi -- accept (y/n)?
 ```
 Den Standardpfad (Home Directory) kann man mit der Eingabetaste bestätigen. Bei der Nachfrage, bei dem der Pfad ausgegeben wird, kann man y gefolgt von der Eingabetaste drücken.
 
-
-----------------------------------------------------------------------
 
 ```
 Creating minecraft server directory...
@@ -247,11 +238,11 @@ screen -r
 
 ```
 [18:34:07 INFO]: Done (42.606s)! For help, type "help"
-[18:34:07 INFO]: *************************************************************************************
+[18:34:07 INFO]: ***********************************************************************
 [18:34:07 INFO]: This is the first time you're starting this server.
 [18:34:07 INFO]: It's recommended you read our 'Getting Started' documentation for guidance.
 [18:34:07 INFO]: View this and more helpful information here: https://docs.papermc.io/paper/next-steps
-[18:34:07 INFO]: *************************************************************************************
+[18:34:07 INFO]: ***********************************************************************
 ```
 
 In diesem Fall dauerte das Anstarten einige Sekunden. Die CPU-Last ist zeitweise auf allen Kernen sehr hoch, später pendelt es sich aber nach einigen Minuten auf einem niedrigeren Niveau von ca. 40 % auf einem Core (1500 MHz) ein. Der Speicherverbrauch ist wie eingestellt auf ca. 2,2 GB (47 %). Diese Daten wurden mit top bzw. htop ermittelt.
@@ -292,7 +283,7 @@ Server Adresse: 192.168.1.111:25565
 
 Nun ist der Server in der Liste und man kann durch Drücken des blauen Pfeils die Verbindung aufbauen. 
 
-## Minecraft Server Einstellungen
+## Minecraft Server Einstellungen und Optimierungen
 
 Alle wichtigen Einstellungen für den Server sind in der Datei “server.properties” gespeichert. Für den Port auf dem der Minecraft Server verfügbar ist, gilt der Parameter “server-port”. Er ist auf den Standardwert 25565 (Java-Version) gesetzt. Informationen rund um die Einstellungen können der deutschen Minecraft Gamepedia Seite [Server.properties](https://minecraft-de.gamepedia.com/Server.properties) entnommen werden.  
 Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal setzen. Weiters könnte man auch die Anzahl der gleichzeitigen Player reduzieren. 
@@ -300,7 +291,13 @@ Man könnte z.B. noch den Schwierigkeitsgrad von Einfach/easy auf Normal/normal 
 ```
 difficulty=normal
 max-players=8
+network-compression-threshold=512
+simulation-distance=4
+sync-chunk-writes=false
+view-distance=7
+
 ```
+
 
 ###  Icon und Message of the Day (MOTD)
 
@@ -378,8 +375,20 @@ Einige interessant Server Plugins/Mods für den Server sind:
 ## Minecraft Server Update
 
 Zuerst beendet man den Server mit ``sudo service minecraft stop``. 
-Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechelt in den Minecraft Folder mit ``cd ~/minecraft``, Man lädt sich das Setup herunter ``wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh`` und startet es mit ``bash SetupMinecraft.sh``.
-Nun kann man den aktualisierten Server wieder starten, dazu gibt man ``sudo service minecraft start`` ein. 
+Bei einem Update geht man eigentlich gleich vor wie bei einer Erstinstallation. Man wechselt in den Minecraft Folder mit ``cd ~/minecraft``, Man lädt sich das Setup herunter ``wget https://raw.githubusercontent.com/TheRemote/RaspberryPiMinecraft/master/SetupMinecraft.sh``.
+<!-- Nun muss man die Version ``Version="1.21.7"`` und die Einstellung ``AllowLocalCopy="1"`` in der Datei "SetupMinecraft.sh" anpassen.-->
+Nun kann man das Setup mit ``bash SetupMinecraft.sh`` starten.  
+ 
+Fall ein Update nicht funktioniert kann man es auch manuell herunterladen:  
+
+``curl -o paperclip.jar https://fill-data.papermc.io/v1/objects/37b7ca967d81ba06ccb7986efc7f41b9faaaca1e06b351b8b3da102d35f9574e/paper-1.21.8-6.jar``
+
+In der start.sh Datei muss aber auch die entsprechende Version eingetragen sein.  
+Aber Achtung durch das Update kann es sein, dass die Plug-Ins aktualisiert werden müssen.  
+Nun kann man den aktualisierten Server wieder starten, dazu gibt man ``sudo service minecraft start`` ein.
+
+<!--sync  -av --exclude='*.jar' plugins-1.21.4 plugins -->
+
 
 
 ## Karten wiederherstellen
@@ -448,7 +457,7 @@ fi
 <!-- restic ls -r backups/restic latest --password-file restic_pw -->
 
 
-**Spater kann man die erzeugten Backup auflisten:**
+**Erzeugten Backup auflisten:**
 
 ```
 restic -r backups/restic/ snapshots --password-file restic_pw
@@ -465,6 +474,12 @@ a1800b6b  2025-06-04 17:49:12  minecraft               /home/minecraft/minecraft
 0e72cff1  2025-06-07 09:48:39  minecraft               /home/minecraft/minecraft
 --------------------------------------------------------------------------------
 5 snapshots
+```
+
+**Geänderte Dateien von einem Backups auflisten:**
+
+```
+restic -r backups/restic/ diff  a1800b6b 0e72cff1 --verbose --password-file restic_pw
 ```
 
 
