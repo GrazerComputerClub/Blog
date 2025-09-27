@@ -6,8 +6,15 @@
     <description>Recent content in Raspberry Pi on GC2 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.gc2.at/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi vs. Thin Client</title>
+      <link>https://blog.gc2.at/post/pivstc/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.gc2.at/post/pivstc/</guid>
+      <description>&lt;p&gt;In der Lieferkettenkrise als man keine Raspberry Pi&amp;rsquo;s kaufen konnte, musste man sich anderweitig umsehen um kleine, sparsame aber leistungsfähige PC-System zu finden. Thin Clients sind eine Alternative, aber wie schlagen sie sich gegen den Pi?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SD-Karte lesen und schreiben</title>
       <link>https://blog.gc2.at/post/imager/</link>

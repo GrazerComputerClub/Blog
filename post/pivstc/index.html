@@ -11,27 +11,27 @@
              "@id": "https:\/\/blog.gc2.at\/"
         },
         "articleSection" : "post",
-        "name" : "Hotkeys zuweisen ohne X11",
-        "headline" : "Hotkeys zuweisen ohne X11",
-        "description" : "\u003cp\u003eHotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafische Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.\u003c\/p\u003e",
+        "name" : "Raspberry Pi vs. Thin Client",
+        "headline" : "Raspberry Pi vs. Thin Client",
+        "description" : "\u003cp\u003eIn der Lieferkettenkrise als man keine Raspberry Pi\u0026rsquo;s kaufen konnte, musste man sich anderweitig umsehen um kleine, sparsame aber leistungsfähige PC-System zu finden. Thin Clients sind eine Alternative, aber wie schlagen sie sich gegen den Pi?\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
         "publisher": "",
         "accountablePerson" : "",
         "copyrightHolder" : "",
-        "copyrightYear" : "2018",
-        "datePublished": "2018-12-11 00:00:00 \u002b0000 UTC",
-        "dateModified" : "2018-12-11 00:00:00 \u002b0000 UTC",
-        "url" : "https:\/\/blog.gc2.at\/post\/hotkeys-zuweisen-ohne-x11\/",
-        "wordCount" : "434",
-        "image" : "https:\/\/blog.gc2.at\/img\/keys_black_vol.jpg",
+        "copyrightYear" : "2025",
+        "datePublished": "2025-09-27 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2025-09-27 00:00:00 \u002b0000 UTC",
+        "url" : "https:\/\/blog.gc2.at\/post\/pivstc\/",
+        "wordCount" : "826",
+        "image" : "https:\/\/blog.gc2.at\/img\/PIvsTC.jpg",
         "keywords" : [ "Blog" ]   
     }
     </script>
 
 
- <title>Hotkeys zuweisen ohne X11 </title>
+ <title>Raspberry Pi vs. Thin Client </title>
 
 
 <meta name="description" content="Blog des Grazer Computer Club - GC2" />
@@ -220,11 +220,11 @@
     
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/keys_black_vol.jpg">
+      <div class='featured-image lazy lazy-bg-image'  data-background="https://blog.gc2.at/img/PIvsTC.jpg">
       </div>
       
         <div class="entry-meta">
-          <span class="date">11 December</span>	<span> / </span>
+          <span class="date">27 September</span>	<span> / </span>
 
           <span class="author">
             <a href="http://strohmayers.com" title="Posts von Martin Strohmayer" rel="author">Martin Strohmayer</a>
@@ -242,32 +242,146 @@
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> Hotkeys zuweisen ohne X11</h1>
+          <h1 class='entry-title'> Raspberry Pi vs. Thin Client</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <p>Hotkeys bzw. eine Tastaturtaste einem Programmaufruf zuweisen, ist eine typische Aufgabe die von diversen Desktop-Umgebungen zur Verfügung gestellt wird. Mit dem Programm Triggerhappy steht diese Funktion aber auch in der Shell bzw. auf Systemen ohne grafische Oberfläche zur Verfügung. So können die Multimedia-Tasten der Tastatur oder eines Laptops zum Funktionieren gebracht werden.</p>
-<p>Triggerhappy überwacht Eingaben und gedrückte Tasten und kann dann entsprechend Befehle und Programme ausführen. Es ist ein systemweiter Dienst (Service oder Daemon), der auch ohne eine grafische Oberfläche funktioniert. Installiert wird das Programm durch die Eingabe von <code>apt-get install tiggerhappy</code>, wobei es bei Raspbian allerdings bereits vorinstalliert ist.<br>
-Die Parametrierung erfolgt über Konfigurations-Dateien die sich im Verzeichnis &ldquo;/etc/triggerhappy/triggers.d/&rdquo; befinden müssen. Als erster wird der Ereignisname angegeben. Es ist auch möglich, bis zu 5 kombinierte Ereignisnamen hinzuzufügen. Sie werden mit einem Plus-Zeichen verknüpft. Mögliche Ereignisnamen bzw. Eventcodes findet man auf der Seite <a href="https://code.woboq.org/gtk/include/linux/input-event-codes.h.html">https://code.woboq.org/gtk/include/linux/input-event-codes.h.html</a>. Dann wird der Ereigniswert bzw. die Art der Aktivierung angegeben. Ein Wert von 1 entspricht dem Drücken einer Taste, 2 entspricht der gehaltenen Taste, die Freigabe wird durch den Wert 0 definiert. Zuletzt gibt man das auszuführende Programm an.
-Eine Beispielkonfiguration für den Raspberry Pi ist das Hinterlegen der Laut- und Leise-Taste einer Multimediatastatur mit der entsprechenden Funktion. Dabei wird der PCM Audio Kanal um jeweils 2 dB verändert, wenn die Taste gedrückt wird. Wird zusätzlich die linke Shift-Taste gedrückt, verändert sich der Wert um 10 dB. Dies gilt auch, wenn die Taste gedrückt bleibt.</p>
-<p><strong>/etc/triggerhappy/triggers.d/audio.conf</strong></p>
-<pre tabindex="0"><code># adjust volume
-KEY_VOLUMEUP			1	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP			2	/usr/bin/amixer set PCM 2dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEUP+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB+
-KEY_VOLUMEDOWN			1	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN			2	/usr/bin/amixer set PCM 2dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	1	/usr/bin/amixer set PCM 10dB-
-KEY_VOLUMEDOWN+KEY_LEFTCTRL 	2	/usr/bin/amixer set PCM 10dB-
-</code></pre><p><strong>/etc/triggerhappy/triggers.d/system.conf</strong></p>
-<pre tabindex="0"><code># shutdown
-KEY_H+KEY_LEFTCTRL 	1	/sbin/halt
-</code></pre><p>Achtung, bei der Ausführung kann es zu Problemen mit Rechten kommen. Diagnostizieren kann man es durch eine Testaktivierung und danach dem Befehl <code>service triggerhappy status</code>. Dann wird am Bildschirm die Ausgabe des Programmaufrufes ausgegeben. Im Fall des Verändern der Lautstärke mit &lsquo;amixer&rsquo; wird die Gruppe bzw. das Recht &lsquo;audio&rsquo; gebraucht. Deshalb muss zuvor der Benutzer &rsquo;nobody&rsquo; zur Gruppe &lsquo;audio&rsquo; hinzugefügt werden. Dies erfolgt durch Eingabe des Befehls <code>sudo adduser nobody audio</code>.
-Damit allen Benutzer das Herunterfahren erlaubt wird muss das Sticky-Bit für &lsquo;shutdown&rsquo; bzw. &lsquo;halt&rsquo; gesetzt werden. Dies erfolgt mit dem Befehl <code>sudo chmod u+s /sbin/halt</code>.</p>
-<p>Alternativ kann man auch den Dienst mit dem Benutzer pi starten. Dazu muss man die Datei <code>/lib/systemd/system/triggerhappy.service</code> editieren und bei Parameter user pi statt nobody angeben <code>--user pi</code>. Danach muss man <code>sudo systemctl daemon-reload</code> und <code>sudo service triggerhappy restart</code> ausführen.
-&lsquo;`</p>
+              <p>In der Lieferkettenkrise als man keine Raspberry Pi&rsquo;s kaufen konnte, musste man sich anderweitig umsehen um kleine, sparsame aber leistungsfähige PC-System zu finden. Thin Clients sind eine Alternative, aber wie schlagen sie sich gegen den Pi?</p>
+<h2 id="beschreibung">Beschreibung</h2>
+<p>Während der Corona-Pandemie kam es weltweit zu massiven Lieferengpässen bei Elektronikkomponenten – und der beliebte Raspberry Pi war besonders betroffen. Man konnte keine neuen bekommen oder nur zu total überzogenen Preisen. Auch die Gebrauchtpreise stiegen entsprechend.</p>
+<p>In dieser Situation schienen sich gebrauchte Thin Clients als Alternative anzubieten. Ursprünglich für den Einsatz in Unternehmen konzipiert, bieten sie eine solide Hardwarebasis und sind oft günstig gebraucht erhältlich. Sie sind klein und sparsame aber auch mit eine ausreichend leistungsfähigen CPU (x86/AMD64) ausgestattet. <br>
+Ich entschied mich damals für ein Lenovo M600 (Intel N3700) und später noch für ein HP T630 (AMD GX-420GI) System.</p>
+<p>Vergleicht man sie mit dem Raspberry Pi sticht zualler erst die gute Austattung und Erweiterbarkeit heraus. Sie Thin Clients werden zumeist mit Gehäuse, Netzteil, SSD/MMC und integrierter CPU Kühlung angeboten. Komponenten die man beim Pi erst nachkaufen muss.
+Beim RAM sind zuminest 4 GB vorhanden, der dann auch günstig auf z.B. 8 GB aufgerüstet werden kann. Beim Raspberry Pi muss man sich beim Kauf entscheiden und kann später nicht aufrüsten. Will man beim Pi5 eine M2-NVMe einsetzen, so muss man einen entsprechenden HAT kaufen. Beim Pi4 geht das nur über die USB-3.0 Schnittstelle.<br>
+Bei den zwei beispielhaften Thin Client kann man zwar nur M2-SATA einsetzen, aber diese sind bereits intern vorhanden (sogar 2 davon). Beim
+M600 Kann man auch intern eine SSD einbauen.<br>
+Das sind doch einige Vorteile die für einen Thin Client sprechen.</p>
+<p>Der Vorteil vom Rapsberry Pi liegt vorallem beim Energieverbrauch und natürlich bei den GPIOs. Ist eines davon kritisch für den Einsatz sollte man auf den Rapsberry Pi setzen!</p>
+<p>Ein Nachteil beim den Thin Clients ist, dass man sie gebraucht kaufen muss, wenn man sie günstige haben möchte. Teilweise werden auch zu hohe Preise verlangt, man muss also schon das passende Angebot und Produkt finden.
+Zur Produktbewertung  kann man natürlich auch die KI seines Vertrauens befragen.
+z. B. &ldquo;Ist der Einsatz eines T630 Thin Client als NAS sinvoll oder soll ich lieber einen Raspberry Pi 5 verwenden?&rdquo;</p>
+<p>Mögliche Händler:</p>
+<ul>
+<li>Willhaben - <a href="https://www.willhaben.at">https://www.willhaben.at</a></li>
+<li>Ebay - <a href="https://www.ebay.de">https://www.ebay.de</a> und <a href="https://www.ebay.at">https://www.ebay.at</a></li>
+<li>RAM-König - <a href="https://www.ram-koenig.de/">https://www.ram-koenig.de/</a></li>
+</ul>
+<p>Eine gute Webseite die sich mit der Analyse von Thin Clients gewidmet hat ist <a href="https://www.parkytowers.me.uk/thin/hp/t530/linux.shtml">https://www.parkytowers.me.uk/thin/hp/t530/linux.shtml</a></p>
+<p>Unabhängig von den offensichtlichen Unterschieden wollte ich mir den Energieverbrauch und die CPU Performance genauer ansehen.<br>
+Vorweg der Vergleich der CPU Leistung bei so unterschiedlichen Archikteuren ist schwierig und es kommt sehr auf den Benchmark an. Leider kann man die Systeme also nicht abschließend Bewerten, sondern es kommt immer auf den Einsatz an.</p>
+<h2 id="vor--und-nachteile">Vor- und Nachteile</h2>
+<p><strong>Thin Client:</strong></p>
+<p>✅ Gebraucht günstiger als Pi4/Pi5 mit Komplettaustattung<br>
+✅ RAM erweiterbar<br>
+✅ M2 Sockel (NVMe oder SATA) und SATA<br>
+✅ x86/AMD64, Möglicherweise Windows kompatibel<br>
+⭕ Gebrauchtes günstiges Modell muss gefunden werden<br>
+✅ Nachhaltig, Umweltschonender, Recycling</p>
+<p><strong>Raspberry Pi:</strong></p>
+<p>✅ Sehr Energiesparend<br>
+✅ GPIOs<br>
+✅ Raspberry Pi Zero&rsquo;s sind sehr günstig<br>
+✅ CPU übertaktbar<br>
+⭕ Netzteil, Lüfter und Gehäuse muss extra erworben werden.<br>
+⭕ RAM nicht erweiterbar<br>
+⭕ NVMe erst ab Pi5</p>
+<h2 id="energieverbrauch">Energieverbrauch</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Idle power (W)</th>
+<th>Full power (W)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M600 (N3700)</td>
+<td>6,9</td>
+<td>12,6</td>
+</tr>
+<tr>
+<td>T630 (GX-420GI)</td>
+<td>4,2</td>
+<td>22,3</td>
+</tr>
+<tr>
+<td>720q (i5-8500T)</td>
+<td>15</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Pi 4*</td>
+<td>3,4</td>
+<td>7,1</td>
+</tr>
+<tr>
+<td>Pi 4* @ 1.8 GHz</td>
+<td>3,4</td>
+<td>9,1</td>
+</tr>
+<tr>
+<td>Pi 5*</td>
+<td>3,6</td>
+<td>8-11,5</td>
+</tr>
+</tbody>
+</table>
+<p>* with Fan and Raspberry Pi Power Supply</p>
+<p>Powermeter: Shelly Plug-S</p>
+<p>Man sieht das gute Thin Clients nahe an den Idle Verbrauch der Pis herankommen. Für mich die wichtigste Kenngröße da meine Systeme zumeinst in Leerlauf arbeiten.
+Energiesparende Intel CPUs (6 Watt) brauchen unter Vollast aber auch nur geringfügig mehr als die ARM Prozessoren.</p>
+<h2 id="cpu---benchmark-programme">CPU - Benchmark Programme</h2>
+<p>Es kamen folgende Benchmark programme zum Einsatz:</p>
+<ul>
+<li>nbench - <a href="https://www.math.utah.edu/~mayer/linux/bmark.html">https://www.math.utah.edu/~mayer/linux/bmark.html</a></li>
+<li>Passmark - <a href="https://www.passmark.com/products/performancetest/download.php">https://www.passmark.com/products/performancetest/download.php</a></li>
+<li>7-zip</li>
+</ul>
+<h3 id="nbench">nbench</h3>
+<pre tabindex="0"><code>wget http://www.math.utah.edu/~mayer/linux/nbench-byte-2.2.3.tar.gz
+tar xzvf nbench-byte-2.2.3.tar.gz
+cd nbench-byte-2.2.3
+make
+./nbench
+</code></pre><h3 id="passmark">Passmark</h3>
+<p>Es wird libncurses5 benötig, das bei aktuellen Trixie Debian oder Ubuntu nicht mehr mitgeliefert wird.</p>
+<pre tabindex="0"><code>sudo apt install libncurses5
+</code></pre><p>in dem Fall muss man sich die alte Version deshalb manuell installieren.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>ARM64</strong></p>
+<pre tabindex="0"><code>wget http://ftp.de.debian.org/debian/pool/main/n/ncurses/libncurses5_6.4-4_arm64.deb
+sudo apt install ./libncurses5_6.4-4_arm64.deb
+</code></pre><pre tabindex="0"><code>wget https://www.passmark.com/downloads/PerformanceTest_Linux_ARM64.zip
+unzip PerformanceTest_Linux_ARM64.zip
+cd PerformanceTest
+./pt_linux_arm64
+</code></pre><p><strong>AMD64</strong></p>
+<pre tabindex="0"><code>wget http://ftp.de.debian.org/debian/pool/main/n/ncurses/libncurses5_6.4-4_amd64.deb
+sudo apt install ./libncurses5_6.4-4_arm64.deb
+</code></pre><pre tabindex="0"><code>wget https://www.passmark.com/downloads/PerformanceTest_Linux_x86-64.zip
+unzip PerformanceTest_Linux_x86-64.zip
+cd PerformanceTest
+./pt_linux_x64
+</code></pre><p>Press: A<br>
+Press: n</p>
+<h3 id="7zip">7zip</h3>
+<pre tabindex="0"><code>sudo apt install p7zip-full
+</code></pre><h2 id="benchmark-ergebnisse">Benchmark Ergebnisse</h2>
+<p><strong>Passmark:</strong></p>
+<p><img src="../../img/PIvsTC_passmark.png" alt="Passmark"></p>
+<p>Hier scheint der Benchmark neuere x86 Architekturen besser zu bewerten.
+Der Intel i5-8500T hat ein überproportional gutes Ergebnis, ist er wirklich 3x so schnell wie der Pi5?<br>
+Der Pi4 performt im Vergleich zu Pi5 sehr schlecht.</p>
+<p><strong>nbench:</strong></p>
+<p><img src="../../img/PIvsTC_nbench.png" alt="Passmark"></p>
+<p>Der alte Benchmark von 1995 testet nur einen Kern. Hier sind Pi5 und i5-8500T gar nicht so weit auseinander. Die Intel CPU ist ca. doppelt so schnell wie der BCM2712 (auf alle Kerne gerechnet). Der Pi5 ist ca. doppelt so schnell wie der Pi4.</p>
+<p><strong>7-zip:</strong></p>
+<p><img src="../../img/PIvsTC_7z-decomp.png" alt="7-zip Entpacken"></p>
+<p><img src="../../img/PIvsTC_7z-comp.png" alt="7-zip Packen"></p>
+<p>Die Perfromance von 7-zip unterscheidet sich stark beim Komprimieren und Dekomprimieren. Beim Entpacken schlägt sich die ARM Architektur besonders gut. Der AMD Prozesser fällt dabei besonders zurück obwohl er bei Komprimieren gleich auf ist.</p>
             </article>
           </div>
           
