@@ -55,3 +55,17 @@ Aber natürlich funktioniert auch noch das gute alte dd, dann sogar mit zip-Komp
 ```bash
   sudo dd bs=4M status=progress if=/dev/sda | gzip > LibreELEC_12.gz
 ```
+
+
+## USB-Boot-Stick (ISO-Image) 
+
+Eine ganz andere Anforderung ist, wenn man einen USB-Boot-Stick für ein PC-System erstellen will, dann benötigt man ein anderes Programm. Hierzu verwendet man am Besten das Programm MultiWriter.
+
+```bash
+  sudo apt install gnome-multi-writer
+```
+
+![Gnome MultiWwriter](../../img/GnomeMultiWrite.png) 
+
+Nach dem Start muss man einen USB-Stick anstecken und auswählen.  
+Mit der Öffnen-Schaltfläche wählt man eine ISO-Datei (Boot-System) aus und dann startet man den Vorgang mit der Schaltfläche "Kopieren beginnen".
