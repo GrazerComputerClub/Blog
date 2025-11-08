@@ -24,7 +24,7 @@
         "datePublished": "2025-08-24 00:00:00 \u002b0000 UTC",
         "dateModified" : "2025-08-24 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/blog.gc2.at\/post\/imager\/",
-        "wordCount" : "374",
+        "wordCount" : "439",
         "image" : "https:\/\/blog.gc2.at\/img\/Imager.png",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://blog.gc2.at/css/style.css?v=1758988754" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/style.css?v=1762601549" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://blog.gc2.at/css/custom.css?v=1758988754" rel="stylesheet" type='text/css' media='all'>
+<link href="https://blog.gc2.at/css/custom.css?v=1762601549" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://blog.gc2.at/img/favicon.ico" type="image/x-icon">
 
@@ -277,7 +277,19 @@ Es wird eine Vortschrittsanzeige und die voraussichtliche Dauer angezeigt. Aber 
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  sudo dd <span style="color:#bb60d5">bs</span><span style="color:#666">=</span>4M <span style="color:#bb60d5">status</span><span style="color:#666">=</span>progress <span style="color:#007020;font-weight:bold">if</span><span style="color:#666">=</span>/dev/sda | gzip &gt; LibreELEC_12.gz
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="usb-boot-stick-iso-image">USB-Boot-Stick (ISO-Image)</h2>
+<p>Eine ganz andere Anforderung ist, wenn man einen USB-Boot-Stick für ein PC-System erstellen will, dann benötigt man ein anderes Programm. Hierzu verwendet man am Besten das Programm MultiWriter.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  sudo apt install gnome-multi-writer
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p><img src="../../img/GnomeMultiWrite.png" alt="Gnome MultiWwriter"></p>
+<p>Nach dem Start muss man einen USB-Stick anstecken und auswählen.<br>
+Mit der Öffnen-Schaltfläche wählt man eine ISO-Datei (Boot-System) aus und dann startet man den Vorgang mit der Schaltfläche &ldquo;Kopieren beginnen&rdquo;.</p>
             </article>
           </div>
           
@@ -474,7 +486,7 @@ title="github icon"></i>
   </div>
   <script src="https://blog.gc2.at/js/jquery.min.js"></script>
 <script src="https://blog.gc2.at/js/jquerymigrate.js"></script>
-<script src="https://blog.gc2.at/js/production.min.js?v=1758988754"></script>
+<script src="https://blog.gc2.at/js/production.min.js?v=1762601549"></script>
 
 </body>
 </html>
